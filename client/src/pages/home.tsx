@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
-import logoSimple from "@assets/5_Transparent_Image_1768444352222.png";
+import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
 
 export default function Home() {
-  const words = ["watching", "reading", "listening to", "playing"];
+  const words = [
+    { text: "watching", color: "text-purple-400" },
+    { text: "reading", color: "text-blue-400" },
+    { text: "listening to", color: "text-orange-400" },
+    { text: "playing", color: "text-green-400" }
+  ];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -57,12 +62,12 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="w-72 md:w-80 mb-8"
+              className="w-80 md:w-96 mb-6 -ml-2"
             >
               <img 
-                src={logoSimple} 
+                src={logoWhite} 
                 alt="Consumed Logo" 
-                className="w-full h-auto brightness-0 invert" 
+                className="w-full h-auto" 
               />
             </motion.div>
 
@@ -73,7 +78,7 @@ export default function Home() {
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
               What are you <br />
-              <span className="relative inline-block min-w-[200px] h-[1.2em]">
+              <span className="relative inline-block min-w-[300px] h-[1.2em]">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
@@ -81,9 +86,9 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute left-0 text-primary"
+                    className={`absolute left-0 ${words[index].color}`}
                   >
-                    {words[index]}?
+                    {words[index].text}?
                   </motion.span>
                 </AnimatePresence>
               </span>
@@ -159,104 +164,60 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* App Content - Scrollable */}
-                <div className="flex-1 overflow-hidden relative">
-                   {/* Top Bar */}
-                   <div className="px-5 py-2 flex justify-between items-center bg-[#050505] z-10 sticky top-0">
-                      <div className="w-20">
-                         <img src={logoSimple} className="w-full brightness-0 invert" alt="logo" />
-                      </div>
-                      <div className="flex gap-3">
-                        <Search className="w-5 h-5 text-zinc-400" />
-                        <Activity className="w-5 h-5 text-zinc-400" />
+                {/* App Content - What are you reading? */}
+                <div className="flex-1 overflow-hidden relative px-5 pt-8">
+                   {/* Header Area */}
+                   <div className="text-center mb-8 mt-4">
+                      <h2 className="text-3xl font-bold text-white mb-1 font-body">What are you</h2>
+                      <h2 className="text-3xl font-bold text-blue-400 mb-3 font-body">reading?</h2>
+                      <p className="text-sm text-zinc-500 font-body">Track it. Share it. Play with it.</p>
+                   </div>
+
+                   {/* Search Bar */}
+                   <div className="mb-6 relative">
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+                      <div className="w-full h-12 bg-white rounded-xl flex items-center pl-11 pr-4 text-sm text-zinc-500 font-body">
+                        Search for something...
                       </div>
                    </div>
 
-                   {/* Profile Header Area */}
-                   <div className="px-5 pt-2 pb-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 border-2 border-background"></div>
-                        <div>
-                          <h3 className="font-bold text-sm text-white font-body leading-tight">Heidi Tagliaferri</h3>
-                          <p className="text-xs text-zinc-500 font-body">@HeidiIsConsumed</p>
-                        </div>
-                        <Button size="sm" className="ml-auto h-7 text-xs bg-primary hover:bg-primary/90 rounded-full px-3">
-                           Edit
-                        </Button>
-                      </div>
-
-                      <div className="flex gap-4 text-xs text-zinc-400 mb-6 font-body">
-                         <div className="flex items-center gap-1"><Star className="w-3 h-3 text-yellow-500" /> 15248 pts</div>
-                         <div className="flex items-center gap-1"><TrendingUp className="w-3 h-3 text-purple-400" /> 794 items</div>
-                      </div>
-
-                      {/* Currently Consuming */}
-                      <div className="mb-2">
-                         <h4 className="text-sm font-medium text-white mb-3 font-body">Currently consuming...</h4>
-                         <div className="flex gap-3 overflow-hidden pb-4">
-                            {/* Card 1 */}
-                            <div className="w-24 shrink-0 space-y-2">
-                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
-                                  <img 
-                                    src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&q=80&w=300" 
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                    alt="Cover" 
-                                  />
-                                  <div className="absolute bottom-2 left-2 right-2 h-1 bg-white/20 rounded-full overflow-hidden">
-                                     <div className="h-full w-[40%] bg-primary"></div>
-                                  </div>
-                               </div>
-                               <p className="text-xs text-zinc-300 truncate font-body">Gossip Girl</p>
-                            </div>
-                            
-                            {/* Card 2 */}
-                            <div className="w-24 shrink-0 space-y-2">
-                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
-                                  <img 
-                                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300" 
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                    alt="Cover" 
-                                  />
-                                  <div className="absolute bottom-2 left-2 right-2">
-                                     <div className="bg-primary text-[9px] font-bold px-1.5 py-0.5 rounded text-white w-fit">S1 E4</div>
-                                  </div>
-                               </div>
-                               <p className="text-xs text-zinc-300 truncate font-body">The Gilded Age</p>
-                            </div>
-
-                            {/* Card 3 */}
-                            <div className="w-24 shrink-0 space-y-2">
-                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
-                                  <div className="w-full h-full bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center">
-                                     <Music className="w-8 h-8 text-white/20" />
-                                  </div>
-                                  <div className="absolute bottom-2 left-2 right-2">
-                                     <div className="bg-primary text-[9px] font-bold px-1.5 py-0.5 rounded text-white w-fit">20%</div>
-                                  </div>
-                               </div>
-                               <p className="text-xs text-zinc-300 truncate font-body">Midnight Rain</p>
-                            </div>
+                   {/* Quick Add List */}
+                   <div className="space-y-2">
+                      <p className="text-xs font-semibold text-zinc-500 mb-3 font-body uppercase tracking-wider">Quick Add</p>
+                      
+                      {/* Item 1 */}
+                      <div className="w-full p-2 bg-zinc-900/80 rounded-2xl flex items-center gap-3 border border-white/5">
+                         <div className="w-10 h-14 bg-zinc-800 rounded-lg overflow-hidden shrink-0">
+                           <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=100" className="w-full h-full object-cover" alt="Book" />
+                         </div>
+                         <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-medium text-white truncate font-body">The Light We Carry</h4>
+                            <p className="text-[10px] text-zinc-500 font-body uppercase">Book</p>
+                         </div>
+                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mr-1">
+                            <Plus className="w-4 h-4 text-white" />
                          </div>
                       </div>
 
-                      {/* Feed Item */}
-                      <div className="mt-2 p-3 bg-zinc-900/50 rounded-xl border border-white/5">
-                         <div className="flex gap-2 items-center mb-2">
-                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-[10px] text-purple-300 font-bold">H</div>
-                            <span className="text-xs text-zinc-400">Heidi posted a hot take</span>
+                      {/* Item 2 */}
+                      <div className="w-full p-2 bg-zinc-900/80 rounded-2xl flex items-center gap-3 border border-white/5">
+                         <div className="w-10 h-14 bg-zinc-800 rounded-lg overflow-hidden shrink-0">
+                           <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=100" className="w-full h-full object-cover" alt="TV" />
                          </div>
-                         <p className="text-sm text-white font-medium mb-2 leading-snug">"She should've ended up with Alfie"</p>
-                         <div className="h-10 bg-black/40 rounded-lg flex items-center px-3 gap-2">
-                            <Film className="w-3 h-3 text-zinc-500" />
-                            <span className="text-xs text-zinc-400">Emily in Paris</span>
+                         <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-medium text-white truncate font-body">Bridgerton</h4>
+                            <p className="text-[10px] text-zinc-500 font-body uppercase">TV</p>
+                         </div>
+                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mr-1">
+                            <Plus className="w-4 h-4 text-white" />
                          </div>
                       </div>
-
                    </div>
+
                 </div>
                 
                 {/* Bottom Nav */}
-                <div className="h-20 bg-[#050505] border-t border-white/5 flex items-start justify-center gap-16 pt-4 px-2 shrink-0 z-20">
+                <div className="h-20 bg-[#050505] border-t border-white/5 flex items-start justify-center gap-20 pt-4 px-2 shrink-0 z-20">
                    <div className="flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
                       <Activity className="w-6 h-6 text-white" strokeWidth={2.5} />
                       <span className="text-[10px] font-medium text-white font-body tracking-wide">Activity</span>
