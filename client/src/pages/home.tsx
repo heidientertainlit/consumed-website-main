@@ -178,34 +178,36 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative w-full max-w-sm md:max-w-md lg:max-w-4xl flex justify-center items-center"
+          className="relative w-full max-w-sm md:max-w-md lg:max-w-4xl flex flex-col justify-center items-center"
         >
           {/* Phone Frame - Centered */}
-          <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[700px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20">
-            <Carousel className="w-full h-full" opts={{ loop: true }}>
+          <Carousel className="w-full flex flex-col items-center" opts={{ loop: true }}>
+            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20">
               <CarouselContent className="h-full">
                 {[screen1, screen2, screen7, screen6, screen4, screen5, screen3].map((screen, index) => (
                   <CarouselItem key={index} className="h-full">
-                    <div className="w-full h-full relative group cursor-grab active:cursor-grabbing">
+                    <div className="w-full h-full relative">
                       <img 
                         src={screen} 
                         alt={`App Screen ${index + 1}`} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-black"
                       />
-                      {/* Interaction Hint Overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none" />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              {/* Navigation buttons */}
-              <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 border-white/10 text-white hover:bg-black/80 hover:text-white w-10 h-10 backdrop-blur-sm" />
-              <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 border-white/10 text-white hover:bg-black/80 hover:text-white w-10 h-10 backdrop-blur-sm" />
-            </Carousel>
+              
+              {/* Home Indicator */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
+            </div>
             
-            {/* Home Indicator */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
-          </div>
+            {/* Navigation buttons - Below the phone */}
+            <div className="flex items-center gap-6 mt-8">
+              <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white w-12 h-12" />
+              <span className="text-sm text-zinc-400 font-body">Swipe or tap to explore</span>
+              <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white w-12 h-12" />
+            </div>
+          </Carousel>
 
           {/* Decorative Glows */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
