@@ -497,7 +497,7 @@ export default function Home() {
                <div className="bg-white text-black p-4 rounded-3xl">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">J</div>
-                  <p className="text-sm"><span className="font-bold">jordancroninger@gmail.com</span> added The Gifts of Imperfection <span className="text-purple-600 font-medium">→ Currently</span></p>
+                  <p className="text-sm"><span className="font-bold">Jordan</span> added The Gifts of Imperfection <span className="text-purple-600 font-medium">→ Currently</span></p>
                 </div>
                 
                 <div className="flex gap-4 p-3 rounded-2xl border border-zinc-100 bg-zinc-50/50">
