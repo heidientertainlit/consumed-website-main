@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 container mx-auto px-6 py-8 flex items-center justify-between">
+      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,12 @@ export default function Home() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
+          className="flex items-center gap-6"
         >
+          <div className="hidden md:inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
+            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="text-xs font-medium text-muted-foreground">Accepting pilot users</span>
+          </div>
           <Button variant="ghost" className="text-muted-foreground hover:text-foreground transition-colors">
             Get in touch
           </Button>
@@ -41,21 +46,12 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-16 md:pt-24 pb-32">
+      <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Text */}
           <div className="flex flex-col text-left max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 w-fit mb-8 backdrop-blur-sm"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-sm font-medium text-muted-foreground">Accepting pilot users</span>
-            </motion.div>
-
+            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
