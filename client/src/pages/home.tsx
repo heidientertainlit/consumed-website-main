@@ -237,6 +237,19 @@ export default function Home() {
               </span>
             ))}
           </div>
+          <a 
+            href="https://app.consumedapp.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-8 inline-block"
+          >
+            <Button 
+              size="default" 
+              className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
+            >
+              Try Consumed Now
+            </Button>
+          </a>
         </motion.div>
 
       </main>
