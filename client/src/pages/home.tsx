@@ -33,7 +33,14 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-end">
+      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="w-24 md:w-28">
+           <img 
+             src={logoWhite} 
+             alt="Consumed Logo" 
+             className="w-full h-auto" 
+           />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,18 +61,6 @@ export default function Home() {
           {/* Left Column: Text */}
           <div className="flex flex-col text-center items-center max-w-2xl mx-auto">
             
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="w-48 md:w-64 mb-6"
-            >
-              <img 
-                src={logoWhite} 
-                alt="Consumed Logo" 
-                className="w-full h-auto" 
-              />
-            </motion.div>
-
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -106,15 +101,14 @@ export default function Home() {
             >
               <Button 
                 size="lg" 
-                className="h-14 px-8 text-base font-semibold rounded-2xl bg-primary text-white hover:bg-primary/90 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.5)] transition-all active:scale-95 font-body"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
               >
                 <Smartphone className="mr-2 h-5 w-5" />
                 Join TestFlight
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="h-14 px-8 text-base font-semibold rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-foreground transition-all active:scale-95 backdrop-blur-sm font-body"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
               >
                 <Globe className="mr-2 h-5 w-5" />
                 Launch Pilot Web App
