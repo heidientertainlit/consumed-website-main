@@ -129,7 +129,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl font-body"
           >
-            Play, react, and keep up with what you love. Because finally, all our entertainment is all in one place.
+            Play, react, and keep up with what you love. Because this is where entertainment comes together.
           </motion.p>
 
           <motion.div 
@@ -215,7 +215,7 @@ export default function Home() {
 
       </main>
 
-      <footer className="py-8 text-center text-sm text-zinc-600 border-t border-white/5 bg-black font-body">
+      <footer className="relative z-50 py-8 text-center text-sm text-zinc-600 border-t border-white/5 bg-black font-body">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
