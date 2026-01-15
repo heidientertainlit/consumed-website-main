@@ -123,8 +123,8 @@ export default function Home() {
               className="mt-12 flex items-center gap-4 text-sm text-muted-foreground font-body"
             >
               <div className="flex -space-x-2">
-                {["Jeepler", "Kaleb", "Nick", "Seth", "Aly"].map((name, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-xs font-medium text-white" title={name}>
+                {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-xs font-medium text-white uppercase" title={name}>
                     {name.charAt(0)}
                   </div>
                 ))}
