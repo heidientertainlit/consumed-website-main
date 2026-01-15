@@ -212,282 +212,31 @@ export default function Home() {
         </div>
 
         {/* Separation Divider */}
-        <div className="mt-24 md:mt-32 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="relative h-24 w-full overflow-hidden">
+          <svg
+            className="absolute bottom-0 w-full h-full text-white"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 100"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+             <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" />
+          </svg>
+        </div>
 
         {/* Entertainment DNA Section */}
-        <div className="mt-24 md:mt-32 pt-12">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Your Entertainment DNA</h2>
-            <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
-              Get a glimpse of your consumption personality, recommendations, and what your friends are up to.
+        <div className="bg-white text-black py-32">
+          <div className="container mx-auto px-6 max-w-4xl text-center">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Discover Your<br/>Entertainment DNA</h2>
+            <p className="text-xl md:text-2xl text-zinc-600 font-body mb-12 max-w-3xl mx-auto leading-relaxed">
+              It's like "Spotify Wrapped" but for ALL entertainment types, and it helps guide your recommendations and entertainment discovery.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
-            
-            {/* 1. Personality Card (Span 8) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-1 md:col-span-8 bg-white text-black p-8 rounded-3xl relative overflow-hidden"
+            <Button 
+              size="lg" 
+              className="h-16 px-10 text-lg font-bold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all shadow-xl hover:shadow-2xl"
             >
-               <div className="flex justify-between items-start mb-8">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white">
-                      <Star className="w-4 h-4 fill-current" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg leading-tight">Your Entertainment DNA</h3>
-                      <p className="text-xs text-zinc-500 font-medium uppercase tracking-wide">Personality Profile</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="icon" variant="ghost" className="rounded-full hover:bg-zinc-100 text-zinc-400">
-                      <RefreshCw className="w-4 h-4" />
-                    </Button>
-                    <Button size="sm" className="rounded-full bg-purple-600 text-white hover:bg-purple-700 border-0">
-                      <Download className="w-4 h-4 mr-2" />
-                      Download
-                    </Button>
-                    <Button size="sm" className="rounded-full bg-purple-600 text-white hover:bg-purple-700 border-0">
-                      <Share2 className="w-4 h-4 mr-2" />
-                      Share
-                    </Button>
-                  </div>
-               </div>
-
-               <div className="text-center py-4">
-                 <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">Vibe-Syncing Clubhouse Maven</h2>
-                 <p className="text-zinc-500 italic mb-6">Escaping with style and stories.</p>
-                 <p className="text-zinc-600 leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-                   Your Entertainment DNA is a tapestry of cozy camaraderie and vibrant escapes. With a penchant for historical backdrops like 'Gilded Age' and 'Downton Abbey,' you drift into worlds enriched with drama and charm. Comfort comes wrapped in the familiar dialogues of 'Friends' and 'Gilmore Girls,' while action-packed scenes in 'Batman Begins' and 'The Martian' set your pulses racing.
-                 </p>
-               </div>
-            </motion.div>
-
-            {/* 2. Trivia Leaderboard (Span 4) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="col-span-1 md:col-span-4 bg-[#1a0b2e] border border-white/10 p-6 rounded-3xl flex flex-col"
-            >
-              <div className="flex items-center justify-between mb-6">
-                 <div className="flex items-center gap-2 text-orange-400">
-                   <Trophy className="w-5 h-5" />
-                   <span className="font-bold uppercase tracking-wider text-sm">Trivia Champions</span>
-                 </div>
-                 <span className="text-xs text-purple-400 hover:text-purple-300 cursor-pointer flex items-center">
-                   View Leaderboard <ChevronRight className="w-3 h-3 ml-1" />
-                 </span>
-              </div>
-              
-              <div className="space-y-3">
-                {[
-                  { rank: 1, name: "Jeeppler", score: 300, color: "bg-yellow-500" },
-                  { rank: 2, name: "Seth", score: 120, color: "bg-zinc-400" },
-                  { rank: 3, name: "heidi", score: 30, color: "bg-amber-700" }
-                ].map((user) => (
-                  <div key={user.rank} className="flex items-center justify-between bg-white/5 p-3 rounded-xl">
-                     <div className="flex items-center gap-3">
-                        <div className={`w-6 h-6 rounded-full ${user.color} flex items-center justify-center text-xs font-bold text-black`}>
-                          {user.rank}
-                        </div>
-                        <div className="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center text-xs text-white">
-                           <User className="w-4 h-4" />
-                        </div>
-                        <span className="font-medium text-white">{user.name}</span>
-                     </div>
-                     <span className="font-mono font-bold text-white">{user.score}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* 3. Currently Consuming (Span 12) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="col-span-1 md:col-span-12"
-            >
-              <h3 className="text-zinc-400 mb-4 text-sm font-medium">Heidi is currently consuming...</h3>
-              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                {[
-                  { title: "Gossip Girl", type: "TV", progress: 0, ep: "S1E0", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&q=80&w=300" },
-                  { title: "The Unselected Journals", type: "Book", progress: 0, ep: "0%", img: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=300" },
-                  { title: "American Murder", type: "Doc", progress: 50, ep: "50%", img: "https://images.unsplash.com/photo-1550100136-e074fa714874?auto=format&fit=crop&q=80&w=300" },
-                  { title: "Why Duolingo...", type: "Pod", progress: 10, ep: "10%", img: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&q=80&w=300" },
-                  { title: "Victoria", type: "TV", progress: 0, ep: "S1E0", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=300" },
-                  { title: "The Gilded Age", type: "TV", progress: 0, ep: "S1E10", img: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format&fit=crop&q=80&w=300" }
-                ].map((item, i) => (
-                  <div key={i} className="min-w-[160px] w-[160px] group relative">
-                    <div className="aspect-[2/3] rounded-xl overflow-hidden mb-2 relative">
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-                      <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/90 to-transparent flex items-center gap-2">
-                        <div className="h-6 px-2 rounded-md bg-purple-600 flex items-center justify-center text-[10px] font-bold text-white min-w-[40px]">
-                          {item.ep}
-                        </div>
-                        <Button size="icon" className="h-6 w-6 rounded-full bg-zinc-800/80 hover:bg-zinc-700 text-white ml-auto">
-                           <MoreHorizontal className="w-3 h-3" />
-                        </Button>
-                      </div>
-                      {item.progress > 0 && (
-                        <div className="absolute bottom-10 left-2 right-2 h-1 bg-zinc-700 rounded-full overflow-hidden">
-                          <div className="h-full bg-purple-500" style={{ width: `${item.progress}%` }} />
-                        </div>
-                      )}
-                    </div>
-                    <h4 className="text-sm font-medium text-white truncate">{item.title}</h4>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* 4. Trivia Question (Span 5) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="col-span-1 md:col-span-5 bg-[#120822] border border-white/10 p-6 rounded-3xl"
-            >
-               <div className="flex items-center gap-2 mb-4">
-                 <div className="flex items-center gap-1 text-purple-400">
-                   <Tv className="w-4 h-4" />
-                   <span className="text-xs font-bold uppercase">TV</span>
-                 </div>
-                 <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-bold">+10 pts</span>
-                 <span className="ml-auto text-xs text-zinc-500">1/30</span>
-               </div>
-               
-               <h3 className="text-lg font-bold text-white mb-6">What is the name of Michael Scott's film?</h3>
-               
-               <div className="space-y-2 mb-6">
-                 {["Threat Level Midnight", "Golden Ticket", "Dunder Dawn", "Scranton Nights"].map((opt, i) => (
-                   <div key={i} className={`p-3 rounded-xl border ${i === 0 ? 'bg-white/10 border-white/20' : 'bg-transparent border-white/5 hover:bg-white/5'} text-sm font-medium text-white cursor-pointer transition-colors`}>
-                     {opt}
-                   </div>
-                 ))}
-               </div>
-               
-               <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-xl h-10">
-                 Answer
-               </Button>
-            </motion.div>
-
-            {/* 5. Recommended For You (Span 7) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="col-span-1 md:col-span-7 bg-[#120822] border border-white/10 p-6 rounded-3xl"
-            >
-              <div className="flex items-center gap-2 mb-6">
-                <Star className="w-5 h-5 text-yellow-500 fill-current" />
-                <h3 className="text-lg font-bold text-white">Recommended for you</h3>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  { title: "Daisy Jones & The Six", img: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&q=80&w=200" },
-                  { title: "Little Women", img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=200" },
-                  { title: "The Crown", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=200" },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col gap-2">
-                    <div className="aspect-[2/3] rounded-xl overflow-hidden bg-zinc-800">
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-medium text-white truncate leading-tight mb-1">{item.title}</h4>
-                      <div className="flex text-purple-400 gap-0.5">
-                        {[1,2,3,4,5].map(s => <Star key={s} className="w-2.5 h-2.5" />)}
-                      </div>
-                    </div>
-                    <Button size="sm" variant="outline" className="h-7 text-xs rounded-full border-white/10 bg-transparent hover:bg-white/10 text-white w-full">
-                      + Add
-                    </Button>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* 6. Activity Feed (Span 12) */}
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.4 }}
-               className="col-span-1 md:col-span-12 space-y-4"
-            >
-              {/* Activity Item 1 */}
-              <div className="bg-white text-black p-4 rounded-3xl">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold">S</div>
-                  <p className="text-sm"><span className="font-bold">Seth</span> added to <span className="text-purple-600 font-medium">→ Want To</span></p>
-                </div>
-                
-                <div className="flex gap-4 p-3 rounded-2xl border border-zinc-100 bg-zinc-50/50">
-                  <div className="w-16 h-24 bg-zinc-200 rounded-lg shrink-0 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1614583225154-5fcdda07019e?auto=format&fit=crop&q=80&w=200" alt="The Martian" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-lg mb-0.5">The Martian</h4>
-                    <p className="text-xs text-zinc-500 mb-3">by Andy Weir • Book</p>
-                    <div className="flex gap-2">
-                      <Button size="sm" className="rounded-full bg-purple-600 text-white hover:bg-purple-700 h-8 px-4">
-                        <Plus className="w-4 h-4 mr-1" /> Add
-                      </Button>
-                      <Button size="sm" variant="outline" className="rounded-full h-8 px-4 border-zinc-200">
-                        <Share2 className="w-4 h-4 mr-1" /> Share
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-4 mt-4 px-2 text-zinc-400">
-                  <Heart className="w-5 h-5 hover:text-red-500 cursor-pointer transition-colors" />
-                  <MessageSquare className="w-5 h-5 hover:text-blue-500 cursor-pointer transition-colors" />
-                  <span className="text-xs ml-auto">6 days ago</span>
-                </div>
-              </div>
-
-               {/* Activity Item 2 */}
-               <div className="bg-white text-black p-4 rounded-3xl">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">J</div>
-                  <p className="text-sm"><span className="font-bold">Jordan</span> added The Gifts of Imperfection <span className="text-purple-600 font-medium">→ Currently</span></p>
-                </div>
-                
-                <div className="flex gap-4 p-3 rounded-2xl border border-zinc-100 bg-zinc-50/50">
-                  <div className="w-16 h-24 bg-zinc-200 rounded-lg shrink-0 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=200" alt="Gifts of Imperfection" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-lg mb-0.5">The Gifts of Imperfection</h4>
-                    <p className="text-xs text-zinc-500 mb-3">by Brené Brown • Book</p>
-                    <div className="flex gap-2">
-                      <Button size="sm" className="rounded-full bg-purple-600 text-white hover:bg-purple-700 h-8 px-4">
-                        <Plus className="w-4 h-4 mr-1" /> Add
-                      </Button>
-                      <Button size="sm" variant="outline" className="rounded-full h-8 px-4 border-zinc-200">
-                        <Share2 className="w-4 h-4 mr-1" /> Share
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-4 mt-4 px-2 text-zinc-400">
-                  <Heart className="w-5 h-5 hover:text-red-500 cursor-pointer transition-colors" />
-                  <MessageSquare className="w-5 h-5 hover:text-blue-500 cursor-pointer transition-colors" />
-                  <span className="text-xs ml-auto">6 days ago</span>
-                </div>
-              </div>
-
-            </motion.div>
-
+              Discover Your Entertainment DNA
+            </Button>
           </div>
         </div>
 
