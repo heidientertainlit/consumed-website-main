@@ -2,8 +2,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
+
+// Screen Imports
+import screen1 from "@assets/IMG_5733_1768454610482.PNG";
+import screen2 from "@assets/IMG_5735_1768454613289.PNG";
+import screen3 from "@assets/IMG_5739_1768454615709.PNG";
+import screen4 from "@assets/IMG_5740_1768454618224.PNG";
+import screen5 from "@assets/IMG_5741_1768454620680.PNG";
+import screen6 from "@assets/IMG_5742_1768454623111.PNG";
+import screen7 from "@assets/IMG_5743_1768454625777.PNG";
 
 // TikTok Icon Component since it's not in Lucide
 const TikTok = ({ className }: { className?: string }) => (
@@ -158,93 +168,36 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right Column: Abstract App Preview */}
+          {/* Right Column: App Screenshots Carousel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative lg:block mt-12 lg:mt-0"
+            className="relative lg:block mt-12 lg:mt-0 flex justify-center"
           >
             {/* Phone Frame */}
-            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl overflow-hidden">
-              <div className="absolute top-0 w-full h-full bg-[#050505] overflow-hidden flex flex-col">
-                {/* Status Bar */}
-                <div className="h-10 w-full bg-transparent flex items-center justify-between px-6 pt-2 shrink-0 z-20">
-                  <div className="text-[12px] font-medium text-white font-body">9:41</div>
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 bg-white rounded-full opacity-100"></div>
-                    <div className="w-3 h-3 bg-white rounded-full opacity-50"></div>
-                    <div className="w-4 h-3 bg-white rounded-[2px] opacity-100"></div>
-                  </div>
-                </div>
-
-                {/* App Content - What are you reading? */}
-                <div className="flex-1 overflow-hidden relative px-5 pt-8">
-                   {/* Header Area */}
-                   <div className="text-center mb-8 mt-4">
-                      <h2 className="text-3xl font-bold text-white mb-1 font-body">What are you</h2>
-                      <h2 className="text-3xl font-bold text-blue-400 mb-3 font-body">reading?</h2>
-                      <p className="text-sm text-zinc-500 font-body">Track it. Share it. Play with it.</p>
-                   </div>
-
-                   {/* Search Bar */}
-                   <div className="mb-6 relative">
-                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
-                      <div className="w-full h-12 bg-white rounded-xl flex items-center pl-11 pr-4 text-sm text-zinc-500 font-body">
-                        Search for something...
+            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl overflow-hidden ring-1 ring-white/10">
+              <Carousel className="w-full h-full" opts={{ loop: true }}>
+                <CarouselContent className="h-full">
+                  {[screen1, screen2, screen7, screen6, screen4, screen5, screen3].map((screen, index) => (
+                    <CarouselItem key={index} className="h-full">
+                      <div className="w-full h-full relative">
+                        <img 
+                          src={screen} 
+                          alt={`App Screen ${index + 1}`} 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                   </div>
-
-                   {/* Quick Add List */}
-                   <div className="space-y-2">
-                      <p className="text-xs font-semibold text-zinc-500 mb-3 font-body uppercase tracking-wider">Quick Add</p>
-                      
-                      {/* Item 1 */}
-                      <div className="w-full p-2 bg-zinc-900/80 rounded-2xl flex items-center gap-3 border border-white/5">
-                         <div className="w-10 h-14 bg-zinc-800 rounded-lg overflow-hidden shrink-0">
-                           <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=100" className="w-full h-full object-cover" alt="Book" />
-                         </div>
-                         <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-medium text-white truncate font-body">The Light We Carry</h4>
-                            <p className="text-[10px] text-zinc-500 font-body uppercase">Book</p>
-                         </div>
-                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mr-1">
-                            <Plus className="w-4 h-4 text-white" />
-                         </div>
-                      </div>
-
-                      {/* Item 2 */}
-                      <div className="w-full p-2 bg-zinc-900/80 rounded-2xl flex items-center gap-3 border border-white/5">
-                         <div className="w-10 h-14 bg-zinc-800 rounded-lg overflow-hidden shrink-0">
-                           <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&q=80&w=100" className="w-full h-full object-cover" alt="TV" />
-                         </div>
-                         <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-medium text-white truncate font-body">Bridgerton</h4>
-                            <p className="text-[10px] text-zinc-500 font-body uppercase">TV</p>
-                         </div>
-                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mr-1">
-                            <Plus className="w-4 h-4 text-white" />
-                         </div>
-                      </div>
-                   </div>
-
-                </div>
-                
-                {/* Bottom Nav */}
-                <div className="h-20 bg-[#050505] border-t border-white/5 flex items-start justify-center gap-20 pt-4 px-2 shrink-0 z-20">
-                   <div className="flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
-                      <Activity className="w-6 h-6 text-white" strokeWidth={2.5} />
-                      <span className="text-[10px] font-medium text-white font-body tracking-wide">Activity</span>
-                   </div>
-                   <div className="flex flex-col items-center gap-1.5">
-                      <div className="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center border-2 border-transparent group-hover:border-white transition-colors relative">
-                        <User className="w-4 h-4 text-white" strokeWidth={2.5} />
-                      </div>
-                      <span className="text-[10px] font-medium text-white font-body tracking-wide">Me</span>
-                   </div>
-                </div>
-                <div className="h-1 w-32 bg-white/20 rounded-full absolute bottom-2 left-1/2 -translate-x-1/2 z-30"></div>
-              </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {/* Custom Navigation buttons overlaid */}
+                <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 border-none text-white hover:bg-black/70 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 border-none text-white hover:bg-black/70 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Carousel>
+              
+              {/* Home Indicator */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
             </div>
 
             {/* Decorative Glow behind phone */}
