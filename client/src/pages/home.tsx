@@ -151,8 +151,8 @@ export default function Home() {
           >
             <div className="flex -space-x-1.5">
               {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
-                <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-[10px] font-medium text-white uppercase" title={name}>
-                  {name.charAt(0)}
+                <div key={i} className="w-7 h-7 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-[8px] font-medium text-white uppercase" title={name}>
+                  {name.slice(0, 3)}
                 </div>
               ))}
             </div>
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
 
         {/* Visual Separator */}
-        <div className="w-full flex flex-col items-center my-4 md:my-6">
+        <div className="w-full flex flex-col items-center my-2 md:my-3">
           <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
           <div className="mt-3 text-center">
             <p className="text-xs uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
