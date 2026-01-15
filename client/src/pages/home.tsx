@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Clapperboard } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoSimple from "@assets/5_Transparent_Image_1768444352222.png";
@@ -122,84 +122,135 @@ export default function Home() {
             className="relative hidden lg:block"
           >
             {/* Phone Frame */}
-            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[600px] w-[320px] shadow-2xl overflow-hidden">
-              <div className="absolute top-0 w-full h-full bg-zinc-900 overflow-hidden">
+            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl overflow-hidden">
+              <div className="absolute top-0 w-full h-full bg-[#050505] overflow-hidden flex flex-col">
                 {/* Status Bar */}
-                <div className="h-6 w-full bg-transparent flex items-center justify-between px-6 mt-2">
-                  <div className="text-[10px] font-medium text-zinc-400 font-body">9:41</div>
+                <div className="h-10 w-full bg-transparent flex items-center justify-between px-6 pt-2 shrink-0 z-20">
+                  <div className="text-[12px] font-medium text-white font-body">9:41</div>
                   <div className="flex gap-1.5">
-                    <div className="w-3 h-3 bg-zinc-400 rounded-full opacity-20"></div>
-                    <div className="w-3 h-3 bg-zinc-400 rounded-full opacity-20"></div>
+                    <div className="w-3 h-3 bg-white rounded-full opacity-100"></div>
+                    <div className="w-3 h-3 bg-white rounded-full opacity-50"></div>
+                    <div className="w-4 h-3 bg-white rounded-[2px] opacity-100"></div>
                   </div>
                 </div>
 
-                {/* App Header */}
-                <div className="px-6 pt-6 pb-4 flex justify-between items-center">
-                  <div className="w-24">
-                    <img 
-                      src={logoSimple} 
-                      alt="Logo" 
-                      className="w-full opacity-90 brightness-0 invert" 
-                    />
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-zinc-800 border border-white/10"></div>
-                </div>
+                {/* App Content - Scrollable */}
+                <div className="flex-1 overflow-hidden relative">
+                   {/* Top Bar */}
+                   <div className="px-5 py-2 flex justify-between items-center bg-[#050505] z-10 sticky top-0">
+                      <div className="w-20">
+                         <img src={logoSimple} className="w-full brightness-0 invert" alt="logo" />
+                      </div>
+                      <div className="flex gap-3">
+                        <Search className="w-5 h-5 text-zinc-400" />
+                        <Activity className="w-5 h-5 text-zinc-400" />
+                      </div>
+                   </div>
 
-                {/* Feed Items (Simulated) */}
-                <div className="px-4 space-y-4">
-                  {/* Card 1: Game */}
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                        <Gamepad2 className="w-4 h-4 text-primary" />
+                   {/* Profile Header Area */}
+                   <div className="px-5 pt-2 pb-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 border-2 border-background"></div>
+                        <div>
+                          <h3 className="font-bold text-sm text-white font-body leading-tight">Heidi Tagliaferri</h3>
+                          <p className="text-xs text-zinc-500 font-body">@HeidiIsConsumed</p>
+                        </div>
+                        <Button size="sm" className="ml-auto h-7 text-xs bg-primary hover:bg-primary/90 rounded-full px-3">
+                           Edit
+                        </Button>
                       </div>
-                      <div className="space-y-1">
-                        <div className="h-2 w-20 bg-zinc-700 rounded-full"></div>
-                        <div className="h-2 w-12 bg-zinc-800 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="h-24 w-full rounded-xl bg-gradient-to-br from-primary/20 to-purple-900/10 border border-white/5 flex items-center justify-center relative overflow-hidden">
-                       <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
-                    </div>
-                  </div>
 
-                   {/* Card 2: Book */}
-                   <div className="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
-                        <BookOpen className="w-4 h-4 text-blue-400" />
+                      <div className="flex gap-4 text-xs text-zinc-400 mb-6 font-body">
+                         <div className="flex items-center gap-1"><Star className="w-3 h-3 text-yellow-500" /> 15248 pts</div>
+                         <div className="flex items-center gap-1"><TrendingUp className="w-3 h-3 text-purple-400" /> 794 items</div>
                       </div>
-                      <div className="space-y-1">
-                        <div className="h-2 w-24 bg-zinc-700 rounded-full"></div>
-                        <div className="h-2 w-16 bg-zinc-800 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="h-16 w-full rounded-xl bg-zinc-800/50 flex items-center justify-center">
-                       <div className="w-full px-4 flex gap-2">
-                         <div className="h-2 w-full bg-white/5 rounded-full"></div>
-                       </div>
-                    </div>
-                  </div>
 
-                  {/* Card 3: Podcast */}
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-3 opacity-60">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center">
-                        <Mic className="w-4 h-4 text-orange-400" />
-                      </div>
-                      <div className="space-y-1">
-                        <div className="h-2 w-16 bg-zinc-700 rounded-full"></div>
-                        <div className="h-2 w-10 bg-zinc-800 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
+                      {/* Currently Consuming */}
+                      <div className="mb-2">
+                         <h4 className="text-sm font-medium text-white mb-3 font-body">Currently consuming...</h4>
+                         <div className="flex gap-3 overflow-hidden pb-4">
+                            {/* Card 1 */}
+                            <div className="w-24 shrink-0 space-y-2">
+                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
+                                  <img 
+                                    src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&q=80&w=300" 
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                                    alt="Cover" 
+                                  />
+                                  <div className="absolute bottom-2 left-2 right-2 h-1 bg-white/20 rounded-full overflow-hidden">
+                                     <div className="h-full w-[40%] bg-primary"></div>
+                                  </div>
+                               </div>
+                               <p className="text-xs text-zinc-300 truncate font-body">Gossip Girl</p>
+                            </div>
+                            
+                            {/* Card 2 */}
+                            <div className="w-24 shrink-0 space-y-2">
+                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
+                                  <img 
+                                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300" 
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                                    alt="Cover" 
+                                  />
+                                  <div className="absolute bottom-2 left-2 right-2">
+                                     <div className="bg-primary text-[9px] font-bold px-1.5 py-0.5 rounded text-white w-fit">S1 E4</div>
+                                  </div>
+                               </div>
+                               <p className="text-xs text-zinc-300 truncate font-body">The Gilded Age</p>
+                            </div>
 
+                            {/* Card 3 */}
+                            <div className="w-24 shrink-0 space-y-2">
+                               <div className="h-32 w-full rounded-lg bg-zinc-800 relative overflow-hidden group">
+                                  <div className="w-full h-full bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center">
+                                     <Music className="w-8 h-8 text-white/20" />
+                                  </div>
+                                  <div className="absolute bottom-2 left-2 right-2">
+                                     <div className="bg-primary text-[9px] font-bold px-1.5 py-0.5 rounded text-white w-fit">20%</div>
+                                  </div>
+                               </div>
+                               <p className="text-xs text-zinc-300 truncate font-body">Midnight Rain</p>
+                            </div>
+                         </div>
+                      </div>
+
+                      {/* Feed Item */}
+                      <div className="mt-2 p-3 bg-zinc-900/50 rounded-xl border border-white/5">
+                         <div className="flex gap-2 items-center mb-2">
+                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-[10px] text-purple-300 font-bold">H</div>
+                            <span className="text-xs text-zinc-400">Heidi posted a hot take</span>
+                         </div>
+                         <p className="text-sm text-white font-medium mb-2 leading-snug">"She should've ended up with Alfie"</p>
+                         <div className="h-10 bg-black/40 rounded-lg flex items-center px-3 gap-2">
+                            <Film className="w-3 h-3 text-zinc-500" />
+                            <span className="text-xs text-zinc-400">Emily in Paris</span>
+                         </div>
+                      </div>
+
+                   </div>
                 </div>
                 
                 {/* Bottom Nav */}
-                <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black to-transparent flex items-end justify-center pb-6">
-                  <div className="h-1 w-32 bg-zinc-800 rounded-full"></div>
+                <div className="h-16 bg-[#050505] border-t border-white/5 flex items-center justify-around px-2 shrink-0 z-20">
+                   <div className="flex flex-col items-center gap-1">
+                      <TrendingUp className="w-5 h-5 text-zinc-500" />
+                   </div>
+                   <div className="flex flex-col items-center gap-1">
+                      <Search className="w-5 h-5 text-zinc-500" />
+                   </div>
+                   <div className="flex flex-col items-center gap-1 relative -top-5">
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
+                         <Activity className="w-6 h-6 text-white" />
+                      </div>
+                   </div>
+                   <div className="flex flex-col items-center gap-1">
+                      <Activity className="w-5 h-5 text-zinc-500" />
+                   </div>
+                   <div className="flex flex-col items-center gap-1">
+                      <div className="w-5 h-5 rounded-full bg-white text-black text-[10px] font-bold flex items-center justify-center">M</div>
+                   </div>
                 </div>
+                <div className="h-1 w-32 bg-white/20 rounded-full absolute bottom-2 left-1/2 -translate-x-1/2 z-30"></div>
               </div>
             </div>
 
