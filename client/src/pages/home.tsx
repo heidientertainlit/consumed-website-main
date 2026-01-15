@@ -220,8 +220,8 @@ export default function Home() {
           <p>&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
             <a href="mailto:info@consumedapp.com" className="hover:text-zinc-400 transition-colors">Contact</a>
-            <a href="#" className="hover:text-zinc-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-zinc-400 transition-colors">Terms</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-zinc-400 transition-colors">Privacy</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-zinc-400 transition-colors">Terms</a>
           </div>
         </div>
       </footer>
