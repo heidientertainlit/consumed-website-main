@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Smartphone, Globe, Music, Gamepad2, Tv, Film } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
+import logoWhite from "@assets/2_Transparent_Image_1768444202037.png";
 
 export default function Home() {
   return (
@@ -9,15 +10,15 @@ export default function Home() {
       {/* Background & Texture */}
       <div className="bg-grain" />
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-background/80 z-10" />
+        <div className="absolute inset-0 bg-background/60 z-10" />
         <img 
           src={bgImage} 
           alt="Background" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30 mix-blend-overlay"
         />
-        {/* Subtle Gradient Spotlights */}
-        <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-secondary/20 rounded-full blur-[150px]" />
+        {/* Subtle Gradient Spotlights matching logo purple */}
+        <div className="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px]" />
       </div>
 
       {/* Navigation */}
@@ -25,23 +26,25 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-2xl font-bold tracking-tight"
+          className="w-40"
         >
-          consumed
+          <img 
+            src={logoWhite} 
+            alt="Consumed Logo" 
+            className="w-full h-auto"
+          />
         </motion.div>
+        
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="flex items-center gap-6"
         >
-          <div className="hidden md:inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-medium text-muted-foreground">Accepting pilot users</span>
+          <div className="flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-sm shadow-lg shadow-purple-900/10">
+            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
+            <span className="text-xs font-medium text-white/90">Accepting pilot users</span>
           </div>
-          <Button variant="ghost" className="text-muted-foreground hover:text-foreground transition-colors">
-            Get in touch
-          </Button>
         </motion.div>
       </nav>
 
@@ -78,7 +81,7 @@ export default function Home() {
             >
               <Button 
                 size="lg" 
-                className="h-14 px-8 text-base font-semibold rounded-2xl bg-foreground text-background hover:bg-foreground/90 transition-transform active:scale-95"
+                className="h-14 px-8 text-base font-semibold rounded-2xl bg-primary text-white hover:bg-primary/90 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.5)] transition-all active:scale-95"
               >
                 <Smartphone className="mr-2 h-5 w-5" />
                 Join TestFlight
@@ -132,8 +135,10 @@ export default function Home() {
 
                 {/* App Header */}
                 <div className="px-6 pt-6 pb-4 flex justify-between items-center">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Feed</h3>
-                  <div className="w-8 h-8 rounded-full bg-zinc-800"></div>
+                  <div className="w-24">
+                    <img src={logoWhite} alt="Logo" className="w-full opacity-90" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-zinc-800 border border-white/10"></div>
                 </div>
 
                 {/* Feed Items (Simulated) */}
@@ -141,14 +146,15 @@ export default function Home() {
                   {/* Card 1 */}
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-purple-500/20"></div>
+                      <div className="w-8 h-8 rounded-full bg-primary/20"></div>
                       <div className="space-y-1">
                         <div className="h-2 w-20 bg-zinc-700 rounded-full"></div>
                         <div className="h-2 w-12 bg-zinc-800 rounded-full"></div>
                       </div>
                     </div>
-                    <div className="h-32 w-full rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/5 flex items-center justify-center">
-                       <Gamepad2 className="text-white/20 w-8 h-8" />
+                    <div className="h-32 w-full rounded-xl bg-gradient-to-br from-primary/30 to-purple-900/20 border border-white/5 flex items-center justify-center relative overflow-hidden">
+                       <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+                       <Gamepad2 className="text-white/40 w-8 h-8 relative z-10" />
                     </div>
                     <div className="flex gap-2 pt-1">
                       <div className="h-6 w-16 rounded-full bg-white/5"></div>
