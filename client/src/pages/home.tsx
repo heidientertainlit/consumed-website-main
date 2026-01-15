@@ -219,6 +219,7 @@ export default function Home() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
+            <a href="mailto:info@consumedapp.com" className="hover:text-zinc-400 transition-colors">Contact</a>
             <a href="#" className="hover:text-zinc-400 transition-colors">Privacy</a>
             <a href="#" className="hover:text-zinc-400 transition-colors">Terms</a>
             <a href="#" className="hover:text-zinc-400 transition-colors">Twitter</a>
