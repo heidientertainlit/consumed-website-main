@@ -135,10 +135,10 @@ export default function Home() {
             href="https://app.consumedapp.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-5 py-2 backdrop-blur-sm shadow-lg shadow-purple-900/10 hover:bg-white/10 transition-colors"
+            className="flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 md:px-5 md:py-2 backdrop-blur-sm shadow-lg shadow-purple-900/10 hover:bg-white/10 transition-colors"
           >
-            <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
-            <span className="text-sm font-medium text-white/90 font-body">Accepting pilot users</span>
+            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)] flex-shrink-0"></span>
+            <span className="text-xs md:text-sm font-medium text-white/90 font-body whitespace-nowrap">Accepting pilot users</span>
           </a>
         </motion.div>
       </nav>
