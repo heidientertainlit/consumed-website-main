@@ -181,9 +181,9 @@ export default function Home() {
           className="relative w-full max-w-sm md:max-w-md lg:max-w-4xl flex flex-col justify-center items-center"
         >
           {/* Phone Frame - Centered */}
-          <Carousel className="w-full flex flex-col items-center" opts={{ loop: true }}>
-            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20">
-              <CarouselContent className="h-full">
+          <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
+            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20 touch-pan-x">
+              <CarouselContent className="h-full cursor-grab active:cursor-grabbing">
                 {[screen1, screen2, screen7, screen6, screen4, screen5, screen3].map((screen, index) => (
                   <CarouselItem key={index} className="h-full">
                     <div className="w-full h-full relative">
