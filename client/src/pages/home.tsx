@@ -90,7 +90,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg font-body"
             >
-              Track it. Share it. Play with it. The universal home for movies, games, music, books, podcasts, and TV.
+              Play, react, and keep up with what you love. Because finally, all our entertainment is all in one place.
             </motion.p>
 
             <motion.div 
