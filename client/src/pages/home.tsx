@@ -211,32 +211,47 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Separation Divider */}
-        <div className="relative h-24 w-full overflow-hidden">
-          <svg
-            className="absolute bottom-0 w-full h-full text-white"
-            preserveAspectRatio="none"
-            viewBox="0 0 1440 100"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-             <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" />
-          </svg>
-        </div>
+        {/* Separation Divider - Clean Straight Line */}
+        <div className="w-full bg-white h-24 -mb-1 relative z-20" style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0 100%)" }}></div>
 
         {/* Entertainment DNA Section */}
-        <div className="bg-white text-black py-32">
-          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Discover Your<br/>Entertainment DNA</h2>
-            <p className="text-xl md:text-2xl text-zinc-600 font-body mb-12 max-w-3xl mx-auto leading-relaxed">
-              It's like "Spotify Wrapped" but for ALL entertainment types, and it helps guide your recommendations and entertainment discovery.
-            </p>
-            <Button 
-              size="lg" 
-              className="h-16 px-10 text-lg font-bold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all shadow-xl hover:shadow-2xl"
-            >
-              Discover Your Entertainment DNA
-            </Button>
+        <div className="bg-white text-black py-24 relative z-10">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center gap-16">
+               <div className="flex-1 text-left">
+                  <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+                    Discover Your<br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Entertainment DNA</span>
+                  </h2>
+                  <p className="text-xl text-zinc-600 font-body mb-8 leading-relaxed">
+                    It's like "Spotify Wrapped" but for ALL entertainment types. We analyze what you watch, read, play, and listen to, creating a unique profile that evolves with you.
+                  </p>
+                  <Button 
+                    size="lg" 
+                    className="h-14 px-8 text-lg font-bold rounded-full bg-black text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl"
+                  >
+                    Get Your Profile
+                  </Button>
+               </div>
+               
+               <div className="flex-1 w-full max-w-md relative">
+                  {/* Abstract Representation of DNA/Profile */}
+                  <div className="aspect-square rounded-[3rem] bg-gradient-to-br from-purple-50 to-indigo-50 border border-zinc-100 p-8 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                     <div className="h-full w-full rounded-2xl bg-white border border-zinc-100 shadow-sm p-6 flex flex-col items-center justify-center text-center">
+                        <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                           <Star className="w-10 h-10 text-purple-600 fill-current" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-zinc-900 mb-2">Vibe-Syncing<br/>Clubhouse Maven</h3>
+                        <p className="text-zinc-500 text-sm">Top Genres: History, Comedy, Sci-Fi</p>
+                        <div className="mt-8 flex gap-2">
+                           <div className="h-2 w-16 bg-purple-500 rounded-full" />
+                           <div className="h-2 w-8 bg-indigo-400 rounded-full" />
+                           <div className="h-2 w-4 bg-pink-400 rounded-full" />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
           </div>
         </div>
 
