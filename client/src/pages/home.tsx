@@ -23,18 +23,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
-      {/* Background & Texture */}
-      <div className="bg-grain" />
+      {/* Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-black via-[#1a0b2e] to-[#2e1065]" />
+      
+      {/* Ambient Light */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-background/60 z-10" />
-        <img 
-          src={bgImage} 
-          alt="Background" 
-          className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-        />
-        {/* Subtle Gradient Spotlights matching logo purple */}
-        <div className="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px]" />
+        <div className="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
 
       {/* Navigation */}
