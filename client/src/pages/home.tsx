@@ -131,7 +131,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
+            className="flex justify-center items-center w-full"
           >
             <Button 
               size="default" 
@@ -140,19 +140,6 @@ export default function Home() {
               <Bell className="mr-2 h-4 w-4" />
               Get notified when it's in the App Store
             </Button>
-            <a 
-              href="https://app.consumedapp.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button 
-                size="default" 
-                className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
-              >
-                <Globe className="mr-2 h-4 w-4" />
-                Launch Pilot Web App
-              </Button>
-            </a>
           </motion.div>
 
           {/* Micro-Social Proof */}
