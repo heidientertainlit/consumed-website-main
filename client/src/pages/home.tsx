@@ -68,7 +68,7 @@ export default function Home() {
               className="text-4xl md:text-6xl font-bold tracking-tight mb-1 leading-[1.1] w-full"
             >
               What are you <br />
-              <span className="relative block h-[1.3em] w-full text-3xl md:text-5xl mt-4">
+              <span className="relative block h-[1.3em] w-full text-2xl md:text-4xl mt-4 font-medium">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
