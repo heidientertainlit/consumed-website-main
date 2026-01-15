@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
 
@@ -38,6 +40,10 @@ export default function Home() {
     { text: "playing", color: "text-green-400" }
   ];
   const [index, setIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,6 +51,33 @@ export default function Home() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage({ type: 'success', text: data.message });
+        setEmail("");
+      } else {
+        setSubmitMessage({ type: 'error', text: data.error || 'Something went wrong' });
+      }
+    } catch (error) {
+      setSubmitMessage({ type: 'error', text: 'Failed to connect. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -140,6 +173,7 @@ export default function Home() {
           >
             <Button 
               size="default" 
+              onClick={() => setIsModalOpen(true)}
               className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
             >
               <Bell className="mr-2 h-4 w-4" />
@@ -214,7 +248,7 @@ export default function Home() {
         </motion.div>
 
         {/* Section Divider */}
-        <div className="mt-24 md:mt-32 w-full max-w-md mx-auto">
+        <div className="mt-16 md:mt-20 w-full max-w-md mx-auto">
           <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </div>
 
@@ -269,6 +303,46 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Email Subscription Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-md bg-zinc-900 border-white/10 text-white">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-center">Get notified</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSubscribe} className="space-y-4 mt-4">
+            <p className="text-sm text-zinc-400 text-center font-body">
+              Be the first to know when Consumed is available in the App Store.
+            </p>
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="bg-white/5 border-white/10 text-white placeholder:text-zinc-500 focus:border-purple-500 font-body"
+              data-testid="input-email"
+            />
+            {submitMessage && (
+              <p className={`text-sm text-center font-body ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                {submitMessage.text}
+              </p>
+            )}
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
+              data-testid="button-submit"
+            >
+              {isSubmitting ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                "Notify me"
+              )}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
