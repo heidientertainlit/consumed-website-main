@@ -161,7 +161,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p>Join early adopters because entertainment is better with friends.</p>
+            <p>Join early adopters and get Consumed.</p>
           </motion.div>
         </div>
 
