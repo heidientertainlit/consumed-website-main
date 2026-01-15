@@ -71,7 +71,7 @@ export default function Home() {
             <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
               <TikTok className="w-5 h-5" />
             </a>
           </div>
