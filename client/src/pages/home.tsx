@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Smartphone, Globe, Music, Gamepad2, Tv, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
-import logoWhite from "@assets/2_Transparent_Image_1768444202037.png";
+import logoSimple from "@assets/5_Transparent_Image_1768444352222.png";
 
 export default function Home() {
   return (
@@ -29,9 +29,9 @@ export default function Home() {
           className="w-40"
         >
           <img 
-            src={logoWhite} 
+            src={logoSimple} 
             alt="Consumed Logo" 
-            className="w-full h-auto"
+            className="w-full h-auto brightness-0 invert"
           />
         </motion.div>
         
@@ -136,7 +136,11 @@ export default function Home() {
                 {/* App Header */}
                 <div className="px-6 pt-6 pb-4 flex justify-between items-center">
                   <div className="w-24">
-                    <img src={logoWhite} alt="Logo" className="w-full opacity-90" />
+                    <img 
+                      src={logoSimple} 
+                      alt="Logo" 
+                      className="w-full opacity-90 brightness-0 invert" 
+                    />
                   </div>
                   <div className="w-8 h-8 rounded-full bg-zinc-800 border border-white/10"></div>
                 </div>
