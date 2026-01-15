@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="w-24 md:w-28">
+        <div className="w-32 md:w-40">
            <img 
              src={logoWhite} 
              alt="Consumed Logo" 
@@ -65,7 +65,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-[1.1]"
             >
               What are you <br />
               <span className="relative inline-block min-w-[300px] h-[1.3em] w-full text-3xl md:text-5xl mt-2">
