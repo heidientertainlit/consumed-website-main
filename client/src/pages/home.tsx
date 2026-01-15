@@ -166,7 +166,7 @@ export default function Home() {
         </div>
 
         {/* Visual Separator */}
-        <div className="w-full flex flex-col items-center my-2 md:my-3">
+        <div className="w-full flex flex-col items-center mt-0 mb-2">
           <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
           <div className="mt-3 text-center">
             <p className="text-xs uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
