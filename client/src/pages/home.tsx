@@ -26,7 +26,7 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-40"
+          className="w-56"
         >
           <img 
             src={logoSimple} 
@@ -59,9 +59,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
-              The universal home for <span className="text-primary">everything</span> you consume.
+              Where <span className="text-primary">entertainment</span> comes together.
             </motion.h1>
 
             <motion.p 
@@ -70,7 +70,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg font-body"
             >
-              Movies, games, music, books, podcasts, and TV. Track your history, discover new favorites, and see what your friends are actually into.
+              The universal home for everything you consume. Movies, games, music, books, podcasts, and TV. Track your history, discover new favorites, and see what your friends are actually into.
             </motion.p>
 
             <motion.div 
