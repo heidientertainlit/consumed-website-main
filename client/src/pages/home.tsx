@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       {/* Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-black via-[#1a0b2e] to-[#2e1065]" />
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#1a0a2e] via-black to-black" />
       
       {/* Ambient Light */}
       <div className="fixed inset-0 z-0 pointer-events-none">
