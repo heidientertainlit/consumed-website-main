@@ -1,15 +1,30 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
 
+// TikTok Icon Component since it's not in Lucide
+const TikTok = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
 export default function Home() {
   const words = [
     { text: "watching", color: "text-purple-400" },
-    { text: "reading", color: "text-blue-400" },
-    { text: "listening to", color: "text-orange-400" },
+    { text: "reading", color: "text-indigo-400" },
+    { text: "listening to", color: "text-blue-400" },
     { text: "playing", color: "text-green-400" }
   ];
   const [index, setIndex] = useState(0);
@@ -34,12 +49,22 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="w-32 md:w-40">
-           <img 
-             src={logoWhite} 
-             alt="Consumed Logo" 
-             className="w-full h-auto" 
-           />
+        <div className="flex items-center gap-8">
+          <div className="w-32 md:w-40">
+             <img 
+               src={logoWhite} 
+               alt="Consumed Logo" 
+               className="w-full h-auto" 
+             />
+          </div>
+          <div className="hidden md:flex items-center gap-4 border-l border-white/10 pl-8">
+            <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+              <TikTok className="w-5 h-5" />
+            </a>
+          </div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -228,7 +253,7 @@ export default function Home() {
         </div>
 
         {/* Entertainment DNA Section */}
-        <div className="mt-32 border-t border-white/5 pt-24">
+        <div className="mt-48 md:mt-64 border-t border-white/5 pt-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Your Entertainment DNA</h2>
             <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
