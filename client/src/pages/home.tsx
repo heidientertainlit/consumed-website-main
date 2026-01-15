@@ -65,10 +65,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-1 leading-[1.1] w-full"
+              className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-[1.1] w-full flex flex-wrap justify-center items-center gap-x-3"
             >
-              What are you <br />
-              <span className="relative block h-[1.3em] w-full text-2xl md:text-4xl mt-4 font-medium">
+              <span>What are you</span>
+              <span className="relative inline-flex min-w-[220px] justify-start h-[1.1em]">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
@@ -76,7 +76,7 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`absolute left-1/2 -translate-x-1/2 ${words[index].color} whitespace-nowrap`}
+                    className={`absolute left-0 ${words[index].color} whitespace-nowrap`}
                   >
                     {words[index].text}?
                   </motion.span>
@@ -123,9 +123,9 @@ export default function Home() {
               className="mt-12 flex items-center gap-4 text-sm text-muted-foreground font-body"
             >
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-xs font-medium text-white">
-                    {String.fromCharCode(64 + i)}
+                {["Jeepler", "Kaleb", "Nick", "Seth", "Aly"].map((name, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-xs font-medium text-white" title={name}>
+                    {name.charAt(0)}
                   </div>
                 ))}
               </div>
