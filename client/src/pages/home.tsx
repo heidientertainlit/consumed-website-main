@@ -62,7 +62,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="w-64 md:w-80 mb-6 lg:-ml-2"
+              className="w-48 md:w-64 mb-6 lg:-ml-2"
             >
               <img 
                 src={logoWhite} 
