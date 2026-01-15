@@ -65,7 +65,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-[1.1]"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-1 leading-[1.1]"
             >
               What are you <br />
               <span className="relative inline-block min-w-[300px] h-[1.3em] w-full text-3xl md:text-5xl mt-4">
