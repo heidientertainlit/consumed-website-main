@@ -22,19 +22,7 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="w-56"
-        >
-          <img 
-            src={logoSimple} 
-            alt="Consumed Logo" 
-            className="w-full h-auto brightness-0 invert" 
-          />
-        </motion.div>
-        
+      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-end">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,12 +37,24 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32">
+      <main className="relative z-10 container mx-auto px-6 pt-6 md:pt-12 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Text */}
           <div className="flex flex-col text-left max-w-2xl">
             
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="w-72 md:w-80 mb-8"
+            >
+              <img 
+                src={logoSimple} 
+                alt="Consumed Logo" 
+                className="w-full h-auto brightness-0 invert" 
+              />
+            </motion.div>
+
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative lg:block mt-12 lg:mt-0"
           >
             {/* Phone Frame */}
             <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl overflow-hidden">
