@@ -95,7 +95,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32 flex flex-col items-center">
+      <main className="relative z-10 container mx-auto px-6 pt-16 md:pt-28 pb-32 flex flex-col items-center">
         
         {/* Hero Text Section */}
         <div className="flex flex-col text-center items-center max-w-3xl mx-auto mb-8">
