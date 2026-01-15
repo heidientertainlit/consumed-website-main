@@ -93,16 +93,16 @@ export default function Home() {
       <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32 flex flex-col items-center">
         
         {/* Hero Text Section */}
-        <div className="flex flex-col text-center items-center max-w-4xl mx-auto mb-20">
+        <div className="flex flex-col text-center items-center max-w-3xl mx-auto mb-8">
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1] w-full flex flex-wrap justify-center items-center gap-x-3 md:gap-x-5"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1] w-full flex flex-wrap justify-center items-center gap-x-3"
           >
             <span>What are you</span>
-            <span className="relative inline-flex min-w-[220px] md:min-w-[300px] justify-start h-[1.1em]">
+            <span className="relative inline-flex min-w-[180px] md:min-w-[220px] justify-start h-[1.1em]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -122,7 +122,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl font-body"
+            className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl font-body"
           >
             Play, react, and keep up with what you love. Because finally, all our entertainment is all in one place.
           </motion.p>
@@ -134,10 +134,10 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
           >
             <Button 
-              size="lg" 
-              className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
+              size="default" 
+              className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
             >
-              <Bell className="mr-2 h-5 w-5" />
+              <Bell className="mr-2 h-4 w-4" />
               Get notified when it's in the App Store
             </Button>
             <a 
@@ -146,10 +146,10 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Button 
-                size="lg" 
-                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
+                size="default" 
+                className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
               >
-                <Globe className="mr-2 h-5 w-5" />
+                <Globe className="mr-2 h-4 w-4" />
                 Launch Pilot Web App
               </Button>
             </a>
@@ -160,11 +160,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-12 flex items-center gap-4 text-sm text-muted-foreground font-body justify-center"
+            className="mt-6 flex items-center gap-3 text-xs text-muted-foreground font-body justify-center"
           >
-            <div className="flex -space-x-2">
+            <div className="flex -space-x-1.5">
               {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-xs font-medium text-white uppercase" title={name}>
+                <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-[10px] font-medium text-white uppercase" title={name}>
                   {name.charAt(0)}
                 </div>
               ))}
@@ -174,10 +174,10 @@ export default function Home() {
         </div>
 
         {/* Visual Separator */}
-        <div className="w-full flex flex-col items-center my-16 md:my-24">
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
-          <div className="mt-6 text-center">
-            <p className="text-sm uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
+        <div className="w-full flex flex-col items-center my-8 md:my-12">
+          <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+          <div className="mt-3 text-center">
+            <p className="text-xs uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
           </div>
         </div>
 
