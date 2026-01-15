@@ -213,13 +213,18 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
         </motion.div>
 
+        {/* Section Divider */}
+        <div className="mt-24 md:mt-32 w-full max-w-md mx-auto">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        </div>
+
         {/* Entertainment DNA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-24 md:mt-32 text-center max-w-2xl mx-auto"
+          className="mt-16 md:mt-20 text-center max-w-2xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Find out your <span className="text-purple-400">Entertainment DNA</span>
