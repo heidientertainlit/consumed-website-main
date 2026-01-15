@@ -1,10 +1,21 @@
-import { motion } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoSimple from "@assets/5_Transparent_Image_1768444352222.png";
 
 export default function Home() {
+  const words = ["watching", "reading", "listening to", "playing"];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       {/* Background & Texture */}
@@ -61,7 +72,21 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
-              Where <span className="text-primary">entertainment</span> comes together.
+              What are you <br />
+              <span className="relative inline-block min-w-[200px] h-[1.2em]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute left-0 text-primary"
+                  >
+                    {words[index]}?
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </motion.h1>
 
             <motion.p 
@@ -70,7 +95,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg font-body"
             >
-              The universal home for everything you consume. Movies, games, music, books, podcasts, and TV. Track your history, discover new favorites, and see what your friends are actually into.
+              Track it. Share it. Play with it. The universal home for movies, games, music, books, podcasts, and TV.
             </motion.p>
 
             <motion.div 
@@ -231,23 +256,16 @@ export default function Home() {
                 </div>
                 
                 {/* Bottom Nav */}
-                <div className="h-16 bg-[#050505] border-t border-white/5 flex items-center justify-around px-2 shrink-0 z-20">
-                   <div className="flex flex-col items-center gap-1">
-                      <TrendingUp className="w-5 h-5 text-zinc-500" />
+                <div className="h-20 bg-[#050505] border-t border-white/5 flex items-start justify-center gap-16 pt-4 px-2 shrink-0 z-20">
+                   <div className="flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
+                      <Activity className="w-6 h-6 text-white" strokeWidth={2.5} />
+                      <span className="text-[10px] font-medium text-white font-body tracking-wide">Activity</span>
                    </div>
-                   <div className="flex flex-col items-center gap-1">
-                      <Search className="w-5 h-5 text-zinc-500" />
-                   </div>
-                   <div className="flex flex-col items-center gap-1 relative -top-5">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
-                         <Activity className="w-6 h-6 text-white" />
+                   <div className="flex flex-col items-center gap-1.5">
+                      <div className="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center border-2 border-transparent group-hover:border-white transition-colors relative">
+                        <User className="w-4 h-4 text-white" strokeWidth={2.5} />
                       </div>
-                   </div>
-                   <div className="flex flex-col items-center gap-1">
-                      <Activity className="w-5 h-5 text-zinc-500" />
-                   </div>
-                   <div className="flex flex-col items-center gap-1">
-                      <div className="w-5 h-5 rounded-full bg-white text-black text-[10px] font-bold flex items-center justify-center">M</div>
+                      <span className="text-[10px] font-medium text-white font-body tracking-wide">Me</span>
                    </div>
                 </div>
                 <div className="h-1 w-32 bg-white/20 rounded-full absolute bottom-2 left-1/2 -translate-x-1/2 z-30"></div>
