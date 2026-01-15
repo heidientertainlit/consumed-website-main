@@ -222,7 +222,6 @@ export default function Home() {
             <a href="mailto:info@consumedapp.com" className="hover:text-zinc-400 transition-colors">Contact</a>
             <a href="#" className="hover:text-zinc-400 transition-colors">Privacy</a>
             <a href="#" className="hover:text-zinc-400 transition-colors">Terms</a>
-            <a href="#" className="hover:text-zinc-400 transition-colors">Twitter</a>
           </div>
         </div>
       </footer>
