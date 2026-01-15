@@ -75,10 +75,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]"
             >
               What are you <br />
-              <span className="relative inline-block min-w-[300px] h-[1.2em] w-full">
+              <span className="relative inline-block min-w-[300px] h-[1.3em] w-full text-3xl md:text-5xl mt-2">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
@@ -86,7 +86,7 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`absolute left-1/2 -translate-x-1/2 ${words[index].color}`}
+                    className={`absolute left-1/2 -translate-x-1/2 ${words[index].color} whitespace-nowrap`}
                   >
                     {words[index].text}?
                   </motion.span>
