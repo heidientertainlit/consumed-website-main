@@ -57,12 +57,12 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Text */}
-          <div className="flex flex-col text-left max-w-2xl">
+          <div className="flex flex-col text-center items-center max-w-2xl mx-auto lg:mx-0 lg:text-left lg:items-start">
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="w-80 md:w-96 mb-6 -ml-2"
+              className="w-64 md:w-80 mb-6 lg:-ml-2"
             >
               <img 
                 src={logoWhite} 
@@ -78,7 +78,7 @@ export default function Home() {
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"
             >
               What are you <br />
-              <span className="relative inline-block min-w-[300px] h-[1.2em]">
+              <span className="relative inline-block min-w-[300px] h-[1.2em] text-left">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
@@ -86,7 +86,7 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`absolute left-0 ${words[index].color}`}
+                    className={`absolute left-0 lg:left-0 left-1/2 -translate-x-1/2 lg:translate-x-0 ${words[index].color}`}
                   >
                     {words[index].text}?
                   </motion.span>
@@ -107,7 +107,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button 
                 size="lg" 
