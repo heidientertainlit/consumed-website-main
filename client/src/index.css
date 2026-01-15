@@ -30,6 +30,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --font-sans: 'Poppins', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* Dark Mode Gradient Theme */
