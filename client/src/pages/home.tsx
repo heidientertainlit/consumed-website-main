@@ -227,36 +227,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Categories Section - Expanded Grid */}
-        <div className="mt-32 border-t border-white/5 pt-16">
-          <div className="text-center mb-16">
-            <h3 className="text-2xl font-semibold mb-4">All your consumption</h3>
-            <p className="text-muted-foreground font-body">One unified layer for every story you experience.</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { icon: Film, label: "Movies" },
-              { icon: Tv, label: "TV" },
-              { icon: Gamepad2, label: "Games" },
-              { icon: Music, label: "Music" },
-              { icon: BookOpen, label: "Books" },
-              { icon: Mic, label: "Podcasts" }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex flex-col items-center justify-center p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-primary/20 hover:bg-zinc-900/50 transition-all group"
-              >
-                <item.icon className="w-6 h-6 mb-3 text-zinc-500 group-hover:text-primary transition-colors" />
-                <span className="font-medium text-sm text-zinc-300 group-hover:text-white transition-colors font-body">{item.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </main>
 
       <footer className="py-8 text-center text-sm text-zinc-600 border-t border-white/5 bg-black font-body">
