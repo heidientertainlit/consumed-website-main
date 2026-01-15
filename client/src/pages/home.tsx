@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
@@ -132,22 +132,28 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button 
                 size="lg" 
                 className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
               >
-                <Smartphone className="mr-2 h-5 w-5" />
-                Join TestFlight
+                <Bell className="mr-2 h-5 w-5" />
+                Get notified when it's in the App Store
               </Button>
-              <Button 
-                size="lg" 
-                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
+              <a 
+                href="https://app.consumedapp.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Globe className="mr-2 h-5 w-5" />
-                Launch Pilot Web App
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)] font-body border-0"
+                >
+                  <Globe className="mr-2 h-5 w-5" />
+                  Launch Pilot Web App
+                </Button>
+              </a>
             </motion.div>
 
             {/* Micro-Social Proof */}
@@ -205,8 +211,11 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Separation Divider */}
+        <div className="mt-24 md:mt-32 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
         {/* Entertainment DNA Section */}
-        <div className="mt-48 md:mt-64 border-t border-white/5 pt-24">
+        <div className="mt-24 md:mt-32 pt-12">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Your Entertainment DNA</h2>
             <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
