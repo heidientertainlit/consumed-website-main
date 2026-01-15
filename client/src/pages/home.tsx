@@ -152,7 +152,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-6 flex items-center gap-3 text-xs text-muted-foreground font-body justify-center"
+            className="mt-10 flex items-center gap-3 text-xs text-muted-foreground font-body justify-center"
           >
             <div className="flex -space-x-1.5">
               {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
