@@ -52,6 +52,8 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -67,8 +69,8 @@ export default function Home() {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitMessage({ type: 'success', text: data.message });
         setEmail("");
+        setShowSuccess(true);
       } else {
         setSubmitMessage({ type: 'error', text: data.error || 'Something went wrong' });
       }
@@ -76,6 +78,20 @@ export default function Home() {
       setSubmitMessage({ type: 'error', text: 'Failed to connect. Please try again.' });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.origin : 'https://consumedapp.com';
+  const shareText = "Check out Consumed - the app that brings all your entertainment together!";
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Consumed', text: shareText, url: shareUrl });
+      } catch (err) {}
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      alert('Link copied to clipboard!');
     }
   };
 
@@ -305,42 +321,68 @@ export default function Home() {
       </footer>
 
       {/* Email Subscription Modal */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      <Dialog open={isModalOpen} onOpenChange={(open) => {
+        setIsModalOpen(open);
+        if (!open) {
+          setShowSuccess(false);
+          setSubmitMessage(null);
+        }
+      }}>
         <DialogContent className="sm:max-w-md bg-zinc-900 border-white/10 text-white">
-          <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-center">Get notified</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={handleSubscribe} className="space-y-4 mt-4">
-            <p className="text-sm text-zinc-400 text-center font-body">
-              Be the first to know when Consumed is available in the App Store.
-            </p>
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="bg-white/5 border-white/10 text-white placeholder:text-zinc-500 focus:border-purple-500 font-body"
-              data-testid="input-email"
-            />
-            {submitMessage && (
-              <p className={`text-sm text-center font-body ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
-                {submitMessage.text}
-              </p>
-            )}
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
-              data-testid="button-submit"
-            >
-              {isSubmitting ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                "Notify me"
-              )}
-            </Button>
-          </form>
+          {showSuccess ? (
+            <div className="text-center py-4">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
+                <Bell className="w-8 h-8 text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Thanks, we'll notify you!</h3>
+              <p className="text-zinc-400 font-body mb-6">Now tell a friend</p>
+              <Button
+                onClick={handleShare}
+                className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
+                data-testid="button-share"
+              >
+                <Share2 className="mr-2 h-4 w-4" />
+                Share Consumed
+              </Button>
+            </div>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-xl font-bold text-center">Get notified</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleSubscribe} className="space-y-4 mt-4">
+                <p className="text-sm text-zinc-400 text-center font-body">
+                  Be the first to know when Consumed is available in the App Store.
+                </p>
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-500 focus:border-purple-500 font-body"
+                  data-testid="input-email"
+                />
+                {submitMessage && (
+                  <p className={`text-sm text-center font-body ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {submitMessage.text}
+                  </p>
+                )}
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
+                  data-testid="button-submit"
+                >
+                  {isSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    "Notify me"
+                  )}
+                </Button>
+              </form>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </div>
