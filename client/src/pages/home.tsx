@@ -68,7 +68,7 @@ export default function Home() {
              />
           </div>
           <div className="hidden md:flex items-center gap-4 border-l border-white/10 pl-8">
-            <a href="#" className="text-zinc-400 hover:text-white transition-colors">
+            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
             <a href="#" className="text-zinc-400 hover:text-white transition-colors">
