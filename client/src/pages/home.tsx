@@ -173,6 +173,14 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Visual Separator */}
+        <div className="w-full flex flex-col items-center my-16 md:my-24">
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+          <div className="mt-6 text-center">
+            <p className="text-sm uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
+          </div>
+        </div>
+
         {/* Carousel Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
