@@ -228,7 +228,7 @@ export default function Home() {
             Discover your unique entertainment profile based on everything you watch, read, play, and listen to.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Movies", "TV Shows", "Books", "Games", "Music", "Podcasts"].map((item) => (
+            {["Movies", "TV Shows", "Books", "Gaming", "Music", "Podcasts"].map((item) => (
               <span 
                 key={item} 
                 className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-zinc-300 font-body"
