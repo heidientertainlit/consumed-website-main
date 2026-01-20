@@ -173,8 +173,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg font-normal mb-12 text-center tracking-wide"
           >
-            <span className="text-zinc-500">Across what you're </span>
-            <span className="relative inline-block min-w-[100px] md:min-w-[130px]">
+            <span className="text-zinc-500">Across what you're</span>
+            <span className="relative inline-block min-w-[100px] md:min-w-[130px] ml-1.5">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
