@@ -153,7 +153,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-[1.1]"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.2]"
           >
             Feed your entertainment obsession
           </motion.h1>
@@ -162,7 +162,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-lg md:text-xl text-muted-foreground mb-3 font-body"
+            className="text-base md:text-lg text-zinc-500 mb-6 font-body"
           >
             See how you stack up.
           </motion.p>
@@ -171,18 +171,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl font-medium mb-8 flex items-baseline justify-center"
+            className="text-base md:text-lg font-normal mb-12 flex items-baseline justify-center tracking-wide"
           >
-            <span className="text-zinc-400 mr-2">Across what you're</span>
-            <span className="relative inline-flex min-w-[140px] md:min-w-[180px] h-[1.2em]">
+            <span className="text-zinc-500 mr-2">Across what you're</span>
+            <span className="relative inline-flex min-w-[120px] md:min-w-[150px] h-[1.2em]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
-                  initial={{ y: 20, opacity: 0 }}
+                  initial={{ y: 15, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className={`absolute left-0 top-0 ${words[index].color} whitespace-nowrap`}
+                  exit={{ y: -15, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className={`absolute left-0 top-0 ${words[index].color} whitespace-nowrap font-medium`}
                 >
                   {words[index].text}
                 </motion.span>
@@ -209,13 +209,13 @@ export default function Home() {
           {/* Micro-Social Proof */}
           <motion.div 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.7 }}
             transition={{ delay: 0.8 }}
-            className="mt-10 flex items-center gap-3 text-xs text-muted-foreground font-body justify-center"
+            className="mt-14 flex items-center gap-3 text-[11px] text-zinc-600 font-body justify-center"
           >
             <div className="flex -space-x-1.5">
               {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
-                <div key={i} className="w-7 h-7 rounded-full border-2 border-background bg-zinc-800 flex items-center justify-center text-[8px] font-medium text-white uppercase" title={name}>
+                <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-zinc-800/80 flex items-center justify-center text-[7px] font-medium text-white/80 uppercase" title={name}>
                   {name.slice(0, 3)}
                 </div>
               ))}
