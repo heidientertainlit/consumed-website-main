@@ -167,14 +167,14 @@ export default function Home() {
             See how you stack up.
           </motion.p>
 
-          <motion.div 
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg font-normal mb-12 flex items-baseline justify-center tracking-wide"
+            className="text-base md:text-lg font-normal mb-12 text-center tracking-wide"
           >
-            <span className="text-zinc-500 mr-2">Across what you're</span>
-            <span className="relative inline-flex min-w-[120px] md:min-w-[150px] h-[1.2em]">
+            <span className="text-zinc-500">Across what you're </span>
+            <span className="relative inline-block min-w-[100px] md:min-w-[130px]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -182,13 +182,13 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -15, opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className={`absolute left-0 top-0 ${words[index].color} whitespace-nowrap font-medium`}
+                  className={`${words[index].color} font-medium`}
                 >
                   {words[index].text}
                 </motion.span>
               </AnimatePresence>
             </span>
-          </motion.div>
+          </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
