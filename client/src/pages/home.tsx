@@ -171,10 +171,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl font-medium mb-8 h-[1.5em] flex items-center justify-center"
+            className="text-xl md:text-2xl font-medium mb-8 flex items-baseline justify-center"
           >
             <span className="text-zinc-400 mr-2">Across what you're</span>
-            <span className="relative inline-flex min-w-[140px] md:min-w-[180px] justify-start">
+            <span className="relative inline-flex min-w-[140px] md:min-w-[180px] h-[1.2em]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -182,7 +182,7 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -20, opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className={`absolute left-0 ${words[index].color} whitespace-nowrap`}
+                  className={`absolute left-0 top-0 ${words[index].color} whitespace-nowrap`}
                 >
                   {words[index].text}
                 </motion.span>
