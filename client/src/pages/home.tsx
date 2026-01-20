@@ -34,10 +34,10 @@ const TikTok = ({ className }: { className?: string }) => (
 
 export default function Home() {
   const words = [
-    { text: "watching", color: "text-purple-400" },
-    { text: "reading", color: "text-indigo-400" },
-    { text: "listening to", color: "text-blue-400" },
-    { text: "playing", color: "text-green-400" }
+    { text: "watching.", color: "text-purple-400" },
+    { text: "listening to.", color: "text-blue-400" },
+    { text: "reading.", color: "text-indigo-400" },
+    { text: "playing.", color: "text-green-400" }
   ];
   const [index, setIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -153,10 +153,28 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1] w-full flex flex-wrap justify-center items-center gap-x-3"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-[1.1]"
           >
-            <span>What are you</span>
-            <span className="relative inline-flex min-w-[180px] md:min-w-[220px] justify-start h-[1.1em]">
+            Feed your entertainment obsession
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-lg md:text-xl text-muted-foreground mb-3 font-body"
+          >
+            See how you stack up.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl md:text-2xl font-medium mb-8 h-[1.5em] flex items-center justify-center"
+          >
+            <span className="text-zinc-400 mr-2">Across what you're</span>
+            <span className="relative inline-flex min-w-[140px] md:min-w-[180px] justify-start">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -166,20 +184,11 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className={`absolute left-0 ${words[index].color} whitespace-nowrap`}
                 >
-                  {words[index].text}?
+                  {words[index].text}
                 </motion.span>
               </AnimatePresence>
             </span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl font-body"
-          >
-            Play, react, and keep up with what you love. Because this is where entertainment comes together.
-          </motion.p>
+          </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
