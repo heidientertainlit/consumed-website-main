@@ -186,7 +186,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-4 flex justify-center items-center w-full"
+            className="mt-2 flex justify-center items-center w-full"
           >
             <a 
               href="https://app.consumedapp.com"
