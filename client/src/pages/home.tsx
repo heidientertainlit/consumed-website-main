@@ -9,13 +9,12 @@ import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_
 import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
 
 // Screen Imports
-import screen1 from "@assets/IMG_5733_1768454610482.PNG";
-import screen2 from "@assets/IMG_5735_1768454613289.PNG";
-import screen3 from "@assets/IMG_5739_1768454615709.PNG";
-import screen4 from "@assets/IMG_5740_1768454618224.PNG";
-import screen5 from "@assets/IMG_5741_1768454620680.PNG";
-import screen6 from "@assets/IMG_5742_1768454623111.PNG";
-import screen7 from "@assets/IMG_5743_1768454625777.PNG";
+import screen1 from "@assets/Screenshot_2026-01-28_at_11.49.11_AM_1769626154377.png";
+import screen2 from "@assets/Screenshot_2026-01-28_at_11.49.56_AM_1769626198451.png";
+import screen3 from "@assets/Screenshot_2026-01-28_at_11.50.13_AM_1769626215606.png";
+import screen4 from "@assets/Screenshot_2026-01-28_at_11.50.29_AM_1769626231708.png";
+import screen5 from "@assets/Screenshot_2026-01-28_at_11.50.51_AM_1769626253622.png";
+import screen6 from "@assets/Screenshot_2026-01-28_at_11.52.47_AM_1769626369551.png";
 
 // TikTok Icon Component since it's not in Lucide
 const TikTok = ({ className }: { className?: string }) => (
@@ -242,7 +241,7 @@ export default function Home() {
           <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
             <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20 touch-pan-x">
               <CarouselContent className="h-full cursor-grab active:cursor-grabbing">
-                {[screen1, screen2, screen7, screen6, screen4, screen5, screen3].map((screen, index) => (
+                {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
                   <CarouselItem key={index} className="h-full">
                     <div className="w-full h-full relative">
                       <img 
