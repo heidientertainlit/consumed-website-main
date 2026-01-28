@@ -191,17 +191,17 @@ export default function Home() {
           >
             <div className="flex -space-x-2">
               {[
-                { name: "Jeeppler", color: "bg-purple-500" },
-                { name: "kjwoodsemh", color: "bg-indigo-500" },
-                { name: "linds047", color: "bg-violet-500" },
-                { name: "nicklombardo2", color: "bg-fuchsia-500" },
-                { name: "seth", color: "bg-purple-600" },
-                { name: "hulabear23", color: "bg-indigo-600" },
-                { name: "madhope21", color: "bg-violet-600" },
-                { name: "Snazzyman", color: "bg-purple-400" }
+                { name: "Jeeppler", color: "bg-slate-700", emoji: "🎮" },
+                { name: "kjwoodsemh", color: "bg-amber-600", emoji: "🎸" },
+                { name: "linds047", color: "bg-emerald-600", emoji: "📚" },
+                { name: "nicklombardo2", color: "bg-blue-600", emoji: "🎬" },
+                { name: "seth", color: "bg-orange-500", emoji: "🎧" },
+                { name: "hulabear23", color: "bg-teal-600", emoji: "🎯" },
+                { name: "madhope21", color: "bg-rose-600", emoji: "🎵" },
+                { name: "Snazzyman", color: "bg-cyan-600", emoji: "📺" }
               ].map((user, i) => (
-                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
-                  {user.name.slice(0, 2).toUpperCase()}
+                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[10px] shadow-sm`} title={user.name}>
+                  {user.emoji}
                 </div>
               ))}
             </div>
