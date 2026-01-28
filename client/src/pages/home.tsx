@@ -356,7 +356,7 @@ export default function Home() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-400">&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
-            <a href="mailto:info@consumedapp.com" className="text-zinc-400 hover:text-purple-400 transition-colors">Contact</a>
+            <a href="mailto:info@consumedapp.com" className="text-zinc-400 hover:text-purple-400 transition-colors">info@consumedapp.com</a>
             <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="text-zinc-400 hover:text-purple-400 transition-colors">Privacy</a>
             <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="text-zinc-400 hover:text-purple-400 transition-colors">Terms</a>
           </div>
