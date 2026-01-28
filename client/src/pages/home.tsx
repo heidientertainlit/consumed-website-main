@@ -182,37 +182,46 @@ export default function Home() {
             Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
 
+          {/* Micro-Social Proof */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.7 }}
+            transition={{ delay: 0.5 }}
+            className="mt-6 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+          >
+            <div className="flex -space-x-2">
+              {[
+                { name: "Jeeppler", color: "bg-purple-500" },
+                { name: "kjwoodsemh", color: "bg-indigo-500" },
+                { name: "linds047", color: "bg-violet-500" },
+                { name: "nicklombardo2", color: "bg-fuchsia-500" },
+                { name: "seth", color: "bg-purple-600" },
+                { name: "hulabear23", color: "bg-indigo-600" },
+                { name: "madhope21", color: "bg-violet-600" },
+                { name: "Snazzyman", color: "bg-purple-400" }
+              ].map((user, i) => (
+                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
+                  {user.name.slice(0, 2).toUpperCase()}
+                </div>
+              ))}
+            </div>
+            <p>Join early adopters and get Consumed.</p>
+          </motion.div>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center items-center w-full"
+            className="mt-6 flex justify-center items-center w-full"
           >
             <a 
               href="https://app.consumedapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-11 px-6 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
+              className="h-12 px-12 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
             >
               Test the pilot app
             </a>
-          </motion.div>
-
-          {/* Micro-Social Proof */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
-            transition={{ delay: 0.8 }}
-            className="mt-14 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
-          >
-            <div className="flex -space-x-1.5">
-              {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
-                <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-purple-100 flex items-center justify-center text-[7px] font-medium text-purple-700 uppercase" title={name}>
-                  {name.slice(0, 3)}
-                </div>
-              ))}
-            </div>
-            <p>Join early adopters and get Consumed.</p>
           </motion.div>
         </div>
 
