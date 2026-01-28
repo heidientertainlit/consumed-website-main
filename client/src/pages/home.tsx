@@ -407,8 +407,7 @@ export default function Home() {
             className="relative z-10 text-center max-w-2xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to own your entertainment identity?<br />
-              <span className="text-purple-400">Find out your Entertainment DNA</span>
+              Ready to own your entertainment identity? <span className="text-purple-400">Find out your Entertainment DNA</span>
             </h2>
             <p className="text-lg text-muted-foreground font-body mb-8">
               Discover your unique entertainment profile based on everything you watch, read, play, and listen to. The pilot is live and evolving. Join now and help shape the future of Consumed.
