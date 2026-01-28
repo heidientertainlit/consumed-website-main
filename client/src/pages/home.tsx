@@ -203,7 +203,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.7 }}
             transition={{ delay: 0.5 }}
-            className="mt-4 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+            className="mt-6 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
           >
             <div className="flex -space-x-2">
               {[
