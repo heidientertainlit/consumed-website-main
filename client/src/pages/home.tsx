@@ -325,6 +325,23 @@ export default function Home() {
           <p className="text-lg text-zinc-500 font-body leading-relaxed">
             Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
           </p>
+          
+          {/* Media Type Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            {["Movies", "TV Shows", "Books", "Gaming", "Music", "Podcasts"].map((item) => (
+              <span 
+                key={item} 
+                className="px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-sm text-zinc-600 font-body"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+          
+          {/* DNA Icon */}
+          <div className="mt-8 flex justify-center">
+            <Dna className="w-12 h-12 text-purple-400" />
+          </div>
         </motion.div>
 
         {/* Section Divider */}
