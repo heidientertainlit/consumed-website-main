@@ -222,8 +222,50 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Three-Column Feature Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
+        >
+          {/* Play Trivia */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <Gamepad2 className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Test your entertainment knowledge. Answer questions, compete on leaderboards, and make predictions about what you watch.
+            </p>
+          </div>
+
+          {/* Track Everything */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <ListChecks className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Track Everything</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Log movies, TV shows, books, podcasts, and music. Build your profile and see your habits come to life.
+            </p>
+          </div>
+
+          {/* Discover Your DNA */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <Dna className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Find out what makes your taste unique. See how you stack up and unlock your entertainment identity.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Visual Separator */}
-        <div className="w-full flex flex-col items-center mt-0 mb-2">
+        <div className="w-full flex flex-col items-center mt-16 mb-2">
           <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
           <div className="mt-3 text-center">
             <p className="text-xs uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
@@ -266,48 +308,6 @@ export default function Home() {
 
           {/* Decorative Glows */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
-        </motion.div>
-
-        {/* Three-Column Feature Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
-        >
-          {/* Play Trivia */}
-          <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <Gamepad2 className="w-7 h-7 text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
-              Test your entertainment knowledge. Answer questions, compete on leaderboards, and make predictions about what you watch.
-            </p>
-          </div>
-
-          {/* Track Everything */}
-          <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <ListChecks className="w-7 h-7 text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Track Everything</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
-              Log movies, TV shows, books, podcasts, and music. Build your profile and see your habits come to life.
-            </p>
-          </div>
-
-          {/* Discover Your DNA */}
-          <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <Dna className="w-7 h-7 text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
-              Find out what makes your taste unique. See how you stack up and unlock your entertainment identity.
-            </p>
-          </div>
         </motion.div>
 
         {/* Section Divider */}
