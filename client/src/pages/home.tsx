@@ -95,15 +95,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-[#f8f8f8] text-zinc-900 overflow-x-hidden selection:bg-primary/30">
       {/* Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#1a0a2e] via-black to-black" />
-      
-      {/* Ambient Light */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
-      </div>
+      <div className="fixed inset-0 z-0 pointer-events-none bg-[#f8f8f8]" />
 
       {/* Navigation */}
       <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
@@ -115,11 +109,11 @@ export default function Home() {
                className="w-full h-auto" 
              />
           </div>
-          <div className="hidden md:flex items-center gap-4 border-l border-white/10 pl-8">
-            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
+          <div className="hidden md:flex items-center gap-4 border-l border-zinc-200 pl-8">
+            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
+            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
               <TikTok className="w-5 h-5" />
             </a>
           </div>
@@ -134,10 +128,10 @@ export default function Home() {
             href="https://app.consumedapp.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 md:px-5 md:py-2 backdrop-blur-sm shadow-lg shadow-purple-900/10 hover:bg-white/10 transition-colors"
+            className="flex items-center space-x-2 bg-white border border-zinc-200 rounded-full px-3 py-1.5 md:px-5 md:py-2 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:bg-purple-50 transition-colors"
           >
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)] flex-shrink-0"></span>
-            <span className="text-xs md:text-sm font-medium text-white/90 font-body whitespace-nowrap">Accepting pilot users</span>
+            <span className="text-xs md:text-sm font-medium text-zinc-700 font-body whitespace-nowrap">Accepting pilot users</span>
           </a>
         </motion.div>
       </nav>
@@ -163,7 +157,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
-            <span className="text-zinc-400">What you're </span>
+            <span className="text-zinc-600">What you're </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -176,7 +170,7 @@ export default function Home() {
                   {words[index].text}
                 </motion.span>
               </AnimatePresence>
-            <span className="text-zinc-400"> All in one place.</span>
+            <span className="text-zinc-600"> All in one place.</span>
           </motion.p>
 
           <motion.p 
@@ -209,11 +203,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.7 }}
             transition={{ delay: 0.8 }}
-            className="mt-14 flex items-center gap-3 text-[11px] text-zinc-600 font-body justify-center"
+            className="mt-14 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
           >
             <div className="flex -space-x-1.5">
               {["Jeeppler", "kjwoodsemh", "linds047", "nicklombardo2", "seth", "hulabear23", "madhope21", "Snazzyman"].map((name, i) => (
-                <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-zinc-800/80 flex items-center justify-center text-[7px] font-medium text-white/80 uppercase" title={name}>
+                <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-purple-100 flex items-center justify-center text-[7px] font-medium text-purple-700 uppercase" title={name}>
                   {name.slice(0, 3)}
                 </div>
               ))}
@@ -236,7 +230,7 @@ export default function Home() {
               <Gamepad2 className="w-7 h-7 text-purple-400" />
             </div>
             <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+            <p className="text-zinc-500 font-body text-sm leading-relaxed">
               Test your entertainment knowledge. Answer questions, compete on leaderboards, and make predictions about what you watch.
             </p>
           </div>
@@ -247,7 +241,7 @@ export default function Home() {
               <ListChecks className="w-7 h-7 text-purple-400" />
             </div>
             <h3 className="text-xl font-bold mb-3">Track Everything</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+            <p className="text-zinc-500 font-body text-sm leading-relaxed">
               Log movies, TV shows, books, podcasts, and music. Build your profile and see your habits come to life.
             </p>
           </div>
@@ -258,7 +252,7 @@ export default function Home() {
               <Dna className="w-7 h-7 text-purple-400" />
             </div>
             <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
-            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+            <p className="text-zinc-500 font-body text-sm leading-relaxed">
               Find out what makes your taste unique. See how you stack up and unlock your entertainment identity.
             </p>
           </div>
@@ -266,9 +260,9 @@ export default function Home() {
 
         {/* Visual Separator */}
         <div className="w-full flex flex-col items-center mt-16 mb-2">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+          <div className="w-px h-10 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
           <div className="mt-3 text-center">
-            <p className="text-xs uppercase tracking-widest text-zinc-500 font-body">See what's inside</p>
+            <p className="text-xs uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
           </div>
         </div>
 
@@ -281,7 +275,7 @@ export default function Home() {
         >
           {/* Phone Frame - Centered */}
           <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
-            <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20 touch-pan-x">
+            <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
               <CarouselContent className="h-[704px]">
                 {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
                   <CarouselItem key={index} className="h-[704px]">
@@ -300,9 +294,9 @@ export default function Home() {
             
             {/* Navigation buttons - Below the phone */}
             <div className="flex items-center gap-6 mt-8">
-              <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white w-12 h-12" />
-              <span className="text-sm text-zinc-400 font-body">Swipe or tap to explore</span>
-              <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white w-12 h-12" />
+              <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
+              <span className="text-sm text-zinc-500 font-body">Swipe or tap to explore</span>
+              <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
             </div>
           </Carousel>
 
@@ -321,18 +315,18 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Where your useless knowledge becomes your <span className="text-purple-400">entertainment identity</span>
           </h2>
-          <p className="text-lg text-zinc-400 font-body leading-relaxed">
+          <p className="text-lg text-zinc-500 font-body leading-relaxed">
             Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
           </p>
         </motion.div>
 
         {/* Section Divider */}
         <div className="mt-16 md:mt-20 w-full max-w-md mx-auto">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
         </div>
 
         {/* Entertainment DNA Section with Neural Background */}
-        <div className="relative mt-16 md:mt-20 py-16 -mx-6 px-6 overflow-hidden">
+        <div className="relative mt-16 md:mt-20 py-16 -mx-6 px-6 overflow-hidden bg-gradient-to-b from-[#1a0a2e] via-[#0f0518] to-[#0a0a0f] rounded-3xl mx-4">
           {/* Animated Neural Network Background */}
           <div className="absolute inset-0 overflow-hidden">
             <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
@@ -412,7 +406,7 @@ export default function Home() {
               ))}
             </svg>
             {/* Gradient overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent" />
           </div>
           
           <motion.div 
@@ -422,17 +416,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="relative z-10 text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Ready to own your entertainment identity? <span className="text-purple-400">Find out your Entertainment DNA</span>
             </h2>
-            <p className="text-lg text-muted-foreground font-body mb-8">
+            <p className="text-lg text-zinc-400 font-body mb-8">
               Discover your unique entertainment profile based on everything you watch, read, play, and listen to. The pilot is live and evolving. Join now and help shape the future of Consumed.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               {["Movies", "TV Shows", "Books", "Gaming", "Music", "Podcasts"].map((item) => (
                 <span 
                   key={item} 
-                  className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-zinc-300 font-body"
+                  className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-zinc-300 font-body"
                 >
                   {item}
                 </span>
@@ -456,13 +450,13 @@ export default function Home() {
 
       </main>
 
-      <footer className="relative z-50 py-8 text-center text-sm text-zinc-600 border-t border-white/5 bg-black font-body">
+      <footer className="relative z-50 py-8 text-center text-sm text-zinc-500 border-t border-zinc-200 bg-white font-body">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
-            <a href="mailto:info@consumedapp.com" className="hover:text-zinc-400 transition-colors">Contact</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-zinc-400 transition-colors">Privacy</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-zinc-400 transition-colors">Terms</a>
+            <a href="mailto:info@consumedapp.com" className="hover:text-purple-600 transition-colors">Contact</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-purple-600 transition-colors">Privacy</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-purple-600 transition-colors">Terms</a>
           </div>
         </div>
       </footer>
