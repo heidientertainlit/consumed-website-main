@@ -162,6 +162,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-xl md:text-2xl font-medium mb-2 text-center tracking-wide"
+          >
+            <span className="text-zinc-400">All your entertainment in one place.</span>
+          </motion.p>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
             <span className="text-zinc-400">Across what you're </span>
@@ -182,10 +191,10 @@ export default function Home() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="text-base md:text-lg text-zinc-500 mb-12 font-body max-w-xl text-center"
           >
-            All your entertainment in one place. Play trivia, track what you consume, and discover your entertainment DNA.
+            Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
 
           <motion.div 
