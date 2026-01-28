@@ -162,16 +162,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl"
-          >
-            All your entertainment in one place. Play trivia, track what you consume, and discover your entertainment DNA.
-          </motion.p>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg font-normal mb-12 text-center tracking-wide"
+            className="text-base md:text-lg font-normal mb-6 text-center tracking-wide"
           >
             <span className="text-zinc-500">Across what you're </span>
               <AnimatePresence mode="wait">
@@ -186,6 +177,15 @@ export default function Home() {
                   {words[index].text}
                 </motion.span>
               </AnimatePresence>
+          </motion.p>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-lg text-zinc-500 mb-12 font-body max-w-xl text-center"
+          >
+            All your entertainment in one place. Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
 
           <motion.div 
