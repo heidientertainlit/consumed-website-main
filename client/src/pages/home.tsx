@@ -162,9 +162,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-base md:text-lg font-normal mb-6 text-center tracking-wide"
+            className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
-            <span className="text-zinc-500">Across what you're </span>
+            <span className="text-zinc-400">Across what you're </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
