@@ -177,7 +177,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-zinc-500 mb-12 font-body max-w-xl text-center"
+            className="text-base md:text-lg text-zinc-500 mb-4 font-body max-w-xl text-center"
           >
             Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
@@ -186,7 +186,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-2 flex justify-center items-center w-full"
+            className="flex justify-center items-center w-full"
           >
             <a 
               href="https://app.consumedapp.com"
