@@ -182,6 +182,22 @@ export default function Home() {
             Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
 
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-6 flex justify-center items-center w-full"
+          >
+            <a 
+              href="https://app.consumedapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-12 px-12 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
+            >
+              Test the pilot app
+            </a>
+          </motion.div>
+
           {/* Micro-Social Proof */}
           <motion.div 
             initial={{ opacity: 0 }}
@@ -206,22 +222,6 @@ export default function Home() {
               ))}
             </div>
             <p>Join early adopters and get Consumed.</p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 flex justify-center items-center w-full"
-          >
-            <a 
-              href="https://app.consumedapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-12 px-12 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
-            >
-              Test the pilot app
-            </a>
           </motion.div>
         </div>
 
@@ -309,9 +309,7 @@ export default function Home() {
             </div>
           </Carousel>
 
-          {/* Decorative Glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
-        </motion.div>
+                  </motion.div>
 
         {/* Useless Knowledge Section */}
         <motion.div
@@ -334,10 +332,10 @@ export default function Home() {
           <div className="h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
         </div>
 
-        {/* Entertainment DNA Section with Neural Background */}
-        <div className="relative mt-16 md:mt-20 py-16 -mx-6 px-6 overflow-hidden bg-gradient-to-b from-[#1a0a2e] via-[#0f0518] to-[#0a0a0f] rounded-3xl mx-4">
+        {/* Entertainment DNA Section */}
+        <div className="relative mt-16 md:mt-20 py-16 px-6">
           {/* Animated Neural Network Background */}
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden opacity-30">
             <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
               <defs>
                 <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
@@ -425,17 +423,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="relative z-10 text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Ready to own your entertainment identity? <span className="text-purple-400">Find out your Entertainment DNA</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900">
+              Ready to own your entertainment identity? <span className="text-purple-600">Find out your Entertainment DNA</span>
             </h2>
-            <p className="text-lg text-zinc-400 font-body mb-8">
+            <p className="text-lg text-zinc-500 font-body mb-8">
               Discover your unique entertainment profile based on everything you watch, read, play, and listen to. The pilot is live and evolving. Join now and help shape the future of Consumed.
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               {["Movies", "TV Shows", "Books", "Gaming", "Music", "Podcasts"].map((item) => (
                 <span 
                   key={item} 
-                  className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-zinc-300 font-body"
+                  className="px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-sm text-zinc-600 font-body"
                 >
                   {item}
                 </span>
@@ -459,13 +457,13 @@ export default function Home() {
 
       </main>
 
-      <footer className="relative z-50 py-8 text-center text-sm text-zinc-500 border-t border-zinc-200 bg-white font-body">
+      <footer className="relative z-50 py-12 text-center text-sm text-zinc-400 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a0f] font-body">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {new Date().getFullYear()} Consumed.</p>
+          <p className="text-zinc-400">&copy; {new Date().getFullYear()} Consumed.</p>
           <div className="flex gap-6">
-            <a href="mailto:info@consumedapp.com" className="hover:text-purple-600 transition-colors">Contact</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-purple-600 transition-colors">Privacy</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="hover:text-purple-600 transition-colors">Terms</a>
+            <a href="mailto:info@consumedapp.com" className="text-zinc-400 hover:text-purple-400 transition-colors">Contact</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="text-zinc-400 hover:text-purple-400 transition-colors">Privacy</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); alert('Coming soon'); }} className="text-zinc-400 hover:text-purple-400 transition-colors">Terms</a>
           </div>
         </div>
       </footer>
