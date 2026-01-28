@@ -155,16 +155,16 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.2]"
           >
-            Feed your entertainment obsession
+            How you do entertainment.
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-base md:text-lg text-zinc-500 mb-6 font-body"
+            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl"
           >
-            See how you stack up.
+            All your entertainment in one place. Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
 
           <motion.p 
