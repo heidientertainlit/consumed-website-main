@@ -177,7 +177,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-zinc-500 mb-4 font-body max-w-xl text-center"
+            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
           >
             Play trivia, track what you consume, and discover your entertainment DNA.
           </motion.p>
@@ -203,7 +203,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.7 }}
             transition={{ delay: 0.5 }}
-            className="mt-6 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+            className="mt-8 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
           >
             <div className="flex -space-x-2">
               {[
