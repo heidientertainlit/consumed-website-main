@@ -247,7 +247,7 @@ export default function Home() {
                       <img 
                         src={screen} 
                         alt={`App Screen ${index + 1}`} 
-                        className="w-full h-full object-contain bg-black"
+                        className="w-full h-full object-cover object-top bg-zinc-950"
                       />
                     </div>
                   </CarouselItem>
