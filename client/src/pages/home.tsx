@@ -228,7 +228,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
+          className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
         >
           {/* Play Trivia */}
           <div className="text-center px-4">
@@ -308,6 +308,22 @@ export default function Home() {
 
           {/* Decorative Glows */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
+        </motion.div>
+
+        {/* Useless Knowledge Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Where your useless knowledge becomes your <span className="text-purple-400">entertainment identity</span>
+          </h2>
+          <p className="text-lg text-zinc-400 font-body leading-relaxed">
+            Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
+          </p>
         </motion.div>
 
         {/* Section Divider */}
