@@ -162,18 +162,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-xl md:text-2xl font-medium mb-2 text-center tracking-wide"
-          >
-            <span className="text-zinc-400">All your entertainment in one place.</span>
-          </motion.p>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
-            <span className="text-zinc-400">Across what you're </span>
+            <span className="text-zinc-400">What you're </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -186,6 +177,7 @@ export default function Home() {
                   {words[index].text}
                 </motion.span>
               </AnimatePresence>
+            <span className="text-zinc-400"> All in one place.</span>
           </motion.p>
 
           <motion.p 
