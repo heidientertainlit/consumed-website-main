@@ -240,14 +240,15 @@ export default function Home() {
           {/* Phone Frame - Centered */}
           <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
             <div className="relative mx-auto border-zinc-800 bg-zinc-950 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-white/10 z-20 touch-pan-x">
-              <CarouselContent className="h-full cursor-grab active:cursor-grabbing">
+              <CarouselContent className="h-full cursor-grab active:cursor-grabbing" style={{ height: '100%' }}>
                 {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
-                  <CarouselItem key={index} className="h-full">
-                    <div className="w-full h-full relative">
+                  <CarouselItem key={index} className="h-full" style={{ height: '100%' }}>
+                    <div className="w-full h-full relative bg-[#0a0a0f]" style={{ height: '100%' }}>
                       <img 
                         src={screen} 
                         alt={`App Screen ${index + 1}`} 
-                        className="w-full h-full object-fill bg-zinc-950"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectPosition: 'top center' }}
                       />
                     </div>
                   </CarouselItem>
