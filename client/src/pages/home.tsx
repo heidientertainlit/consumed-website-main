@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2 } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -268,6 +268,48 @@ export default function Home() {
 
           {/* Decorative Glows */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[800px] bg-primary/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
+        </motion.div>
+
+        {/* Three-Column Feature Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
+        >
+          {/* Play Trivia */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <Gamepad2 className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Test your entertainment knowledge. Answer questions, compete on leaderboards, and make predictions about what you watch.
+            </p>
+          </div>
+
+          {/* Track Everything */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <ListChecks className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Track Everything</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Log movies, TV shows, books, podcasts, and music. Build your profile and see your habits come to life.
+            </p>
+          </div>
+
+          {/* Discover Your DNA */}
+          <div className="text-center px-4">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+              <Dna className="w-7 h-7 text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
+            <p className="text-zinc-400 font-body text-sm leading-relaxed">
+              Find out what makes your taste unique. See how you stack up and unlock your entertainment identity.
+            </p>
+          </div>
         </motion.div>
 
         {/* Section Divider */}
