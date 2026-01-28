@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
-import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
+import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Screen Imports
 import screen1 from "@assets/IMG_5990_1769627771433.PNG";
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="flex items-center gap-8">
           <div className="w-32 md:w-40">
              <img 
-               src={logoWhite} 
+               src={logoPurple} 
                alt="Consumed Logo" 
                className="w-full h-auto" 
              />
@@ -128,10 +128,10 @@ export default function Home() {
             href="https://app.consumedapp.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-white border border-zinc-200 rounded-full px-3 py-1.5 md:px-5 md:py-2 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:bg-purple-50 transition-colors"
+            className="flex items-center space-x-2 bg-gradient-to-r from-[#1a0a2e] to-[#2d1b4e] rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-purple-900/20 hover:opacity-90 transition-all"
           >
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)] flex-shrink-0"></span>
-            <span className="text-xs md:text-sm font-medium text-zinc-700 font-body whitespace-nowrap">Accepting pilot users</span>
+            <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">Accepting pilot users</span>
           </a>
         </motion.div>
       </nav>
@@ -226,8 +226,8 @@ export default function Home() {
         >
           {/* Play Trivia */}
           <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <Gamepad2 className="w-7 h-7 text-purple-400" />
+            <div className="mb-5 flex items-center justify-center">
+              <Gamepad2 className="w-10 h-10 text-[#2d1b4e]" />
             </div>
             <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
@@ -237,8 +237,8 @@ export default function Home() {
 
           {/* Track Everything */}
           <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <ListChecks className="w-7 h-7 text-purple-400" />
+            <div className="mb-5 flex items-center justify-center">
+              <ListChecks className="w-10 h-10 text-[#2d1b4e]" />
             </div>
             <h3 className="text-xl font-bold mb-3">Track Everything</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
@@ -248,8 +248,8 @@ export default function Home() {
 
           {/* Discover Your DNA */}
           <div className="text-center px-4">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-              <Dna className="w-7 h-7 text-purple-400" />
+            <div className="mb-5 flex items-center justify-center">
+              <Dna className="w-10 h-10 text-[#2d1b4e]" />
             </div>
             <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
