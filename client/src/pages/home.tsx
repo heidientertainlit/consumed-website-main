@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks } from "lucide-react";
+import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks, Dice5, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -247,36 +247,36 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
         >
-          {/* Play Trivia */}
+          {/* Play */}
           <div className="text-center px-4">
             <div className="mb-5 flex items-center justify-center">
-              <Gamepad2 className="w-10 h-10 text-[#2d1b4e]" />
+              <Dice5 className="w-10 h-10 text-[#2d1b4e]" />
             </div>
-            <h3 className="text-xl font-bold mb-3">Play Trivia</h3>
+            <h3 className="text-xl font-bold mb-3">Play</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              Test your entertainment knowledge. Answer questions, compete on leaderboards, and make predictions about what you watch.
+              Predict. Compete. Climb the leaderboard.
             </p>
           </div>
 
-          {/* Track Everything */}
+          {/* Track */}
           <div className="text-center px-4">
             <div className="mb-5 flex items-center justify-center">
               <ListChecks className="w-10 h-10 text-[#2d1b4e]" />
             </div>
-            <h3 className="text-xl font-bold mb-3">Track Everything</h3>
+            <h3 className="text-xl font-bold mb-3">Track</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              Log movies, TV shows, books, podcasts, and music. Build your profile and see your habits come to life.
+              Log everything you watch, read, and play.
             </p>
           </div>
 
-          {/* Discover Your DNA */}
+          {/* Connect */}
           <div className="text-center px-4">
             <div className="mb-5 flex items-center justify-center">
-              <Dna className="w-10 h-10 text-[#2d1b4e]" />
+              <Users className="w-10 h-10 text-[#2d1b4e]" />
             </div>
-            <h3 className="text-xl font-bold mb-3">Discover Your DNA</h3>
+            <h3 className="text-xl font-bold mb-3">Connect</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              Find out what makes your taste unique. See how you stack up and unlock your entertainment identity.
+              See what friends are into. Share takes. Compare taste.
             </p>
           </div>
         </motion.div>
