@@ -225,6 +225,20 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-10 md:mt-14 text-center max-w-2xl mx-auto"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 leading-tight">
+            Stop bouncing between apps.<br />
+            Now it's all in one place.
+          </h2>
+        </motion.div>
+
         {/* Three-Column Feature Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
