@@ -170,7 +170,8 @@ export default function Home() {
                   {words[index].text}
                 </motion.span>
               </AnimatePresence>
-            <span className="text-zinc-600"> Tracked. Playable. All in one place.</span>
+            <br />
+            <span className="text-zinc-600">Trackable. Playable. All in one place.</span>
           </motion.p>
 
           <motion.p 
