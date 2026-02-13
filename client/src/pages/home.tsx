@@ -249,8 +249,9 @@ export default function Home() {
         >
           {/* Play */}
           <div className="text-center px-4">
-            <div className="mb-5 flex items-center justify-center">
-              <Dice5 className="w-10 h-10 text-[#2d1b4e]" />
+            <div className="mb-5 flex items-center justify-center relative w-14 h-12 mx-auto">
+              <Dice5 className="w-9 h-9 text-[#2d1b4e] absolute left-0 top-1 -rotate-12" />
+              <Dice5 className="w-9 h-9 text-[#2d1b4e] absolute right-0 bottom-0 rotate-12 opacity-70" />
             </div>
             <h3 className="text-xl font-bold mb-3">Play</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
@@ -340,28 +341,7 @@ export default function Home() {
             Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
           </p>
           
-          {/* Media Type Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            {["Movies", "TV Shows", "Books", "Gaming", "Music", "Podcasts"].map((item) => (
-              <span 
-                key={item} 
-                className="px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-sm text-zinc-600 font-body"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          
-          {/* DNA Icon */}
-          <div className="mt-8 flex justify-center">
-            <Dna className="w-12 h-12 text-purple-400" />
-          </div>
         </motion.div>
-
-        {/* Section Divider */}
-        <div className="mt-16 md:mt-20 w-full max-w-md mx-auto">
-          <div className="h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
-        </div>
 
         
       </main>
