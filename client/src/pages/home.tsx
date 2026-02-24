@@ -353,7 +353,10 @@ export default function Home() {
             <p className="text-zinc-400">&copy; {new Date().getFullYear()} Consumed.</p>
             <a href="mailto:info@consumedapp.com" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-info-email">info@consumedapp.com</a>
           </div>
-          <a href="/support" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-support">Support</a>
+          <div className="flex items-center gap-4">
+            <a href="/support" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-support">Support</a>
+            <a href="/privacy" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-privacy">Privacy</a>
+          </div>
         </div>
       </footer>
 

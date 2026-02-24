@@ -1,0 +1,59 @@
+TERMS OF SERVICE
+EntertainLit, LLC (dba Consumed)
+Effective Date: February 23, 2026
+These Terms of Service ("Terms") are entered into between you and EntertainLit, LLC, doing business as Consumed ("Consumed," "we," "us," or "our").
+By accessing or using the Consumed mobile application, you agree to these Terms. If you do not agree, please do not use the app.
+
+1. Eligibility
+You must be at least 18 years old to use Consumed. By using the app, you confirm that you meet this age requirement. If we become aware that a user is under 18, we will promptly terminate their account and delete any associated data.
+
+2. User Accounts
+You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to provide accurate information and not impersonate any other person or entity. We reserve the right to suspend or terminate accounts that violate these Terms.
+
+3. User Content
+You retain ownership of content you submit to Consumed, including:
+
+Media tracking activity
+Ratings
+Lists
+Predictions
+Trivia participation
+Profile content
+
+By submitting content, you grant Consumed a non-exclusive, worldwide, royalty-free license to display and use that content within the app and its features. We may remove content that violates our policies at our discretion.
+
+4. Acceptable Use
+You agree not to:
+
+Harass, threaten, or harm other users
+Upload unlawful, infringing, or offensive content
+Attempt to manipulate leaderboards, games, or prediction features
+Reverse engineer, decompile, or otherwise exploit the platform
+Use automated tools or bots to interact with the app
+
+
+5. Intellectual Property
+All branding, software, design, and platform content provided by Consumed are owned by EntertainLit, LLC and protected by applicable intellectual property laws. You may not copy, reproduce, modify, or distribute any part of the app or its content without our prior written permission.
+
+6. Entertainment Disclaimer
+Consumed provides entertainment tracking, interactive games, and prediction features for informational and entertainment purposes only. All games, predictions, and leaderboard features are non-wagering and carry no monetary value. Consumed does not provide gambling, financial wagering, or real-money gaming services of any kind.
+
+7. Third-Party Services
+Consumed integrates with third-party services to deliver certain features. Your use of the app may be subject to the terms and privacy policies of those providers. We are not responsible for the practices or content of any third-party services.
+
+8. Limitation of Liability
+The app is provided "as is" without warranties of any kind, express or implied. To the fullest extent permitted by law, EntertainLit, LLC shall not be liable for any service interruptions, data loss, unauthorized access, or incidental, indirect, or consequential damages arising from your use of the app.
+
+9. Account Termination
+You may delete your account at any time within the app settings. We may suspend or terminate accounts at our discretion for violations of these Terms, with or without notice.
+
+10. Changes to Terms
+We may update these Terms periodically. When we do, we will update the Effective Date above. Continued use of the app after any changes constitutes your acceptance of the revised Terms.
+
+11. Governing Law
+These Terms are governed by the laws of the State of [Your State], without regard to its conflict of law provisions.
+
+12. Contact Us
+If you have any questions about these Terms, please contact us:
+EntertainLit, LLC (dba Consumed)
+Email: support@consumedapp.com
