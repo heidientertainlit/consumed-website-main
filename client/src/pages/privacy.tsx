@@ -7,11 +7,9 @@ export default function Privacy() {
     <div className="min-h-screen bg-[#f8f8f8] font-body">
       <header className="py-8 px-6">
         <div className="container mx-auto max-w-2xl">
-          <Link href="/">
-            <a className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#2d1b4e] transition-colors text-sm" data-testid="link-back-home">
+          <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#2d1b4e] transition-colors text-sm" data-testid="link-back-home">
               <ArrowLeft className="w-4 h-4" />
               Back
-            </a>
           </Link>
         </div>
       </header>
@@ -39,7 +37,7 @@ export default function Privacy() {
                 <li>Email address</li>
                 <li>Username</li>
                 <li>Profile information</li>
-                <li>Media tracking activity (movies, television, books, music, podcasts, games, and other entertainment)</li>
+                <li>Media tracking activity (movies, television, books, music, podcasts, games, sports, and other entertainment)</li>
                 <li>Ratings, lists, predictions, trivia participation, and leaderboard activity</li>
                 <li>User-generated content</li>
                 <li>Support communications</li>
@@ -61,7 +59,8 @@ export default function Privacy() {
               <ul className="list-disc pl-6 space-y-1 mb-4">
                 <li>Provide authentication and account access</li>
                 <li>Store and display your media history and activity</li>
-                <li>Power leaderboards, games, and prediction features</li>
+                <li>Power leaderboards, games, predictions, and interactive features</li>
+                <li>Generate insights, summaries, or classifications using artificial intelligence services</li>
                 <li>Improve product performance and user experience</li>
                 <li>Send optional push notifications</li>
                 <li>Monitor security and prevent abuse</li>
@@ -74,7 +73,7 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">3. Media Tracking Data</h2>
               <p className="mb-2">Consumed allows users to log and track their entertainment consumption across media types. This information may be used to:</p>
               <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li>Generate personal insights and summaries</li>
+                <li>Generate personal insights, summaries, and AI-powered features</li>
                 <li>Display leaderboard rankings</li>
                 <li>Improve feature development</li>
                 <li>Enable social and interactive experiences</li>
@@ -83,14 +82,24 @@ export default function Privacy() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">4. Third-Party Service Providers</h2>
-              <p className="mb-2">We use the following third-party service providers to operate our services. These providers process data on our behalf in accordance with their own privacy policies:</p>
+              <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">4. Third-Party Service Providers & Content Sources</h2>
+              <p className="mb-2">We use third-party providers and content sources to operate and improve our services. These may include:</p>
               <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li><strong>Supabase</strong> – authentication and database infrastructure</li>
-                <li><strong>OneSignal</strong> – push notification delivery</li>
-                <li><strong>PostHog</strong> – analytics and product usage tracking. PostHog does not use Apple's Advertising Identifier (IDFA) and does not engage in cross-app or cross-site tracking. Its data collection is not considered "tracking" under Apple's App Tracking Transparency framework.</li>
+                <li>Cloud infrastructure and database providers</li>
+                <li>Push notification services</li>
+                <li>Analytics and product usage tracking services</li>
+                <li>Artificial intelligence processing services</li>
+                <li>External media data providers</li>
               </ul>
-              <p>We do not use any third-party SDKs for advertising or cross-app tracking purposes.</p>
+              <p className="mb-2">Media data and metadata may be provided by third-party APIs, including:</p>
+              <ul className="list-disc pl-6 space-y-1 mb-4">
+                <li>The Movie Database (TMDB) for movie and television information</li>
+                <li>Spotify for music and podcast-related metadata</li>
+                <li>Google Books for book-related metadata</li>
+              </ul>
+              <p className="mb-4">These providers may process limited data necessary to deliver functionality. Their use of information is governed by their respective privacy policies and terms.</p>
+              <p className="mb-4">We do not use third-party SDKs for advertising or cross-app tracking purposes.</p>
+              <p>PostHog does not use Apple's Advertising Identifier (IDFA) and does not engage in cross-app or cross-site tracking. Its data collection is not considered "tracking" under Apple's App Tracking Transparency framework.</p>
             </section>
 
             <section>
@@ -114,15 +123,16 @@ export default function Privacy() {
               <ul className="list-disc pl-6 space-y-1 mb-4">
                 <li>Access the personal information we hold about you</li>
                 <li>Request correction of inaccurate data</li>
-                <li>Request deletion of your data (see Account Deletion above)</li>
+                <li>Request deletion of your data</li>
                 <li>Opt out of optional push notifications at any time through your device settings</li>
               </ul>
-              <p>To exercise any of these rights, please contact us at <a href="mailto:support@consumedapp.com" className="text-[#2d1b4e] font-medium hover:underline">support@consumedapp.com</a>.</p>
+              <p>To exercise these rights, contact us at: <a href="mailto:support@consumedapp.com" className="text-[#2d1b4e] font-medium hover:underline">support@consumedapp.com</a></p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">8. Children's Privacy</h2>
-              <p>Consumed is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will promptly delete it. If you believe we may have collected such information, please contact us at <a href="mailto:support@consumedapp.com" className="text-[#2d1b4e] font-medium hover:underline">support@consumedapp.com</a>.</p>
+              <p className="mb-4">Consumed is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will promptly delete it.</p>
+              <p>If you believe we may have collected such information, contact us at <a href="mailto:support@consumedapp.com" className="text-[#2d1b4e] font-medium hover:underline">support@consumedapp.com</a>.</p>
             </section>
 
             <section>
@@ -132,12 +142,13 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">10. Changes to This Policy</h2>
-              <p>We may update this Privacy Policy periodically. When we do, we will update the Effective Date at the top of this policy. For significant changes, we may notify you through the app or via email. Continued use of the app after updates constitutes your acceptance of the revised policy.</p>
+              <p className="mb-4">We may update this Privacy Policy periodically. When we do, we will update the Effective Date above. For significant changes, we may notify you through the app or via email.</p>
+              <p>Continued use of the app after updates constitutes acceptance of the revised policy.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-[#1a0a2e] mb-3">11. Contact Us</h2>
-              <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+              <p>If you have questions about this Privacy Policy or our data practices:</p>
               <p className="mt-2">
                 EntertainLit, LLC (dba Consumed)<br />
                 Email: <a href="mailto:support@consumedapp.com" className="text-[#2d1b4e] font-medium hover:underline">support@consumedapp.com</a>

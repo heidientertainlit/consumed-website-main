@@ -7,11 +7,9 @@ export default function Terms() {
     <div className="min-h-screen bg-[#f8f8f8] font-body">
       <header className="py-8 px-6">
         <div className="container mx-auto max-w-2xl">
-          <Link href="/">
-            <a className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#2d1b4e] transition-colors text-sm" data-testid="link-back-home">
+          <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#2d1b4e] transition-colors text-sm" data-testid="link-back-home">
               <ArrowLeft className="w-4 h-4" />
               Back
-            </a>
           </Link>
         </div>
       </header>
