@@ -17,7 +17,9 @@ export default function Terms() {
       <main className="px-6 pb-20">
         <div className="container mx-auto max-w-2xl">
           <div className="flex items-center gap-3 mb-8">
-            <img src={logoPurple} alt="Consumed" className="h-8 w-auto" />
+            <Link href="/">
+              <img src={logoPurple} alt="Consumed" className="h-8 w-auto cursor-pointer" />
+            </Link>
           </div>
 
           <h1 className="text-3xl font-bold text-[#1a0a2e] mb-2" data-testid="text-terms-title">Terms of Service</h1>
