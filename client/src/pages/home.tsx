@@ -356,6 +356,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a href="/support" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-support">Support</a>
             <a href="/privacy" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-privacy">Privacy</a>
+            <a href="/terms" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-terms">Terms</a>
           </div>
         </div>
       </footer>
