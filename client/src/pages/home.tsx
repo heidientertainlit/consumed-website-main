@@ -33,10 +33,10 @@ const TikTok = ({ className }: { className?: string }) => (
 
 export default function Home() {
   const words = [
-    { text: "watching.", color: "text-purple-400" },
-    { text: "listening to.", color: "text-blue-400" },
-    { text: "reading.", color: "text-indigo-400" },
-    { text: "playing.", color: "text-green-400" }
+    { text: "watching?", color: "text-purple-400" },
+    { text: "listening to?", color: "text-blue-400" },
+    { text: "reading?", color: "text-indigo-400" },
+    { text: "playing?", color: "text-green-400" }
   ];
   const [index, setIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
