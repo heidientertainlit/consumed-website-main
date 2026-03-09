@@ -139,7 +139,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="-mb-2"
           >
-            <img src={logoPurple} alt="Consumed Logo" className="w-[22rem] md:w-[28rem] h-auto mx-auto" />
+            <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
           </motion.div>
           
           <motion.h1 
@@ -155,7 +155,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
+            className="text-lg md:text-xl font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
           >
             CONNECT. TRACK. PLAY.
           </motion.p>
