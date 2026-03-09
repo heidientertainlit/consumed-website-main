@@ -166,20 +166,6 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
-            <span className="text-zinc-600">With what you're </span>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={index}
-                  initial={{ y: 15, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -15, opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className={`${words[index].color} font-medium inline-block`}
-                >
-                  {words[index].text}
-                </motion.span>
-              </AnimatePresence>
-            <br />
             <span className="text-zinc-600">Where your entertainment lives. All in one place.</span>
           </motion.p>
 
@@ -345,7 +331,19 @@ export default function Home() {
           className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Where your useless knowledge becomes your <span className="text-purple-400">entertainment identity</span>
+            <span className="text-zinc-800">What are you </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={index}
+                initial={{ y: 15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -15, opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className={`${words[index].color} font-medium inline-block`}
+              >
+                {words[index].text}
+              </motion.span>
+            </AnimatePresence>
           </h2>
           <p className="text-lg text-zinc-500 font-body leading-relaxed">
             Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
