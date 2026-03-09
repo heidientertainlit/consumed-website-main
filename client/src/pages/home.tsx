@@ -142,10 +142,28 @@ export default function Home() {
         {/* Hero Text Section */}
         <div className="flex flex-col text-center items-center max-w-3xl mx-auto mb-8">
           
-          <motion.p 
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.2]"
+          >
+            How you do entertainment.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-xs md:text-sm font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
+          >
+            CONNECT. TRACK. PLAY.
+          </motion.p>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
             <span className="text-zinc-600">With what you're </span>
@@ -163,15 +181,6 @@ export default function Home() {
               </AnimatePresence>
             <br />
             <span className="text-zinc-600">Where your entertainment lives. All in one place.</span>
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-xs md:text-sm font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
-          >
-            CONNECT. TRACK. PLAY.
           </motion.p>
 
           <motion.p 
