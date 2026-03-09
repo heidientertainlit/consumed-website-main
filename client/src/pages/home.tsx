@@ -101,22 +101,13 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <div className="w-32 md:w-40">
-             <img 
-               src={logoPurple} 
-               alt="Consumed Logo" 
-               className="w-full h-auto" 
-             />
-          </div>
-          <div className="hidden md:flex items-center gap-4 border-l border-zinc-200 pl-8">
-            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
-              <TikTok className="w-5 h-5" />
-            </a>
-          </div>
+        <div className="flex items-center gap-4">
+          <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
+            <TikTok className="w-5 h-5" />
+          </a>
         </div>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -141,6 +132,15 @@ export default function Home() {
         
         {/* Hero Text Section */}
         <div className="flex flex-col text-center items-center max-w-3xl mx-auto mb-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mb-6"
+          >
+            <img src={logoPurple} alt="Consumed Logo" className="w-40 md:w-48 h-auto mx-auto" />
+          </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -180,16 +180,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-xl md:text-2xl font-medium mt-8 mb-2 text-center tracking-wide"
-          >
-            <span className="text-zinc-600">Where your entertainment lives.</span>
-          </motion.p>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
+            className="text-base md:text-lg text-zinc-500 mt-8 mb-6 font-body max-w-xl text-center"
           >
             Movies, shows, books, music, podcasts & games — track them, play over them, connect over them, and discover your Entertainment DNA.
           </motion.p>
@@ -229,10 +220,13 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-10 md:mt-14 text-center max-w-2xl mx-auto"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-3">
+            Where your entertainment lives.
+          </h2>
+          <p className="text-lg md:text-xl text-zinc-500 font-medium leading-tight">
             Stop bouncing between apps.<br />
             Now it's all in one place.
-          </h2>
+          </p>
         </motion.div>
 
         {/* Three-Column Feature Section */}
