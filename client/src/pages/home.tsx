@@ -137,9 +137,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="mb-6"
+            className="mb-1"
           >
-            <img src={logoPurple} alt="Consumed Logo" className="w-64 md:w-80 h-auto mx-auto" />
+            <img src={logoPurple} alt="Consumed Logo" className="w-80 md:w-96 h-auto mx-auto" />
           </motion.div>
           
           <motion.h1 
