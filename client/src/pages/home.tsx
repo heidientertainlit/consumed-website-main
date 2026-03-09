@@ -151,37 +151,19 @@ export default function Home() {
             How you do entertainment.
           </motion.h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-xl md:text-2xl font-medium mb-4 text-center tracking-wide"
-          >
-            <span className="text-zinc-600">Where your entertainment lives.</span>
-          </motion.p>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="text-2xl md:text-3xl font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
           >
             CONNECT. TRACK. PLAY.
           </motion.p>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
-          >
-            Play trivia, track what you consume, and discover your entertainment DNA. Movies, Music, Books, Podcasts, TV, and Gaming — finally, all under one roof.
-          </motion.p>
-
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center items-center w-full"
           >
             <a 
@@ -193,6 +175,24 @@ export default function Home() {
               Test the pilot app
             </a>
           </motion.div>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-xl md:text-2xl font-medium mt-8 mb-2 text-center tracking-wide"
+          >
+            <span className="text-zinc-600">Where your entertainment lives.</span>
+          </motion.p>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
+          >
+            Play trivia, track what you consume, and discover your entertainment DNA. Movies, Music, Books, Podcasts, TV, and Gaming — finally, all under one roof.
+          </motion.p>
 
           {/* Micro-Social Proof */}
           <motion.div 
