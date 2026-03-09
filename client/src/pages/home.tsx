@@ -139,7 +139,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mb-6"
           >
-            <img src={logoPurple} alt="Consumed Logo" className="w-40 md:w-48 h-auto mx-auto" />
+            <img src={logoPurple} alt="Consumed Logo" className="w-64 md:w-80 h-auto mx-auto" />
           </motion.div>
           
           <motion.h1 
@@ -239,9 +239,8 @@ export default function Home() {
         >
           {/* Play */}
           <div className="text-center px-4">
-            <div className="mb-5 flex items-center justify-center gap-[-4px] mx-auto">
-              <Dice5 className="w-9 h-9 text-[#2d1b4e] -rotate-12 -mr-1" />
-              <Dice5 className="w-9 h-9 text-[#2d1b4e] rotate-12 -ml-1" />
+            <div className="mb-5 flex items-center justify-center mx-auto">
+              <Trophy className="w-9 h-9 text-[#2d1b4e]" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl font-bold mb-3">Play</h3>
             <p className="text-zinc-500 font-body text-sm leading-relaxed">
