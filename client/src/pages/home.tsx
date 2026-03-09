@@ -148,7 +148,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.2]"
           >
-            How you do entertainment.
+            CONNECT. TRACK. PLAY.
           </motion.h1>
 
           <motion.p 
@@ -157,7 +157,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-xl md:text-2xl font-medium mb-6 text-center tracking-wide"
           >
-            <span className="text-zinc-600">What you're </span>
+            <span className="text-zinc-600">With what you're </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
@@ -171,7 +171,7 @@ export default function Home() {
                 </motion.span>
               </AnimatePresence>
             <br />
-            <span className="text-zinc-600">Trackable. Playable. All in one place.</span>
+            <span className="text-zinc-600">Where your entertainment lives. All in one place.</span>
           </motion.p>
 
           <motion.p 
@@ -180,7 +180,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
           >
-            Play trivia, track what you consume, and discover your entertainment DNA.
+            Play trivia, track what you consume, and discover your entertainment DNA. Movies, Music, Books, Podcasts, TV, and Gaming — finally, all under one roof.
           </motion.p>
 
           <motion.div 
