@@ -191,7 +191,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base md:text-lg text-zinc-500 mb-6 font-body max-w-xl text-center"
           >
-            Play trivia, track what you consume, and discover your entertainment DNA. Movies, Music, Books, Podcasts, TV, and Gaming — finally, all under one roof.
+            Movies, shows, books, music, podcasts & games — track them, play over them, connect over them, and discover your Entertainment DNA.
           </motion.p>
 
           {/* Micro-Social Proof */}
