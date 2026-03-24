@@ -349,56 +349,25 @@ export default function Home() {
 
                   </motion.div>
 
-        {/* Screenshot Mosaic Section */}
+        {/* Screenshot Strip Carousel */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-20 md:mt-28 w-full max-w-5xl mx-auto px-4 overflow-hidden"
+          className="mt-6 w-full"
         >
-          <p className="text-xs uppercase tracking-widest text-zinc-400 font-body text-center mb-16">Inside the app</p>
-
-          {/* Row 1 — 4 cards, staggered vertically */}
-          <div className="flex gap-4 md:gap-5 justify-center mb-4 md:mb-5">
-            {[
-              { src: promo1, rotate: -2.5, y: 24 },
-              { src: promo2, rotate: 2,    y: -20 },
-              { src: promo3, rotate: -1.5, y: 32 },
-              { src: promo4, rotate: 3,    y: -12 },
-            ].map((item, i) => (
-              <motion.div
+          <div
+            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                viewport={{ once: true }}
-                className="w-[23%] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
-                style={{ transform: `rotate(${item.rotate}deg) translateY(${item.y}px)` }}
+                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
               >
-                <img src={item.src} alt={`Consumed screenshot ${i + 1}`} className="w-full h-auto block" />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Row 2 — 3 cards, centered, staggered */}
-          <div className="flex gap-4 md:gap-5 justify-center">
-            {[
-              { src: promo5, rotate: -2,   y: -16 },
-              { src: promo6, rotate: 1.5,  y: 20 },
-              { src: promo7, rotate: -3,   y: -8 },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.32 + i * 0.08 }}
-                viewport={{ once: true }}
-                className="w-[23%] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
-                style={{ transform: `rotate(${item.rotate}deg) translateY(${item.y}px)` }}
-              >
-                <img src={item.src} alt={`Consumed screenshot ${i + 5}`} className="w-full h-auto block" />
-              </motion.div>
+                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
+              </div>
             ))}
           </div>
         </motion.div>
