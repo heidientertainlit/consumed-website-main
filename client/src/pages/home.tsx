@@ -326,51 +326,38 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </motion.div>
 
-        {/* Visual Separator */}
-        <div className="w-full flex flex-col items-center mt-16 mb-2">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
-          <div className="mt-3 text-center">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
+          {/* Visual Separator */}
+          <div className="w-full flex flex-col items-center mt-10 mb-6">
+            <div className="w-px h-8 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
+            <p className="mt-3 text-xs uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
           </div>
-        </div>
 
-        {/* Carousel Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative w-full max-w-sm md:max-w-md lg:max-w-4xl flex flex-col justify-center items-center"
-        >
-          {/* Phone Frame - Centered */}
-          <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
-            <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
-              <CarouselContent className="h-[704px]">
-                {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
-                  <CarouselItem key={index} className="h-[704px]">
-                    <img 
-                      src={screen} 
-                      alt={`App Screen ${index + 1}`} 
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              {/* Home Indicator */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
-            </div>
-            
-            {/* Navigation buttons - Below the phone */}
-            <div className="flex items-center gap-6 mt-8">
-              <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
-              <span className="text-sm text-zinc-500 font-body">Swipe or tap to explore</span>
-              <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
-            </div>
-          </Carousel>
-
-                  </motion.div>
+          {/* Phone Carousel */}
+          <div className="w-full flex flex-col items-center">
+            <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
+              <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
+                <CarouselContent className="h-[704px]">
+                  {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
+                    <CarouselItem key={index} className="h-[704px]">
+                      <img
+                        src={screen}
+                        alt={`App Screen ${index + 1}`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
+              </div>
+              <div className="flex items-center gap-6 mt-8">
+                <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
+                <span className="text-sm text-zinc-500 font-body">Swipe or tap to explore</span>
+                <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
+              </div>
+            </Carousel>
+          </div>
+        </motion.div>
 
         {/* Useless Knowledge Section */}
         <motion.div
