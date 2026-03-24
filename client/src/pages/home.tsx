@@ -400,10 +400,10 @@ export default function Home() {
           {/* Phone Carousel */}
           <div className="w-full flex flex-col items-center">
             <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
-              <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[720px] w-[350px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
-                <CarouselContent className="h-[704px]">
+              <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[540px] w-[265px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
+                <CarouselContent className="h-[524px]">
                   {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
-                    <CarouselItem key={index} className="h-[704px]">
+                    <CarouselItem key={index} className="h-[524px]">
                       <img
                         src={screen}
                         alt={`App Screen ${index + 1}`}
