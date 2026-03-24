@@ -137,9 +137,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="-mb-2"
+            className="-mb-2 relative inline-block"
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
+            <span
+              className="absolute top-1 right-0 text-xs font-light bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
+              style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '0.05em' }}
+            >
+              beta
+            </span>
           </motion.div>
           
           <motion.h1 
