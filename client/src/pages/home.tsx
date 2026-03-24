@@ -116,7 +116,7 @@ export default function Home() {
           className="flex items-center gap-6"
         >
           <a 
-            href="mailto:support@consumedapp.com"
+            href="mailto:feedback@consumedapp.com?subject=Consumed Beta Feedback"
             className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all"
           >
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
