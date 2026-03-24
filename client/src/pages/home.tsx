@@ -180,7 +180,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2 leading-[1.2] whitespace-nowrap"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2 leading-[1.2] whitespace-nowrap -mt-6 md:-mt-8"
           >
             The social layer of entertainment.
           </motion.h1>
@@ -215,11 +215,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-10 max-w-md text-center"
+            className="mt-10 max-w-2xl text-center"
           >
-            <p className="text-lg font-semibold text-zinc-700 font-body mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-zinc-800 font-heading mb-4 leading-tight">
               Your entertainment is everywhere. That's the problem.
-            </p>
+            </h2>
             <p className="text-base text-zinc-400 font-body leading-relaxed">
               The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
             </p>
