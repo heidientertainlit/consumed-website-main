@@ -220,73 +220,39 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-10 w-full max-w-5xl flex flex-col gap-4"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Left Card — Problem statement */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col shadow-sm border border-zinc-100">
-              <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Left — no card, floats on page */}
+            <div className="flex flex-col px-2">
+              <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-3">
                 Your entertainment is everywhere.<br />That's the problem.
               </h2>
-              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-4">
+              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-5">
                 The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
               </p>
 
-              {/* Illustration */}
-              <div className="flex flex-col gap-2.5 rounded-xl bg-zinc-50 border border-zinc-100 p-3 overflow-hidden">
-
-                {/* Message bubbles */}
-                <div className="flex flex-col gap-1.5">
-                  <div className="self-end bg-[#2d1b4e] text-white text-[11px] px-3 py-1.5 rounded-2xl rounded-br-sm max-w-[78%] font-body leading-snug">
-                    omg you NEED to watch Severance 😭
-                  </div>
-                  <div className="self-start bg-zinc-200 text-zinc-600 text-[11px] px-3 py-1.5 rounded-2xl rounded-bl-sm max-w-[78%] font-body leading-snug">
-                    added to list 📌 what's it on??
-                  </div>
-                  <div className="self-end bg-[#2d1b4e] text-white text-[11px] px-3 py-1.5 rounded-2xl rounded-br-sm max-w-[78%] font-body leading-snug">
-                    Apple TV+ — also read The Covenant 🙏
-                  </div>
+              {/* Illustration — note + bubbles side by side */}
+              <div className="grid grid-cols-2 gap-2.5">
+                {/* Notes snippet */}
+                <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-3 font-body">
+                  <div className="text-[10px] font-bold text-amber-700 mb-2">📝 To Watch</div>
+                  <div className="text-[10px] text-zinc-400 line-through mb-0.5">Severance</div>
+                  <div className="text-[10px] text-zinc-600 mb-0.5">The Covenant</div>
+                  <div className="text-[10px] text-zinc-600 mb-0.5">SmartLess ep?</div>
+                  <div className="text-[10px] text-zinc-300">White Lotus S3...</div>
                 </div>
 
-                {/* Notes app snippet */}
-                <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 font-body">
-                  <div className="text-[10px] font-bold text-amber-700 mb-1">📝 To Watch / Read / Listen</div>
-                  <div className="text-[10px] text-zinc-400 line-through">Severance</div>
-                  <div className="text-[10px] text-zinc-600">The Covenant</div>
-                  <div className="text-[10px] text-zinc-600">SmartLess — that ep w/ Brandi?</div>
-                  <div className="text-[10px] text-zinc-300">White Lotus S3 finale...</div>
-                </div>
-
-                {/* Platform marquee */}
-                <div className="overflow-hidden relative">
-                  <div className="animate-marquee">
-                    {[
-                      { name: "Netflix", bg: "bg-red-500" },
-                      { name: "Spotify", bg: "bg-green-500" },
-                      { name: "Apple TV+", bg: "bg-zinc-800" },
-                      { name: "HBO Max", bg: "bg-purple-700" },
-                      { name: "Goodreads", bg: "bg-amber-700" },
-                      { name: "Letterboxd", bg: "bg-emerald-800" },
-                      { name: "Audible", bg: "bg-orange-500" },
-                      { name: "Podcasts", bg: "bg-violet-600" },
-                      { name: "YouTube", bg: "bg-red-600" },
-                      { name: "Disney+", bg: "bg-blue-700" },
-                      { name: "Netflix", bg: "bg-red-500" },
-                      { name: "Spotify", bg: "bg-green-500" },
-                      { name: "Apple TV+", bg: "bg-zinc-800" },
-                      { name: "HBO Max", bg: "bg-purple-700" },
-                      { name: "Goodreads", bg: "bg-amber-700" },
-                      { name: "Letterboxd", bg: "bg-emerald-800" },
-                      { name: "Audible", bg: "bg-orange-500" },
-                      { name: "Podcasts", bg: "bg-violet-600" },
-                      { name: "YouTube", bg: "bg-red-600" },
-                      { name: "Disney+", bg: "bg-blue-700" },
-                    ].map((p, i) => (
-                      <span key={i} className={`${p.bg} text-white text-[9px] px-2.5 py-0.5 rounded-full whitespace-nowrap font-body font-medium`}>
-                        {p.name}
-                      </span>
-                    ))}
+                {/* Chat bubbles */}
+                <div className="flex flex-col gap-1.5 justify-center">
+                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
+                    omg watch Severance 😭
+                  </div>
+                  <div className="self-start bg-zinc-200 text-zinc-600 text-[10px] px-2.5 py-1.5 rounded-2xl rounded-bl-sm max-w-full font-body leading-snug">
+                    added 📌 what's it on?
+                  </div>
+                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
+                    Apple TV+ 🙏 also The Covenant
                   </div>
                 </div>
-
               </div>
             </div>
 
