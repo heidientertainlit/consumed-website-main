@@ -29,3 +29,18 @@ export const insertSubscriberSchema = createInsertSchema(subscribers).pick({
 
 export type InsertSubscriber = z.infer<typeof insertSubscriberSchema>;
 export type Subscriber = typeof subscribers.$inferSelect;
+
+export const feedback = pgTable("feedback", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email"),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertFeedbackSchema = createInsertSchema(feedback).pick({
+  email: true,
+  message: true,
+});
+
+export type InsertFeedback = z.infer<typeof insertFeedbackSchema>;
+export type Feedback = typeof feedback.$inferSelect;
