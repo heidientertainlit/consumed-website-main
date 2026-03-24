@@ -204,6 +204,20 @@ export default function Home() {
             </a>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-10 max-w-md text-center"
+          >
+            <p className="text-base font-semibold text-zinc-700 font-body mb-3">
+              Your entertainment is everywhere. That's the problem.
+            </p>
+            <p className="text-sm text-zinc-400 font-body leading-relaxed">
+              The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
+            </p>
+          </motion.div>
+
           {/* Micro-Social Proof */}
           <motion.div 
             initial={{ opacity: 0 }}
