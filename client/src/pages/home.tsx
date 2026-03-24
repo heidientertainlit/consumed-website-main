@@ -173,14 +173,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
           >
-            <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
+            <img src={logoPurple} alt="Consumed Logo" className="w-[18rem] md:w-[34rem] h-auto mx-auto" />
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 leading-[1.2] whitespace-nowrap -mt-2 text-[#3b0764]"
+            className="text-xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 leading-[1.2] md:whitespace-nowrap -mt-2 text-[#3b0764]"
           >
             The social layer of entertainment.
           </motion.h1>
@@ -394,7 +394,7 @@ export default function Home() {
           {/* Visual Separator */}
           <div className="w-full flex flex-col items-center mt-10 mb-6">
             <div className="w-px h-8 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
-            <p className="mt-3 text-[9px] uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
+            <p className="mt-3 text-[7px] md:text-[9px] uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
           </div>
 
           {/* Phone Carousel */}
