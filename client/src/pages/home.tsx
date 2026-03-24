@@ -252,6 +252,29 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Screenshot Strip Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-10 w-full"
+        >
+          <div
+            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
+              >
+                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Section Heading + Features — Gray Rounded Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -348,29 +371,6 @@ export default function Home() {
           </Carousel>
 
                   </motion.div>
-
-        {/* Screenshot Strip Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-6 w-full"
-        >
-          <div
-            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
-              >
-                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Useless Knowledge Section */}
         <motion.div
