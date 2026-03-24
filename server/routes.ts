@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertSubscriberSchema } from "@shared/schema";
+import { insertSubscriberSchema, insertFeedbackSchema } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -24,6 +24,20 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Subscribe error:", error);
       return res.status(500).json({ error: "Something went wrong" });
+    }
+  });
+
+  app.post("/api/feedback", async (req, res) => {
+    try {
+      const result = insertFeedbackSchema.safeParse(req.body);
+      if (!result.success) {
+        return res.status(400).json({ error: "Please include a message." });
+      }
+      await storage.addFeedback(result.data);
+      return res.status(201).json({ message: "Thanks for your feedback!" });
+    } catch (error) {
+      console.error("Feedback error:", error);
+      return res.status(500).json({ error: "Something went wrong." });
     }
   });
 

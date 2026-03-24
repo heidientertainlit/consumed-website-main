@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks, Dice5, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
@@ -40,9 +40,15 @@ export default function Home() {
   ];
   const [index, setIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [feedbackEmail, setFeedbackEmail] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFeedbackSubmitting, setIsFeedbackSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+  const [feedbackError, setFeedbackError] = useState<string | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -94,6 +100,32 @@ export default function Home() {
     }
   };
 
+  const handleFeedback = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!feedbackMessage.trim()) return;
+    setIsFeedbackSubmitting(true);
+    setFeedbackError(null);
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: feedbackEmail || undefined, message: feedbackMessage }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setFeedbackSubmitted(true);
+        setFeedbackEmail("");
+        setFeedbackMessage("");
+      } else {
+        setFeedbackError(data.error || 'Something went wrong.');
+      }
+    } catch {
+      setFeedbackError('Failed to connect. Please try again.');
+    } finally {
+      setIsFeedbackSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f8f8f8] text-zinc-900 overflow-x-hidden selection:bg-primary/30">
       {/* Background */}
@@ -115,13 +147,14 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="flex items-center gap-6"
         >
-          <a 
-            href="mailto:feedback@consumedapp.com?subject=Consumed Beta Feedback"
+          <button
+            data-testid="button-feedback"
+            onClick={() => { setIsFeedbackOpen(true); setFeedbackSubmitted(false); }}
             className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all"
           >
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
             <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
-          </a>
+          </button>
         </motion.div>
       </nav>
 
@@ -418,6 +451,72 @@ export default function Home() {
                     "Notify me"
                   )}
                 </Button>
+              </form>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Feedback Modal */}
+      <Dialog open={isFeedbackOpen} onOpenChange={(open) => { setIsFeedbackOpen(open); if (!open) setFeedbackSubmitted(false); }}>
+        <DialogContent className="bg-white rounded-2xl border border-zinc-100 shadow-2xl max-w-md w-full p-8">
+          {feedbackSubmitted ? (
+            <div className="flex flex-col items-center gap-4 py-6 text-center">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 to-indigo-100 flex items-center justify-center">
+                <svg className="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-zinc-900 font-heading">Thanks so much!</h2>
+              <p className="text-zinc-500 font-body text-sm leading-relaxed">Your feedback helps shape Consumed. We read every single message.</p>
+              <button
+                onClick={() => setIsFeedbackOpen(false)}
+                className="mt-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold hover:opacity-90 transition-all font-body"
+              >
+                Done
+              </button>
+            </div>
+          ) : (
+            <>
+              <DialogHeader className="mb-6">
+                <DialogTitle className="text-2xl font-bold text-zinc-900 font-heading">Give Feedback</DialogTitle>
+                <DialogDescription className="text-zinc-500 font-body text-sm mt-1">
+                  Tell us what you love, what's broken, or what you'd love to see.
+                </DialogDescription>
+              </DialogHeader>
+              <form onSubmit={handleFeedback} className="flex flex-col gap-4">
+                <input
+                  type="email"
+                  placeholder="Your email (optional)"
+                  value={feedbackEmail}
+                  onChange={(e) => setFeedbackEmail(e.target.value)}
+                  data-testid="input-feedback-email"
+                  className="w-full h-11 px-4 rounded-xl border border-zinc-200 bg-zinc-50 text-sm font-body text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                />
+                <textarea
+                  placeholder="What's on your mind?"
+                  value={feedbackMessage}
+                  onChange={(e) => setFeedbackMessage(e.target.value)}
+                  required
+                  rows={5}
+                  data-testid="input-feedback-message"
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-sm font-body text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-300 resize-none"
+                />
+                {feedbackError && (
+                  <p className="text-red-500 text-xs font-body">{feedbackError}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={isFeedbackSubmitting || !feedbackMessage.trim()}
+                  data-testid="button-submit-feedback"
+                  className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isFeedbackSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin mx-auto" />
+                  ) : (
+                    "Send Feedback"
+                  )}
+                </button>
               </form>
             </>
           )}

@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Subscriber, type InsertSubscriber, users, subscribers } from "@shared/schema";
+import { type User, type InsertUser, type Subscriber, type InsertSubscriber, type Feedback, type InsertFeedback, users, subscribers, feedback } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -8,6 +8,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   addSubscriber(email: string): Promise<Subscriber>;
   getSubscriberByEmail(email: string): Promise<Subscriber | undefined>;
+  addFeedback(data: InsertFeedback): Promise<Feedback>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -34,6 +35,11 @@ export class DatabaseStorage implements IStorage {
   async getSubscriberByEmail(email: string): Promise<Subscriber | undefined> {
     const [subscriber] = await db.select().from(subscribers).where(eq(subscribers.email, email));
     return subscriber;
+  }
+
+  async addFeedback(data: InsertFeedback): Promise<Feedback> {
+    const [entry] = await db.insert(feedback).values(data).returning();
+    return entry;
   }
 }
 
