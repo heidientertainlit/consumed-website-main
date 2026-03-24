@@ -198,7 +198,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center items-center w-full"
+            className="flex justify-center items-center w-full mt-4"
           >
             <a 
               href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
