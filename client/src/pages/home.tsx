@@ -218,66 +218,70 @@ export default function Home() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="mt-10 w-full max-w-5xl flex flex-col gap-4"
         >
-          {/* Left Card — Problem statement */}
-          <div className="bg-white rounded-3xl p-8 md:p-10 flex flex-col justify-between shadow-sm border border-zinc-100">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading leading-tight mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Left Card — Problem statement */}
+            <div className="bg-white rounded-2xl p-6 flex flex-col shadow-sm border border-zinc-100">
+              <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-3">
                 Your entertainment is everywhere.<br />That's the problem.
               </h2>
-              <p className="text-base text-zinc-400 font-body leading-relaxed">
+              <p className="text-sm text-zinc-400 font-body leading-relaxed">
                 The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
               </p>
             </div>
-            <div className="mt-8 flex items-center gap-3 text-[11px] text-zinc-500 font-body">
-              <div className="flex -space-x-2">
+
+            {/* Right Card — Live activity feed */}
+            <div className="bg-[#1a0a2e] rounded-2xl p-6 flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold text-white font-heading leading-tight mb-4">
+                Entertainment is already social.
+              </h3>
+              <div className="flex flex-col gap-2.5 overflow-y-auto max-h-[200px] scrollbar-hide">
                 {[
-                  { name: "Jeeppler", color: "bg-slate-700" },
-                  { name: "kjwoodsemh", color: "bg-amber-600" },
-                  { name: "linds047", color: "bg-emerald-600" },
-                  { name: "nicklombardo2", color: "bg-blue-600" },
-                  { name: "seth", color: "bg-orange-500" },
-                  { name: "hulabear23", color: "bg-teal-600" },
-                  { name: "madhope21", color: "bg-rose-600" },
-                  { name: "Snazzyman", color: "bg-cyan-600" }
-                ].map((user, i) => (
-                  <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-white flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
-                    {user.name.slice(0, 2).toUpperCase()}
+                  { initials: "JR", color: "bg-violet-600", name: "jordanrivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-500/20 text-violet-300" },
+                  { initials: "LK", color: "bg-emerald-600", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-500/20 text-emerald-300" },
+                  { initials: "KJ", color: "bg-amber-600", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-500/20 text-amber-300" },
+                  { initials: "SE", color: "bg-blue-600", name: "seth", time: "1h ago", text: "started reading James by Percival Everett", tag: "book", tagColor: "bg-blue-500/20 text-blue-300" },
+                  { initials: "MH", color: "bg-rose-600", name: "madhope21", time: "2h ago", text: "added Sinners to their watchlist after you rated it", tag: "movie", tagColor: "bg-rose-500/20 text-rose-300" },
+                  { initials: "HB", color: "bg-teal-600", name: "hulabear23", time: "3h ago", text: "listening to SmartLess — ep 212 right now 🎧", tag: "podcast", tagColor: "bg-teal-500/20 text-teal-300" },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/[0.06] hover:bg-white/[0.09] transition-colors rounded-xl p-3 flex items-start gap-3 flex-shrink-0">
+                    <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0 mt-0.5`}>
+                      {item.initials}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-white/90 text-xs font-semibold font-body">{item.name}</span>
+                        <span className="text-white/35 text-[10px] font-body">{item.time}</span>
+                      </div>
+                      <p className="text-white/60 text-xs font-body leading-snug">{item.text}</p>
+                      <span className={`mt-1.5 inline-block text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
+                    </div>
                   </div>
                 ))}
               </div>
-              <p>Join early adopters and get Consumed.</p>
             </div>
           </div>
 
-          {/* Right Card — Live activity feed */}
-          <div className="bg-[#1a0a2e] rounded-3xl p-8 md:p-10 flex flex-col">
-            <h3 className="text-2xl md:text-3xl font-bold text-white font-heading leading-tight mb-6">
-              Entertainment is<br />already social.
-            </h3>
-            <div className="flex flex-col gap-3">
+          {/* Avatars — below both cards */}
+          <div className="flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center">
+            <div className="flex -space-x-2">
               {[
-                { initials: "JR", color: "bg-violet-600", name: "jordanrivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-500/20 text-violet-300" },
-                { initials: "LK", color: "bg-emerald-600", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-500/20 text-emerald-300" },
-                { initials: "KJ", color: "bg-amber-600", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-500/20 text-amber-300" },
-                { initials: "SE", color: "bg-blue-600", name: "seth", time: "1h ago", text: "started reading James by Percival Everett", tag: "book", tagColor: "bg-blue-500/20 text-blue-300" },
-              ].map((item, i) => (
-                <div key={i} className="bg-white/[0.06] hover:bg-white/[0.09] transition-colors rounded-2xl p-4 flex items-start gap-3">
-                  <div className={`w-9 h-9 rounded-full ${item.color} flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0 mt-0.5`}>
-                    {item.initials}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-white/90 text-sm font-semibold font-body">{item.name}</span>
-                      <span className="text-white/35 text-xs font-body">{item.time}</span>
-                    </div>
-                    <p className="text-white/60 text-sm font-body leading-snug">{item.text}</p>
-                    <span className={`mt-2 inline-block text-xs ${item.tagColor} px-2.5 py-0.5 rounded-full font-body`}>{item.tag}</span>
-                  </div>
+                { name: "Jeeppler", color: "bg-slate-700" },
+                { name: "kjwoodsemh", color: "bg-amber-600" },
+                { name: "linds047", color: "bg-emerald-600" },
+                { name: "nicklombardo2", color: "bg-blue-600" },
+                { name: "seth", color: "bg-orange-500" },
+                { name: "hulabear23", color: "bg-teal-600" },
+                { name: "madhope21", color: "bg-rose-600" },
+                { name: "Snazzyman", color: "bg-cyan-600" }
+              ].map((user, i) => (
+                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
+                  {user.name.slice(0, 2).toUpperCase()}
                 </div>
               ))}
             </div>
+            <p>Join early adopters and get Consumed.</p>
           </div>
         </motion.div>
 
