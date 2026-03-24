@@ -216,7 +216,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 0.4 }}
-            className="mt-5 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+            className="mt-8 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
           >
             <div className="flex -space-x-2">
               {[
@@ -234,7 +234,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p>Join early adopters and get Consumed.</p>
+            <p>See what everyone's into, get Consumed.</p>
           </motion.div>
 
         </div>
