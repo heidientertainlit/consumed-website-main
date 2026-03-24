@@ -393,7 +393,7 @@ export default function Home() {
           {/* Visual Separator */}
           <div className="w-full flex flex-col items-center mt-10 mb-6">
             <div className="w-px h-8 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
-            <p className="mt-3 text-xs uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
+            <p className="mt-3 text-[9px] uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
           </div>
 
           {/* Phone Carousel */}
