@@ -116,13 +116,11 @@ export default function Home() {
           className="flex items-center gap-6"
         >
           <a 
-            href="https://app.consumedapp.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-gradient-to-r from-[#1a0a2e] to-[#2d1b4e] rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-purple-900/20 hover:opacity-90 transition-all"
+            href="mailto:support@consumedapp.com"
+            className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all"
           >
-            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)] flex-shrink-0"></span>
-            <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">Accepting pilot users</span>
+            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
+            <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
           </a>
         </motion.div>
       </nav>
@@ -137,15 +135,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="relative inline-block"
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
-            <span
-              className="absolute bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full px-1.5 py-px text-[8px] font-semibold tracking-widest uppercase"
-              style={{ fontFamily: "'Poppins', sans-serif", bottom: '10%', right: '6%' }}
-            >
-              BETA
-            </span>
           </motion.div>
           
           <motion.h1 
