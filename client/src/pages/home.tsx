@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks, Dice5, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -147,14 +148,10 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="flex items-center gap-6"
         >
-          <button
-            data-testid="button-feedback"
-            onClick={() => { setIsFeedbackOpen(true); setFeedbackSubmitted(false); }}
-            className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all"
-          >
+          <Link href="/feedback" className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all" data-testid="link-feedback">
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
             <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
-          </button>
+          </Link>
         </motion.div>
       </nav>
 
@@ -197,12 +194,13 @@ export default function Home() {
             className="flex justify-center items-center w-full"
           >
             <a 
-              href="https://app.consumedapp.com"
+              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
               target="_blank"
               rel="noopener noreferrer"
               className="h-12 px-12 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
+              data-testid="link-download-app"
             >
-              Test the pilot app
+              Download the App
             </a>
           </motion.div>
 

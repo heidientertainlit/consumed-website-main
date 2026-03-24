@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Support from "@/pages/support";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
+import Feedback from "@/pages/feedback";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/support" component={Support} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/feedback" component={Feedback} />
       <Route component={NotFound} />
     </Switch>
   );
