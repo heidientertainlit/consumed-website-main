@@ -141,8 +141,8 @@ export default function Home() {
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
             <span
-              className="absolute top-1 right-0 text-xs font-light bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
-              style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '0.05em' }}
+              className="absolute text-xs font-medium bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
+              style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '0.05em', top: '18%', right: '8%', transform: 'rotate(-8deg)' }}
             >
               beta
             </span>
