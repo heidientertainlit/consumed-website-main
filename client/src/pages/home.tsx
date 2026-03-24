@@ -211,16 +211,65 @@ export default function Home() {
             </a>
           </motion.div>
 
+          {/* Avatars — under Download button */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.8 }}
+            transition={{ delay: 0.4 }}
+            className="mt-5 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+          >
+            <div className="flex -space-x-2">
+              {[
+                { name: "Jeeppler", color: "bg-slate-700" },
+                { name: "kjwoodsemh", color: "bg-amber-600" },
+                { name: "linds047", color: "bg-emerald-600" },
+                { name: "nicklombardo2", color: "bg-blue-600" },
+                { name: "seth", color: "bg-orange-500" },
+                { name: "hulabear23", color: "bg-teal-600" },
+                { name: "madhope21", color: "bg-rose-600" },
+                { name: "Snazzyman", color: "bg-cyan-600" }
+              ].map((user, i) => (
+                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
+                  {user.name.slice(0, 2).toUpperCase()}
+                </div>
+              ))}
+            </div>
+            <p>Join early adopters and get Consumed.</p>
+          </motion.div>
+
         </div>
+
+        {/* Screenshot Strip Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-10 w-full"
+        >
+          <div
+            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
+              >
+                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Two-Column Section */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-10 w-full max-w-5xl flex flex-col gap-4"
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-10 w-full max-w-5xl"
         >
-          {/* Single unified card with divider */}
           <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-zinc-100">
 
@@ -232,8 +281,6 @@ export default function Home() {
                 <p className="text-sm text-zinc-400 font-body leading-relaxed mb-5">
                   The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
                 </p>
-
-                {/* Illustration — note + bubbles side by side */}
                 <div className="grid grid-cols-2 gap-2.5 mt-auto">
                   <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-3 font-body">
                     <div className="text-[10px] font-bold text-amber-700 mb-2">📝 To Watch</div>
@@ -288,50 +335,6 @@ export default function Home() {
               </div>
 
             </div>
-          </div>
-
-          {/* Avatars — below both cards */}
-          <div className="flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center">
-            <div className="flex -space-x-2">
-              {[
-                { name: "Jeeppler", color: "bg-slate-700" },
-                { name: "kjwoodsemh", color: "bg-amber-600" },
-                { name: "linds047", color: "bg-emerald-600" },
-                { name: "nicklombardo2", color: "bg-blue-600" },
-                { name: "seth", color: "bg-orange-500" },
-                { name: "hulabear23", color: "bg-teal-600" },
-                { name: "madhope21", color: "bg-rose-600" },
-                { name: "Snazzyman", color: "bg-cyan-600" }
-              ].map((user, i) => (
-                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
-                  {user.name.slice(0, 2).toUpperCase()}
-                </div>
-              ))}
-            </div>
-            <p>Join early adopters and get Consumed.</p>
-          </div>
-        </motion.div>
-
-        {/* Screenshot Strip Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-10 w-full"
-        >
-          <div
-            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
-              >
-                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
-              </div>
-            ))}
           </div>
         </motion.div>
 
