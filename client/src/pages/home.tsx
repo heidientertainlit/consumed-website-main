@@ -204,15 +204,6 @@ export default function Home() {
             </a>
           </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-zinc-500 mt-8 mb-6 font-body max-w-xl text-center"
-          >
-            Movies, shows, books, music, podcasts & games — track them, play over them, connect over them, and discover your Entertainment DNA.
-          </motion.p>
-
           {/* Micro-Social Proof */}
           <motion.div 
             initial={{ opacity: 0 }}
@@ -254,6 +245,9 @@ export default function Home() {
           <p className="text-lg md:text-xl text-zinc-500 font-medium leading-tight">
             Stop bouncing between apps.<br />
             Now it's all in one place.
+          </p>
+          <p className="text-base md:text-lg text-zinc-400 mt-4 font-body max-w-xl mx-auto">
+            Movies, shows, books, music, podcasts & games — track them, play over them, connect over them, and discover your Entertainment DNA.
           </p>
         </motion.div>
 
