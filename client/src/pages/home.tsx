@@ -141,10 +141,10 @@ export default function Home() {
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
             <span
-              className="absolute text-xs font-medium bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
-              style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: '0.05em', top: '18%', right: '8%', transform: 'rotate(-8deg)' }}
+              className="absolute bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-widest uppercase"
+              style={{ fontFamily: "'Poppins', sans-serif", top: '10%', right: '6%' }}
             >
-              beta
+              BETA
             </span>
           </motion.div>
           
