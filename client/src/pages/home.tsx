@@ -245,7 +245,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-10 w-full"
+          className="mt-16 w-full"
         >
           <div
             className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -270,71 +270,72 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-10 w-full max-w-5xl"
         >
-          <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-zinc-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-              {/* Left — problem statement */}
-              <div className="p-7 flex flex-col">
-                <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-3">
-                  Your entertainment is everywhere.<br />That's the problem.
-                </h2>
-                <p className="text-sm text-zinc-400 font-body leading-relaxed mb-5">
-                  The rec buried in the group chat. The Notes app full of shows you'll never find. No idea what your friends are actually watching right now. You're already doing this. Consumed just gives it a home.
-                </p>
-                <div className="grid grid-cols-2 gap-2.5 mt-auto">
-                  <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-3 font-body">
-                    <div className="text-[10px] font-bold text-amber-700 mb-2">📝 To Watch</div>
-                    <div className="text-[10px] text-zinc-400 line-through mb-0.5">Severance</div>
-                    <div className="text-[10px] text-zinc-600 mb-0.5">The Covenant</div>
-                    <div className="text-[10px] text-zinc-600 mb-0.5">SmartLess ep?</div>
-                    <div className="text-[10px] text-zinc-300">White Lotus S3...</div>
+            {/* Left card — problem statement */}
+            <div className="bg-zinc-50 rounded-2xl border border-zinc-100 p-8 md:p-10 flex flex-col">
+              <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-4">
+                Your entertainment is everywhere.<br />That's the problem.
+              </h2>
+              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-2">
+                The rec buried in the group chat. The Notes app full of shows you'll never find. Want to see what your friends are actually watching, reading, or listening to right now?
+              </p>
+              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-6">
+                You're already doing this. Consumed just gives it a home.
+              </p>
+              <div className="grid grid-cols-2 gap-2.5 mt-auto">
+                <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-3 font-body">
+                  <div className="text-[10px] font-bold text-amber-700 mb-2">📝 To Watch</div>
+                  <div className="text-[10px] text-zinc-400 line-through mb-0.5">Severance</div>
+                  <div className="text-[10px] text-zinc-600 mb-0.5">The Covenant</div>
+                  <div className="text-[10px] text-zinc-600 mb-0.5">SmartLess ep?</div>
+                  <div className="text-[10px] text-zinc-300">White Lotus S3...</div>
+                </div>
+                <div className="flex flex-col gap-1.5 justify-center">
+                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
+                    omg watch Severance 😭
                   </div>
-                  <div className="flex flex-col gap-1.5 justify-center">
-                    <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
-                      omg watch Severance 😭
-                    </div>
-                    <div className="self-start bg-zinc-100 text-zinc-600 text-[10px] px-2.5 py-1.5 rounded-2xl rounded-bl-sm max-w-full font-body leading-snug">
-                      added 📌 what's it on?
-                    </div>
-                    <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
-                      Apple TV+ 🙏
-                    </div>
+                  <div className="self-start bg-zinc-200 text-zinc-600 text-[10px] px-2.5 py-1.5 rounded-2xl rounded-bl-sm max-w-full font-body leading-snug">
+                    added 📌 what's it on?
+                  </div>
+                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
+                    Apple TV+ 🙏
                   </div>
                 </div>
               </div>
-
-              {/* Right — social activity feed */}
-              <div className="p-7 flex flex-col">
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-4">
-                  Entertainment is already social.
-                </h3>
-                <div className="flex flex-col gap-2 overflow-y-auto max-h-[220px] scrollbar-hide">
-                  {[
-                    { initials: "JR", color: "bg-violet-500", name: "jordanrivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-50 text-violet-600" },
-                    { initials: "LK", color: "bg-emerald-500", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-50 text-emerald-600" },
-                    { initials: "KJ", color: "bg-amber-500", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-50 text-amber-600" },
-                    { initials: "SE", color: "bg-blue-500", name: "seth", time: "1h ago", text: "started reading James by Percival Everett", tag: "book", tagColor: "bg-blue-50 text-blue-600" },
-                    { initials: "MH", color: "bg-rose-500", name: "madhope21", time: "2h ago", text: "added Sinners to their watchlist after you rated it", tag: "movie", tagColor: "bg-rose-50 text-rose-600" },
-                    { initials: "HB", color: "bg-teal-500", name: "hulabear23", time: "3h ago", text: "listening to SmartLess — ep 212 right now 🎧", tag: "podcast", tagColor: "bg-teal-50 text-teal-600" },
-                  ].map((item, i) => (
-                    <div key={i} className="hover:bg-zinc-50 transition-colors rounded-xl p-3 flex items-start gap-3 flex-shrink-0">
-                      <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0 mt-0.5`}>
-                        {item.initials}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-0.5">
-                          <span className="text-zinc-800 text-xs font-semibold font-body">{item.name}</span>
-                          <span className="text-zinc-400 text-[10px] font-body">{item.time}</span>
-                        </div>
-                        <p className="text-zinc-500 text-xs font-body leading-snug">{item.text}</p>
-                        <span className={`mt-1.5 inline-block text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
             </div>
+
+            {/* Right card — social activity feed */}
+            <div className="bg-zinc-50 rounded-2xl border border-zinc-100 p-8 md:p-10 flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-4">
+                Entertainment is already social.
+              </h3>
+              <div className="flex flex-col gap-2 overflow-y-auto max-h-[260px] scrollbar-hide">
+                {[
+                  { initials: "JR", color: "bg-violet-500", name: "jordanrivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-100 text-violet-600" },
+                  { initials: "LK", color: "bg-emerald-500", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-100 text-emerald-600" },
+                  { initials: "KJ", color: "bg-amber-500", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-100 text-amber-600" },
+                  { initials: "SE", color: "bg-blue-500", name: "seth", time: "1h ago", text: "started reading James by Percival Everett", tag: "book", tagColor: "bg-blue-100 text-blue-600" },
+                  { initials: "MH", color: "bg-rose-500", name: "madhope21", time: "2h ago", text: "added Sinners to their watchlist after you rated it", tag: "movie", tagColor: "bg-rose-100 text-rose-600" },
+                  { initials: "HB", color: "bg-teal-500", name: "hulabear23", time: "3h ago", text: "listening to SmartLess — ep 212 right now 🎧", tag: "podcast", tagColor: "bg-teal-100 text-teal-600" },
+                ].map((item, i) => (
+                  <div key={i} className="hover:bg-zinc-100 transition-colors rounded-xl p-3 flex items-start gap-3 flex-shrink-0">
+                    <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0 mt-0.5`}>
+                      {item.initials}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="text-zinc-800 text-xs font-semibold font-body">{item.name}</span>
+                        <span className="text-zinc-400 text-[10px] font-body">{item.time}</span>
+                      </div>
+                      <p className="text-zinc-500 text-xs font-body leading-snug">{item.text}</p>
+                      <span className={`mt-1.5 inline-block text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </motion.div>
 
