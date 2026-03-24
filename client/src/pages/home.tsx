@@ -137,17 +137,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="flex flex-col items-center"
+            className="relative inline-block"
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[26rem] md:w-[34rem] h-auto mx-auto" />
-            <div className="w-[26rem] md:w-[34rem] flex justify-end pr-[7%] -mt-1">
-              <span
-                className="bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-widest uppercase"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                BETA
-              </span>
-            </div>
+            <span
+              className="absolute bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-widest uppercase"
+              style={{ fontFamily: "'Poppins', sans-serif", top: '0%', right: '4%' }}
+            >
+              BETA
+            </span>
           </motion.div>
           
           <motion.h1 
