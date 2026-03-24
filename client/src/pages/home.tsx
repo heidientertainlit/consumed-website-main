@@ -175,7 +175,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-[1.2]"
           >
-            How you do entertainment.
+            The social layer of entertainment.
           </motion.h1>
 
           <motion.p
