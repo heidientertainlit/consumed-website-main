@@ -16,6 +16,13 @@ import screen3 from "@assets/IMG_5992_1769627702651.PNG";
 import screen4 from "@assets/IMG_5993_1769627706216.PNG";
 import screen5 from "@assets/IMG_5994_1769627709299.PNG";
 import screen6 from "@assets/IMG_5995_1769627712282.PNG";
+import promo1 from "@assets/1_1774376395182.png";
+import promo2 from "@assets/2_1774376395182.png";
+import promo3 from "@assets/3_1774376395182.png";
+import promo4 from "@assets/4_1774376395182.png";
+import promo5 from "@assets/5_1774376395183.png";
+import promo6 from "@assets/6_1774376395183.png";
+import promo7 from "@assets/7_1774376395183.png";
 
 // TikTok Icon Component since it's not in Lucide
 const TikTok = ({ className }: { className?: string }) => (
@@ -346,6 +353,43 @@ export default function Home() {
           </Carousel>
 
                   </motion.div>
+
+        {/* Screenshot Mosaic Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mt-20 md:mt-28 w-full max-w-5xl mx-auto px-4"
+        >
+          <p className="text-xs uppercase tracking-widest text-zinc-400 font-body text-center mb-10">Inside the app</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+            {[
+              { src: promo1, rotate: "-rotate-1" },
+              { src: promo2, rotate: "rotate-1" },
+              { src: promo3, rotate: "-rotate-[0.5deg]" },
+              { src: promo4, rotate: "rotate-[1.5deg]" },
+              { src: promo5, rotate: "-rotate-1" },
+              { src: promo6, rotate: "rotate-[0.5deg]" },
+              { src: promo7, rotate: "-rotate-[1.5deg]" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                viewport={{ once: true }}
+                className={`${item.rotate} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ${i === 6 ? "md:col-start-2" : ""}`}
+              >
+                <img
+                  src={item.src}
+                  alt={`Consumed app screenshot ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Useless Knowledge Section */}
         <motion.div
