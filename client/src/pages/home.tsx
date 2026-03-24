@@ -239,15 +239,11 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-10 md:mt-14 text-center max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-3">
-            Consumed is the app where your entertainment lives.
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-4">
+            Consumed is where your entertainment finally lives.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-500 font-medium leading-tight">
-            Stop bouncing between apps.<br />
-            Now it's all in one place.
-          </p>
-          <p className="text-base md:text-lg text-zinc-400 mt-4 font-body max-w-xl mx-auto">
-            Movies, shows, books, music, podcasts & games — track them, play over them, connect over them, and discover your Entertainment DNA.
+          <p className="text-base md:text-lg text-zinc-500 font-body max-w-xl mx-auto leading-relaxed">
+            No more scattered apps, buried recs, or losing track of what your friends are into. Movies, shows, books, music, podcasts & games — track them, play over them, connect over them.
           </p>
         </motion.div>
 
