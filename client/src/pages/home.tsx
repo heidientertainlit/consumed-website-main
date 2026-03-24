@@ -252,61 +252,56 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Section Heading */}
+        {/* Section Heading + Features — Gray Rounded Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-10 md:mt-14 text-center max-w-2xl mx-auto"
+          className="mt-10 md:mt-14 w-full max-w-5xl mx-auto bg-zinc-100/80 rounded-3xl px-8 md:px-16 py-12 md:py-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-4">
-            Consumed is where your entertainment finally lives.
-          </h2>
-          <p className="text-base md:text-lg text-zinc-500 font-body max-w-xl mx-auto leading-relaxed">
-            No more scattered apps, buried recs, or losing track of what your friends are into. Movies, shows, books, music, podcasts & games — track them, play over them, connect over them.
-          </p>
-        </motion.div>
-
-        {/* Three-Column Feature Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto"
-        >
-          {/* Play */}
-          <div className="text-center px-4">
-            <div className="mb-5 flex items-center justify-center mx-auto">
-              <Trophy className="w-9 h-9 text-[#2d1b4e]" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Play</h3>
-            <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              Predict. Compete. Climb the leaderboard.
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-4">
+              Consumed finally gives all your entertainment, one home.
+            </h2>
+            <p className="text-base md:text-lg text-zinc-500 font-body leading-relaxed">
+              No more scattered apps, buried recs, or losing track of what your friends are into. Movies, shows, books, music, podcasts & games — track them, play over them, connect over them.
             </p>
           </div>
 
-          {/* Track */}
-          <div className="text-center px-4">
-            <div className="mb-5 flex items-center justify-center">
-              <ListChecks className="w-10 h-10 text-[#2d1b4e]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {/* Play */}
+            <div className="text-center px-4">
+              <div className="mb-5 flex items-center justify-center mx-auto">
+                <Trophy className="w-9 h-9 text-[#2d1b4e]" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Play</h3>
+              <p className="text-zinc-500 font-body text-sm leading-relaxed">
+                Predict. Compete. Climb the leaderboard.
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-3">Track</h3>
-            <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              Log everything you watch, read, and play.
-            </p>
-          </div>
 
-          {/* Connect */}
-          <div className="text-center px-4">
-            <div className="mb-5 flex items-center justify-center">
-              <Users className="w-10 h-10 text-[#2d1b4e]" />
+            {/* Track */}
+            <div className="text-center px-4">
+              <div className="mb-5 flex items-center justify-center">
+                <ListChecks className="w-10 h-10 text-[#2d1b4e]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Track</h3>
+              <p className="text-zinc-500 font-body text-sm leading-relaxed">
+                Log everything you watch, read, and play.
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-3">Connect</h3>
-            <p className="text-zinc-500 font-body text-sm leading-relaxed">
-              See what friends are into. Share takes. Compare taste.
-            </p>
+
+            {/* Connect */}
+            <div className="text-center px-4">
+              <div className="mb-5 flex items-center justify-center">
+                <Users className="w-10 h-10 text-[#2d1b4e]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Connect</h3>
+              <p className="text-zinc-500 font-body text-sm leading-relaxed">
+                See what friends are into. Share takes. Compare taste.
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -360,32 +355,49 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mt-20 md:mt-28 w-full max-w-5xl mx-auto px-4"
+          className="mt-20 md:mt-28 w-full max-w-5xl mx-auto px-4 overflow-hidden"
         >
-          <p className="text-xs uppercase tracking-widest text-zinc-400 font-body text-center mb-10">Inside the app</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+          <p className="text-xs uppercase tracking-widest text-zinc-400 font-body text-center mb-16">Inside the app</p>
+
+          {/* Row 1 — 4 cards, staggered vertically */}
+          <div className="flex gap-4 md:gap-5 justify-center mb-4 md:mb-5">
             {[
-              { src: promo1, rotate: "-rotate-1" },
-              { src: promo2, rotate: "rotate-1" },
-              { src: promo3, rotate: "-rotate-[0.5deg]" },
-              { src: promo4, rotate: "rotate-[1.5deg]" },
-              { src: promo5, rotate: "-rotate-1" },
-              { src: promo6, rotate: "rotate-[0.5deg]" },
-              { src: promo7, rotate: "-rotate-[1.5deg]" },
+              { src: promo1, rotate: -2.5, y: 24 },
+              { src: promo2, rotate: 2,    y: -20 },
+              { src: promo3, rotate: -1.5, y: 32 },
+              { src: promo4, rotate: 3,    y: -12 },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className={`${item.rotate} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ${i === 6 ? "md:col-start-2" : ""}`}
+                className="w-[23%] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                style={{ transform: `rotate(${item.rotate}deg) translateY(${item.y}px)` }}
               >
-                <img
-                  src={item.src}
-                  alt={`Consumed app screenshot ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                <img src={item.src} alt={`Consumed screenshot ${i + 1}`} className="w-full h-auto block" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 2 — 3 cards, centered, staggered */}
+          <div className="flex gap-4 md:gap-5 justify-center">
+            {[
+              { src: promo5, rotate: -2,   y: -16 },
+              { src: promo6, rotate: 1.5,  y: 20 },
+              { src: promo7, rotate: -3,   y: -8 },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.32 + i * 0.08 }}
+                viewport={{ once: true }}
+                className="w-[23%] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                style={{ transform: `rotate(${item.rotate}deg) translateY(${item.y}px)` }}
+              >
+                <img src={item.src} alt={`Consumed screenshot ${i + 5}`} className="w-full h-auto block" />
               </motion.div>
             ))}
           </div>
