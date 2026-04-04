@@ -182,7 +182,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 leading-[1.2] md:whitespace-nowrap -mt-2 text-[#3b0764]"
           >
-            The social layer of entertainment.
+            Where entertainment gets played.
           </motion.h1>
 
           <motion.p
@@ -191,7 +191,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-lg md:text-xl font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
           >
-            CONNECT. TRACK. PLAY.
+            PLAY. CONNECT. DISCOVER.
           </motion.p>
 
           <motion.div 
@@ -239,13 +239,24 @@ export default function Home() {
 
         </div>
 
+        {/* Tagline above carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-24 text-center"
+        >
+          <p className="text-xl md:text-2xl font-semibold text-[#3b0764] font-heading">The social layer of entertainment.</p>
+        </motion.div>
+
         {/* Screenshot Strip Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-24 w-full"
+          className="mt-6 w-full"
         >
           <div
             className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
