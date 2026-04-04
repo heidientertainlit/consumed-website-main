@@ -172,6 +172,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
+            className="mt-3"
           >
             <img src={logoPurple} alt="Consumed Logo" className="w-[18rem] md:w-[34rem] h-auto mx-auto" />
           </motion.div>
@@ -189,7 +190,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-lg md:text-xl font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
+            className="text-sm md:text-base font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
           >
             PLAY. CONNECT. DISCOVER.
           </motion.p>
@@ -247,7 +248,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <p className="text-xl md:text-2xl font-semibold text-[#3b0764] font-heading">The social layer of entertainment.</p>
+          <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading">The social layer of entertainment.</p>
         </motion.div>
 
         {/* Screenshot Strip Carousel */}
