@@ -9,6 +9,7 @@ import Support from "@/pages/support";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
 import Feedback from "@/pages/feedback";
+import Analytics from "@/pages/analytics";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/feedback" component={Feedback} />
+      <Route path="/analytics" component={Analytics} />
       <Route component={NotFound} />
     </Switch>
   );
