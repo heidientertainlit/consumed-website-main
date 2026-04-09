@@ -19,7 +19,7 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/feedback" component={Feedback} />
-      <Route path="/analytics" component={Analytics} />
+      <Route path="/analytics-for-partners" component={Analytics} />
       <Route component={NotFound} />
     </Switch>
   );
