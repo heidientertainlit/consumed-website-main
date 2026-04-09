@@ -96,10 +96,6 @@ export default function Analytics() {
         <p className="text-base text-zinc-400 font-body leading-relaxed max-w-2xl">
           Consumed is a social entertainment platform — where users play, rate, predict, and share everything they consume across TV, film, music, books, podcasts, and gaming. This document outlines the behavioral data Consumed can surface for brand and media partners.
         </p>
-        <div className="mt-6 inline-flex items-center gap-2 bg-white border border-zinc-200 rounded-full px-4 py-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span className="text-xs text-zinc-500 font-body">Platform availability: iOS app and web app · Android not yet available</span>
-        </div>
       </div>
 
       {/* Sections */}
@@ -126,7 +122,13 @@ export default function Analytics() {
 
       {/* Footer */}
       <div className="border-t border-zinc-200 bg-white">
-        <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-zinc-400 font-body">
+        <div className="max-w-5xl mx-auto px-6 pt-6 pb-2 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-[#f8f8f8] border border-zinc-200 rounded-full px-4 py-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span className="text-xs text-zinc-500 font-body">Platform availability: iOS app and web app · Android not yet available</span>
+          </div>
+        </div>
+        <div className="max-w-5xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-zinc-400 font-body">
           <span>consumed · Confidential — Partner Overview · Beta 2026</span>
           <div className="flex gap-4">
             <span>consumedapp.com</span>
