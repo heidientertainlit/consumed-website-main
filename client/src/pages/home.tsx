@@ -192,7 +192,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-sm md:text-base font-normal text-[#6b21a8] mb-6"
           >
-            Everything you watch, read, and listen — all in one place.
+            All entertainment, all in one place.
           </motion.p>
 
           <motion.div 
