@@ -195,15 +195,6 @@ export default function Home() {
             Track what you consume. Play what you know.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.18 }}
-            className="text-xs md:text-sm font-normal text-zinc-500 mb-6"
-          >
-            All your entertainment — finally somewhere.
-          </motion.p>
-
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -257,7 +248,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading">The social layer of entertainment.</p>
+          <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading">Finally, all your entertainment — all in one place.</p>
         </motion.div>
 
         {/* Screenshot Strip Carousel */}
@@ -452,6 +443,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
         >
+          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#6b21a8] font-semibold font-body mb-4">The social layer of entertainment</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             <span className="text-zinc-800">What are you </span>
             <AnimatePresence mode="wait">
