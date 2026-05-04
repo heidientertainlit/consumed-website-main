@@ -190,9 +190,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-sm md:text-base font-light tracking-[0.3em] uppercase text-[#6b21a8] mb-6"
+            className="text-sm md:text-base font-normal text-[#6b21a8] mb-6"
           >
-            PLAY. CONNECT. DISCOVER.
+            Everything you watch, read, and listen — all in one place.
           </motion.p>
 
           <motion.div 
