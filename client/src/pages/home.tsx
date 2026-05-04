@@ -190,9 +190,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-sm md:text-base font-normal text-[#6b21a8] mb-6"
+            className="text-sm md:text-base font-medium text-[#6b21a8] mb-2"
           >
-            All entertainment, all in one place.
+            Track what you consume. Play what you know.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.18 }}
+            className="text-xs md:text-sm font-normal text-zinc-500 mb-6"
+          >
+            All your entertainment — finally somewhere.
           </motion.p>
 
           <motion.div 
