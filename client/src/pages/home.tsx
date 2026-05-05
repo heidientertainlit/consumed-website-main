@@ -281,7 +281,11 @@ export default function Home() {
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[14%] lg:translate-y-[16%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              style={{
+                filter:
+                  "drop-shadow(0 0 1px rgba(255,255,255,0.45)) drop-shadow(0 0 6px rgba(168,85,247,0.55)) drop-shadow(0 0 18px rgba(99,102,241,0.35)) drop-shadow(0 35px 70px rgba(168,85,247,0.4))",
+              }}
+              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[14%] lg:translate-y-[16%]"
               data-testid="img-hero-phones"
             />
           </motion.div>
@@ -295,7 +299,11 @@ export default function Home() {
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[160%] max-w-[900px] h-auto translate-x-[18%] translate-y-[8%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              style={{
+                filter:
+                  "drop-shadow(0 0 1px rgba(255,255,255,0.45)) drop-shadow(0 0 6px rgba(168,85,247,0.55)) drop-shadow(0 0 18px rgba(99,102,241,0.35)) drop-shadow(0 35px 70px rgba(168,85,247,0.4))",
+              }}
+              className="relative z-10 w-[160%] max-w-[900px] h-auto translate-x-[18%] translate-y-[8%]"
             />
           </motion.div>
         </div>
