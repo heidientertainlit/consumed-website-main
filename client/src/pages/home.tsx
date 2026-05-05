@@ -190,7 +190,7 @@ export default function Home() {
         {/* Hero content — two columns, left aligned */}
         <div className="relative z-10 container mx-auto px-6 pt-2 md:pt-6 pb-0 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 md:items-start">
           {/* Left column — copy */}
-          <div className="text-left">
+          <div className="text-left md:pt-16 lg:pt-24">
             {/* Rotating headline — cycles, last one stops */}
             <div className="relative min-h-[140px] md:min-h-[170px] lg:min-h-[200px] flex items-start">
               <AnimatePresence mode="wait">
@@ -264,17 +264,17 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right column — phone mockups stack (bleeds off bottom of hero) */}
+          {/* Right column — phone mockups stack (bleeds off right + bottom of hero) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center items-end self-end"
+            className="relative flex justify-end items-start md:-mt-8 lg:-mt-16"
           >
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[135%] max-w-[900px] md:max-w-[1120px] lg:max-w-[1280px] h-auto translate-y-[22%] md:translate-y-[26%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[160%] max-w-[1100px] md:max-w-[1320px] lg:max-w-[1500px] h-auto translate-x-[14%] md:translate-x-[18%] translate-y-[28%] md:translate-y-[34%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
             />
           </motion.div>
