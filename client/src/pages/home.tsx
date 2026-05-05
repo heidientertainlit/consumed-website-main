@@ -206,17 +206,19 @@ export default function Home() {
                     <>
                       You always <span className="whitespace-nowrap">call the ending</span>, <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">don't you...</span>
                     </>
+                  ) : headlineIndex === 0 ? (
+                    <>
+                      Do you have good taste?
+                      <span className="block bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                        Yeah… we thought so.
+                      </span>
+                    </>
                   ) : (
                     <>
                       {rotatingHeadlines[headlineIndex].prefix}
                       <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
                         {rotatingHeadlines[headlineIndex].gradient}
                       </span>
-                      {headlineIndex === 0 && (
-                        <span className="block bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                          Yeah… we thought so.
-                        </span>
-                      )}
                     </>
                   )}
                 </motion.h1>
