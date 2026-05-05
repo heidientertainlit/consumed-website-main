@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "7FvL2N40YqA_ItDUGjk5V"
+uri = "file://artifacts/mockup-sandbox/public/images/poster-succession.png"
+type = "image"
+title = "Moody prestige TV poster"
+
+[[generated]]
+id = "2JBMrIq8iX7BZBmk-enOc"
+uri = "file://artifacts/mockup-sandbox/public/images/poster-breaking-bad.png"
+type = "image"
+title = "Desert cinematic TV poster"
