@@ -213,7 +213,7 @@ export default function Home() {
                         {rotatingHeadlines[headlineIndex].gradient}
                       </span>
                       {headlineIndex === 0 && (
-                        <span className="block mt-3 text-xl md:text-2xl lg:text-3xl font-medium text-white/70 italic">
+                        <span className="block bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
                           Yeah… we thought so.
                         </span>
                       )}
