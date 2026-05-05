@@ -249,7 +249,8 @@ export default function Home() {
             <img
               src={heroPhone}
               alt="Consumed app preview"
-              className="relative z-10 w-full max-w-[460px] md:max-w-[520px] h-auto drop-shadow-[0_30px_60px_rgba(168,85,247,0.35)]"
+              style={{ transform: "rotate(-12deg)" }}
+              className="relative z-10 w-full max-w-[640px] md:max-w-[720px] lg:max-w-[780px] h-auto drop-shadow-[0_30px_60px_rgba(168,85,247,0.35)] -mr-12 md:-mr-20"
               data-testid="img-hero-phone"
             />
           </motion.div>
