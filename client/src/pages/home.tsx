@@ -218,6 +218,25 @@ export default function Home() {
               </AnimatePresence>
             </div>
 
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-2"
+            >
+              <a
+                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_25px_rgba(168,85,247,0.4)] font-body border-0 inline-flex items-center justify-center gap-2"
+                data-testid="link-download-app"
+              >
+                Make your call
+                <span aria-hidden="true">→</span>
+              </a>
+            </motion.div>
+
             {/* Avatars */}
             <motion.div
               initial={{ opacity: 0 }}
