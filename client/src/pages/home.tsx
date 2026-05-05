@@ -61,10 +61,11 @@ export default function Home() {
   const [feedbackError, setFeedbackError] = useState<string | null>(null);
   const [headlineIndex, setHeadlineIndex] = useState(0);
 
-  const rotatingHeadlines = [
-    "Do you have good taste?",
-    "Are you the friend with the best recs?",
-    "You always call the ending, don't you....",
+  const rotatingHeadlines: { prefix: string; gradient: string; nowrap?: boolean }[] = [
+    { prefix: "Do you have ", gradient: "good taste?" },
+    { prefix: "Are you the friend with the ", gradient: "best recs?" },
+    { prefix: "You always call the ending, ", gradient: "don't you...", nowrap: true },
+    { prefix: "Track what you consume. ", gradient: "Play what you know." },
   ];
 
   useEffect(() => {
@@ -201,12 +202,17 @@ export default function Home() {
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading"
                 >
-                  {headlineIndex === rotatingHeadlines.length - 1 ? (
+                  {headlineIndex === 2 ? (
                     <>
-                      You always <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">call the ending</span>, don't you<span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">....</span>
+                      You always <span className="whitespace-nowrap">call the ending</span>, <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">don't you...</span>
                     </>
                   ) : (
-                    rotatingHeadlines[headlineIndex]
+                    <>
+                      {rotatingHeadlines[headlineIndex].prefix}
+                      <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                        {rotatingHeadlines[headlineIndex].gradient}
+                      </span>
+                    </>
                   )}
                 </motion.h1>
               </AnimatePresence>
