@@ -188,7 +188,7 @@ export default function Home() {
         </nav>
 
         {/* Hero content — two columns, left aligned */}
-        <div className="relative z-10 container mx-auto px-6 pt-2 md:pt-6 pb-0 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 md:items-start">
+        <div className="relative z-10 container mx-auto px-6 pt-2 md:pt-6 pb-8 md:pb-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 md:items-start">
           {/* Left column — copy */}
           <div className="text-left md:pt-16 lg:pt-24">
             {/* Rotating headline — cycles, last one stops */}
@@ -264,18 +264,31 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right column — phone mockups stack (bleeds off right + bottom of hero) */}
+          {/* Right column — phone mockups stack (absolute so it doesn't extend hero height; clipped by hero overflow-hidden) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-end items-start -mt-12 md:-mt-24 lg:-mt-32"
+            className="hidden md:flex absolute right-0 top-0 bottom-0 w-1/2 justify-end items-start pointer-events-none"
           >
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[16%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] -translate-y-[2%] md:-translate-y-[4%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
+            />
+          </motion.div>
+          {/* Mobile phones — in flow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden relative flex justify-end items-start -mt-4"
+          >
+            <img
+              src={heroPhonesStack}
+              alt="Consumed app previews"
+              className="relative z-10 w-[160%] max-w-[900px] h-auto translate-x-[18%] translate-y-[8%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
             />
           </motion.div>
         </div>
