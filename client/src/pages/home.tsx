@@ -8,6 +8,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "@/components/ui/input";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
+import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
+import heroPhone from "@assets/hero_phone_play2_nobg.png";
 
 // Screen Imports
 import screen1 from "@assets/IMG_5990_1769627771433.PNG";
@@ -139,106 +141,123 @@ export default function Home() {
       {/* Background */}
       <div className="fixed inset-0 z-0 pointer-events-none bg-[#f8f8f8]" />
 
-      {/* Navigation */}
-      <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
-            <Instagram className="w-5 h-5" />
-          </a>
-          <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-purple-600 transition-colors">
-            <TikTok className="w-5 h-5" />
-          </a>
+      {/* Dark Hero Section — full bleed */}
+      <section className="relative bg-gradient-to-b from-[#0f0521] via-[#1a0a2e] to-[#2d1b4e] text-white overflow-hidden">
+        {/* Purple glow blob — top right */}
+        <div className="pointer-events-none absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full bg-purple-600/30 blur-[120px]" />
+        <div className="pointer-events-none absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-indigo-500/20 blur-[100px]" />
+
+        {/* Navigation */}
+        <nav className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-5">
+            <img src={logoWhite} alt="Consumed" className="h-6 md:h-7 w-auto" />
+            <div className="hidden md:flex items-center gap-4 ml-2">
+              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                <TikTok className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex items-center gap-6"
+          >
+            <Link href="/feedback" className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/30 hover:opacity-90 transition-all" data-testid="link-feedback">
+              <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
+              <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
+            </Link>
+          </motion.div>
+        </nav>
+
+        {/* Hero content — two columns, left aligned */}
+        <div className="relative z-10 container mx-auto px-6 pt-8 md:pt-12 pb-16 md:pb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center">
+          {/* Left column — copy */}
+          <div className="text-left">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading"
+            >
+              Where entertainment <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">gets played.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              className="text-base md:text-lg text-white/70 font-body mt-5 max-w-md"
+            >
+              Track what you consume. Play what you know.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mt-7"
+            >
+              <a
+                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_25px_rgba(168,85,247,0.4)] font-body border-0 inline-flex items-center justify-center"
+                data-testid="link-download-app"
+              >
+                Download the App
+              </a>
+            </motion.div>
+
+            {/* Avatars — under download button */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-6 flex items-center gap-3 text-[11px] md:text-xs text-white/60 font-body"
+            >
+              <div className="flex -space-x-2">
+                {[
+                  { name: "Jeeppler", color: "bg-slate-700" },
+                  { name: "kjwoodsemh", color: "bg-amber-600" },
+                  { name: "linds047", color: "bg-emerald-600" },
+                  { name: "nicklombardo2", color: "bg-blue-600" },
+                  { name: "seth", color: "bg-orange-500" },
+                  { name: "hulabear23", color: "bg-teal-600" },
+                  { name: "madhope21", color: "bg-rose-600" },
+                  { name: "Snazzyman", color: "bg-cyan-600" }
+                ].map((user, i) => (
+                  <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#1a0a2e] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
+                    {user.name.slice(0, 2).toUpperCase()}
+                  </div>
+                ))}
+              </div>
+              <p>See what everyone's into, get Consumed.</p>
+            </motion.div>
+          </div>
+
+          {/* Right column — phone mockup */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex justify-center md:justify-end items-center"
+          >
+            <img
+              src={heroPhone}
+              alt="Consumed app preview"
+              className="relative z-10 w-full max-w-[460px] md:max-w-[520px] h-auto drop-shadow-[0_30px_60px_rgba(168,85,247,0.35)]"
+              data-testid="img-hero-phone"
+            />
+          </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="flex items-center gap-6"
-        >
-          <Link href="/feedback" className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all" data-testid="link-feedback">
-            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
-            <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
-          </Link>
-        </motion.div>
-      </nav>
+      </section>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-6 md:pt-12 pb-32 flex flex-col items-center">
-        
-        {/* Hero Text Section */}
-        <div className="flex flex-col text-center items-center max-w-3xl mx-auto mb-8">
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-3"
-          >
-            <img src={logoPurple} alt="Consumed Logo" className="w-[18rem] md:w-[34rem] h-auto mx-auto" />
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 leading-[1.2] md:whitespace-nowrap -mt-2 text-[#3b0764]"
-          >
-            Where entertainment gets played.
-          </motion.h1>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex justify-center items-center w-full mt-4"
-          >
-            <a 
-              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-12 px-12 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0 inline-flex items-center justify-center"
-              data-testid="link-download-app"
-            >
-              Download the App
-            </a>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base font-medium text-[#6b21a8] mt-10"
-          >
-            Track what you consume. Play what you know.
-          </motion.p>
-
-          {/* Avatars — under Download button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            transition={{ delay: 0.4 }}
-            className="mt-3 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
-          >
-            <div className="flex -space-x-2">
-              {[
-                { name: "Jeeppler", color: "bg-slate-700" },
-                { name: "kjwoodsemh", color: "bg-amber-600" },
-                { name: "linds047", color: "bg-emerald-600" },
-                { name: "nicklombardo2", color: "bg-blue-600" },
-                { name: "seth", color: "bg-orange-500" },
-                { name: "hulabear23", color: "bg-teal-600" },
-                { name: "madhope21", color: "bg-rose-600" },
-                { name: "Snazzyman", color: "bg-cyan-600" }
-              ].map((user, i) => (
-                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#f8f8f8] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
-                  {user.name.slice(0, 2).toUpperCase()}
-                </div>
-              ))}
-            </div>
-            <p>See what everyone's into, get Consumed.</p>
-          </motion.div>
-
-        </div>
+      <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32 flex flex-col items-center">
 
         {/* Tagline above carousel */}
         <motion.div
