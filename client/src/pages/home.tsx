@@ -269,12 +269,12 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-end items-start md:-mt-8 lg:-mt-16"
+            className="relative flex justify-end items-start -mt-12 md:-mt-24 lg:-mt-32"
           >
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[160%] max-w-[1100px] md:max-w-[1320px] lg:max-w-[1500px] h-auto translate-x-[14%] md:translate-x-[18%] translate-y-[28%] md:translate-y-[34%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[16%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
             />
           </motion.div>
