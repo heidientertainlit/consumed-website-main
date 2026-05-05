@@ -186,20 +186,11 @@ export default function Home() {
             Where entertainment gets played.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-sm md:text-base font-medium text-[#6b21a8] mb-2"
-          >
-            Track what you consume. Play what you know.
-          </motion.p>
-
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center items-center w-full mt-1"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex justify-center items-center w-full mt-4"
           >
             <a 
               href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
@@ -211,6 +202,15 @@ export default function Home() {
               Download the App
             </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-sm md:text-base font-medium text-[#6b21a8] mt-4"
+          >
+            Track what you consume. Play what you know.
+          </motion.p>
 
           {/* Avatars — under Download button */}
           <motion.div
