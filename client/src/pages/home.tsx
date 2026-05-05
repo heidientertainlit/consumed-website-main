@@ -212,6 +212,11 @@ export default function Home() {
                       <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
                         {rotatingHeadlines[headlineIndex].gradient}
                       </span>
+                      {headlineIndex === 0 && (
+                        <span className="block mt-3 text-xl md:text-2xl lg:text-3xl font-medium text-white/70 italic">
+                          Yeah… we thought so.
+                        </span>
+                      )}
                     </>
                   )}
                 </motion.h1>
