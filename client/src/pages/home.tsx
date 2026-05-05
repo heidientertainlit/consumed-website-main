@@ -207,7 +207,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base font-medium text-[#6b21a8] mt-4"
+            className="text-sm md:text-base font-medium text-[#6b21a8] mt-10"
           >
             Track what you consume. Play what you know.
           </motion.p>
@@ -217,7 +217,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
+            className="mt-3 flex items-center gap-3 text-[11px] text-zinc-500 font-body justify-center"
           >
             <div className="flex -space-x-2">
               {[
