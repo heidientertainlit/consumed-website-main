@@ -274,7 +274,7 @@ export default function Home() {
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] -translate-y-[2%] md:-translate-y-[4%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[14%] lg:translate-y-[16%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
             />
           </motion.div>
