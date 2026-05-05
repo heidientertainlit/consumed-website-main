@@ -9,8 +9,7 @@ import { Input } from "@/components/ui/input";
 import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import logoWhite from "@assets/ConsumedLogo_white_1768445075453.png";
-import heroPhone from "@assets/hero_phone_play2_nobg.png";
-import heroPhoneBack from "@assets/hero_phone_play3_nobg.png";
+import heroPhonesStack from "@assets/hero_phones_stack_nobg.png";
 
 // Screen Imports
 import screen1 from "@assets/IMG_5990_1769627771433.PNG";
@@ -240,28 +239,18 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right column — phone mockups (stacked, overlapping) */}
+          {/* Right column — phone mockups stack */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center items-center min-h-[480px] md:min-h-[620px] -mx-4 md:mx-0"
+            className="relative flex justify-center items-center"
           >
-            {/* Back phone — Moneyball / Trivia */}
             <img
-              src={heroPhoneBack}
-              alt="Consumed trivia preview"
-              style={{ transform: "rotate(8deg)" }}
-              className="absolute z-0 w-[78%] max-w-[560px] md:max-w-[640px] h-auto right-0 md:-right-8 top-2 drop-shadow-[0_25px_50px_rgba(99,102,241,0.35)]"
-              data-testid="img-hero-phone-back"
-            />
-            {/* Front phone — Your Turn / Activity */}
-            <img
-              src={heroPhone}
-              alt="Consumed app preview"
-              style={{ transform: "rotate(-10deg)" }}
-              className="relative z-10 w-[95%] max-w-[700px] md:max-w-[820px] lg:max-w-[880px] h-auto -ml-12 md:-ml-24 drop-shadow-[0_35px_70px_rgba(168,85,247,0.45)]"
-              data-testid="img-hero-phone"
+              src={heroPhonesStack}
+              alt="Consumed app previews"
+              className="relative z-10 w-full max-w-[560px] md:max-w-[680px] lg:max-w-[760px] h-auto drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              data-testid="img-hero-phones"
             />
           </motion.div>
         </div>
