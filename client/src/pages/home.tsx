@@ -59,6 +59,19 @@ export default function Home() {
   const [isFeedbackSubmitting, setIsFeedbackSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
   const [feedbackError, setFeedbackError] = useState<string | null>(null);
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+
+  const rotatingHeadlines = [
+    "Do you have good taste?",
+    "Are you the friend with the best recs?",
+    "You always call the ending, don't you....",
+  ];
+
+  useEffect(() => {
+    if (headlineIndex >= rotatingHeadlines.length - 1) return;
+    const t = setTimeout(() => setHeadlineIndex((i) => i + 1), 2800);
+    return () => clearTimeout(t);
+  }, [headlineIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -177,42 +190,29 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-6 pt-8 md:pt-12 pb-0 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center">
           {/* Left column — copy */}
           <div className="text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading"
-            >
-              Where entertainment <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">gets played.</span>
-            </motion.h1>
+            {/* Rotating headline — cycles, last one stops */}
+            <div className="relative min-h-[180px] md:min-h-[220px] lg:min-h-[260px] flex items-start">
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={headlineIndex}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -14 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading"
+                >
+                  {headlineIndex === rotatingHeadlines.length - 1 ? (
+                    <>
+                      You always <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">call the ending</span>, don't you<span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">....</span>
+                    </>
+                  ) : (
+                    rotatingHeadlines[headlineIndex]
+                  )}
+                </motion.h1>
+              </AnimatePresence>
+            </div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
-              className="text-base md:text-lg text-white/70 font-body mt-5 max-w-md"
-            >
-              Track what you consume. Play what you know.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-7"
-            >
-              <a
-                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_25px_rgba(168,85,247,0.4)] font-body border-0 inline-flex items-center justify-center"
-                data-testid="link-download-app"
-              >
-                Download the App
-              </a>
-            </motion.div>
-
-            {/* Avatars — under download button */}
+            {/* Avatars */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -249,7 +249,7 @@ export default function Home() {
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-[120%] max-w-[760px] md:max-w-[920px] lg:max-w-[1040px] h-auto translate-y-[18%] md:translate-y-[22%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[125%] max-w-[820px] md:max-w-[1000px] lg:max-w-[1140px] h-auto translate-y-[24%] md:translate-y-[30%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
             />
           </motion.div>
@@ -258,6 +258,38 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32 flex flex-col items-center">
+
+        {/* Brand intro — purple logo + headline + sub + CTA */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full flex flex-col items-center text-center pt-8 md:pt-16 pb-8"
+        >
+          <img
+            src={logoPurple}
+            alt="Consumed"
+            className="h-16 md:h-24 lg:h-28 w-auto mb-8"
+            data-testid="img-logo-purple-section"
+          />
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
+            Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
+          </h2>
+          <p className="text-base md:text-lg text-zinc-600 font-body mt-5 max-w-md">
+            Track what you consume. Play what you know.
+          </p>
+          <a
+            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-7 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
+            data-testid="link-make-your-call"
+          >
+            Make your call
+            <span aria-hidden="true">→</span>
+          </a>
+        </motion.section>
 
         {/* Tagline above carousel */}
         <motion.div
