@@ -174,7 +174,7 @@ export default function Home() {
         </nav>
 
         {/* Hero content — two columns, left aligned */}
-        <div className="relative z-10 container mx-auto px-6 pt-8 md:pt-12 pb-16 md:pb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center">
+        <div className="relative z-10 container mx-auto px-6 pt-8 md:pt-12 pb-0 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 items-center">
           {/* Left column — copy */}
           <div className="text-left">
             <motion.h1
@@ -239,17 +239,17 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right column — phone mockups stack */}
+          {/* Right column — phone mockups stack (bleeds off bottom of hero) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center items-center"
+            className="relative flex justify-center items-end self-end"
           >
             <img
               src={heroPhonesStack}
               alt="Consumed app previews"
-              className="relative z-10 w-full max-w-[560px] md:max-w-[680px] lg:max-w-[760px] h-auto drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
+              className="relative z-10 w-[120%] max-w-[760px] md:max-w-[920px] lg:max-w-[1040px] h-auto translate-y-[18%] md:translate-y-[22%] drop-shadow-[0_35px_70px_rgba(168,85,247,0.4)]"
               data-testid="img-hero-phones"
             />
           </motion.div>
