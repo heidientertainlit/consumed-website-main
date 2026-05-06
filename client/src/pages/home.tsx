@@ -310,38 +310,201 @@ export default function Home() {
       </section>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-12 md:pt-20 pb-32 flex flex-col items-center">
+      <main className="relative z-10 container mx-auto px-6 pt-2 md:pt-4 pb-32 flex flex-col items-center">
 
-        {/* Brand intro — purple logo + headline + sub + CTA */}
+        {/* Brand intro — purple logo + headline + CTA */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col items-center text-center pt-8 md:pt-16 pb-8"
+          className="w-full flex flex-col items-center text-center pt-2 md:pt-6 pb-6"
         >
           <img
             src={logoPurple}
             alt="Consumed"
-            className="h-16 md:h-24 lg:h-28 w-auto mb-8"
+            className="h-16 md:h-24 lg:h-28 w-auto mb-6"
             data-testid="img-logo-purple-section"
           />
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
             Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
           </h2>
-          <p className="text-base md:text-lg text-zinc-600 font-body mt-5 max-w-md">
-            Track what you consume. Play what you know.
-          </p>
           <a
             href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-7 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-            data-testid="link-make-your-call"
+            data-testid="link-download-app-section"
           >
-            Make your call
+            Download the App
             <span aria-hidden="true">→</span>
           </a>
+        </motion.section>
+
+        {/* Section A — Entertainment is already social */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full max-w-6xl mt-16 md:mt-24"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 font-heading leading-[1.05]">
+                Entertainment is already <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">social.</span>
+              </h2>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="w-12 h-[2px] bg-gradient-to-r from-[#a855f7] to-[#6366f1] rounded-full" />
+                <p className="text-base md:text-lg text-zinc-500 font-body">Now you can actually see it.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3" data-testid="feed-social">
+              {[
+                { initials: "JR", color: "bg-violet-500", name: "jordannivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-100 text-violet-700" },
+                { initials: "LK", color: "bg-emerald-500", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-100 text-emerald-700" },
+                { initials: "KJ", color: "bg-amber-500", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-100 text-amber-700" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-zinc-100 shadow-sm p-4 flex items-start gap-3" data-testid={`feed-item-${i}`}>
+                  <div className={`w-10 h-10 rounded-full ${item.color} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
+                    {item.initials}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <span className="text-zinc-900 text-sm font-semibold font-body">{item.name}</span>
+                      <span className="text-zinc-400 text-xs font-body">{item.time}</span>
+                      <span className={`ml-auto text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
+                    </div>
+                    <p className="text-zinc-600 text-sm font-body leading-snug">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Section B — Play / Track / Connect (dark card) */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full max-w-6xl mt-16 md:mt-24 bg-[#0f0521] text-white rounded-3xl px-6 md:px-12 py-12 md:py-16"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {/* Play */}
+            <div data-testid="card-play">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                <Play className="w-5 h-5 text-white" fill="white" />
+              </div>
+              <h3 className="text-2xl font-bold font-heading mb-2">Play</h3>
+              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
+                Make your call.<br />See who agrees.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <p className="text-sm text-white/85 font-body mb-4">Which movie is overrated?</p>
+                <button className="px-4 py-2 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-xs font-semibold inline-flex items-center gap-1.5 font-body" data-testid="button-vote-now">
+                  Vote now <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+            {/* Track */}
+            <div data-testid="card-track">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                <ListChecks className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold font-heading mb-2">Track</h3>
+              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
+                Log everything you watch,<br />read, listen, and play.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <p className="text-xs uppercase tracking-wider text-white/50 font-body mb-3">Your Library</p>
+                {[["Movies", 236], ["TV Shows", 84], ["Books", 57], ["Podcasts", 41]].map(([label, count]) => (
+                  <div key={label as string} className="flex items-center justify-between py-1.5 text-sm font-body border-b border-white/5 last:border-b-0">
+                    <span className="text-white/85">{label}</span>
+                    <span className="text-white/50 tabular-nums">{count}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Connect */}
+            <div data-testid="card-connect">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                <Users className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold font-heading mb-2">Connect</h3>
+              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
+                See what friends are into.<br />Share takes. Compare taste.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <p className="text-xs uppercase tracking-wider text-white/50 font-body mb-3">Friend Activity</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    {["bg-violet-500", "bg-emerald-500", "bg-amber-500", "bg-blue-500", "bg-rose-500"].map((c, i) => (
+                      <div key={i} className={`w-8 h-8 rounded-full ${c} border-2 border-[#0f0521]`} />
+                    ))}
+                  </div>
+                  <span className="text-sm text-white/70 font-body">+27</span>
+                </div>
+                <p className="mt-3 text-xs text-white/50 font-body">12 friends active today</p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Section C — Hot take */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full max-w-6xl mt-16 md:mt-24"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 font-heading leading-[1.05] mb-3">
+                Hot take.
+              </h2>
+              <p className="text-2xl md:text-3xl text-zinc-600 font-body mb-7">
+                This show is overrated.
+              </p>
+              <div className="flex items-center gap-3">
+                <button className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold font-body shadow-[0_8px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all" data-testid="button-agree">Agree</button>
+                <button className="px-6 py-2.5 rounded-full bg-zinc-900 text-white text-sm font-semibold font-body hover:bg-zinc-800 transition-all" data-testid="button-disagree">Disagree</button>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex items-center gap-6">
+              {/* Poster */}
+              <div className="w-28 h-40 md:w-36 md:h-52 rounded-xl bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 flex items-end justify-center p-3 flex-shrink-0 shadow-inner">
+                <span className="text-white text-xs md:text-sm font-bold tracking-[0.2em] font-heading text-center leading-tight">THE<br />WITCHER</span>
+              </div>
+              {/* Result */}
+              <div className="flex-1 text-center">
+                <div className="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-3">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" stroke="#e4e4e7" strokeWidth="6" fill="none" />
+                    <circle
+                      cx="50" cy="50" r="42"
+                      stroke="url(#hotTakeGrad)" strokeWidth="6" fill="none"
+                      strokeDasharray={`${(78 / 100) * 2 * Math.PI * 42} ${2 * Math.PI * 42}`}
+                      strokeLinecap="round"
+                    />
+                    <defs>
+                      <linearGradient id="hotTakeGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#a855f7" />
+                        <stop offset="100%" stopColor="#6366f1" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-3xl md:text-4xl font-bold text-zinc-900 font-heading">78%</span>
+                    <span className="text-xs text-zinc-500 font-body">agree</span>
+                  </div>
+                </div>
+                <p className="text-sm text-zinc-500 font-body">12,842 votes</p>
+              </div>
+            </div>
+          </div>
         </motion.section>
 
         {/* Tagline above carousel */}
@@ -378,139 +541,16 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Two-Column Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-10 w-full max-w-5xl"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-            {/* Left card — problem statement */}
-            <div className="bg-zinc-50 rounded-2xl border border-zinc-100 p-8 md:p-10 flex flex-col">
-              <h2 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-4">
-                Your entertainment is everywhere.<br />That's the problem.
-              </h2>
-              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-2">
-                The rec buried in the group chat. The Notes app full of shows you'll never find. Want to see what your friends are actually watching, reading, or listening to right now?
-              </p>
-              <p className="text-sm text-zinc-400 font-body leading-relaxed mb-6">
-                You're already doing this. Consumed just gives it a home.
-              </p>
-              <div className="grid grid-cols-2 gap-2.5 mt-auto">
-                <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-3 font-body">
-                  <div className="text-[10px] font-bold text-amber-700 mb-2">📝 To Watch</div>
-                  <div className="text-[10px] text-zinc-400 line-through mb-0.5">Severance</div>
-                  <div className="text-[10px] text-zinc-600 mb-0.5">The Covenant</div>
-                  <div className="text-[10px] text-zinc-600 mb-0.5">SmartLess ep?</div>
-                  <div className="text-[10px] text-zinc-300">White Lotus S3...</div>
-                </div>
-                <div className="flex flex-col gap-1.5 justify-center">
-                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
-                    omg watch Severance 😭
-                  </div>
-                  <div className="self-start bg-zinc-200 text-zinc-600 text-[10px] px-2.5 py-1.5 rounded-2xl rounded-bl-sm max-w-full font-body leading-snug">
-                    added 📌 what's it on?
-                  </div>
-                  <div className="self-end bg-[#2d1b4e] text-white text-[10px] px-2.5 py-1.5 rounded-2xl rounded-br-sm max-w-full font-body leading-snug">
-                    Apple TV+ 🙏
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right card — social activity feed */}
-            <div className="bg-zinc-50 rounded-2xl border border-zinc-100 p-8 md:p-10 flex flex-col">
-              <h3 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-4">
-                Entertainment is already social.
-              </h3>
-              <div className="flex flex-col gap-2 overflow-y-auto max-h-[260px] scrollbar-hide">
-                {[
-                  { initials: "JR", color: "bg-violet-500", name: "jordanrivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-100 text-violet-600" },
-                  { initials: "LK", color: "bg-emerald-500", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-100 text-emerald-600" },
-                  { initials: "KJ", color: "bg-amber-500", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-100 text-amber-600" },
-                  { initials: "SE", color: "bg-blue-500", name: "seth", time: "1h ago", text: "started reading James by Percival Everett", tag: "book", tagColor: "bg-blue-100 text-blue-600" },
-                  { initials: "MH", color: "bg-rose-500", name: "madhope21", time: "2h ago", text: "added Sinners to their watchlist after you rated it", tag: "movie", tagColor: "bg-rose-100 text-rose-600" },
-                  { initials: "HB", color: "bg-teal-500", name: "hulabear23", time: "3h ago", text: "listening to SmartLess — ep 212 right now 🎧", tag: "podcast", tagColor: "bg-teal-100 text-teal-600" },
-                ].map((item, i) => (
-                  <div key={i} className="hover:bg-zinc-100 transition-colors rounded-xl p-3 flex items-start gap-3 flex-shrink-0">
-                    <div className={`w-8 h-8 rounded-full ${item.color} flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0 mt-0.5`}>
-                      {item.initials}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-0.5">
-                        <span className="text-zinc-800 text-xs font-semibold font-body">{item.name}</span>
-                        <span className="text-zinc-400 text-[10px] font-body">{item.time}</span>
-                      </div>
-                      <p className="text-zinc-500 text-xs font-body leading-snug">{item.text}</p>
-                      <span className={`mt-1.5 inline-block text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </motion.div>
-
-        {/* Section Heading + Features — Gray Rounded Card */}
+        {/* Phone Carousel — Gray Rounded Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-10 md:mt-14 w-full max-w-5xl mx-auto bg-zinc-100/80 rounded-3xl px-8 md:px-16 py-12 md:py-16"
+          className="mt-16 md:mt-24 w-full max-w-5xl mx-auto bg-zinc-100/80 rounded-3xl px-8 md:px-16 py-12 md:py-16"
         >
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-4">
-              Consumed finally gives all your entertainment, one home.
-            </h2>
-            <p className="text-base md:text-lg text-zinc-500 font-body leading-relaxed">
-              No more scattered apps, buried recs, or losing track of what your friends are into. Movies, shows, books, music, podcasts & games — track them, play over them, connect over them.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {/* Play */}
-            <div className="text-center px-4">
-              <div className="mb-5 flex items-center justify-center mx-auto">
-                <Trophy className="w-9 h-9 text-[#2d1b4e]" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Play</h3>
-              <p className="text-zinc-500 font-body text-sm leading-relaxed">
-                Predict. Compete. Climb the leaderboard.
-              </p>
-            </div>
-
-            {/* Track */}
-            <div className="text-center px-4">
-              <div className="mb-5 flex items-center justify-center">
-                <ListChecks className="w-10 h-10 text-[#2d1b4e]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Track</h3>
-              <p className="text-zinc-500 font-body text-sm leading-relaxed">
-                Log everything you watch, read, and play.
-              </p>
-            </div>
-
-            {/* Connect */}
-            <div className="text-center px-4">
-              <div className="mb-5 flex items-center justify-center">
-                <Users className="w-10 h-10 text-[#2d1b4e]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Connect</h3>
-              <p className="text-zinc-500 font-body text-sm leading-relaxed">
-                See what friends are into. Share takes. Compare taste.
-              </p>
-            </div>
-          </div>
-
-          {/* Visual Separator */}
-          <div className="w-full flex flex-col items-center mt-10 mb-6">
-            <div className="w-px h-8 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
-            <p className="mt-3 text-[7px] md:text-[9px] uppercase tracking-widest text-zinc-400 font-body">See what's inside</p>
+          <div className="w-full flex flex-col items-center mb-8">
+            <p className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-body">See what's inside</p>
           </div>
 
           {/* Phone Carousel */}
