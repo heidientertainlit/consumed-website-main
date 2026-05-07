@@ -312,34 +312,79 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-6 pt-2 md:pt-4 pb-32 flex flex-col items-center">
 
-        {/* Brand intro — purple logo + headline + CTA */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full flex flex-col items-center text-center pt-2 md:pt-6 pb-6"
+        {/* Watercolor band — Brand intro + Tagline + Promo carousel */}
+        <div
+          className="relative w-screen left-1/2 -translate-x-1/2 py-12 md:py-20"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 18% 22%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 82% 18%, rgba(99,102,241,0.09) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 50% 85%, rgba(168,85,247,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 30% 70%, rgba(196,181,253,0.10) 0%, transparent 65%), #faf6fb",
+          }}
         >
-          <img
-            src={logoPurple}
-            alt="Consumed"
-            className="h-16 md:h-24 lg:h-28 w-auto mb-6"
-            data-testid="img-logo-purple-section"
-          />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
-            Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
-          </h2>
-          <a
-            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-            data-testid="link-download-app-section"
-          >
-            Download the App
-            <span aria-hidden="true">→</span>
-          </a>
-        </motion.section>
+          <div className="container mx-auto px-6 flex flex-col items-center">
+            {/* Brand intro — purple logo + headline + CTA */}
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="w-full flex flex-col items-center text-center pt-2 md:pt-6 pb-6"
+            >
+              <img
+                src={logoPurple}
+                alt="Consumed"
+                className="h-16 md:h-24 lg:h-28 w-auto mb-6"
+                data-testid="img-logo-purple-section"
+              />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
+                Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
+              </h2>
+              <a
+                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
+                data-testid="link-download-app-section"
+              >
+                Download the App
+                <span aria-hidden="true">→</span>
+              </a>
+            </motion.section>
+
+            {/* Tagline above carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-16 md:mt-24 text-center"
+            >
+              <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading max-w-3xl">Finally, all your entertainment — all in one place.</p>
+            </motion.div>
+
+            {/* Screenshot Strip Carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-8 w-full"
+            >
+              <div
+                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
+                  >
+                    <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Section A — Entertainment is already social */}
         <motion.section
@@ -506,40 +551,6 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-
-        {/* Tagline above carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-24 text-center"
-        >
-          <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading">Finally, all your entertainment — all in one place.</p>
-        </motion.div>
-
-        {/* Screenshot Strip Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-6 w-full"
-        >
-          <div
-            className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 snap-x snap-mandatory scrollbar-hide"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
-              >
-                <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Phone Carousel — Gray Rounded Card */}
         <motion.div
