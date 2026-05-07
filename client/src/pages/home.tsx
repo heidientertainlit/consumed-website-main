@@ -192,7 +192,7 @@ export default function Home() {
           {/* Left column — copy */}
           <div className="text-left md:pt-8 lg:pt-12">
             {/* Rotating headline — cycles, last one stops */}
-            <div className="relative min-h-[120px] md:min-h-[150px] lg:min-h-[180px] flex items-end">
+            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-start">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={headlineIndex}
