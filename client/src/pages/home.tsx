@@ -326,7 +326,7 @@ export default function Home() {
             <img
               src={logoPurple}
               alt="Consumed"
-              className="h-14 md:h-20 lg:h-24 w-auto mb-1 md:mb-2"
+              className="h-14 md:h-20 lg:h-24 w-auto -mb-3 md:-mb-5"
               data-testid="img-logo-purple-section"
             />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-3xl">
