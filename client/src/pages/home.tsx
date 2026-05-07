@@ -200,7 +200,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-white font-heading"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-white font-heading"
                 >
                   {headlineIndex === 2 ? (
                     <>
