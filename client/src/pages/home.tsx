@@ -501,7 +501,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Section C — Hot take */}
+        {/* Section C — Hot take + Rating cards */}
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -509,27 +509,22 @@ export default function Home() {
           viewport={{ once: true }}
           className="w-full max-w-6xl mt-16 md:mt-24 px-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 font-heading leading-[1.05] mb-3">
-                Hot take.
-              </h2>
-              <p className="text-2xl md:text-3xl text-zinc-600 font-body mb-7">
-                This show is overrated.
-              </p>
-              <div className="flex items-center gap-3">
-                <button className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold font-body shadow-[0_8px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all" data-testid="button-agree">Agree</button>
-                <button className="px-6 py-2.5 rounded-full bg-zinc-900 text-white text-sm font-semibold font-body hover:bg-zinc-800 transition-all" data-testid="button-disagree">Disagree</button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            {/* Hot Take Card */}
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex items-center gap-6" data-testid="card-hot-take">
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body mb-3">Hot take</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading leading-tight mb-5">
+                  This show is overrated.
+                </h3>
+                <div className="flex items-center gap-3">
+                  <button className="px-5 py-2 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold font-body shadow-[0_8px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all" data-testid="button-agree">Agree</button>
+                  <button className="px-5 py-2 rounded-full bg-zinc-900 text-white text-sm font-semibold font-body hover:bg-zinc-800 transition-all" data-testid="button-disagree">Disagree</button>
+                </div>
               </div>
-            </div>
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex items-center gap-6">
-              {/* Poster */}
-              <div className="w-28 h-40 md:w-36 md:h-52 rounded-xl bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 flex items-end justify-center p-3 flex-shrink-0 shadow-inner">
-                <span className="text-white text-xs md:text-sm font-bold tracking-[0.2em] font-heading text-center leading-tight">THE<br />WITCHER</span>
-              </div>
-              {/* Result */}
-              <div className="flex-1 text-center">
-                <div className="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-3">
+              {/* Result Ring */}
+              <div className="flex-shrink-0 text-center">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-2">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="42" stroke="#e4e4e7" strokeWidth="6" fill="none" />
                     <circle
@@ -546,11 +541,72 @@ export default function Home() {
                     </defs>
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-3xl md:text-4xl font-bold text-zinc-900 font-heading">78%</span>
-                    <span className="text-xs text-zinc-500 font-body">agree</span>
+                    <span className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading">78%</span>
+                    <span className="text-[10px] text-zinc-500 font-body">agree</span>
                   </div>
                 </div>
-                <p className="text-sm text-zinc-500 font-body">12,842 votes</p>
+                <p className="text-xs text-zinc-500 font-body">12,842 votes</p>
+              </div>
+            </div>
+
+            {/* Rating Card — Star Wars */}
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-rating">
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">What's your take?</p>
+                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Movie</span>
+                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+10 pts</span>
+              </div>
+              <div className="flex items-start gap-4 mb-3">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-black flex items-center justify-center flex-shrink-0 overflow-hidden shadow-inner">
+                  <span className="text-yellow-400 text-[8px] md:text-[9px] font-extrabold tracking-[0.15em] font-heading text-center leading-tight">STAR<br />WARS</span>
+                </div>
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="text-lg md:text-xl font-bold text-zinc-900 font-heading leading-tight">Star Wars</h3>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 mb-4 pb-4 border-b border-zinc-100">
+                <div className="flex items-center gap-0.5">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" />
+                  ))}
+                </div>
+                <span className="text-xs text-zinc-700 font-body font-semibold ml-1">You rated 5/5</span>
+                <button className="text-xs text-rose-500 font-body ml-auto hover:underline">× Remove</button>
+              </div>
+
+              {/* Friend ratings */}
+              <div className="space-y-2.5">
+                {[
+                  { name: "Heidi Peters Tagliaferri", stars: 5, note: "↑ 3.0 above avg", noteColor: "text-emerald-600" },
+                  { name: "jennalovesbooks", stars: 4, note: "↑ 2.0 above avg", noteColor: "text-emerald-600" },
+                  { name: "kjwoodsemh", stars: 2, note: "= Average rating", noteColor: "text-zinc-500" },
+                ].map((f) => (
+                  <div key={f.name} className="flex items-center justify-between text-xs font-body" data-testid={`friend-rating-${f.name}`}>
+                    <span className="text-zinc-800 font-medium truncate pr-2">{f.name}</span>
+                    <div className="flex flex-col items-end flex-shrink-0">
+                      <div className="flex items-center gap-0.5">
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <Star key={s} className={`w-3 h-3 ${s <= f.stars ? "text-yellow-400" : "text-zinc-200"}`} fill="currentColor" />
+                        ))}
+                      </div>
+                      <span className={`text-[10px] ${f.noteColor} mt-0.5`}>{f.note}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4 mt-5 pt-4 border-t border-zinc-100">
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-like">
+                  <Heart className="w-4 h-4" /> 0
+                </button>
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-comment">
+                  <MessageSquare className="w-4 h-4" /> 0
+                </button>
+                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-add">
+                  <Plus className="w-4 h-4" />
+                </button>
+                <span className="ml-auto text-[10px] uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full font-body font-semibold">Rating</span>
+                <span className="text-xs text-zinc-400 font-body">8h</span>
               </div>
             </div>
           </div>
