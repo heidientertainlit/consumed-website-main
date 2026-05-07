@@ -192,7 +192,7 @@ export default function Home() {
           {/* Left column — copy */}
           <div className="text-left md:pt-8 lg:pt-12">
             {/* Rotating headline — cycles, last one stops */}
-            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-start">
+            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-end">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={headlineIndex}
@@ -208,8 +208,8 @@ export default function Home() {
                     </>
                   ) : headlineIndex === 0 ? (
                     <>
-                      Do you have good taste?
-                      <span className="block bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                      Do you have good taste?{" "}
+                      <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
                         Yeah… we thought so.
                       </span>
                     </>
