@@ -762,7 +762,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 md:mt-24 w-full max-w-5xl mx-auto bg-zinc-100/80 rounded-3xl px-8 md:px-16 py-12 md:py-16"
+          className="mt-12 md:mt-16 w-full max-w-5xl mx-auto px-6"
         >
           <div className="w-full flex flex-col items-center mb-8">
             <p className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-body">See what's inside</p>
