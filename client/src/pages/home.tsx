@@ -513,7 +513,10 @@ export default function Home() {
             {/* Hot Take Card */}
             <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex items-center gap-6" data-testid="card-hot-take">
               <div className="flex-1 min-w-0">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body mb-3">Cast your vote</p>
+                <div className="flex items-center gap-2 mb-3">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Cast your vote</p>
+                  <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Friends</span>
+                </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading leading-tight mb-5">
                   Were they on a break?
                 </h3>
