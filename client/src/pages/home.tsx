@@ -408,7 +408,7 @@ export default function Home() {
               </h2>
               <div className="mt-6 flex items-center gap-3">
                 <div className="w-12 h-[2px] bg-gradient-to-r from-[#a855f7] to-[#6366f1] rounded-full" />
-                <p className="text-base md:text-lg text-zinc-500 font-body">Now you can actually see it.</p>
+                <p className="text-base md:text-lg text-zinc-500 font-body">Now it finally has a home.</p>
               </div>
             </div>
             <div className="flex flex-col gap-3" data-testid="feed-social">
