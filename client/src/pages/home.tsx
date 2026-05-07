@@ -723,9 +723,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="relative text-center max-w-3xl mx-auto px-6 py-20 md:py-28"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] text-white font-heading mb-6">
               <span className="block">What are you</span>
-              <span className="block min-h-[1.1em]">
+              <span className="block min-h-[1.25em] pb-2">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
