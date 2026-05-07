@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-full bg-white pt-2 md:pt-4 pb-10 md:pb-14"
+          className="relative w-full bg-white pt-10 md:pt-16 pb-10 md:pb-14"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
