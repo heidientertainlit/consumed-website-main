@@ -329,9 +329,12 @@ export default function Home() {
               className="h-12 md:h-16 lg:h-20 w-auto -mb-1 md:-mb-2"
               data-testid="img-logo-purple-section"
             />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] pb-2 font-heading max-w-3xl bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
-              Where entertainment<br />gets played.
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] pb-2 font-heading whitespace-nowrap bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
+              Where entertainment gets played.
             </h2>
+            <p className="mt-2 text-[10px] md:text-xs uppercase tracking-[0.3em] text-zinc-500 font-light font-body">
+              Track what you consume. Play what you know.
+            </p>
             <a
               href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
               target="_blank"
