@@ -723,20 +723,22 @@ export default function Home() {
             viewport={{ once: true }}
             className="relative text-center max-w-3xl mx-auto px-6 py-20 md:py-28"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading leading-[1.05] mb-6">
-              <span className="text-white">What are you </span>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={index}
-                  initial={{ y: 15, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -15, opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className={`${words[index].color} font-medium inline-block`}
-                >
-                  {words[index].text}
-                </motion.span>
-              </AnimatePresence>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading mb-6">
+              <span className="block">What are you</span>
+              <span className="block min-h-[1.1em]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -15, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent inline-block"
+                  >
+                    {words[index].text}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h2>
             <p className="text-lg text-white/75 font-body leading-relaxed">
               Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
