@@ -713,6 +713,47 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* Useless Knowledge Section — dark purple gradient */}
+        <section className="relative w-full mt-16 md:mt-24 bg-gradient-to-br from-[#1a0a2e] via-[#3b0764] to-[#1e1b4b] overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-40" style={{ background: "radial-gradient(circle at 20% 30%, rgba(168,85,247,0.35), transparent 50%), radial-gradient(circle at 80% 70%, rgba(99,102,241,0.3), transparent 50%)" }} />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative text-center max-w-3xl mx-auto px-6 py-20 md:py-28"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold font-heading leading-[1.05] mb-6">
+              <span className="text-white">What are you </span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index}
+                  initial={{ y: 15, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -15, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className={`${words[index].color} font-medium inline-block`}
+                >
+                  {words[index].text}
+                </motion.span>
+              </AnimatePresence>
+            </h2>
+            <p className="text-lg text-white/75 font-body leading-relaxed">
+              Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
+            </p>
+            <a
+              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.5)] font-body border-0 inline-flex items-center justify-center gap-2"
+              data-testid="link-start-sharing"
+            >
+              Start sharing
+              <span aria-hidden="true">→</span>
+            </a>
+          </motion.div>
+        </section>
+
         {/* Phone Carousel — Gray Rounded Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -751,45 +792,6 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Useless Knowledge Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold font-heading leading-[1.05] mb-6">
-            <span className="text-zinc-800">What are you </span>
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={index}
-                initial={{ y: 15, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -15, opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className={`${words[index].color} font-medium inline-block`}
-              >
-                {words[index].text}
-              </motion.span>
-            </AnimatePresence>
-          </h2>
-          <p className="text-lg text-zinc-500 font-body leading-relaxed">
-            Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
-          </p>
-          <a
-            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-            data-testid="link-start-sharing"
-          >
-            Start sharing
-            <span aria-hidden="true">→</span>
-          </a>
-        </motion.div>
-
-        
       </main>
 
       <footer className="relative z-50 py-12 text-center text-sm text-zinc-400 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a0f] font-body">
