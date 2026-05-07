@@ -192,7 +192,7 @@ export default function Home() {
           {/* Left column — copy */}
           <div className="text-left md:pt-8 lg:pt-12">
             {/* Rotating headline — cycles, last one stops */}
-            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-start">
+            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-end">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={headlineIndex}
@@ -285,7 +285,7 @@ export default function Home() {
                 filter:
                   "drop-shadow(0 0 1px rgba(255,255,255,0.45)) drop-shadow(0 0 6px rgba(168,85,247,0.55)) drop-shadow(0 0 18px rgba(99,102,241,0.35)) drop-shadow(0 35px 70px rgba(168,85,247,0.4))",
               }}
-              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] translate-y-[10%] md:translate-y-[14%] lg:translate-y-[16%]"
+              className="relative z-10 w-[170%] max-w-[1200px] md:max-w-[1440px] lg:max-w-[1640px] h-auto translate-x-[22%] md:translate-x-[28%] lg:translate-x-[32%] -translate-y-[2%] md:translate-y-[2%] lg:translate-y-[4%]"
               data-testid="img-hero-phones"
             />
           </motion.div>
