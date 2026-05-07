@@ -190,9 +190,9 @@ export default function Home() {
         {/* Hero content — two columns, left aligned */}
         <div className="relative z-10 container mx-auto px-6 pt-2 md:pt-6 pb-8 md:pb-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 md:items-start">
           {/* Left column — copy */}
-          <div className="text-left md:pt-16 lg:pt-24">
+          <div className="text-left md:pt-8 lg:pt-12">
             {/* Rotating headline — cycles, last one stops */}
-            <div className="relative min-h-[140px] md:min-h-[170px] lg:min-h-[200px] flex items-start">
+            <div className="relative min-h-[150px] md:min-h-[185px] lg:min-h-[220px] flex items-start">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={headlineIndex}
@@ -200,7 +200,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white font-heading"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] text-white font-heading"
                 >
                   {headlineIndex === 2 ? (
                     <>
