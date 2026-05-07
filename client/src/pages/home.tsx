@@ -347,7 +347,7 @@ export default function Home() {
 
         {/* Watercolor band — Tagline + Promo carousel (full bleed) */}
         <section
-          className="relative w-full py-16 md:py-24 overflow-hidden"
+          className="relative w-full pt-12 md:pt-16 pb-8 md:pb-10 overflow-hidden"
           style={{
             background:
               "radial-gradient(ellipse 60% 50% at 18% 22%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 82% 18%, rgba(99,102,241,0.09) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 50% 85%, rgba(168,85,247,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 30% 70%, rgba(196,181,253,0.10) 0%, transparent 65%), #faf6fb",
@@ -396,7 +396,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-6xl mt-16 md:mt-24 px-6"
+          className="w-full max-w-6xl mt-8 md:mt-12 px-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
