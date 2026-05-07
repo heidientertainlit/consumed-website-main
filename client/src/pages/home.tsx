@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-full bg-white py-16 md:py-24"
+          className="relative w-full bg-white pt-6 md:pt-10 pb-12 md:pb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -326,11 +326,11 @@ export default function Home() {
             <img
               src={logoPurple}
               alt="Consumed"
-              className="h-16 md:h-24 lg:h-28 w-auto mb-6"
+              className="h-16 md:h-24 lg:h-28 w-auto mb-2 md:mb-3"
               data-testid="img-logo-purple-section"
             />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
-              Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
+              Where entertainment<br /><span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
             </h2>
             <a
               href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
