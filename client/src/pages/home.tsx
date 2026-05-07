@@ -759,7 +759,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-heading leading-[1.05] mb-6">
             <span className="text-zinc-800">What are you </span>
             <AnimatePresence mode="wait">
               <motion.span
