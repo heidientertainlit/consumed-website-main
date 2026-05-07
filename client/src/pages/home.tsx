@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-full bg-white pt-6 md:pt-10 pb-12 md:pb-16"
+          className="relative w-full bg-white pt-2 md:pt-4 pb-10 md:pb-14"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -326,10 +326,10 @@ export default function Home() {
             <img
               src={logoPurple}
               alt="Consumed"
-              className="h-16 md:h-24 lg:h-28 w-auto mb-2 md:mb-3"
+              className="h-14 md:h-20 lg:h-24 w-auto mb-1 md:mb-2"
               data-testid="img-logo-purple-section"
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-3xl">
               Where entertainment<br /><span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
             </h2>
             <a
