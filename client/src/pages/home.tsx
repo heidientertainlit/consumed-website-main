@@ -602,7 +602,6 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-16 md:mt-24 text-center max-w-3xl mx-auto px-4"
         >
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#6b21a8] font-semibold font-body mb-4">The social layer of entertainment</p>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             <span className="text-zinc-800">What are you </span>
             <AnimatePresence mode="wait">
@@ -621,7 +620,16 @@ export default function Home() {
           <p className="text-lg text-zinc-500 font-body leading-relaxed">
             Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
           </p>
-          
+          <a
+            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
+            data-testid="link-start-sharing"
+          >
+            Start sharing
+            <span aria-hidden="true">→</span>
+          </a>
         </motion.div>
 
         
