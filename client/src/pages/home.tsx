@@ -310,11 +310,11 @@ export default function Home() {
       </section>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-6 pt-2 md:pt-4 pb-32 flex flex-col items-center">
+      <main className="relative z-10 pb-32 flex flex-col items-center w-full">
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-screen left-1/2 -translate-x-1/2 bg-white py-16 md:py-24"
+          className="relative w-full bg-white py-16 md:py-24"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export default function Home() {
 
         {/* Watercolor band — Tagline + Promo carousel (full bleed) */}
         <section
-          className="relative w-screen left-1/2 -translate-x-1/2 py-16 md:py-24 overflow-hidden"
+          className="relative w-full py-16 md:py-24 overflow-hidden"
           style={{
             background:
               "radial-gradient(ellipse 60% 50% at 18% 22%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 82% 18%, rgba(99,102,241,0.09) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 50% 85%, rgba(168,85,247,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 30% 70%, rgba(196,181,253,0.10) 0%, transparent 65%), #faf6fb",
@@ -396,7 +396,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-6xl mt-16 md:mt-24"
+          className="w-full max-w-6xl mt-16 md:mt-24 px-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
@@ -438,7 +438,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-6xl mt-16 md:mt-24 bg-[#0f0521] text-white rounded-3xl px-6 md:px-12 py-12 md:py-16"
+          className="w-[calc(100%-3rem)] max-w-6xl mt-16 md:mt-24 bg-[#0f0521] text-white rounded-3xl px-6 md:px-12 py-12 md:py-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {/* Play */}
@@ -507,7 +507,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-6xl mt-16 md:mt-24"
+          className="w-full max-w-6xl mt-16 md:mt-24 px-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
