@@ -310,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* Main Content */}
-      <main className="relative z-10 pb-32 flex flex-col items-center w-full">
+      <main className="relative z-10 pb-12 flex flex-col items-center w-full">
 
         {/* Brand intro — white section */}
         <section
@@ -507,7 +507,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-6xl mt-16 md:mt-24 px-6"
+          className="w-full max-w-6xl mt-8 md:mt-12 px-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Hot Take Card */}
