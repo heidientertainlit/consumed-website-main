@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-full bg-white pt-10 md:pt-16 pb-20 md:pb-28"
+          className="relative w-full bg-white pt-20 md:pt-28 pb-20 md:pb-28"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -326,7 +326,7 @@ export default function Home() {
             <img
               src={logoPurple}
               alt="Consumed"
-              className="h-14 md:h-20 lg:h-24 w-auto -mb-1 md:-mb-2"
+              className="h-12 md:h-16 lg:h-20 w-auto -mb-1 md:-mb-2"
               data-testid="img-logo-purple-section"
             />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] pb-2 font-heading max-w-3xl bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
