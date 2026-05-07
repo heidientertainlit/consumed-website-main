@@ -70,7 +70,7 @@ export default function Home() {
 
   useEffect(() => {
     if (headlineIndex >= rotatingHeadlines.length - 1) return;
-    const t = setTimeout(() => setHeadlineIndex((i) => i + 1), 2800);
+    const t = setTimeout(() => setHeadlineIndex((i) => i + 1), 4500);
     return () => clearTimeout(t);
   }, [headlineIndex]);
 
@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Brand intro — white section */}
         <section
-          className="relative w-full bg-white pt-10 md:pt-16 pb-10 md:pb-14"
+          className="relative w-full bg-white pt-10 md:pt-16 pb-20 md:pb-28"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
