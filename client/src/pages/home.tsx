@@ -230,7 +230,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-2"
+              className="mt-8 md:mt-10"
             >
               <a
                 href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
