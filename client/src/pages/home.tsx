@@ -612,6 +612,104 @@ export default function Home() {
                 <span className="text-xs text-zinc-400 font-body">8h</span>
               </div>
             </div>
+
+            {/* Prediction Card — Dancing with the Stars */}
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-prediction">
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Prediction</p>
+                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">DWTS</span>
+                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+25 pts</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-1">
+                Who lifts the Mirrorball?
+              </h3>
+              <p className="text-xs text-zinc-500 font-body mb-5">Season 34 finale · closes in 2d</p>
+
+              <div className="space-y-2.5">
+                {[
+                  { name: "Ilona Maher", pct: 46, you: true, color: "from-[#a855f7] to-[#6366f1]" },
+                  { name: "Joey Graziadei", pct: 31, you: false, color: "from-pink-400 to-rose-500" },
+                  { name: "Danielle Fishel", pct: 15, you: false, color: "from-amber-400 to-orange-500" },
+                  { name: "Jenn Tran", pct: 8, you: false, color: "from-emerald-400 to-teal-500" },
+                ].map((c) => (
+                  <div key={c.name} className="font-body" data-testid={`prediction-${c.name}`}>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-zinc-800 font-medium truncate">{c.name}</span>
+                        {c.you && <span className="text-[9px] uppercase tracking-wider text-violet-700 bg-violet-100 px-1.5 py-0.5 rounded-full font-semibold flex-shrink-0">Your pick</span>}
+                      </div>
+                      <span className="text-zinc-500 flex-shrink-0">{c.pct}%</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-zinc-100 rounded-full overflow-hidden">
+                      <div className={`h-full rounded-full bg-gradient-to-r ${c.color}`} style={{ width: `${c.pct}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4 mt-5 pt-4 border-t border-zinc-100">
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-prediction-like">
+                  <Heart className="w-4 h-4" /> 14
+                </button>
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-prediction-comment">
+                  <MessageSquare className="w-4 h-4" /> 6
+                </button>
+                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-prediction-add">
+                  <Plus className="w-4 h-4" />
+                </button>
+                <span className="ml-auto text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Prediction</span>
+                <span className="text-xs text-zinc-400 font-body">2h</span>
+              </div>
+            </div>
+
+            {/* Binge Battle Card — Book series */}
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-binge-battle">
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Binge battle</p>
+                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Book</span>
+                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+15 pts</span>
+              </div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-14 h-20 md:w-16 md:h-24 rounded-md bg-gradient-to-br from-rose-900 via-rose-800 to-rose-950 flex items-end justify-center p-1.5 flex-shrink-0 shadow-inner">
+                  <span className="text-amber-300 text-[7px] md:text-[8px] font-extrabold tracking-wider font-heading text-center leading-tight">FOURTH<br />WING</span>
+                </div>
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="text-lg md:text-xl font-bold text-zinc-900 font-heading leading-tight mb-0.5">Empyrean Series</h3>
+                  <p className="text-xs text-zinc-500 font-body">Who finished first?</p>
+                </div>
+              </div>
+
+              <div className="space-y-2.5 pb-4 border-b border-zinc-100">
+                {[
+                  { rank: 1, name: "jennalovesbooks", time: "3d 4h", medal: "🥇" },
+                  { rank: 2, name: "Heidi Peters Tagliaferri", time: "5d 12h", medal: "🥈" },
+                  { rank: 3, name: "you", time: "1w 2d", medal: "🥉", you: true },
+                  { rank: 4, name: "kjwoodsemh", time: "2w 5d", medal: "" },
+                ].map((p) => (
+                  <div key={p.name} className="flex items-center justify-between text-xs font-body" data-testid={`binge-${p.name}`}>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="w-5 text-center text-sm flex-shrink-0">{p.medal || <span className="text-zinc-400 text-xs">{p.rank}</span>}</span>
+                      <span className={`truncate ${p.you ? "text-violet-700 font-semibold" : "text-zinc-800 font-medium"}`}>{p.name}</span>
+                    </div>
+                    <span className="text-zinc-500 flex-shrink-0">{p.time}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4 mt-4">
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-binge-like">
+                  <Heart className="w-4 h-4" /> 22
+                </button>
+                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-binge-comment">
+                  <MessageSquare className="w-4 h-4" /> 9
+                </button>
+                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-binge-add">
+                  <Plus className="w-4 h-4" />
+                </button>
+                <span className="ml-auto text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-body font-semibold">Battle</span>
+                <span className="text-xs text-zinc-400 font-body">5h</span>
+              </div>
+            </div>
           </div>
         </motion.section>
 
