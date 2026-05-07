@@ -312,51 +312,55 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-6 pt-2 md:pt-4 pb-32 flex flex-col items-center">
 
-        {/* Watercolor band — Brand intro + Tagline + Promo carousel */}
-        <div
-          className="relative w-screen left-1/2 -translate-x-1/2 py-12 md:py-20"
+        {/* Brand intro — white section */}
+        <section
+          className="relative w-screen left-1/2 -translate-x-1/2 bg-white py-16 md:py-24"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="container mx-auto px-6 flex flex-col items-center text-center"
+          >
+            <img
+              src={logoPurple}
+              alt="Consumed"
+              className="h-16 md:h-24 lg:h-28 w-auto mb-6"
+              data-testid="img-logo-purple-section"
+            />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
+              Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
+            </h2>
+            <a
+              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
+              data-testid="link-download-app-section"
+            >
+              Download the App
+              <span aria-hidden="true">→</span>
+            </a>
+          </motion.div>
+        </section>
+
+        {/* Watercolor band — Tagline + Promo carousel (full bleed) */}
+        <section
+          className="relative w-screen left-1/2 -translate-x-1/2 py-16 md:py-24 overflow-hidden"
           style={{
             background:
               "radial-gradient(ellipse 60% 50% at 18% 22%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 82% 18%, rgba(99,102,241,0.09) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 50% 85%, rgba(168,85,247,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 30% 70%, rgba(196,181,253,0.10) 0%, transparent 65%), #faf6fb",
           }}
         >
           <div className="container mx-auto px-6 flex flex-col items-center">
-            {/* Brand intro — purple logo + headline + CTA */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="w-full flex flex-col items-center text-center pt-2 md:pt-6 pb-6"
-            >
-              <img
-                src={logoPurple}
-                alt="Consumed"
-                className="h-16 md:h-24 lg:h-28 w-auto mb-6"
-                data-testid="img-logo-purple-section"
-              />
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-zinc-900 font-heading max-w-4xl">
-                Where entertainment <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">gets played.</span>
-              </h2>
-              <a
-                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-                data-testid="link-download-app-section"
-              >
-                Download the App
-                <span aria-hidden="true">→</span>
-              </a>
-            </motion.section>
-
             {/* Tagline above carousel */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mt-16 md:mt-24 text-center"
+              className="text-center"
             >
               <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading max-w-3xl">Finally, all your entertainment — all in one place.</p>
             </motion.div>
@@ -367,7 +371,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mt-8 w-full"
+              className="mt-10 w-full"
             >
               <div
                 className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -384,7 +388,7 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </section>
 
         {/* Section A — Entertainment is already social */}
         <motion.section
