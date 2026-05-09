@@ -329,10 +329,10 @@ export default function Home() {
               className="h-12 md:h-16 lg:h-20 w-auto -mb-1 md:-mb-2"
               data-testid="img-logo-purple-section"
             />
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] pb-2 font-heading whitespace-nowrap bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
-              Where entertainment gets played.
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] pb-2 font-heading md:whitespace-nowrap text-center bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
+              Where entertainment <br className="md:hidden" />gets played.
             </h2>
-            <p className="mt-2 text-[10px] md:text-xs uppercase tracking-[0.3em] text-zinc-500 font-light font-body">
+            <p className="mt-2 text-[9px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-500 font-light font-body text-center px-2">
               Track what you consume. Play what you know.
             </p>
             <a
@@ -514,7 +514,7 @@ export default function Home() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Hot Take Card */}
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex items-center gap-6" data-testid="card-hot-take">
+            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex flex-col sm:flex-row sm:items-center gap-6" data-testid="card-hot-take">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-3">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Cast your vote</p>
@@ -557,7 +557,7 @@ export default function Home() {
 
             {/* Rating Card — Star Wars */}
             <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-rating">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">What's your take?</p>
                 <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Movie</span>
                 <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+10 pts</span>
@@ -618,7 +618,7 @@ export default function Home() {
 
             {/* Prediction Card — Dancing with the Stars */}
             <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-prediction">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Prediction</p>
                 <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">DWTS</span>
                 <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+25 pts</span>
@@ -667,7 +667,7 @@ export default function Home() {
 
             {/* Binge Battle Card — Book series */}
             <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-binge-battle">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Binge battle</p>
                 <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Book</span>
                 <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+15 pts</span>
