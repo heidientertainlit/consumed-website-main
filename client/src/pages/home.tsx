@@ -285,7 +285,7 @@ export default function Home() {
                 filter:
                   "drop-shadow(0 0 1px rgba(255,255,255,0.45)) drop-shadow(0 0 6px rgba(168,85,247,0.55)) drop-shadow(0 0 18px rgba(99,102,241,0.35)) drop-shadow(0 35px 70px rgba(168,85,247,0.4))",
               }}
-              className="relative z-10 w-[110%] max-w-[760px] md:max-w-[880px] lg:max-w-[980px] h-auto translate-x-[14%] md:translate-x-[18%] lg:translate-x-[20%] -translate-y-[12%] md:-translate-y-[10%] lg:-translate-y-[8%]"
+              className="relative z-10 w-[105%] max-w-[820px] md:max-w-[900px] lg:max-w-[980px] h-auto translate-x-[16%] md:translate-x-[18%] lg:translate-x-[20%] translate-y-[2%] md:translate-y-[2%] lg:translate-y-[2%]"
               data-testid="img-hero-phones"
             />
           </motion.div>
