@@ -155,9 +155,6 @@ export default function Home() {
 
       {/* Top header — white, brand focus */}
       <header className="relative w-full bg-white border-b border-zinc-100 overflow-hidden">
-        {/* Soft brand glow behind the logo */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[420px] rounded-full bg-purple-300/20 blur-[120px]" />
-
         {/* Nav row */}
         <nav className="relative z-50 container mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -184,12 +181,25 @@ export default function Home() {
           <img
             src={logoPurple}
             alt="Consumed"
-            className="h-24 md:h-36 lg:h-44 w-auto"
+            className="h-14 md:h-20 lg:h-24 w-auto"
             data-testid="img-logo-header"
           />
           <p className="mt-3 md:mt-4 text-sm md:text-base uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-500 font-medium font-body">
             Entertainment is better, together.
           </p>
+          <p className="mt-5 md:mt-6 text-[10px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-400 font-light font-body">
+            Track what you consume. Play what you know.
+          </p>
+          <a
+            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
+            data-testid="link-download-app-header"
+          >
+            Download the App
+            <span aria-hidden="true">→</span>
+          </a>
         </motion.div>
       </header>
 
@@ -284,42 +294,6 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="relative z-10 pb-12 flex flex-col items-center w-full">
-
-        {/* Brand intro — white section */}
-        <section
-          className="relative w-full bg-white pt-20 md:pt-28 pb-20 md:pb-28"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="container mx-auto px-6 flex flex-col items-center text-center"
-          >
-            <img
-              src={logoPurple}
-              alt="Consumed"
-              className="h-12 md:h-16 lg:h-20 w-auto -mb-1 md:-mb-2"
-              data-testid="img-logo-purple-section"
-            />
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] pb-2 font-heading md:whitespace-nowrap text-center bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
-              Where entertainment <br className="md:hidden" />gets played.
-            </h2>
-            <p className="mt-2 text-[9px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-500 font-light font-body text-center px-2">
-              Track what you consume. Play what you know.
-            </p>
-            <a
-              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-              data-testid="link-download-app-section"
-            >
-              Download the App
-              <span aria-hidden="true">→</span>
-            </a>
-          </motion.div>
-        </section>
 
         {/* Watercolor band — Tagline + Promo carousel (full bleed) */}
         <section
