@@ -154,7 +154,10 @@ export default function Home() {
       <div className="fixed inset-0 z-0 pointer-events-none bg-[#f8f8f8]" />
 
       {/* Top header — white, brand focus */}
-      <header className="relative w-full bg-white border-b border-zinc-100">
+      <header className="relative w-full bg-white border-b border-zinc-100 overflow-hidden">
+        {/* Soft brand glow behind the logo */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[420px] rounded-full bg-purple-300/20 blur-[120px]" />
+
         {/* Nav row */}
         <nav className="relative z-50 container mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -176,17 +179,17 @@ export default function Home() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="container mx-auto px-6 pt-4 md:pt-8 pb-14 md:pb-20 flex flex-col items-center text-center"
+          className="relative z-10 container mx-auto px-6 pt-6 md:pt-10 pb-16 md:pb-24 flex flex-col items-center text-center"
         >
           <img
             src={logoPurple}
             alt="Consumed"
-            className="h-16 md:h-24 lg:h-28 w-auto"
+            className="h-24 md:h-36 lg:h-44 w-auto"
             data-testid="img-logo-header"
           />
-          <h1 className="mt-4 md:mt-6 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] font-heading bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
-            Entertainment is better together.
-          </h1>
+          <p className="mt-3 md:mt-4 text-sm md:text-base uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-500 font-medium font-body">
+            Entertainment is better, together.
+          </p>
         </motion.div>
       </header>
 
