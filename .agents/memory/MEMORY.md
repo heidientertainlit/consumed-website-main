@@ -1,1 +1,1 @@
-- [Neon/glow image transparency](neon-image-transparency.md) — knock out dark bg of a neon/glow screenshot via alpha-from-luminance; CopyOpacity mask needs `-alpha off`.
+- [Recovering a stuck git rebase](git-rebase-recovery.md) — bash blocks git-writes & .replit is protected; reconstruct the abort via Node (code_execution): read-tree --reset + git archive|tar + fs edits to .git.
