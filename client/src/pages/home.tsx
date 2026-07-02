@@ -13,6 +13,9 @@ import screenRooms from "../assets/images/screen-rooms.png";
 import screenTakes from "../assets/images/screen-takes.png";
 import screenRatings from "../assets/images/screen-ratings.png";
 import screenAdd from "../assets/images/screen-add.png";
+import wcStroke1 from "../assets/images/wc-stroke-1.png";
+import wcStroke2 from "../assets/images/wc-stroke-2.png";
+import wcStroke3 from "../assets/images/wc-stroke-3.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -63,45 +66,27 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
   </a>
 );
 
-const BLOB_PATH =
-  "M40 24 C70 8 140 6 168 26 C192 42 194 70 188 96 C182 124 160 142 128 148 C96 154 56 150 32 130 C10 112 6 78 14 52 C20 34 28 32 40 24 Z";
+const STROKE_VARIANTS = [
+  { stroke: wcStroke1, transform: "rotate(-3deg)" },
+  { stroke: wcStroke2, transform: "scaleX(-1) rotate(2deg)" },
+  { stroke: wcStroke3, transform: "rotate(4deg)" },
+];
 
 function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
-  const edgeId = `wc-edge-${seed}`;
-  const darkId = `wc-dark-${seed}`;
-  const lightId = `wc-light-${seed}`;
+  const variant = STROKE_VARIANTS[seed % STROKE_VARIANTS.length];
+  const maskStyle = {
+    backgroundColor: color,
+    WebkitMaskImage: `url(${variant.stroke})`,
+    maskImage: `url(${variant.stroke})`,
+    WebkitMaskSize: "100% 100%",
+    maskSize: "100% 100%",
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    transform: variant.transform,
+  } as const;
   return (
-    <div className="relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 mb-4 transition-transform duration-300 group-hover:scale-110">
-      <svg viewBox="0 0 200 170" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <defs>
-          <filter id={edgeId} x="-35%" y="-35%" width="170%" height="170%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves={4} seed={seed} result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale={20} xChannelSelector="R" yChannelSelector="G" result="disp" />
-            <feGaussianBlur in="disp" stdDeviation={1.2} />
-          </filter>
-          <filter id={darkId} x="-35%" y="-35%" width="170%" height="170%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.022 0.032" numOctaves={3} seed={seed} result="t" />
-            <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0.9 0.9 0 -0.55" result="d" />
-            <feGaussianBlur in="d" stdDeviation={0.6} result="db" />
-            <feComposite in="db" in2="SourceAlpha" operator="in" />
-          </filter>
-          <filter id={lightId} x="-35%" y="-35%" width="170%" height="170%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.026 0.02" numOctaves={3} seed={seed + 9} result="t" />
-            <feColorMatrix in="t" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.9 0.9 0.9 0 -0.6" result="l" />
-            <feGaussianBlur in="l" stdDeviation={0.6} result="lb" />
-            <feComposite in="lb" in2="SourceAlpha" operator="in" />
-          </filter>
-        </defs>
-        <g filter={`url(#${edgeId})`}>
-          <path d={BLOB_PATH} fill={color} opacity={0.85} />
-        </g>
-        <g filter={`url(#${darkId})`} opacity={0.5}>
-          <path d={BLOB_PATH} fill={color} transform="translate(100 85) scale(0.9) translate(-100 -85)" />
-        </g>
-        <g filter={`url(#${lightId})`} opacity={0.55}>
-          <path d={BLOB_PATH} fill={color} transform="translate(100 85) scale(0.9) translate(-100 -85)" />
-        </g>
-      </svg>
+    <div className="relative flex items-center justify-center w-28 h-20 md:w-32 md:h-24 mb-3 transition-transform duration-300 group-hover:scale-105">
+      <div className="absolute inset-0" aria-hidden="true" style={maskStyle} />
       <Icon className="relative z-10 h-8 w-8 md:h-10 md:w-10 text-neutral-900" strokeWidth={1.75} />
     </div>
   );

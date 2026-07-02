@@ -96,3 +96,21 @@ id = "JCiEgT6FTsGwKPS-xFVx0"
 uri = "file://client/src/assets/images/cover-chef.png"
 type = "image"
 title = "Chef drama media cover"
+
+[[generated]]
+id = "KLYk6C1uidOzGUkTbnhDh"
+uri = "file://attached_assets/generated_images/wc_stroke_1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "fNbLolAlenSOAwyFfEIDg"
+uri = "file://attached_assets/generated_images/wc_stroke_2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "1UNKhsDQ1qfc-iyh5nCIK"
+uri = "file://attached_assets/generated_images/wc_stroke_3.png"
+type = "image"
+title = "generated_image"
