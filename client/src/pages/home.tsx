@@ -289,7 +289,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-0 relative overflow-hidden bg-[#faf0e6]" id="features">
+        <section className="pt-24 md:pt-28 pb-0 relative overflow-hidden bg-[#fbf8f4]" id="features">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
 
