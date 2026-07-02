@@ -263,33 +263,26 @@ export default function Home() {
             <img src={logoPurple} alt="Consumed" className="h-7 md:h-8 cursor-pointer hover:opacity-80 transition-opacity" />
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
-            <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
-            <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
-          </nav>
-          
-          <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <AppStoreButton />
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors" aria-label="Menu">
-              <Menu className="w-5 h-5" />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label="Menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-
-          <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </button>
         </div>
       </header>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden">
-          <nav className="flex flex-col gap-6 text-2xl font-heading">
-            <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary">About Us</button>
-            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary">Insights</button>
-            <div className="mt-8">
-              <AppStoreButton className="w-full text-lg py-4" />
-            </div>
+        <div className="fixed inset-0 z-40 bg-background pt-28 px-6">
+          <nav className="flex flex-col gap-6 text-2xl font-heading max-w-7xl mx-auto">
+            <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary transition-colors">About Us</button>
+            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary transition-colors">Insights</button>
           </nav>
         </div>
       )}
