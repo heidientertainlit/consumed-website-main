@@ -6,7 +6,7 @@ import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Hear
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
-import heroEditorial from "../assets/images/hero-editorial.png";
+import heroCollage from "../assets/images/hero-collage.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -138,7 +138,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:w-[45%] flex flex-col items-start z-10"
+              className="lg:w-[45%] flex flex-col items-start z-10 lg:order-2"
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
                 See what everyone's consuming.
@@ -169,10 +169,10 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-[55%] relative"
+              className="lg:w-[55%] relative lg:order-1"
             >
-              <div className="relative w-full max-w-none aspect-[6/5] lg:w-[140%] lg:-mr-[22%] xl:-mr-[9rem]">
-                <img src={heroEditorial} alt="Mixed-media collage of a person surrounded by movies, books, music and games" className="w-full h-full object-contain object-right" />
+              <div className="relative w-full max-w-none aspect-[6/5] lg:w-[140%] lg:-ml-[22%] xl:-ml-[9rem]">
+                <img src={heroCollage} alt="Mixed-media collage of a woman surrounded by movies, books, music and a vinyl record" className="w-full h-full object-contain object-left scale-x-[-1]" />
               </div>
             </motion.div>
           </div>
