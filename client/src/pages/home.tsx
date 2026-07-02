@@ -137,12 +137,10 @@ export default function Home() {
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
                 See what everyone's consuming.
-                <span className="relative block w-fit text-primary font-script text-3xl md:text-4xl lg:text-[2.75rem] leading-none mt-5 whitespace-nowrap">
-                  <span className="inline-block -rotate-3">Track.</span>{" "}
-                  <span className="inline-block rotate-1 -translate-y-1.5">Connect.</span>{" "}
-                  <span className="inline-block rotate-2 translate-y-1">Compare.</span>
-                  <svg className="absolute -bottom-4 left-0 w-full text-primary/70" height="14" viewBox="0 0 320 14" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M3 9 C 70 2, 130 12, 195 6 S 300 4, 317 8" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+                <span className="relative block w-fit text-primary font-script text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.2] mt-4 whitespace-nowrap">
+                  Track. Connect. Compare.
+                  <svg className="absolute -bottom-2 left-0 w-full text-primary" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                   </svg>
                 </span>
               </h1>
@@ -176,8 +174,8 @@ export default function Home() {
         </section>
 
         {/* 3. CATEGORIES */}
-        <section className="py-24 md:py-32 px-6 container mx-auto max-w-7xl" id="how-it-works">
-          <div className="text-center mb-16 md:mb-24">
+        <section className="py-24 md:py-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
+          <div className="text-center order-2 mt-16 md:mt-24">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +187,7 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 order-1">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", icon: Clapperboard, color: "text-purple-600", bg: "bg-purple-100", blob: "blob-1" },
               { title: "Books", desc: "Log your reads and share your thoughts.", icon: BookOpen, color: "text-emerald-600", bg: "bg-emerald-100", blob: "blob-2" },
