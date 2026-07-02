@@ -1,0 +1,1 @@
+- [Neon/glow image transparency](neon-image-transparency.md) — knock out dark bg of a neon/glow screenshot via alpha-from-luminance; CopyOpacity mask needs `-alpha off`.

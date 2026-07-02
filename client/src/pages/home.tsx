@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -17,11 +17,6 @@ import coverDesert from "../assets/images/cover-desert.png";
 import coverWestern from "../assets/images/cover-western.png";
 import coverLiterary from "../assets/images/cover-literary.png";
 import coverChef from "../assets/images/cover-chef.png";
-import catMovies from "../assets/images/cat-movies.png";
-import catBooks from "../assets/images/cat-books.png";
-import catPodcasts from "../assets/images/cat-podcasts.png";
-import catGames from "../assets/images/cat-games.png";
-import catMusic from "../assets/images/cat-music.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -62,6 +57,31 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     Download the app
   </a>
 );
+
+const BLOB_PATH =
+  "M40 24 C70 8 140 6 168 26 C192 42 194 70 188 96 C182 124 160 142 128 148 C96 154 56 150 32 130 C10 112 6 78 14 52 C20 34 28 32 40 24 Z";
+
+function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
+  const filterId = `watercolor-${seed}`;
+  return (
+    <div className="relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 mb-4 transition-transform duration-300 group-hover:scale-110">
+      <svg viewBox="0 0 200 170" className="absolute inset-0 h-full w-full" aria-hidden="true">
+        <defs>
+          <filter id={filterId} x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves={3} seed={seed} result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale={14} xChannelSelector="R" yChannelSelector="G" result="disp" />
+            <feGaussianBlur in="disp" stdDeviation={0.6} />
+          </filter>
+        </defs>
+        <g filter={`url(#${filterId})`}>
+          <path d={BLOB_PATH} fill={color} opacity={0.92} />
+          <path d={BLOB_PATH} fill={color} opacity={0.5} transform="translate(100 85) scale(0.72) translate(-100 -85)" />
+        </g>
+      </svg>
+      <Icon className="relative z-10 h-14 w-14 md:h-16 md:w-16 text-neutral-900" strokeWidth={1.75} />
+    </div>
+  );
+}
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,7 +164,7 @@ export default function Home() {
                   </svg>
                   <motion.img
                     src={neonSmiley}
-                    alt="Neon smiley"
+                    alt=""
                     data-testid="img-hero-smiley"
                     aria-hidden="true"
                     initial={{ opacity: 0, scale: 0.6 }}
@@ -203,11 +223,11 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 order-1">
             {[
-              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", img: catMovies },
-              { title: "Books", desc: "Log your reads and share your thoughts.", img: catBooks },
-              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", img: catPodcasts },
-              { title: "Games", desc: "Track your games and achievements.", img: catGames },
-              { title: "Music", desc: "Save what you listen to and discover more.", img: catMusic },
+              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
+              { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
+              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones, color: "#efb3c6", seed: 35 },
+              { title: "Games", desc: "Track your games and achievements.", Icon: Gamepad2, color: "#e5c261", seed: 49 },
+              { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2, color: "#9f8bd9", seed: 63 },
             ].map((cat, i) => (
               <motion.div 
                 key={cat.title}
@@ -215,9 +235,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center text-center"
+                className="group flex flex-col items-center text-center"
               >
-                <img src={cat.img} alt="" aria-hidden="true" className="h-32 md:h-40 w-auto max-w-full object-contain mb-4 transition-transform hover:scale-110 duration-300" />
+                <CategoryIcon Icon={cat.Icon} color={cat.color} seed={cat.seed} />
                 <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
               </motion.div>
