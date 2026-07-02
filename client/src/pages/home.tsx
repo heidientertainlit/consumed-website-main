@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -13,11 +13,6 @@ import screenRooms from "../assets/images/screen-rooms.png";
 import screenTakes from "../assets/images/screen-takes.png";
 import screenRatings from "../assets/images/screen-ratings.png";
 import screenAdd from "../assets/images/screen-add.png";
-import roomHorror from "../assets/images/room-horror.png";
-import roomScifi from "../assets/images/room-scifi.png";
-import roomBooks from "../assets/images/room-books.png";
-import showDune from "../assets/images/show-dune.png";
-import showTlou from "../assets/images/show-tlou.png";
 import posterPodcast from "../assets/images/poster-podcast.jpg";
 import posterBook from "../assets/images/poster-book.jpg";
 import posterMovie from "../assets/images/poster-movie.jpg";
@@ -390,150 +385,31 @@ export default function Home() {
 
         {/* 4. ROOMS / SOCIAL */}
         <section className="py-24 md:py-32 bg-secondary/40" id="rooms">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-              {/* Left Column */}
-              <div className="lg:w-1/3 flex flex-col justify-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">React together</p>
-                  <h2 className="text-4xl md:text-5xl font-heading font-normal mb-8">
-                    Find your people.<br />
-                    <span className="text-primary italic">Join the conversation.</span>
-                  </h2>
-                  
-                  <ul className="space-y-4 mb-10 text-foreground/80 font-medium">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Compare taste and see your overlap</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Hot takes, predictions, theories, debates</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Find the people whose taste you trust</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Join Rooms where your people already are</li>
-                  </ul>
-                  
-                  <button onClick={() => scrollToSection("rooms")} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" data-testid="button-explore-rooms">
-                    Explore Rooms <ArrowRight className="w-4 h-4 ml-1" />
-                  </button>
-                </motion.div>
-              </div>
+          <div className="container mx-auto px-6 max-w-3xl">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center text-center"
+              >
+                <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">React together</p>
+                <h2 className="text-4xl md:text-5xl font-heading font-normal mb-8">
+                  Find your people.<br />
+                  <span className="text-primary italic">Join the conversation.</span>
+                </h2>
 
-              {/* Right Column / Cards */}
-              <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {/* Card 1: Popular Rooms */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5"
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="font-bold text-lg">Popular Rooms</h3>
-                    <span className="text-sm text-primary font-medium cursor-pointer">See all →</span>
-                  </div>
-                  <div className="space-y-4">
-                    {[
-                      { img: roomHorror, name: "Horror Heads", members: "12.4K" },
-                      { img: roomScifi, name: "Sci-Fi Central", members: "8.7K" },
-                      { img: roomBooks, name: "The Book Nook", members: "15.1K" }
-                    ].map(room => (
-                      <div key={room.name} className="flex items-center gap-4 group cursor-pointer">
-                        <img src={room.img} alt={room.name} className="w-12 h-12 rounded-xl object-cover group-hover:scale-105 transition-transform" />
-                        <div>
-                          <p className="font-bold text-sm">{room.name}</p>
-                          <p className="text-xs text-foreground/50">{room.members} members</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+                <ul className="space-y-4 mb-10 text-foreground/80 font-medium text-left inline-flex flex-col">
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Compare taste and see your overlap</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Hot takes, predictions, theories, debates</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Find the people whose taste you trust</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Join Rooms where your people already are</li>
+                </ul>
 
-                {/* Card 2: Hot Discussion */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5 flex flex-col"
-                >
-                  <div className="mb-4">
-                    <span className="inline-block px-2.5 py-1 bg-red-100 text-red-600 text-[10px] font-bold uppercase rounded-md mb-2">Hot Discussion</span>
-                    <h3 className="font-bold text-base leading-snug">The best opening scene in a horror movie?</h3>
-                    <p className="text-xs text-foreground/50 mt-1">127 replies</p>
-                  </div>
-                  
-                  <div className="flex-1 space-y-4 mt-2">
-                    <div className="bg-secondary/30 p-3 rounded-2xl">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-5 h-5 rounded-full bg-blue-200 flex items-center justify-center text-[10px] font-bold text-blue-700">A</div>
-                        <span className="text-xs font-bold">Alex</span>
-                      </div>
-                      <p className="text-sm">Scream (1996) is untouchable. The tension building with the phone calls...</p>
-                      <div className="flex gap-3 mt-2 text-foreground/40">
-                        <span className="text-[10px] flex items-center gap-1"><Heart className="w-3 h-3" /> 42</span>
-                      </div>
-                    </div>
-                    <div className="bg-secondary/30 p-3 rounded-2xl">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-5 h-5 rounded-full bg-green-200 flex items-center justify-center text-[10px] font-bold text-green-700">J</div>
-                        <span className="text-xs font-bold">Jordan</span>
-                      </div>
-                      <p className="text-sm">Ghost Ship has entered the chat.</p>
-                      <div className="flex gap-3 mt-2 text-foreground/40">
-                        <span className="text-[10px] flex items-center gap-1"><Heart className="w-3 h-3" /> 18</span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 3: Friends Are Watching */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5"
-                >
-                  <h3 className="font-bold text-lg mb-6">Friends Are Watching</h3>
-                  
-                  <div className="space-y-5">
-                    <div>
-                      <p className="text-xs text-foreground/50 mb-2">You and 24 others watched</p>
-                      <div className="flex gap-3">
-                        <img src={showDune} alt="Dune" className="w-10 h-14 rounded-lg object-cover" />
-                        <div>
-                          <p className="font-bold text-sm">Dune: Part Two</p>
-                          <p className="text-xs text-foreground/50">2024</p>
-                          <div className="flex gap-0.5 mt-1">
-                            {[...Array(5)].map((_,i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="h-px bg-border w-full" />
-                    
-                    <div>
-                      <p className="text-xs text-foreground/50 mb-2">Jess predicted</p>
-                      <div className="flex gap-3">
-                        <img src={showTlou} alt="TLOU" className="w-10 h-14 rounded-lg object-cover" />
-                        <div>
-                          <p className="font-bold text-sm">The Last of Us</p>
-                          <p className="text-xs text-foreground/50">S2 E2</p>
-                          <p className="text-sm italic mt-1 bg-secondary/30 p-2 rounded-lg border-l-2 border-primary">"I think Ellie will find out about Joel in episode 4."</p>
-                          <div className="flex items-center gap-4 mt-2 text-[10px] text-foreground/50">
-                            <span className="flex items-center gap-1"><ThumbsUp className="w-3 h-3" /> 12</span>
-                            <span className="flex items-center gap-1"><MessageCircle className="w-3 h-3" /> 4</span>
-                            <span className="text-primary font-bold cursor-pointer">Reply</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+                <button onClick={() => scrollToSection("rooms")} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" data-testid="button-explore-rooms">
+                  Explore Rooms <ArrowRight className="w-4 h-4 ml-1" />
+                </button>
+              </motion.div>
             </div>
-          </div>
         </section>
 
         {/* 5. DOWNLOAD CTA */}
