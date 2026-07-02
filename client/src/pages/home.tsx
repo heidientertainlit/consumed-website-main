@@ -280,10 +280,15 @@ export default function Home() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background pt-28 px-6">
-          <nav className="flex flex-col gap-6 text-2xl font-heading max-w-7xl mx-auto">
-            <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary transition-colors">About Us</button>
-            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary transition-colors">Insights</button>
-          </nav>
+          <div className="max-w-7xl mx-auto">
+            <p className="text-base md:text-lg text-foreground/60 leading-relaxed mb-8 max-w-md">
+              Our Mission: Bringing joy and connection through entertainment.
+            </p>
+            <nav className="flex flex-col gap-6 text-2xl font-heading">
+              <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary transition-colors">About Us</button>
+              <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary transition-colors">Insights</button>
+            </nav>
+          </div>
         </div>
       )}
 
@@ -618,7 +623,7 @@ export default function Home() {
               <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
             </nav>
             <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
-              We help people understand themselves — and each other — through entertainment.
+              Our Mission: Bringing joy and connection through entertainment.
             </p>
             <p className="text-sm text-foreground/40">
               © 2026 Consumed. All rights reserved.
