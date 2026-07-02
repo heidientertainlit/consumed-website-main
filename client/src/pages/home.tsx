@@ -381,7 +381,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-20 md:mt-28">
+          <div className="text-center mt-8 md:mt-12">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -398,7 +398,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative mt-10 md:mt-14"
+            className="relative mt-6 md:mt-8"
           >
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
               <div className="w-72 h-72 md:w-[32rem] md:h-[32rem] bg-primary/20 rounded-full blur-[110px]" />
