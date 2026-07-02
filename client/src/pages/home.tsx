@@ -135,13 +135,13 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:w-[45%] flex flex-col items-start z-10"
             >
-              <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading font-normal leading-[1.05] tracking-tight mb-6">
-                Your entertainment identity, <br/>
-                <span className="text-primary italic font-serif">connected.</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
+                See what everyone's consuming.
+                <span className="block text-primary italic font-serif mt-2">Track. Connect. Compare.</span>
               </h1>
               
               <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
-                Track what you watch, read, listen to, and play. React to what you love. See what everyone else is into. Find your people.
+                See what people are watching, reading, listening to, and playing. Discover your entertainment identity.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -177,8 +177,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
             >
-              All your entertainment.<br />
-              <span className="text-primary italic">All in one place.</span>
+              What you consume says everything.<br />
+              <span className="text-primary italic">One identity.</span>
             </motion.h2>
           </div>
 
@@ -219,17 +219,17 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">Connection makes it better</p>
+                  <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">React together</p>
                   <h2 className="text-4xl md:text-5xl font-heading font-normal mb-8">
-                    See what others are into.<br />
+                    Find your people.<br />
                     <span className="text-primary italic">Join the conversation.</span>
                   </h2>
                   
                   <ul className="space-y-4 mb-10 text-foreground/80 font-medium">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> See what friends are consuming</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> React, reply, and join discussions</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Find people with your taste</li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Join Rooms for deeper convos</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Compare taste and see your overlap</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Hot takes, predictions, theories, debates</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Find the people whose taste you trust</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Join Rooms where your people already are</li>
                   </ul>
                   
                   <button onClick={() => scrollToSection("rooms")} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" data-testid="button-explore-rooms">
@@ -363,10 +363,10 @@ export default function Home() {
             
             <div className="lg:w-1/3 z-10 text-center lg:text-left">
               <h2 className="text-4xl md:text-5xl font-heading font-normal mb-4 text-white">
-                Entertainment is<br />
-                <span className="italic text-white/90">better together.</span>
+                Your entertainment identity<br />
+                <span className="italic text-white/90">is waiting.</span>
               </h2>
-              <p className="text-white/80 text-lg">Build your identity. Share your takes. Find your people.</p>
+              <p className="text-white/80 text-lg">Track everything. See where you rank.</p>
             </div>
 
             <div className="lg:w-1/3 z-10 flex justify-center perspective-1000">
@@ -424,6 +424,9 @@ export default function Home() {
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
               <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Blog</button>
             </nav>
+            <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
+              We help people understand themselves — and each other — through entertainment.
+            </p>
             <p className="text-sm text-foreground/40">
               © 2026 Consumed. All rights reserved.
             </p>
