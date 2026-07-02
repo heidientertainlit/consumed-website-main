@@ -65,7 +65,7 @@ const BLOB_PATH =
 function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
   const filterId = `watercolor-${seed}`;
   return (
-    <div className="relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 mb-4 transition-transform duration-300 group-hover:scale-110">
+    <div className="relative flex items-center justify-center w-24 h-24 md:w-28 md:h-28 mb-4 transition-transform duration-300 group-hover:scale-110">
       <svg viewBox="0 0 200 170" className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
           <filter id={filterId} x="-25%" y="-25%" width="150%" height="150%">
@@ -79,7 +79,7 @@ function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; 
           <path d={BLOB_PATH} fill={color} opacity={0.5} transform="translate(100 85) scale(0.72) translate(-100 -85)" />
         </g>
       </svg>
-      <Icon className="relative z-10 h-14 w-14 md:h-16 md:w-16 text-neutral-900" strokeWidth={1.75} />
+      <Icon className="relative z-10 h-10 w-10 md:h-12 md:w-12 text-neutral-900" strokeWidth={1.75} />
     </div>
   );
 }
@@ -209,7 +209,7 @@ export default function Home() {
         </section>
 
         {/* 3. CATEGORIES */}
-        <section className="pt-4 md:pt-8 pb-24 md:pb-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
+        <section className="pt-0 pb-24 md:pb-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
