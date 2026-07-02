@@ -6,7 +6,7 @@ import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Hear
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
-import heroCollage from "../assets/images/hero-collage.png";
+import heroStrip from "../assets/images/hero-strip.png";
 import neonSmiley from "../assets/images/neon-smiley.png";
 import screenDna from "../assets/images/screen-dna.png";
 import screenRooms from "../assets/images/screen-rooms.png";
@@ -292,67 +292,68 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-32 md:pt-40 pb-20 px-6 container mx-auto max-w-7xl relative overflow-hidden" id="features">
+        <section className="pt-32 md:pt-40 pb-0 relative overflow-hidden" id="features">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:w-[45%] flex flex-col items-start z-10"
-            >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
-                See what everyone's consuming.
-                <span className="relative block w-fit text-primary font-heading italic text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.2] mt-4 whitespace-nowrap">
-                  Track. Connect. Compare.
-                  <svg className="absolute -bottom-2 left-0 w-full text-primary" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  </svg>
-                  <motion.img
-                    src={neonSmiley}
-                    alt=""
-                    data-testid="img-hero-smiley"
-                    aria-hidden="true"
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-                    transition={{
-                      opacity: { duration: 0.6, delay: 0.6 },
-                      scale: { duration: 0.6, delay: 0.6 },
-                      y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
-                    }}
-                    className="pointer-events-none select-none absolute left-full top-1/2 -translate-y-1/2 ml-3 md:ml-4 w-10 md:w-12 lg:w-14"
-                  />
-                </span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
-                See what people are watching, reading, listening to, and playing. Discover your entertainment identity.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
-                <button 
-                  onClick={() => scrollToSection("better-together")}
-                  className="w-full sm:w-auto px-8 py-3.5 text-base font-medium rounded-full border-2 border-foreground/10 hover:border-foreground/20 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Play className="w-4 h-4 fill-current" /> Watch video
-                </button>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-[55%] relative"
-            >
-              <div className="relative w-full max-w-none aspect-[6/5] lg:w-[140%] lg:-mr-[22%] xl:-mr-[9rem]">
-                <img src={heroCollage} alt="Mixed-media collage of a woman surrounded by movies, books, music and a vinyl record" className="w-full h-full object-contain object-right" />
-              </div>
-            </motion.div>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center text-center z-10 max-w-3xl mx-auto px-6"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
+              See what everyone's consuming.
+              <span className="relative block w-fit mx-auto text-primary font-heading italic text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.2] mt-4 whitespace-nowrap">
+                Track. Connect. Compare.
+                <svg className="absolute -bottom-2 left-0 w-full text-primary" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+                <motion.img
+                  src={neonSmiley}
+                  alt=""
+                  data-testid="img-hero-smiley"
+                  aria-hidden="true"
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+                  transition={{
+                    opacity: { duration: 0.6, delay: 0.6 },
+                    scale: { duration: 0.6, delay: 0.6 },
+                    y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+                  }}
+                  className="pointer-events-none select-none absolute left-full top-1/2 -translate-y-1/2 ml-3 md:ml-4 w-10 md:w-12 lg:w-14"
+                />
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-xl leading-relaxed font-sans">
+              See what people are watching, reading, listening to, and playing. Discover your entertainment identity.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
+              <button 
+                onClick={() => scrollToSection("better-together")}
+                className="w-full sm:w-auto px-8 py-3.5 text-base font-medium rounded-full border-2 border-foreground/10 hover:border-foreground/20 transition-colors flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4 fill-current" /> Watch video
+              </button>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="w-full mt-16 md:mt-20"
+          >
+            <img
+              src={heroStrip}
+              alt="Illustration of friends together watching movies, reading books, listening to podcasts and playing games"
+              className="w-full"
+              data-testid="img-hero-strip"
+            />
+          </motion.div>
         </section>
 
         {/* 3. CATEGORIES */}
