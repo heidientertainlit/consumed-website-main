@@ -137,7 +137,14 @@ export default function Home() {
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
                 See what everyone's consuming.
-                <span className="block text-primary font-script font-bold text-3xl md:text-4xl lg:text-5xl leading-none mt-3 whitespace-nowrap">Track. Connect. Compare.</span>
+                <span className="relative block w-fit text-primary font-script text-3xl md:text-4xl lg:text-[2.75rem] leading-none mt-5 whitespace-nowrap">
+                  <span className="inline-block -rotate-3">Track.</span>{" "}
+                  <span className="inline-block rotate-1 -translate-y-1.5">Connect.</span>{" "}
+                  <span className="inline-block rotate-2 translate-y-1">Compare.</span>
+                  <svg className="absolute -bottom-4 left-0 w-full text-primary/70" height="14" viewBox="0 0 320 14" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M3 9 C 70 2, 130 12, 195 6 S 300 4, 317 8" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+                  </svg>
+                </span>
               </h1>
               
               <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
