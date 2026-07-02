@@ -91,8 +91,6 @@ export default function Home() {
           </Link>
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
-            <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
-            <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
             <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
             <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
           </nav>
@@ -114,8 +112,6 @@ export default function Home() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden">
           <nav className="flex flex-col gap-6 text-2xl font-heading">
-            <button onClick={() => scrollToSection("features")} className="text-left hover:text-primary">Features</button>
-            <button onClick={() => scrollToSection("how-it-works")} className="text-left hover:text-primary">How It Works</button>
             <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary">About Us</button>
             <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary">Insights</button>
             <div className="mt-8">
@@ -424,8 +420,6 @@ export default function Home() {
               <img src={logoPurple} alt="Consumed" className="h-6 opacity-80 cursor-pointer" />
             </Link>
             <nav className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm font-medium text-foreground/70">
-              <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
-              <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
               <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
             </nav>
