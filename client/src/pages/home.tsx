@@ -292,7 +292,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-32 md:pt-40 pb-0 relative overflow-hidden" id="features">
+        <section className="pt-24 md:pt-28 pb-0 relative overflow-hidden bg-[#faf0e6]" id="features">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
 
@@ -302,9 +302,9 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center text-center z-10 max-w-3xl mx-auto px-6"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
               See what everyone's consuming.
-              <span className="relative block w-fit mx-auto text-primary font-heading italic text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.2] mt-4 whitespace-nowrap">
+              <span className="relative block w-fit mx-auto text-primary font-heading italic text-2xl md:text-3xl lg:text-4xl leading-[1.2] mt-4 whitespace-nowrap">
                 Track. Connect. Compare.
                 <svg className="absolute -bottom-2 left-0 w-full text-primary" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
                   <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
@@ -326,7 +326,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-xl leading-relaxed font-sans">
+            <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
               See what people are watching, reading, listening to, and playing. Discover your entertainment identity.
             </p>
 
@@ -345,7 +345,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-full mt-16 md:mt-20"
+            className="w-full mt-8 md:mt-10"
           >
             <img
               src={heroStrip}
