@@ -137,7 +137,7 @@ export default function Home() {
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
                 See what everyone's consuming.
-                <span className="block text-primary italic font-serif mt-2">Track. Connect. Compare.</span>
+                <span className="block text-primary font-script font-bold text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] mt-3">Track. Connect. Compare.</span>
               </h1>
               
               <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
