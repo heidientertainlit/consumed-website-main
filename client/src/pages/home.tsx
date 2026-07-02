@@ -68,7 +68,8 @@ const BLOB_PATH =
 
 function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
   const edgeId = `wc-edge-${seed}`;
-  const grainId = `wc-grain-${seed}`;
+  const darkId = `wc-dark-${seed}`;
+  const lightId = `wc-light-${seed}`;
   return (
     <div className="relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 mb-4 transition-transform duration-300 group-hover:scale-110">
       <svg viewBox="0 0 200 170" className="absolute inset-0 h-full w-full" aria-hidden="true">
@@ -76,21 +77,29 @@ function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; 
           <filter id={edgeId} x="-35%" y="-35%" width="170%" height="170%">
             <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves={4} seed={seed} result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale={20} xChannelSelector="R" yChannelSelector="G" result="disp" />
-            <feGaussianBlur in="disp" stdDeviation={1.4} />
+            <feGaussianBlur in="disp" stdDeviation={1.2} />
           </filter>
-          <filter id={grainId} x="-35%" y="-35%" width="170%" height="170%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves={3} seed={seed + 5} result="g" />
-            <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0" result="ga" />
-            <feComposite in="ga" in2="SourceAlpha" operator="in" />
+          <filter id={darkId} x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.022 0.032" numOctaves={3} seed={seed} result="t" />
+            <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0.9 0.9 0 -0.55" result="d" />
+            <feGaussianBlur in="d" stdDeviation={0.6} result="db" />
+            <feComposite in="db" in2="SourceAlpha" operator="in" />
+          </filter>
+          <filter id={lightId} x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.026 0.02" numOctaves={3} seed={seed + 9} result="t" />
+            <feColorMatrix in="t" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.9 0.9 0.9 0 -0.6" result="l" />
+            <feGaussianBlur in="l" stdDeviation={0.6} result="lb" />
+            <feComposite in="lb" in2="SourceAlpha" operator="in" />
           </filter>
         </defs>
         <g filter={`url(#${edgeId})`}>
-          <path d={BLOB_PATH} fill={color} opacity={0.8} />
-          <path d={BLOB_PATH} fill={color} opacity={0.45} transform="translate(100 85) scale(0.82) translate(-100 -85)" />
-          <path d={BLOB_PATH} fill="#ffffff" opacity={0.16} transform="translate(100 85) scale(0.58) translate(-100 -85)" />
+          <path d={BLOB_PATH} fill={color} opacity={0.85} />
         </g>
-        <g filter={`url(#${grainId})`} opacity={0.3}>
-          <path d={BLOB_PATH} fill={color} />
+        <g filter={`url(#${darkId})`} opacity={0.5}>
+          <path d={BLOB_PATH} fill={color} transform="translate(100 85) scale(0.9) translate(-100 -85)" />
+        </g>
+        <g filter={`url(#${lightId})`} opacity={0.55}>
+          <path d={BLOB_PATH} fill={color} transform="translate(100 85) scale(0.9) translate(-100 -85)" />
         </g>
       </svg>
       <Icon className="relative z-10 h-8 w-8 md:h-10 md:w-10 text-neutral-900" strokeWidth={1.75} />
