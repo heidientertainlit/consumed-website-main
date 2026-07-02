@@ -36,3 +36,63 @@ id = "EYWrg2GunO2T65i2hmy5V"
 uri = "file://client/src/assets/images/taste-overlap.png"
 type = "image"
 title = "Taste overlap connection"
+
+[[generated]]
+id = "KULkPvHyugfBF3qpHYg2j"
+uri = "file://client/src/assets/images/hero-editorial.png"
+type = "image"
+title = "Hero editorial illustration with armchair"
+
+[[generated]]
+id = "6nEWCkVOb3f6z1hgVcVrE"
+uri = "file://client/src/assets/images/room-horror.png"
+type = "image"
+title = "Horror room thumbnail"
+
+[[generated]]
+id = "QNywaJ24E1_mKnasxdzC0"
+uri = "file://client/src/assets/images/room-scifi.png"
+type = "image"
+title = "Sci-fi room thumbnail"
+
+[[generated]]
+id = "6EtxAz6wBKhFDV5l3F6tX"
+uri = "file://client/src/assets/images/room-books.png"
+type = "image"
+title = "Books room thumbnail"
+
+[[generated]]
+id = "hnr8rGivOFRwqjvwDS7Sy"
+uri = "file://client/src/assets/images/show-dune.png"
+type = "image"
+title = "Desert sci-fi show thumbnail"
+
+[[generated]]
+id = "oNAAwb4nQ_6bFYdX3JsP0"
+uri = "file://client/src/assets/images/show-tlou.png"
+type = "image"
+title = "Post-apocalyptic show thumbnail"
+
+[[generated]]
+id = "2aECWA-WfUmN1aO1fR8ET"
+uri = "file://client/src/assets/images/cover-desert.png"
+type = "image"
+title = "Desert epic media cover"
+
+[[generated]]
+id = "qNt8fuCv7HWKOr2QVAmFx"
+uri = "file://client/src/assets/images/cover-western.png"
+type = "image"
+title = "Western media cover"
+
+[[generated]]
+id = "Q65aWfnaKScSlsu_tnPBo"
+uri = "file://client/src/assets/images/cover-literary.png"
+type = "image"
+title = "Literary drama media cover"
+
+[[generated]]
+id = "JCiEgT6FTsGwKPS-xFVx0"
+uri = "file://client/src/assets/images/cover-chef.png"
+type = "image"
+title = "Chef drama media cover"

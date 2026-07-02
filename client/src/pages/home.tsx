@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Flame, Eye, GitMerge, Swords, Instagram, Menu, X, ArrowRight } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Gamepad2, Music, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
-// Generated collage images
-import heroCollage from "../assets/images/hero-collage.png";
-import identityCollage from "../assets/images/identity-collage.png";
-import reactionsCollage from "../assets/images/reactions-collage.png";
-import tasteOverlap from "../assets/images/taste-overlap.png";
+// Generated images
+import heroEditorial from "../assets/images/hero-editorial.png";
+import roomHorror from "../assets/images/room-horror.png";
+import roomScifi from "../assets/images/room-scifi.png";
+import roomBooks from "../assets/images/room-books.png";
+import showDune from "../assets/images/show-dune.png";
+import showTlou from "../assets/images/show-tlou.png";
+import coverDesert from "../assets/images/cover-desert.png";
+import coverWestern from "../assets/images/cover-western.png";
+import coverLiterary from "../assets/images/cover-literary.png";
+import coverChef from "../assets/images/cover-chef.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -25,28 +31,30 @@ const TikTok = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const XIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+  </svg>
+);
+
 const AppStoreButton = ({ className = "" }: { className?: string }) => (
   <a
     href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 bg-foreground text-white px-6 py-3 rounded-full font-medium transition-transform hover:scale-105 active:scale-95 ${className}`}
+    className={`inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-medium transition-transform hover:scale-105 active:scale-95 ${className}`}
   >
-    Get the app
+    Download the app
   </a>
-);
-
-// Scribble decorations
-const ScribbleUnderline = () => (
-  <svg className="absolute w-full h-4 -bottom-1 left-0 text-primary opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-    <path d="M0,5 Q20,1 40,7 T80,3 T100,5" fill="none" stroke="currentColor" strokeWidth="2" />
-  </svg>
-);
-
-const StarDoodle = ({ className }: { className?: string }) => (
-  <svg className={`text-primary ${className}`} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2v20M17 5l-10 14M5 5l10 14M2 12h20" />
-  </svg>
 );
 
 export default function Home() {
@@ -59,25 +67,37 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 font-sans">
       
-      {/* Navigation */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-3" : "bg-transparent py-5"}`}>
-        <div className="container mx-auto px-6 flex items-center justify-between">
+      {/* 1. Navigation */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"}`}>
+        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
           <Link href="/">
-            <img src={logoPurple} alt="Consumed" className="h-8 md:h-10 cursor-pointer hover:opacity-80 transition-opacity" />
+            <img src={logoPurple} alt="Consumed" className="h-7 md:h-8 cursor-pointer hover:opacity-80 transition-opacity" />
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <span className="cursor-pointer hover:text-primary transition-colors">Feed</span>
-            <span className="cursor-pointer hover:text-primary transition-colors">Your DNA</span>
-            <span className="cursor-pointer hover:text-primary transition-colors">Reactions</span>
-            <span className="cursor-pointer hover:text-primary transition-colors">Rooms</span>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
+            <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
+            <button onClick={() => scrollToSection("rooms")} className="hover:text-primary transition-colors">Rooms</button>
+            <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
+            <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
+            <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Blog</button>
           </nav>
           
           <div className="hidden md:flex items-center gap-4">
             <AppStoreButton />
+            <button className="p-2 hover:bg-black/5 rounded-full transition-colors" aria-label="Menu">
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
 
           <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -90,10 +110,11 @@ export default function Home() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden">
           <nav className="flex flex-col gap-6 text-2xl font-heading">
-            <span className="cursor-pointer hover:text-primary">Feed</span>
-            <span className="cursor-pointer hover:text-primary">Your DNA</span>
-            <span className="cursor-pointer hover:text-primary">Reactions</span>
-            <span className="cursor-pointer hover:text-primary">Rooms</span>
+            <button onClick={() => scrollToSection("features")} className="text-left hover:text-primary">Features</button>
+            <button onClick={() => scrollToSection("rooms")} className="text-left hover:text-primary">Rooms</button>
+            <button onClick={() => scrollToSection("how-it-works")} className="text-left hover:text-primary">How It Works</button>
+            <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary">About Us</button>
+            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary">Blog</button>
             <div className="mt-8">
               <AppStoreButton className="w-full text-lg py-4" />
             </div>
@@ -102,29 +123,35 @@ export default function Home() {
       )}
 
       <main>
-        {/* HERO */}
-        <section className="pt-32 md:pt-48 pb-20 px-6 container mx-auto relative">
-          <StarDoodle className="absolute top-40 left-10 w-8 h-8 opacity-40 rotate-12" />
-          <StarDoodle className="absolute top-20 right-20 w-12 h-12 opacity-30 -rotate-12" />
+        {/* 2. HERO */}
+        <section className="pt-32 md:pt-40 pb-20 px-6 container mx-auto max-w-7xl relative" id="features">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
           
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:w-1/2 flex flex-col items-start"
+              className="lg:w-[45%] flex flex-col items-start z-10"
             >
-              <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] mb-6 relative">
-                See what <span className="relative inline-block">everyone's<ScribbleUnderline/></span> consuming.
+              <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading font-normal leading-[1.05] tracking-tight mb-6">
+                Your entertainment identity, <br/>
+                <span className="text-primary italic font-serif">connected.</span>
               </h1>
-              <p className="text-xl md:text-2xl font-medium mb-4 text-primary">
-                Track. Connect. Compare.
+              
+              <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
+                Track what you watch, read, listen to, and play. React to what you love. See what everyone else is into. Find your people.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                See what people are watching, reading, listening to, and playing — and discover your entertainment identity along the way.
-              </p>
+              
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <AppStoreButton className="w-full sm:w-auto px-8 py-4 text-lg" />
+                <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
+                <button 
+                  onClick={() => scrollToSection("better-together")}
+                  className="w-full sm:w-auto px-8 py-3.5 text-base font-medium rounded-full border-2 border-foreground/10 hover:border-foreground/20 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Play className="w-4 h-4 fill-current" /> Watch video
+                </button>
               </div>
             </motion.div>
             
@@ -132,263 +159,286 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-1/2 relative"
+              className="lg:w-[55%] relative"
             >
-              <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl" />
-              <img src={heroCollage} alt="People enjoying entertainment" className="relative z-10 w-full h-auto object-contain max-h-[600px]" />
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 1 - THE HOOK */}
-        <section className="py-20 md:py-32 bg-secondary/30 relative">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-heading font-bold mb-8"
-              >
-                Everything your friends are into.
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
-              >
-                Watching. Reading. Listening. Playing. All of it, in one feed — no algorithm deciding what you see, just the people whose taste you actually trust.
-              </motion.p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 2 - THE PAYOFF (IDENTITY) */}
-        <section className="py-24 md:py-32 container mx-auto px-6">
-          <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2"
-            >
-              <img src={identityCollage} alt="Entertainment Identity" className="w-full h-auto object-contain max-h-[500px]" />
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2"
-            >
-              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                What you consume says everything.
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Every episode, chapter, and playlist feeds your DNA — a living profile of your taste across every medium. Not your ratings. You.
-              </p>
-              
-              <div className="bg-white rounded-2xl p-8 border border-border shadow-sm">
-                <p className="text-primary font-bold text-xl mb-2">Movies & TV. Books. Podcasts. Games. Music.</p>
-                <p className="text-3xl font-heading font-bold">One identity.</p>
+              <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[600px] ml-auto">
+                <img src={heroEditorial} alt="Editorial illustration of person relaxing with media" className="w-full h-full object-contain" />
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* SECTION 3 - THE VOICE */}
-        <section className="py-24 md:py-32 bg-primary/5">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">React together.</h2>
-              <p className="text-xl text-muted-foreground">Built for people with opinions.</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="order-2 md:order-1 flex flex-col gap-6">
-                {/* Hot Takes */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-2 h-full bg-orange-400 group-hover:w-3 transition-all" />
-                  <div className="p-3 bg-orange-100 rounded-full h-fit text-orange-500">
-                    <Flame className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Hot takes</h3>
-                    <p className="text-muted-foreground text-sm mb-3">Say the thing everyone's thinking. Or the thing nobody is.</p>
-                    <p className="italic text-foreground font-medium">"The book ending was better and I'll die on this hill."</p>
-                  </div>
-                </motion.div>
-
-                {/* Predictions */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-2 h-full bg-purple-400 group-hover:w-3 transition-all" />
-                  <div className="p-3 bg-purple-100 rounded-full h-fit text-purple-600">
-                    <Eye className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Predictions</h3>
-                    <p className="text-muted-foreground text-sm mb-3">Call it before it happens. Get the receipts when you're right.</p>
-                    <p className="italic text-foreground font-medium">"Calling it now — the neighbor did it. Screenshot this."</p>
-                  </div>
-                </motion.div>
-
-                {/* Theories */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-2 h-full bg-blue-400 group-hover:w-3 transition-all" />
-                  <div className="p-3 bg-blue-100 rounded-full h-fit text-blue-500">
-                    <GitMerge className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Theories</h3>
-                    <p className="text-muted-foreground text-sm mb-3">Connect the dots nobody else saw. Build the case.</p>
-                    <p className="italic text-foreground font-medium">"The clock in ep 2 and the photo in ep 7? Same timestamp."</p>
-                  </div>
-                </motion.div>
-
-                {/* Debates */}
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-2 h-full bg-red-400 group-hover:w-3 transition-all" />
-                  <div className="p-3 bg-red-100 rounded-full h-fit text-red-500">
-                    <Swords className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Debates</h3>
-                    <p className="text-muted-foreground text-sm mb-3">Defend your taste. Change some minds. Keep score.</p>
-                    <p className="italic text-foreground font-medium">"Sequels can't beat originals. Prove me wrong."</p>
-                  </div>
-                </motion.div>
-              </div>
-
-              <div className="order-1 md:order-2">
-                <img src={reactionsCollage} alt="People reacting to media" className="w-full h-auto object-contain max-h-[600px] hover:scale-105 transition-transform duration-700" />
-              </div>
-            </div>
-
-            <div className="mt-16 text-center">
-              <p className="text-2xl font-heading font-medium">
-                Entertainment isn't finished when the credits roll. <span className="text-primary relative inline-block">That's when it starts.<ScribbleUnderline/></span>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 4 - THE MECHANIC */}
-        <section className="py-24 md:py-32 container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2"
-            >
-              <img src={tasteOverlap} alt="Taste overlap between friends" className="w-full h-auto object-contain max-h-[500px]" />
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2"
-            >
-              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Find your people.</h2>
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                Compare taste. See your overlap. Join Rooms where your kind of fan is already mid-conversation.
-              </p>
-              
-              <div className="bg-white rounded-2xl p-6 md:p-8 border border-border shadow-sm mb-8 relative">
-                <div className="absolute -top-4 -right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full transform rotate-12">
-                  Match!
-                </div>
-                <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
-                  <span className="text-primary text-2xl">87%</span> taste overlap
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  You and Heidi agree on thrillers, true crime, and slow-burn sci-fi. She's watching two things you haven't started.
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4">Trending Rooms</p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">Horror Heads</span>
-                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">Sci-Fi Central</span>
-                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">True Crime Corner</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 5 - THE CLOSE */}
-        <section className="py-24 md:py-32 bg-foreground text-white text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-foreground to-foreground opacity-50" />
-          
-          <div className="container mx-auto px-6 relative z-10">
+        {/* 3. CATEGORIES */}
+        <section className="py-24 md:py-32 px-6 container mx-auto max-w-7xl" id="how-it-works">
+          <div className="text-center mb-16 md:mb-24">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-heading font-bold mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
             >
-              Your entertainment identity is waiting.
+              All your entertainment.<br />
+              <span className="text-primary italic">All in one place.</span>
             </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-white/70 mb-10"
-            >
-              Track everything. See where you rank.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <a
-                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-foreground px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
+            {[
+              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", icon: Clapperboard, color: "text-purple-600", bg: "bg-purple-100", blob: "blob-1" },
+              { title: "Books", desc: "Log your reads and share your thoughts.", icon: BookOpen, color: "text-emerald-600", bg: "bg-emerald-100", blob: "blob-2" },
+              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", icon: Headphones, color: "text-pink-600", bg: "bg-pink-100", blob: "blob-3" },
+              { title: "Games", desc: "Track your games and achievements.", icon: Gamepad2, color: "text-amber-600", bg: "bg-amber-100", blob: "blob-4" },
+              { title: "Music", desc: "Save what you listen to and discover more.", icon: Music, color: "text-indigo-600", bg: "bg-indigo-100", blob: "blob-5" },
+            ].map((cat, i) => (
+              <motion.div 
+                key={cat.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex flex-col items-center text-center"
               >
-                Download on the App Store <ArrowRight className="w-5 h-5" />
-              </a>
-            </motion.div>
+                <div className={`w-24 h-24 mb-6 flex items-center justify-center ${cat.bg} ${cat.color} blob-shape ${cat.blob} transition-transform hover:scale-110 duration-300`}>
+                  <cat.icon className="w-10 h-10" />
+                </div>
+                <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* 4. ROOMS / SOCIAL */}
+        <section className="py-24 md:py-32 bg-secondary/40" id="rooms">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+              {/* Left Column */}
+              <div className="lg:w-1/3 flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">Connection makes it better</p>
+                  <h2 className="text-4xl md:text-5xl font-heading font-normal mb-8">
+                    See what others are into.<br />
+                    <span className="text-primary italic">Join the conversation.</span>
+                  </h2>
+                  
+                  <ul className="space-y-4 mb-10 text-foreground/80 font-medium">
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> See what friends are consuming</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> React, reply, and join discussions</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Find people with your taste</li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60" /> Join Rooms for deeper convos</li>
+                  </ul>
+                  
+                  <button onClick={() => scrollToSection("rooms")} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" data-testid="button-explore-rooms">
+                    Explore Rooms <ArrowRight className="w-4 h-4 ml-1" />
+                  </button>
+                </motion.div>
+              </div>
+
+              {/* Right Column / Cards */}
+              <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {/* Card 1: Popular Rooms */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="font-bold text-lg">Popular Rooms</h3>
+                    <span className="text-sm text-primary font-medium cursor-pointer">See all →</span>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { img: roomHorror, name: "Horror Heads", members: "12.4K" },
+                      { img: roomScifi, name: "Sci-Fi Central", members: "8.7K" },
+                      { img: roomBooks, name: "The Book Nook", members: "15.1K" }
+                    ].map(room => (
+                      <div key={room.name} className="flex items-center gap-4 group cursor-pointer">
+                        <img src={room.img} alt={room.name} className="w-12 h-12 rounded-xl object-cover group-hover:scale-105 transition-transform" />
+                        <div>
+                          <p className="font-bold text-sm">{room.name}</p>
+                          <p className="text-xs text-foreground/50">{room.members} members</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Card 2: Hot Discussion */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5 flex flex-col"
+                >
+                  <div className="mb-4">
+                    <span className="inline-block px-2.5 py-1 bg-red-100 text-red-600 text-[10px] font-bold uppercase rounded-md mb-2">Hot Discussion</span>
+                    <h3 className="font-bold text-base leading-snug">The best opening scene in a horror movie?</h3>
+                    <p className="text-xs text-foreground/50 mt-1">127 replies</p>
+                  </div>
+                  
+                  <div className="flex-1 space-y-4 mt-2">
+                    <div className="bg-secondary/30 p-3 rounded-2xl">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-5 h-5 rounded-full bg-blue-200 flex items-center justify-center text-[10px] font-bold text-blue-700">A</div>
+                        <span className="text-xs font-bold">Alex</span>
+                      </div>
+                      <p className="text-sm">Scream (1996) is untouchable. The tension building with the phone calls...</p>
+                      <div className="flex gap-3 mt-2 text-foreground/40">
+                        <span className="text-[10px] flex items-center gap-1"><Heart className="w-3 h-3" /> 42</span>
+                      </div>
+                    </div>
+                    <div className="bg-secondary/30 p-3 rounded-2xl">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-5 h-5 rounded-full bg-green-200 flex items-center justify-center text-[10px] font-bold text-green-700">J</div>
+                        <span className="text-xs font-bold">Jordan</span>
+                      </div>
+                      <p className="text-sm">Ghost Ship has entered the chat.</p>
+                      <div className="flex gap-3 mt-2 text-foreground/40">
+                        <span className="text-[10px] flex items-center gap-1"><Heart className="w-3 h-3" /> 18</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 3: Friends Are Watching */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white rounded-3xl p-6 shadow-sm border border-black/5"
+                >
+                  <h3 className="font-bold text-lg mb-6">Friends Are Watching</h3>
+                  
+                  <div className="space-y-5">
+                    <div>
+                      <p className="text-xs text-foreground/50 mb-2">You and 24 others watched</p>
+                      <div className="flex gap-3">
+                        <img src={showDune} alt="Dune" className="w-10 h-14 rounded-lg object-cover" />
+                        <div>
+                          <p className="font-bold text-sm">Dune: Part Two</p>
+                          <p className="text-xs text-foreground/50">2024</p>
+                          <div className="flex gap-0.5 mt-1">
+                            {[...Array(5)].map((_,i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="h-px bg-border w-full" />
+                    
+                    <div>
+                      <p className="text-xs text-foreground/50 mb-2">Jess predicted</p>
+                      <div className="flex gap-3">
+                        <img src={showTlou} alt="TLOU" className="w-10 h-14 rounded-lg object-cover" />
+                        <div>
+                          <p className="font-bold text-sm">The Last of Us</p>
+                          <p className="text-xs text-foreground/50">S2 E2</p>
+                          <p className="text-sm italic mt-1 bg-secondary/30 p-2 rounded-lg border-l-2 border-primary">"I think Ellie will find out about Joel in episode 4."</p>
+                          <div className="flex items-center gap-4 mt-2 text-[10px] text-foreground/50">
+                            <span className="flex items-center gap-1"><ThumbsUp className="w-3 h-3" /> 12</span>
+                            <span className="flex items-center gap-1"><MessageCircle className="w-3 h-3" /> 4</span>
+                            <span className="text-primary font-bold cursor-pointer">Reply</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. DOWNLOAD CTA */}
+        <section className="py-12 md:py-24 px-4 container mx-auto max-w-7xl" id="better-together">
+          <div className="bg-gradient-to-br from-primary to-[#5b3ebf] rounded-[2.5rem] p-10 md:p-16 text-white overflow-hidden relative flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none mix-blend-overlay" />
+            
+            <div className="lg:w-1/3 z-10 text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl font-heading font-normal mb-4 text-white">
+                Entertainment is<br />
+                <span className="italic text-white/90">better together.</span>
+              </h2>
+              <p className="text-white/80 text-lg">Build your identity. Share your takes. Find your people.</p>
+            </div>
+
+            <div className="lg:w-1/3 z-10 flex justify-center perspective-1000">
+              <div className="relative w-64 h-80 flex items-center justify-center transform-style-3d">
+                <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={coverDesert} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 origin-bottom-left" alt="Cover" />
+                <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={coverWestern} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-10 origin-bottom" alt="Cover" />
+                <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={coverLiterary} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-20 origin-bottom" alt="Cover" />
+                <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={coverChef} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-30 origin-bottom-right" alt="Cover" />
+              </div>
+            </div>
+
+            <div className="lg:w-1/3 z-10 flex flex-col items-center lg:items-end text-center lg:text-right gap-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">Download Consumed</h3>
+                <p className="text-white/80">Join thousands building their entertainment identity.</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
+                </a>
+                <div className="opacity-50 cursor-not-allowed grayscale">
+                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-[68px] -ml-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. AS SEEN IN */}
+        <section className="py-12 border-t border-b border-border/50 bg-white" id="about-us">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-40 grayscale">
+              <span className="font-heading font-bold text-2xl">TechCrunch</span>
+              <span className="font-sans font-bold text-xl tracking-tighter">THE VERGE</span>
+              <span className="font-serif font-bold text-2xl">Forbes</span>
+              <span className="font-sans font-bold text-xl tracking-tight">FAST COMPANY</span>
+              <span className="font-sans font-bold text-2xl text-purple-900">Yahoo!</span>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-white border-t border-border py-12">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <img src={logoPurple} alt="Consumed" className="h-6 opacity-80" />
-            <p className="text-sm text-muted-foreground max-w-sm text-center md:text-left">
-              We help people understand themselves — and each other — through entertainment.
+      {/* 7. FOOTER */}
+      <footer className="bg-background pt-20 pb-10" id="blog">
+        <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="flex flex-col items-center md:items-start gap-6">
+            <Link href="/">
+              <img src={logoPurple} alt="Consumed" className="h-6 opacity-80 cursor-pointer" />
+            </Link>
+            <nav className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm font-medium text-foreground/70">
+              <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
+              <button onClick={() => scrollToSection("rooms")} className="hover:text-primary transition-colors">Rooms</button>
+              <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
+              <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
+              <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Blog</button>
+            </nav>
+            <p className="text-sm text-foreground/40">
+              © 2026 Consumed. All rights reserved.
             </p>
           </div>
           
-          <div className="flex flex-col items-center md:items-end gap-6">
-            <div className="flex items-center gap-4">
-              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <TikTok className="w-5 h-5" />
-              </a>
-            </div>
-            
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>© 2026 Consumed</span>
-              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
-              <Link href="/feedback" className="hover:text-primary transition-colors" data-testid="link-feedback">Feedback</Link>
-              <Link href="/support" className="hover:text-primary transition-colors">Contact</Link>
-            </div>
+          <div className="flex items-center gap-5">
+            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
+              <Instagram className="w-4 h-4" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
+              <XIcon className="w-4 h-4" />
+            </a>
+            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
+              <TikTok className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </footer>

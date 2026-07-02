@@ -34,39 +34,38 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Light/Warm Collage Theme */
 :root {
   /* Background: Warm cream/off-white */
-  --background: 40 33% 97%; /* #FAF8F5 */
-  --foreground: 265 30% 15%; /* Deep purple-ink */
+  --background: 40 33% 96%; /* #f7f3ec ish */
+  --foreground: 265 30% 12%; /* Deep purple-ink */
   
-  /* Cards: Pure white with slight warmth */
+  /* Cards: Pure white */
   --card: 0 0% 100%;
-  --card-foreground: 265 30% 15%;
+  --card-foreground: 265 30% 12%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 265 30% 15%;
+  --popover-foreground: 265 30% 12%;
   
-  /* Primary: The vibrant Consumed purple */
-  --primary: 266 75% 55%; 
+  /* Primary: Vibrant purple (#7c5cff) */
+  --primary: 252 100% 68%; 
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary: Soft lavender/cream mix for accents */
-  --secondary: 266 30% 90%;
-  --secondary-foreground: 265 30% 20%;
+  /* Secondary: Soft lavender tint for sections */
+  --secondary: 252 30% 93%;
+  --secondary-foreground: 265 30% 15%;
   
-  --muted: 40 20% 92%;
-  --muted-foreground: 265 15% 45%;
+  --muted: 40 10% 90%;
+  --muted-foreground: 265 10% 40%;
   
-  --accent: 266 75% 55%;
+  --accent: 252 100% 68%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   
-  --border: 40 20% 88%;
-  --input: 40 20% 88%;
-  --ring: 266 75% 55%;
+  --border: 40 10% 88%;
+  --input: 40 10% 88%;
+  --ring: 252 100% 68%;
   
   --radius: 1rem;
 }
@@ -78,7 +77,6 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     background-color: hsl(var(--background));
-    /* Soft noise texture overlay can go here if needed */
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
@@ -94,3 +92,13 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Organic blobs for categories */
+.blob-shape {
+  border-radius: 50% 60% 40% 70% / 60% 50% 70% 40%;
+}
+.blob-1 { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+.blob-2 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.blob-3 { border-radius: 50% 50% 40% 60% / 40% 70% 50% 60%; }
+.blob-4 { border-radius: 30% 70% 60% 40% / 50% 40% 60% 50%; }
+.blob-5 { border-radius: 70% 30% 50% 50% / 60% 60% 40% 40%; }
