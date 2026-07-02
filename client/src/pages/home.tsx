@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Play, Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Gamepad2, Music, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -16,6 +16,11 @@ import coverDesert from "../assets/images/cover-desert.png";
 import coverWestern from "../assets/images/cover-western.png";
 import coverLiterary from "../assets/images/cover-literary.png";
 import coverChef from "../assets/images/cover-chef.png";
+import catMovies from "../assets/images/cat-movies.png";
+import catBooks from "../assets/images/cat-books.png";
+import catPodcasts from "../assets/images/cat-podcasts.png";
+import catGames from "../assets/images/cat-games.png";
+import catMusic from "../assets/images/cat-music.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -51,7 +56,7 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-medium transition-transform hover:scale-105 active:scale-95 ${className}`}
+    className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#241a4d] via-[#4b31b0] to-[#7c5cff] text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-primary/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/40 active:scale-95 ${className}`}
   >
     Download the app
   </a>
@@ -174,7 +179,7 @@ export default function Home() {
         </section>
 
         {/* 3. CATEGORIES */}
-        <section className="py-24 md:py-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
+        <section className="pt-4 md:pt-8 pb-24 md:pb-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
           <div className="text-center order-2 mt-16 md:mt-24">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -189,11 +194,11 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 order-1">
             {[
-              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", icon: Clapperboard, color: "text-purple-600", bg: "bg-purple-100", blob: "blob-1" },
-              { title: "Books", desc: "Log your reads and share your thoughts.", icon: BookOpen, color: "text-emerald-600", bg: "bg-emerald-100", blob: "blob-2" },
-              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", icon: Headphones, color: "text-pink-600", bg: "bg-pink-100", blob: "blob-3" },
-              { title: "Games", desc: "Track your games and achievements.", icon: Gamepad2, color: "text-amber-600", bg: "bg-amber-100", blob: "blob-4" },
-              { title: "Music", desc: "Save what you listen to and discover more.", icon: Music, color: "text-indigo-600", bg: "bg-indigo-100", blob: "blob-5" },
+              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", img: catMovies },
+              { title: "Books", desc: "Log your reads and share your thoughts.", img: catBooks },
+              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", img: catPodcasts },
+              { title: "Games", desc: "Track your games and achievements.", img: catGames },
+              { title: "Music", desc: "Save what you listen to and discover more.", img: catMusic },
             ].map((cat, i) => (
               <motion.div 
                 key={cat.title}
@@ -203,9 +208,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className={`w-24 h-24 mb-6 flex items-center justify-center ${cat.bg} ${cat.color} blob-shape ${cat.blob} transition-transform hover:scale-110 duration-300`}>
-                  <cat.icon className="w-10 h-10" />
-                </div>
+                <img src={cat.img} alt="" aria-hidden="true" className="h-24 md:h-28 w-auto object-contain mb-5 transition-transform hover:scale-110 duration-300" />
                 <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
               </motion.div>
