@@ -66,7 +66,7 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
 function CategoryIcon({ Icon }: { Icon: LucideIcon }) {
   return (
     <div className="flex items-center justify-center w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
-      <Icon className="h-12 w-12 md:h-14 md:w-14 text-neutral-900" strokeWidth={1.5} />
+      <Icon className="h-12 w-12 md:h-14 md:w-14 text-primary/75" strokeWidth={1.25} />
     </div>
   );
 }
