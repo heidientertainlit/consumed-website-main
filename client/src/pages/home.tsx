@@ -56,7 +56,7 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#241a4d] via-[#4b31b0] to-[#7c5cff] text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-primary/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/40 active:scale-95 ${className}`}
+    className={`inline-flex items-center justify-center gap-2 bg-[#3a2496] text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95 ${className}`}
   >
     Download the app
   </a>
@@ -192,7 +192,7 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 order-1">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 order-1">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", img: catMovies },
               { title: "Books", desc: "Log your reads and share your thoughts.", img: catBooks },
@@ -208,7 +208,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col items-center text-center"
               >
-                <img src={cat.img} alt="" aria-hidden="true" className="h-24 md:h-28 w-auto object-contain mb-5 transition-transform hover:scale-110 duration-300" />
+                <img src={cat.img} alt="" aria-hidden="true" className="h-32 md:h-40 w-auto max-w-full object-contain mb-4 transition-transform hover:scale-110 duration-300" />
                 <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
               </motion.div>
