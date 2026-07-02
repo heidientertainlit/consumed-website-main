@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, type LucideIcon } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, MessageCircle, Heart, Star, ThumbsUp, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
 import heroCollage from "../assets/images/hero-collage.png";
 import neonSmiley from "../assets/images/neon-smiley.png";
-import appDna from "../assets/images/app-dna.png";
+import screenDna from "../assets/images/screen-dna.png";
+import screenRooms from "../assets/images/screen-rooms.png";
+import screenTakes from "../assets/images/screen-takes.png";
+import screenRatings from "../assets/images/screen-ratings.png";
+import screenAdd from "../assets/images/screen-add.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -80,6 +84,149 @@ function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; 
         </g>
       </svg>
       <Icon className="relative z-10 h-10 w-10 md:h-12 md:w-12 text-neutral-900" strokeWidth={1.75} />
+    </div>
+  );
+}
+
+const PHONE_SCREENS = [
+  { src: screenDna, label: "Your Entertainment DNA" },
+  { src: screenRatings, label: "Share your takes & ratings" },
+  { src: screenTakes, label: "Compare takes with friends" },
+  { src: screenRooms, label: "Join Rooms for what you love" },
+  { src: screenAdd, label: "Track movies, shows, books & more" },
+];
+
+function PhoneCarousel() {
+  const [active, setActive] = useState(0);
+  const [dims, setDims] = useState({ spacing: 150, rotate: 7 });
+  const draggingRef = useRef(false);
+  const count = PHONE_SCREENS.length;
+
+  useEffect(() => {
+    const update = () =>
+      setDims(
+        window.innerWidth < 768
+          ? { spacing: 92, rotate: 6 }
+          : { spacing: 150, rotate: 7 }
+      );
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const go = (dir: number) => setActive((p) => (p + dir + count) % count);
+
+  return (
+    <div className="relative w-full flex flex-col items-center">
+      <motion.div
+        className="relative h-[480px] md:h-[580px] w-full flex items-center justify-center overflow-hidden select-none touch-pan-y"
+        role="group"
+        aria-roledescription="carousel"
+        aria-label="Consumed app screens"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.15}
+        onDragStart={() => {
+          draggingRef.current = true;
+        }}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -60) go(1);
+          else if (info.offset.x > 60) go(-1);
+          window.setTimeout(() => {
+            draggingRef.current = false;
+          }, 0);
+        }}
+      >
+        {PHONE_SCREENS.map((screen, i) => {
+          let offset = i - active;
+          if (offset > count / 2) offset -= count;
+          if (offset < -count / 2) offset += count;
+          const abs = Math.abs(offset);
+          const isActive = offset === 0;
+          return (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{ zIndex: 30 - abs, pointerEvents: abs > 2 ? "none" : "auto" }}
+              animate={{
+                x: offset * dims.spacing,
+                rotate: offset * dims.rotate,
+                scale: isActive ? 1 : 0.82 - (abs - 1) * 0.06,
+                opacity: abs > 2 ? 0 : 1,
+              }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              onClick={() => {
+                if (draggingRef.current || isActive) return;
+                setActive(i);
+              }}
+              onKeyDown={(e) => {
+                if (isActive) return;
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActive(i);
+                }
+              }}
+              role={isActive ? undefined : "button"}
+              tabIndex={isActive ? -1 : 0}
+              aria-label={isActive ? undefined : `View ${PHONE_SCREENS[i].label}`}
+            >
+              <div
+                className={`rounded-[2.25rem] bg-neutral-900 p-2 shadow-2xl ring-1 ring-white/10 ${
+                  isActive ? "cursor-grab active:cursor-grabbing" : "cursor-pointer"
+                }`}
+              >
+                <img
+                  src={screen.src}
+                  alt={`Consumed app — ${screen.label}`}
+                  draggable={false}
+                  data-testid={`img-phone-${i}`}
+                  className="w-[200px] md:w-[240px] rounded-[1.85rem] pointer-events-none"
+                />
+              </div>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+
+      <div className="flex items-center gap-5 mt-6">
+        <button
+          onClick={() => go(-1)}
+          data-testid="button-phone-prev"
+          aria-label="Previous screen"
+          className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground/5 transition-colors"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <div className="flex items-center gap-2">
+          {PHONE_SCREENS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              data-testid={`dot-phone-${i}`}
+              aria-label={`Go to screen ${i + 1}`}
+              aria-current={i === active}
+              className={`h-2 rounded-full transition-all ${
+                i === active ? "w-6 bg-primary" : "w-2 bg-foreground/25 hover:bg-foreground/40"
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={() => go(1)}
+          data-testid="button-phone-next"
+          aria-label="Next screen"
+          className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground/5 transition-colors"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      <p
+        className="mt-4 text-sm font-medium text-foreground/70"
+        data-testid="text-phone-label"
+      >
+        {PHONE_SCREENS[active].label}
+      </p>
     </div>
   );
 }
@@ -250,19 +397,12 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative mt-12 md:mt-16 flex justify-center"
+            className="relative mt-10 md:mt-14"
           >
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-              <div className="w-72 h-72 md:w-[28rem] md:h-[28rem] bg-primary/20 rounded-full blur-[100px]" />
+              <div className="w-72 h-72 md:w-[32rem] md:h-[32rem] bg-primary/20 rounded-full blur-[110px]" />
             </div>
-            <div className="relative rounded-[2.75rem] bg-neutral-900 p-2.5 shadow-2xl ring-1 ring-white/10 rotate-[-8deg] hover:rotate-[-3deg] transition-transform duration-500 ease-out">
-              <img
-                src={appDna}
-                alt="The Consumed app showing a personal Entertainment DNA profile"
-                data-testid="img-app-dna"
-                className="w-[240px] md:w-[280px] rounded-[2.25rem]"
-              />
-            </div>
+            <PhoneCarousel />
           </motion.div>
         </section>
 
