@@ -67,23 +67,33 @@ const BLOB_PATH =
   "M40 24 C70 8 140 6 168 26 C192 42 194 70 188 96 C182 124 160 142 128 148 C96 154 56 150 32 130 C10 112 6 78 14 52 C20 34 28 32 40 24 Z";
 
 function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
-  const filterId = `watercolor-${seed}`;
+  const edgeId = `wc-edge-${seed}`;
+  const grainId = `wc-grain-${seed}`;
   return (
-    <div className="relative flex items-center justify-center w-24 h-24 md:w-28 md:h-28 mb-4 transition-transform duration-300 group-hover:scale-110">
+    <div className="relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 mb-4 transition-transform duration-300 group-hover:scale-110">
       <svg viewBox="0 0 200 170" className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
-          <filter id={filterId} x="-25%" y="-25%" width="150%" height="150%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves={3} seed={seed} result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale={14} xChannelSelector="R" yChannelSelector="G" result="disp" />
-            <feGaussianBlur in="disp" stdDeviation={0.6} />
+          <filter id={edgeId} x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves={4} seed={seed} result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale={20} xChannelSelector="R" yChannelSelector="G" result="disp" />
+            <feGaussianBlur in="disp" stdDeviation={1.4} />
+          </filter>
+          <filter id={grainId} x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves={3} seed={seed + 5} result="g" />
+            <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0" result="ga" />
+            <feComposite in="ga" in2="SourceAlpha" operator="in" />
           </filter>
         </defs>
-        <g filter={`url(#${filterId})`}>
-          <path d={BLOB_PATH} fill={color} opacity={0.92} />
-          <path d={BLOB_PATH} fill={color} opacity={0.5} transform="translate(100 85) scale(0.72) translate(-100 -85)" />
+        <g filter={`url(#${edgeId})`}>
+          <path d={BLOB_PATH} fill={color} opacity={0.8} />
+          <path d={BLOB_PATH} fill={color} opacity={0.45} transform="translate(100 85) scale(0.82) translate(-100 -85)" />
+          <path d={BLOB_PATH} fill="#ffffff" opacity={0.16} transform="translate(100 85) scale(0.58) translate(-100 -85)" />
+        </g>
+        <g filter={`url(#${grainId})`} opacity={0.3}>
+          <path d={BLOB_PATH} fill={color} />
         </g>
       </svg>
-      <Icon className="relative z-10 h-10 w-10 md:h-12 md:w-12 text-neutral-900" strokeWidth={1.75} />
+      <Icon className="relative z-10 h-8 w-8 md:h-10 md:w-10 text-neutral-900" strokeWidth={1.75} />
     </div>
   );
 }
