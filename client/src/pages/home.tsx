@@ -13,18 +13,15 @@ import screenRooms from "../assets/images/screen-rooms.png";
 import screenTakes from "../assets/images/screen-takes.png";
 import screenRatings from "../assets/images/screen-ratings.png";
 import screenAdd from "../assets/images/screen-add.png";
-import wcStroke1 from "../assets/images/wc-stroke-1.png";
-import wcStroke2 from "../assets/images/wc-stroke-2.png";
-import wcStroke3 from "../assets/images/wc-stroke-3.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
 import showDune from "../assets/images/show-dune.png";
 import showTlou from "../assets/images/show-tlou.png";
-import coverDesert from "../assets/images/cover-desert.png";
-import coverWestern from "../assets/images/cover-western.png";
-import coverLiterary from "../assets/images/cover-literary.png";
-import coverChef from "../assets/images/cover-chef.png";
+import posterPodcast from "../assets/images/poster-podcast.jpg";
+import posterBook from "../assets/images/poster-book.jpg";
+import posterMovie from "../assets/images/poster-movie.jpg";
+import posterAlbum from "../assets/images/poster-album.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -66,28 +63,10 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
   </a>
 );
 
-const STROKE_VARIANTS = [
-  { stroke: wcStroke1, transform: "rotate(-3deg)" },
-  { stroke: wcStroke2, transform: "scaleX(-1) rotate(2deg)" },
-  { stroke: wcStroke3, transform: "rotate(4deg)" },
-];
-
-function CategoryIcon({ Icon, color, seed }: { Icon: LucideIcon; color: string; seed: number }) {
-  const variant = STROKE_VARIANTS[seed % STROKE_VARIANTS.length];
-  const maskStyle = {
-    backgroundColor: color,
-    WebkitMaskImage: `url(${variant.stroke})`,
-    maskImage: `url(${variant.stroke})`,
-    WebkitMaskSize: "100% 100%",
-    maskSize: "100% 100%",
-    WebkitMaskRepeat: "no-repeat",
-    maskRepeat: "no-repeat",
-    transform: variant.transform,
-  } as const;
+function CategoryIcon({ Icon }: { Icon: LucideIcon }) {
   return (
-    <div className="relative flex items-center justify-center w-28 h-20 md:w-32 md:h-24 mb-3 transition-transform duration-300 group-hover:scale-105">
-      <div className="absolute inset-0" aria-hidden="true" style={maskStyle} />
-      <Icon className="relative z-10 h-8 w-8 md:h-10 md:w-10 text-neutral-900" strokeWidth={1.75} />
+    <div className="flex items-center justify-center w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
+      <Icon className="h-12 w-12 md:h-14 md:w-14 text-neutral-900" strokeWidth={1.5} />
     </div>
   );
 }
@@ -376,7 +355,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="group flex flex-col items-center text-center"
               >
-                <CategoryIcon Icon={cat.Icon} color={cat.color} seed={cat.seed} />
+                <CategoryIcon Icon={cat.Icon} />
                 <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
               </motion.div>
@@ -572,24 +551,25 @@ export default function Home() {
 
             <div className="lg:w-1/3 z-10 flex justify-center perspective-1000">
               <div className="relative w-64 h-80 flex items-center justify-center transform-style-3d">
-                <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={coverDesert} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 origin-bottom-left" alt="Cover" />
-                <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={coverWestern} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-10 origin-bottom" alt="Cover" />
-                <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={coverLiterary} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-20 origin-bottom" alt="Cover" />
-                <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={coverChef} className="absolute w-32 md:w-40 rounded-xl shadow-2xl border border-white/20 z-30 origin-bottom-right" alt="Cover" />
+                <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={posterPodcast} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 origin-bottom-left" alt="The Toast podcast" />
+                <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={posterBook} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-10 origin-bottom" alt="Reese's Book Club pick" />
+                <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={posterMovie} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-20 origin-bottom" alt="Dune: Part Two" />
+                <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={posterAlbum} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-30 origin-bottom-right" alt="Short n' Sweet album" />
               </div>
             </div>
 
             <div className="lg:w-1/3 z-10 flex flex-col items-center lg:items-end text-center lg:text-right gap-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Download Consumed</h3>
-                <p className="text-white/80">Join thousands building their entertainment identity.</p>
-              </div>
               <div className="flex flex-col gap-3">
                 <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
                   <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
                 </a>
-                <div className="opacity-50 cursor-not-allowed grayscale">
-                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-[68px] -ml-2" />
+                <div className="relative inline-block">
+                  <div className="opacity-40 cursor-not-allowed grayscale">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-[68px] -ml-2" />
+                  </div>
+                  <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="bg-white text-primary text-[11px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full shadow-lg -rotate-6">Coming Soon</span>
+                  </span>
                 </div>
               </div>
             </div>
