@@ -398,7 +398,7 @@ export default function Home() {
         </section>
 
         {/* 6. AS SEEN IN */}
-        <section className="py-12 border-t border-b border-border/50 bg-white" id="about-us">
+        <section className="hidden py-12 border-t border-b border-border/50 bg-white" id="about-us">
           <div className="container mx-auto px-6 max-w-7xl">
             <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
             <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-40 grayscale">
