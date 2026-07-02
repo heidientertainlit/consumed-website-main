@@ -7,7 +7,7 @@ import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
 import heroCollage from "../assets/images/hero-collage.png";
-import communityCollage from "../assets/images/community-collage.png";
+import neonSmiley from "../assets/images/neon-smiley.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -128,6 +128,21 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
 
+          <motion.img
+            src={neonSmiley}
+            alt="Neon smiley"
+            data-testid="img-hero-smiley"
+            aria-hidden="true"
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -14, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.5 },
+              scale: { duration: 0.6, delay: 0.5 },
+              y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
+            }}
+            className="pointer-events-none select-none absolute z-20 w-14 md:w-20 lg:w-24 top-28 right-4 md:top-36 md:right-12 lg:top-40 lg:right-[50%]"
+          />
+
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -214,15 +229,6 @@ export default function Home() {
         {/* 4. ROOMS / SOCIAL */}
         <section className="py-24 md:py-32 bg-secondary/40" id="rooms">
           <div className="container mx-auto px-6 max-w-7xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mb-14 md:mb-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-lg border border-black/5"
-            >
-              <img src={communityCollage} alt="Two friends watching something together on a tablet, surrounded by books, headphones, vinyl and cinema tickets" className="w-full h-auto object-cover" />
-            </motion.div>
             <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
               {/* Left Column */}
               <div className="lg:w-1/3 flex flex-col justify-center">
