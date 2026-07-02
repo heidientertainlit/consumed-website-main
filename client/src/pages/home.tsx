@@ -255,7 +255,7 @@ export default function Home() {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
               <div className="w-72 h-72 md:w-[28rem] md:h-[28rem] bg-primary/20 rounded-full blur-[100px]" />
             </div>
-            <div className="relative rounded-[2.75rem] bg-neutral-900 p-2.5 shadow-2xl ring-1 ring-white/10">
+            <div className="relative rounded-[2.75rem] bg-neutral-900 p-2.5 shadow-2xl ring-1 ring-white/10 rotate-[-8deg] hover:rotate-[-3deg] transition-transform duration-500 ease-out">
               <img
                 src={appDna}
                 alt="The Consumed app showing a personal Entertainment DNA profile"
