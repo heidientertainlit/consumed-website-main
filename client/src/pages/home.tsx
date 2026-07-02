@@ -124,7 +124,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-32 md:pt-40 pb-20 px-6 container mx-auto max-w-7xl relative" id="features">
+        <section className="pt-32 md:pt-40 pb-20 px-6 container mx-auto max-w-7xl relative overflow-hidden" id="features">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
           
@@ -137,7 +137,7 @@ export default function Home() {
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal leading-[1.05] tracking-tight mb-6">
                 See what everyone's consuming.
-                <span className="block text-primary font-script font-bold text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] mt-3">Track. Connect. Compare.</span>
+                <span className="block text-primary font-script font-bold text-3xl md:text-4xl lg:text-5xl leading-none mt-3 whitespace-nowrap">Track. Connect. Compare.</span>
               </h1>
               
               <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-md leading-relaxed font-sans">
@@ -161,8 +161,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:w-[55%] relative"
             >
-              <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[600px] ml-auto">
-                <img src={heroEditorial} alt="Editorial illustration of person relaxing with media" className="w-full h-full object-contain" />
+              <div className="relative w-full max-w-none aspect-[6/5] lg:w-[140%] lg:-mr-[22%] xl:-mr-[9rem]">
+                <img src={heroEditorial} alt="Mixed-media collage of a person surrounded by movies, books, music and games" className="w-full h-full object-contain object-right" />
               </div>
             </motion.div>
           </div>
