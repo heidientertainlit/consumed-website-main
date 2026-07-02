@@ -7,6 +7,7 @@ import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
 import heroCollage from "../assets/images/hero-collage.png";
+import communityCollage from "../assets/images/community-collage.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -213,6 +214,15 @@ export default function Home() {
         {/* 4. ROOMS / SOCIAL */}
         <section className="py-24 md:py-32 bg-secondary/40" id="rooms">
           <div className="container mx-auto px-6 max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-14 md:mb-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-lg border border-black/5"
+            >
+              <img src={communityCollage} alt="Two friends watching something together on a tablet, surrounded by books, headphones, vinyl and cinema tickets" className="w-full h-auto object-cover" />
+            </motion.div>
             <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
               {/* Left Column */}
               <div className="lg:w-1/3 flex flex-col justify-center">
