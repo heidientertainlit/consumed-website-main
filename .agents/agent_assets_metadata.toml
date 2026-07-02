@@ -12,3 +12,27 @@ id = "2JBMrIq8iX7BZBmk-enOc"
 uri = "file://artifacts/mockup-sandbox/public/images/poster-breaking-bad.png"
 type = "image"
 title = "Desert cinematic TV poster"
+
+[[generated]]
+id = "i56Mt87MNxArB9-iP02Dz"
+uri = "file://client/src/assets/images/hero-collage.png"
+type = "image"
+title = "Hero media consumption collage"
+
+[[generated]]
+id = "oGqHMNgcmIjg0oTbi7oVM"
+uri = "file://client/src/assets/images/identity-collage.png"
+type = "image"
+title = "Entertainment identity collage"
+
+[[generated]]
+id = "7KmahGVafIbekeN4CMTKl"
+uri = "file://client/src/assets/images/reactions-collage.png"
+type = "image"
+title = "Reactions and voice illustration"
+
+[[generated]]
+id = "EYWrg2GunO2T65i2hmy5V"
+uri = "file://client/src/assets/images/taste-overlap.png"
+type = "image"
+title = "Taste overlap connection"

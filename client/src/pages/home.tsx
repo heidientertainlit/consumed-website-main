@@ -1,30 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Music, Gamepad2, Tv, Film, BookOpen, Mic, Star, TrendingUp, Activity, Search, User, UserCircle, Plus, Share2, Download, RefreshCw, MoreHorizontal, Play, Heart, MessageSquare, Trophy, ChevronRight, Instagram, Bell, X, Loader2, Dna, ListChecks, Dice5, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import bgImage from "@assets/generated_images/subtle_dark_purple_and_black_mesh_gradient_professional_background.png";
+import { motion } from "framer-motion";
+import { Flame, Eye, GitMerge, Swords, Instagram, Menu, X, ArrowRight } from "lucide-react";
+
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
-// Screen Imports
-import screen1 from "@assets/IMG_5990_1769627771433.PNG";
-import screen2 from "@assets/IMG_5991_1769627785554.PNG";
-import screen3 from "@assets/IMG_5992_1769627702651.PNG";
-import screen4 from "@assets/IMG_5993_1769627706216.PNG";
-import screen5 from "@assets/IMG_5994_1769627709299.PNG";
-import screen6 from "@assets/IMG_5995_1769627712282.PNG";
-import promo1 from "@assets/1_1774376395182.png";
-import promo2 from "@assets/2_1774376395182.png";
-import promo3 from "@assets/3_1774376395182.png";
-import promo4 from "@assets/4_1774376395182.png";
-import promo5 from "@assets/5_1774376395183.png";
-import promo6 from "@assets/6_1774376395183.png";
-import promo7 from "@assets/7_1774376395183.png";
+// Generated collage images
+import heroCollage from "../assets/images/hero-collage.png";
+import identityCollage from "../assets/images/identity-collage.png";
+import reactionsCollage from "../assets/images/reactions-collage.png";
+import tasteOverlap from "../assets/images/taste-overlap.png";
 
-// TikTok Icon Component since it's not in Lucide
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -39,858 +25,374 @@ const TikTok = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const AppStoreButton = ({ className = "" }: { className?: string }) => (
+  <a
+    href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`inline-flex items-center justify-center gap-2 bg-foreground text-white px-6 py-3 rounded-full font-medium transition-transform hover:scale-105 active:scale-95 ${className}`}
+  >
+    Get the app
+  </a>
+);
+
+// Scribble decorations
+const ScribbleUnderline = () => (
+  <svg className="absolute w-full h-4 -bottom-1 left-0 text-primary opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+    <path d="M0,5 Q20,1 40,7 T80,3 T100,5" fill="none" stroke="currentColor" strokeWidth="2" />
+  </svg>
+);
+
+const StarDoodle = ({ className }: { className?: string }) => (
+  <svg className={`text-primary ${className}`} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2v20M17 5l-10 14M5 5l10 14M2 12h20" />
+  </svg>
+);
+
 export default function Home() {
-  const words = [
-    { text: "watching?", color: "text-purple-400" },
-    { text: "listening to?", color: "text-blue-400" },
-    { text: "reading?", color: "text-indigo-400" },
-    { text: "playing?", color: "text-green-400" }
-  ];
-  const [index, setIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [feedbackEmail, setFeedbackEmail] = useState("");
-  const [feedbackMessage, setFeedbackMessage] = useState("");
-  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isFeedbackSubmitting, setIsFeedbackSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-  const [feedbackError, setFeedbackError] = useState<string | null>(null);
-  const [headlineIndex, setHeadlineIndex] = useState(0);
-
-  const rotatingHeadlines: { prefix: string; gradient: string; nowrap?: boolean }[] = [
-    { prefix: "Do you have ", gradient: "good taste?" },
-    { prefix: "Are you the friend with the ", gradient: "best recs?" },
-    { prefix: "You always call the ending, ", gradient: "don't you...", nowrap: true },
-    { prefix: "Track what you consume. ", gradient: "Play what you know." },
-  ];
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (headlineIndex >= rotatingHeadlines.length - 1) return;
-    const t = setTimeout(() => setHeadlineIndex((i) => i + 1), 4500);
-    return () => clearTimeout(t);
-  }, [headlineIndex]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage(null);
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setEmail("");
-        setShowSuccess(true);
-      } else {
-        setSubmitMessage({ type: 'error', text: data.error || 'Something went wrong' });
-      }
-    } catch (error) {
-      setSubmitMessage({ type: 'error', text: 'Failed to connect. Please try again.' });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const shareUrl = typeof window !== 'undefined' ? window.location.origin : 'https://consumedapp.com';
-  const shareText = "Check out Consumed - the app that brings all your entertainment together!";
-
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: 'Consumed', text: shareText, url: shareUrl });
-      } catch (err) {}
-    } else {
-      navigator.clipboard.writeText(shareUrl);
-      alert('Link copied to clipboard!');
-    }
-  };
-
-  const handleFeedback = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!feedbackMessage.trim()) return;
-    setIsFeedbackSubmitting(true);
-    setFeedbackError(null);
-    try {
-      const response = await fetch('/api/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: feedbackEmail || undefined, message: feedbackMessage }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setFeedbackSubmitted(true);
-        setFeedbackEmail("");
-        setFeedbackMessage("");
-      } else {
-        setFeedbackError(data.error || 'Something went wrong.');
-      }
-    } catch {
-      setFeedbackError('Failed to connect. Please try again.');
-    } finally {
-      setIsFeedbackSubmitting(false);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#f8f8f8] text-zinc-900 overflow-x-hidden selection:bg-primary/30">
-      {/* Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-[#f8f8f8]" />
-
-      {/* Top header — white, brand focus */}
-      <header className="relative w-full bg-white border-b border-zinc-100 overflow-hidden">
-        {/* Nav row */}
-        <nav className="relative z-50 container mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors" data-testid="link-instagram">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors" data-testid="link-tiktok">
-              <TikTok className="w-5 h-5" />
-            </a>
-          </div>
-          <Link href="/feedback" className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full px-3 py-1.5 md:px-5 md:py-2 shadow-lg shadow-blue-900/20 hover:opacity-90 transition-all" data-testid="link-feedback">
-            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
-            <span className="text-xs md:text-sm font-medium text-white font-body whitespace-nowrap">In Beta · Give Feedback</span>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+      
+      {/* Navigation */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-3" : "bg-transparent py-5"}`}>
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <Link href="/">
+            <img src={logoPurple} alt="Consumed" className="h-8 md:h-10 cursor-pointer hover:opacity-80 transition-opacity" />
           </Link>
-        </nav>
+          
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <span className="cursor-pointer hover:text-primary transition-colors">Feed</span>
+            <span className="cursor-pointer hover:text-primary transition-colors">Your DNA</span>
+            <span className="cursor-pointer hover:text-primary transition-colors">Reactions</span>
+            <span className="cursor-pointer hover:text-primary transition-colors">Rooms</span>
+          </nav>
+          
+          <div className="hidden md:flex items-center gap-4">
+            <AppStoreButton />
+          </div>
 
-        {/* Centered brand focus */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 container mx-auto px-6 pt-6 md:pt-10 pb-16 md:pb-24 flex flex-col items-center text-center"
-        >
-          <img
-            src={logoPurple}
-            alt="Consumed"
-            className="h-14 md:h-20 lg:h-24 w-auto"
-            data-testid="img-logo-header"
-          />
-          <p className="mt-3 md:mt-4 text-sm md:text-base uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-500 font-medium font-body">
-            Entertainment is better, together.
-          </p>
-          <p className="mt-5 md:mt-6 text-[10px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-zinc-400 font-light font-body">
-            Track what you consume. Play what you know.
-          </p>
-          <a
-            href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.35)] font-body border-0 inline-flex items-center justify-center gap-2"
-            data-testid="link-download-app-header"
-          >
-            Download the App
-            <span aria-hidden="true">→</span>
-          </a>
-        </motion.div>
+          <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </header>
 
-      {/* Dark Hero Section — full bleed */}
-      <section className="relative bg-gradient-to-b from-[#0f0521] via-[#1a0a2e] to-[#2d1b4e] text-white overflow-hidden">
-        {/* Purple glow blob — top right */}
-        <div className="pointer-events-none absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full bg-purple-600/30 blur-[120px]" />
-        <div className="pointer-events-none absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full bg-indigo-500/20 blur-[100px]" />
-
-        {/* Hero content — centered */}
-        <div className="relative z-10 container mx-auto px-6 py-20 md:py-28 flex flex-col items-center text-center">
-          {/* Rotating headline — cycles, last one stops */}
-          <div className="relative min-h-[130px] md:min-h-[150px] lg:min-h-[160px] flex items-center justify-center w-full max-w-4xl">
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={headlineIndex}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -14 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-white font-heading"
-              >
-                {headlineIndex === 2 ? (
-                  <>
-                    You always <span className="whitespace-nowrap">call the ending</span>, <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">don't you...</span>
-                  </>
-                ) : headlineIndex === 0 ? (
-                  <>
-                    Do you have good taste?{" "}
-                    <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                      Yeah… we thought so.
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    {rotatingHeadlines[headlineIndex].prefix}
-                    <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                      {rotatingHeadlines[headlineIndex].gradient}
-                    </span>
-                  </>
-                )}
-              </motion.h2>
-            </AnimatePresence>
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 md:mt-10"
-          >
-            <a
-              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_25px_rgba(168,85,247,0.4)] font-body border-0 inline-flex items-center justify-center gap-2"
-              data-testid="link-download-app"
-            >
-              Make your call
-              <span aria-hidden="true">→</span>
-            </a>
-          </motion.div>
-
-          {/* Avatars */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 flex items-center gap-3 text-[11px] md:text-xs text-white/60 font-body"
-          >
-            <div className="flex -space-x-2">
-              {[
-                { name: "Jeeppler", color: "bg-slate-700" },
-                { name: "kjwoodsemh", color: "bg-amber-600" },
-                { name: "linds047", color: "bg-emerald-600" },
-                { name: "nicklombardo2", color: "bg-blue-600" },
-                { name: "seth", color: "bg-orange-500" },
-                { name: "hulabear23", color: "bg-teal-600" },
-                { name: "madhope21", color: "bg-rose-600" },
-                { name: "Snazzyman", color: "bg-cyan-600" }
-              ].map((user, i) => (
-                <div key={i} className={`w-7 h-7 rounded-full ${user.color} border-2 border-[#1a0a2e] flex items-center justify-center text-[8px] font-bold text-white shadow-sm`} title={user.name}>
-                  {user.name.slice(0, 2).toUpperCase()}
-                </div>
-              ))}
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden">
+          <nav className="flex flex-col gap-6 text-2xl font-heading">
+            <span className="cursor-pointer hover:text-primary">Feed</span>
+            <span className="cursor-pointer hover:text-primary">Your DNA</span>
+            <span className="cursor-pointer hover:text-primary">Reactions</span>
+            <span className="cursor-pointer hover:text-primary">Rooms</span>
+            <div className="mt-8">
+              <AppStoreButton className="w-full text-lg py-4" />
             </div>
-            <p>See what everyone's into, get Consumed.</p>
-          </motion.div>
+          </nav>
         </div>
-      </section>
+      )}
 
-      {/* Main Content */}
-      <main className="relative z-10 pb-12 flex flex-col items-center w-full">
-
-        {/* Watercolor band — Tagline + Promo carousel (full bleed) */}
-        <section
-          className="relative w-full pt-12 md:pt-16 pb-8 md:pb-10 overflow-hidden"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 18% 22%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 82% 18%, rgba(99,102,241,0.09) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 50% 85%, rgba(168,85,247,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 30% 70%, rgba(196,181,253,0.10) 0%, transparent 65%), #faf6fb",
-          }}
-        >
-          <div className="container mx-auto px-6 flex flex-col items-center">
-            {/* Tagline above carousel */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center"
+      <main>
+        {/* HERO */}
+        <section className="pt-32 md:pt-48 pb-20 px-6 container mx-auto relative">
+          <StarDoodle className="absolute top-40 left-10 w-8 h-8 opacity-40 rotate-12" />
+          <StarDoodle className="absolute top-20 right-20 w-12 h-12 opacity-30 -rotate-12" />
+          
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:w-1/2 flex flex-col items-start"
             >
-              <p className="text-3xl md:text-4xl font-semibold text-[#3b0764] font-heading max-w-3xl">Finally, all entertainment — all in one place.</p>
+              <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] mb-6 relative">
+                See what <span className="relative inline-block">everyone's<ScribbleUnderline/></span> consuming.
+              </h1>
+              <p className="text-xl md:text-2xl font-medium mb-4 text-primary">
+                Track. Connect. Compare.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
+                See what people are watching, reading, listening to, and playing — and discover your entertainment identity along the way.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <AppStoreButton className="w-full sm:w-auto px-8 py-4 text-lg" />
+              </div>
             </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:w-1/2 relative"
+            >
+              <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl" />
+              <img src={heroCollage} alt="People enjoying entertainment" className="relative z-10 w-full h-auto object-contain max-h-[600px]" />
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Screenshot Strip Carousel */}
-            <motion.div
+        {/* SECTION 1 - THE HOOK */}
+        <section className="py-20 md:py-32 bg-secondary/30 relative">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-heading font-bold mb-8"
+              >
+                Everything your friends are into.
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
+              >
+                Watching. Reading. Listening. Playing. All of it, in one feed — no algorithm deciding what you see, just the people whose taste you actually trust.
+              </motion.p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2 - THE PAYOFF (IDENTITY) */}
+        <section className="py-24 md:py-32 container mx-auto px-6">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
+              <img src={identityCollage} alt="Entertainment Identity" className="w-full h-auto object-contain max-h-[500px]" />
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+                What you consume says everything.
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Every episode, chapter, and playlist feeds your DNA — a living profile of your taste across every medium. Not your ratings. You.
+              </p>
+              
+              <div className="bg-white rounded-2xl p-8 border border-border shadow-sm">
+                <p className="text-primary font-bold text-xl mb-2">Movies & TV. Books. Podcasts. Games. Music.</p>
+                <p className="text-3xl font-heading font-bold">One identity.</p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* SECTION 3 - THE VOICE */}
+        <section className="py-24 md:py-32 bg-primary/5">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">React together.</h2>
+              <p className="text-xl text-muted-foreground">Built for people with opinions.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="order-2 md:order-1 flex flex-col gap-6">
+                {/* Hot Takes */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-orange-400 group-hover:w-3 transition-all" />
+                  <div className="p-3 bg-orange-100 rounded-full h-fit text-orange-500">
+                    <Flame className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Hot takes</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Say the thing everyone's thinking. Or the thing nobody is.</p>
+                    <p className="italic text-foreground font-medium">"The book ending was better and I'll die on this hill."</p>
+                  </div>
+                </motion.div>
+
+                {/* Predictions */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-purple-400 group-hover:w-3 transition-all" />
+                  <div className="p-3 bg-purple-100 rounded-full h-fit text-purple-600">
+                    <Eye className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Predictions</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Call it before it happens. Get the receipts when you're right.</p>
+                    <p className="italic text-foreground font-medium">"Calling it now — the neighbor did it. Screenshot this."</p>
+                  </div>
+                </motion.div>
+
+                {/* Theories */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-blue-400 group-hover:w-3 transition-all" />
+                  <div className="p-3 bg-blue-100 rounded-full h-fit text-blue-500">
+                    <GitMerge className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Theories</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Connect the dots nobody else saw. Build the case.</p>
+                    <p className="italic text-foreground font-medium">"The clock in ep 2 and the photo in ep 7? Same timestamp."</p>
+                  </div>
+                </motion.div>
+
+                {/* Debates */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-white p-6 rounded-2xl shadow-sm border border-border flex gap-4 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-red-400 group-hover:w-3 transition-all" />
+                  <div className="p-3 bg-red-100 rounded-full h-fit text-red-500">
+                    <Swords className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Debates</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Defend your taste. Change some minds. Keep score.</p>
+                    <p className="italic text-foreground font-medium">"Sequels can't beat originals. Prove me wrong."</p>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="order-1 md:order-2">
+                <img src={reactionsCollage} alt="People reacting to media" className="w-full h-auto object-contain max-h-[600px] hover:scale-105 transition-transform duration-700" />
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <p className="text-2xl font-heading font-medium">
+                Entertainment isn't finished when the credits roll. <span className="text-primary relative inline-block">That's when it starts.<ScribbleUnderline/></span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4 - THE MECHANIC */}
+        <section className="py-24 md:py-32 container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
+              <img src={tasteOverlap} alt="Taste overlap between friends" className="w-full h-auto object-contain max-h-[500px]" />
+            </motion.div>
+            
+            <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mt-10 w-full"
+              className="lg:w-1/2"
             >
-              <div
-                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {[promo1, promo2, promo3, promo4, promo5, promo6, promo7].map((src, i) => (
-                  <div
-                    key={i}
-                    className="flex-shrink-0 w-[70vw] md:w-[23%] rounded-2xl overflow-hidden shadow-lg snap-start"
-                  >
-                    <img src={src} alt={`Consumed app screenshot ${i + 1}`} className="w-full h-auto block" />
-                  </div>
-                ))}
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Find your people.</h2>
+              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+                Compare taste. See your overlap. Join Rooms where your kind of fan is already mid-conversation.
+              </p>
+              
+              <div className="bg-white rounded-2xl p-6 md:p-8 border border-border shadow-sm mb-8 relative">
+                <div className="absolute -top-4 -right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full transform rotate-12">
+                  Match!
+                </div>
+                <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
+                  <span className="text-primary text-2xl">87%</span> taste overlap
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  You and Heidi agree on thrillers, true crime, and slow-burn sci-fi. She's watching two things you haven't started.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4">Trending Rooms</p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">Horror Heads</span>
+                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">Sci-Fi Central</span>
+                  <span className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-pointer">True Crime Corner</span>
+                </div>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Section A — Entertainment is already social */}
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full max-w-6xl mt-8 md:mt-12 px-6"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 font-heading leading-[1.05]">
-                Entertainment is already <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">social.</span>
-              </h2>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="w-12 h-[2px] bg-gradient-to-r from-[#a855f7] to-[#6366f1] rounded-full" />
-                <p className="text-base md:text-lg text-zinc-500 font-body">Now it finally has a home.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3" data-testid="feed-social">
-              {[
-                { initials: "JR", color: "bg-violet-500", name: "jordannivers", time: "just now", text: "gave White Lotus S3 a 5/5 — best finale in years", tag: "tv show", tagColor: "bg-violet-100 text-violet-700" },
-                { initials: "LK", color: "bg-emerald-500", name: "linds047", time: "8m ago", text: "predicted Beyoncé wins Album of the Year 🎤", tag: "prediction", tagColor: "bg-emerald-100 text-emerald-700" },
-                { initials: "KJ", color: "bg-amber-500", name: "kjwoodsemh", time: "22m ago", text: "scored 9/10 on Gladiator trivia — challenged you", tag: "trivia", tagColor: "bg-amber-100 text-amber-700" },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-zinc-100 shadow-sm p-4 flex items-start gap-3" data-testid={`feed-item-${i}`}>
-                  <div className={`w-10 h-10 rounded-full ${item.color} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
-                    {item.initials}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="text-zinc-900 text-sm font-semibold font-body">{item.name}</span>
-                      <span className="text-zinc-400 text-xs font-body">{item.time}</span>
-                      <span className={`ml-auto text-[10px] ${item.tagColor} px-2 py-0.5 rounded-full font-body`}>{item.tag}</span>
-                    </div>
-                    <p className="text-zinc-600 text-sm font-body leading-snug">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Section B — Play / Track / Connect (dark card) */}
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-[calc(100%-3rem)] max-w-6xl mt-16 md:mt-24 bg-[#0f0521] text-white rounded-3xl px-6 md:px-12 py-12 md:py-16"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-            {/* Play */}
-            <div data-testid="card-play">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-                <Play className="w-5 h-5 text-white" fill="white" />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-2">Play</h3>
-              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
-                Make your call.<br />See who agrees.
-              </p>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                <p className="text-sm text-white/85 font-body mb-4">Which movie is overrated?</p>
-                <button className="px-4 py-2 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-xs font-semibold inline-flex items-center gap-1.5 font-body" data-testid="button-vote-now">
-                  Vote now <span aria-hidden="true">→</span>
-                </button>
-              </div>
-            </div>
-            {/* Track */}
-            <div data-testid="card-track">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-                <ListChecks className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-2">Track</h3>
-              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
-                Log everything you watch,<br />read, listen, and play.
-              </p>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                <p className="text-xs uppercase tracking-wider text-white/50 font-body mb-3">Your Library</p>
-                {[["Movies", 236], ["TV Shows", 84], ["Books", 57], ["Podcasts", 41]].map(([label, count]) => (
-                  <div key={label as string} className="flex items-center justify-between py-1.5 text-sm font-body border-b border-white/5 last:border-b-0">
-                    <span className="text-white/85">{label}</span>
-                    <span className="text-white/50 tabular-nums">{count}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Connect */}
-            <div data-testid="card-connect">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a855f7] to-[#6366f1] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-                <Users className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-2">Connect</h3>
-              <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">
-                See what friends are into.<br />Share takes. Compare taste.
-              </p>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                <p className="text-xs uppercase tracking-wider text-white/50 font-body mb-3">Friend Activity</p>
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    {["bg-violet-500", "bg-emerald-500", "bg-amber-500", "bg-blue-500", "bg-rose-500"].map((c, i) => (
-                      <div key={i} className={`w-8 h-8 rounded-full ${c} border-2 border-[#0f0521]`} />
-                    ))}
-                  </div>
-                  <span className="text-sm text-white/70 font-body">+27</span>
-                </div>
-                <p className="mt-3 text-xs text-white/50 font-body">12 friends active today</p>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Section C — Hot take + Rating cards */}
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full max-w-6xl mt-8 md:mt-12 px-6"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-            {/* Hot Take Card */}
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8 flex flex-col sm:flex-row sm:items-center gap-6" data-testid="card-hot-take">
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-3">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Cast your vote</p>
-                  <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Friends</span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading leading-tight mb-5">
-                  Were they on a break?
-                </h3>
-                <div className="flex items-center gap-3">
-                  <button className="px-5 py-2 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold font-body shadow-[0_8px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all" data-testid="button-yes">Yes</button>
-                  <button className="px-5 py-2 rounded-full bg-zinc-900 text-white text-sm font-semibold font-body hover:bg-zinc-800 transition-all" data-testid="button-no">No</button>
-                </div>
-              </div>
-              {/* Result Ring */}
-              <div className="flex-shrink-0 text-center">
-                <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-2">
-                  <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="42" stroke="#e4e4e7" strokeWidth="6" fill="none" />
-                    <circle
-                      cx="50" cy="50" r="42"
-                      stroke="url(#hotTakeGrad)" strokeWidth="6" fill="none"
-                      strokeDasharray={`${(78 / 100) * 2 * Math.PI * 42} ${2 * Math.PI * 42}`}
-                      strokeLinecap="round"
-                    />
-                    <defs>
-                      <linearGradient id="hotTakeGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#a855f7" />
-                        <stop offset="100%" stopColor="#6366f1" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-2xl md:text-3xl font-bold text-zinc-900 font-heading">78%</span>
-                    <span className="text-[10px] text-zinc-500 font-body">agree</span>
-                  </div>
-                </div>
-                <p className="text-xs text-zinc-500 font-body">12,842 votes</p>
-              </div>
-            </div>
-
-            {/* Rating Card — Star Wars */}
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-rating">
-              <div className="flex items-center gap-2 mb-4 flex-wrap">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">What's your take?</p>
-                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Movie</span>
-                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+10 pts</span>
-              </div>
-              <div className="flex items-start gap-4 mb-3">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-black flex items-center justify-center flex-shrink-0 overflow-hidden shadow-inner">
-                  <span className="text-yellow-400 text-[8px] md:text-[9px] font-extrabold tracking-[0.15em] font-heading text-center leading-tight">STAR<br />WARS</span>
-                </div>
-                <div className="flex-1 min-w-0 pt-1">
-                  <h3 className="text-lg md:text-xl font-bold text-zinc-900 font-heading leading-tight">Star Wars</h3>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 mb-4 pb-4 border-b border-zinc-100">
-                <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" />
-                  ))}
-                </div>
-                <span className="text-xs text-zinc-700 font-body font-semibold ml-1">You rated 5/5</span>
-                <button className="text-xs text-rose-500 font-body ml-auto hover:underline">× Remove</button>
-              </div>
-
-              {/* Friend ratings */}
-              <div className="space-y-2.5">
-                {[
-                  { name: "Heidi Peters Tagliaferri", stars: 5, note: "↑ 3.0 above avg", noteColor: "text-emerald-600" },
-                  { name: "jennalovesbooks", stars: 4, note: "↑ 2.0 above avg", noteColor: "text-emerald-600" },
-                  { name: "kjwoodsemh", stars: 2, note: "= Average rating", noteColor: "text-zinc-500" },
-                ].map((f) => (
-                  <div key={f.name} className="flex items-center justify-between text-xs font-body" data-testid={`friend-rating-${f.name}`}>
-                    <span className="text-zinc-800 font-medium truncate pr-2">{f.name}</span>
-                    <div className="flex flex-col items-end flex-shrink-0">
-                      <div className="flex items-center gap-0.5">
-                        {[1, 2, 3, 4, 5].map((s) => (
-                          <Star key={s} className={`w-3 h-3 ${s <= f.stars ? "text-yellow-400" : "text-zinc-200"}`} fill="currentColor" />
-                        ))}
-                      </div>
-                      <span className={`text-[10px] ${f.noteColor} mt-0.5`}>{f.note}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-4 mt-5 pt-4 border-t border-zinc-100">
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-like">
-                  <Heart className="w-4 h-4" /> 0
-                </button>
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-comment">
-                  <MessageSquare className="w-4 h-4" /> 0
-                </button>
-                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-add">
-                  <Plus className="w-4 h-4" />
-                </button>
-                <span className="ml-auto text-[10px] uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full font-body font-semibold">Rating</span>
-                <span className="text-xs text-zinc-400 font-body">8h</span>
-              </div>
-            </div>
-
-            {/* Prediction Card — Dancing with the Stars */}
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-prediction">
-              <div className="flex items-center gap-2 mb-4 flex-wrap">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Prediction</p>
-                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">DWTS</span>
-                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+25 pts</span>
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-zinc-900 font-heading leading-tight mb-1">
-                Who lifts the Mirrorball?
-              </h3>
-              <p className="text-xs text-zinc-500 font-body mb-5">Season 34 finale · closes in 2d</p>
-
-              <div className="space-y-2.5">
-                {[
-                  { name: "Ilona Maher", pct: 46, you: true, color: "from-[#a855f7] to-[#6366f1]" },
-                  { name: "Joey Graziadei", pct: 31, you: false, color: "from-pink-400 to-rose-500" },
-                  { name: "Danielle Fishel", pct: 15, you: false, color: "from-amber-400 to-orange-500" },
-                  { name: "Jenn Tran", pct: 8, you: false, color: "from-emerald-400 to-teal-500" },
-                ].map((c) => (
-                  <div key={c.name} className="font-body" data-testid={`prediction-${c.name}`}>
-                    <div className="flex items-center justify-between text-xs mb-1">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-zinc-800 font-medium truncate">{c.name}</span>
-                        {c.you && <span className="text-[9px] uppercase tracking-wider text-violet-700 bg-violet-100 px-1.5 py-0.5 rounded-full font-semibold flex-shrink-0">Your pick</span>}
-                      </div>
-                      <span className="text-zinc-500 flex-shrink-0">{c.pct}%</span>
-                    </div>
-                    <div className="h-1.5 w-full bg-zinc-100 rounded-full overflow-hidden">
-                      <div className={`h-full rounded-full bg-gradient-to-r ${c.color}`} style={{ width: `${c.pct}%` }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-4 mt-5 pt-4 border-t border-zinc-100">
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-prediction-like">
-                  <Heart className="w-4 h-4" /> 14
-                </button>
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-prediction-comment">
-                  <MessageSquare className="w-4 h-4" /> 6
-                </button>
-                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-prediction-add">
-                  <Plus className="w-4 h-4" />
-                </button>
-                <span className="ml-auto text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Prediction</span>
-                <span className="text-xs text-zinc-400 font-body">2h</span>
-              </div>
-            </div>
-
-            {/* Binge Battle Card — Book series */}
-            <div className="bg-white rounded-3xl border border-zinc-100 shadow-lg p-6 md:p-8" data-testid="card-binge-battle">
-              <div className="flex items-center gap-2 mb-4 flex-wrap">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#6b21a8] font-semibold font-body">Binge battle</p>
-                <span className="text-[10px] uppercase tracking-wider text-violet-700 bg-violet-100 px-2 py-0.5 rounded-full font-body font-semibold">Book</span>
-                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full font-body">+15 pts</span>
-              </div>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-20 md:w-16 md:h-24 rounded-md bg-gradient-to-br from-rose-900 via-rose-800 to-rose-950 flex items-end justify-center p-1.5 flex-shrink-0 shadow-inner">
-                  <span className="text-amber-300 text-[7px] md:text-[8px] font-extrabold tracking-wider font-heading text-center leading-tight">FOURTH<br />WING</span>
-                </div>
-                <div className="flex-1 min-w-0 pt-1">
-                  <h3 className="text-lg md:text-xl font-bold text-zinc-900 font-heading leading-tight mb-0.5">Empyrean Series</h3>
-                  <p className="text-xs text-zinc-500 font-body">Who finished first?</p>
-                </div>
-              </div>
-
-              <div className="space-y-2.5 pb-4 border-b border-zinc-100">
-                {[
-                  { rank: 1, name: "jennalovesbooks", time: "3d 4h", medal: "🥇" },
-                  { rank: 2, name: "Heidi Peters Tagliaferri", time: "5d 12h", medal: "🥈" },
-                  { rank: 3, name: "you", time: "1w 2d", medal: "🥉", you: true },
-                  { rank: 4, name: "kjwoodsemh", time: "2w 5d", medal: "" },
-                ].map((p) => (
-                  <div key={p.name} className="flex items-center justify-between text-xs font-body" data-testid={`binge-${p.name}`}>
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span className="w-5 text-center text-sm flex-shrink-0">{p.medal || <span className="text-zinc-400 text-xs">{p.rank}</span>}</span>
-                      <span className={`truncate ${p.you ? "text-violet-700 font-semibold" : "text-zinc-800 font-medium"}`}>{p.name}</span>
-                    </div>
-                    <span className="text-zinc-500 flex-shrink-0">{p.time}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-4 mt-4">
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-rose-500 transition-colors text-xs font-body" data-testid="button-binge-like">
-                  <Heart className="w-4 h-4" /> 22
-                </button>
-                <button className="flex items-center gap-1 text-zinc-400 hover:text-zinc-700 transition-colors text-xs font-body" data-testid="button-binge-comment">
-                  <MessageSquare className="w-4 h-4" /> 9
-                </button>
-                <button className="text-zinc-400 hover:text-zinc-700 transition-colors" data-testid="button-binge-add">
-                  <Plus className="w-4 h-4" />
-                </button>
-                <span className="ml-auto text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-body font-semibold">Battle</span>
-                <span className="text-xs text-zinc-400 font-body">5h</span>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Useless Knowledge Section — dark purple gradient */}
-        <section className="relative w-full mt-16 md:mt-24 bg-gradient-to-br from-[#1a0a2e] via-[#3b0764] to-[#1e1b4b] overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-40" style={{ background: "radial-gradient(circle at 20% 30%, rgba(168,85,247,0.35), transparent 50%), radial-gradient(circle at 80% 70%, rgba(99,102,241,0.3), transparent 50%)" }} />
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative text-center max-w-3xl mx-auto px-6 py-20 md:py-28"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] text-white font-heading mb-6">
-              <span className="block">What are you</span>
-              <span className="block min-h-[1.25em] pb-2">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={index}
-                    initial={{ y: 15, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -15, opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent inline-block"
-                  >
-                    {words[index].text}
-                  </motion.span>
-                </AnimatePresence>
-              </span>
-            </h2>
-            <p className="text-lg text-white/75 font-body leading-relaxed">
-              Turn the shows you binge, books you abandoned, and hot takes nobody asked for into games, predictions, and bragging rights. See what people like you saw coming. Connect over what you're watching. And see where you stack up.
-            </p>
-            <a
-              href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 h-12 px-10 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_30px_rgba(168,85,247,0.5)] font-body border-0 inline-flex items-center justify-center gap-2"
-              data-testid="link-start-sharing"
+        {/* SECTION 5 - THE CLOSE */}
+        <section className="py-24 md:py-32 bg-foreground text-white text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-foreground to-foreground opacity-50" />
+          
+          <div className="container mx-auto px-6 relative z-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-heading font-bold mb-6"
             >
-              Start sharing
-              <span aria-hidden="true">→</span>
-            </a>
-          </motion.div>
+              Your entertainment identity is waiting.
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl md:text-2xl text-white/70 mb-10"
+            >
+              Track everything. See where you rank.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <a
+                href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-foreground px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+              >
+                Download on the App Store <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </div>
         </section>
-
-        {/* Phone Carousel — Gray Rounded Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 md:mt-16 w-full max-w-5xl mx-auto px-6"
-        >
-          <div className="w-full flex flex-col items-center mb-8">
-            <p className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-body">See what's inside</p>
-          </div>
-
-          {/* Phone Carousel */}
-          <div className="w-full flex flex-col items-center">
-            <Carousel className="w-full flex flex-col items-center" opts={{ loop: true, dragFree: false }}>
-              <div className="relative mx-auto border-zinc-300 bg-zinc-900 border-[8px] rounded-[3rem] h-[540px] w-[265px] shadow-2xl overflow-hidden ring-1 ring-zinc-200 z-20 touch-pan-x">
-                <CarouselContent className="h-[524px]">
-                  {[screen1, screen2, screen3, screen4, screen5, screen6].map((screen, index) => (
-                    <CarouselItem key={index} className="h-[524px]">
-                      <img
-                        src={screen}
-                        alt={`App Screen ${index + 1}`}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20 pointer-events-none"></div>
-              </div>
-              <div className="flex items-center gap-6 mt-8">
-                <CarouselPrevious className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
-                <span className="text-sm text-zinc-500 font-body">Swipe or tap to explore</span>
-                <CarouselNext className="relative static translate-x-0 translate-y-0 bg-white border-zinc-200 text-zinc-700 hover:bg-purple-50 hover:text-purple-700 w-12 h-12" />
-              </div>
-            </Carousel>
-          </div>
-        </motion.div>
-
       </main>
 
-      <footer className="relative z-50 py-12 text-center text-sm text-zinc-400 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a0f] font-body">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4">
-            <p className="text-zinc-400">&copy; {new Date().getFullYear()} Consumed.</p>
-            <a href="mailto:info@consumedapp.com" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-info-email">info@consumedapp.com</a>
+      {/* FOOTER */}
+      <footer className="bg-white border-t border-border py-12">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <img src={logoPurple} alt="Consumed" className="h-6 opacity-80" />
+            <p className="text-sm text-muted-foreground max-w-sm text-center md:text-left">
+              We help people understand themselves — and each other — through entertainment.
+            </p>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="/support" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-support">Support</a>
-            <a href="/privacy" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-privacy">Privacy</a>
-            <a href="/terms" className="text-zinc-400 hover:text-purple-400 transition-colors" data-testid="link-terms">Terms</a>
+          
+          <div className="flex flex-col items-center md:items-end gap-6">
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <TikTok className="w-5 h-5" />
+              </a>
+            </div>
+            
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <span>© 2026 Consumed</span>
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
+              <Link href="/feedback" className="hover:text-primary transition-colors" data-testid="link-feedback">Feedback</Link>
+              <Link href="/support" className="hover:text-primary transition-colors">Contact</Link>
+            </div>
           </div>
         </div>
       </footer>
 
-      {/* Email Subscription Modal */}
-      <Dialog open={isModalOpen} onOpenChange={(open) => {
-        setIsModalOpen(open);
-        if (!open) {
-          setShowSuccess(false);
-          setSubmitMessage(null);
-        }
-      }}>
-        <DialogContent className="sm:max-w-md bg-zinc-900 border-white/10 text-white">
-          {showSuccess ? (
-            <div className="text-center py-4">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
-                <Bell className="w-8 h-8 text-green-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Thanks, we'll notify you!</h3>
-              <p className="text-zinc-400 font-body mb-6">Now tell a friend</p>
-              <Button
-                onClick={handleShare}
-                className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
-                data-testid="button-share"
-              >
-                <Share2 className="mr-2 h-4 w-4" />
-                Share Consumed
-              </Button>
-            </div>
-          ) : (
-            <>
-              <DialogHeader>
-                <DialogTitle className="text-xl font-bold text-center">Get notified</DialogTitle>
-              </DialogHeader>
-              <form onSubmit={handleSubscribe} className="space-y-4 mt-4">
-                <p className="text-sm text-zinc-400 text-center font-body">
-                  Be the first to know when Consumed is available in the App Store.
-                </p>
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-500 focus:border-purple-500 font-body"
-                  data-testid="input-email"
-                />
-                {submitMessage && (
-                  <p className={`text-sm text-center font-body ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
-                    {submitMessage.text}
-                  </p>
-                )}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body border-0"
-                  data-testid="button-submit"
-                >
-                  {isSubmitting ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    "Notify me"
-                  )}
-                </Button>
-              </form>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-
-      {/* Feedback Modal */}
-      <Dialog open={isFeedbackOpen} onOpenChange={(open) => { setIsFeedbackOpen(open); if (!open) setFeedbackSubmitted(false); }}>
-        <DialogContent className="bg-white rounded-2xl border border-zinc-100 shadow-2xl max-w-md w-full p-8">
-          {feedbackSubmitted ? (
-            <div className="flex flex-col items-center gap-4 py-6 text-center">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 to-indigo-100 flex items-center justify-center">
-                <svg className="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-bold text-zinc-900 font-heading">Thanks so much!</h2>
-              <p className="text-zinc-500 font-body text-sm leading-relaxed">Your feedback helps shape Consumed. We read every single message.</p>
-              <button
-                onClick={() => setIsFeedbackOpen(false)}
-                className="mt-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-sm font-semibold hover:opacity-90 transition-all font-body"
-              >
-                Done
-              </button>
-            </div>
-          ) : (
-            <>
-              <DialogHeader className="mb-6">
-                <DialogTitle className="text-2xl font-bold text-zinc-900 font-heading">Give Feedback</DialogTitle>
-                <DialogDescription className="text-zinc-500 font-body text-sm mt-1">
-                  Tell us what you love, what's broken, or what you'd love to see.
-                </DialogDescription>
-              </DialogHeader>
-              <form onSubmit={handleFeedback} className="flex flex-col gap-4">
-                <input
-                  type="email"
-                  placeholder="Your email (optional)"
-                  value={feedbackEmail}
-                  onChange={(e) => setFeedbackEmail(e.target.value)}
-                  data-testid="input-feedback-email"
-                  className="w-full h-11 px-4 rounded-xl border border-zinc-200 bg-zinc-50 text-sm font-body text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-300"
-                />
-                <textarea
-                  placeholder="What's on your mind?"
-                  value={feedbackMessage}
-                  onChange={(e) => setFeedbackMessage(e.target.value)}
-                  required
-                  rows={5}
-                  data-testid="input-feedback-message"
-                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-sm font-body text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-300 resize-none"
-                />
-                {feedbackError && (
-                  <p className="text-red-500 text-xs font-body">{feedbackError}</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={isFeedbackSubmitting || !feedbackMessage.trim()}
-                  data-testid="button-submit-feedback"
-                  className="w-full h-11 text-sm font-semibold rounded-full bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white hover:opacity-90 transition-all active:scale-95 shadow-[0_0_15px_rgba(168,85,247,0.3)] font-body disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isFeedbackSubmitting ? (
-                    <Loader2 className="h-4 w-4 animate-spin mx-auto" />
-                  ) : (
-                    "Send Feedback"
-                  )}
-                </button>
-              </form>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
