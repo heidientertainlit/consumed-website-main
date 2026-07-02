@@ -8,6 +8,7 @@ import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 // Generated images
 import heroCollage from "../assets/images/hero-collage.png";
 import neonSmiley from "../assets/images/neon-smiley.png";
+import appDna from "../assets/images/app-dna.png";
 import roomHorror from "../assets/images/room-horror.png";
 import roomScifi from "../assets/images/room-scifi.png";
 import roomBooks from "../assets/images/room-books.png";
@@ -209,19 +210,7 @@ export default function Home() {
 
         {/* 3. CATEGORIES */}
         <section className="pt-4 md:pt-8 pb-24 md:pb-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
-          <div className="text-center order-2 mt-16 md:mt-24">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
-            >
-              What you consume says everything.<br />
-              <span className="text-primary italic">One identity.</span>
-            </motion.h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 order-1">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
               { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
@@ -243,6 +232,38 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <div className="text-center mt-20 md:mt-28">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
+            >
+              What you consume says everything.<br />
+              <span className="text-primary italic">Discover your entertainment identity.</span>
+            </motion.h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative mt-12 md:mt-16 flex justify-center"
+          >
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+              <div className="w-72 h-72 md:w-[28rem] md:h-[28rem] bg-primary/20 rounded-full blur-[100px]" />
+            </div>
+            <div className="relative rounded-[2.75rem] bg-neutral-900 p-2.5 shadow-2xl ring-1 ring-white/10">
+              <img
+                src={appDna}
+                alt="The Consumed app showing a personal Entertainment DNA profile"
+                data-testid="img-app-dna"
+                className="w-[240px] md:w-[280px] rounded-[2.25rem]"
+              />
+            </div>
+          </motion.div>
         </section>
 
         {/* 4. ROOMS / SOCIAL */}
