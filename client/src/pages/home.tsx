@@ -241,7 +241,7 @@ export default function Home() {
               className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
             >
               What you consume says everything.<br />
-              <span className="text-primary italic">Discover your entertainment identity.</span>
+              <span className="text-primary italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
             </motion.h2>
           </div>
 
