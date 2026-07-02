@@ -286,9 +286,9 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
               See what everyone's consuming.
               <span className="relative block w-fit mx-auto text-primary font-heading italic text-lg md:text-xl lg:text-2xl leading-[1.2] mt-4 lg:whitespace-nowrap">
-                Track. Connect. Discover your entertainment identity.
-                <svg className="absolute -bottom-2 left-0 w-full text-primary" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                Track. Connect. Consume.
+                <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
                 <motion.img
                   src={neonSmiley}
