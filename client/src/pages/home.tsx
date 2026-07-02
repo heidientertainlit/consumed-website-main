@@ -92,10 +92,9 @@ export default function Home() {
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
             <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
-            <button onClick={() => scrollToSection("rooms")} className="hover:text-primary transition-colors">Rooms</button>
             <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
             <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
-            <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Blog</button>
+            <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
           </nav>
           
           <div className="hidden md:flex items-center gap-4">
@@ -116,10 +115,9 @@ export default function Home() {
         <div className="fixed inset-0 z-40 bg-background pt-24 px-6 md:hidden">
           <nav className="flex flex-col gap-6 text-2xl font-heading">
             <button onClick={() => scrollToSection("features")} className="text-left hover:text-primary">Features</button>
-            <button onClick={() => scrollToSection("rooms")} className="text-left hover:text-primary">Rooms</button>
             <button onClick={() => scrollToSection("how-it-works")} className="text-left hover:text-primary">How It Works</button>
             <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary">About Us</button>
-            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary">Blog</button>
+            <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary">Insights</button>
             <div className="mt-8">
               <AppStoreButton className="w-full text-lg py-4" />
             </div>
@@ -427,10 +425,9 @@ export default function Home() {
             </Link>
             <nav className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm font-medium text-foreground/70">
               <button onClick={() => scrollToSection("features")} className="hover:text-primary transition-colors">Features</button>
-              <button onClick={() => scrollToSection("rooms")} className="hover:text-primary transition-colors">Rooms</button>
               <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors">How It Works</button>
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
-              <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Blog</button>
+              <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
             </nav>
             <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
               We help people understand themselves — and each other — through entertainment.
