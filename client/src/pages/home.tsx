@@ -546,7 +546,6 @@ export default function Home() {
                 Your entertainment identity<br />
                 <span className="italic text-white/90">is waiting.</span>
               </h2>
-              <p className="text-white/80 text-lg">Track everything. See where you rank.</p>
             </div>
 
             <div className="lg:w-1/3 z-10 flex justify-center perspective-1000">
