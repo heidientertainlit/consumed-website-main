@@ -220,7 +220,7 @@ export default function Home() {
             </p>
             <nav className="flex flex-col gap-6 text-2xl font-heading">
               <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary transition-colors">About Us</button>
-              <button onClick={() => scrollToSection("blog")} className="text-left hover:text-primary transition-colors">Insights</button>
+              <Link href="/insights" className="text-left hover:text-primary transition-colors" data-testid="link-insights-mobile">Insights</Link>
             </nav>
           </div>
         </div>
@@ -454,7 +454,7 @@ export default function Home() {
             </Link>
             <nav className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm font-medium text-foreground/70">
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
-              <button onClick={() => scrollToSection("blog")} className="hover:text-primary transition-colors">Insights</button>
+              <Link href="/insights" className="hover:text-primary transition-colors" data-testid="link-insights-footer">Insights</Link>
             </nav>
             <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
               Our Mission: Bringing joy and connection through entertainment.

@@ -10,6 +10,7 @@ import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
 import Feedback from "@/pages/feedback";
 import Analytics from "@/pages/analytics";
+import Insights, { InsightPost } from "@/pages/insights";
 
 function Router() {
   return (
@@ -20,6 +21,8 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/feedback" component={Feedback} />
       <Route path="/analytics-for-partners" component={Analytics} />
+      <Route path="/insights" component={Insights} />
+      <Route path="/insights/:slug" component={InsightPost} />
       <Route component={NotFound} />
     </Switch>
   );
