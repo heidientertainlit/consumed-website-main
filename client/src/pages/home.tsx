@@ -198,6 +198,15 @@ export default function Home() {
           </Link>
           
           <div className="flex items-center gap-3 md:gap-4">
+            <a
+              href="https://app.consumedapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+              data-testid="link-web-app"
+            >
+              Open web app
+            </a>
             <AppStoreButton />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -221,6 +230,7 @@ export default function Home() {
             <nav className="flex flex-col gap-6 text-2xl font-heading">
               <button onClick={() => scrollToSection("about-us")} className="text-left hover:text-primary transition-colors">About Us</button>
               <Link href="/insights" className="text-left hover:text-primary transition-colors" data-testid="link-insights-mobile">Insights</Link>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="text-left hover:text-primary transition-colors" data-testid="link-web-app-mobile">Open web app</a>
             </nav>
           </div>
         </div>
@@ -455,6 +465,7 @@ export default function Home() {
             <nav className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm font-medium text-foreground/70">
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
               <Link href="/insights" className="hover:text-primary transition-colors" data-testid="link-insights-footer">Insights</Link>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" data-testid="link-web-app-footer">Open web app</a>
             </nav>
             <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
               Our Mission: Bringing joy and connection through entertainment.
