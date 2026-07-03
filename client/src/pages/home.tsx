@@ -384,9 +384,9 @@ export default function Home() {
                   ))}
                 </div>
 
-                <button onClick={() => scrollToSection("better-together")} className="inline-flex items-center bg-primary text-white font-bold rounded-full px-6 py-3 hover:opacity-90 transition-opacity" data-testid="button-download-rooms">
+                <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-primary text-white font-bold rounded-full px-6 py-3 hover:opacity-90 transition-opacity" data-testid="button-download-rooms">
                   Download to see what everyone's saying <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
+                </a>
               </motion.div>
             </div>
         </section>
