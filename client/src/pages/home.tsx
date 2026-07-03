@@ -398,15 +398,34 @@ export default function Home() {
                   <span className="text-primary italic">Join the conversation.</span>
                 </h2>
 
-                <ul className="space-y-4 mb-10 text-foreground/80 font-medium text-left inline-flex flex-col">
+                <ul className="space-y-4 mb-8 text-foreground/80 font-medium text-left inline-flex flex-col">
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Compare taste and see your overlap</li>
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Hot takes, predictions, theories, debates</li>
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Find the people whose taste you trust</li>
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Join Rooms where your people already are</li>
                 </ul>
 
-                <button onClick={() => scrollToSection("rooms")} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" data-testid="button-explore-rooms">
-                  Explore Rooms <ArrowRight className="w-4 h-4 ml-1" />
+                <div className="flex flex-wrap justify-center gap-2.5 mb-8 max-w-lg">
+                  {[
+                    { name: "Horror Heads", members: "12.4K" },
+                    { name: "Sci-Fi Central", members: "8.7K" },
+                    { name: "The Book Nook", members: "15.1K" },
+                    { name: "Chart Toppers", members: "9.3K" },
+                    { name: "Podcast Lounge", members: "6.8K" },
+                  ].map((room) => (
+                    <span
+                      key={room.name}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-white border border-black/5 shadow-sm px-3.5 py-1.5 text-sm font-medium"
+                      data-testid={`chip-room-${room.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    >
+                      {room.name}
+                      <span className="text-foreground/40 text-xs">{room.members}</span>
+                    </span>
+                  ))}
+                </div>
+
+                <button onClick={() => scrollToSection("better-together")} className="inline-flex items-center bg-primary text-white font-bold rounded-full px-6 py-3 hover:opacity-90 transition-opacity" data-testid="button-download-rooms">
+                  Download to see what everyone's saying <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
               </motion.div>
             </div>
