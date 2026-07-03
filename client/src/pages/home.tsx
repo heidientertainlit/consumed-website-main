@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
+import { Play, Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -165,46 +165,6 @@ function PhoneCarousel() {
           );
         })}
       </motion.div>
-
-      <div className="flex items-center gap-5 mt-6">
-        <button
-          onClick={() => go(-1)}
-          data-testid="button-phone-prev"
-          aria-label="Previous screen"
-          className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground/5 transition-colors"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <div className="flex items-center gap-2">
-          {PHONE_SCREENS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              data-testid={`dot-phone-${i}`}
-              aria-label={`Go to screen ${i + 1}`}
-              aria-current={i === active}
-              className={`h-2 rounded-full transition-all ${
-                i === active ? "w-6 bg-primary" : "w-2 bg-foreground/25 hover:bg-foreground/40"
-              }`}
-            />
-          ))}
-        </div>
-        <button
-          onClick={() => go(1)}
-          data-testid="button-phone-next"
-          aria-label="Next screen"
-          className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground/5 transition-colors"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-
-      <p
-        className="mt-4 text-sm font-medium text-foreground/70"
-        data-testid="text-phone-label"
-      >
-        {PHONE_SCREENS[active].label}
-      </p>
     </div>
   );
 }
@@ -333,7 +293,7 @@ export default function Home() {
         </section>
 
         {/* 3. CATEGORIES */}
-        <section className="pt-0 pb-24 md:pb-32 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
+        <section className="pt-0 pb-8 md:pb-12 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
@@ -384,7 +344,7 @@ export default function Home() {
         </section>
 
         {/* 4. ROOMS / SOCIAL */}
-        <section className="py-24 md:py-32 bg-secondary/40" id="rooms">
+        <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-secondary/40" id="rooms">
           <div className="container mx-auto px-6 max-w-3xl">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
