@@ -198,6 +198,18 @@ export default function Home() {
           </Link>
           
           <div className="flex items-center gap-3 md:gap-4">
+            <div className="hidden sm:flex items-center gap-1.5">
+              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-instagram">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-x">
+                <XIcon className="w-4 h-4" />
+              </a>
+              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-tiktok">
+                <TikTok className="w-4 h-4" />
+              </a>
+            </div>
+            <span className="hidden sm:block w-px h-5 bg-border" />
             <a
               href="https://app.consumedapp.com"
               target="_blank"
@@ -232,6 +244,17 @@ export default function Home() {
               <Link href="/insights" className="text-left hover:text-primary transition-colors" data-testid="link-insights-mobile">Insights</Link>
               <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="text-left hover:text-primary transition-colors" data-testid="link-web-app-mobile">Open web app</a>
             </nav>
+            <div className="flex items-center gap-4 mt-10">
+              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-11 h-11 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-mobile-instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-11 h-11 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-mobile-x">
+                <XIcon className="w-5 h-5" />
+              </a>
+              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-11 h-11 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors" data-testid="link-mobile-tiktok">
+                <TikTok className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       )}
