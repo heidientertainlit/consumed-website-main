@@ -296,7 +296,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
-              See what's trending, discover new favorites, and follow the conversations behind the entertainment everyone loves.
+              See what's trending, discover new favorites, and connect with people who love what you love.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
