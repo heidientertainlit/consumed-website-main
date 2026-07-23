@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Gamepad2, Music2, type LucideIcon } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -321,12 +321,11 @@ export default function Home() {
 
         {/* 3. CATEGORIES */}
         <section className="pt-0 pb-8 md:pb-12 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
               { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
               { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones, color: "#efb3c6", seed: 35 },
-              { title: "Games", desc: "Track your games and achievements.", Icon: Gamepad2, color: "#e5c261", seed: 49 },
               { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2, color: "#9f8bd9", seed: 63 },
             ].map((cat, i) => (
               <motion.div 
@@ -343,6 +342,20 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative w-64 h-72 md:h-80 mx-auto mt-10 md:mt-14 flex items-center justify-center"
+            data-testid="stack-posters"
+          >
+            <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={posterPodcast} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 origin-bottom-left" alt="The Toast podcast" />
+            <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={posterBook} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-10 origin-bottom" alt="Reese's Book Club pick" />
+            <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={posterMovie} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-20 origin-bottom" alt="Dune: Part Two" />
+            <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={posterAlbum} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-30 origin-bottom-right" alt="Short n' Sweet album" />
+          </motion.div>
 
           <div className="text-center mt-8 md:mt-12">
             <motion.h2 
@@ -430,12 +443,87 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="lg:w-1/3 z-10 flex justify-center perspective-1000">
-              <div className="relative w-64 h-80 flex items-center justify-center transform-style-3d">
-                <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={posterPodcast} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 origin-bottom-left" alt="The Toast podcast" />
-                <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={posterBook} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-10 origin-bottom" alt="Reese's Book Club pick" />
-                <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={posterMovie} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-20 origin-bottom" alt="Dune: Part Two" />
-                <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={posterAlbum} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-white/20 z-30 origin-bottom-right" alt="Short n' Sweet album" />
+            <div className="lg:w-1/3 z-10 flex justify-center">
+              <div className="relative w-72 md:w-80 h-[22rem] flex items-center justify-center">
+                <motion.div
+                  initial={{ rotate: -8, x: -28, y: 16 }}
+                  whileInView={{ rotate: -7, x: -36, y: 20 }}
+                  viewport={{ once: true }}
+                  className="absolute w-60 md:w-64 bg-white text-foreground rounded-2xl shadow-2xl p-5 origin-bottom-left"
+                  data-testid="card-identity-dna"
+                >
+                  <p className="font-bold text-sm mb-3">Your DNA Journey</p>
+                  <div className="space-y-2.5 text-sm">
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-3 h-3 rounded-full bg-primary mt-1 shrink-0" />
+                      <div><p className="text-primary text-xs font-semibold">Now</p><p className="font-bold text-primary leading-tight">Emotional Binger</p></div>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-3 h-3 rounded-full border-2 border-foreground/20 mt-1 shrink-0" />
+                      <div><p className="text-foreground/40 text-xs">May 31</p><p className="font-semibold leading-tight">Emotional Binger</p></div>
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-black/5">
+                    <p className="text-xs text-foreground/40 mb-1.5">Current Era</p>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold px-3 py-1.5">✨ Culture Catch Up</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ rotate: 9, x: 30, y: 6 }}
+                  whileInView={{ rotate: 8, x: 40, y: 8 }}
+                  viewport={{ once: true }}
+                  className="absolute w-60 md:w-64 bg-white text-foreground rounded-2xl shadow-2xl p-5 z-10 origin-bottom-right"
+                  data-testid="card-identity-stats"
+                >
+                  <p className="font-bold text-sm mb-3">Mostly Into</p>
+                  <div className="space-y-2.5 text-xs font-semibold">
+                    {[
+                      { label: "Drama", pct: 41, color: "#e0559d" },
+                      { label: "Mystery", pct: 10, color: "#7c5cff" },
+                      { label: "Comedy", pct: 10, color: "#4d7cfe" },
+                    ].map((g) => (
+                      <div key={g.label}>
+                        <div className="flex justify-between mb-1"><span>{g.label}</span><span>{g.pct}%</span></div>
+                        <div className="h-1.5 rounded-full bg-black/5"><div className="h-full rounded-full" style={{ width: `${g.pct * 2}%`, backgroundColor: g.color }} /></div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-black/5 grid grid-cols-4 text-center">
+                    {[
+                      { n: "43", label: "Tracked", color: "#7c5cff" },
+                      { n: "7", label: "Movies", color: "#e0559d" },
+                      { n: "12", label: "Shows", color: "#4d7cfe" },
+                      { n: "6", label: "Books", color: "#2f9e6e" },
+                    ].map((s) => (
+                      <div key={s.label}><p className="font-heading text-lg font-semibold" style={{ color: s.color }}>{s.n}</p><p className="text-[10px] text-foreground/50">{s.label}</p></div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ rotate: -2, y: -12 }}
+                  whileInView={{ rotate: -1, y: -16 }}
+                  viewport={{ once: true }}
+                  className="absolute w-64 md:w-72 bg-[#231a3f] text-white rounded-2xl shadow-2xl p-6 z-20 border border-white/10"
+                  data-testid="card-identity-profile"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-white/60 text-xs mb-2">@punkinpie123</p>
+                      <p className="font-heading text-lg leading-tight">The</p>
+                      <p className="font-heading text-3xl font-semibold leading-tight">Emotional Binger</p>
+                    </div>
+                    <img src={neonSmiley} alt="" className="w-12 h-12 shrink-0" />
+                  </div>
+                  <p className="text-white/50 text-xs italic mt-3">with shades of</p>
+                  <p className="text-sm font-semibold mt-0.5">Comfort Rewatcher • Prestige Detective</p>
+                  <div className="mt-4 pt-4 border-t border-white/10 grid grid-cols-3 text-center">
+                    <div><p className="font-heading text-xl font-semibold">963</p><p className="text-[10px] text-white/50">pts</p></div>
+                    <div><p className="font-heading text-xl font-semibold">#13</p><p className="text-[10px] text-white/50">leaderboard</p></div>
+                    <div><p className="font-heading text-xl font-semibold">43</p><p className="text-[10px] text-white/50">tracked</p></div>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
