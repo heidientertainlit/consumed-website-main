@@ -13,10 +13,6 @@ import screenRooms from "../assets/images/screen-rooms.png";
 import screenTakes from "../assets/images/screen-takes.png";
 import screenRatings from "../assets/images/screen-ratings.png";
 import screenAdd from "../assets/images/screen-add.png";
-import posterPodcast from "../assets/images/poster-podcast.jpg";
-import posterBook from "../assets/images/poster-book.jpg";
-import posterMovie from "../assets/images/poster-movie.jpg";
-import posterAlbum from "../assets/images/poster-album.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -321,42 +317,26 @@ export default function Home() {
 
         {/* 3. CATEGORIES */}
         <section className="pt-0 pb-8 md:pb-12 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:gap-x-12">
-              {[
-                { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
-                { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
-                { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones, color: "#efb3c6", seed: 35 },
-                { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2, color: "#9f8bd9", seed: 63 },
-              ].map((cat, i) => (
-                <motion.div 
-                  key={cat.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group flex flex-col items-center text-center"
-                >
-                  <CategoryIcon Icon={cat.Icon} />
-                  <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="grid grid-cols-4 gap-3 md:gap-4 shrink-0 w-full max-w-xs sm:max-w-md lg:max-w-lg"
-              data-testid="row-posters"
-            >
-              <img src={posterPodcast} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="The Toast podcast" data-testid="img-poster-podcast" />
-              <img src={posterBook} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Reese's Book Club pick" data-testid="img-poster-book" />
-              <img src={posterMovie} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Dune: Part Two" data-testid="img-poster-movie" />
-              <img src={posterAlbum} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Short n' Sweet album" data-testid="img-poster-album" />
-            </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
+              { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
+              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones, color: "#efb3c6", seed: 35 },
+              { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2, color: "#9f8bd9", seed: 63 },
+            ].map((cat, i) => (
+              <motion.div 
+                key={cat.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group flex flex-col items-center text-center"
+              >
+                <CategoryIcon Icon={cat.Icon} />
+                <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
+              </motion.div>
+            ))}
           </div>
 
           <div className="text-center mt-8 md:mt-12">
