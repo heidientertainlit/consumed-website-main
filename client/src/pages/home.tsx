@@ -349,13 +349,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative w-64 h-72 md:h-80 shrink-0 flex items-center justify-center"
-              data-testid="stack-posters"
+              className="grid grid-cols-4 gap-3 md:gap-4 shrink-0 w-full max-w-xs sm:max-w-md lg:max-w-lg"
+              data-testid="row-posters"
             >
-              <motion.img initial={{ rotate: -15, x: -40, y: 10 }} whileInView={{ rotate: -10, x: -60, y: 20 }} src={posterPodcast} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 origin-bottom-left" alt="The Toast podcast" />
-              <motion.img initial={{ rotate: -5, x: -10, y: -5 }} whileInView={{ rotate: -2, x: -20, y: 5 }} src={posterBook} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-10 origin-bottom" alt="Reese's Book Club pick" />
-              <motion.img initial={{ rotate: 5, x: 20, y: -10 }} whileInView={{ rotate: 8, x: 20, y: -5 }} src={posterMovie} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-20 origin-bottom" alt="Dune: Part Two" />
-              <motion.img initial={{ rotate: 15, x: 50, y: 5 }} whileInView={{ rotate: 18, x: 60, y: 10 }} src={posterAlbum} className="absolute w-28 md:w-36 aspect-[2/3] object-cover rounded-xl shadow-2xl border border-black/5 z-30 origin-bottom-right" alt="Short n' Sweet album" />
+              <img src={posterPodcast} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="The Toast podcast" data-testid="img-poster-podcast" />
+              <img src={posterBook} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Reese's Book Club pick" data-testid="img-poster-book" />
+              <img src={posterMovie} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Dune: Part Two" data-testid="img-poster-movie" />
+              <img src={posterAlbum} className="w-full aspect-[2/3] object-cover rounded-xl shadow-lg border border-black/5" alt="Short n' Sweet album" data-testid="img-poster-album" />
             </motion.div>
           </div>
 
