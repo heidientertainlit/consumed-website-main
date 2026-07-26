@@ -268,9 +268,9 @@ export default function Home() {
             className="flex flex-col items-center text-center z-10 max-w-3xl mx-auto px-6"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-              Entertainment is better, shared.
+              Entertainment is better, together.
               <span className="relative block w-fit mx-auto text-primary font-heading italic text-xl md:text-2xl lg:text-3xl leading-[1.2] mt-4 lg:whitespace-nowrap">
-                See what everyone's consuming.
+                The best part is talking about it!
                 <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
                   <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
@@ -292,7 +292,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
-              See what's trending, discover new favorites, and connect with people through the entertainment you love.
+              See what everyone's consuming, what's trending, discover new favorites, and connect with people through the entertainment you love.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
