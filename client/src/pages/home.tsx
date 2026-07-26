@@ -48,9 +48,12 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 bg-[#3a2496] text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95 ${className}`}
+    className={`relative inline-flex items-center justify-center gap-2 bg-[#3a2496] text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95 ${className}`}
   >
     Download the app
+    <span className="absolute -top-2 -right-2 bg-[#c4b5fd] text-[#3a2496] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
+      Beta
+    </span>
   </a>
 );
 
