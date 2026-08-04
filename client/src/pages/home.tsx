@@ -271,7 +271,7 @@ export default function Home() {
             className="flex flex-col items-center text-center z-10 max-w-3xl mx-auto px-6"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-              Entertainment is better, together.
+              Entertainment is better, shared.
               <span className="relative block w-fit mx-auto text-primary font-heading italic text-xl md:text-2xl lg:text-3xl leading-[1.2] mt-4 lg:whitespace-nowrap">
                 The best part is talking about it!
                 <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
