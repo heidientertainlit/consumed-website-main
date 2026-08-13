@@ -37,7 +37,7 @@
 
 :root {
   /* Background: Warm cream/off-white */
-  --background: 34 47% 97%; /* #fbf8f4 */
+  --background: 0 0% 100%; /* white */
   --foreground: 265 30% 12%; /* Deep purple-ink */
   
   /* Cards: Pure white */

@@ -6,9 +6,11 @@ import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, H
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
-import heroStrip from "../assets/images/hero-strip.png";
 import neonSmiley from "../assets/images/neon-smiley.png";
 import screenDna from "../assets/images/screen-dna.png";
+import screenDnaHero from "../assets/images/screen-dna-hero.webp";
+import screenAddHero from "../assets/images/screen-add-hero.webp";
+import screenRatingsHero from "../assets/images/screen-ratings-hero.webp";
 import screenRooms from "../assets/images/screen-rooms.png";
 import screenTakes from "../assets/images/screen-takes.png";
 import screenRatings from "../assets/images/screen-ratings.png";
@@ -260,62 +262,102 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-0 relative overflow-hidden bg-[#fbf8f4]" id="features">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
+        <section className="pt-24 md:pt-28 pb-12 md:pb-16 relative overflow-hidden bg-white" id="features">
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 blur-[80px] rounded-full -z-10 pointer-events-none" />
 
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center z-10 max-w-3xl mx-auto px-6"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-              Entertainment is better, shared.
-              <span className="relative block w-fit mx-auto text-primary font-heading italic text-xl md:text-2xl lg:text-3xl leading-[1.2] mt-4 lg:whitespace-nowrap">
-                The best part is talking about it!
-                <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                </svg>
-                <motion.img
-                  src={neonSmiley}
-                  alt=""
-                  data-testid="img-hero-smiley"
-                  aria-hidden="true"
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-                  transition={{
-                    opacity: { duration: 0.6, delay: 0.6 },
-                    scale: { duration: 0.6, delay: 0.6 },
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
-                  }}
-                  className="pointer-events-none select-none absolute left-full top-1/2 -translate-y-1/2 ml-3 md:ml-4 w-10 md:w-12 lg:w-14"
-                />
-              </span>
-            </h1>
+          <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+            {/* Left: copy */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
+                Entertainment is better, <span className="text-primary italic">shared.</span>
+                <span className="relative block w-fit mx-auto lg:mx-0 text-primary font-heading italic text-xl md:text-2xl lg:text-[1.75rem] leading-[1.2] mt-4">
+                  The best part is talking about it!
+                  <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                  </svg>
+                  <motion.img
+                    src={neonSmiley}
+                    alt=""
+                    data-testid="img-hero-smiley"
+                    aria-hidden="true"
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+                    transition={{
+                      opacity: { duration: 0.6, delay: 0.6 },
+                      scale: { duration: 0.6, delay: 0.6 },
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+                    }}
+                    className="pointer-events-none select-none absolute left-full top-1/2 -translate-y-1/2 ml-3 md:ml-4 w-10 md:w-12"
+                  />
+                </span>
+              </h1>
 
-            <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
-              See what everyone's consuming, what's trending, discover new favorites, and connect with people through the entertainment you love.
-            </p>
+              <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
+                See what everyone's consuming, what's trending, discover new favorites, and discover your entertainment DNA.
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
-            </div>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
+                <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
+                <a
+                  href="https://app.consumedapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 text-foreground font-semibold px-4 py-3.5 hover:text-primary transition-colors"
+                  data-testid="link-hero-web-app"
+                >
+                  Open web app <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-full mt-2 md:mt-3"
-          >
-            <img
-              src={heroStrip}
-              alt="Illustration of friends together watching movies, reading books, listening to podcasts and playing games"
-              className="w-full"
-              data-testid="img-hero-strip"
-            />
-          </motion.div>
+              <div className="flex items-center gap-3" data-testid="hero-social-proof">
+                <div className="flex -space-x-2.5" aria-hidden="true">
+                  {["EB", "PD", "SS", "CR"].map((initials, i) => (
+                    <div
+                      key={initials}
+                      className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-[11px] font-bold text-white"
+                      style={{ background: ["#7c5cd6", "#2e1c78", "#b57edc", "#4a34a8"][i] }}
+                    >
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="flex text-primary" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
+                    ))}
+                  </div>
+                  <span className="text-sm font-semibold text-foreground/80">Join 16.7K+ fans</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right: phone screens */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="lg:w-[55%] w-full flex items-center justify-center"
+            >
+              <div className="relative flex items-center justify-center">
+                <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
+                  <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
+                </div>
+                <div className="w-[240px] md:w-[270px] rounded-[2.25rem] border-[7px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden z-10 relative">
+                  <img src={screenDnaHero} alt="Consumed app — Entertainment DNA profile screen" className="w-full" data-testid="img-hero-phone-dna" />
+                </div>
+                <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden rotate-6 -translate-x-6 translate-y-4 z-0">
+                  <img src={screenRatingsHero} alt="Consumed app — Takes and ratings screen" className="w-full" data-testid="img-hero-phone-ratings" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* 3. CATEGORIES */}

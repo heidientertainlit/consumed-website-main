@@ -1,1 +1,2 @@
 - [Recovering a stuck git rebase](git-rebase-recovery.md) — bash blocks git-writes & .replit is protected; reconstruct the abort via Node (code_execution): read-tree --reset + git archive|tar + fs edits to .git.
+- [Workflow restart rg failure](workflow-restart-rg-bug.md) — WorkflowsRestart failing with "Ripgrep exited code 2" is platform-side; don't loop restarts, start server detached via CodeExecution spawn.
