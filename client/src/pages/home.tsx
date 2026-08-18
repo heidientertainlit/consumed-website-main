@@ -276,26 +276,6 @@ export default function Home() {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
                 Entertainment is better, <span className="text-primary italic">shared.</span>
-                <span className="relative block w-fit mx-auto lg:mx-0 text-primary font-heading italic text-xl md:text-2xl lg:text-[1.75rem] leading-[1.2] mt-4">
-                  The best part is talking about it!
-                  <svg className="absolute -bottom-1.5 left-0 w-full text-primary/40" height="12" viewBox="0 0 320 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M4 7 C 90 3, 230 3, 316 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                  <motion.img
-                    src={neonSmiley}
-                    alt=""
-                    data-testid="img-hero-smiley"
-                    aria-hidden="true"
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-                    transition={{
-                      opacity: { duration: 0.6, delay: 0.6 },
-                      scale: { duration: 0.6, delay: 0.6 },
-                      y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
-                    }}
-                    className="pointer-events-none select-none absolute left-full top-1/2 -translate-y-1/2 ml-3 md:ml-4 w-10 md:w-12"
-                  />
-                </span>
               </h1>
 
               <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
