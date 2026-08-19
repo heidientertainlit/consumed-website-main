@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, type LucideIcon } from "lucide-react";
@@ -7,14 +7,9 @@ import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
 // Generated images
 import neonSmiley from "../assets/images/neon-smiley.png";
-import screenDna from "../assets/images/screen-dna.png";
 import screenDnaHero from "../assets/images/screen-dna-hero.webp";
 import screenAddHero from "../assets/images/screen-add-hero.webp";
 import screenRatingsHero from "../assets/images/screen-ratings-hero.webp";
-import screenRooms from "../assets/images/screen-rooms.png";
-import screenTakes from "../assets/images/screen-takes.png";
-import screenRatings from "../assets/images/screen-ratings.png";
-import screenAdd from "../assets/images/screen-add.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -62,110 +57,7 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
 function CategoryIcon({ Icon }: { Icon: LucideIcon }) {
   return (
     <div className="flex items-center justify-center w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
-      <Icon className="h-12 w-12 md:h-14 md:w-14 text-primary/75" strokeWidth={1.25} />
-    </div>
-  );
-}
-
-const PHONE_SCREENS = [
-  { src: screenDna, label: "Your Entertainment DNA" },
-  { src: screenRatings, label: "Share your takes & ratings" },
-  { src: screenTakes, label: "Compare takes with friends" },
-  { src: screenRooms, label: "Join Rooms for what you love" },
-  { src: screenAdd, label: "Track movies, shows, books & more" },
-];
-
-function PhoneCarousel() {
-  const [active, setActive] = useState(0);
-  const [dims, setDims] = useState({ spacing: 150, rotate: 7 });
-  const draggingRef = useRef(false);
-  const count = PHONE_SCREENS.length;
-
-  useEffect(() => {
-    const update = () =>
-      setDims(
-        window.innerWidth < 768
-          ? { spacing: 92, rotate: 6 }
-          : { spacing: 150, rotate: 7 }
-      );
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const go = (dir: number) => setActive((p) => (p + dir + count) % count);
-
-  return (
-    <div className="relative w-full flex flex-col items-center">
-      <motion.div
-        className="relative h-[480px] md:h-[580px] w-full flex items-center justify-center overflow-hidden select-none touch-pan-y"
-        role="group"
-        aria-roledescription="carousel"
-        aria-label="Consumed app screens"
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.15}
-        onDragStart={() => {
-          draggingRef.current = true;
-        }}
-        onDragEnd={(_, info) => {
-          if (info.offset.x < -60) go(1);
-          else if (info.offset.x > 60) go(-1);
-          window.setTimeout(() => {
-            draggingRef.current = false;
-          }, 0);
-        }}
-      >
-        {PHONE_SCREENS.map((screen, i) => {
-          let offset = i - active;
-          if (offset > count / 2) offset -= count;
-          if (offset < -count / 2) offset += count;
-          const abs = Math.abs(offset);
-          const isActive = offset === 0;
-          return (
-            <motion.div
-              key={i}
-              className="absolute"
-              style={{ zIndex: 30 - abs, pointerEvents: abs > 2 ? "none" : "auto" }}
-              animate={{
-                x: offset * dims.spacing,
-                rotate: offset * dims.rotate,
-                scale: isActive ? 1 : 0.82 - (abs - 1) * 0.06,
-                opacity: abs > 2 ? 0 : 1,
-              }}
-              transition={{ type: "spring", stiffness: 260, damping: 30 }}
-              onClick={() => {
-                if (draggingRef.current || isActive) return;
-                setActive(i);
-              }}
-              onKeyDown={(e) => {
-                if (isActive) return;
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setActive(i);
-                }
-              }}
-              role={isActive ? undefined : "button"}
-              tabIndex={isActive ? -1 : 0}
-              aria-label={isActive ? undefined : `View ${PHONE_SCREENS[i].label}`}
-            >
-              <div
-                className={`rounded-[2.25rem] bg-neutral-900 p-2 shadow-2xl ring-1 ring-white/10 ${
-                  isActive ? "cursor-grab active:cursor-grabbing" : "cursor-pointer"
-                }`}
-              >
-                <img
-                  src={screen.src}
-                  alt={`Consumed app — ${screen.label}`}
-                  draggable={false}
-                  data-testid={`img-phone-${i}`}
-                  className="w-[200px] md:w-[240px] rounded-[1.85rem] pointer-events-none"
-                />
-              </div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+      <Icon className="h-12 w-12 md:h-14 md:w-14 text-[#d7ccff]" strokeWidth={1.25} />
     </div>
   );
 }
@@ -262,7 +154,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-12 md:pb-16 relative overflow-hidden bg-white" id="features">
+        <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible bg-white z-10" id="features">
           <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 blur-[80px] rounded-full -z-10 pointer-events-none" />
 
@@ -323,7 +215,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="lg:w-[55%] w-full flex items-center justify-center"
+              className="lg:w-[55%] w-full flex items-center justify-center translate-y-10 md:translate-y-14"
             >
               <div className="relative flex items-center justify-center">
                 <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
@@ -341,8 +233,10 @@ export default function Home() {
         </section>
 
         {/* 3. CATEGORIES */}
-        <section className="pt-0 pb-8 md:pb-12 px-6 container mx-auto max-w-7xl flex flex-col" id="how-it-works">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <section className="pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden bg-gradient-to-br from-[#160942] via-[#2e1c78] to-[#5336aa] text-white" id="how-it-works">
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,_#9f8bd9_0%,_transparent_35%),radial-gradient(circle_at_bottom_left,_#6d50c7_0%,_transparent_45%)] pointer-events-none" />
+          <div className="container mx-auto max-w-7xl relative z-10 flex flex-col">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
             {[
               { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
               { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
@@ -358,36 +252,25 @@ export default function Home() {
                 className="group flex flex-col items-center text-center"
               >
                 <CategoryIcon Icon={cat.Icon} />
-                <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
+                <h3 className="font-bold text-xl mb-3 text-white">{cat.title}</h3>
+                <p className="text-sm text-white/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
               </motion.div>
             ))}
-          </div>
+            </div>
 
           <div className="text-center mt-8 md:mt-12">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
             >
               What you consume says everything.<br />
-              <span className="text-primary italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
+              <span className="text-[#d7ccff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
             </motion.h2>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative mt-6 md:mt-8"
-          >
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-              <div className="w-72 h-72 md:w-[32rem] md:h-[32rem] bg-primary/20 rounded-full blur-[110px]" />
-            </div>
-            <PhoneCarousel />
-          </motion.div>
+          </div>
         </section>
 
         {/* 4. ROOMS / SOCIAL */}
