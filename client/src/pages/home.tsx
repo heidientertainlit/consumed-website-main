@@ -159,7 +159,7 @@ export default function Home() {
         <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible bg-white z-10" id="features">
           <div className="absolute inset-x-0 bottom-0 h-20 md:h-28 bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] bg-fixed pointer-events-none" aria-hidden="true" />
 
-          <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+          <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
