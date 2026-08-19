@@ -351,16 +351,52 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            <div className="text-center mt-16 md:mt-20">
+            <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
+              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
+                className="relative z-10 text-center text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
               >
                 What you consume says everything.<br />
-                <span className="text-primary italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
+                <span className="text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
               </motion.h2>
+
+              <div className="relative z-10 flex gap-4 md:gap-6 mt-10 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
+                {[
+                  { title: "The Prestige Detective", shades: "Story Sharer • Emotional Binger", streak: "1", rank: "#1", tracked: "909", accent: "#b981ff" },
+                  { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
+                  { title: "The Culture Catch Up", shades: "Trend Tracker • Music Maven", streak: "7", rank: "#8", tracked: "712", accent: "#8f9dff" },
+                ].map((identity, i) => (
+                  <motion.article
+                    key={identity.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12 }}
+                    className="w-[290px] md:w-[31.5%] min-w-[290px] shrink-0 rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(0,0,0,0.25)]"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="text-[10px] font-bold tracking-[0.16em] text-[#cfc3ff]">YOUR ENTERTAINMENT DNA ✧</p>
+                      <span className="w-8 h-8 rounded-full border border-white/15 text-white/70 flex items-center justify-center">↗</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-4 mt-6">
+                      <h3 className="font-heading text-3xl leading-[1.02] text-white max-w-[175px]">{identity.title}</h3>
+                      <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center shrink-0" style={{ borderColor: identity.accent, boxShadow: `0 0 22px ${identity.accent}88` }}>
+                        <img src={neonSmiley} alt="" aria-hidden="true" className="w-11 h-11" />
+                      </div>
+                    </div>
+                    <p className="mt-7 text-xs italic text-white/45">with shades of</p>
+                    <p className="mt-1 text-sm font-semibold text-white/85">{identity.shades}</p>
+                    <div className="border-t border-white/10 mt-6 pt-4 grid grid-cols-3 text-center">
+                      <div><p className="text-lg font-bold" style={{ color: identity.accent }}>🔥 {identity.streak}</p><p className="text-[10px] text-white/45 mt-1">play streak</p></div>
+                      <div className="border-x border-white/10"><p className="text-lg font-bold text-white">🏆 {identity.rank}</p><p className="text-[10px] text-white/45 mt-1">leaderboard</p></div>
+                      <div><p className="text-lg font-bold text-white">{identity.tracked}</p><p className="text-[10px] text-white/45 mt-1">tracked</p></div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
