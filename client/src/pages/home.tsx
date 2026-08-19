@@ -453,12 +453,12 @@ export default function Home() {
         </section>
 
         {/* 6. BETA FEEDBACK */}
-        <section className="py-10 md:py-12 px-6 bg-white" id="feedback">
+        <section className="py-10 md:py-12 bg-white" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="container mx-auto max-w-5xl rounded-[2.5rem] bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)] px-7 py-10 md:px-14 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto rounded-[2.5rem] bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)] px-7 py-10 md:px-14 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-14"
           >
             <div className="w-14 h-14 rounded-full bg-white/10 border border-white/25 shadow-sm flex items-center justify-center text-white shrink-0">
               <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
