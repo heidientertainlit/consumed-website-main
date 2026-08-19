@@ -330,7 +330,7 @@ export default function Home() {
         </section>
 
         {/* 4. CATEGORIES */}
-        <section className="py-20 md:py-28 px-6 bg-white" id="categories">
+        <section className="pt-14 md:pt-20 pb-20 md:pb-28 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
               {[
@@ -385,8 +385,8 @@ export default function Home() {
                     </div>
                     <div className="flex items-center justify-between gap-4 mt-6">
                       <h3 className="font-heading text-3xl leading-[1.02] text-white max-w-[175px]">{identity.title}</h3>
-                      <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center shrink-0" style={{ borderColor: identity.accent, boxShadow: `0 0 22px ${identity.accent}88` }}>
-                        <img src={neonSmiley} alt="" aria-hidden="true" className="w-11 h-11" />
+                      <div className="w-16 h-16 flex items-center justify-center shrink-0">
+                        <img src={neonSmiley} alt="" aria-hidden="true" className="w-14 h-14" />
                       </div>
                     </div>
                     <p className="mt-7 text-xs italic text-white/45">with shades of</p>
@@ -481,117 +481,12 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* 7. DOWNLOAD CTA */}
-        <section className="py-12 md:py-24 px-4 container mx-auto max-w-7xl" id="better-together">
-          <div className="bg-gradient-to-br from-primary to-[#5b3ebf] rounded-[2.5rem] p-10 md:p-16 text-white overflow-hidden relative flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none mix-blend-overlay" />
-            
-            <div className="lg:w-1/3 z-10 text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-heading font-normal mb-4 text-white">
-                Your entertainment identity<br />
-                <span className="italic text-white/90">is waiting.</span>
-              </h2>
-            </div>
-
-            <div className="lg:w-1/3 z-10 flex justify-center">
-              <div className="relative w-72 md:w-80 h-[22rem] flex items-center justify-center">
-                <motion.div
-                  initial={{ rotate: -8, x: -28, y: 16 }}
-                  whileInView={{ rotate: -7, x: -36, y: 20 }}
-                  viewport={{ once: true }}
-                  className="absolute w-60 md:w-64 bg-white text-foreground rounded-2xl shadow-2xl p-5 origin-bottom-left"
-                  data-testid="card-identity-dna"
-                >
-                  <p className="font-bold text-sm mb-3">Your DNA Journey</p>
-                  <div className="space-y-2.5 text-sm">
-                    <div className="flex items-start gap-2.5">
-                      <span className="w-3 h-3 rounded-full bg-primary mt-1 shrink-0" />
-                      <div><p className="text-primary text-xs font-semibold">Now</p><p className="font-bold text-primary leading-tight">Emotional Binger</p></div>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <span className="w-3 h-3 rounded-full border-2 border-foreground/20 mt-1 shrink-0" />
-                      <div><p className="text-foreground/40 text-xs">May 31</p><p className="font-semibold leading-tight">Emotional Binger</p></div>
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-black/5">
-                    <p className="text-xs text-foreground/40 mb-1.5">Current Era</p>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold px-3 py-1.5">✨ Culture Catch Up</span>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ rotate: 9, x: 30, y: 6 }}
-                  whileInView={{ rotate: 8, x: 40, y: 8 }}
-                  viewport={{ once: true }}
-                  className="absolute w-60 md:w-64 bg-white text-foreground rounded-2xl shadow-2xl p-5 z-10 origin-bottom-right"
-                  data-testid="card-identity-stats"
-                >
-                  <p className="font-bold text-sm mb-3">Mostly Into</p>
-                  <div className="space-y-2.5 text-xs font-semibold">
-                    {[
-                      { label: "Drama", pct: 41, color: "#e0559d" },
-                      { label: "Mystery", pct: 10, color: "#7c5cff" },
-                      { label: "Comedy", pct: 10, color: "#4d7cfe" },
-                    ].map((g) => (
-                      <div key={g.label}>
-                        <div className="flex justify-between mb-1"><span>{g.label}</span><span>{g.pct}%</span></div>
-                        <div className="h-1.5 rounded-full bg-black/5"><div className="h-full rounded-full" style={{ width: `${g.pct * 2}%`, backgroundColor: g.color }} /></div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-black/5 grid grid-cols-4 text-center">
-                    {[
-                      { n: "43", label: "Tracked", color: "#7c5cff" },
-                      { n: "7", label: "Movies", color: "#e0559d" },
-                      { n: "12", label: "Shows", color: "#4d7cfe" },
-                      { n: "6", label: "Books", color: "#2f9e6e" },
-                    ].map((s) => (
-                      <div key={s.label}><p className="font-heading text-lg font-semibold" style={{ color: s.color }}>{s.n}</p><p className="text-[10px] text-foreground/50">{s.label}</p></div>
-                    ))}
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ rotate: -2, y: -12 }}
-                  whileInView={{ rotate: -1, y: -16 }}
-                  viewport={{ once: true }}
-                  className="absolute w-64 md:w-72 bg-[#231a3f] text-white rounded-2xl shadow-2xl p-6 z-20 border border-white/10"
-                  data-testid="card-identity-profile"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="text-white/60 text-xs mb-2">@punkinpie123</p>
-                      <p className="font-heading text-lg leading-tight">The</p>
-                      <p className="font-heading text-3xl font-semibold leading-tight">Emotional Binger</p>
-                    </div>
-                    <img src={neonSmiley} alt="" className="w-12 h-12 shrink-0" />
-                  </div>
-                  <p className="text-white/50 text-xs italic mt-3">with shades of</p>
-                  <p className="text-sm font-semibold mt-0.5">Comfort Rewatcher • Prestige Detective</p>
-                  <div className="mt-4 pt-4 border-t border-white/10 grid grid-cols-3 text-center">
-                    <div><p className="font-heading text-xl font-semibold">963</p><p className="text-[10px] text-white/50">pts</p></div>
-                    <div><p className="font-heading text-xl font-semibold">#13</p><p className="text-[10px] text-white/50">leaderboard</p></div>
-                    <div><p className="font-heading text-xl font-semibold">43</p><p className="text-[10px] text-white/50">tracked</p></div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/3 z-10 flex flex-col items-center lg:items-end text-center lg:text-right gap-6">
-              <div className="flex flex-col gap-3">
-                <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
-                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
-                </a>
-                <div className="relative inline-block">
-                  <div className="opacity-40 cursor-not-allowed grayscale">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-[68px] -ml-2" />
-                  </div>
-                  <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="bg-white text-primary text-[11px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full shadow-lg -rotate-6">Coming Soon</span>
-                  </span>
-                </div>
-              </div>
-            </div>
+        {/* 7. APP STORE DOWNLOAD */}
+        <section className="py-10 md:py-14 px-6 bg-white" id="better-together">
+          <div className="flex justify-center">
+            <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
+            </a>
           </div>
         </section>
 
