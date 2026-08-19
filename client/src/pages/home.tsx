@@ -551,7 +551,7 @@ export default function Home() {
                     >
                       DNA EVOLVING
                     </motion.span>
-                    <span className="block mt-1 font-heading text-base md:text-lg text-white">Your pattern is taking shape</span>
+                    <span className="block mt-1 font-heading text-base md:text-lg text-white">Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.</span>
                   </motion.div>
                 </div>
 
