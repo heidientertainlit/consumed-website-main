@@ -632,7 +632,7 @@ export default function Home() {
 
                 <div className="flex items-center justify-center gap-3 md:gap-6 mt-7">
                   <div className="text-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#7d51ed] to-[#b35cea] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">YO</div>
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#7d51ed] to-[#b35cea] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">TR</div>
                     <p className="mt-2 text-[11px] font-bold tracking-wide">YOU</p>
                   </div>
                   <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-white border-[6px] border-primary flex flex-col items-center justify-center shadow-sm">
