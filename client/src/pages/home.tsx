@@ -267,6 +267,7 @@ export default function Home() {
                   detail: "by Colleen Hoover",
                   meta: "81% aligned with you",
                   badge: "45% match",
+                  likes: "68",
                   image: maybeSomedayReview,
                 },
                 {
@@ -277,6 +278,7 @@ export default function Home() {
                   detail: "You rated this 3/5 ★",
                   meta: "5.0 average rating",
                   badge: "You loved this",
+                  likes: "112",
                   image: dayOfJackalReview,
                 },
               ].map((post, i) => (
@@ -315,7 +317,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between border-t border-[#eeeaf7] pt-3 mt-3 text-xs text-[#756e83]">
-                    <button type="button" aria-label="Like this take" className="hover:text-[#643ec5] transition-colors"><ThumbsUp className="w-4 h-4" strokeWidth={1.7} /></button>
+                    <button type="button" aria-label={`${post.likes} likes`} className="inline-flex items-center gap-1 hover:text-[#643ec5] transition-colors"><ThumbsUp className="w-4 h-4" strokeWidth={1.7} /><span>{post.likes}</span></button>
                     <button type="button" aria-label="Dislike this take" className="hover:text-[#643ec5] transition-colors"><ThumbsDown className="w-4 h-4" strokeWidth={1.7} /></button>
                     <button type="button" className="font-medium hover:text-[#643ec5] transition-colors">Reply</button>
                     <button type="button" aria-label="Favorite this take" className="text-[#f4bd1f]"><Star className="w-4 h-4 fill-current" strokeWidth={1.7} /></button>
