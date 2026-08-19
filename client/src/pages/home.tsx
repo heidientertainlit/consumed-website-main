@@ -413,7 +413,37 @@ export default function Home() {
             </div>
         </section>
 
-        {/* 5. DOWNLOAD CTA */}
+        {/* 6. BETA FEEDBACK */}
+        <section className="py-16 md:py-20 px-6 bg-white" id="feedback">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="container mx-auto max-w-5xl rounded-[2rem] bg-[#f0ebff] border border-[#dfd5ff] px-7 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+          >
+            <div className="w-14 h-14 rounded-full bg-white border border-[#d8cbff] shadow-sm flex items-center justify-center text-[#5132ad] shrink-0">
+              <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-heading font-normal text-[#1d123e]">
+                Consumed is in beta,<br />
+                <span className="italic text-[#5132ad]">so we love your feedback.</span>
+              </h2>
+              <p className="mt-4 text-[#504865] leading-relaxed max-w-xl">
+                Tell us what you want more of, what’s not quite right, and how we can make it even better.
+              </p>
+            </div>
+            <Link
+              href="/feedback"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3a2496] px-6 py-3.5 text-white font-semibold whitespace-nowrap transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
+              data-testid="link-beta-feedback"
+            >
+              Share feedback <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </section>
+
+        {/* 7. DOWNLOAD CTA */}
         <section className="py-12 md:py-24 px-4 container mx-auto max-w-7xl" id="better-together">
           <div className="bg-gradient-to-br from-primary to-[#5b3ebf] rounded-[2.5rem] p-10 md:p-16 text-white overflow-hidden relative flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none mix-blend-overlay" />
@@ -527,7 +557,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. AS SEEN IN */}
+        {/* 8. AS SEEN IN */}
         <section className="hidden py-12 border-t border-b border-border/50 bg-white" id="about-us">
           <div className="container mx-auto px-6 max-w-7xl">
             <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
