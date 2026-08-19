@@ -351,19 +351,20 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
+            <div className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="relative z-10 text-center text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
-              >
-                What you consume says everything.<br />
-                <span className="text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
-              </motion.h2>
+              <div className="relative z-10 max-w-7xl mx-auto">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
+                >
+                  What you consume says everything.<br />
+                  <span className="text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
+                </motion.h2>
 
-              <div className="relative z-10 flex gap-4 md:gap-6 mt-10 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
+                <div className="flex gap-4 md:gap-6 mt-10 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
                 {[
                   { title: "The Prestige Detective", shades: "Story Sharer • Emotional Binger", streak: "1", rank: "#1", tracked: "909", accent: "#b981ff" },
                   { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
@@ -396,6 +397,7 @@ export default function Home() {
                     </div>
                   </motion.article>
                 ))}
+                </div>
               </div>
             </div>
           </div>
@@ -450,12 +452,12 @@ export default function Home() {
         </section>
 
         {/* 6. BETA FEEDBACK */}
-        <section className="py-16 md:py-20 px-6 bg-white" id="feedback">
+        <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-[#160942] via-[#2e1c78] to-[#5035a5]" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="container mx-auto max-w-5xl rounded-[2rem] bg-gradient-to-br from-[#160942] via-[#2e1c78] to-[#5035a5] border border-white/10 px-7 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+            className="container mx-auto max-w-5xl px-7 py-4 md:px-14 md:py-5 flex flex-col md:flex-row items-center gap-8 md:gap-14"
           >
             <div className="w-14 h-14 rounded-full bg-white/10 border border-white/25 shadow-sm flex items-center justify-center text-white shrink-0">
               <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
