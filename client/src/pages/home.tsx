@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
@@ -460,52 +460,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. ROOMS / SOCIAL */}
-        <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-white" id="rooms">
-          <div className="container mx-auto px-6 max-w-3xl">
+        {/* 5. TASTE MATCH */}
+        <section className="py-20 md:py-28 px-6 bg-white" id="rooms">
+          <div className="container mx-auto max-w-7xl grid lg:grid-cols-[0.85fr_1.15fr] items-center gap-12 lg:gap-20">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center text-center"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-xs font-bold tracking-[0.18em] text-primary uppercase mb-4">Taste Match</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                Find the people<br />
+                <span className="italic text-primary">who get it.</span>
+              </h2>
+              <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-foreground/70">
+                See how your entertainment taste overlaps, find people whose recommendations you trust, and discover what you have in common.
+              </p>
+              <a
+                href="https://app.consumedapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 rounded-full bg-primary px-6 py-3.5 text-white font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
+                data-testid="link-find-your-people"
               >
-                <p className="text-xs font-bold tracking-widest text-foreground/50 uppercase mb-4">React together</p>
-                <h2 className="text-4xl md:text-5xl font-heading font-normal mb-8">
-                  Find your people.<br />
-                  <span className="text-primary italic">Join the conversation.</span>
-                </h2>
+                Find your people <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
 
-                <ul className="space-y-4 mb-8 text-foreground/80 font-medium text-left inline-flex flex-col">
-                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Compare taste and see your overlap</li>
-                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Hot takes, predictions, theories, debates</li>
-                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Find the people whose taste you trust</li>
-                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary/60 shrink-0" /> Join Rooms where your people already are</li>
-                </ul>
-
-                <div className="flex flex-wrap justify-center gap-2.5 mb-8 max-w-lg">
-                  {[
-                    { name: "Horror Heads", members: "12.4K" },
-                    { name: "Sci-Fi Central", members: "8.7K" },
-                    { name: "The Book Nook", members: "15.1K" },
-                    { name: "Chart Toppers", members: "9.3K" },
-                    { name: "Podcast Lounge", members: "6.8K" },
-                  ].map((room) => (
-                    <span
-                      key={room.name}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-white border border-black/5 shadow-sm px-3.5 py-1.5 text-sm font-medium"
-                      data-testid={`chip-room-${room.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {room.name}
-                      <span className="text-foreground/40 text-xs">{room.members}</span>
-                    </span>
-                  ))}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="rounded-[2rem] border border-[#e9e4f1] bg-[#fbfaff] p-5 md:p-7 shadow-[0_22px_55px_rgba(45,25,99,0.1)]">
+                <div className="flex items-center justify-between">
+                  <span className="rounded-full border border-[#e5dcff] bg-[#f3efff] px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-primary">✧ COMPARE DNA</span>
+                  <span className="text-sm text-foreground/40">Share →</span>
                 </div>
 
-                <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-primary text-white font-bold rounded-full px-6 py-3 hover:opacity-90 transition-opacity" data-testid="button-download-rooms">
-                  Download to see what everyone's saying <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </motion.div>
-            </div>
+                <div className="flex items-center justify-center gap-3 md:gap-6 mt-7">
+                  <div className="text-center">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#7d51ed] to-[#b35cea] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">YO</div>
+                    <p className="mt-2 text-[11px] font-bold tracking-wide">YOU</p>
+                  </div>
+                  <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-white border-[6px] border-primary flex flex-col items-center justify-center shadow-sm">
+                    <strong className="text-4xl md:text-5xl font-heading text-primary leading-none">92%</strong>
+                    <span className="mt-1 text-[9px] font-bold tracking-[0.17em] text-foreground/40">MATCH</span>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#e34b9a] to-[#8951ed] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">AR</div>
+                    <p className="mt-2 text-[11px] font-bold tracking-wide">AVERY</p>
+                  </div>
+                </div>
+
+                <div className="mt-7 divide-y divide-[#e9e5ee] border-y border-[#e9e5ee]">
+                  <div className="py-4">
+                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">You both love</p>
+                    <p className="mt-1 text-sm md:text-base font-semibold text-foreground">Severance <span className="text-foreground/30">·</span> The White Lotus <span className="text-foreground/30">·</span> Gone Girl</p>
+                  </div>
+                  <div className="py-4">
+                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">You both are</p>
+                    <p className="mt-1 text-sm md:text-base font-semibold text-primary">Prestige Detectives</p>
+                  </div>
+                  <div className="py-4">
+                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">But you disagree on</p>
+                    <div className="flex items-center justify-between gap-3 mt-1">
+                      <p className="text-sm md:text-base font-semibold">Godzilla vs. Kong</p>
+                      <span className="rounded-full bg-[#f5eafa] px-2.5 py-1 text-[10px] font-bold text-[#c13b82]">DNA CLASH</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="mt-5 text-center text-sm italic text-foreground/55">Matching doesn’t have to mean identical.</p>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* 6. BETA FEEDBACK */}
