@@ -6,7 +6,6 @@ import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Mus
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
 import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
-import playExploreScreen from "@assets/Screenshot_2026-08-19_at_12.49.53_PM_1787165463923.png";
 
 import discoveryExploreScreen from "@assets/Screenshot_2026-08-19_at_12.49.38_PM_1787165463923.png";
 
@@ -163,7 +162,7 @@ export default function Home() {
               className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-                Entertainment is better <span className="italic">shared.</span>
+                Entertainment is better, <span className="italic">together.</span>
               </h1>
 
               <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
@@ -337,7 +336,7 @@ export default function Home() {
                   <span className="italic text-primary">All in one place.</span>
                 </h2>
                 <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
-                  Keep track of what you’re watching, reading, and listening to — and never lose track of what you want to try next.
+                  Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 mt-8">
@@ -740,10 +739,10 @@ export default function Home() {
             <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#168dff]/30 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#ef4ba5]/20 blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 grid lg:grid-cols-[1fr_0.58fr] items-center gap-10 lg:gap-16">
+            <div className="relative z-10 max-w-2xl mx-auto text-center">
               <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#cfc7ff] mb-4">Play</p>
@@ -754,26 +753,13 @@ export default function Home() {
                 <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
                   Trivia, predictions, rankings and more ways to make entertainment a little more fun.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-7">
+                <div className="flex flex-wrap justify-center gap-2 mt-7">
                   {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
                     <span key={mode} className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/85">
                       {mode}
                     </span>
                   ))}
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20, rotate: 2 }}
-                whileInView={{ opacity: 1, y: 0, rotate: 1 }}
-                viewport={{ once: true }}
-                className="justify-self-center lg:justify-self-end w-[230px] md:w-[260px] h-[380px] md:h-[430px] overflow-hidden rounded-[1.8rem] border-[6px] border-[#171326] bg-[#171326] shadow-[0_28px_65px_rgba(0,0,0,0.35)]"
-              >
-                <img
-                  src={playExploreScreen}
-                  alt="Consumed Play screen with today's play, leaderboard, and game modes"
-                  className="w-full h-full object-cover object-top"
-                />
               </motion.div>
             </div>
 
@@ -882,15 +868,15 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20, rotate: -2 }}
-                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="justify-self-center lg:justify-self-end w-[220px] md:w-[250px] h-[380px] md:h-[430px] overflow-hidden rounded-[1.8rem] border-[6px] border-[#171326] bg-[#171326] shadow-[0_28px_65px_rgba(0,0,0,0.35)]"
+                className="justify-self-center lg:justify-self-end w-full max-w-[430px] aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/20 bg-[#160b37]/40 shadow-[0_28px_65px_rgba(0,0,0,0.28)]"
               >
                 <img
                   src={discoveryExploreScreen}
                   alt="Consumed Discover screen for finding movies, shows, books, and more"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-[center_28%] scale-[1.18]"
                 />
               </motion.div>
             </div>
