@@ -156,9 +156,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible bg-white z-10" id="features">
-          <div className="absolute inset-x-0 bottom-0 h-20 md:h-28 bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] bg-fixed pointer-events-none" aria-hidden="true" />
-
+        <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible bg-white z-10" id="features">
           <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
@@ -234,7 +232,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] bg-fixed text-white" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto mt-3 md:mt-6 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
             <motion.div
@@ -351,7 +349,7 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            <div className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
+            <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.h2 
@@ -407,7 +405,7 @@ export default function Home() {
         </section>
 
         {/* 5. ROOMS / SOCIAL */}
-        <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-secondary/40" id="rooms">
+        <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-white" id="rooms">
           <div className="container mx-auto px-6 max-w-3xl">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -455,12 +453,12 @@ export default function Home() {
         </section>
 
         {/* 6. BETA FEEDBACK */}
-        <section className="py-14 md:py-16 px-6 bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)]" id="feedback">
+        <section className="py-10 md:py-12 px-6 bg-white" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="container mx-auto max-w-5xl px-7 py-4 md:px-14 md:py-5 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+            className="container mx-auto max-w-5xl rounded-[2.5rem] bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)] px-7 py-10 md:px-14 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-14"
           >
             <div className="w-14 h-14 rounded-full bg-white/10 border border-white/25 shadow-sm flex items-center justify-center text-white shrink-0">
               <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
