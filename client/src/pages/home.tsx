@@ -452,7 +452,7 @@ export default function Home() {
         </section>
 
         {/* 6. BETA FEEDBACK */}
-        <section className="py-14 md:py-16 px-6 bg-[linear-gradient(135deg,_#160942_0%,_#2e1c78_55%,_#5035a5_100%)] bg-fixed" id="feedback">
+        <section className="py-14 md:py-16 px-6 bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)]" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -482,7 +482,7 @@ export default function Home() {
         </section>
 
         {/* 7. APP STORE DOWNLOAD */}
-        <section className="py-4 md:py-5 px-6 bg-[linear-gradient(135deg,_#160942_0%,_#2e1c78_55%,_#5035a5_100%)] bg-fixed" id="better-together">
+        <section className="py-4 md:py-5 px-6 bg-white" id="better-together">
           <div className="flex justify-center">
             <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
               <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
@@ -506,33 +506,33 @@ export default function Home() {
       </main>
 
       {/* 7. FOOTER */}
-      <footer className="bg-[linear-gradient(135deg,_#160942_0%,_#2e1c78_55%,_#5035a5_100%)] bg-fixed pt-8 pb-8" id="blog">
+      <footer className="bg-white pt-8 pb-8" id="blog">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-7">
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="/">
-              <img src={logoPurple} alt="Consumed" className="h-6 brightness-0 invert opacity-90 cursor-pointer" />
+              <img src={logoPurple} alt="Consumed" className="h-6 opacity-80 cursor-pointer" />
             </Link>
-            <nav className="flex flex-wrap items-center justify-center md:justify-start gap-5 text-sm font-medium text-white/70">
-              <button onClick={() => scrollToSection("about-us")} className="hover:text-white transition-colors">About Us</button>
-              <Link href="/insights" className="hover:text-white transition-colors" data-testid="link-insights-footer">Insights</Link>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" data-testid="link-web-app-footer">Open web app</a>
+            <nav className="flex flex-wrap items-center justify-center md:justify-start gap-5 text-sm font-medium text-foreground/70">
+              <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
+              <Link href="/insights" className="hover:text-primary transition-colors" data-testid="link-insights-footer">Insights</Link>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" data-testid="link-web-app-footer">Open web app</a>
             </nav>
-            <p className="text-sm text-white/65 max-w-sm text-center md:text-left leading-relaxed">
+            <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
               Our Mission: Bringing joy and connection through entertainment.
             </p>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-foreground/40">
               © 2026 Consumed. All rights reserved.
             </p>
           </div>
           
           <div className="flex items-center gap-5">
-            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+            <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
               <XIcon className="w-4 h-4" />
             </a>
-            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
               <TikTok className="w-4 h-4" />
             </a>
           </div>
