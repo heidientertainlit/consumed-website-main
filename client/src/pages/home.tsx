@@ -455,23 +455,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="container mx-auto max-w-5xl rounded-[2rem] bg-[#f0ebff] border border-[#dfd5ff] px-7 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+            className="container mx-auto max-w-5xl rounded-[2rem] bg-gradient-to-br from-[#160942] via-[#2e1c78] to-[#5035a5] border border-white/10 px-7 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-14"
           >
-            <div className="w-14 h-14 rounded-full bg-white border border-[#d8cbff] shadow-sm flex items-center justify-center text-[#5132ad] shrink-0">
+            <div className="w-14 h-14 rounded-full bg-white/10 border border-white/25 shadow-sm flex items-center justify-center text-white shrink-0">
               <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-heading font-normal text-[#1d123e]">
+              <h2 className="text-3xl md:text-4xl font-heading font-normal text-white">
                 Consumed is in beta,<br />
-                <span className="italic text-[#5132ad]">so we love your feedback.</span>
+                <span className="italic text-[#d8ceff]">so we love your feedback.</span>
               </h2>
-              <p className="mt-4 text-[#504865] leading-relaxed max-w-xl">
+              <p className="mt-4 text-white/75 leading-relaxed max-w-xl">
                 Tell us what you want more of, what’s not quite right, and how we can make it even better.
               </p>
             </div>
             <Link
               href="/feedback"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3a2496] px-6 py-3.5 text-white font-semibold whitespace-nowrap transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold whitespace-nowrap transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
               data-testid="link-beta-feedback"
             >
               Share feedback <ArrowRight className="w-4 h-4" />
