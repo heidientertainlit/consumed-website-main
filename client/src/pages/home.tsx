@@ -157,7 +157,7 @@ export default function Home() {
       <main>
         {/* 2. HERO */}
         <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible bg-white z-10" id="features">
-          <div className="absolute inset-x-0 bottom-0 h-20 md:h-28 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-x-0 bottom-0 h-20 md:h-28 bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] bg-fixed pointer-events-none" aria-hidden="true" />
 
           <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
             {/* Left: copy */}
@@ -234,7 +234,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] text-white" id="how-it-works">
+        <section className="pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] bg-fixed text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
             <motion.div
