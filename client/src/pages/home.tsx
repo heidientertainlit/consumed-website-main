@@ -156,7 +156,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible bg-white z-10" id="features">
+        <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible z-10" id="features">
           <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
@@ -232,7 +232,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto mt-3 md:mt-6 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
             <motion.div
