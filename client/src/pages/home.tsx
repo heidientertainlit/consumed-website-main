@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2, type LucideIcon } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
+import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
+import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
 
 // Generated images
 import neonSmiley from "../assets/images/neon-smiley.png";
@@ -55,14 +57,6 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     </span>
   </a>
 );
-
-function CategoryIcon({ Icon }: { Icon: LucideIcon }) {
-  return (
-    <div className="flex items-center justify-center w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
-      <Icon className="h-12 w-12 md:h-14 md:w-14 text-primary/75" strokeWidth={1.25} />
-    </div>
-  );
-}
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -328,39 +322,104 @@ export default function Home() {
         {/* 4. CATEGORIES */}
         <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-              {[
-                { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard },
-                { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen },
-                { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones },
-                { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2 },
-              ].map((cat, i) => (
-                <motion.div 
-                  key={cat.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group flex flex-col items-center text-center"
-                >
-                  <CategoryIcon Icon={cat.Icon} />
-                  <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
-                </motion.div>
-              ))}
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">Your media, your way</p>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                  Everything you’re into.<br />
+                  <span className="italic text-primary">All in one place.</span>
+                </h2>
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
+                  Keep track of what you’re watching, reading, and listening to — and never lose track of what you want to try next.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-8">
+                  {[
+                    { title: "Movies & TV", desc: "Watchlists and ratings", Icon: Clapperboard },
+                    { title: "Books", desc: "Reads and favorites", Icon: BookOpen },
+                    { title: "Podcasts", desc: "Episodes and listens", Icon: Headphones },
+                    { title: "Music", desc: "Albums and artists", Icon: Music2 },
+                  ].map((cat, i) => (
+                    <motion.div
+                      key={cat.title}
+                      initial={{ opacity: 0, y: 14 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="flex items-center gap-3 rounded-2xl border border-[#ece8f5] bg-[#fbfaff] p-3.5"
+                    >
+                      <span className="w-10 h-10 rounded-xl bg-[#eee8ff] flex items-center justify-center shrink-0">
+                        <cat.Icon className="w-5 h-5 text-primary" strokeWidth={1.6} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm font-bold leading-tight">{cat.title}</span>
+                        <span className="block text-[11px] text-foreground/50 mt-0.5">{cat.desc}</span>
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative min-h-[500px] md:min-h-[560px] max-w-[650px] w-full mx-auto"
+              >
+                <div className="absolute top-0 right-0 w-[74%] h-[500px] md:h-[550px] rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-[0_24px_60px_rgba(42,24,83,0.16)]">
+                  <img
+                    src={mediaLibraryScreen}
+                    alt="Consumed My Media screen with lists, filters, and tracked titles"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+
+                <div className="absolute top-10 left-0 z-10 w-[43%] rounded-2xl border border-[#ece8f5] bg-white p-4 shadow-[0_16px_35px_rgba(42,24,83,0.14)]">
+                  <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-primary">Your library</p>
+                  <p className="mt-2 text-3xl font-heading font-semibold text-[#7b3fe4]">912</p>
+                  <p className="text-xs text-foreground/50">titles tracked</p>
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-2 mt-4 text-xs">
+                    <span><strong className="text-[#e64b94]">83</strong> Movies</span>
+                    <span><strong className="text-[#3177d8]">65</strong> TV</span>
+                    <span><strong className="text-[#30a04a]">732</strong> Books</span>
+                    <span><strong className="text-[#6e44d8]">8h</strong> Pods</span>
+                  </div>
+                </div>
+
+                <div className="absolute left-4 md:left-7 bottom-0 z-20 w-[53%] rounded-[1.6rem] overflow-hidden border-[5px] border-[#1a1135] bg-[#1a1135] shadow-[0_22px_45px_rgba(30,13,82,0.28)]">
+                  <img
+                    src={currentlyConsumingScreen}
+                    alt="Consumed Entertainment DNA currently consuming preview"
+                    className="w-full"
+                  />
+                </div>
+              </motion.div>
             </div>
             <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <div className="relative z-10 max-w-7xl mx-auto">
-                <motion.h2 
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-center text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
+                  className="text-center"
                 >
-                  What you consume says everything.<br />
-                  <span className="text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
-                </motion.h2>
+                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] text-white">
+                    What you consume says everything.<br />
+                    <span className="text-[#d8ceff]">There&apos;s a pattern to what you love.</span>
+                  </h2>
+                  <p className="mt-4 text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl font-heading">
+                    Discover your entertainment identity.
+                  </p>
+                  <p className="max-w-3xl mx-auto mt-5 text-sm md:text-base leading-relaxed text-white/70">
+                    The more you track, rate, and interact, the more your Entertainment DNA evolves — revealing the patterns behind what you love.
+                  </p>
+                </motion.div>
 
                 <div className="flex gap-4 md:gap-6 mt-10 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
                 {[
@@ -396,9 +455,6 @@ export default function Home() {
                   </motion.article>
                 ))}
                 </div>
-                <p className="max-w-3xl mx-auto mt-5 text-center text-sm md:text-base leading-relaxed text-white/70">
-                  The more you track, rate, and interact, the more your Entertainment DNA evolves — revealing the patterns behind what you love.
-                </p>
               </div>
             </div>
           </div>
