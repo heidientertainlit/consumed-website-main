@@ -274,7 +274,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-tourney font-semibold leading-[0.95] tracking-[-0.06em] mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
                 Entertainment is better, <span className="text-[#2e1c78]">shared.</span>
               </h1>
 
