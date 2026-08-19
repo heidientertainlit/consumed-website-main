@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, type LucideIcon } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, CheckCircle2, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2, type LucideIcon } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 
@@ -157,8 +157,7 @@ export default function Home() {
       <main>
         {/* 2. HERO */}
         <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible bg-white z-10" id="features">
-          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-pink-300/10 blur-[80px] rounded-full -z-10 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-20 md:h-28 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] pointer-events-none" aria-hidden="true" />
 
           <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
             {/* Left: copy */}
@@ -315,10 +314,12 @@ export default function Home() {
                       <p className="text-xs font-semibold text-[#714bd0] mt-auto pt-2">{post.meta}</p>
                     </div>
                   </div>
-                  <div className="flex justify-between border-t border-[#eeeaf7] pt-3 mt-3 text-xs text-[#756e83]">
-                    <span className="text-[#643ec5] font-semibold">✦ Agree</span>
-                    <span>🔥  {34 + i * 11}</span>
-                    <span>◯ Reply</span>
+                  <div className="flex items-center justify-between border-t border-[#eeeaf7] pt-3 mt-3 text-xs text-[#756e83]">
+                    <button type="button" aria-label="Like this take" className="hover:text-[#643ec5] transition-colors"><ThumbsUp className="w-4 h-4" strokeWidth={1.7} /></button>
+                    <button type="button" aria-label="Dislike this take" className="hover:text-[#643ec5] transition-colors"><ThumbsDown className="w-4 h-4" strokeWidth={1.7} /></button>
+                    <button type="button" className="font-medium hover:text-[#643ec5] transition-colors">Reply</button>
+                    <button type="button" aria-label="Favorite this take" className="text-[#f4bd1f]"><Star className="w-4 h-4 fill-current" strokeWidth={1.7} /></button>
+                    <button type="button" className="inline-flex items-center gap-1 font-medium hover:text-[#643ec5] transition-colors">Share <Share2 className="w-3.5 h-3.5" strokeWidth={1.7} /></button>
                   </div>
                 </motion.article>
               ))}
