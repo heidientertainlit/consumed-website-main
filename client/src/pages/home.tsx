@@ -7,7 +7,6 @@ import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
 import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
 
-import discoveryExploreScreen from "@assets/Screenshot_2026-08-19_at_12.49.38_PM_1787165463923.png";
 
 // Generated images
 import neonSmiley from "../assets/images/neon-smiley.png";
@@ -836,13 +835,13 @@ export default function Home() {
           <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
-            <div className="relative z-10 grid lg:grid-cols-[1fr_0.5fr] items-center gap-10 lg:gap-16">
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
               <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center gap-3 mb-4">
                   <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff]">Discovery</p>
                   <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em]">DISCOVER</span>
                 </div>
@@ -850,7 +849,7 @@ export default function Home() {
                   Your next obsession<br />
                   <span className="italic text-[#d8ceff]">is already here.</span>
                 </h2>
-                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
+                <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-white/75">
                   Discover what to watch, read, or listen to next through your taste, your Entertainment DNA, the people you trust, and what&apos;s happening across Consumed.
                 </p>
                 <a
@@ -863,46 +862,6 @@ export default function Home() {
                   Discover something new <ArrowRight className="w-4 h-4" />
                 </a>
               </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="justify-self-center lg:justify-self-end w-full max-w-[430px] aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/20 bg-[#160b37]/40 shadow-[0_28px_65px_rgba(0,0,0,0.28)]"
-              >
-                <img
-                  src={discoveryExploreScreen}
-                  alt="Consumed Discover screen for finding movies, shows, books, and more"
-                  className="w-full h-full object-cover object-[center_28%] scale-[1.18]"
-                />
-              </motion.div>
-            </div>
-
-            <div className="relative z-10 mt-12">
-              <p className="text-xs font-bold tracking-[0.16em] uppercase text-white/60 mb-4">Why it&apos;s here</p>
-              <div className="flex gap-3 overflow-x-auto pb-3 -mx-7 px-7 md:mx-0 md:px-0 scrollbar-none">
-                {[
-                  { reason: "Because you loved…", title: "Severance", accent: "bg-[#9462ea]" },
-                  { reason: "People you follow are loving…", title: "The Bear", accent: "bg-[#eb5b9c]" },
-                  { reason: "Trending in Horror…", title: "The Substance", accent: "bg-[#df7c34]" },
-                  { reason: "Popular with Prestige Detectives…", title: "The Day of the Jackal", accent: "bg-[#497ad7]" },
-                  { reason: "Because of your DNA…", title: "Sharp Objects", accent: "bg-[#47a685]" },
-                ].map((item, i) => (
-                  <motion.article
-                    key={item.reason}
-                    initial={{ opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="w-[205px] min-w-[205px] rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm"
-                  >
-                    <div className={`w-10 h-14 rounded-lg ${item.accent} shadow-inner`} />
-                    <p className="mt-4 text-[10px] font-bold tracking-[0.11em] uppercase text-white/55 leading-snug">{item.reason}</p>
-                    <p className="mt-1.5 text-base font-heading font-semibold leading-tight">{item.title}</p>
-                    <span className="inline-flex mt-4 text-[10px] font-bold tracking-wider text-[#d8ceff]">EXPLORE →</span>
-                  </motion.article>
-                ))}
-              </div>
             </div>
           </div>
         </section>
