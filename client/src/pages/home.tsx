@@ -206,7 +206,7 @@ export default function Home() {
                       <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
                     ))}
                   </div>
-                  <span className="text-sm font-semibold text-foreground/80">Join 16.7K+ fans</span>
+                  <span className="text-sm font-semibold text-foreground/80">Join hundreds of fans</span>
                 </div>
               </div>
             </motion.div>
