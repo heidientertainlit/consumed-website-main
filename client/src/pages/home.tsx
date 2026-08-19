@@ -245,12 +245,10 @@ export default function Home() {
             >
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#d7ccff] mb-3">The feed</p>
               <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
-                Real takes.<br />
-                Real people.<br />
-                About what<br />
-                we’re all watching,<br />
-                reading, listening to,<br />
-                <span className="italic text-[#d7ccff]">and loving.</span>
+                Takes. Theories. Reactions. And everything in between.
+                <span className="block mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
+                  About what we’re all watching, reading, listening to, and loving.
+                </span>
               </h2>
               <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
                 Explore the feed <ArrowRight className="w-4 h-4" />
