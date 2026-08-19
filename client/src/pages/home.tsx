@@ -801,7 +801,7 @@ export default function Home() {
                   “You had me at hello.”
                 </blockquote>
                 <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#376ff0] to-[#ab31e5] px-5 py-3 text-sm font-bold text-white">
-                  Take the trivia <ArrowRight className="w-4 h-4" />
+                  Play Trivia <ArrowRight className="w-4 h-4" />
                 </a>
               </motion.article>
 
