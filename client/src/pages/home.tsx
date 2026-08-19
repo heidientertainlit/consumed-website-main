@@ -328,38 +328,22 @@ export default function Home() {
         </section>
 
         {/* 4. FEEL / CONNECTION INTERLUDE */}
-        <section className="order-4 py-24 md:py-32 px-6 bg-white overflow-hidden" id="connection">
-          <div className="container mx-auto max-w-6xl relative min-h-[360px] flex items-center justify-center text-center">
-            {[
-              { text: "“Wait, YOU watch that too?!”", className: "top-2 left-0 md:left-10" },
-              { text: "“You HAVE to read this.”", className: "top-16 right-0 md:right-8" },
-              { text: "“I cannot believe that ending.”", className: "bottom-16 left-0 md:left-16" },
-              { text: "“This is my comfort show.”", className: "bottom-2 right-0 md:right-20" },
-              { text: "“Okay but hear me out...”", className: "top-1/2 right-0" },
-            ].map((thought, i) => (
-              <motion.span
-                key={thought.text}
-                animate={{ y: [0, i % 2 === 0 ? -7 : 7, 0], x: [0, i % 2 === 0 ? 5 : -5, 0] }}
-                transition={{ duration: 5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.45 }}
-                className={`absolute hidden md:inline-flex rounded-full border border-[#e8e2f2] bg-white px-4 py-2 text-sm italic text-foreground/55 shadow-sm ${thought.className}`}
-              >
-                {thought.text}
-              </motion.span>
-            ))}
-
+        <section className="order-4 py-8 md:py-12 bg-white" id="connection">
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_52%,_#5b35ae_100%)] px-7 py-16 md:px-14 md:py-24 text-white">
+            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_15%_20%,_#6845be_0%,_transparent_30%),radial-gradient(circle_at_82%_80%,_#9a69eb_0%,_transparent_28%)] pointer-events-none" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative z-10 max-w-4xl"
+              className="relative z-10 max-w-4xl mx-auto text-center"
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Entertainment makes us <span className="italic text-primary">feel things.</span>
+                Entertainment makes us <span className="italic text-[#d8ceff]">feel things.</span>
               </h2>
-              <p className="mt-6 text-lg md:text-xl leading-relaxed text-foreground/65">
+              <p className="mt-6 text-lg md:text-xl leading-relaxed text-white/75">
                 Comforted. Smarter. Seen. Nostalgic. Inspired.<br className="hidden md:block" /> Completely unwell over a fictional character.
               </p>
-              <p className="mt-7 font-heading text-3xl md:text-4xl italic text-primary">
+              <p className="mt-7 font-heading text-3xl md:text-4xl italic text-[#d8ceff]">
                 And it brings us together.
               </p>
             </motion.div>
@@ -1016,25 +1000,58 @@ export default function Home() {
                   <span className="rounded-full bg-[#f0ebff] px-3 py-1.5 text-[10px] font-bold text-primary">LIVE</span>
                 </div>
 
-                <div className="space-y-4 py-5">
+                <div className="space-y-3 py-5">
                   <div className="flex items-start gap-3">
                     <span className="w-8 h-8 shrink-0 rounded-full bg-[#ed5d9d] text-white flex items-center justify-center text-[10px] font-bold">A</span>
                     <div>
-                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">just now</span></p>
+                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">2m ago</span></p>
                       <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#f4efff] px-3.5 py-2.5 text-sm text-foreground/80">Hot take: this season is already better than the last one.</p>
+                      <div className="flex items-center gap-2 mt-2 text-[11px] font-semibold text-foreground/45">
+                        <motion.span
+                          animate={{ scale: [1, 1.16, 1] }}
+                          transition={{ duration: 1.7, repeat: Infinity, ease: "easeInOut" }}
+                          className="rounded-full border border-[#ebd8eb] bg-white px-2 py-1 text-[#dc4e9e]"
+                        >
+                          ♥ 12
+                        </motion.span>
+                        <span>Reply</span>
+                        <span>4 replies</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 justify-end">
-                    <div className="text-right">
-                      <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
-                      <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
+
+                  <div className="ml-11 border-l-2 border-[#eee8f6] pl-3 space-y-3">
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-7 h-7 shrink-0 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[9px] font-bold">J</span>
+                      <div>
+                        <p className="text-xs font-bold">Jordan <span className="font-normal text-foreground/40">1m ago</span></p>
+                        <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#eef8ff] px-3 py-2 text-sm text-foreground/80">YES. And episode four? I need everyone&apos;s theories.</p>
+                        <div className="flex items-center gap-2 mt-1.5 text-[10px] font-semibold text-foreground/40">
+                          <span>🔥 6</span><span>Reply</span>
+                        </div>
+                      </div>
                     </div>
-                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[10px] font-bold">YO</span>
+
+                    <div className="flex items-start gap-2.5 justify-end">
+                      <div className="text-right">
+                        <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
+                        <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
+                        <motion.div
+                          animate={{ opacity: [0.5, 1, 0.5] }}
+                          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                          className="mt-1.5 text-[10px] font-semibold text-[#6d47c6]"
+                        >
+                          Avery and 3 others liked this
+                        </motion.div>
+                      </div>
+                      <span className="w-7 h-7 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[9px] font-bold">YO</span>
+                    </div>
                   </div>
+
                   <motion.div
                     animate={{ opacity: [0.45, 1, 0.45] }}
                     transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex items-center gap-2 text-xs text-foreground/45"
+                    className="flex items-center gap-2 ml-11 text-xs text-foreground/45"
                   >
                     <span className="w-8 h-8 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[10px] font-bold">J</span>
                     <span className="rounded-full bg-[#f3f1f6] px-3 py-2">Jordan is typing <span className="tracking-[0.18em]">•••</span></span>
