@@ -594,8 +594,8 @@ export default function Home() {
         </section>
 
         {/* 5. TASTE MATCH */}
-        <section className="py-20 md:py-28 px-6 bg-white" id="taste-match">
-          <div className="container mx-auto max-w-7xl grid lg:grid-cols-[0.85fr_1.15fr] items-center gap-12 lg:gap-20">
+        <section className="pt-20 md:pt-28 pb-2 md:pb-4 px-6 bg-white" id="taste-match">
+          <div className="container mx-auto max-w-7xl grid lg:grid-cols-[1fr_0.85fr] items-center gap-12 lg:gap-14">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -624,12 +624,11 @@ export default function Home() {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative w-full max-w-[510px] lg:justify-self-end"
             >
-              <div className="rounded-[2rem] border border-[#e9e4f1] bg-[#fbfaff] p-5 md:p-7 shadow-[0_22px_55px_rgba(45,25,99,0.1)]">
-                <div className="flex items-center justify-between">
+              <div className="rounded-[2rem] border border-[#e9e4f1] bg-[#fbfaff] p-5 md:p-6 shadow-[0_22px_55px_rgba(45,25,99,0.1)]">
+                <div className="flex items-center">
                   <span className="rounded-full border border-[#e5dcff] bg-[#f3efff] px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-primary">✧ COMPARE DNA</span>
-                  <span className="text-sm text-foreground/40">Share →</span>
                 </div>
 
                 <div className="flex items-center justify-center gap-3 md:gap-6 mt-7">
@@ -664,8 +663,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
-                <p className="mt-5 text-center text-sm italic text-foreground/55">Matching doesn’t have to mean identical.</p>
               </div>
             </motion.div>
           </div>
