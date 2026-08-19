@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
@@ -339,10 +339,13 @@ export default function Home() {
 
                 <div className="grid grid-cols-2 gap-3 mt-8">
                   {[
-                    { title: "Movies & TV", desc: "Watchlists and ratings", Icon: Clapperboard },
+                    { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
+                    { title: "TV", desc: "Episodes and seasons", Icon: Tv },
                     { title: "Books", desc: "Reads and favorites", Icon: BookOpen },
                     { title: "Podcasts", desc: "Episodes and listens", Icon: Headphones },
                     { title: "Music", desc: "Albums and artists", Icon: Music2 },
+                    { title: "YouTube", desc: "Channels and videos", Icon: Youtube },
+                    { title: "Gaming", desc: "Games and playtime", Icon: Gamepad2 },
                   ].map((cat, i) => (
                     <motion.div
                       key={cat.title}
@@ -460,7 +463,7 @@ export default function Home() {
         </section>
 
         {/* 5. TASTE MATCH */}
-        <section className="py-20 md:py-28 px-6 bg-white" id="rooms">
+        <section className="py-20 md:py-28 px-6 bg-white" id="taste-match">
           <div className="container mx-auto max-w-7xl grid lg:grid-cols-[0.85fr_1.15fr] items-center gap-12 lg:gap-20">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
@@ -537,7 +540,69 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. BETA FEEDBACK */}
+        {/* 6. ROOMS */}
+        <section className="py-8 md:py-12 bg-white" id="rooms">
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_90%_20%,_#8c65e6_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#6335b7_0%,_transparent_30%)] pointer-events-none" />
+            <div className="relative z-10 grid lg:grid-cols-[0.78fr_1.22fr] items-center gap-10 lg:gap-16">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Rooms</p>
+                <h2 className="text-4xl md:text-5xl font-heading font-normal leading-[1.05]">
+                  There&apos;s a Room<br />
+                  <span className="italic text-[#d8ceff]">for that.</span>
+                </h2>
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-xl">
+                  From the genres you love to the shows you can&apos;t stop thinking about, Rooms give you a place to find the conversations you&apos;re actually interested in.
+                </p>
+                <p className="mt-6 font-heading text-2xl italic text-[#d8ceff]">Go where your people are.</p>
+                <a
+                  href="https://app.consumedapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-7 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
+                  data-testid="link-explore-rooms"
+                >
+                  Explore Rooms <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-2 sm:grid-cols-3 gap-3"
+              >
+                {[
+                  "True Crime",
+                  "Reality",
+                  "Horror",
+                  "Fantasy",
+                  "Rom Com",
+                  "Period Drama",
+                  "Comedy",
+                  "Sports Talk & Docs",
+                ].map((room, i) => (
+                  <div
+                    key={room}
+                    className={`min-h-[92px] rounded-2xl border border-white/15 p-4 flex flex-col justify-between transition-transform hover:-translate-y-1 ${
+                      i === 0 ? "bg-[#a653d7]/50 sm:col-span-2" : "bg-white/10"
+                    }`}
+                  >
+                    <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/55">Room</span>
+                    <span className="text-base md:text-lg font-heading font-semibold leading-tight">{room}</span>
+                    <span className="text-[10px] font-bold tracking-wider text-[#d8ceff]">JOIN THE TALK →</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. BETA FEEDBACK */}
         <section className="py-10 md:py-12 bg-white" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -567,7 +632,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* 7. APP STORE DOWNLOAD */}
+        {/* 8. APP STORE DOWNLOAD */}
         <section className="py-4 md:py-5 px-6 bg-white" id="better-together">
           <div className="flex justify-center">
             <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
@@ -576,7 +641,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 8. AS SEEN IN */}
+        {/* 9. AS SEEN IN */}
         <section className="hidden py-12 border-t border-b border-border/50 bg-white" id="about-us">
           <div className="container mx-auto px-6 max-w-7xl">
             <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
