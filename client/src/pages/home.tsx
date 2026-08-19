@@ -10,6 +10,8 @@ import neonSmiley from "../assets/images/neon-smiley.png";
 import screenDnaHero from "../assets/images/screen-dna-hero.webp";
 import screenAddHero from "../assets/images/screen-add-hero.webp";
 import screenRatingsHero from "../assets/images/screen-ratings-hero.webp";
+import maybeSomedayReview from "../assets/images/maybe-someday-review.webp";
+import dayOfJackalReview from "../assets/images/day-of-jackal-review.webp";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -57,7 +59,7 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
 function CategoryIcon({ Icon }: { Icon: LucideIcon }) {
   return (
     <div className="flex items-center justify-center w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
-      <Icon className="h-12 w-12 md:h-14 md:w-14 text-[#d7ccff]" strokeWidth={1.25} />
+      <Icon className="h-12 w-12 md:h-14 md:w-14 text-primary/75" strokeWidth={1.25} />
     </div>
   );
 }
@@ -232,48 +234,137 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. CATEGORIES */}
-        <section className="pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden bg-gradient-to-br from-[#160942] via-[#2e1c78] to-[#5336aa] text-white" id="how-it-works">
-          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,_#9f8bd9_0%,_transparent_35%),radial-gradient(circle_at_bottom_left,_#6d50c7_0%,_transparent_45%)] pointer-events-none" />
-          <div className="container mx-auto max-w-7xl relative z-10 flex flex-col">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-            {[
-              { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard, color: "#a98fd6", seed: 7 },
-              { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen, color: "#9db99f", seed: 21 },
-              { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones, color: "#efb3c6", seed: 35 },
-              { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2, color: "#9f8bd9", seed: 63 },
-            ].map((cat, i) => (
-              <motion.div 
-                key={cat.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group flex flex-col items-center text-center"
-              >
-                <CategoryIcon Icon={cat.Icon} />
-                <h3 className="font-bold text-xl mb-3 text-white">{cat.title}</h3>
-                <p className="text-sm text-white/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
-              </motion.div>
-            ))}
-            </div>
-
-          <div className="text-center mt-8 md:mt-12">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+        {/* 3. TAKES FEED */}
+        <section className="pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] text-white" id="how-it-works">
+          <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
+          <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white"
+              className="lg:w-[22%] shrink-0"
             >
-              What you consume says everything.<br />
-              <span className="text-[#d7ccff] italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
-            </motion.h2>
-          </div>
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#d7ccff] mb-3">The feed</p>
+              <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
+                Real takes.<br />
+                Real people.<br />
+                About what<br />
+                we’re all watching,<br />
+                reading, listening to,<br />
+                <span className="italic text-[#d7ccff]">and loving.</span>
+              </h2>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
+                Explore the feed <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
 
+            <div className="flex flex-1 gap-4 md:gap-5 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
+              {[
+                {
+                  person: "Rachelle S.",
+                  time: "2h ago",
+                  take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series… WITH A SOUNDTRACK. And some spice if you’re into that ;)”",
+                  title: "Maybe Someday",
+                  detail: "by Colleen Hoover",
+                  meta: "81% aligned with you",
+                  badge: "45% match",
+                  image: maybeSomedayReview,
+                },
+                {
+                  person: "Ashley H.",
+                  time: "5h ago",
+                  take: "“Overall it was a good watch. Some of the family dynamics felt drawn out, but I’m interested to see what they do for season 2.”",
+                  title: "The Day of the Jackal",
+                  detail: "You rated this 3/5 ★",
+                  meta: "5.0 average rating",
+                  badge: "You loved this",
+                  image: dayOfJackalReview,
+                },
+              ].map((post, i) => (
+                <motion.article
+                  key={post.person}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.12 }}
+                  className="w-[330px] md:w-[390px] shrink-0 rounded-2xl bg-white text-[#19142d] shadow-[0_20px_45px_rgba(0,0,0,0.22)] p-4"
+                >
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[11px] font-bold">
+                      {post.person.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold leading-none">{post.person}</p>
+                      <p className="text-xs text-[#6c657b] mt-1">{post.time}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-[105px] md:w-[118px] shrink-0">
+                      <div className="relative h-[154px] md:h-[166px] rounded-xl overflow-hidden shadow-md">
+                        <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                      </div>
+                      <span className="relative -mt-3 mx-auto w-fit block rounded-full bg-[#7651cf] text-white text-[10px] font-semibold px-2.5 py-1 shadow-md">
+                        {post.badge}
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex flex-col">
+                      <h3 className="text-base md:text-lg font-bold leading-tight">{post.title}</h3>
+                      <p className="text-xs text-[#777080] mt-1">{post.detail}</p>
+                      <div className="text-[#f4b91d] tracking-[0.08em] text-sm mt-2" aria-label="Five stars">★★★★★</div>
+                      <p className="text-xs md:text-[13px] leading-[1.45] text-[#4f4958] mt-2 line-clamp-5">{post.take}</p>
+                      <p className="text-xs font-semibold text-[#714bd0] mt-auto pt-2">{post.meta}</p>
+                    </div>
+                  </div>
+                  <div className="flex justify-between border-t border-[#eeeaf7] pt-3 mt-3 text-xs text-[#756e83]">
+                    <span className="text-[#643ec5] font-semibold">✦ Agree</span>
+                    <span>🔥  {34 + i * 11}</span>
+                    <span>◯ Reply</span>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* 4. ROOMS / SOCIAL */}
+        {/* 4. CATEGORIES */}
+        <section className="py-20 md:py-28 px-6 bg-white" id="categories">
+          <div className="container mx-auto max-w-7xl flex flex-col">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+              {[
+                { title: "Movies & TV", desc: "Track what you watch and rate honestly.", Icon: Clapperboard },
+                { title: "Books", desc: "Log your reads and share your thoughts.", Icon: BookOpen },
+                { title: "Podcasts", desc: "Follow episodes and discuss the best ones.", Icon: Headphones },
+                { title: "Music", desc: "Save what you listen to and discover more.", Icon: Music2 },
+              ].map((cat, i) => (
+                <motion.div 
+                  key={cat.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group flex flex-col items-center text-center"
+                >
+                  <CategoryIcon Icon={cat.Icon} />
+                  <h3 className="font-bold text-xl mb-3">{cat.title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed max-w-[200px]">{cat.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center mt-16 md:mt-20">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal"
+              >
+                What you consume says everything.<br />
+                <span className="text-primary italic text-2xl md:text-3xl lg:text-4xl">Discover your entertainment identity.</span>
+              </motion.h2>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. ROOMS / SOCIAL */}
         <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-secondary/40" id="rooms">
           <div className="container mx-auto px-6 max-w-3xl">
             <motion.div
