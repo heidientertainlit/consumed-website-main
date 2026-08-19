@@ -6,6 +6,9 @@ import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Mus
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
 import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
+import playExploreScreen from "@assets/Screenshot_2026-08-19_at_12.49.53_PM_1787165463923.png";
+
+import discoveryExploreScreen from "@assets/Screenshot_2026-08-19_at_12.49.38_PM_1787165463923.png";
 
 // Generated images
 import neonSmiley from "../assets/images/neon-smiley.png";
@@ -423,7 +426,136 @@ export default function Home() {
                   </p>
                 </motion.div>
 
-                <div className="flex gap-4 md:gap-6 mt-10 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
+                <div className="relative h-[230px] md:h-[275px] mt-8 md:mt-10 overflow-hidden" aria-hidden="true">
+                  <div className="absolute inset-x-[12%] top-1/2 h-24 -translate-y-1/2 rounded-full bg-[#9f63ff]/20 blur-3xl" />
+
+                  {[
+                    { label: "Movies", className: "left-1 md:left-8 top-5", delay: 0 },
+                    { label: "Books", className: "left-3 md:left-16 bottom-8", delay: 0.5 },
+                    { label: "TV", className: "right-4 md:right-20 top-4", delay: 1 },
+                    { label: "Podcasts", className: "right-1 md:right-8 bottom-9", delay: 1.5 },
+                    { label: "Ratings", className: "left-[16%] md:left-[23%] top-[46%]", delay: 2 },
+                    { label: "Takes", className: "right-[16%] md:right-[23%] top-[46%]", delay: 2.5 },
+                  ].map((source) => (
+                    <motion.span
+                      key={source.label}
+                      animate={{ y: [0, -6, 0], opacity: [0.55, 1, 0.55] }}
+                      transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: source.delay }}
+                      className={`absolute z-20 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] md:text-xs font-bold tracking-wide text-[#e1d9ff] backdrop-blur-sm ${source.className}`}
+                    >
+                      {source.label}
+                    </motion.span>
+                  ))}
+
+                  <motion.svg
+                    viewBox="0 0 930 230"
+                    className="absolute inset-0 w-full h-full overflow-visible"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.4 }}
+                  >
+                    <defs>
+                      <linearGradient id="dna-strand-a" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stopColor="#6d46d6" />
+                        <stop offset="48%" stopColor="#cf70ff" />
+                        <stop offset="100%" stopColor="#7f9dff" />
+                      </linearGradient>
+                      <linearGradient id="dna-strand-b" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stopColor="#e66bb4" />
+                        <stop offset="52%" stopColor="#8d5df0" />
+                        <stop offset="100%" stopColor="#56c5da" />
+                      </linearGradient>
+                      <filter id="dna-glow">
+                        <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                        <feMerge>
+                          <feMergeNode in="coloredBlur" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+
+                    {[
+                      { x: 112, y1: 48, y2: 182 },
+                      { x: 248, y1: 112, y2: 112 },
+                      { x: 382, y1: 180, y2: 50 },
+                      { x: 470, y1: 112, y2: 112 },
+                      { x: 606, y1: 48, y2: 182 },
+                      { x: 694, y1: 112, y2: 112 },
+                      { x: 828, y1: 180, y2: 50 },
+                    ].map((rung, i) => (
+                      <motion.line
+                        key={rung.x}
+                        x1={rung.x}
+                        x2={rung.x}
+                        y1={rung.y1}
+                        y2={rung.y2}
+                        stroke={i % 2 === 0 ? "#c997ff" : "#6ed5df"}
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        variants={{
+                          hidden: { pathLength: 0, opacity: 0 },
+                          visible: { pathLength: 1, opacity: 0.55 },
+                        }}
+                        transition={{ duration: 0.45, delay: 0.35 + i * 0.1 }}
+                      />
+                    ))}
+
+                    <motion.path
+                      d="M25 115 C95 18 180 18 250 115 S400 212 470 115 S620 18 690 115 S835 212 905 115"
+                      fill="none"
+                      stroke="url(#dna-strand-a)"
+                      strokeWidth="7"
+                      strokeLinecap="round"
+                      filter="url(#dna-glow)"
+                      variants={{
+                        hidden: { pathLength: 0, opacity: 0 },
+                        visible: { pathLength: 1, opacity: 1 },
+                      }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                    />
+                    <motion.path
+                      d="M25 115 C95 212 180 212 250 115 S400 18 470 115 S620 212 690 115 S835 18 905 115"
+                      fill="none"
+                      stroke="url(#dna-strand-b)"
+                      strokeWidth="7"
+                      strokeLinecap="round"
+                      filter="url(#dna-glow)"
+                      variants={{
+                        hidden: { pathLength: 0, opacity: 0 },
+                        visible: { pathLength: 1, opacity: 1 },
+                      }}
+                      transition={{ duration: 1.5, ease: "easeInOut", delay: 0.15 }}
+                    />
+
+                    <circle cx="30" cy="115" r="7" fill="#ffffff" filter="url(#dna-glow)">
+                      <animate attributeName="cx" values="30;250;470;690;900" dur="4.5s" repeatCount="indefinite" />
+                      <animate attributeName="opacity" values="0;1;1;1;0" dur="4.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="900" cy="115" r="6" fill="#d87dff" filter="url(#dna-glow)">
+                      <animate attributeName="cx" values="900;690;470;250;30" dur="5.2s" begin="0.7s" repeatCount="indefinite" />
+                      <animate attributeName="opacity" values="0;1;1;1;0" dur="5.2s" begin="0.7s" repeatCount="indefinite" />
+                    </circle>
+                  </motion.svg>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.82 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.15, duration: 0.6, type: "spring" }}
+                    className="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/20 bg-[#160c38]/85 px-4 py-3 text-center shadow-[0_0_35px_rgba(178,104,255,0.35)] backdrop-blur-md"
+                  >
+                    <motion.span
+                      animate={{ opacity: [0.55, 1, 0.55] }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                      className="block text-[9px] font-bold tracking-[0.16em] text-[#d8ceff]"
+                    >
+                      DNA EVOLVING
+                    </motion.span>
+                    <span className="block mt-1 font-heading text-base md:text-lg text-white">Your pattern is taking shape</span>
+                  </motion.div>
+                </div>
+
+                <div className="flex gap-4 md:gap-6 mt-4 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
                 {[
                   { title: "The Prestige Detective", shades: "Story Sharer • Emotional Binger", streak: "1", rank: "#1", tracked: "909", accent: "#b981ff" },
                   { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
@@ -434,7 +566,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.12 }}
+                    transition={{ delay: 0.55 + i * 0.14 }}
                     className="w-[290px] md:w-[31.5%] min-w-[290px] shrink-0 rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(0,0,0,0.25)] flex flex-col"
                   >
                     <div className="flex items-start justify-between gap-3">
@@ -602,7 +734,283 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. BETA FEEDBACK */}
+        {/* 7. PLAY */}
+        <section className="py-8 md:py-12 bg-white" id="play">
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#15103c_0%,_#292073_48%,_#6b32c9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+            <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#168dff]/30 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#ef4ba5]/20 blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 grid lg:grid-cols-[1fr_0.58fr] items-center gap-10 lg:gap-16">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#cfc7ff] mb-4">Play</p>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                  Don&apos;t just consume it.<br />
+                  <span className="italic text-[#b8ddff]">Play along.</span>
+                </h2>
+                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
+                  Trivia, predictions, rankings and more ways to make entertainment a little more fun.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-7">
+                  {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
+                    <span key={mode} className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/85">
+                      {mode}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20, rotate: 2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+                viewport={{ once: true }}
+                className="justify-self-center lg:justify-self-end w-[230px] md:w-[260px] h-[380px] md:h-[430px] overflow-hidden rounded-[1.8rem] border-[6px] border-[#171326] bg-[#171326] shadow-[0_28px_65px_rgba(0,0,0,0.35)]"
+              >
+                <img
+                  src={playExploreScreen}
+                  alt="Consumed Play screen with today's play, leaderboard, and game modes"
+                  className="w-full h-full object-cover object-top"
+                />
+              </motion.div>
+            </div>
+
+            <div className="relative z-10 grid md:grid-cols-3 gap-4 md:gap-5 mt-10">
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="rounded-[1.7rem] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)]"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#2c6ef2]">Prediction</span>
+                  <span className="rounded-full bg-[#eaf1ff] px-2.5 py-1 text-[10px] font-bold text-[#2c6ef2]">LIVE</span>
+                </div>
+                <h3 className="mt-4 text-xl font-bold leading-tight">Who&apos;s making it to the finale?</h3>
+                <div className="space-y-3 mt-5">
+                  {[
+                    { name: "Ava", value: 42, color: "#296be9" },
+                    { name: "Ben", value: 31, color: "#7a4bea" },
+                    { name: "Carla", value: 17, color: "#d64fa6" },
+                    { name: "Dylan", value: 10, color: "#f1a52b" },
+                  ].map((choice) => (
+                    <div key={choice.name}>
+                      <div className="flex justify-between text-xs font-semibold"><span>{choice.name}</span><span>{choice.value}%</span></div>
+                      <div className="h-2 rounded-full bg-[#efeff4] mt-1.5 overflow-hidden">
+                        <div className="h-full rounded-full" style={{ width: `${choice.value}%`, backgroundColor: choice.color }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="rounded-[1.7rem] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)] flex flex-col"
+              >
+                <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#8d31ca]">Trivia</span>
+                <h3 className="mt-4 text-xl font-bold leading-tight">Which movie is this quote from?</h3>
+                <blockquote className="mt-5 rounded-2xl bg-[#f6efff] p-5 font-heading text-2xl italic text-[#6f2baa]">
+                  “You had me at hello.”
+                </blockquote>
+                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#376ff0] to-[#ab31e5] px-5 py-3 text-sm font-bold text-white">
+                  Take the trivia <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.16 }}
+                className="rounded-[1.7rem] bg-[#fff9e8] p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)] flex flex-col"
+              >
+                <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#d18412]">Rank It</span>
+                <h3 className="mt-4 text-xl font-bold leading-tight">Rank these &apos;90s rom-coms.</h3>
+                <ol className="space-y-2.5 mt-5">
+                  {["10 Things I Hate About You", "Clueless", "You've Got Mail"].map((title, i) => (
+                    <li key={title} className="flex items-center gap-3 rounded-xl border border-[#eadcae] bg-white/75 px-3 py-2.5">
+                      <span className="w-7 h-7 rounded-full bg-[#f3cf5f] flex items-center justify-center text-xs font-extrabold">{i + 1}</span>
+                      <span className="text-sm font-semibold">{title}</span>
+                    </li>
+                  ))}
+                </ol>
+                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1930] px-5 py-3 text-sm font-bold text-white">
+                  Play now <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.article>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. DISCOVERY */}
+        <section className="py-8 md:py-12 bg-white" id="discovery">
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+            <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
+
+            <div className="relative z-10 grid lg:grid-cols-[1fr_0.5fr] items-center gap-10 lg:gap-16">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff]">Discovery</p>
+                  <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em]">DISCOVER</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                  Your next obsession<br />
+                  <span className="italic text-[#d8ceff]">is already here.</span>
+                </h2>
+                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
+                  Discover what to watch, read, or listen to next through your taste, your Entertainment DNA, the people you trust, and what&apos;s happening across Consumed.
+                </p>
+                <a
+                  href="https://app.consumedapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-8 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
+                  data-testid="link-discover-something-new"
+                >
+                  Discover something new <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20, rotate: -2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+                viewport={{ once: true }}
+                className="justify-self-center lg:justify-self-end w-[220px] md:w-[250px] h-[380px] md:h-[430px] overflow-hidden rounded-[1.8rem] border-[6px] border-[#171326] bg-[#171326] shadow-[0_28px_65px_rgba(0,0,0,0.35)]"
+              >
+                <img
+                  src={discoveryExploreScreen}
+                  alt="Consumed Discover screen for finding movies, shows, books, and more"
+                  className="w-full h-full object-cover object-top"
+                />
+              </motion.div>
+            </div>
+
+            <div className="relative z-10 mt-12">
+              <p className="text-xs font-bold tracking-[0.16em] uppercase text-white/60 mb-4">Why it&apos;s here</p>
+              <div className="flex gap-3 overflow-x-auto pb-3 -mx-7 px-7 md:mx-0 md:px-0 scrollbar-none">
+                {[
+                  { reason: "Because you loved…", title: "Severance", accent: "bg-[#9462ea]" },
+                  { reason: "People you follow are loving…", title: "The Bear", accent: "bg-[#eb5b9c]" },
+                  { reason: "Trending in Horror…", title: "The Substance", accent: "bg-[#df7c34]" },
+                  { reason: "Popular with Prestige Detectives…", title: "The Day of the Jackal", accent: "bg-[#497ad7]" },
+                  { reason: "Because of your DNA…", title: "Sharp Objects", accent: "bg-[#47a685]" },
+                ].map((item, i) => (
+                  <motion.article
+                    key={item.reason}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="w-[205px] min-w-[205px] rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm"
+                  >
+                    <div className={`w-10 h-14 rounded-lg ${item.accent} shadow-inner`} />
+                    <p className="mt-4 text-[10px] font-bold tracking-[0.11em] uppercase text-white/55 leading-snug">{item.reason}</p>
+                    <p className="mt-1.5 text-base font-heading font-semibold leading-tight">{item.title}</p>
+                    <span className="inline-flex mt-4 text-[10px] font-bold tracking-wider text-[#d8ceff]">EXPLORE →</span>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 9. ENTERTAINMENT CHATTER */}
+        <section className="py-24 md:py-32 px-6 bg-white overflow-hidden" id="chatter">
+          <div className="container mx-auto max-w-6xl relative min-h-[500px] md:min-h-[560px] flex items-center justify-center">
+            {[
+              { text: "obsessed", className: "top-2 left-0 md:left-8", color: "bg-[#f4eaff] text-[#7232ba]" },
+              { text: "couldn’t finish it", className: "top-16 right-0 md:right-10", color: "bg-[#fff1f8] text-[#c64188]" },
+              { text: "10/10", className: "top-40 left-0 md:left-16", color: "bg-[#eaf2ff] text-[#3572cf]" },
+              { text: "overrated", className: "bottom-24 left-0 md:left-24", color: "bg-[#fff6df] text-[#a66a12]" },
+              { text: "no spoilers", className: "bottom-8 right-0 md:right-14", color: "bg-[#e9fbf2] text-[#228a5e]" },
+              { text: "TEAM AVA", className: "top-40 right-0 md:right-20", color: "bg-[#efeaff] text-[#6f45d4]" },
+              { text: "I called that ending", className: "bottom-40 right-4 md:right-0", color: "bg-[#eef9ff] text-[#2679a9]" },
+              { text: "starting tonight", className: "bottom-2 left-1/3", color: "bg-[#f7efff] text-[#9146c1]" },
+            ].map((take, i) => (
+              <motion.span
+                key={take.text}
+                animate={{ x: [0, i % 2 === 0 ? 10 : -10, 0], y: [0, i % 3 === 0 ? -8 : 8, 0] }}
+                transition={{ duration: 5 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.35 }}
+                className={`absolute z-0 hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold shadow-sm border border-white ${take.className} ${take.color}`}
+              >
+                {take.text}
+              </motion.span>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative z-10 max-w-2xl text-center"
+            >
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">The conversation never ends</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                Okay, but what are you<br />
+                <span className="italic text-primary">watching right now?</span>
+              </h2>
+
+              <div className="mt-9 rounded-[2rem] border border-[#e8e4f0] bg-white p-5 md:p-6 text-left shadow-[0_20px_55px_rgba(51,31,94,0.12)]">
+                <div className="flex items-center justify-between pb-4 border-b border-[#eeeaf4]">
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-2">
+                      {["A", "J", "M"].map((initial, i) => (
+                        <span key={initial} className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white" style={{ background: ["#7b53db", "#ed5d9d", "#3b8eec"][i] }}>{initial}</span>
+                      ))}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold">Tonight&apos;s chat</p>
+                      <p className="text-xs text-[#32a269]">● 14 watching now</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-[#f0ebff] px-3 py-1.5 text-[10px] font-bold text-primary">LIVE</span>
+                </div>
+
+                <div className="space-y-4 py-5">
+                  <div className="flex items-start gap-3">
+                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#ed5d9d] text-white flex items-center justify-center text-[10px] font-bold">A</span>
+                    <div>
+                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">just now</span></p>
+                      <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#f4efff] px-3.5 py-2.5 text-sm text-foreground/80">Hot take: this season is already better than the last one.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 justify-end">
+                    <div className="text-right">
+                      <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
+                      <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
+                    </div>
+                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[10px] font-bold">YO</span>
+                  </div>
+                  <motion.div
+                    animate={{ opacity: [0.45, 1, 0.45] }}
+                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex items-center gap-2 text-xs text-foreground/45"
+                  >
+                    <span className="w-8 h-8 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[10px] font-bold">J</span>
+                    <span className="rounded-full bg-[#f3f1f6] px-3 py-2">Jordan is typing <span className="tracking-[0.18em]">•••</span></span>
+                  </motion.div>
+                </div>
+
+                <div className="flex items-center gap-3 rounded-full border border-[#e7e1ef] bg-[#fbfaff] px-4 py-3">
+                  <span className="text-primary text-lg leading-none">+</span>
+                  <span className="text-sm text-foreground/40">Drop your hot take...</span>
+                  <span className="ml-auto text-xs font-bold text-primary">Send ↑</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 10. BETA FEEDBACK */}
         <section className="py-10 md:py-12 bg-white" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -615,11 +1023,10 @@ export default function Home() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-heading font-normal text-white">
-                Consumed is in beta,<br />
-                <span className="italic text-[#d8ceff]">so we love your feedback.</span>
+                Help us make Consumed better.
               </h2>
               <p className="mt-4 text-white/75 leading-relaxed max-w-xl">
-                Tell us what you want more of, what’s not quite right, and how we can make it even better.
+                Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
               </p>
             </div>
             <Link
@@ -632,16 +1039,36 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* 8. APP STORE DOWNLOAD */}
-        <section className="py-4 md:py-5 px-6 bg-white" id="better-together">
-          <div className="flex justify-center">
-            <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000" alt="Download on the App Store" className="h-12" />
-            </a>
-          </div>
+        {/* 11. FINAL CTA */}
+        <section className="py-8 md:py-12 bg-white" id="better-together">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0b0425_0%,_#1c0d4a_48%,_#452184_100%)] px-7 py-16 md:px-14 md:py-24 text-center text-white"
+          >
+            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_18%_15%,_#4c2b98_0%,_transparent_28%),radial-gradient(circle_at_82%_85%,_#8762d7_0%,_transparent_28%)] pointer-events-none" />
+            <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+              <span className="w-14 h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-2xl mb-6">😊</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                What are you consuming?
+              </h2>
+              <p className="mt-5 text-xl md:text-2xl font-heading text-[#d8ceff]">
+                Track it. Talk about it. Find your people.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-9">
+                <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95">
+                  Download the app
+                </a>
+                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-white font-semibold transition-all hover:bg-white/20">
+                  Open web app <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
-        {/* 9. AS SEEN IN */}
+        {/* 12. AS SEEN IN */}
         <section className="hidden py-12 border-t border-b border-border/50 bg-white" id="about-us">
           <div className="container mx-auto px-6 max-w-7xl">
             <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
@@ -656,36 +1083,48 @@ export default function Home() {
         </section>
       </main>
 
-      {/* 7. FOOTER */}
-      <footer className="bg-white pt-8 pb-8" id="blog">
-        <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-7">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <Link href="/">
-              <img src={logoPurple} alt="Consumed" className="h-6 opacity-80 cursor-pointer" />
-            </Link>
-            <nav className="flex flex-wrap items-center justify-center md:justify-start gap-5 text-sm font-medium text-foreground/70">
+      {/* 12. FOOTER */}
+      <footer className="bg-white pt-12 md:pt-16 pb-8" id="footer">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-[1.35fr_0.75fr_0.75fr_0.75fr] gap-10 lg:gap-14">
+            <div>
+              <Link href="/">
+                <img src={logoPurple} alt="Consumed" className="h-7 opacity-85 cursor-pointer" />
+              </Link>
+              <p className="mt-4 max-w-xs font-heading text-xl text-foreground/75">
+                Entertainment is better, <span className="italic text-primary">shared.</span>
+              </p>
+            </div>
+
+            <nav className="flex flex-col items-start gap-3 text-sm text-foreground/65">
+              <p className="mb-1 text-xs font-bold tracking-[0.15em] uppercase text-foreground">Product</p>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" data-testid="link-web-app-footer">Open web app</a>
+              <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Download the app</a>
+              <button onClick={() => scrollToSection("rooms")} className="hover:text-primary transition-colors">Rooms</button>
+              <button onClick={() => scrollToSection("play")} className="hover:text-primary transition-colors">Play</button>
+            </nav>
+
+            <nav className="flex flex-col items-start gap-3 text-sm text-foreground/65">
+              <p className="mb-1 text-xs font-bold tracking-[0.15em] uppercase text-foreground">Company</p>
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
               <Link href="/insights" className="hover:text-primary transition-colors" data-testid="link-insights-footer">Insights</Link>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" data-testid="link-web-app-footer">Open web app</a>
+              <button onClick={() => scrollToSection("feedback")} className="hover:text-primary transition-colors">Feedback</button>
             </nav>
-            <p className="text-sm text-foreground/60 max-w-sm text-center md:text-left leading-relaxed">
-              Our Mission: Bringing joy and connection through entertainment.
-            </p>
-            <p className="text-sm text-foreground/40">
-              © 2026 Consumed. All rights reserved.
-            </p>
+
+            <nav className="flex flex-col items-start gap-3 text-sm text-foreground/65">
+              <p className="mb-1 text-xs font-bold tracking-[0.15em] uppercase text-foreground">Follow</p>
+              <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+              <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a>
+              <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">X</a>
+            </nav>
           </div>
-          
-          <div className="flex items-center gap-5">
-            <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
-              <Instagram className="w-4 h-4" />
-            </a>
-            <a href="https://x.com/consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
-              <XIcon className="w-4 h-4" />
-            </a>
-            <a href="https://www.tiktok.com/@consumedapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors">
-              <TikTok className="w-4 h-4" />
-            </a>
+
+          <div className="mt-12 pt-7 border-t border-border/70 flex flex-col md:flex-row md:items-end justify-between gap-5">
+            <div>
+              <p className="text-xs font-bold tracking-[0.15em] uppercase text-foreground mb-2">Our mission</p>
+              <p className="text-sm text-foreground/60">Bringing joy and connection through entertainment.</p>
+            </div>
+            <p className="text-sm text-foreground/40">© 2026 Consumed.</p>
           </div>
         </div>
       </footer>
