@@ -150,9 +150,9 @@ export default function Home() {
         </div>
       )}
 
-      <main className="flex flex-col">
+      <main>
         {/* 2. HERO */}
-        <section className="order-1 pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible z-10" id="features">
+        <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible z-10" id="features">
           <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
@@ -165,14 +165,9 @@ export default function Home() {
                 Entertainment is better, <span className="italic">together.</span>
               </h1>
 
-              <div className="mb-8 max-w-xl space-y-3 text-foreground/80 leading-relaxed font-sans">
-                <p className="text-base md:text-lg font-medium text-foreground">
-                  One place for everything you watch, read &amp; listen to — and everything that happens around it.
-                </p>
-                <p className="text-sm md:text-base">
-                  See what everyone&apos;s consuming, talk about what you&apos;re into, find your next obsession, and discover your Entertainment DNA.
-                </p>
-              </div>
+              <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
+                See what everyone's consuming, what's trending, discover new favorites, and discover your entertainment DNA.
+              </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
                 <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
@@ -205,7 +200,7 @@ export default function Home() {
                       <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
                     ))}
                   </div>
-                  <span className="text-sm font-semibold text-foreground/80">Join hundreds already consuming together</span>
+                  <span className="text-sm font-semibold text-foreground/80">Join hundreds of fans</span>
                 </div>
               </div>
             </motion.div>
@@ -233,7 +228,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="order-2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
             <motion.div
@@ -244,10 +239,9 @@ export default function Home() {
             >
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#d7ccff] mb-3">The feed</p>
               <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
-                Wait, did you watch<br />
-                <span className="italic text-[#d7ccff]">this yet?!</span>
+                Takes. Theories. Reactions. And everything in between.
                 <span className="block mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
-                  Because the second something gets us, we need to know what everyone else thinks.
+                  About what we’re all watching, reading, listening to, and loving.
                 </span>
               </h2>
               <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
@@ -327,67 +321,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. FEEL / CONNECTION INTERLUDE */}
-        <section className="order-4 py-8 md:py-12 bg-white" id="connection">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_52%,_#5b35ae_100%)] px-7 py-16 md:px-14 md:py-24 text-white">
-            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_15%_20%,_#6845be_0%,_transparent_30%),radial-gradient(circle_at_82%_80%,_#9a69eb_0%,_transparent_28%)] pointer-events-none" />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative z-10 max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Entertainment makes us <span className="italic text-[#d8ceff]">feel things.</span>
-              </h2>
-              <p className="mt-6 text-lg md:text-xl leading-relaxed text-white/75">
-                Comforted. Smarter. Seen. Nostalgic. Inspired.<br className="hidden md:block" /> Completely unwell over a fictional character.
-              </p>
-              <p className="mt-7 font-heading text-3xl md:text-4xl italic text-[#d8ceff]">
-                And it brings us together.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
         {/* 4. CATEGORIES */}
-        <section className="order-5 pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
+        <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-5xl mx-auto text-center pb-16 md:pb-20"
-            >
-              <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">The problem</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Your entertainment life is<br />
-                <span className="italic text-primary">EVERYWHERE.</span>
-              </h2>
-              <p className="mt-6 max-w-3xl mx-auto text-base md:text-lg leading-relaxed text-foreground/65">
-                Your books are on Libby, Audible, and Goodreads. Your shows are spread across streaming platforms, while your watchlist is buried in Notes. Music lives on Spotify, YouTube, and Apple Music. Your takes, theories, and recommendations disappear into texts and Reddit threads.
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-7">
-                {["Libby", "Audible", "Goodreads", "Streaming apps", "Letterboxd", "Notes", "Spotify", "Group chats", "Reddit"].map((place) => (
-                  <span key={place} className="rounded-full border border-[#e4dcef] bg-[#faf8fd] px-3.5 py-1.5 text-xs font-semibold text-foreground/55">{place}</span>
-                ))}
-              </div>
-              <p className="mt-7 font-heading text-2xl italic text-primary">Honestly? It&apos;s exhausting.</p>
-            </motion.div>
-
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">All in one place</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">Your media, your way</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                   Everything you’re into.<br />
                   <span className="italic text-primary">All in one place.</span>
                 </h2>
                 <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
-                  One home for everything you&apos;re watching, reading, and listening to — and everything you want to try next.
+                  Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 mt-8">
@@ -464,12 +413,15 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Okay, but what does all of that say about you?</p>
+                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] text-white">
-                    Meet your Entertainment DNA.
+                    There&apos;s a pattern to what you love.
                   </h2>
-                  <p className="max-w-3xl mx-auto mt-5 text-base md:text-lg leading-relaxed text-white/70">
-                    Think Spotify Wrapped meets a personality profile — across everything you watch, read &amp; listen to.
+                  <p className="mt-4 text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl font-heading">
+                    Discover your entertainment identity.
+                  </p>
+                  <p className="max-w-3xl mx-auto mt-5 text-sm md:text-base leading-relaxed text-white/70">
+                    The more you track, rate, and interact, the more your Entertainment DNA evolves — revealing the patterns behind what you love.
                   </p>
                 </motion.div>
 
@@ -596,9 +548,9 @@ export default function Home() {
                       transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
                       className="block text-[9px] font-bold tracking-[0.16em] text-[#d8ceff]"
                     >
-                      YOUR ENTERTAINMENT DNA
+                      DNA EVOLVING
                     </motion.span>
-                    <span className="block mt-1 font-heading text-base md:text-lg text-white">The Prestige Detective</span>
+                    <span className="block mt-1 font-heading text-base md:text-lg text-white">Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.</span>
                   </motion.div>
                 </div>
 
@@ -642,7 +594,7 @@ export default function Home() {
         </section>
 
         {/* 5. TASTE MATCH */}
-        <section className="order-8 pt-20 md:pt-28 pb-2 md:pb-4 px-6 bg-white" id="taste-match">
+        <section className="pt-20 md:pt-28 pb-2 md:pb-4 px-6 bg-white" id="taste-match">
           <div className="container mx-auto max-w-7xl grid lg:grid-cols-[1fr_0.85fr] items-center gap-12 lg:gap-14">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
@@ -651,11 +603,11 @@ export default function Home() {
             >
               <p className="text-xs font-bold tracking-[0.18em] text-primary uppercase mb-4">Taste Match</p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Wait... YOU like<br />
-                <span className="italic text-primary">that too?!</span>
+                Find the people<br />
+                <span className="italic text-primary">who get it.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-foreground/70">
-                See who gets your taste—and how much of it you actually have in common.
+                See how your entertainment taste overlaps, find people whose recommendations you trust, and discover what you have in common.
               </p>
               <a
                 href="https://app.consumedapp.com"
@@ -664,7 +616,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 mt-8 rounded-full bg-primary px-6 py-3.5 text-white font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
                 data-testid="link-find-your-people"
               >
-                Find the people who get it <ArrowRight className="w-4 h-4" />
+                Find your people <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
 
@@ -717,7 +669,7 @@ export default function Home() {
         </section>
 
         {/* 6. ROOMS */}
-        <section className="order-9 py-8 md:py-12 bg-white" id="rooms">
+        <section className="py-8 md:py-12 bg-white" id="rooms">
           <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_90%_20%,_#8c65e6_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#6335b7_0%,_transparent_30%)] pointer-events-none" />
             <div className="relative z-10 grid lg:grid-cols-[0.78fr_1.22fr] items-center gap-10 lg:gap-16">
@@ -732,7 +684,7 @@ export default function Home() {
                   <span className="italic text-[#d8ceff]">for that.</span>
                 </h2>
                 <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-xl">
-                  Reality TV. True Crime. Horror. Fantasy. Rom-Coms. Whatever you&apos;re into, your people are probably already talking about it.
+                  From the genres you love to the shows you can&apos;t stop thinking about, Rooms give you a place to find the conversations you&apos;re actually interested in.
                 </p>
                 <p className="mt-6 font-heading text-2xl italic text-[#d8ceff]">Go where your people are.</p>
                 <a
@@ -779,7 +731,7 @@ export default function Home() {
         </section>
 
         {/* 7. PLAY */}
-        <section className="order-10 py-8 md:py-12 bg-white" id="play">
+        <section className="py-8 md:py-12 bg-white" id="play">
           <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#15103c_0%,_#292073_48%,_#6b32c9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
             <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#168dff]/30 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#ef4ba5]/20 blur-3xl pointer-events-none" />
@@ -796,7 +748,7 @@ export default function Home() {
                   <span className="italic text-[#b8ddff]">Play along.</span>
                 </h2>
                 <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
-                  Predict it. Rank it. Debate it. Test yourself.
+                  Trivia, predictions, rankings and more ways to make entertainment a little more fun.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 mt-7">
                   {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
@@ -880,7 +832,7 @@ export default function Home() {
         </section>
 
         {/* 8. DISCOVERY */}
-        <section className="order-7 py-8 md:py-12 bg-white" id="discovery">
+        <section className="py-8 md:py-12 bg-white" id="discovery">
           <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
@@ -895,11 +847,11 @@ export default function Home() {
                   <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em]">DISCOVER</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  So... what should I<br />
-                  <span className="italic text-[#d8ceff]">get into next?</span>
+                  Your next obsession<br />
+                  <span className="italic text-[#d8ceff]">is already here.</span>
                 </h2>
                 <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
-                  Find what to watch, read, or listen to next through your taste, your people, what&apos;s trending, and your Entertainment DNA.
+                  Discover what to watch, read, or listen to next through your taste, your Entertainment DNA, the people you trust, and what&apos;s happening across Consumed.
                 </p>
                 <a
                   href="https://app.consumedapp.com"
@@ -931,10 +883,10 @@ export default function Home() {
               <div className="flex gap-3 overflow-x-auto pb-3 -mx-7 px-7 md:mx-0 md:px-0 scrollbar-none">
                 {[
                   { reason: "Because you loved…", title: "Severance", accent: "bg-[#9462ea]" },
-                  { reason: "Your people are loving…", title: "The Bear", accent: "bg-[#eb5b9c]" },
-                  { reason: "Trending in True Crime…", title: "The Staircase", accent: "bg-[#df7c34]" },
+                  { reason: "People you follow are loving…", title: "The Bear", accent: "bg-[#eb5b9c]" },
+                  { reason: "Trending in Horror…", title: "The Substance", accent: "bg-[#df7c34]" },
                   { reason: "Popular with Prestige Detectives…", title: "The Day of the Jackal", accent: "bg-[#497ad7]" },
-                  { reason: "Because of your Entertainment DNA…", title: "Sharp Objects", accent: "bg-[#47a685]" },
+                  { reason: "Because of your DNA…", title: "Sharp Objects", accent: "bg-[#47a685]" },
                 ].map((item, i) => (
                   <motion.article
                     key={item.reason}
@@ -956,7 +908,7 @@ export default function Home() {
         </section>
 
         {/* 9. ENTERTAINMENT CHATTER */}
-        <section className="order-3 py-14 md:py-20 px-6 bg-white overflow-hidden" id="chatter">
+        <section className="py-24 md:py-32 px-6 bg-white overflow-hidden" id="chatter">
           <div className="container mx-auto max-w-6xl relative min-h-[500px] md:min-h-[560px] flex items-center justify-center">
             {[
               { text: "obsessed", className: "top-2 left-0 md:left-8", color: "bg-[#f4eaff] text-[#7232ba]" },
@@ -984,7 +936,13 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative z-10 max-w-2xl text-center"
             >
-              <div className="rounded-[2rem] border border-[#e8e4f0] bg-white p-5 md:p-6 text-left shadow-[0_20px_55px_rgba(51,31,94,0.12)]">
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">The conversation never ends</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
+                Okay, but what are you<br />
+                <span className="italic text-primary">watching right now?</span>
+              </h2>
+
+              <div className="mt-9 rounded-[2rem] border border-[#e8e4f0] bg-white p-5 md:p-6 text-left shadow-[0_20px_55px_rgba(51,31,94,0.12)]">
                 <div className="flex items-center justify-between pb-4 border-b border-[#eeeaf4]">
                   <div className="flex items-center gap-3">
                     <div className="flex -space-x-2">
@@ -1000,58 +958,25 @@ export default function Home() {
                   <span className="rounded-full bg-[#f0ebff] px-3 py-1.5 text-[10px] font-bold text-primary">LIVE</span>
                 </div>
 
-                <div className="space-y-3 py-5">
+                <div className="space-y-4 py-5">
                   <div className="flex items-start gap-3">
                     <span className="w-8 h-8 shrink-0 rounded-full bg-[#ed5d9d] text-white flex items-center justify-center text-[10px] font-bold">A</span>
                     <div>
-                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">2m ago</span></p>
+                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">just now</span></p>
                       <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#f4efff] px-3.5 py-2.5 text-sm text-foreground/80">Hot take: this season is already better than the last one.</p>
-                      <div className="flex items-center gap-2 mt-2 text-[11px] font-semibold text-foreground/45">
-                        <motion.span
-                          animate={{ scale: [1, 1.16, 1] }}
-                          transition={{ duration: 1.7, repeat: Infinity, ease: "easeInOut" }}
-                          className="rounded-full border border-[#ebd8eb] bg-white px-2 py-1 text-[#dc4e9e]"
-                        >
-                          ♥ 12
-                        </motion.span>
-                        <span>Reply</span>
-                        <span>4 replies</span>
-                      </div>
                     </div>
                   </div>
-
-                  <div className="ml-11 border-l-2 border-[#eee8f6] pl-3 space-y-3">
-                    <div className="flex items-start gap-2.5">
-                      <span className="w-7 h-7 shrink-0 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[9px] font-bold">J</span>
-                      <div>
-                        <p className="text-xs font-bold">Jordan <span className="font-normal text-foreground/40">1m ago</span></p>
-                        <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#eef8ff] px-3 py-2 text-sm text-foreground/80">YES. And episode four? I need everyone&apos;s theories.</p>
-                        <div className="flex items-center gap-2 mt-1.5 text-[10px] font-semibold text-foreground/40">
-                          <span>🔥 6</span><span>Reply</span>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3 justify-end">
+                    <div className="text-right">
+                      <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
+                      <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
                     </div>
-
-                    <div className="flex items-start gap-2.5 justify-end">
-                      <div className="text-right">
-                        <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
-                        <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
-                        <motion.div
-                          animate={{ opacity: [0.5, 1, 0.5] }}
-                          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                          className="mt-1.5 text-[10px] font-semibold text-[#6d47c6]"
-                        >
-                          Avery and 3 others liked this
-                        </motion.div>
-                      </div>
-                      <span className="w-7 h-7 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[9px] font-bold">YO</span>
-                    </div>
+                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[10px] font-bold">YO</span>
                   </div>
-
                   <motion.div
                     animate={{ opacity: [0.45, 1, 0.45] }}
                     transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex items-center gap-2 ml-11 text-xs text-foreground/45"
+                    className="flex items-center gap-2 text-xs text-foreground/45"
                   >
                     <span className="w-8 h-8 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[10px] font-bold">J</span>
                     <span className="rounded-full bg-[#f3f1f6] px-3 py-2">Jordan is typing <span className="tracking-[0.18em]">•••</span></span>
@@ -1069,7 +994,7 @@ export default function Home() {
         </section>
 
         {/* 10. BETA FEEDBACK */}
-        <section className="order-11 py-10 md:py-12 bg-white" id="feedback">
+        <section className="py-10 md:py-12 bg-white" id="feedback">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1081,26 +1006,24 @@ export default function Home() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-heading font-normal text-white">
-                Okay, now tell us what YOU want.
+                Help us make Consumed better.
               </h2>
               <p className="mt-4 text-white/75 leading-relaxed max-w-xl">
-                Yep, we&apos;re in beta. We&apos;re learning what you love, what you don&apos;t, and what would make Consumed the place you actually want to hang out. Join hundreds of others helping us build the entertainment world we&apos;ve all been missing.
+                Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
               </p>
             </div>
-            <a
-              href="https://app.consumedapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/feedback"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold whitespace-nowrap transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
               data-testid="link-beta-feedback"
             >
-              Try Consumed <ArrowRight className="w-4 h-4" />
-            </a>
+              Share feedback <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         </section>
 
         {/* 11. FINAL CTA */}
-        <section className="order-12 py-8 md:py-12 bg-white" id="better-together">
+        <section className="py-8 md:py-12 bg-white" id="better-together">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1109,18 +1032,21 @@ export default function Home() {
           >
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_18%_15%,_#4c2b98_0%,_transparent_28%),radial-gradient(circle_at_82%_85%,_#8762d7_0%,_transparent_28%)] pointer-events-none" />
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+              <span className="w-14 h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-2xl mb-6">😊</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                So... what are you consuming?
+                What are you consuming?
               </h2>
               <p className="mt-5 text-xl md:text-2xl font-heading text-[#d8ceff]">
-                Tell us what you&apos;re watching, what you thought, and whether we need to watch it too.
+                Track it. Talk about it. Find your people.
               </p>
-              <div className="flex items-center justify-center mt-9">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-9">
                 <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95">
-                  Download Consumed
+                  Download the app
+                </a>
+                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-white font-semibold transition-all hover:bg-white/20">
+                  Open web app <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <p className="mt-9 font-heading text-2xl md:text-3xl italic text-[#d8ceff]">Entertainment is better, together.</p>
             </div>
           </motion.div>
         </section>
@@ -1149,7 +1075,7 @@ export default function Home() {
                 <img src={logoPurple} alt="Consumed" className="h-7 opacity-85 cursor-pointer" />
               </Link>
               <p className="mt-4 max-w-xs font-heading text-xl text-foreground/75">
-                Entertainment is better, <span className="italic text-primary">together.</span>
+                Entertainment is better, <span className="italic text-primary">shared.</span>
               </p>
             </div>
 
