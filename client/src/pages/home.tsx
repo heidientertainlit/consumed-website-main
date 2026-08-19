@@ -328,7 +328,7 @@ export default function Home() {
         </section>
 
         {/* 4. CATEGORIES */}
-        <section className="pt-14 md:pt-20 pb-20 md:pb-28 px-6 bg-white" id="categories">
+        <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
               {[
