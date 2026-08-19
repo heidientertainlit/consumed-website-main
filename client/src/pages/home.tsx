@@ -388,7 +388,7 @@ export default function Home() {
                         <img src={neonSmiley} alt="" aria-hidden="true" className="w-14 h-14" />
                       </div>
                     </div>
-                    <p className="mt-7 text-xs italic text-white/45">with shades of</p>
+                    <p className={`${i < 2 ? "mt-5" : "mt-7"} text-xs italic text-white/45`}>with shades of</p>
                     <p className="mt-1 text-sm font-semibold text-white/85">{identity.shades}</p>
                     <div className="border-t border-white/10 mt-auto pt-6 grid grid-cols-3 text-center">
                       <div><p className="text-lg font-bold" style={{ color: identity.accent }}>🔥 {identity.streak}</p><p className="text-[10px] text-white/45 mt-1">play streak</p></div>
@@ -398,6 +398,9 @@ export default function Home() {
                   </motion.article>
                 ))}
                 </div>
+                <p className="max-w-3xl mx-auto mt-5 text-center text-sm md:text-base leading-relaxed text-white/70">
+                  The more you track, rate, and interact, the more your Entertainment DNA evolves — revealing the patterns behind what you love.
+                </p>
               </div>
             </div>
           </div>
