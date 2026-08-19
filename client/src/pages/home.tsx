@@ -376,7 +376,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.12 }}
-                    className="w-[290px] md:w-[31.5%] min-w-[290px] shrink-0 rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(0,0,0,0.25)]"
+                    className="w-[290px] md:w-[31.5%] min-w-[290px] shrink-0 rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(0,0,0,0.25)] flex flex-col"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <p className="text-[10px] font-bold tracking-[0.16em] text-[#cfc3ff]">YOUR ENTERTAINMENT DNA ✧</p>
@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                     <p className="mt-7 text-xs italic text-white/45">with shades of</p>
                     <p className="mt-1 text-sm font-semibold text-white/85">{identity.shades}</p>
-                    <div className="border-t border-white/10 mt-6 pt-4 grid grid-cols-3 text-center">
+                    <div className="border-t border-white/10 mt-auto pt-6 grid grid-cols-3 text-center">
                       <div><p className="text-lg font-bold" style={{ color: identity.accent }}>🔥 {identity.streak}</p><p className="text-[10px] text-white/45 mt-1">play streak</p></div>
                       <div className="border-x border-white/10"><p className="text-lg font-bold text-white">🏆 {identity.rank}</p><p className="text-[10px] text-white/45 mt-1">leaderboard</p></div>
                       <div><p className="text-lg font-bold text-white">{identity.tracked}</p><p className="text-[10px] text-white/45 mt-1">tracked</p></div>
