@@ -410,8 +410,7 @@ export default function Home() {
                 >
                   <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] text-white">
-                    What you consume says everything.<br />
-                    <span className="text-[#d8ceff]">There&apos;s a pattern to what you love.</span>
+                    There&apos;s a pattern to what you love.
                   </h2>
                   <p className="mt-4 text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl font-heading">
                     Discover your entertainment identity.
