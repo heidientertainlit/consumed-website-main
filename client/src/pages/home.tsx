@@ -1021,7 +1021,7 @@ export default function Home() {
                 <img src={logoPurple} alt="Consumed" className="h-7 opacity-85 cursor-pointer" />
               </Link>
               <p className="mt-4 max-w-xs font-heading text-xl text-foreground/75">
-                Entertainment is better, <span className="italic text-primary">shared.</span>
+                Entertainment is better, <span className="italic text-primary">together.</span>
               </p>
             </div>
 
