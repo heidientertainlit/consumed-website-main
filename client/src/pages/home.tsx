@@ -952,46 +952,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 10. BETA FEEDBACK */}
-        <section className="py-10 md:py-12 bg-white" id="feedback">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto rounded-[2.5rem] bg-[linear-gradient(135deg,_#0d0629_0%,_#1e0d52_55%,_#382077_100%)] px-7 py-10 md:px-14 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-14"
-          >
-            <div className="w-14 h-14 rounded-full bg-white/10 border border-white/25 shadow-sm flex items-center justify-center text-white shrink-0">
-              <span className="text-[11px] font-extrabold tracking-widest">BETA</span>
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-heading font-normal text-white">
-                Help us make Consumed better.
-              </h2>
-              <p className="mt-4 text-white/75 leading-relaxed max-w-xl">
-                Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
-              </p>
-            </div>
-            <Link
-              href="/feedback"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold whitespace-nowrap transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
-              data-testid="link-beta-feedback"
-            >
-              Share feedback <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-        </section>
-
-        {/* 11. FINAL CTA */}
+        {/* 10. FINAL CTA */}
         <section className="py-8 md:py-12 bg-white" id="better-together">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0b0425_0%,_#1c0d4a_48%,_#452184_100%)] px-7 py-16 md:px-14 md:py-24 text-center text-white"
+            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0b0425_0%,_#1c0d4a_48%,_#452184_100%)] px-7 py-16 md:px-14 md:py-20 text-center text-white"
           >
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_18%_15%,_#4c2b98_0%,_transparent_28%),radial-gradient(circle_at_82%_85%,_#8762d7_0%,_transparent_28%)] pointer-events-none" />
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-              <span className="w-14 h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-2xl mb-6">😊</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                 What are you consuming?
               </h2>
@@ -1007,10 +977,27 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            <div id="feedback" className="relative z-10 max-w-5xl mx-auto mt-14 md:mt-16 pt-8 md:pt-10 border-t border-white/15 grid md:grid-cols-[1fr_auto] items-center gap-7 text-center md:text-left">
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-3">Build it with us</p>
+                <h3 className="text-2xl md:text-3xl font-heading font-normal text-white">Help us make Consumed better.</h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-white/65">
+                  Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
+                </p>
+              </div>
+              <Link
+                href="/feedback"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-white font-semibold whitespace-nowrap transition-all hover:bg-white/20"
+                data-testid="link-beta-feedback"
+              >
+                Share feedback <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
         </section>
 
-        {/* 12. AS SEEN IN */}
+        {/* 11. AS SEEN IN */}
         <section className="hidden py-12 border-t border-b border-border/50 bg-white" id="about-us">
           <div className="container mx-auto px-6 max-w-7xl">
             <p className="text-center text-xs font-bold tracking-widest text-foreground/40 uppercase mb-8">As Seen In</p>
