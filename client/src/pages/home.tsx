@@ -143,10 +143,10 @@ function LiveConversationsCarousel() {
 }
 
 const heroFeedItems = [
-  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "ABSOLUTELY MUST READ. Such a beautiful romantic series...", badge: "45% match", image: maybeSomedayReview },
-  { person: "Ashley H.", time: "5h ago", title: "The Day of the Jackal", detail: "You rated this 3/5 ★", take: "Overall it was a good watch. I’m interested to see where season two goes.", badge: "You loved this", image: dayOfJackalReview },
-  { person: "Marcus T.", time: "32m ago", title: "The Last of Us Part II", detail: "Currently playing · PS5", take: "Six hours later, I’m still trying to beat the same boss.", badge: "In progress", image: showTlou },
-  { person: "Evan C.", time: "1h ago", title: "The Ringer NBA Show", detail: "Podcast · New episode", take: "The debate about this season is already getting out of hand.", badge: "New episode", image: posterPodcast },
+  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "The soundtrack alone sold me. I’m only a few chapters in and already completely invested.", badge: "45% match", image: maybeSomedayReview },
+  { person: "Ashley H.", time: "5h ago", title: "The Day of the Jackal", detail: "You rated this 3/5 ★", take: "That rooftop scene had me pacing. I need to talk about the ending with someone.", badge: "You loved this", image: dayOfJackalReview },
+  { person: "Marcus T.", time: "32m ago", title: "The Last of Us Part II", detail: "Currently playing · PS5", take: "I went back for every collectible, then got caught reliving that ending all over again.", badge: "In progress", image: showTlou },
+  { person: "Evan C.", time: "1h ago", title: "The Toast", detail: "Podcast · New episode", take: "The pop-culture takes from this episode were exactly what I needed for my commute.", badge: "New episode", image: posterPodcast },
 ];
 
 function HeroFeedCarousel() {
@@ -330,7 +330,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-0 translate-y-1 md:translate-y-2">
+              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-0">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
@@ -355,10 +355,10 @@ export default function Home() {
                   href="https://app.consumedapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 text-foreground font-semibold px-4 py-3.5 hover:text-primary transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground/55 hover:text-primary transition-colors"
                   data-testid="link-hero-web-app"
                 >
-                  Open web app <ArrowRight className="w-4 h-4" />
+                  Open web app <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
               <div className="mt-9 w-full self-center">
