@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Star, Share2 } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Star, Share2, TrendingUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
@@ -18,6 +18,9 @@ import dayOfJackalReview from "../assets/images/day-of-jackal-review.webp";
 import showTlou from "../assets/images/show-tlou.png";
 import posterPodcast from "../assets/images/poster-podcast.jpg";
 import coverChef from "../assets/images/cover-chef.png";
+import posterMovie from "../assets/images/poster-movie.jpg";
+import posterBook from "../assets/images/poster-book.jpg";
+import showDune from "../assets/images/show-dune.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -61,6 +64,81 @@ const AppStoreButton = ({ className = "" }: { className?: string }) => (
     </span>
   </a>
 );
+
+const liveConversationItems = [
+  { title: "The Daily", prompt: "Listeners have strong opinions on this one", type: "Podcast", Icon: Headphones, poster: posterPodcast },
+  { title: "Toy Story 5", prompt: "Is the ending brilliant or a cop-out?", type: "Movie", Icon: Clapperboard, poster: posterMovie },
+  { title: "Spark", prompt: "Readers can’t agree on this one", type: "Book", Icon: BookOpen, poster: posterBook },
+  { title: "Dune: Prophecy", prompt: "The theories are already getting wild", type: "TV", Icon: Tv, poster: showDune },
+  { title: "The Last of Us Part II", prompt: "Players are still debating that ending", type: "Game", Icon: Gamepad2, poster: showTlou },
+  { title: "Hot Ones", prompt: "This episode is all over everyone’s feed", type: "YouTube", Icon: Youtube, poster: coverChef },
+];
+
+function LiveConversationsCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const visibleItems = [
+    liveConversationItems[activeIndex],
+    liveConversationItems[(activeIndex + 1) % liveConversationItems.length],
+  ];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % liveConversationItems.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <motion.aside
+      initial={{ opacity: 0, x: 24 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+      className="w-full max-w-md mx-auto lg:mx-0"
+      aria-label="Live entertainment conversations"
+    >
+      <p className="mb-3 text-center lg:text-left text-[10px] font-bold tracking-[0.18em] uppercase text-primary">Live conversations</p>
+      <div className="rounded-[2rem] border border-[#301669]/15 bg-[linear-gradient(145deg,_#11062e_0%,_#211044_58%,_#41257a_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(40,17,93,0.2)]">
+        <motion.div
+          key={activeIndex}
+          initial={{ opacity: 0, x: 18 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="space-y-3"
+        >
+          {visibleItems.map((item) => (
+            <article key={item.title} className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] p-3 shadow-[0_10px_24px_rgba(7,2,25,0.15)]">
+              <img src={item.poster} alt="" className="h-12 w-12 shrink-0 rounded-xl object-cover" />
+              <div className="min-w-0 flex-1">
+                <h3 className="truncate text-sm md:text-base font-bold text-white">{item.title}</h3>
+                <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-white/55">
+                  <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#b790ff]" strokeWidth={1.8} />
+                  <span className="truncate">{item.prompt}</span>
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#160a36]/35 px-2.5 py-1 text-[10px] font-semibold text-white/75">
+                <item.Icon className="h-3.5 w-3.5 text-[#bf9cff]" strokeWidth={1.8} />
+                {item.type}
+              </span>
+            </article>
+          ))}
+        </motion.div>
+
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <div className="flex items-center gap-1.5" aria-label={`Conversation ${activeIndex + 1} of ${liveConversationItems.length}`}>
+            {liveConversationItems.map((item, index) => (
+              <span
+                key={item.title}
+                className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-[#ae82ff]" : "h-1.5 w-1.5 rounded-full bg-white/30"}
+              />
+            ))}
+          </div>
+          <span className="text-xs font-semibold text-[#bd9aff]">439 more conversations</span>
+        </div>
+      </div>
+    </motion.aside>
+  );
+}
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -155,13 +233,13 @@ export default function Home() {
       <main>
         {/* 2. HERO */}
         <section className="pt-24 md:pt-28 pb-20 md:pb-24 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 relative -translate-y-3 md:-translate-y-4">
+          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-5xl mx-auto flex flex-col items-center text-center z-10"
+              className="max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-7 md:mb-8">
                 Where entertainment comes together,<br />
@@ -191,6 +269,7 @@ export default function Home() {
               </div>
 
             </motion.div>
+            <LiveConversationsCarousel />
           </div>
         </section>
 
