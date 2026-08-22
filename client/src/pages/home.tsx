@@ -177,7 +177,7 @@ function HeroFeedCarousel() {
       initial={{ opacity: 0, x: 24 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className="w-full max-w-[560px] mx-auto"
+      className="w-full max-w-[560px] mx-auto xl:translate-y-5"
       aria-label="What people are talking about"
     >
       <div className="relative h-[285px] md:h-[320px]">
@@ -939,28 +939,28 @@ export default function Home() {
 
         {/* 6. ROOMS */}
         <section className="py-8 md:py-12 bg-white" id="rooms">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
-            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_90%_20%,_#8c65e6_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#6335b7_0%,_transparent_30%)] pointer-events-none" />
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] border border-[#ece7f3] bg-white px-7 py-12 md:px-14 md:py-16 text-[#201636] shadow-[0_18px_45px_rgba(57,37,88,0.06)]">
+            <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_90%_20%,_#f1e8ff_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#f9edff_0%,_transparent_30%)] pointer-events-none" />
             <div className="relative z-10 grid lg:grid-cols-[0.78fr_1.22fr] items-center gap-10 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Rooms</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Rooms</p>
                 <h2 className="text-4xl md:text-5xl font-heading font-normal leading-[1.05]">
                   There&apos;s a Room<br />
-                  <span className="italic text-[#d8ceff]">for that.</span>
+                  <span className="italic text-primary">for that.</span>
                 </h2>
-                <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-xl">
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/65 max-w-xl">
                   From the genres you love to the shows you can&apos;t stop thinking about, Rooms give you a place to find the conversations you&apos;re actually interested in.
                 </p>
-                <p className="mt-6 font-heading text-2xl italic text-[#d8ceff]">Go where your people are.</p>
+                <p className="mt-6 font-heading text-2xl italic text-primary">Go where your people are.</p>
                 <a
                   href="https://app.consumedapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-7 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 mt-7 rounded-full bg-[#3a2496] px-6 py-3.5 text-white font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
                   data-testid="link-explore-rooms"
                 >
                   Explore Rooms <ArrowRight className="w-4 h-4" />
@@ -985,13 +985,13 @@ export default function Home() {
                 ].map((room, i) => (
                   <div
                     key={room}
-                    className={`min-h-[92px] rounded-2xl border border-white/15 p-4 flex flex-col justify-between transition-transform hover:-translate-y-1 ${
-                      i === 0 ? "bg-[#a653d7]/50 sm:col-span-2" : "bg-white/10"
+                      className={`min-h-[92px] rounded-2xl border border-[#e8e1f1] p-4 flex flex-col justify-between shadow-[0_10px_24px_rgba(67,44,103,0.05)] transition-transform hover:-translate-y-1 ${
+                        i === 0 ? "bg-[#f0e7ff] sm:col-span-2" : "bg-white/80"
                     }`}
                   >
-                    <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/55">Room</span>
+                      <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-primary/55">Room</span>
                     <span className="text-base md:text-lg font-heading font-semibold leading-tight">{room}</span>
-                    <span className="text-[10px] font-bold tracking-wider text-[#d8ceff]">JOIN THE TALK →</span>
+                      <span className="text-[10px] font-bold tracking-wider text-primary/75">JOIN THE TALK →</span>
                   </div>
                 ))}
               </motion.div>
