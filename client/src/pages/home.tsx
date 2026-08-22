@@ -173,7 +173,7 @@ export default function Home() {
                 See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
                 <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
                 <a
                   href="https://app.consumedapp.com"
@@ -184,28 +184,6 @@ export default function Home() {
                 >
                   Open web app <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
-
-              <div className="flex items-center gap-2 text-foreground/50" data-testid="hero-social-proof">
-                <div className="flex -space-x-1.5" aria-hidden="true">
-                  {["EB", "PD", "SS", "CR"].map((initials, i) => (
-                    <div
-                      key={initials}
-                      className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-white flex items-center justify-center text-[7px] md:text-[8px] font-bold text-white shadow-sm"
-                      style={{ background: ["#9b8db8", "#776a96", "#b3a5c4", "#655a80"][i] }}
-                    >
-                      {initials}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="flex text-[#9a8bbd]" aria-hidden="true">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} className="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
-                    ))}
-                  </div>
-                  <span className="text-[10px] md:text-[11px] font-medium whitespace-nowrap">Join hundreds of fans</span>
-                </div>
               </div>
 
             </motion.div>
@@ -248,6 +226,27 @@ export default function Home() {
               <p className="mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
                 Takes. Theories. Reactions. And everything in between.
               </p>
+              <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2" data-testid="feed-social-proof">
+                <div className="flex -space-x-2" aria-hidden="true">
+                  {["EB", "PD", "SS", "CR"].map((initials, i) => (
+                    <div
+                      key={initials}
+                      className="w-9 h-9 rounded-full border-2 border-[#251151] flex items-center justify-center text-[11px] font-bold text-white shadow-md"
+                      style={{ background: ["#a58fe7", "#7657c8", "#c0a7f0", "#59408f"][i] }}
+                    >
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex text-[#d5c4ff]" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
+                    ))}
+                  </div>
+                  <span className="text-sm font-semibold text-white/85 whitespace-nowrap">Join hundreds of fans</span>
+                </div>
+              </div>
               <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
                 Explore the feed <ArrowRight className="w-4 h-4" />
               </a>
