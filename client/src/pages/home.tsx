@@ -328,19 +328,17 @@ export default function Home() {
         {/* 4. CATEGORIES */}
         <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16">
+            <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  Entertainment is better,<br />
-                  <span className="italic text-primary">together.</span>
+                <h2 className="text-4xl md:text-5xl lg:text-[2.4rem] xl:whitespace-nowrap font-heading font-normal leading-[1.05]">
+                  Entertainment is better, <span className="italic text-primary">together.</span>
                 </h2>
-                <p className="mt-5 font-heading text-xl md:text-2xl leading-snug text-foreground/70">
-                  Everything you’re into.<br />
-                  All in one place.
+                <p className="mt-5 font-heading text-xl md:text-2xl lg:text-[1.35rem] xl:whitespace-nowrap leading-snug text-foreground/70">
+                  Everything you’re into. All in one place.
                 </p>
                 <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
                   Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
