@@ -227,34 +227,14 @@ export default function Home() {
               <p className="mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
                 Takes. Theories. Reactions. And everything in between.
               </p>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 rounded-full bg-white text-[#251151] text-sm font-bold shadow-sm hover:bg-[#e5d9ff] hover:-translate-y-0.5 transition-all">
-                Explore the feed <ArrowRight className="w-4 h-4" />
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center mt-5 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-sm font-bold shadow-[0_8px_20px_rgba(72,78,210,0.34)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
+                Explore the feed
               </a>
-              <div className="mt-4 flex items-center gap-2.5 text-white/80" data-testid="feed-social-proof">
-                <div className="flex -space-x-1.5 shrink-0" aria-hidden="true">
-                  {["EB", "PD", "SS", "CR"].map((initials, i) => (
-                    <div
-                      key={initials}
-                      className="w-7 h-7 rounded-full border border-[#251151] flex items-center justify-center text-[9px] font-bold text-white shadow-sm"
-                      style={{ background: ["#a58fe7", "#7657c8", "#c0a7f0", "#59408f"][i] }}
-                    >
-                      {initials}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-xs font-semibold whitespace-nowrap">Join the conversation</span>
-                  <div className="flex text-[#d5c4ff]" aria-label="Five-star rating">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
-            <div className="flex flex-1 gap-4 md:gap-5 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
-              {[
+            <div className="flex-1 min-w-0">
+              <div className="flex gap-4 md:gap-5 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
+                {[
                 {
                   person: "Rachelle S.",
                   time: "2h ago",
@@ -277,8 +257,8 @@ export default function Home() {
                   likes: "112",
                   image: dayOfJackalReview,
                 },
-              ].map((post, i) => (
-                <motion.article
+                ].map((post, i) => (
+                  <motion.article
                   key={post.person}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -319,8 +299,30 @@ export default function Home() {
                     <button type="button" aria-label="Favorite this take" className="text-[#f4bd1f]"><Star className="w-4 h-4 fill-current" strokeWidth={1.7} /></button>
                     <button type="button" className="inline-flex items-center gap-1 font-medium hover:text-[#643ec5] transition-colors">Share <Share2 className="w-3.5 h-3.5" strokeWidth={1.7} /></button>
                   </div>
-                </motion.article>
-              ))}
+                  </motion.article>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center justify-center gap-2.5 text-white/80" data-testid="feed-social-proof">
+                <div className="flex -space-x-1.5 shrink-0" aria-hidden="true">
+                  {["EB", "PD", "SS", "CR"].map((initials, i) => (
+                    <div
+                      key={initials}
+                      className="w-7 h-7 rounded-full border border-[#251151] flex items-center justify-center text-[9px] font-bold text-white shadow-sm"
+                      style={{ background: ["#a58fe7", "#7657c8", "#c0a7f0", "#59408f"][i] }}
+                    >
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-xs font-semibold whitespace-nowrap">Join the conversation</span>
+                  <div className="flex text-[#d5c4ff]" aria-label="Five-star rating">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
