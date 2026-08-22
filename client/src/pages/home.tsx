@@ -142,6 +142,86 @@ function LiveConversationsCarousel() {
   );
 }
 
+const heroFeedItems = [
+  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "ABSOLUTELY MUST READ. Such a beautiful romantic series...", badge: "45% match", image: maybeSomedayReview },
+  { person: "Ashley H.", time: "5h ago", title: "The Day of the Jackal", detail: "You rated this 3/5 ★", take: "Overall it was a good watch. I’m interested to see where season two goes.", badge: "You loved this", image: dayOfJackalReview },
+  { person: "Marcus T.", time: "32m ago", title: "The Last of Us Part II", detail: "Currently playing · PS5", take: "Six hours later, I’m still trying to beat the same boss.", badge: "In progress", image: showTlou },
+  { person: "Evan C.", time: "1h ago", title: "The Ringer NBA Show", detail: "Podcast · New episode", take: "The debate about this season is already getting out of hand.", badge: "New episode", image: posterPodcast },
+];
+
+function HeroFeedCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const visibleItems = [
+    heroFeedItems[activeIndex],
+    heroFeedItems[(activeIndex + 1) % heroFeedItems.length],
+  ];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % heroFeedItems.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <motion.aside
+      initial={{ opacity: 0, x: 24 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+      className="w-full max-w-[560px] mx-auto"
+      aria-label="What people are talking about"
+    >
+      <div className="rounded-[2rem] bg-[linear-gradient(135deg,_#12072f_0%,_#241155_55%,_#4a2c91_100%)] p-3 md:p-4 shadow-[0_22px_55px_rgba(37,17,89,0.22)]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, x: 18 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -18 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="grid grid-cols-2 gap-3"
+          >
+            {visibleItems.map((item) => (
+              <article key={item.person} className="min-w-0 rounded-2xl bg-white p-3 text-[#1b1530] shadow-[0_12px_26px_rgba(0,0,0,0.18)]">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
+                  <div className="min-w-0">
+                    <p className="truncate text-[11px] font-bold leading-none">{item.person}</p>
+                    <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
+                  </div>
+                </div>
+                <div className="mt-3 flex gap-2">
+                  <div className="w-14 shrink-0">
+                    <img src={item.image} alt={item.title} className="h-[88px] w-14 rounded-lg object-cover shadow-sm" />
+                    <span className="relative -mt-2 mx-auto block w-fit whitespace-nowrap rounded-full bg-[#7651cf] px-1.5 py-0.5 text-[7px] font-semibold text-white">{item.badge}</span>
+                  </div>
+                  <div className="min-w-0 flex flex-col">
+                    <h3 className="line-clamp-2 text-[12px] md:text-sm font-bold leading-tight">{item.title}</h3>
+                    <p className="mt-1 line-clamp-1 text-[9px] text-[#777080]">{item.detail}</p>
+                    <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">★★★★★</p>
+                    <p className="mt-1 line-clamp-3 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
+                  </div>
+                </div>
+                <div className="mt-2.5 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
+                  <span>♡ 68</span>
+                  <span>Reply</span>
+                  <Star className="h-3 w-3 fill-[#f4b91d] text-[#f4b91d]" />
+                </div>
+              </article>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        <div className="mt-3 flex justify-center gap-1.5" aria-hidden="true">
+          {heroFeedItems.map((item, index) => (
+            <span key={item.person} className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-white" : "h-1.5 w-1.5 rounded-full bg-white/40"} />
+          ))}
+        </div>
+      </div>
+    </motion.aside>
+  );
+}
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -271,7 +351,7 @@ export default function Home() {
               </div>
 
             </motion.div>
-            <LiveConversationsCarousel />
+            <HeroFeedCarousel />
           </div>
         </section>
 
@@ -307,7 +387,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-[22%] shrink-0"
+              className="max-w-md lg:w-[42%] shrink-0"
             >
               <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
                 Come see what everyone’s talking about.
@@ -320,7 +400,7 @@ export default function Home() {
               </a>
             </motion.div>
 
-            <div className="flex-1 min-w-0">
+            <div className="hidden">
               <div className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
                 {[
                 {
@@ -1006,6 +1086,9 @@ export default function Home() {
                 >
                   Discover something new <ArrowRight className="w-4 h-4" />
                 </a>
+                <div className="mt-10 md:mt-12">
+                  <LiveConversationsCarousel />
+                </div>
               </motion.div>
             </div>
           </div>
