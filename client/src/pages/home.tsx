@@ -334,11 +334,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="font-heading text-xl md:text-2xl text-foreground/70 mb-5">Entertainment is better, <span className="italic text-primary">together.</span></p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  Everything you’re into.<br />
-                  <span className="italic text-primary">All in one place.</span>
+                  Entertainment is better,<br />
+                  <span className="italic text-primary">together.</span>
                 </h2>
+                <p className="mt-5 font-heading text-xl md:text-2xl leading-snug text-foreground/70">
+                  Everything you’re into.<br />
+                  All in one place.
+                </p>
                 <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
                   Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
                 </p>
