@@ -97,8 +97,8 @@ function LiveConversationsCarousel() {
       className="w-full max-w-md mx-auto lg:mx-0"
       aria-label="Live entertainment conversations"
     >
-      <p className="mb-3 text-center lg:text-left text-[10px] font-bold tracking-[0.18em] uppercase text-primary">Live conversations</p>
-      <div className="rounded-[2rem] border border-[#301669]/15 bg-[linear-gradient(145deg,_#11062e_0%,_#211044_58%,_#41257a_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(40,17,93,0.2)]">
+      <p className="mb-3 text-center lg:text-left text-[10px] font-bold tracking-[0.18em] uppercase text-[#8a6bb5]">Live conversations</p>
+      <div className="rounded-[2rem] border border-[#e4d9ef] bg-[radial-gradient(circle_at_90%_8%,_#f3e4ff_0%,_transparent_30%),radial-gradient(circle_at_10%_100%,_#fce8ef_0%,_transparent_34%),linear-gradient(145deg,_#fffdfc_0%,_#f7f1ff_58%,_#f4edff_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(80,54,112,0.12)]">
         <motion.div
           key={activeIndex}
           initial={{ opacity: 0, x: 18 }}
@@ -107,17 +107,17 @@ function LiveConversationsCarousel() {
           className="space-y-3"
         >
           {visibleItems.map((item) => (
-            <article key={item.title} className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] p-3 shadow-[0_10px_24px_rgba(7,2,25,0.15)]">
+            <article key={item.title} className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-[0_10px_24px_rgba(92,64,123,0.09)]">
               <img src={item.poster} alt="" className="h-12 w-12 shrink-0 rounded-xl object-cover" />
               <div className="min-w-0 flex-1">
-                <h3 className="truncate text-sm md:text-base font-bold text-white">{item.title}</h3>
-                <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-white/55">
-                  <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#b790ff]" strokeWidth={1.8} />
+                <h3 className="truncate text-sm md:text-base font-bold text-[#25183a]">{item.title}</h3>
+                <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-[#80748f]">
+                  <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#a17acb]" strokeWidth={1.8} />
                   <span className="truncate">{item.prompt}</span>
                 </p>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#160a36]/35 px-2.5 py-1 text-[10px] font-semibold text-white/75">
-                <item.Icon className="h-3.5 w-3.5 text-[#bf9cff]" strokeWidth={1.8} />
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#e4d8ef] bg-white/75 px-2.5 py-1 text-[10px] font-semibold text-[#69577a]">
+                <item.Icon className="h-3.5 w-3.5 text-[#9a78bd]" strokeWidth={1.8} />
                 {item.type}
               </span>
             </article>
@@ -129,11 +129,11 @@ function LiveConversationsCarousel() {
             {liveConversationItems.map((item, index) => (
               <span
                 key={item.title}
-                className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-[#ae82ff]" : "h-1.5 w-1.5 rounded-full bg-white/30"}
+                className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-[#a982d8]" : "h-1.5 w-1.5 rounded-full bg-[#cfc4d9]"}
               />
             ))}
           </div>
-          <span className="text-xs font-semibold text-[#bd9aff]">439 more conversations</span>
+          <span className="text-xs font-semibold text-[#8c69b5]">439 more conversations</span>
         </div>
       </div>
     </motion.aside>
