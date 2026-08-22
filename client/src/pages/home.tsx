@@ -161,7 +161,7 @@ export default function Home() {
               className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-                Entertainment is better, <span className="italic">together.</span>
+                Where entertainment comes together <span className="italic">— so we can, too.</span>
               </h1>
 
               <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
@@ -329,7 +329,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">Your media, your way</p>
+                <p className="font-heading text-xl md:text-2xl text-foreground/70 mb-5">Entertainment is better, <span className="italic text-primary">together.</span></p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                   Everything you’re into.<br />
                   <span className="italic text-primary">All in one place.</span>
