@@ -429,7 +429,7 @@ export default function Home() {
         {/* 3. TAKES FEED */}
         <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 h-[390px] md:h-[480px] relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
-          <div className="container mx-auto max-w-7xl relative z-10 px-7 pt-14 md:px-14 md:pt-16">
+          <div className="container mx-auto max-w-7xl relative z-10 px-7 pt-28 md:px-14 md:pt-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -600,7 +600,7 @@ export default function Home() {
         </section>
 
         {/* 4. CATEGORIES */}
-        <section className="relative z-20 -mt-32 md:-mt-[13rem] pb-0 px-6 bg-transparent" id="categories">
+        <section className="relative z-20 -mt-12 md:-mt-40 pb-0 px-6 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-16">
               <motion.div
@@ -608,7 +608,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
                     { title: "TV", desc: "Episodes and seasons", Icon: Tv },
