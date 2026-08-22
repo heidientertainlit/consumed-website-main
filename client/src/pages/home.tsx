@@ -242,7 +242,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-xs font-semibold whitespace-nowrap">Join hundreds of fans</span>
+                  <span className="text-xs font-semibold whitespace-nowrap">Join the conversation</span>
                   <div className="flex text-[#d5c4ff]" aria-label="Five-star rating">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
