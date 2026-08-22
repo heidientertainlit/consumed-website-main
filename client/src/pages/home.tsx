@@ -466,7 +466,7 @@ export default function Home() {
             <div className="order-2 lg:order-3 lg:col-span-2 flex justify-center -translate-y-4 md:-translate-y-6">
               <div className="mt-2 md:mt-4 w-full max-w-[760px]">
                 <p className="mb-3 text-center text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight text-foreground">
-                  Because entertainment is better, together.
+                  Because entertainment is better, <em>together.</em>
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
                   {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
