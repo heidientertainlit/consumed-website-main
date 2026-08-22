@@ -177,7 +177,7 @@ function HeroFeedCarousel() {
       initial={{ opacity: 0, x: 24 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className="w-full max-w-[560px] mx-auto xl:translate-y-5"
+      className="w-full max-w-[560px] mx-auto xl:translate-x-8 xl:translate-y-5"
       aria-label="What people are talking about"
     >
       <div className="relative h-[285px] md:h-[320px]">
@@ -328,7 +328,7 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-28 md:pt-32 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
+        <section className="pt-32 md:pt-40 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
           <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12 lg:gap-20 xl:gap-24 relative -translate-y-3 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
