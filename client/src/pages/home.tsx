@@ -151,9 +151,10 @@ const heroFeedItems = [
 
 function HeroFeedCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const visibleItems = [
-    heroFeedItems[activeIndex],
-    heroFeedItems[(activeIndex + 1) % heroFeedItems.length],
+  const stackedItems = [
+    { item: heroFeedItems[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], x: -72, y: 24, rotate: -7, scale: 0.9, opacity: 0.68, zIndex: 1 },
+    { item: heroFeedItems[activeIndex], x: 0, y: 0, rotate: 0, scale: 1, opacity: 1, zIndex: 3 },
+    { item: heroFeedItems[(activeIndex + 1) % heroFeedItems.length], x: 72, y: 24, rotate: 7, scale: 0.9, opacity: 0.75, zIndex: 2 },
   ];
 
   useEffect(() => {
@@ -172,49 +173,60 @@ function HeroFeedCarousel() {
       className="w-full max-w-[560px] mx-auto"
       aria-label="What people are talking about"
     >
-      <div className="rounded-[2rem] bg-[linear-gradient(135deg,_#12072f_0%,_#241155_55%,_#4a2c91_100%)] p-3 md:p-4 shadow-[0_22px_55px_rgba(37,17,89,0.22)]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, x: 18 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -18 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="grid grid-cols-2 gap-3"
-          >
-            {visibleItems.map((item) => (
-              <article key={item.person} className="min-w-0 rounded-2xl bg-white p-3 text-[#1b1530] shadow-[0_12px_26px_rgba(0,0,0,0.18)]">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
-                  <div className="min-w-0">
-                    <p className="truncate text-[11px] font-bold leading-none">{item.person}</p>
-                    <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
-                  </div>
+      <div className="relative h-[285px] md:h-[320px]">
+        <AnimatePresence initial={false}>
+          {stackedItems.map(({ item, ...position }) => (
+            <motion.article
+              key={item.person}
+              initial={{ opacity: 0, x: 150, y: position.y + 16, rotate: 10, scale: 0.84 }}
+              animate={{
+                opacity: position.opacity,
+                x: position.x,
+                y: [position.y, position.y - 4, position.y],
+                rotate: position.rotate,
+                scale: position.scale,
+              }}
+              exit={{ opacity: 0, x: -150, y: position.y + 16, rotate: -10, scale: 0.84 }}
+              transition={{
+                x: { duration: 0.8, ease: "easeInOut" },
+                rotate: { duration: 0.8, ease: "easeInOut" },
+                scale: { duration: 0.8, ease: "easeInOut" },
+                opacity: { duration: 0.45 },
+                y: { duration: 3.8, repeat: Infinity, ease: "easeInOut" },
+              }}
+              style={{ zIndex: position.zIndex }}
+              className="absolute left-1/2 -ml-[130px] md:-ml-[140px] w-[260px] md:w-[280px] rounded-2xl border border-[#ece7f3] bg-white p-3 text-[#1b1530] shadow-[0_18px_40px_rgba(59,36,97,0.16)]"
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
+                <div className="min-w-0">
+                  <p className="truncate text-[11px] font-bold leading-none">{item.person}</p>
+                  <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
                 </div>
-                <div className="mt-3 flex gap-2">
-                  <div className="w-14 shrink-0">
-                    <img src={item.image} alt={item.title} className="h-[88px] w-14 rounded-lg object-cover shadow-sm" />
-                    <span className="relative -mt-2 mx-auto block w-fit whitespace-nowrap rounded-full bg-[#7651cf] px-1.5 py-0.5 text-[7px] font-semibold text-white">{item.badge}</span>
-                  </div>
-                  <div className="min-w-0 flex flex-col">
-                    <h3 className="line-clamp-2 text-[12px] md:text-sm font-bold leading-tight">{item.title}</h3>
-                    <p className="mt-1 line-clamp-1 text-[9px] text-[#777080]">{item.detail}</p>
-                    <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">★★★★★</p>
-                    <p className="mt-1 line-clamp-3 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
-                  </div>
+              </div>
+              <div className="mt-3 flex gap-2">
+                <div className="w-14 shrink-0">
+                  <img src={item.image} alt={item.title} className="h-[88px] w-14 rounded-lg object-cover shadow-sm" />
+                  <span className="relative -mt-2 mx-auto block w-fit whitespace-nowrap rounded-full bg-[#7651cf] px-1.5 py-0.5 text-[7px] font-semibold text-white">{item.badge}</span>
                 </div>
-                <div className="mt-2.5 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
-                  <span>♡ 68</span>
-                  <span>Reply</span>
-                  <Star className="h-3 w-3 fill-[#f4b91d] text-[#f4b91d]" />
+                <div className="min-w-0 flex flex-col">
+                  <h3 className="line-clamp-2 text-[12px] md:text-sm font-bold leading-tight">{item.title}</h3>
+                  <p className="mt-1 line-clamp-1 text-[9px] text-[#777080]">{item.detail}</p>
+                  <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">★★★★★</p>
+                  <p className="mt-1 line-clamp-3 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
                 </div>
-              </article>
-            ))}
-          </motion.div>
+              </div>
+              <div className="mt-2.5 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
+                <span>♡ 68</span>
+                <span>Reply</span>
+                <Star className="h-3 w-3 fill-[#f4b91d] text-[#f4b91d]" />
+              </div>
+            </motion.article>
+          ))}
         </AnimatePresence>
-        <div className="mt-3 flex justify-center gap-1.5" aria-hidden="true">
+        <div className="absolute bottom-0 inset-x-0 flex justify-center gap-1.5" aria-hidden="true">
           {heroFeedItems.map((item, index) => (
-            <span key={item.person} className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-white" : "h-1.5 w-1.5 rounded-full bg-white/40"} />
+            <span key={item.person} className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-[#7751ca]" : "h-1.5 w-1.5 rounded-full bg-[#d8cde5]"} />
           ))}
         </div>
       </div>
