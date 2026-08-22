@@ -15,6 +15,9 @@ import screenAddHero from "../assets/images/screen-add-hero.webp";
 import screenRatingsHero from "../assets/images/screen-ratings-hero.webp";
 import maybeSomedayReview from "../assets/images/maybe-someday-review.webp";
 import dayOfJackalReview from "../assets/images/day-of-jackal-review.webp";
+import showTlou from "../assets/images/show-tlou.png";
+import posterPodcast from "../assets/images/poster-podcast.jpg";
+import coverChef from "../assets/images/cover-chef.png";
 
 const TikTok = ({ className }: { className?: string }) => (
   <svg 
@@ -227,13 +230,13 @@ export default function Home() {
               <p className="mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
                 Takes. Theories. Reactions. And everything in between.
               </p>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-w-[160px] items-center justify-center mt-5 px-6 py-2 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-xs font-bold shadow-[0_8px_20px_rgba(72,78,210,0.34)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center mt-5 px-4 py-2 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-xs font-bold shadow-[0_8px_20px_rgba(72,78,210,0.34)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
                 Explore the feed
               </a>
             </motion.div>
 
             <div className="flex-1 min-w-0">
-              <div className="flex gap-4 md:gap-5 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
+              <div className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
                 {[
                 {
                   person: "Rachelle S.",
@@ -257,6 +260,39 @@ export default function Home() {
                   likes: "112",
                   image: dayOfJackalReview,
                 },
+                {
+                  person: "Marcus T.",
+                  time: "32m ago",
+                  take: "“I thought I was just jumping back in for an hour. Six hours later, I’m still trying to beat the same boss.”",
+                  title: "The Last of Us Part II",
+                  detail: "Currently playing · PS5",
+                  meta: "92% aligned with you",
+                  badge: "In progress",
+                  likes: "93",
+                  image: showTlou,
+                },
+                {
+                  person: "Evan C.",
+                  time: "1h ago",
+                  take: "“The debate about this season is already getting out of hand — and I’m absolutely listening to every minute of it.”",
+                  title: "The Ringer NBA Show",
+                  detail: "Podcast · New episode",
+                  meta: "Top in your circle",
+                  badge: "New episode",
+                  likes: "84",
+                  image: posterPodcast,
+                },
+                {
+                  person: "Drew M.",
+                  time: "3h ago",
+                  take: "“A twenty-minute interview somehow turned into an entire evening of clips, reactions, and a new chef to follow.”",
+                  title: "Hot Ones",
+                  detail: "YouTube · 24 min",
+                  meta: "Starting tonight",
+                  badge: "Watch later",
+                  likes: "57",
+                  image: coverChef,
+                },
                 ].map((post, i) => (
                   <motion.article
                   key={post.person}
@@ -264,7 +300,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.12 }}
-                  className="w-[330px] md:w-[390px] shrink-0 rounded-2xl bg-white text-[#19142d] shadow-[0_20px_45px_rgba(0,0,0,0.22)] p-4"
+                  className="w-[330px] md:w-[390px] shrink-0 snap-start rounded-2xl bg-white text-[#19142d] shadow-[0_20px_45px_rgba(0,0,0,0.22)] p-4"
                 >
                   <div className="flex items-center gap-2.5 mb-3">
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[11px] font-bold">
