@@ -154,14 +154,14 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative -translate-y-3 md:-translate-y-4">
+        <section className="pt-24 md:pt-28 pb-20 md:pb-24 relative overflow-visible z-10" id="features">
+          <div className="container mx-auto max-w-7xl px-6 relative -translate-y-3 md:-translate-y-4">
             {/* Left: copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
+              className="max-w-5xl mx-auto flex flex-col items-center text-center z-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-7 md:mb-8">
                 Where entertainment comes together,<br />
@@ -191,13 +191,16 @@ export default function Home() {
               </div>
 
             </motion.div>
+          </div>
+        </section>
 
-            {/* Right: phone screens */}
-            <motion.div
+        {/* Hero app screens — a separate moment that leads into the feed */}
+        <section className="relative z-10 pb-0">
+          <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="lg:w-[55%] w-full flex items-center justify-center translate-y-10 md:translate-y-14"
+              className="w-full flex items-center justify-center translate-y-10 md:translate-y-14"
             >
               <div className="relative flex items-center justify-center origin-center md:scale-[0.92] lg:scale-[0.9]">
                 <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
@@ -211,7 +214,6 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-          </div>
         </section>
 
         {/* 3. TAKES FEED */}
