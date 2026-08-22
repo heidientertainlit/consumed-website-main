@@ -939,28 +939,28 @@ export default function Home() {
 
         {/* 6. ROOMS */}
         <section className="py-8 md:py-12 bg-white" id="rooms">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] border border-[#ece7f3] bg-white px-7 py-12 md:px-14 md:py-16 text-[#201636] shadow-[0_18px_45px_rgba(57,37,88,0.06)]">
-            <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_90%_20%,_#f1e8ff_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#f9edff_0%,_transparent_30%)] pointer-events-none" />
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_90%_20%,_#8c65e6_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#6335b7_0%,_transparent_30%)] pointer-events-none" />
             <div className="relative z-10 grid lg:grid-cols-[0.78fr_1.22fr] items-center gap-10 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Rooms</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Rooms</p>
                 <h2 className="text-4xl md:text-5xl font-heading font-normal leading-[1.05]">
                   There&apos;s a Room<br />
-                  <span className="italic text-primary">for that.</span>
+                  <span className="italic text-[#d8ceff]">for that.</span>
                 </h2>
-                <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/65 max-w-xl">
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75 max-w-xl">
                   From the genres you love to the shows you can&apos;t stop thinking about, Rooms give you a place to find the conversations you&apos;re actually interested in.
                 </p>
-                <p className="mt-6 font-heading text-2xl italic text-primary">Go where your people are.</p>
+                <p className="mt-6 font-heading text-2xl italic text-[#d8ceff]">Go where your people are.</p>
                 <a
                   href="https://app.consumedapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-7 rounded-full bg-[#3a2496] px-6 py-3.5 text-white font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 mt-7 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
                   data-testid="link-explore-rooms"
                 >
                   Explore Rooms <ArrowRight className="w-4 h-4" />
@@ -985,13 +985,13 @@ export default function Home() {
                 ].map((room, i) => (
                   <div
                     key={room}
-                      className={`min-h-[92px] rounded-2xl border border-[#e8e1f1] p-4 flex flex-col justify-between shadow-[0_10px_24px_rgba(67,44,103,0.05)] transition-transform hover:-translate-y-1 ${
-                        i === 0 ? "bg-[#f0e7ff] sm:col-span-2" : "bg-white/80"
+                      className={`min-h-[92px] rounded-2xl border border-white/15 p-4 flex flex-col justify-between transition-transform hover:-translate-y-1 ${
+                        i === 0 ? "bg-[#a653d7]/50 sm:col-span-2" : "bg-white/10"
                     }`}
                   >
-                      <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-primary/55">Room</span>
-                    <span className="text-base md:text-lg font-heading font-semibold leading-tight">{room}</span>
-                      <span className="text-[10px] font-bold tracking-wider text-primary/75">JOIN THE TALK →</span>
+                      <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/55">Room</span>
+                      <span className="text-base md:text-lg font-heading font-semibold leading-tight">{room}</span>
+                      <span className="text-[10px] font-bold tracking-wider text-[#d8ceff]">JOIN THE TALK →</span>
                   </div>
                 ))}
               </motion.div>
@@ -1001,9 +1001,9 @@ export default function Home() {
 
         {/* 7. PLAY */}
         <section className="py-8 md:py-12 bg-white" id="play">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#15103c_0%,_#292073_48%,_#6b32c9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
-            <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#168dff]/30 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#ef4ba5]/20 blur-3xl pointer-events-none" />
+          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] border border-[#ece7f3] bg-white px-7 py-12 md:px-14 md:py-16 text-[#201636] shadow-[0_18px_45px_rgba(57,37,88,0.06)]">
+            <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#e5f0ff] blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto text-center">
               <motion.div
@@ -1011,17 +1011,17 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#cfc7ff] mb-4">Play</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Play</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                   Don&apos;t just consume it.<br />
-                  <span className="italic text-[#b8ddff]">Play along.</span>
+                  <span className="italic text-primary">Play along.</span>
                 </h2>
-                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
+                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-foreground/65">
                   Trivia, predictions, rankings and more ways to make entertainment a little more fun.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 mt-7">
                   {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
-                    <span key={mode} className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/85">
+                    <span key={mode} className="rounded-full border border-[#e2d8f0] bg-[#f8f4ff] px-3.5 py-1.5 text-xs font-semibold text-primary/80">
                       {mode}
                     </span>
                   ))}
@@ -1034,7 +1034,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="rounded-[1.7rem] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)]"
+                className="rounded-[1.7rem] border border-[#e6e0f0] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)]"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#2c6ef2]">Prediction</span>
@@ -1063,7 +1063,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="rounded-[1.7rem] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)] flex flex-col"
+                className="rounded-[1.7rem] border border-[#e6e0f0] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)] flex flex-col"
               >
                 <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#8d31ca]">Trivia</span>
                 <h3 className="mt-4 text-xl font-bold leading-tight">Which movie is this quote from?</h3>
@@ -1080,7 +1080,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="rounded-[1.7rem] bg-[#fff9e8] p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(0,0,0,0.18)] flex flex-col"
+                className="rounded-[1.7rem] border border-[#eadcae] bg-[#fff9e8] p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)] flex flex-col"
               >
                 <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#d18412]">Rank It</span>
                 <h3 className="mt-4 text-xl font-bold leading-tight">Rank these &apos;90s rom-coms.</h3>
