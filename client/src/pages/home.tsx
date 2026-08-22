@@ -338,6 +338,12 @@ export default function Home() {
                   </motion.article>
                 ))}
               </div>
+              <div className="mt-3 flex items-center justify-center gap-1.5" aria-hidden="true">
+                <span className="h-1.5 w-5 rounded-full bg-white" />
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <span key={i} className="h-1.5 w-1.5 rounded-full bg-white/40" />
+                ))}
+              </div>
               <div className="mt-5 flex items-center justify-center gap-2.5 text-white/80" data-testid="feed-social-proof">
                 <div className="flex -space-x-1.5 shrink-0" aria-hidden="true">
                   {["EB", "PD", "SS", "CR"].map((initials, i) => (
