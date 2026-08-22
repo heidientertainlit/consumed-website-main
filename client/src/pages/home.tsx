@@ -432,8 +432,26 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-6 md:-mt-8 h-[260px] md:h-[360px] relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)]" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 h-[390px] md:h-[480px] relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
+          <div className="container mx-auto max-w-7xl relative z-10 px-7 pt-14 md:px-14 md:pt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl"
+            >
+              <h2 className="text-4xl md:text-5xl font-heading font-normal leading-[1.05]">
+                Entertainment is better, <span className="italic text-[#d8ceff]">together.</span>
+              </h2>
+              <p className="mt-5 font-heading text-xl md:text-2xl leading-snug text-[#e6ddff]">
+                Everything you’re into. All in one place.
+              </p>
+              <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75">
+                Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
+              </p>
+            </motion.div>
+          </div>
           <div className="hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -587,7 +605,7 @@ export default function Home() {
         </section>
 
         {/* 4. CATEGORIES */}
-        <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
+        <section className="relative z-20 -mt-20 md:-mt-40 pb-0 px-6 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-16">
               <motion.div
@@ -595,17 +613,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-[2.4rem] xl:whitespace-nowrap font-heading font-normal leading-[1.05]">
-                  Entertainment is better, <span className="italic text-primary">together.</span>
-                </h2>
-                <p className="mt-5 font-heading text-xl md:text-2xl lg:text-[1.35rem] xl:whitespace-nowrap leading-snug text-foreground/70">
-                  Everything you’re into. All in one place.
-                </p>
-                <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/70 max-w-xl">
-                  Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 mt-8">
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
                     { title: "TV", desc: "Episodes and seasons", Icon: Tv },
