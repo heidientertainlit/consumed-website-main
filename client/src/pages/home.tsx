@@ -169,7 +169,7 @@ export default function Home() {
               </p>
 
               <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
-                <strong className="font-bold text-foreground">One place for everything you watch, read, listen to, and play.</strong> See what everyone&apos;s consuming, what&apos;s trending, and discover your entertainment DNA.
+                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
