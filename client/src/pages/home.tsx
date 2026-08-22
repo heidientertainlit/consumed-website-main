@@ -6,17 +6,17 @@ import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Mus
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
 import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
-import heroMaybeSomeday from "@assets/generated_images/hero-maybe-someday.jpg";
+import heroMaybeSomeday from "@assets/Screenshot_2026-08-22_at_12.03.15_PM_1787421813540.png";
 import heroTheWomen from "@assets/generated_images/hero-the-women.jpg";
 import heroProjectHailMary from "@assets/generated_images/hero-project-hail-mary.jpg";
-import heroSinners from "@assets/generated_images/hero-sinners.jpg";
+import heroSinners from "@assets/Screenshot_2026-08-22_at_12.02.49_PM_1787421813541.png";
 import heroSeverance from "@assets/generated_images/hero-severance.jpg";
-import heroLastOfUsPartTwo from "@assets/generated_images/hero-last-of-us-part-two.jpg";
+import heroLastOfUsPartTwo from "@assets/Screenshot_2026-08-22_at_12.03.08_PM_1787421813540.png";
 import heroGoodMythicalMorning from "@assets/generated_images/hero-good-mythical-morning.jpg";
 import heroGreatBigBeautifulLife from "@assets/generated_images/hero-great-big-beautiful-life.jpg";
-import heroWhiteLotus from "@assets/generated_images/hero-white-lotus.jpg";
-import heroMormonWives from "@assets/generated_images/hero-mormon-wives.jpg";
-import heroCrimeJunkie from "@assets/generated_images/hero-crime-junkie.jpg";
+import heroWhiteLotus from "@assets/Screenshot_2026-08-22_at_12.03.00_PM_1787421813540.png";
+import heroMormonWives from "@assets/Screenshot_2026-08-22_at_12.02.55_PM_1787421813540.png";
+import heroCrimeJunkie from "@assets/Screenshot_2026-08-22_at_12.03.21_PM_1787421813533.png";
 
 
 // Generated images
