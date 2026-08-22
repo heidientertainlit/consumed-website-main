@@ -272,11 +272,10 @@ export default function Home() {
 
             </motion.div>
             <div className="w-full flex flex-col items-center gap-5">
-              <div className="w-full max-w-6xl px-2 flex flex-wrap items-center justify-center sm:justify-between gap-x-5 gap-y-2 text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
-                {["Movies", "TV", "Books", "Podcasts", "Gaming + More"].map((category, index) => (
-                  <span key={category} className="inline-flex items-center gap-5">
+              <div className="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-5 overflow-hidden rounded-2xl border border-[#ece7f3] bg-white/75 shadow-[0_10px_30px_rgba(83,57,124,0.05)] sm:divide-x sm:divide-[#ece7f3]">
+                {["Movies", "TV", "Books", "Podcasts", "Gaming + More"].map((category) => (
+                  <span key={category} className="py-3 text-center text-[10px] md:text-xs font-bold tracking-[0.14em] uppercase text-foreground/50">
                     {category}
-                    {index < 4 && <span className="text-primary/50">•</span>}
                   </span>
                 ))}
               </div>
