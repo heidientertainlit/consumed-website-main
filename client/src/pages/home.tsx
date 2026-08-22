@@ -236,28 +236,24 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-4xl mx-auto flex flex-col items-center text-center z-10"
             >
-              <div className="flex items-center justify-center gap-5 mb-7 md:mb-8">
-                <img src={logoPurple} alt="Consumed" className="h-20 md:h-24 lg:h-28 w-auto" />
+              <div className="flex items-center justify-center gap-2 md:gap-3 mb-7 md:mb-8">
+                <img src={logoPurple} alt="Consumed" className="h-24 md:h-28 lg:h-32 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-20 md:w-24 lg:w-28 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
+                  className="w-24 md:w-28 lg:w-32 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
+              <h1 className="max-w-[650px] text-2xl md:text-3xl lg:text-4xl font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
                 Where entertainment comes together,<br />
                 <span className="italic">so we can too.</span>
               </h1>
 
               <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45 mb-5">
                 Movies · TV · Books · Podcasts · Gaming + More
-              </p>
-
-              <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -272,6 +268,9 @@ export default function Home() {
                   Open web app <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
+              <p className="mt-6 text-sm md:text-base text-foreground/80 max-w-2xl leading-relaxed font-sans">
+                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
+              </p>
 
             </motion.div>
             <LiveConversationsCarousel />
