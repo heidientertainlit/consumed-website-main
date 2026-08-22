@@ -229,6 +229,43 @@ function HeroFeedCarousel() {
               style={{ zIndex: position.zIndex }}
               className="absolute left-1/2 -ml-[130px] md:-ml-[140px] w-[260px] md:w-[280px] rounded-2xl border border-[#ece7f3] bg-white p-3 text-[#1b1530] shadow-[0_18px_40px_rgba(59,36,97,0.16)]"
             >
+              {position.zIndex === 3 && (
+                <>
+                  <div className="pointer-events-none absolute right-8 top-3" aria-hidden="true">
+                    <motion.span
+                      animate={{ opacity: [0, 1, 0], y: [0, -38], scale: [0.75, 1, 0.82] }}
+                      transition={{ duration: 2.8, repeat: Infinity, ease: "easeOut", repeatDelay: 1.2 }}
+                      className="absolute flex h-5 w-5 items-center justify-center rounded-full bg-[#f1e8ff] text-[#7651cf] shadow-sm"
+                    >
+                      <ThumbsUp className="h-2.5 w-2.5" strokeWidth={2} />
+                    </motion.span>
+                    <motion.span
+                      animate={{ opacity: [0, 1, 0], y: [4, -30], x: [8, 17], scale: [0.7, 1, 0.85] }}
+                      transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut", delay: 1.35, repeatDelay: 1.4 }}
+                      className="absolute flex h-5 w-5 items-center justify-center rounded-full bg-[#fff3cd] text-[#e6a511] shadow-sm"
+                    >
+                      <Star className="h-2.5 w-2.5 fill-current" strokeWidth={1.8} />
+                    </motion.span>
+                  </div>
+                  <motion.div
+                    animate={{ opacity: [0.65, 1, 0.65], y: [0, -2, 0] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-7 left-5 z-10 inline-flex items-center gap-1.5 rounded-full border border-[#e7def5] bg-white px-2.5 py-1 text-[8px] font-medium text-[#62576e] shadow-[0_8px_20px_rgba(59,36,97,0.12)]"
+                  >
+                    <span>{activity.speaker} + 2 are typing</span>
+                    <span className="flex items-center gap-0.5" aria-label="Typing">
+                      {[0, 1, 2].map((dot) => (
+                        <motion.span
+                          key={dot}
+                          animate={{ opacity: [0.25, 1, 0.25], y: [0, -1, 0] }}
+                          transition={{ duration: 0.9, repeat: Infinity, delay: dot * 0.14, ease: "easeInOut" }}
+                          className="h-1 w-1 rounded-full bg-[#7651cf]"
+                        />
+                      ))}
+                    </span>
+                  </motion.div>
+                </>
+              )}
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
