@@ -161,7 +161,7 @@ export default function Home() {
               className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-                Where entertainment comes together <span className="italic">— so we can, too.</span>
+                Where entertainment comes together, <span className="italic">so we can too.</span>
               </h1>
 
               <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
