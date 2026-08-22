@@ -164,7 +164,7 @@ export default function Home() {
                 Where entertainment comes together, <span className="italic">so we can too.</span>
               </h1>
 
-              <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-primary/70 mb-5">
+              <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45 mb-5">
                 Movies · TV · Books · Podcasts · Gaming + More
               </p>
 
