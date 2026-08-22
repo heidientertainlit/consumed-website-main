@@ -473,9 +473,6 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-center text-xl md:text-2xl lg:text-[2.15rem] font-heading font-normal leading-[1.08] tracking-tight text-foreground">
-                  Because entertainment is better, <em>together.</em>
-                </p>
               </div>
             </div>
           </div>
