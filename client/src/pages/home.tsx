@@ -436,13 +436,13 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-2xl"
             >
-              <h2 className="text-4xl md:text-5xl font-heading font-normal leading-[1.05]">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-heading font-normal leading-[1.05]">
                 Entertainment is better, <span className="italic text-[#d8ceff]">together.</span>
               </h2>
-              <p className="mt-5 font-heading text-xl md:text-2xl leading-snug text-[#e6ddff]">
+              <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
                 Everything you’re into. All in one place.
               </p>
-              <p className="mt-6 text-base md:text-lg leading-relaxed text-white/75">
+              <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] leading-relaxed text-white/75">
                 Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
               </p>
             </motion.div>
@@ -624,14 +624,14 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
-                      className="flex items-center gap-3 rounded-2xl border border-[#ece8f5] bg-[#fbfaff] p-3.5"
+                      className="flex items-center gap-3 rounded-2xl border border-[#ece8f5] bg-[#fbfaff] p-3.5 md:p-4"
                     >
-                      <span className="w-10 h-10 rounded-xl bg-[#eee8ff] flex items-center justify-center shrink-0">
-                        <cat.Icon className="w-5 h-5 text-primary" strokeWidth={1.6} />
+                      <span className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-[#eee8ff] flex items-center justify-center shrink-0">
+                        <cat.Icon className="w-5 h-5 md:w-[1.35rem] md:h-[1.35rem] text-primary" strokeWidth={1.6} />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-sm font-bold leading-tight">{cat.title}</span>
-                        <span className="block text-[11px] text-foreground/50 mt-0.5">{cat.desc}</span>
+                        <span className="block text-sm md:text-base font-bold leading-tight">{cat.title}</span>
+                        <span className="block text-[11px] md:text-xs text-foreground/50 mt-0.5">{cat.desc}</span>
                       </span>
                     </motion.div>
                   ))}
@@ -642,7 +642,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative min-h-[500px] md:min-h-[560px] max-w-[650px] w-full mx-auto"
+                className="relative min-h-[500px] md:min-h-[560px] max-w-[650px] w-full mx-auto lg:-translate-y-4 xl:-translate-y-6"
               >
                 <div className="absolute top-0 right-0 w-[74%] h-[500px] md:h-[550px] rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-[0_24px_60px_rgba(42,24,83,0.16)]">
                   <img
