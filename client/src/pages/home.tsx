@@ -168,9 +168,9 @@ const heroFeedItems = [
 ];
 
 const liveConversationActivity = [
-  { replies: "14", talking: "6 friends talking", speaker: "Maya", reply: "The soundtrack makes this hit so much harder.", isTyping: true },
+  { replies: "14", talking: "6 friends talking", speaker: "", reply: "Someone is typing something…" },
   { replies: "21", talking: "9 friends talking", speaker: "Jules", reply: "That final chapter completely broke me." },
-  { replies: "18", talking: "7 friends talking", speaker: "Evan", reply: "Rocky might be my favorite character." },
+  { replies: "18", talking: "7 friends talking", speaker: "Evan", reply: "Loved the book AND loved the movie. Ryan Gosling crushed it." },
   { replies: "29", talking: "11 friends talking", speaker: "Nina", reply: "The juke joint scene was unreal." },
   { replies: "32", talking: "14 friends talking", speaker: "Alex", reply: "I still don’t trust Milchick.", isTyping: true },
   { replies: "17", talking: "8 friends talking", speaker: "Sam", reply: "That ending still wrecks me." },
@@ -303,7 +303,13 @@ function HeroFeedCarousel() {
                   </span>
                 </div>
                 <p className="mt-1 truncate text-[#5c5368]">
-                  <span className="font-bold text-[#40354f]">{activity.speaker}:</span> “{activity.reply}”
+                  {activity.speaker ? (
+                    <>
+                      <span className="font-bold text-[#40354f]">{activity.speaker}:</span> “{activity.reply}”
+                    </>
+                  ) : (
+                    <span className="italic text-[#756e83]">{activity.reply}</span>
+                  )}
                 </p>
               </div>
               <div className="mt-2 flex items-center justify-start border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
