@@ -342,14 +342,12 @@ export default function Home() {
                 />
               </div>
               <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
-                Where entertainment<br />
-                comes together,<br />
+                Where entertainment comes together,<br />
                 <span className="italic">so we can too.</span>
               </h1>
 
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming.<br />
-                Track what you love.<br />
+                See what everyone&apos;s consuming. Track what you love.<br />
                 Discover your Entertainment DNA.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
