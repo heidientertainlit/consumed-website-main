@@ -328,8 +328,8 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12 lg:gap-14 relative -translate-y-3 md:-translate-y-4">
+        <section className="pt-28 md:pt-32 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
+          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12 lg:gap-20 xl:gap-24 relative -translate-y-3 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
