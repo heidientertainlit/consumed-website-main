@@ -160,8 +160,9 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-4">
-                Where entertainment comes together, <span className="italic">so we can too.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-7 md:mb-8">
+                Where entertainment comes together,<br />
+                <span className="italic">so we can too.</span>
               </h1>
 
               <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45 mb-5">
