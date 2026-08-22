@@ -143,10 +143,17 @@ function LiveConversationsCarousel() {
 }
 
 const heroFeedItems = [
-  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series.... WITH A SOUNDTRACK. And some spice if you’re into that ;)”", badge: "70% match", image: maybeSomedayReview },
-  { person: "Ashley H.", time: "5h ago", title: "The Day of the Jackal", detail: "You rated this 3/5 ★", take: "That rooftop scene had me pacing. I need to talk about the ending with someone.", badge: "You loved this", image: dayOfJackalReview },
-  { person: "Marcus T.", time: "32m ago", title: "The Last of Us Part II", detail: "Currently playing · PS5", take: "I went back for every collectible, then got caught reliving that ending all over again.", badge: "In progress", image: showTlou },
-  { person: "Evan C.", time: "1h ago", title: "The Toast", detail: "Podcast · New episode", take: "The pop-culture takes from this episode were exactly what I needed for my commute.", badge: "New episode", image: posterPodcast },
+  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", rating: "★★★★★", take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series.... WITH A SOUNDTRACK. And some spice if you’re into that ;)”", badge: "70% match", likes: "68", image: maybeSomedayReview },
+  { person: "Maya R.", time: "18m ago", title: "The Women", detail: "Book · Finished", rating: "★★★★★", take: "“Finished this at 1am and immediately needed someone else to have read it.”", badge: "Finished", likes: "91", image: posterBook },
+  { person: "Daniel K.", time: "41m ago", title: "Project Hail Mary", detail: "Book · Finished", rating: "★★★★½", take: "“I knew nothing going in. Keep it that way. This was so much fun.”", badge: "Finished", likes: "74", image: posterBook },
+  { person: "Sophie M.", time: "1h ago", title: "Sinners", detail: "Movie · Watched", rating: "★★★★", take: "“I thought I knew what kind of movie I was watching. I absolutely did not.”", badge: "Watched", likes: "86", image: posterMovie },
+  { person: "Marcus T.", time: "32m ago", title: "Severance", detail: "Currently watching · S2", rating: "", take: "“Okay, I have a theory about what’s actually happening…”", badge: "Watching", likes: "103", image: showDune },
+  { person: "Evan C.", time: "1h ago", title: "The Last of Us Part II", detail: "Game · Played", rating: "★★★½", take: "“Beautiful game. Still not sure how I feel about some of those story choices.”", badge: "Played", likes: "79", image: showTlou },
+  { person: "Jordan P.", time: "2h ago", title: "Good Mythical Morning", detail: "YouTube · Added to Favorites", rating: "", take: "“This has basically become my morning talk show.”", badge: "Favorite", likes: "57", image: coverChef },
+  { person: "Rachel B.", time: "3h ago", title: "Great Big Beautiful Life", detail: "Book · Finished", rating: "★★★★", take: "“Kept telling myself ‘one more chapter’ and then suddenly it was midnight.”", badge: "Finished", likes: "63", image: posterBook },
+  { person: "Chris A.", time: "4h ago", title: "The White Lotus", detail: "TV · Watched", rating: "★★★½", take: "“The group chat after every episode is half the experience.”", badge: "Watched", likes: "88", image: dayOfJackalReview },
+  { person: "Lauren H.", time: "5h ago", title: "The Secret Lives of Mormon Wives", detail: "Reality · Watching", rating: "★★★½", take: "“I have changed my mind about who I’m rooting for like four times.”", badge: "Watching", likes: "71", image: dayOfJackalReview },
+  { person: "Tyler M.", time: "6h ago", title: "Crime Junkie", detail: "True Crime · Listened", rating: "★★★", take: "“Good gateway podcast. Wouldn’t make my top 10.”", badge: "Listened", likes: "52", image: posterPodcast },
 ];
 
 function HeroFeedCarousel() {
@@ -212,14 +219,18 @@ function HeroFeedCarousel() {
                 <div className="min-w-0 flex flex-col">
                   <h3 className="line-clamp-2 text-[12px] md:text-sm font-bold leading-tight">{item.title}</h3>
                   <p className="mt-1 line-clamp-1 text-[9px] text-[#777080]">{item.detail}</p>
-                  <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">★★★★★</p>
+                  {item.rating && <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">{item.rating}</p>}
                   <p className="mt-1 line-clamp-3 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
                 </div>
               </div>
               <div className="mt-2.5 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
-                <span>♡ 68</span>
-                <span>Reply</span>
-                <Star className="h-3 w-3 fill-[#f4b91d] text-[#f4b91d]" />
+                <button type="button" aria-label={`${item.likes} thumbs up`} className="inline-flex items-center gap-1 hover:text-[#643ec5] transition-colors">
+                  <ThumbsUp className="h-3 w-3" strokeWidth={1.7} />
+                  <span>{item.likes}</span>
+                </button>
+                <button type="button" aria-label="Thumbs down" className="hover:text-[#643ec5] transition-colors">
+                  <ThumbsDown className="h-3 w-3" strokeWidth={1.7} />
+                </button>
               </div>
             </motion.article>
           ))}
