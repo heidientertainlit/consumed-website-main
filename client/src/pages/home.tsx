@@ -452,10 +452,10 @@ export default function Home() {
                 Entertainment is better, <span className="italic text-[#d8ceff]">together.</span>
               </h2>
               <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
-                Everything you’re into. All in one place.
+                Finally, everything you’re into. All in one place.
               </p>
               <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] leading-relaxed text-white/75">
-                Entertainment lives everywhere. Bring the movies, shows, books, podcasts, music, and more you love into one place — so nothing gets lost, and your next favorite is never far away.
+                What we watch, read, listen to, play, save, and talk about is scattered everywhere. Consumed brings it all under one roof — so we can finally see what our friends are into, what they’re saying, and what they’re loving.
               </p>
             </motion.div>
           </div>
