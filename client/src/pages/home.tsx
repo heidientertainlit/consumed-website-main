@@ -330,7 +330,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-0 translate-y-3 md:translate-y-4">
+              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-0 translate-y-1 md:translate-y-2">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
