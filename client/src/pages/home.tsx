@@ -1308,6 +1308,12 @@ export default function Home() {
               <p className="mt-4 max-w-xs font-heading text-xl text-foreground/75">
                 Entertainment is better, <span className="italic text-primary">together.</span>
               </p>
+              <p className="mt-6 max-w-xs text-sm leading-relaxed text-foreground/60">
+                Media, Partnership, &amp; Support:{" "}
+                <a href="mailto:info@consumedapp.com" className="font-semibold text-primary hover:text-[#2e1c78] transition-colors">
+                  info@consumedapp.com
+                </a>
+              </p>
             </div>
 
             <nav className="flex flex-col items-start gap-3 text-sm text-foreground/65">
