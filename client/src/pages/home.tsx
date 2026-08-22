@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Star, Share2, TrendingUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
@@ -98,30 +98,33 @@ function LiveConversationsCarousel() {
       aria-label="Live entertainment conversations"
     >
       <div className="rounded-[2rem] border border-[#e4d9ef] bg-[radial-gradient(circle_at_90%_8%,_#f3e4ff_0%,_transparent_30%),radial-gradient(circle_at_10%_100%,_#fce8ef_0%,_transparent_34%),linear-gradient(145deg,_#fffdfc_0%,_#f7f1ff_58%,_#f4edff_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(80,54,112,0.12)]">
-        <motion.div
-          key={activeIndex}
-          initial={{ opacity: 0, x: 18 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className="space-y-3"
-        >
-          {visibleItems.map((item) => (
-            <article key={item.title} className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-[0_10px_24px_rgba(92,64,123,0.09)]">
-              <img src={item.poster} alt="" className="h-12 w-12 shrink-0 rounded-xl object-cover" />
-              <div className="min-w-0 flex-1">
-                <h3 className="truncate text-sm md:text-base font-bold text-[#25183a]">{item.title}</h3>
-                <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-[#80748f]">
-                  <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#a17acb]" strokeWidth={1.8} />
-                  <span className="truncate">{item.prompt}</span>
-                </p>
-              </div>
-              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#e4d8ef] bg-white/75 px-2.5 py-1 text-[10px] font-semibold text-[#69577a]">
-                <item.Icon className="h-3.5 w-3.5 text-[#9a78bd]" strokeWidth={1.8} />
-                {item.type}
-              </span>
-            </article>
-          ))}
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="space-y-3"
+          >
+            {visibleItems.map((item) => (
+              <article key={item.title} className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-[0_10px_24px_rgba(92,64,123,0.09)]">
+                <img src={item.poster} alt="" className="h-12 w-12 shrink-0 rounded-xl object-cover" />
+                <div className="min-w-0 flex-1">
+                  <h3 className="truncate text-sm md:text-base font-bold text-[#25183a]">{item.title}</h3>
+                  <p className="mt-1 flex items-center gap-1.5 truncate text-xs text-[#80748f]">
+                    <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#a17acb]" strokeWidth={1.8} />
+                    <span className="truncate">{item.prompt}</span>
+                  </p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#e4d8ef] bg-white/75 px-2.5 py-1 text-[10px] font-semibold text-[#69577a]">
+                  <item.Icon className="h-3.5 w-3.5 text-[#9a78bd]" strokeWidth={1.8} />
+                  {item.type}
+                </span>
+              </article>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         <div className="mt-4 flex items-center justify-center gap-3">
           <div className="flex items-center gap-1.5" aria-label={`Conversation ${activeIndex + 1} of ${liveConversationItems.length}`}>
@@ -268,10 +271,15 @@ export default function Home() {
               </div>
 
             </motion.div>
-            <div className="flex flex-col items-center">
-              <p className="mb-3 text-center text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
-                Movies · TV · Books · Podcasts · Gaming + More
-              </p>
+            <div className="w-full flex flex-col items-center gap-5">
+              <div className="w-full max-w-6xl px-2 flex flex-wrap items-center justify-center sm:justify-between gap-x-5 gap-y-2 text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
+                {["Movies", "TV", "Books", "Podcasts", "Gaming + More"].map((category, index) => (
+                  <span key={category} className="inline-flex items-center gap-5">
+                    {category}
+                    {index < 4 && <span className="text-primary/50">•</span>}
+                  </span>
+                ))}
+              </div>
               <LiveConversationsCarousel />
             </div>
           </div>
