@@ -227,7 +227,7 @@ export default function Home() {
               <p className="mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
                 Takes. Theories. Reactions. And everything in between.
               </p>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center mt-5 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-sm font-bold shadow-[0_8px_20px_rgba(72,78,210,0.34)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-w-[160px] items-center justify-center mt-5 px-6 py-2 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-xs font-bold shadow-[0_8px_20px_rgba(72,78,210,0.34)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
                 Explore the feed
               </a>
             </motion.div>
