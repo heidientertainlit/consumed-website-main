@@ -236,18 +236,18 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-4xl mx-auto flex flex-col items-center text-center z-10"
             >
-              <div className="flex items-center justify-center gap-2 md:gap-3 mb-7 md:mb-8">
+              <div className="mt-3 md:mt-4 flex items-center justify-center gap-0 mb-2 md:mb-3">
                 <img src={logoPurple} alt="Consumed" className="h-24 md:h-28 lg:h-32 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-24 md:w-28 lg:w-32 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
+                  className="w-24 md:w-28 lg:w-32 -ml-5 md:-ml-6 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="max-w-[650px] text-2xl md:text-3xl lg:text-4xl font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
+              <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
                 Where entertainment comes together,<br />
                 <span className="italic">so we can too.</span>
               </h1>
