@@ -330,7 +330,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-3 md:gap-4 mb-2 md:mb-3">
+              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-2 md:mb-3">
                 <img src={logoPurple} alt="Consumed" className="h-20 md:h-[5.5rem] lg:h-24 w-auto" />
                 <motion.img
                   src={neonSmiley}
@@ -381,9 +381,25 @@ export default function Home() {
         </section>
 
         {/* Hero app screens — a separate moment that leads into the feed */}
-        <section className="relative z-10 pb-0">
-          <div className="container mx-auto max-w-7xl px-6 flex justify-center lg:justify-end">
-          <motion.div
+        <section className="relative z-10 pt-6 md:pt-10 pb-6 md:pb-10">
+          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[0.82fr_1.18fr] items-center gap-8 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="max-w-md mx-auto lg:mx-0 text-center lg:text-left"
+            >
+              <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
+                Come see what everyone’s talking about.
+              </h2>
+              <p className="mt-4 text-base md:text-lg leading-snug text-foreground/70">
+                Takes. Theories. Reactions. And everything in between.
+              </p>
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center mt-5 px-4 py-2 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-xs font-bold shadow-[0_8px_20px_rgba(72,78,210,0.25)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
+                Explore the feed
+              </a>
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -405,7 +421,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-6 md:-mt-8 pt-20 md:pt-24 pb-14 md:pb-16 px-6 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
+        <section className="hidden" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
             <motion.div
