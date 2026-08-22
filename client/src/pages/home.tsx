@@ -173,7 +173,7 @@ export default function Home() {
                 See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
                 <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
                 <a
                   href="https://app.consumedapp.com"
@@ -186,21 +186,12 @@ export default function Home() {
                 </a>
               </div>
 
-            </motion.div>
-
-            {/* Right: phone screens */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="lg:w-[55%] w-full flex flex-col items-center justify-center translate-y-10 md:translate-y-14"
-            >
-              <div className="flex items-center gap-2.5 mb-3 text-foreground/60" data-testid="hero-social-proof">
+              <div className="flex items-center gap-2 text-foreground/50" data-testid="hero-social-proof">
                 <div className="flex -space-x-1.5" aria-hidden="true">
                   {["EB", "PD", "SS", "CR"].map((initials, i) => (
                     <div
                       key={initials}
-                      className="w-6 h-6 md:w-7 md:h-7 rounded-full border border-white flex items-center justify-center text-[8px] md:text-[9px] font-bold text-white shadow-sm"
+                      className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-white flex items-center justify-center text-[7px] md:text-[8px] font-bold text-white shadow-sm"
                       style={{ background: ["#9b8db8", "#776a96", "#b3a5c4", "#655a80"][i] }}
                     >
                       {initials}
@@ -208,14 +199,24 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="flex text-[#8e7ab9]" aria-hidden="true">
+                  <div className="flex text-[#9a8bbd]" aria-hidden="true">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
+                      <svg key={i} className="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
                     ))}
                   </div>
-                  <span className="text-[11px] md:text-xs font-semibold whitespace-nowrap">Join hundreds of fans</span>
+                  <span className="text-[10px] md:text-[11px] font-medium whitespace-nowrap">Join hundreds of fans</span>
                 </div>
               </div>
+
+            </motion.div>
+
+            {/* Right: phone screens */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="lg:w-[55%] w-full flex items-center justify-center translate-y-10 md:translate-y-14"
+            >
               <div className="relative flex items-center justify-center origin-center md:scale-[0.92] lg:scale-[0.9]">
                 <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
                   <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
