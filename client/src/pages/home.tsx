@@ -274,10 +274,6 @@ function HeroFeedCarousel() {
                     <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#f1ebff] px-1.5 py-0.5 text-[7px] font-bold tracking-[0.08em] text-[#7049c9]">
-                  <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.5, repeat: Infinity }} className="h-1.5 w-1.5 rounded-full bg-[#8e4ee2]" />
-                  LIVE
-                </span>
               </div>
               <div className="mt-3 flex gap-2">
                 <div className="w-14 shrink-0">
