@@ -342,13 +342,12 @@ export default function Home() {
                 />
               </div>
               <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
-                Where entertainment comes together,<br />
-                <span className="italic">so we can too.</span>
+                Where entertainment comes<br />
+                together, <span className="italic">so we can too.</span>
               </h1>
 
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming. Track what you love.<br />
-                Discover your Entertainment DNA.
+                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
@@ -362,13 +361,13 @@ export default function Home() {
                   Open web app <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <div className="mt-9 w-full max-w-[650px] overflow-x-auto scrollbar-none">
-                <div className="min-w-[620px] flex items-center text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
+              <div className="mt-9 w-full self-center">
+                <div className="flex flex-wrap items-center justify-center gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
                   {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
-                    <div key={category} className="contents">
-                      <span className="flex-1 text-center">{category}</span>
-                      {index < 5 && <span className="shrink-0 text-primary/55">•</span>}
-                    </div>
+                    <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
+                      {category}
+                      {index < 5 && <span className="text-primary/55">•</span>}
+                    </span>
                   ))}
                 </div>
               </div>
