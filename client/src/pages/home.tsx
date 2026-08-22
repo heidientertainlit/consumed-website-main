@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Star, Share2, TrendingUp } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, MessageCircle, Star, Share2, TrendingUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
@@ -167,12 +167,26 @@ const heroFeedItems = [
   { person: "Tyler M.", time: "6h ago", title: "Crime Junkie", detail: "True Crime · Listened", rating: "★★★", take: "“Good gateway podcast. Wouldn’t make my top 10.”", badge: "Listened", likes: "52", image: heroCrimeJunkie },
 ];
 
+const liveConversationActivity = [
+  { replies: "14", talking: "6 friends talking", speaker: "Maya", reply: "The soundtrack makes this hit so much harder." },
+  { replies: "21", talking: "9 friends talking", speaker: "Jules", reply: "That final chapter completely broke me." },
+  { replies: "18", talking: "7 friends talking", speaker: "Evan", reply: "Rocky might be my favorite character." },
+  { replies: "29", talking: "11 friends talking", speaker: "Nina", reply: "The juke joint scene was unreal." },
+  { replies: "32", talking: "14 friends talking", speaker: "Alex", reply: "I still don’t trust Milchick." },
+  { replies: "17", talking: "8 friends talking", speaker: "Sam", reply: "That ending still wrecks me." },
+  { replies: "24", talking: "10 friends talking", speaker: "Leah", reply: "This taste test had me crying." },
+  { replies: "16", talking: "5 friends talking", speaker: "Chris", reply: "The last chapter changed everything." },
+  { replies: "27", talking: "12 friends talking", speaker: "Jordan", reply: "That dinner scene was pure chaos." },
+  { replies: "19", talking: "8 friends talking", speaker: "Mia", reply: "I changed sides three times." },
+  { replies: "11", talking: "4 friends talking", speaker: "Ava", reply: "Episode three changed my whole theory." },
+];
+
 function HeroFeedCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const stackedItems = [
-    { item: heroFeedItems[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], x: -72, y: 24, rotate: -7, scale: 0.9, opacity: 0.68, zIndex: 1 },
-    { item: heroFeedItems[activeIndex], x: 0, y: 0, rotate: 0, scale: 1, opacity: 1, zIndex: 3 },
-    { item: heroFeedItems[(activeIndex + 1) % heroFeedItems.length], x: 72, y: 24, rotate: 7, scale: 0.9, opacity: 0.75, zIndex: 2 },
+    { item: heroFeedItems[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], activity: liveConversationActivity[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], x: -72, y: 24, rotate: -7, scale: 0.9, opacity: 0.68, zIndex: 1 },
+    { item: heroFeedItems[activeIndex], activity: liveConversationActivity[activeIndex], x: 0, y: 0, rotate: 0, scale: 1, opacity: 1, zIndex: 3 },
+    { item: heroFeedItems[(activeIndex + 1) % heroFeedItems.length], activity: liveConversationActivity[(activeIndex + 1) % heroFeedItems.length], x: 72, y: 24, rotate: 7, scale: 0.9, opacity: 0.75, zIndex: 2 },
   ];
 
   useEffect(() => {
@@ -193,7 +207,7 @@ function HeroFeedCarousel() {
     >
       <div className="relative h-[285px] md:h-[320px]">
         <AnimatePresence initial={false}>
-          {stackedItems.map(({ item, ...position }) => (
+          {stackedItems.map(({ item, activity, ...position }) => (
             <motion.article
               key={item.person}
               initial={{ opacity: 0, x: 150, y: position.y + 16, rotate: 10, scale: 0.84 }}
@@ -215,12 +229,18 @@ function HeroFeedCarousel() {
               style={{ zIndex: position.zIndex }}
               className="absolute left-1/2 -ml-[130px] md:-ml-[140px] w-[260px] md:w-[280px] rounded-2xl border border-[#ece7f3] bg-white p-3 text-[#1b1530] shadow-[0_18px_40px_rgba(59,36,97,0.16)]"
             >
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
-                <div className="min-w-0">
-                  <p className="truncate text-[11px] font-bold leading-none">{item.person}</p>
-                  <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7d5bd7] to-[#301b6e] text-white flex items-center justify-center text-[9px] font-bold">{item.person.charAt(0)}</span>
+                  <div className="min-w-0">
+                    <p className="truncate text-[11px] font-bold leading-none">{item.person}</p>
+                    <p className="mt-1 text-[9px] text-[#756e83]">{item.time}</p>
+                  </div>
                 </div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-[#f1ebff] px-1.5 py-0.5 text-[7px] font-bold tracking-[0.08em] text-[#7049c9]">
+                  <motion.span animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.5, repeat: Infinity }} className="h-1.5 w-1.5 rounded-full bg-[#8e4ee2]" />
+                  LIVE
+                </span>
               </div>
               <div className="mt-3 flex gap-2">
                 <div className="w-14 shrink-0">
@@ -231,17 +251,37 @@ function HeroFeedCarousel() {
                   <h3 className="line-clamp-2 text-[12px] md:text-sm font-bold leading-tight">{item.title}</h3>
                   <p className="mt-1 line-clamp-1 text-[9px] text-[#777080]">{item.detail}</p>
                   {item.rating && <p className="mt-1.5 text-[9px] tracking-[0.08em] text-[#f4b91d]">{item.rating}</p>}
-                  <p className="mt-1 line-clamp-3 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
+                  <p className="mt-1 line-clamp-2 text-[9px] leading-[1.35] text-[#554e5e]">{item.take}</p>
                 </div>
               </div>
-              <div className="mt-2.5 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
-                <button type="button" aria-label={`${item.likes} thumbs up`} className="inline-flex items-center gap-1 hover:text-[#643ec5] transition-colors">
-                  <ThumbsUp className="h-3 w-3" strokeWidth={1.7} />
-                  <span>{item.likes}</span>
-                </button>
-                <button type="button" aria-label="Thumbs down" className="hover:text-[#643ec5] transition-colors">
-                  <ThumbsDown className="h-3 w-3" strokeWidth={1.7} />
-                </button>
+              <div className="mt-2 rounded-lg border border-[#eee8f7] bg-[#fbf9ff] px-2 py-1.5 text-[8px] text-[#756e83]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center -space-x-1.5">
+                    <span className="w-4 h-4 rounded-full border border-white bg-[#f4a6be] flex items-center justify-center text-[6px] font-bold text-white">M</span>
+                    <span className="w-4 h-4 rounded-full border border-white bg-[#6d8ddd] flex items-center justify-center text-[6px] font-bold text-white">J</span>
+                    <span className="w-4 h-4 rounded-full border border-white bg-[#8863ca] flex items-center justify-center text-[6px] font-bold text-white">A</span>
+                  </div>
+                  <span className="ml-2 mr-auto truncate">{activity.talking}</span>
+                  <span className="inline-flex items-center gap-1 font-semibold text-[#7049c9]">
+                    <MessageCircle className="h-3 w-3" strokeWidth={1.8} />
+                    {activity.replies}
+                  </span>
+                </div>
+                <p className="mt-1 truncate text-[#5c5368]">
+                  <span className="font-bold text-[#40354f]">{activity.speaker}:</span> “{activity.reply}”
+                </p>
+              </div>
+              <div className="mt-2 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
+                <div className="flex items-center gap-1.5">
+                  <button type="button" aria-label={`${item.likes} thumbs up`} className="inline-flex items-center gap-1 rounded-full bg-[#f4f1fa] px-2 py-1 font-semibold hover:bg-[#ece5fa] hover:text-[#643ec5] transition-colors">
+                    <ThumbsUp className="h-3 w-3" strokeWidth={1.7} />
+                    <span>{item.likes}</span>
+                  </button>
+                  <button type="button" aria-label="Thumbs down" className="inline-flex items-center justify-center rounded-full bg-[#f4f1fa] p-1 hover:bg-[#ece5fa] hover:text-[#643ec5] transition-colors">
+                    <ThumbsDown className="h-3 w-3" strokeWidth={1.7} />
+                  </button>
+                </div>
+                <button type="button" className="font-bold tracking-[0.08em] text-[#7049c9] hover:text-[#5434a6] transition-colors">JOIN IN →</button>
               </div>
             </motion.article>
           ))}
