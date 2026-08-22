@@ -235,11 +235,6 @@ function HeroFeedCarousel() {
             </motion.article>
           ))}
         </AnimatePresence>
-        <div className="absolute bottom-0 inset-x-0 flex justify-center gap-1.5" aria-hidden="true">
-          {heroFeedItems.map((item, index) => (
-            <span key={item.person} className={index === activeIndex ? "h-1.5 w-5 rounded-full bg-[#7751ca]" : "h-1.5 w-1.5 rounded-full bg-[#d8cde5]"} />
-          ))}
-        </div>
       </div>
     </motion.aside>
   );
