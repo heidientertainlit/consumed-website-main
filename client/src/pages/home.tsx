@@ -216,7 +216,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="lg:w-[55%] w-full flex items-center justify-center translate-y-10 md:translate-y-14"
             >
-              <div className="relative flex items-center justify-center origin-center md:scale-[1.08] lg:scale-[1.1]">
+              <div className="relative flex items-center justify-center">
                 <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
                   <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
                 </div>
