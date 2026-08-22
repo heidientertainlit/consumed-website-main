@@ -177,7 +177,7 @@ function HeroFeedCarousel() {
       initial={{ opacity: 0, x: 24 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className="w-full max-w-[560px] mx-auto xl:translate-x-8 xl:translate-y-5"
+      className="w-full max-w-[560px] mx-auto xl:-translate-x-4 xl:translate-y-5"
       aria-label="What people are talking about"
     >
       <div className="relative h-[285px] md:h-[320px]">
