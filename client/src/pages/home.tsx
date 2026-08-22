@@ -163,11 +163,7 @@ export default function Home() {
       
       {/* 1. Navigation */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"}`}>
-        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <Link href="/">
-            <img src={logoPurple} alt="Consumed" className="h-7 md:h-8 cursor-pointer hover:opacity-80 transition-opacity" />
-          </Link>
-          
+        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-end">
           <div className="flex items-center gap-3 md:gap-4">
             <div className="hidden sm:flex items-center gap-1.5">
               <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-instagram">
@@ -241,13 +237,13 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-7">
-                <img src={logoPurple} alt="Consumed" className="h-11 md:h-14 w-auto" />
+              <div className="flex items-center justify-center lg:justify-start gap-4 mb-7 md:mb-8">
+                <img src={logoPurple} alt="Consumed" className="h-16 md:h-20 lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-12 md:w-14 drop-shadow-[0_8px_15px_rgba(121,83,213,0.16)]"
+                  className="w-16 md:w-20 lg:w-20 drop-shadow-[0_10px_20px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
