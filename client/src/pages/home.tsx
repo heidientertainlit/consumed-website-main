@@ -353,7 +353,8 @@ export default function Home() {
               </h1>
 
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
+                See what everyone&apos;s consuming. Track what you love.<br />
+                Discover your Entertainment DNA.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
