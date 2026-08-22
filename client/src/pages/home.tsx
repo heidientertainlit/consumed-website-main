@@ -6,6 +6,17 @@ import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Mus
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
 import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
+import heroMaybeSomeday from "@assets/generated_images/hero-maybe-someday.jpg";
+import heroTheWomen from "@assets/generated_images/hero-the-women.jpg";
+import heroProjectHailMary from "@assets/generated_images/hero-project-hail-mary.jpg";
+import heroSinners from "@assets/generated_images/hero-sinners.jpg";
+import heroSeverance from "@assets/generated_images/hero-severance.jpg";
+import heroLastOfUsPartTwo from "@assets/generated_images/hero-last-of-us-part-two.jpg";
+import heroGoodMythicalMorning from "@assets/generated_images/hero-good-mythical-morning.jpg";
+import heroGreatBigBeautifulLife from "@assets/generated_images/hero-great-big-beautiful-life.jpg";
+import heroWhiteLotus from "@assets/generated_images/hero-white-lotus.jpg";
+import heroMormonWives from "@assets/generated_images/hero-mormon-wives.jpg";
+import heroCrimeJunkie from "@assets/generated_images/hero-crime-junkie.jpg";
 
 
 // Generated images
@@ -143,17 +154,17 @@ function LiveConversationsCarousel() {
 }
 
 const heroFeedItems = [
-  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", rating: "★★★★★", take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series.... WITH A SOUNDTRACK. And some spice if you’re into that ;)”", badge: "70% match", likes: "68", image: maybeSomedayReview },
-  { person: "Maya R.", time: "18m ago", title: "The Women", detail: "Book · Finished", rating: "★★★★★", take: "“Finished this at 1am and immediately needed someone else to have read it.”", badge: "Finished", likes: "91", image: posterBook },
-  { person: "Daniel K.", time: "41m ago", title: "Project Hail Mary", detail: "Book · Finished", rating: "★★★★½", take: "“I knew nothing going in. Keep it that way. This was so much fun.”", badge: "Finished", likes: "74", image: posterBook },
-  { person: "Sophie M.", time: "1h ago", title: "Sinners", detail: "Movie · Watched", rating: "★★★★", take: "“I thought I knew what kind of movie I was watching. I absolutely did not.”", badge: "Watched", likes: "86", image: posterMovie },
-  { person: "Marcus T.", time: "32m ago", title: "Severance", detail: "Currently watching · S2", rating: "", take: "“Okay, I have a theory about what’s actually happening…”", badge: "Watching", likes: "103", image: showDune },
-  { person: "Evan C.", time: "1h ago", title: "The Last of Us Part II", detail: "Game · Played", rating: "★★★½", take: "“Beautiful game. Still not sure how I feel about some of those story choices.”", badge: "Played", likes: "79", image: showTlou },
-  { person: "Jordan P.", time: "2h ago", title: "Good Mythical Morning", detail: "YouTube · Added to Favorites", rating: "", take: "“This has basically become my morning talk show.”", badge: "Favorite", likes: "57", image: coverChef },
-  { person: "Rachel B.", time: "3h ago", title: "Great Big Beautiful Life", detail: "Book · Finished", rating: "★★★★", take: "“Kept telling myself ‘one more chapter’ and then suddenly it was midnight.”", badge: "Finished", likes: "63", image: posterBook },
-  { person: "Chris A.", time: "4h ago", title: "The White Lotus", detail: "TV · Watched", rating: "★★★½", take: "“The group chat after every episode is half the experience.”", badge: "Watched", likes: "88", image: dayOfJackalReview },
-  { person: "Lauren H.", time: "5h ago", title: "The Secret Lives of Mormon Wives", detail: "Reality · Watching", rating: "★★★½", take: "“I have changed my mind about who I’m rooting for like four times.”", badge: "Watching", likes: "71", image: dayOfJackalReview },
-  { person: "Tyler M.", time: "6h ago", title: "Crime Junkie", detail: "True Crime · Listened", rating: "★★★", take: "“Good gateway podcast. Wouldn’t make my top 10.”", badge: "Listened", likes: "52", image: posterPodcast },
+  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", rating: "★★★★★", take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series.... WITH A SOUNDTRACK. And some spice if you’re into that ;)”", badge: "70% match", likes: "68", image: heroMaybeSomeday },
+  { person: "Maya R.", time: "18m ago", title: "The Women", detail: "Book · Finished", rating: "★★★★★", take: "“Finished this at 1am and immediately needed someone else to have read it.”", badge: "Finished", likes: "91", image: heroTheWomen },
+  { person: "Daniel K.", time: "41m ago", title: "Project Hail Mary", detail: "Book · Finished", rating: "★★★★½", take: "“I knew nothing going in. Keep it that way. This was so much fun.”", badge: "Finished", likes: "74", image: heroProjectHailMary },
+  { person: "Sophie M.", time: "1h ago", title: "Sinners", detail: "Movie · Watched", rating: "★★★★", take: "“I thought I knew what kind of movie I was watching. I absolutely did not.”", badge: "Watched", likes: "86", image: heroSinners },
+  { person: "Marcus T.", time: "32m ago", title: "Severance", detail: "Currently watching · S2", rating: "", take: "“Okay, I have a theory about what’s actually happening…”", badge: "Watching", likes: "103", image: heroSeverance },
+  { person: "Evan C.", time: "1h ago", title: "The Last of Us Part II", detail: "Game · Played", rating: "★★★½", take: "“Beautiful game. Still not sure how I feel about some of those story choices.”", badge: "Played", likes: "79", image: heroLastOfUsPartTwo },
+  { person: "Jordan P.", time: "2h ago", title: "Good Mythical Morning", detail: "YouTube · Added to Favorites", rating: "", take: "“This has basically become my morning talk show.”", badge: "Favorite", likes: "57", image: heroGoodMythicalMorning },
+  { person: "Rachel B.", time: "3h ago", title: "Great Big Beautiful Life", detail: "Book · Finished", rating: "★★★★", take: "“Kept telling myself ‘one more chapter’ and then suddenly it was midnight.”", badge: "Finished", likes: "63", image: heroGreatBigBeautifulLife },
+  { person: "Chris A.", time: "4h ago", title: "The White Lotus", detail: "TV · Watched", rating: "★★★½", take: "“The group chat after every episode is half the experience.”", badge: "Watched", likes: "88", image: heroWhiteLotus },
+  { person: "Lauren H.", time: "5h ago", title: "The Secret Lives of Mormon Wives", detail: "Reality · Watching", rating: "★★★½", take: "“I have changed my mind about who I’m rooting for like four times.”", badge: "Watching", likes: "71", image: heroMormonWives },
+  { person: "Tyler M.", time: "6h ago", title: "Crime Junkie", detail: "True Crime · Listened", rating: "★★★", take: "“Good gateway podcast. Wouldn’t make my top 10.”", badge: "Listened", likes: "52", image: heroCrimeJunkie },
 ];
 
 function HeroFeedCarousel() {
