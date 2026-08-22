@@ -231,14 +231,14 @@ export default function Home() {
       <main>
         {/* 2. HERO */}
         <section className="pt-24 md:pt-28 pb-12 md:pb-16 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 flex flex-col items-center gap-10 md:gap-12 relative -translate-y-3 md:-translate-y-4">
+          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12 lg:gap-14 relative -translate-y-3 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-4xl mx-auto flex flex-col items-center text-center z-10"
+              className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center gap-3 md:gap-4 mb-2 md:mb-3">
+              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-3 md:gap-4 mb-2 md:mb-3">
                 <img src={logoPurple} alt="Consumed" className="h-24 md:h-28 lg:h-32 w-auto" />
                 <motion.img
                   src={neonSmiley}
@@ -257,7 +257,7 @@ export default function Home() {
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
                 See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
                 <a
                   href="https://app.consumedapp.com"
@@ -271,16 +271,7 @@ export default function Home() {
               </div>
 
             </motion.div>
-            <div className="w-full flex flex-col items-center gap-5">
-              <div className="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-5 overflow-hidden rounded-2xl border border-[#ece7f3] bg-white/75 shadow-[0_10px_30px_rgba(83,57,124,0.05)] sm:divide-x sm:divide-[#ece7f3]">
-                {["Movies", "TV", "Books", "Podcasts", "Gaming + More"].map((category) => (
-                  <span key={category} className="py-3 text-center text-[10px] md:text-xs font-bold tracking-[0.14em] uppercase text-foreground/50">
-                    {category}
-                  </span>
-                ))}
-              </div>
-              <LiveConversationsCarousel />
-            </div>
+            <LiveConversationsCarousel />
           </div>
         </section>
 
@@ -466,6 +457,16 @@ export default function Home() {
         {/* 4. CATEGORIES */}
         <section className="pt-14 md:pt-20 pb-0 px-6 bg-white" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
+            <div className="w-full overflow-x-auto scrollbar-none mb-12 md:mb-16">
+              <div className="min-w-[680px] max-w-6xl mx-auto flex items-center text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
+                {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
+                  <div key={category} className="contents">
+                    <span className="flex-1 text-center">{category}</span>
+                    {index < 5 && <span className="shrink-0 text-primary/55">•</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
