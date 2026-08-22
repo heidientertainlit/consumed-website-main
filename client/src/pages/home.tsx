@@ -380,12 +380,12 @@ export default function Home() {
 
         {/* Hero app screens — a separate moment that leads into the feed */}
         <section className="relative z-10 pt-6 md:pt-10 pb-6 md:pb-10">
-          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[0.82fr_1.18fr] items-center gap-8 lg:gap-12">
+          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-8 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="max-w-md mx-auto lg:mx-0 text-center lg:text-left"
+              className="max-w-md mx-auto lg:order-2 text-center"
             >
               <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
                 Come see what everyone’s talking about.
@@ -401,7 +401,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="w-full lg:w-[58%] flex items-center justify-center translate-y-6 md:translate-y-8"
+              className="w-full lg:order-1 flex items-center justify-center translate-y-6 md:translate-y-8"
             >
               <div className="relative flex items-center justify-center origin-center md:scale-[0.92] lg:scale-[0.9]">
                 <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
@@ -419,9 +419,9 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="hidden" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-6 md:-mt-8 h-[260px] md:h-[360px] relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)]" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
-          <div className="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
+          <div className="hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
