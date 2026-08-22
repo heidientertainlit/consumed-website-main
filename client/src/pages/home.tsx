@@ -97,7 +97,6 @@ function LiveConversationsCarousel() {
       className="w-full max-w-md mx-auto"
       aria-label="Live entertainment conversations"
     >
-      <p className="mb-3 text-center text-[10px] font-bold tracking-[0.18em] uppercase text-[#8a6bb5]">Live conversations</p>
       <div className="rounded-[2rem] border border-[#e4d9ef] bg-[radial-gradient(circle_at_90%_8%,_#f3e4ff_0%,_transparent_30%),radial-gradient(circle_at_10%_100%,_#fce8ef_0%,_transparent_34%),linear-gradient(145deg,_#fffdfc_0%,_#f7f1ff_58%,_#f4edff_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(80,54,112,0.12)]">
         <motion.div
           key={activeIndex}
@@ -236,13 +235,13 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-4xl mx-auto flex flex-col items-center text-center z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center gap-0 mb-2 md:mb-3">
+              <div className="mt-3 md:mt-4 flex items-center justify-center gap-3 md:gap-4 mb-2 md:mb-3">
                 <img src={logoPurple} alt="Consumed" className="h-24 md:h-28 lg:h-32 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-24 md:w-28 lg:w-32 -ml-5 md:-ml-6 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
+                  className="w-24 md:w-28 lg:w-32 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
@@ -252,10 +251,9 @@ export default function Home() {
                 <span className="italic">so we can too.</span>
               </h1>
 
-              <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45 mb-5">
-                Movies · TV · Books · Podcasts · Gaming + More
+              <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
+                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
-
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
                 <a
@@ -268,12 +266,14 @@ export default function Home() {
                   Open web app <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <p className="mt-6 text-sm md:text-base text-foreground/80 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
-              </p>
 
             </motion.div>
-            <LiveConversationsCarousel />
+            <div className="flex flex-col items-center">
+              <p className="mb-3 text-center text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45">
+                Movies · TV · Books · Podcasts · Gaming + More
+              </p>
+              <LiveConversationsCarousel />
+            </div>
           </div>
         </section>
 
