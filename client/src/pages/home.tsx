@@ -168,11 +168,11 @@ const heroFeedItems = [
 ];
 
 const liveConversationActivity = [
-  { replies: "14", talking: "6 friends talking", speaker: "Maya", reply: "The soundtrack makes this hit so much harder." },
+  { replies: "14", talking: "6 friends talking", speaker: "Maya", reply: "The soundtrack makes this hit so much harder.", isTyping: true },
   { replies: "21", talking: "9 friends talking", speaker: "Jules", reply: "That final chapter completely broke me." },
   { replies: "18", talking: "7 friends talking", speaker: "Evan", reply: "Rocky might be my favorite character." },
   { replies: "29", talking: "11 friends talking", speaker: "Nina", reply: "The juke joint scene was unreal." },
-  { replies: "32", talking: "14 friends talking", speaker: "Alex", reply: "I still don’t trust Milchick." },
+  { replies: "32", talking: "14 friends talking", speaker: "Alex", reply: "I still don’t trust Milchick.", isTyping: true },
   { replies: "17", talking: "8 friends talking", speaker: "Sam", reply: "That ending still wrecks me." },
   { replies: "24", talking: "10 friends talking", speaker: "Leah", reply: "This taste test had me crying." },
   { replies: "16", talking: "5 friends talking", speaker: "Chris", reply: "The last chapter changed everything." },
@@ -227,7 +227,7 @@ function HeroFeedCarousel() {
                 y: { duration: 3.8, repeat: Infinity, ease: "easeInOut" },
               }}
               style={{ zIndex: position.zIndex }}
-              className="absolute left-1/2 -ml-[130px] md:-ml-[140px] w-[260px] md:w-[280px] rounded-2xl border border-[#ece7f3] bg-white p-3 text-[#1b1530] shadow-[0_18px_40px_rgba(59,36,97,0.16)]"
+              className="absolute left-1/2 -ml-[136px] md:-ml-[150px] w-[272px] md:w-[300px] rounded-2xl border border-[#ece7f3] bg-white p-3 md:p-3.5 text-[#1b1530] shadow-[0_18px_40px_rgba(59,36,97,0.16)]"
             >
               {position.zIndex === 3 && (
                 <>
@@ -247,6 +247,7 @@ function HeroFeedCarousel() {
                       <Star className="h-2.5 w-2.5 fill-current" strokeWidth={1.8} />
                     </motion.span>
                   </div>
+                  {activity.isTyping && (
                   <motion.div
                     animate={{ opacity: [0.65, 1, 0.65], y: [0, -2, 0] }}
                     transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
@@ -264,6 +265,7 @@ function HeroFeedCarousel() {
                       ))}
                     </span>
                   </motion.div>
+                  )}
                 </>
               )}
               <div className="flex items-center justify-between gap-2">
@@ -304,7 +306,7 @@ function HeroFeedCarousel() {
                   <span className="font-bold text-[#40354f]">{activity.speaker}:</span> “{activity.reply}”
                 </p>
               </div>
-              <div className="mt-2 flex items-center justify-between border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
+              <div className="mt-2 flex items-center justify-start border-t border-[#eeeaf7] pt-2 text-[9px] text-[#756e83]">
                 <div className="flex items-center gap-1.5">
                   <button type="button" aria-label={`${item.likes} thumbs up`} className="inline-flex items-center gap-1 rounded-full bg-[#f4f1fa] px-2 py-1 font-semibold hover:bg-[#ece5fa] hover:text-[#643ec5] transition-colors">
                     <ThumbsUp className="h-3 w-3" strokeWidth={1.7} />
@@ -314,7 +316,6 @@ function HeroFeedCarousel() {
                     <ThumbsDown className="h-3 w-3" strokeWidth={1.7} />
                   </button>
                 </div>
-                <button type="button" className="font-bold tracking-[0.08em] text-[#7049c9] hover:text-[#5434a6] transition-colors">JOIN IN →</button>
               </div>
             </motion.article>
           ))}
