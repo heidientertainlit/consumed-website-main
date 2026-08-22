@@ -361,7 +361,12 @@ export default function Home() {
                   Open web app <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-              <div className="mt-9 w-full self-center">
+            </motion.div>
+            <div className="order-3 lg:order-2">
+              <HeroFeedCarousel />
+            </div>
+            <div className="order-2 lg:order-3 lg:col-span-2 flex justify-center">
+              <div className="mt-2 md:mt-4 w-full max-w-[760px]">
                 <div className="flex flex-wrap items-center justify-center gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
                   {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
                     <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
@@ -371,9 +376,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
-            </motion.div>
-            <HeroFeedCarousel />
+            </div>
           </div>
         </section>
 
