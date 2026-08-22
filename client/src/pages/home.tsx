@@ -143,7 +143,7 @@ function LiveConversationsCarousel() {
 }
 
 const heroFeedItems = [
-  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "The soundtrack alone sold me. I’m only a few chapters in and already completely invested.", badge: "45% match", image: maybeSomedayReview },
+  { person: "Rachelle S.", time: "2h ago", title: "Maybe Someday", detail: "by Colleen Hoover", take: "“ABSOLUTELY MUST READ. Such a beautiful romantic series.... WITH A SOUNDTRACK. And some spice if you’re into that ;)”", badge: "70% match", image: maybeSomedayReview },
   { person: "Ashley H.", time: "5h ago", title: "The Day of the Jackal", detail: "You rated this 3/5 ★", take: "That rooftop scene had me pacing. I need to talk about the ending with someone.", badge: "You loved this", image: dayOfJackalReview },
   { person: "Marcus T.", time: "32m ago", title: "The Last of Us Part II", detail: "Currently playing · PS5", take: "I went back for every collectible, then got caught reliving that ending all over again.", badge: "In progress", image: showTlou },
   { person: "Evan C.", time: "1h ago", title: "The Toast", detail: "Podcast · New episode", take: "The pop-culture takes from this episode were exactly what I needed for my commute.", badge: "New episode", image: posterPodcast },
