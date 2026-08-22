@@ -241,10 +241,20 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
             >
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-7">
+                <img src={logoPurple} alt="Consumed" className="h-11 md:h-14 w-auto" />
+                <motion.img
+                  src={neonSmiley}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-12 md:w-14 drop-shadow-[0_8px_15px_rgba(121,83,213,0.16)]"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
+                />
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-7 md:mb-8">
                 Where entertainment comes together,<br />
                 <span className="italic">so we can too.</span>
-                <img src={neonSmiley} alt="" aria-hidden="true" className="inline-block w-10 md:w-12 align-middle ml-2 md:ml-3 -translate-y-0.5" />
               </h1>
 
               <p className="text-[10px] md:text-xs font-bold tracking-[0.16em] uppercase text-foreground/45 mb-5">
