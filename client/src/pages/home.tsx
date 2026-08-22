@@ -94,10 +94,10 @@ function LiveConversationsCarousel() {
       initial={{ opacity: 0, x: 24 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className="w-full max-w-md mx-auto lg:mx-0"
+      className="w-full max-w-md mx-auto"
       aria-label="Live entertainment conversations"
     >
-      <p className="mb-3 text-center lg:text-left text-[10px] font-bold tracking-[0.18em] uppercase text-[#8a6bb5]">Live conversations</p>
+      <p className="mb-3 text-center text-[10px] font-bold tracking-[0.18em] uppercase text-[#8a6bb5]">Live conversations</p>
       <div className="rounded-[2rem] border border-[#e4d9ef] bg-[radial-gradient(circle_at_90%_8%,_#f3e4ff_0%,_transparent_30%),radial-gradient(circle_at_10%_100%,_#fce8ef_0%,_transparent_34%),linear-gradient(145deg,_#fffdfc_0%,_#f7f1ff_58%,_#f4edff_100%)] p-4 md:p-5 shadow-[0_22px_55px_rgba(80,54,112,0.12)]">
         <motion.div
           key={activeIndex}
@@ -164,8 +164,8 @@ export default function Home() {
       {/* 1. Navigation */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-end">
-          <div className="flex items-center gap-3 md:gap-4">
-            <div className="hidden sm:flex items-center gap-1.5">
+          <div className="flex w-full items-center gap-3 md:gap-4">
+            <div className="hidden sm:flex items-center gap-1.5 mr-auto">
               <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-instagram">
                 <Instagram className="w-4 h-4" />
               </a>
@@ -228,27 +228,26 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-24 md:pt-28 pb-20 md:pb-24 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16 relative -translate-y-3 md:-translate-y-4">
-            {/* Left: copy */}
+        <section className="pt-24 md:pt-28 pb-12 md:pb-16 relative overflow-visible z-10" id="features">
+          <div className="container mx-auto max-w-7xl px-6 flex flex-col items-center gap-10 md:gap-12 relative -translate-y-3 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
+              className="max-w-4xl mx-auto flex flex-col items-center text-center z-10"
             >
-              <div className="flex items-center justify-center lg:justify-start gap-4 mb-7 md:mb-8">
-                <img src={logoPurple} alt="Consumed" className="h-16 md:h-20 lg:h-20 w-auto" />
+              <div className="flex items-center justify-center gap-5 mb-7 md:mb-8">
+                <img src={logoPurple} alt="Consumed" className="h-20 md:h-24 lg:h-28 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-16 md:w-20 lg:w-20 drop-shadow-[0_10px_20px_rgba(121,83,213,0.16)]"
+                  className="w-20 md:w-24 lg:w-28 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] tracking-tight mb-7 md:mb-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
                 Where entertainment comes together,<br />
                 <span className="italic">so we can too.</span>
               </h1>
@@ -257,12 +256,12 @@ export default function Home() {
                 Movies · TV · Books · Podcasts · Gaming + More
               </p>
 
-              <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-xl leading-relaxed font-sans">
+              <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
                 See what everyone&apos;s consuming. Track what you love. Discover your Entertainment DNA.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
-                <AppStoreButton className="w-full sm:w-auto px-8 py-3.5 text-base" />
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
                 <a
                   href="https://app.consumedapp.com"
                   target="_blank"
