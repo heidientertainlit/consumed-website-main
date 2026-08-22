@@ -226,30 +226,30 @@ export default function Home() {
               <p className="mt-4 text-base md:text-lg leading-snug font-sans font-normal text-[#d7ccff]">
                 Takes. Theories. Reactions. And everything in between.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2" data-testid="feed-social-proof">
-                <div className="flex -space-x-2" aria-hidden="true">
+              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
+                Explore the feed <ArrowRight className="w-4 h-4" />
+              </a>
+              <div className="mt-4 flex items-center gap-2.5 text-white/80" data-testid="feed-social-proof">
+                <div className="flex -space-x-1.5 shrink-0" aria-hidden="true">
                   {["EB", "PD", "SS", "CR"].map((initials, i) => (
                     <div
                       key={initials}
-                      className="w-9 h-9 rounded-full border-2 border-[#251151] flex items-center justify-center text-[11px] font-bold text-white shadow-md"
+                      className="w-7 h-7 rounded-full border border-[#251151] flex items-center justify-center text-[9px] font-bold text-white shadow-sm"
                       style={{ background: ["#a58fe7", "#7657c8", "#c0a7f0", "#59408f"][i] }}
                     >
                       {initials}
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex text-[#d5c4ff]" aria-hidden="true">
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-xs font-semibold whitespace-nowrap">Join hundreds of fans</span>
+                  <div className="flex text-[#d5c4ff]" aria-label="Five-star rating">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
+                      <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.8l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>
                     ))}
                   </div>
-                  <span className="text-sm font-semibold text-white/85 whitespace-nowrap">Join hundreds of fans</span>
                 </div>
               </div>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#e2d9ff] font-semibold hover:text-white transition-colors">
-                Explore the feed <ArrowRight className="w-4 h-4" />
-              </a>
             </motion.div>
 
             <div className="flex flex-1 gap-4 md:gap-5 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 scrollbar-none">
