@@ -1409,6 +1409,7 @@ export default function Home() {
               <button onClick={() => scrollToSection("about-us")} className="hover:text-primary transition-colors">About Us</button>
               <Link href="/insights" className="hover:text-primary transition-colors" data-testid="link-insights-footer">Insights</Link>
               <button onClick={() => scrollToSection("feedback")} className="hover:text-primary transition-colors">Feedback</button>
+              <Link href="/privacy" className="hover:text-primary transition-colors" data-testid="link-privacy-footer">Privacy Policy</Link>
             </nav>
 
             <nav className="flex flex-col items-start gap-3 text-sm text-foreground/65">
