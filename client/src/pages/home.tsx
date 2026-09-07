@@ -181,6 +181,45 @@ const liveConversationActivity = [
   { replies: "11", talking: "4 friends talking", speaker: "Ava", reply: "Episode three changed my whole theory." },
 ];
 
+const heroMediaTypes = ["show", "movie", "book", "game", "YouTube rabbit hole", "podcast", "song"];
+
+function HeroTagline() {
+  const [mediaIndex, setMediaIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setMediaIndex((current) => (current + 1) % heroMediaTypes.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
+      Admit it, that{" "}
+      <span className="relative inline-grid max-w-full align-baseline overflow-hidden">
+        <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
+          YouTube rabbit hole
+        </span>
+        <AnimatePresence initial={false} mode="wait">
+          <motion.span
+            key={heroMediaTypes[mediaIndex]}
+            initial={{ opacity: 0, y: "80%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="col-start-1 row-start-1 whitespace-nowrap italic text-primary"
+          >
+            {heroMediaTypes[mediaIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      <br className="hidden sm:block" />
+      was just your entire personality.
+    </h1>
+  );
+}
+
 function HeroFeedCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const stackedItems = [
@@ -438,10 +477,7 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
-                Where entertainment comes<br />
-                together, <span className="italic">so we can too.</span>
-              </h1>
+              <HeroTagline />
 
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
                 See what everyone&apos;s consuming. Track what you love.<br />
