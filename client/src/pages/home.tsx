@@ -479,9 +479,19 @@ export default function Home() {
               </div>
               <HeroTagline />
 
+              <div className="mt-0 mb-5 w-full max-w-[760px]">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
+                  {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
+                    <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
+                      {category}
+                      {index < 5 && <span className="text-primary/55">•</span>}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what everyone&apos;s consuming. Track what you love.<br />
-                Discover your Entertainment DNA.
+                See what your friends are into, find your next obsession, and discover your Entertainment DNA.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
@@ -498,18 +508,6 @@ export default function Home() {
             </motion.div>
             <div className="order-3 lg:order-2">
               <HeroFeedCarousel />
-            </div>
-            <div className="order-2 lg:order-3 lg:col-span-2 flex justify-center -translate-y-4 md:-translate-y-6">
-              <div className="mt-2 md:mt-4 w-full max-w-[760px]">
-                <div className="flex flex-wrap items-center justify-center gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
-                  {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
-                    <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
-                      {category}
-                      {index < 5 && <span className="text-primary/55">•</span>}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
