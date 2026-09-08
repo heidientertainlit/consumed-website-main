@@ -554,7 +554,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 h-[390px] md:h-[480px] relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
+        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 pb-28 md:pb-60 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
           <div className="container mx-auto max-w-7xl relative z-10 px-7 pt-28 md:px-14 md:pt-28">
             <motion.div
@@ -564,14 +564,29 @@ export default function Home() {
               className="max-w-2xl"
             >
               <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-heading font-normal leading-[1.05]">
-                Entertainment is better, <span className="italic text-[#d8ceff]">together.</span>
+                Everything. Is. Everywhere.
               </h2>
               <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
-                Finally, everything you’re into. All in one place.
+                But entertainment is better, <span className="italic text-[#d8ceff]">together.</span> And now, finallyyyy everything is all in one place.
+              </p>
+              <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] font-semibold leading-relaxed text-white/90">
+                Different apps. Different lists. Different conversations.
               </p>
               <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] leading-relaxed text-white/75">
                 What we watch, read, listen to, play, save, and talk about is scattered everywhere. Consumed brings it all under one roof — so we can finally see what our friends are into, what they’re saying, and what they’re loving.
               </p>
+              <p className="mt-5 sm:mt-6 text-sm sm:text-base font-semibold leading-relaxed text-[#e6ddff]">
+                Movies. TV. Books. Podcasts. Music. Gaming. And more.
+              </p>
+              <a
+                href="https://app.consumedapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#301b6e] transition-colors hover:bg-[#e6ddff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                data-testid="link-bring-it-together"
+              >
+                Bring it all together <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
             </motion.div>
           </div>
           <div className="hidden">
