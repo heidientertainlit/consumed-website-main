@@ -394,7 +394,7 @@ function PhoneTrio() {
   );
 }
 
-function ScatteredEntertainmentAnimation() {
+function ScatteredEntertainmentAnimation({ cleared = false }: { cleared?: boolean }) {
   const fragments = [
     {
       className: "left-[-2%] top-[2%] z-10 w-[52%]",
@@ -578,6 +578,7 @@ function ScatteredEntertainmentAnimation() {
     <motion.div
       initial="hidden"
       whileInView="visible"
+      animate={cleared ? "cleared" : undefined}
       viewport={{ once: true, amount: 0.25 }}
       className="relative mx-auto h-[470px] w-full max-w-[680px] sm:h-[520px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
@@ -599,6 +600,18 @@ function ScatteredEntertainmentAnimation() {
                 damping: 13,
                 mass: 0.84,
                 delay: index * 0.18,
+              },
+            },
+            cleared: {
+              opacity: 0,
+              x: (index % 2 === 0 ? -1 : 1) * (420 + index * 35),
+              y: -440 - index * 24,
+              rotate: (index % 2 === 0 ? -1 : 1) * (28 + index * 3),
+              scale: 0.72,
+              transition: {
+                duration: 0.68,
+                delay: index * 0.025,
+                ease: [0.55, 0.06, 0.68, 0.19],
               },
             },
           }}
@@ -623,6 +636,18 @@ function ScatteredEntertainmentAnimation() {
                 stiffness: 220,
                 damping: 12,
                 delay: (fragments.length + index) * 0.18,
+              },
+            },
+            cleared: {
+              opacity: 0,
+              x: (index % 2 === 0 ? -1 : 1) * (480 + index * 50),
+              y: -520 - index * 45,
+              rotate: index % 2 === 0 ? -34 : 38,
+              scale: 0.65,
+              transition: {
+                duration: 0.58,
+                delay: index * 0.035,
+                ease: [0.55, 0.06, 0.68, 0.19],
               },
             },
           }}
@@ -804,6 +829,7 @@ function SocialFeedSection() {
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [phonesBreakingThrough, setPhonesBreakingThrough] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -966,7 +992,7 @@ export default function Home() {
                 </p>
               </motion.div>
               <div className="mx-auto mt-6 max-w-3xl md:mt-10">
-                <ScatteredEntertainmentAnimation />
+                <ScatteredEntertainmentAnimation cleared={phonesBreakingThrough} />
               </div>
             </div>
           </div>
@@ -978,6 +1004,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 150, scale: 0.38, rotate: -5 }}
                 whileInView={{ opacity: 1, y: 0, scale: [0.38, 1.08, 1], rotate: 0 }}
+                onViewportEnter={() => setPhonesBreakingThrough(true)}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.9, times: [0, 0.72, 1], ease: [0.18, 0.88, 0.28, 1.2] }}
                 className="relative z-20 mx-auto"
