@@ -1001,10 +1001,16 @@ export default function Home() {
                   Everything. Is. <span className="italic text-primary">Everywhere.</span>
                 </h2>
                 <p className="mt-6 text-base font-semibold leading-relaxed text-[#493f51] sm:text-lg">
-                  Different apps. Different lists. Different conversations.
+                  Lost recommendations. Group chats. Notes app lists. Screenshots. Way too many apps.
                 </p>
                 <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
-                  What we watch, read, listen to, play, save, and talk about is scattered across streaming queues, screenshots, notes, texts, ratings, and recommendations we swear we&apos;ll remember later.
+                  What we watch, read, listen to, play, save, and talk about is scattered across streaming queues, texts, ratings, and things we swear we&apos;ll remember later.
+                </p>
+                <p className="mt-5 font-heading text-xl text-[#493f51] sm:text-2xl">
+                  So yeah. We made one place for all of it.
+                </p>
+                <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold leading-relaxed text-[#746a7c] sm:text-base">
+                  What you&apos;re into. What your friends are into. And everything you have to say about it.
                 </p>
               </motion.div>
               <div className="mx-auto mt-6 max-w-3xl md:mt-10">
