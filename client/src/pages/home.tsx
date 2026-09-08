@@ -1168,32 +1168,35 @@ export default function Home() {
           </div>
         </section>
 
-        <SocialFeedSection />
-
-        {/* 5. TASTE MATCH */}
-        <section className="pt-20 md:pt-28 pb-2 md:pb-4 px-6 bg-white" id="taste-match">
-          <div className="container mx-auto max-w-7xl grid lg:grid-cols-[1fr_0.85fr] items-center gap-12 lg:gap-14">
+        {/* 5. FRIENDS + DNA MATCHING */}
+        <section className="overflow-hidden bg-white px-6 py-20 md:py-28" id="taste-match">
+          <div className="container mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-xs font-bold tracking-[0.18em] text-primary uppercase mb-4">Taste Match</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Find the people<br />
-                <span className="italic text-primary">who get it.</span>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary">Friends + DNA Matching</p>
+              <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
+                Wait wait wait. You <span className="italic text-primary">love that too?</span>
               </h2>
-              <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-foreground/70">
-                See how your entertainment taste overlaps, find people whose recommendations you trust, and discover what you have in common.
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                Compare your Entertainment DNA with friends. See where you match, what you have in common, and who somehow has the exact same weirdly specific obsessions you do.
+              </p>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
+              </p>
+              <p className="mt-6 font-heading text-2xl leading-tight text-foreground md:text-3xl">
+                Okay, yeah. <span className="italic text-primary">You&apos;re my people.</span>
               </p>
               <a
                 href="https://app.consumedapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-8 rounded-full bg-primary px-6 py-3.5 text-white font-semibold transition-all hover:bg-[#2e1c78] hover:scale-105 active:scale-95"
-                data-testid="link-find-your-people"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
+                data-testid="link-compare-our-dna"
               >
-                Find your people <ArrowRight className="w-4 h-4" />
+                Compare our DNA <ArrowRight className="h-4 w-4" />
               </a>
             </motion.div>
 
@@ -1201,42 +1204,96 @@ export default function Home() {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative w-full max-w-[510px] lg:justify-self-end"
+              className="relative w-full max-w-[570px] lg:justify-self-end"
             >
-              <div className="rounded-[2rem] border border-[#e9e4f1] bg-[#fbfaff] p-5 md:p-6 shadow-[0_22px_55px_rgba(45,25,99,0.1)]">
-                <div className="flex items-center">
-                  <span className="rounded-full border border-[#e5dcff] bg-[#f3efff] px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-primary">✧ COMPARE DNA</span>
+              <div className="absolute -left-12 top-16 h-40 w-40 rounded-full bg-[#a77dea]/15 blur-3xl" />
+              <div className="absolute -right-10 bottom-10 h-44 w-44 rounded-full bg-[#ef78b5]/10 blur-3xl" />
+              <div className="relative rounded-[2rem] border border-[#e7e0eb] bg-[#f8f6f2] p-4 shadow-[0_24px_65px_rgba(45,25,99,0.13)] md:p-5">
+                <div className="mb-4 flex items-center justify-between px-1">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground/45">People you might click with</p>
+                  <span className="rounded-full bg-[#eee8f8] px-3 py-1 text-[10px] font-bold text-primary">DNA MATCHES</span>
                 </div>
 
-                <div className="flex items-center justify-center gap-3 md:gap-6 mt-7">
-                  <div className="text-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#7d51ed] to-[#b35cea] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">TR</div>
-                    <p className="mt-2 text-[11px] font-bold tracking-wide">YOU</p>
-                  </div>
-                  <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-white border-[6px] border-primary flex flex-col items-center justify-center shadow-sm">
-                    <strong className="text-4xl md:text-5xl font-heading text-primary leading-none">92%</strong>
-                    <span className="mt-1 text-[9px] font-bold tracking-[0.17em] text-foreground/40">MATCH</span>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#e34b9a] to-[#8951ed] text-white font-bold text-xl md:text-2xl flex items-center justify-center shadow-lg">AR</div>
-                    <p className="mt-2 text-[11px] font-bold tracking-wide">AVERY</p>
-                  </div>
-                </div>
+                {[
+                  {
+                    name: "Ashley Hughes",
+                    initials: "AH",
+                    match: "77%",
+                    badge: "FRIEND WITH THE CLOSEST TASTE",
+                    common: "15 things in common",
+                    more: "+12",
+                    posters: [heroTheWomen, heroProjectHailMary, heroLastOfUsPartTwo],
+                  },
+                  {
+                    name: "Hilly B.",
+                    initials: "HB",
+                    match: "64%",
+                    badge: "NEW MATCH",
+                    common: "17 things in common",
+                    more: "+16",
+                    posters: [heroSeverance, heroWhiteLotus],
+                  },
+                ].map((match, index) => (
+                  <motion.article
+                    key={match.name}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.12 + index * 0.12 }}
+                    className={`${index === 1 ? "mt-3" : ""} rounded-[1.6rem] border border-[#dcd3e4] bg-white p-4 shadow-sm md:p-5`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#eee9f8] text-sm font-bold text-primary">
+                        {match.initials}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-base font-bold text-foreground md:text-lg">{match.name}</p>
+                        <span className="mt-1 inline-flex max-w-full rounded-full bg-[#edf4ef] px-2.5 py-1 text-center text-[8px] font-bold leading-tight tracking-[0.08em] text-[#557362] md:text-[9px]">
+                          {match.badge}
+                        </span>
+                      </div>
+                      <strong className="font-heading text-4xl font-normal leading-none text-primary md:text-5xl">{match.match}</strong>
+                    </div>
 
-                <div className="mt-7 divide-y divide-[#e9e5ee] border-y border-[#e9e5ee]">
-                  <div className="py-4">
-                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">You both love</p>
-                    <p className="mt-1 text-sm md:text-base font-semibold text-foreground">Severance <span className="text-foreground/30">·</span> The White Lotus <span className="text-foreground/30">·</span> Gone Girl</p>
-                  </div>
-                  <div className="py-4">
-                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">You both are</p>
-                    <p className="mt-1 text-sm md:text-base font-semibold text-primary">Prestige Detectives</p>
-                  </div>
-                  <div className="py-4">
-                    <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-foreground/40">But you disagree on</p>
-                    <div className="flex items-center justify-between gap-3 mt-1">
-                      <p className="text-sm md:text-base font-semibold">Godzilla vs. Kong</p>
-                      <span className="rounded-full bg-[#f5eafa] px-2.5 py-1 text-[10px] font-bold text-[#c13b82]">DNA CLASH</span>
+                    <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.15em] text-primary">You both love</p>
+                    <div className="mt-2 flex items-stretch gap-2">
+                      {match.posters.map((poster, posterIndex) => (
+                        <img
+                          key={`${match.name}-${posterIndex}`}
+                          src={poster}
+                          alt=""
+                          className="h-20 w-12 rounded-lg object-cover shadow-sm sm:h-24 sm:w-[66px] sm:rounded-xl md:h-28 md:w-[76px]"
+                        />
+                      ))}
+                      <div className="flex h-20 min-w-12 flex-col items-center justify-center rounded-lg bg-[#eee8f8] text-primary sm:h-24 sm:min-w-[66px] sm:rounded-xl md:h-28 md:min-w-[76px]">
+                        <strong className="text-lg sm:text-xl">{match.more}</strong>
+                        <span className="text-xs font-semibold">more</span>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 flex items-center justify-between border-t border-[#e7e0e8] pt-3 text-sm">
+                      <span className="font-semibold text-primary">{match.common}</span>
+                      <span className="font-semibold text-foreground/70">View profile <span aria-hidden="true">›</span></span>
+                    </div>
+                  </motion.article>
+                ))}
+
+                <div className="mt-3 rounded-[1.4rem] bg-gradient-to-r from-[#23124e] to-[#4a2c91] p-4 text-white">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your tribes</p>
+                      <p className="mt-1 font-heading text-lg">Prestige Detectives <span className="text-white/35">·</span> Emotional Bingers</p>
+                    </div>
+                    <div className="flex -space-x-2" aria-label="People in your tribes">
+                      {["RS", "HH", "JR", "PP"].map((initials, index) => (
+                        <span
+                          key={initials}
+                          className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#352067] text-[9px] font-bold text-white"
+                          style={{ background: ["#8f67e6", "#c459a0", "#4c84d8", "#7c5bc4"][index] }}
+                        >
+                          {initials}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -1244,6 +1301,8 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        <SocialFeedSection />
 
         {/* 6. ROOMS */}
         <section className="py-8 md:py-12 bg-white" id="rooms">
