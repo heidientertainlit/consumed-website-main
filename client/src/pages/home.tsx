@@ -397,33 +397,35 @@ function PhoneTrio() {
 function ScatteredEntertainmentAnimation() {
   const fragments = [
     {
-      className: "left-[-3%] top-[9%] z-20 w-[57%]",
-      from: { x: -330, y: -160, rotate: -24 },
-      rotate: -6,
+      className: "left-[-2%] top-[2%] z-10 w-[52%]",
+      from: { x: -420, y: -180, rotate: -26 },
+      rotate: -7,
+      surfaceClass: "border-[#e4d686] bg-[#fff8c9] shadow-[0_22px_55px_rgba(67,51,5,0.2)]",
       content: (
         <>
-          <div className="flex items-center justify-between border-b border-[#292235]/10 pb-2">
-            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Notes</p>
-            <span className="text-[9px] text-[#a59dab]">Watch next</span>
+          <div className="flex items-center justify-between border-b border-[#c8b958]/35 pb-2">
+            <p className="text-[9px] font-semibold text-[#c39300]">‹ Notes</p>
+            <span className="text-[9px] text-[#9f8e49]">Watch next</span>
           </div>
-          <div className="mt-3 space-y-2 font-heading text-[15px] leading-none text-[#27202f]">
+          <div className="mt-3 space-y-2 text-[13px] leading-tight text-[#332f20]">
             <p>Severance!!!</p>
-            <p className="text-[#27202f]/70">The one Ashley sent</p>
-            <p className="text-[#27202f]/48">That cooking show from TikTok</p>
-            <p className="text-[#27202f]/32">movie dad mentioned??</p>
+            <p>The one Ashley sent</p>
+            <p>That cooking show from TikTok</p>
+            <p className="text-[#332f20]/55">movie dad mentioned??</p>
           </div>
         </>
       ),
     },
     {
-      className: "right-[-5%] top-[3%] z-30 w-[58%]",
-      from: { x: 370, y: -190, rotate: 26 },
-      rotate: 5,
+      className: "right-[-4%] top-[5%] z-20 w-[48%]",
+      from: { x: 430, y: -210, rotate: 28 },
+      rotate: 6,
+      surfaceClass: "border-black bg-[#111] text-white shadow-[0_26px_60px_rgba(0,0,0,0.35)]",
       content: (
         <>
           <div className="flex items-center justify-between">
             <p className="text-[10px] font-black uppercase tracking-[0.08em] text-[#e50914]">Netflix</p>
-            <span className="text-[8px] font-bold uppercase tracking-[0.15em] text-[#938b99]">My List</span>
+            <span className="text-[8px] font-bold uppercase tracking-[0.15em] text-white/55">My List</span>
           </div>
           <div className="mt-3 flex gap-2">
             {[heroWhiteLotus, dayOfJackalReview, heroSinners].map((image, imageIndex) => (
@@ -439,40 +441,76 @@ function ScatteredEntertainmentAnimation() {
       ),
     },
     {
-      className: "bottom-[4%] left-[7%] z-40 w-[61%]",
-      from: { x: -360, y: 240, rotate: -20 },
-      rotate: -4,
+      className: "left-[6%] top-[35%] z-30 w-[43%]",
+      from: { x: -450, y: 20, rotate: -30 },
+      rotate: 4,
+      surfaceClass: "border-[#dbd8e0] bg-white shadow-[0_24px_55px_rgba(31,18,45,0.25)]",
       content: (
         <>
           <div className="flex items-center justify-between border-b border-[#292235]/10 pb-2">
-            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Group Text</p>
+            <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#6f6678]">Messages</p>
             <span className="text-[9px] text-[#a59dab]">Movie people (8)</span>
           </div>
           <div className="mt-3 space-y-2 text-[10px] leading-tight">
-            <p className="ml-auto w-fit max-w-[80%] rounded-[12px_12px_3px_12px] bg-[#7651cf] px-3 py-2 text-white">Has anyone watched The Studio yet?</p>
-            <p className="w-fit max-w-[84%] rounded-[12px_12px_12px_3px] bg-[#e9e6ec] px-3 py-2 text-[#352d3c]">Wait—adding it to my list right now</p>
-            <div className="flex items-center gap-1 text-[8px] text-[#938b99]">
-              <span className="flex h-5 items-center gap-0.5 rounded-full bg-[#e9e6ec] px-2">
-                {[0, 1, 2].map((dot) => <span key={dot} className="h-1 w-1 rounded-full bg-[#8a828f]" />)}
-              </span>
-              Ashley is typing
+            <p className="ml-auto w-fit max-w-[86%] rounded-[14px_14px_4px_14px] bg-[#0b84ff] px-3 py-2 text-white">what have you seen lately?</p>
+            <p className="w-fit max-w-[88%] rounded-[14px_14px_14px_4px] bg-[#e9e9eb] px-3 py-2 text-[#292235]">omg did you SEE that ending</p>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "right-[4%] top-[39%] z-40 w-[38%]",
+      from: { x: 450, y: 60, rotate: 32 },
+      rotate: -5,
+      surfaceClass: "border-[#8df1c1]/40 bg-[linear-gradient(145deg,#101010,#32204f_48%,#ff4f9a)] text-white shadow-[0_24px_60px_rgba(31,18,45,0.3)]",
+      content: (
+        <>
+          <div className="flex items-center justify-between">
+            <p className="text-[9px] font-black uppercase tracking-[0.12em] text-[#1ed760]">Spotify</p>
+            <span className="text-[8px] text-white/55">Wrapped</span>
+          </div>
+          <p className="mt-3 font-heading text-xl italic leading-none">Your year sounded like this.</p>
+          <div className="mt-4 flex items-end justify-between">
+            <span className="text-[8px] uppercase tracking-[0.16em] text-white/65">Top genre</span>
+            <span className="text-sm font-bold text-[#8df1c1]">Indie Pop</span>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "bottom-[8%] left-[-3%] z-50 w-[47%]",
+      from: { x: -440, y: 260, rotate: -24 },
+      rotate: -3,
+      surfaceClass: "border-[#ddd] bg-white shadow-[0_25px_60px_rgba(31,18,45,0.28)]",
+      content: (
+        <>
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-7 items-center justify-center rounded-md bg-[#ff0033] text-[8px] text-white">▶</span>
+            <p className="text-[10px] font-black tracking-tight text-[#171717]">YouTube</p>
+          </div>
+          <div className="mt-3 flex gap-3">
+            <img src={heroGoodMythicalMorning} alt="" className="h-16 w-[44%] rounded-md object-cover" />
+            <div>
+              <p className="text-[11px] font-bold leading-tight text-[#27202f]">The video you&apos;ll send to everyone</p>
+              <p className="mt-2 text-[8px] text-[#938b99]">Saved to Watch later</p>
             </div>
           </div>
         </>
       ),
     },
     {
-      className: "bottom-[11%] right-[-2%] z-10 w-[38%]",
-      from: { x: 340, y: 260, rotate: 22 },
-      rotate: 8,
+      className: "bottom-[3%] right-[-3%] z-[60] w-[43%]",
+      from: { x: 440, y: 280, rotate: 26 },
+      rotate: 7,
+      surfaceClass: "border-[#ded6ee] bg-[linear-gradient(145deg,#f6f0ff,#e9dcff)] shadow-[0_26px_60px_rgba(54,27,93,0.3)]",
       content: (
         <>
-          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Camera Roll</p>
+          <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#7651cf]">Podcasts / Up next</p>
           <div className="mt-3 flex items-center gap-3">
-            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-sm object-cover" />
+            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-xl object-cover" />
             <div className="min-w-0">
-              <p className="font-heading text-sm leading-tight text-[#27202f]">Listen to this!</p>
-              <p className="mt-1 text-[8px] uppercase tracking-[0.12em] text-[#938b99]">Screenshot 8472</p>
+              <p className="truncate font-heading text-base text-[#27202f]">Crime Junkie</p>
+              <p className="mt-1 text-[8px] uppercase tracking-[0.12em] text-[#7f6f91]">18 episodes saved</p>
             </div>
           </div>
         </>
@@ -480,28 +518,83 @@ function ScatteredEntertainmentAnimation() {
     },
   ];
 
+  const chatBubbles = [
+    {
+      className: "left-[1%] top-[29%] z-[70] max-w-[42%] bg-[#292235] text-white",
+      from: { x: -360, y: -60, rotate: -18 },
+      rotate: -4,
+      text: "what would you recommend?",
+    },
+    {
+      className: "right-[-1%] top-[30%] z-[80] max-w-[38%] bg-[#0b84ff] text-white",
+      from: { x: 390, y: -40, rotate: 20 },
+      rotate: 5,
+      text: "WAIT have you watched it yet??",
+    },
+    {
+      className: "left-[26%] bottom-[1%] z-[90] max-w-[42%] bg-white text-[#292235]",
+      from: { x: 40, y: 330, rotate: -16 },
+      rotate: -2,
+      text: "I need a new show immediately",
+    },
+  ];
+
   return (
     <motion.div
-      className="relative mx-auto h-[400px] w-full max-w-[540px] sm:h-[440px]"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      className="relative mx-auto h-[470px] w-full max-w-[680px] sm:h-[520px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
     >
       {fragments.map((fragment, index) => (
         <motion.div
           key={fragment.className}
-          initial={{ opacity: 0, scale: 0.68, ...fragment.from }}
-          whileInView={{ opacity: 1, x: 0, y: 0, rotate: fragment.rotate, scale: 1 }}
-          viewport={{ once: false, amount: 0.25 }}
-          transition={{
-            type: "spring",
-            stiffness: 190,
-            damping: 14,
-            mass: 0.82,
-            delay: index * 0.09,
+          variants={{
+            hidden: { opacity: 0, scale: 0.62, ...fragment.from },
+            visible: {
+              opacity: 1,
+              x: 0,
+              y: 0,
+              rotate: fragment.rotate,
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 185,
+                damping: 13,
+                mass: 0.84,
+                delay: index * 0.18,
+              },
+            },
           }}
-          className={`absolute rounded-[0.85rem] border border-[#d9d2dd] bg-[#fbfaf7] p-4 text-left shadow-[0_24px_55px_rgba(31,18,45,0.26)] ${fragment.className}`}
+          className={`absolute rounded-[0.9rem] border p-4 text-left ${fragment.surfaceClass} ${fragment.className}`}
         >
           {fragment.content}
         </motion.div>
+      ))}
+      {chatBubbles.map((bubble, index) => (
+        <motion.p
+          key={bubble.text}
+          variants={{
+            hidden: { opacity: 0, scale: 0.55, ...bubble.from },
+            visible: {
+              opacity: 1,
+              x: 0,
+              y: 0,
+              rotate: bubble.rotate,
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 220,
+                damping: 12,
+                delay: (fragments.length + index) * 0.18,
+              },
+            },
+          }}
+          className={`absolute rounded-[1rem] border border-black/5 px-4 py-2.5 text-[11px] font-semibold leading-tight shadow-[0_16px_35px_rgba(31,18,45,0.24)] ${bubble.className}`}
+        >
+          {bubble.text}
+        </motion.p>
       ))}
     </motion.div>
   );
