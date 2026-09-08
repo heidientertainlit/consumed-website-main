@@ -397,58 +397,67 @@ function PhoneTrio() {
 function ScatteredEntertainmentAnimation() {
   const fragments = [
     {
-      className: "left-0 top-3 w-[48%] -rotate-6",
-      pullX: 72,
-      pullY: 82,
+      className: "left-[2%] top-[7%] w-[46%] -rotate-[2deg]",
+      pullX: 62,
+      pullY: 68,
       content: (
         <>
-          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#f4b33f]">Notes</p>
-          <p className="mt-2 font-heading text-lg text-[#211733]">Things I need to watch</p>
-          <p className="mt-2 text-xs leading-relaxed text-[#655d70]">Severance<br />That movie Ashley sent<br />The show from TikTok</p>
+          <div className="flex items-center justify-between border-b border-[#292235]/10 pb-2">
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Notes / Watch next</p>
+            <span className="text-[9px] text-[#a59dab]">03</span>
+          </div>
+          <div className="mt-3 space-y-2.5 font-heading text-[15px] leading-none text-[#27202f]">
+            <p>Severance</p>
+            <p className="text-[#27202f]/65">The one Ashley sent</p>
+            <p className="text-[#27202f]/40">That show from TikTok</p>
+          </div>
         </>
       ),
     },
     {
-      className: "right-0 top-0 w-[45%] rotate-5",
-      pullX: -68,
-      pullY: 88,
+      className: "right-[1%] top-[4%] w-[43%] rotate-[1.5deg]",
+      pullX: -58,
+      pullY: 72,
       content: (
         <>
-          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#32a269]">Messages</p>
-          <p className="mt-2 rounded-2xl rounded-tr-sm bg-[#e8f8ee] px-3 py-2 text-xs font-semibold text-[#245f42]">You HAVE to read this.</p>
-          <p className="mt-2 text-right text-[9px] text-[#847d8c]">Which group chat was this in?</p>
+          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Messages / Ashley</p>
+          <p className="mt-4 font-heading text-lg leading-tight text-[#27202f]">“You would love this.”</p>
+          <div className="mt-4 flex items-center justify-between border-t border-[#292235]/10 pt-2 text-[9px] text-[#938b99]">
+            <span>Project Hail Mary</span>
+            <span>2:14 PM</span>
+          </div>
         </>
       ),
     },
     {
-      className: "bottom-2 left-2 w-[45%] rotate-4",
-      pullX: 72,
-      pullY: -72,
+      className: "bottom-[5%] left-[4%] w-[43%] rotate-[1deg]",
+      pullX: 58,
+      pullY: -66,
       content: (
         <>
-          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#df4f91]">Camera roll</p>
-          <div className="mt-2 flex items-center gap-2">
-            <img src={heroSinners} alt="" className="h-14 w-10 rounded-md object-cover" />
+          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Camera roll / Saved</p>
+          <div className="mt-3 flex items-end gap-3">
+            <img src={heroSinners} alt="" className="h-16 w-11 rounded-sm object-cover grayscale-[20%]" />
             <div>
-              <p className="text-xs font-semibold text-[#211733]">Screenshot_8472</p>
-              <p className="mt-1 text-[10px] text-[#756e83]">Why did I save this?</p>
+              <p className="font-heading text-base text-[#27202f]">Sinners</p>
+              <p className="mt-1 text-[9px] uppercase tracking-[0.12em] text-[#938b99]">Screenshot 8472</p>
             </div>
           </div>
         </>
       ),
     },
     {
-      className: "bottom-3 right-0 w-[47%] -rotate-4",
-      pullX: -70,
-      pullY: -74,
+      className: "bottom-[8%] right-[2%] w-[45%] -rotate-[1.5deg]",
+      pullX: -62,
+      pullY: -62,
       content: (
         <>
-          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#6e50cf]">Up next</p>
-          <div className="mt-2 flex items-center gap-2">
-            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-lg object-cover" />
+          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Listening queue / 18 saved</p>
+          <div className="mt-3 flex items-center gap-3">
+            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-sm object-cover grayscale-[15%]" />
             <div className="min-w-0">
-              <p className="truncate text-xs font-semibold text-[#211733]">Saved podcast episode</p>
-              <p className="mt-1 text-[10px] text-[#756e83]">Somewhere in a queue</p>
+              <p className="truncate font-heading text-base text-[#27202f]">Crime Junkie</p>
+              <p className="mt-1 text-[9px] uppercase tracking-[0.12em] text-[#938b99]">Added three weeks ago</p>
             </div>
           </div>
         </>
@@ -461,52 +470,66 @@ function ScatteredEntertainmentAnimation() {
       initial={{ opacity: 0, scale: 0.96 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className="relative mx-auto h-[390px] w-full max-w-[520px] sm:h-[430px]"
+      className="relative mx-auto h-[400px] w-full max-w-[540px] sm:h-[440px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
     >
-      <div className="absolute inset-[12%] rounded-full bg-[#9b71f0]/15 blur-3xl" />
+      <div className="absolute inset-[8%] rounded-full border border-white/[0.06]" />
+      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent" />
+      <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       {fragments.map((fragment, index) => (
         <motion.div
           key={fragment.className}
           animate={{
             x: [0, 0, fragment.pullX, fragment.pullX, 0],
             y: [0, 0, fragment.pullY, fragment.pullY, 0],
-            scale: [1, 1, 0.68, 0.68, 1],
+            scale: [1, 1, 0.9, 0.9, 1],
             opacity: [1, 1, 0, 0, 1],
           }}
           transition={{
-            duration: 7,
-            times: [0, 0.38, 0.55, 0.72, 1],
+            duration: 9,
+            times: [0, 0.42, 0.58, 0.76, 1],
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: index * 0.04,
+            ease: [0.65, 0, 0.35, 1],
+            delay: index * 0.025,
           }}
-          className={`absolute z-10 rounded-2xl border border-white/70 bg-white/95 p-3.5 text-left shadow-[0_16px_38px_rgba(8,4,26,0.28)] backdrop-blur-sm ${fragment.className}`}
+          className={`absolute z-10 rounded-[0.85rem] border border-[#ded8e2] bg-[#f7f5f1] p-4 text-left shadow-[0_20px_50px_rgba(7,3,20,0.24)] ${fragment.className}`}
         >
           {fragment.content}
         </motion.div>
       ))}
 
       <motion.div
-        animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.72, 0.72, 1, 1, 0.82] }}
-        transition={{ duration: 7, times: [0, 0.42, 0.57, 0.72, 1], repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-1/2 top-1/2 z-20 w-[64%] -translate-x-1/2 -translate-y-1/2 rounded-[1.8rem] border border-white/20 bg-gradient-to-br from-[#5f39bd] to-[#241251] p-5 text-center shadow-[0_22px_60px_rgba(0,0,0,0.35)]"
+        animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.94, 0.94, 1, 1, 0.96] }}
+        transition={{ duration: 9, times: [0, 0.46, 0.6, 0.76, 1], repeat: Infinity, ease: [0.65, 0, 0.35, 1] }}
+        className="absolute left-1/2 top-1/2 z-20 w-[72%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[1rem] border border-white/15 bg-[#f7f5f1] text-[#27202f] shadow-[0_28px_70px_rgba(4,2,14,0.36)]"
       >
-        <img src={logoPurple} alt="" className="mx-auto w-32 brightness-0 invert" />
-        <p className="mt-4 font-heading text-2xl text-white">Everything, together.</p>
-        <div className="mt-4 grid grid-cols-3 gap-2 text-[9px] font-bold uppercase tracking-[0.1em] text-[#d8ceff]">
-          <span className="rounded-full bg-white/10 px-2 py-2">Watch</span>
-          <span className="rounded-full bg-white/10 px-2 py-2">Read</span>
-          <span className="rounded-full bg-white/10 px-2 py-2">Listen</span>
+        <div className="flex items-center justify-between border-b border-[#292235]/10 px-5 py-4">
+          <p className="font-heading text-xl">Your library</p>
+          <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6e50cf]">Consumed</span>
+        </div>
+        <div className="divide-y divide-[#292235]/10 px-5">
+          {[
+            ["Severance", "Watching"],
+            ["Project Hail Mary", "To read"],
+            ["Crime Junkie", "Listening"],
+          ].map(([title, status], index) => (
+            <div key={title} className="flex items-center justify-between py-3">
+              <div className="flex items-center gap-3">
+                <span className="font-heading text-sm text-[#8d8494]">0{index + 1}</span>
+                <span className="font-heading text-base">{title}</span>
+              </div>
+              <span className="text-[8px] font-bold uppercase tracking-[0.14em] text-[#8d8494]">{status}</span>
+            </div>
+          ))}
         </div>
       </motion.div>
 
       <motion.p
         animate={{ opacity: [1, 1, 0, 0, 1] }}
-        transition={{ duration: 7, times: [0, 0.35, 0.5, 0.75, 1], repeat: Infinity }}
-        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/40"
+        transition={{ duration: 9, times: [0, 0.4, 0.54, 0.78, 1], repeat: Infinity }}
+        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-heading text-base italic text-white/35"
       >
-        Where did I save that?
+        scattered, somewhere
       </motion.p>
     </motion.div>
   );
