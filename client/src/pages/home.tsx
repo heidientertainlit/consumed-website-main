@@ -473,9 +473,9 @@ function ScatteredEntertainmentAnimation() {
       className="relative mx-auto h-[400px] w-full max-w-[540px] sm:h-[440px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
     >
-      <div className="absolute inset-[8%] rounded-full border border-white/[0.06]" />
-      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent" />
-      <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+      <div className="absolute inset-[8%] rounded-full border border-[#292235]/[0.07]" />
+      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#292235]/[0.08] to-transparent" />
+      <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-[#292235]/[0.08] to-transparent" />
       {fragments.map((fragment, index) => (
         <motion.div
           key={fragment.className}
@@ -527,7 +527,7 @@ function ScatteredEntertainmentAnimation() {
       <motion.p
         animate={{ opacity: [1, 1, 0, 0, 1] }}
         transition={{ duration: 9, times: [0, 0.4, 0.54, 0.78, 1], repeat: Infinity }}
-        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-heading text-base italic text-white/35"
+        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-heading text-base italic text-[#292235]/30"
       >
         scattered, somewhere
       </motion.p>
@@ -845,52 +845,63 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="relative mx-auto mt-8 w-[calc(100%-2rem)] max-w-7xl overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:mt-12 md:w-[calc(100%-4rem)] md:pb-60" id="how-it-works">
-          <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
-          <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 md:px-14 md:pt-20">
-            <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-heading font-normal leading-[1.05]">
-                Everything. Is. Everywhere.
-              </h2>
-              <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] font-semibold leading-relaxed text-white/90">
-                Different apps. Different lists. Different conversations.
-              </p>
-              <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
-                But entertainment is better, <span className="italic text-[#d8ceff]">together.</span> And now, finallyyyy everything is all in one place.
-              </p>
-              <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] leading-relaxed text-white/75">
-                What we watch, read, listen to, play, save, and talk about is scattered everywhere. Consumed brings it all under one roof — so we can finally see what our friends are into, what they’re saying, and what they’re loving.
-              </p>
-              <p className="mt-5 sm:mt-6 text-sm sm:text-base font-semibold leading-relaxed text-[#e6ddff]">
-                Movies. TV. Books. Podcasts. Music. Gaming. And more.
-              </p>
+        <section className="relative mx-auto mt-8 w-[calc(100%-2rem)] max-w-7xl md:mt-12 md:w-[calc(100%-4rem)]" id="how-it-works">
+          <div className="overflow-hidden rounded-[2.5rem] border border-[#e8e2e9] bg-[#f5f2ed] text-[#211a2a]">
+            <div className="px-7 py-16 md:px-14 md:py-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mx-auto max-w-3xl text-center"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#746a7c]">Your entertainment, currently</p>
+                <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
+                  Everything. Is. <span className="italic text-primary">Everywhere.</span>
+                </h2>
+              </motion.div>
+              <div className="mx-auto mt-8 max-w-3xl md:mt-12">
+                <ScatteredEntertainmentAnimation />
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-5 overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:pb-60">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,_rgba(118,80,209,0.55)_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_rgba(140,93,226,0.45)_0%,_transparent_35%)]" />
+            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 text-center md:px-14 md:pt-20">
+              <motion.div
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mx-auto max-w-3xl"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8ceff]">All Your Entertainment</p>
+                <h3 className="mt-4 font-heading text-3xl font-normal leading-[1.05] text-white sm:text-4xl lg:text-5xl">
+                  Okay but why is all of this in <span className="italic text-[#d8ceff]">different places?</span>
+                </h3>
+                <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+                  Movies over here. Books somewhere else. Podcasts in another app. And don&apos;t even get us started on the notes app list of things someone told you to watch six months ago.
+                </p>
+                <p className="mt-6 font-heading text-xl text-[#e6ddff] sm:text-2xl">
+                  So yeah. We put it all together.
+                </p>
+                <p className="mt-4 text-sm font-semibold leading-relaxed text-white/85 sm:text-base">
+                  Movies. TV. Books. Podcasts. Music. Gaming. Whatever you&apos;re into.
+                </p>
+              </motion.div>
+
+              <div className="mt-10">
+                <PhoneTrio />
+              </div>
+
               <a
                 href="https://app.consumedapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#301b6e] transition-colors hover:bg-[#e6ddff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#301b6e] transition-colors hover:bg-[#e6ddff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 data-testid="link-bring-it-together"
               >
                 Bring it all together <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
-            </motion.div>
-              <ScatteredEntertainmentAnimation />
-            </div>
-
-            <div className="mt-16 border-t border-white/10 pt-12 text-center md:mt-20 md:pt-16">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8ceff]">And then there&apos;s Consumed</p>
-              <h3 className="mt-3 font-heading text-3xl text-white md:text-4xl">
-                One place for <span className="italic text-[#d8ceff]">all of it.</span>
-              </h3>
-              <div className="mt-8">
-                <PhoneTrio />
-              </div>
             </div>
           </div>
           <div className="hidden">
