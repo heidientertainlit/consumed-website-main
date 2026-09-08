@@ -370,6 +370,148 @@ function HeroFeedCarousel() {
   );
 }
 
+function PhoneTrio() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="flex w-full items-center justify-center"
+    >
+      <div className="relative flex origin-center items-center justify-center md:scale-[0.92] lg:scale-[0.9]">
+        <div className="hidden w-[200px] translate-x-6 translate-y-4 -rotate-6 overflow-hidden rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl sm:block md:w-[220px]">
+          <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
+        </div>
+        <div className="relative z-10 w-[240px] overflow-hidden rounded-[2.25rem] border-[7px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl md:w-[270px]">
+          <img src={screenDnaHero} alt="Consumed app — Entertainment DNA profile screen" className="w-full" data-testid="img-hero-phone-dna" />
+        </div>
+        <div className="hidden w-[200px] -translate-x-6 translate-y-4 rotate-6 overflow-hidden rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl sm:block md:w-[220px]">
+          <img src={screenRatingsHero} alt="Consumed app — Takes and ratings screen" className="w-full" data-testid="img-hero-phone-ratings" />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function ScatteredEntertainmentAnimation() {
+  const fragments = [
+    {
+      className: "left-0 top-3 w-[48%] -rotate-6",
+      pullX: 72,
+      pullY: 82,
+      content: (
+        <>
+          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#f4b33f]">Notes</p>
+          <p className="mt-2 font-heading text-lg text-[#211733]">Things I need to watch</p>
+          <p className="mt-2 text-xs leading-relaxed text-[#655d70]">Severance<br />That movie Ashley sent<br />The show from TikTok</p>
+        </>
+      ),
+    },
+    {
+      className: "right-0 top-0 w-[45%] rotate-5",
+      pullX: -68,
+      pullY: 88,
+      content: (
+        <>
+          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#32a269]">Messages</p>
+          <p className="mt-2 rounded-2xl rounded-tr-sm bg-[#e8f8ee] px-3 py-2 text-xs font-semibold text-[#245f42]">You HAVE to read this.</p>
+          <p className="mt-2 text-right text-[9px] text-[#847d8c]">Which group chat was this in?</p>
+        </>
+      ),
+    },
+    {
+      className: "bottom-2 left-2 w-[45%] rotate-4",
+      pullX: 72,
+      pullY: -72,
+      content: (
+        <>
+          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#df4f91]">Camera roll</p>
+          <div className="mt-2 flex items-center gap-2">
+            <img src={heroSinners} alt="" className="h-14 w-10 rounded-md object-cover" />
+            <div>
+              <p className="text-xs font-semibold text-[#211733]">Screenshot_8472</p>
+              <p className="mt-1 text-[10px] text-[#756e83]">Why did I save this?</p>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "bottom-3 right-0 w-[47%] -rotate-4",
+      pullX: -70,
+      pullY: -74,
+      content: (
+        <>
+          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#6e50cf]">Up next</p>
+          <div className="mt-2 flex items-center gap-2">
+            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-lg object-cover" />
+            <div className="min-w-0">
+              <p className="truncate text-xs font-semibold text-[#211733]">Saved podcast episode</p>
+              <p className="mt-1 text-[10px] text-[#756e83]">Somewhere in a queue</p>
+            </div>
+          </div>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.96 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="relative mx-auto h-[390px] w-full max-w-[520px] sm:h-[430px]"
+      aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
+    >
+      <div className="absolute inset-[12%] rounded-full bg-[#9b71f0]/15 blur-3xl" />
+      {fragments.map((fragment, index) => (
+        <motion.div
+          key={fragment.className}
+          animate={{
+            x: [0, 0, fragment.pullX, fragment.pullX, 0],
+            y: [0, 0, fragment.pullY, fragment.pullY, 0],
+            scale: [1, 1, 0.68, 0.68, 1],
+            opacity: [1, 1, 0, 0, 1],
+          }}
+          transition={{
+            duration: 7,
+            times: [0, 0.38, 0.55, 0.72, 1],
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: index * 0.04,
+          }}
+          className={`absolute z-10 rounded-2xl border border-white/70 bg-white/95 p-3.5 text-left shadow-[0_16px_38px_rgba(8,4,26,0.28)] backdrop-blur-sm ${fragment.className}`}
+        >
+          {fragment.content}
+        </motion.div>
+      ))}
+
+      <motion.div
+        animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.72, 0.72, 1, 1, 0.82] }}
+        transition={{ duration: 7, times: [0, 0.42, 0.57, 0.72, 1], repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-1/2 top-1/2 z-20 w-[64%] -translate-x-1/2 -translate-y-1/2 rounded-[1.8rem] border border-white/20 bg-gradient-to-br from-[#5f39bd] to-[#241251] p-5 text-center shadow-[0_22px_60px_rgba(0,0,0,0.35)]"
+      >
+        <img src={logoPurple} alt="" className="mx-auto w-32 brightness-0 invert" />
+        <p className="mt-4 font-heading text-2xl text-white">Everything, together.</p>
+        <div className="mt-4 grid grid-cols-3 gap-2 text-[9px] font-bold uppercase tracking-[0.1em] text-[#d8ceff]">
+          <span className="rounded-full bg-white/10 px-2 py-2">Watch</span>
+          <span className="rounded-full bg-white/10 px-2 py-2">Read</span>
+          <span className="rounded-full bg-white/10 px-2 py-2">Listen</span>
+        </div>
+      </motion.div>
+
+      <motion.p
+        animate={{ opacity: [1, 1, 0, 0, 1] }}
+        transition={{ duration: 7, times: [0, 0.35, 0.5, 0.75, 1], repeat: Infinity }}
+        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/40"
+      >
+        Where did I save that?
+      </motion.p>
+    </motion.div>
+  );
+}
+
 function SocialFeedSection() {
   const feedPosts = [
     {
@@ -679,50 +821,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Hero app screens — a separate moment that leads into the feed */}
-        <section className="relative z-10 -mt-10 md:-mt-12 pt-0 pb-0">
-          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-8 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="max-w-md mx-auto lg:order-2 text-center"
-            >
-              <h2 className="text-3xl md:text-[2.15rem] font-heading font-normal leading-[1.12]">
-                Come see what everyone’s talking about.
-              </h2>
-              <p className="mt-4 text-base md:text-lg leading-snug text-foreground/70">
-                Takes. Theories. Reactions. And everything in between.
-              </p>
-              <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center mt-5 px-4 py-2 rounded-full bg-gradient-to-r from-[#9867f5] via-[#7359ed] to-[#3c82ed] text-white text-xs font-bold shadow-[0_8px_20px_rgba(72,78,210,0.25)] hover:brightness-110 hover:-translate-y-0.5 transition-all">
-                Explore the feed
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="w-full lg:order-1 flex items-center justify-center translate-y-3 md:translate-y-4"
-            >
-              <div className="relative flex items-center justify-center origin-center md:scale-[0.92] lg:scale-[0.9]">
-                <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden -rotate-6 translate-x-6 translate-y-4 z-0">
-                  <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
-                </div>
-                <div className="w-[240px] md:w-[270px] rounded-[2.25rem] border-[7px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden z-10 relative">
-                  <img src={screenDnaHero} alt="Consumed app — Entertainment DNA profile screen" className="w-full" data-testid="img-hero-phone-dna" />
-                </div>
-                <div className="hidden sm:block w-[200px] md:w-[220px] rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl overflow-hidden rotate-6 -translate-x-6 translate-y-4 z-0">
-                  <img src={screenRatingsHero} alt="Consumed app — Takes and ratings screen" className="w-full" data-testid="img-hero-phone-ratings" />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* 3. TAKES FEED */}
-        <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto -mt-14 md:-mt-20 pb-28 md:pb-60 relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] text-white" id="how-it-works">
+        <section className="relative mx-auto mt-8 w-[calc(100%-2rem)] max-w-7xl overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:mt-12 md:w-[calc(100%-4rem)] md:pb-60" id="how-it-works">
           <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_85%_12%,_#7650d1_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_#8c5de2_0%,_transparent_35%)] pointer-events-none" />
-          <div className="container mx-auto max-w-7xl relative z-10 px-7 pt-28 md:px-14 md:pt-28">
+          <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 md:px-14 md:pt-20">
+            <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -754,6 +857,18 @@ export default function Home() {
                 Bring it all together <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </motion.div>
+              <ScatteredEntertainmentAnimation />
+            </div>
+
+            <div className="mt-16 border-t border-white/10 pt-12 text-center md:mt-20 md:pt-16">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8ceff]">And then there&apos;s Consumed</p>
+              <h3 className="mt-3 font-heading text-3xl text-white md:text-4xl">
+                One place for <span className="italic text-[#d8ceff]">all of it.</span>
+              </h3>
+              <div className="mt-8">
+                <PhoneTrio />
+              </div>
+            </div>
           </div>
           <div className="hidden">
             <motion.div
