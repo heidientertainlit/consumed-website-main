@@ -464,9 +464,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left z-10"
+              className="w-full max-w-[680px] mx-auto lg:mx-0 flex flex-col items-start text-left z-10"
             >
-              <div className="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-1 md:gap-2 mb-0">
+              <div className="mt-3 md:mt-4 flex items-center justify-start gap-1 md:gap-2 mb-0">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
@@ -480,7 +480,7 @@ export default function Home() {
               <HeroTagline />
 
               <div className="mt-0 mb-5 w-full max-w-[760px]">
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
+                <div className="flex flex-wrap items-center justify-start gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
                   {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
                     <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
                       {category}
@@ -493,7 +493,7 @@ export default function Home() {
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
                 See what your friends are into, find your next obsession, and discover your Entertainment DNA.
               </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
                 <a
                   href="https://app.consumedapp.com"
