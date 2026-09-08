@@ -397,67 +397,82 @@ function PhoneTrio() {
 function ScatteredEntertainmentAnimation() {
   const fragments = [
     {
-      className: "left-[2%] top-[7%] w-[46%] -rotate-[2deg]",
-      pullX: 62,
-      pullY: 68,
+      className: "left-[-3%] top-[9%] z-20 w-[57%]",
+      from: { x: -330, y: -160, rotate: -24 },
+      rotate: -6,
       content: (
         <>
           <div className="flex items-center justify-between border-b border-[#292235]/10 pb-2">
-            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Notes / Watch next</p>
-            <span className="text-[9px] text-[#a59dab]">03</span>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Notes</p>
+            <span className="text-[9px] text-[#a59dab]">Watch next</span>
           </div>
-          <div className="mt-3 space-y-2.5 font-heading text-[15px] leading-none text-[#27202f]">
-            <p>Severance</p>
-            <p className="text-[#27202f]/65">The one Ashley sent</p>
-            <p className="text-[#27202f]/40">That show from TikTok</p>
-          </div>
-        </>
-      ),
-    },
-    {
-      className: "right-[1%] top-[4%] w-[43%] rotate-[1.5deg]",
-      pullX: -58,
-      pullY: 72,
-      content: (
-        <>
-          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Messages / Ashley</p>
-          <p className="mt-4 font-heading text-lg leading-tight text-[#27202f]">“You would love this.”</p>
-          <div className="mt-4 flex items-center justify-between border-t border-[#292235]/10 pt-2 text-[9px] text-[#938b99]">
-            <span>Project Hail Mary</span>
-            <span>2:14 PM</span>
+          <div className="mt-3 space-y-2 font-heading text-[15px] leading-none text-[#27202f]">
+            <p>Severance!!!</p>
+            <p className="text-[#27202f]/70">The one Ashley sent</p>
+            <p className="text-[#27202f]/48">That cooking show from TikTok</p>
+            <p className="text-[#27202f]/32">movie dad mentioned??</p>
           </div>
         </>
       ),
     },
     {
-      className: "bottom-[5%] left-[4%] w-[43%] rotate-[1deg]",
-      pullX: 58,
-      pullY: -66,
+      className: "right-[-5%] top-[3%] z-30 w-[58%]",
+      from: { x: 370, y: -190, rotate: 26 },
+      rotate: 5,
       content: (
         <>
-          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Camera roll / Saved</p>
-          <div className="mt-3 flex items-end gap-3">
-            <img src={heroSinners} alt="" className="h-16 w-11 rounded-sm object-cover grayscale-[20%]" />
-            <div>
-              <p className="font-heading text-base text-[#27202f]">Sinners</p>
-              <p className="mt-1 text-[9px] uppercase tracking-[0.12em] text-[#938b99]">Screenshot 8472</p>
+          <div className="flex items-center justify-between">
+            <p className="text-[10px] font-black uppercase tracking-[0.08em] text-[#e50914]">Netflix</p>
+            <span className="text-[8px] font-bold uppercase tracking-[0.15em] text-[#938b99]">My List</span>
+          </div>
+          <div className="mt-3 flex gap-2">
+            {[heroWhiteLotus, dayOfJackalReview, heroSinners].map((image, imageIndex) => (
+              <div key={image} className="relative min-w-0 flex-1">
+                <img src={image} alt="" className="aspect-[2/3] w-full rounded-[4px] object-cover" />
+                <span className="absolute bottom-1 left-1 text-[7px] font-black text-white drop-shadow">
+                  {imageIndex + 1}
+                </span>
+              </div>
+            ))}
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "bottom-[4%] left-[7%] z-40 w-[61%]",
+      from: { x: -360, y: 240, rotate: -20 },
+      rotate: -4,
+      content: (
+        <>
+          <div className="flex items-center justify-between border-b border-[#292235]/10 pb-2">
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Group Text</p>
+            <span className="text-[9px] text-[#a59dab]">Movie people (8)</span>
+          </div>
+          <div className="mt-3 space-y-2 text-[10px] leading-tight">
+            <p className="ml-auto w-fit max-w-[80%] rounded-[12px_12px_3px_12px] bg-[#7651cf] px-3 py-2 text-white">Has anyone watched The Studio yet?</p>
+            <p className="w-fit max-w-[84%] rounded-[12px_12px_12px_3px] bg-[#e9e6ec] px-3 py-2 text-[#352d3c]">Wait—adding it to my list right now</p>
+            <div className="flex items-center gap-1 text-[8px] text-[#938b99]">
+              <span className="flex h-5 items-center gap-0.5 rounded-full bg-[#e9e6ec] px-2">
+                {[0, 1, 2].map((dot) => <span key={dot} className="h-1 w-1 rounded-full bg-[#8a828f]" />)}
+              </span>
+              Ashley is typing
             </div>
           </div>
         </>
       ),
     },
     {
-      className: "bottom-[8%] right-[2%] w-[45%] -rotate-[1.5deg]",
-      pullX: -62,
-      pullY: -62,
+      className: "bottom-[11%] right-[-2%] z-10 w-[38%]",
+      from: { x: 340, y: 260, rotate: 22 },
+      rotate: 8,
       content: (
         <>
-          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Listening queue / 18 saved</p>
+          <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6f6678]">Camera Roll</p>
           <div className="mt-3 flex items-center gap-3">
-            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-sm object-cover grayscale-[15%]" />
+            <img src={heroCrimeJunkie} alt="" className="h-12 w-12 rounded-sm object-cover" />
             <div className="min-w-0">
-              <p className="truncate font-heading text-base text-[#27202f]">Crime Junkie</p>
-              <p className="mt-1 text-[9px] uppercase tracking-[0.12em] text-[#938b99]">Added three weeks ago</p>
+              <p className="font-heading text-sm leading-tight text-[#27202f]">Listen to this!</p>
+              <p className="mt-1 text-[8px] uppercase tracking-[0.12em] text-[#938b99]">Screenshot 8472</p>
             </div>
           </div>
         </>
@@ -467,70 +482,27 @@ function ScatteredEntertainmentAnimation() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
       className="relative mx-auto h-[400px] w-full max-w-[540px] sm:h-[440px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
     >
-      <div className="absolute inset-[8%] rounded-full border border-[#292235]/[0.07]" />
-      <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#292235]/[0.08] to-transparent" />
-      <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-[#292235]/[0.08] to-transparent" />
       {fragments.map((fragment, index) => (
         <motion.div
           key={fragment.className}
-          animate={{
-            x: [0, 0, fragment.pullX, fragment.pullX, 0],
-            y: [0, 0, fragment.pullY, fragment.pullY, 0],
-            scale: [1, 1, 0.9, 0.9, 1],
-            opacity: [1, 1, 0, 0, 1],
-          }}
+          initial={{ opacity: 0, scale: 0.68, ...fragment.from }}
+          whileInView={{ opacity: 1, x: 0, y: 0, rotate: fragment.rotate, scale: 1 }}
+          viewport={{ once: false, amount: 0.25 }}
           transition={{
-            duration: 9,
-            times: [0, 0.42, 0.58, 0.76, 1],
-            repeat: Infinity,
-            ease: [0.65, 0, 0.35, 1],
-            delay: index * 0.025,
+            type: "spring",
+            stiffness: 190,
+            damping: 14,
+            mass: 0.82,
+            delay: index * 0.09,
           }}
-          className={`absolute z-10 rounded-[0.85rem] border border-[#ded8e2] bg-[#f7f5f1] p-4 text-left shadow-[0_20px_50px_rgba(7,3,20,0.24)] ${fragment.className}`}
+          className={`absolute rounded-[0.85rem] border border-[#d9d2dd] bg-[#fbfaf7] p-4 text-left shadow-[0_24px_55px_rgba(31,18,45,0.26)] ${fragment.className}`}
         >
           {fragment.content}
         </motion.div>
       ))}
-
-      <motion.div
-        animate={{ opacity: [0, 0, 1, 1, 0], scale: [0.94, 0.94, 1, 1, 0.96] }}
-        transition={{ duration: 9, times: [0, 0.46, 0.6, 0.76, 1], repeat: Infinity, ease: [0.65, 0, 0.35, 1] }}
-        className="absolute left-1/2 top-1/2 z-20 w-[72%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[1rem] border border-white/15 bg-[#f7f5f1] text-[#27202f] shadow-[0_28px_70px_rgba(4,2,14,0.36)]"
-      >
-        <div className="flex items-center justify-between border-b border-[#292235]/10 px-5 py-4">
-          <p className="font-heading text-xl">Your library</p>
-          <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#6e50cf]">Consumed</span>
-        </div>
-        <div className="divide-y divide-[#292235]/10 px-5">
-          {[
-            ["Severance", "Watching"],
-            ["Project Hail Mary", "To read"],
-            ["Crime Junkie", "Listening"],
-          ].map(([title, status], index) => (
-            <div key={title} className="flex items-center justify-between py-3">
-              <div className="flex items-center gap-3">
-                <span className="font-heading text-sm text-[#8d8494]">0{index + 1}</span>
-                <span className="font-heading text-base">{title}</span>
-              </div>
-              <span className="text-[8px] font-bold uppercase tracking-[0.14em] text-[#8d8494]">{status}</span>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      <motion.p
-        animate={{ opacity: [1, 1, 0, 0, 1] }}
-        transition={{ duration: 9, times: [0, 0.4, 0.54, 0.78, 1], repeat: Infinity }}
-        className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-heading text-base italic text-[#292235]/30"
-      >
-        scattered, somewhere
-      </motion.p>
     </motion.div>
   );
 }
