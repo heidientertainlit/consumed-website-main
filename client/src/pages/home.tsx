@@ -408,15 +408,15 @@ function SocialFeedSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-20 md:py-28" id="chatter">
+    <div className="relative overflow-hidden bg-white px-6 py-20 md:py-24" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
-      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-8 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.04] md:text-5xl lg:text-6xl">
+          <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.04] md:text-4xl lg:text-5xl xl:text-6xl">
             Wait, what is everyone into <span className="italic text-primary">right now?</span>
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
@@ -447,8 +447,10 @@ function SocialFeedSection() {
         >
           {[
             { text: "obsessed", className: "-left-4 top-10", color: "bg-[#f4eaff] text-[#7232ba]" },
+            { text: "couldn’t finish it", className: "left-16 -top-5", color: "bg-[#fff1f8] text-[#c64188]" },
             { text: "10/10", className: "-right-3 top-24", color: "bg-[#eaf2ff] text-[#3572cf]" },
             { text: "no spoilers", className: "-left-6 bottom-24", color: "bg-[#e9fbf2] text-[#228a5e]" },
+            { text: "I called that ending", className: "-right-4 bottom-28", color: "bg-[#eef9ff] text-[#2679a9]" },
             { text: "starting tonight", className: "right-4 -bottom-4", color: "bg-[#f7efff] text-[#9146c1]" },
           ].map((take, index) => (
             <motion.span
@@ -503,7 +505,13 @@ function SocialFeedSection() {
                       <span className="text-primary">{post.title}</span>
                     </p>
                     <p className="mt-1 text-xs text-foreground/40">{post.time}</p>
-                    <p className="mt-2 text-sm leading-snug text-foreground/70">“{post.take}”</p>
+                    <p
+                      className={`mt-2 w-fit rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-sm leading-snug ${
+                        index === 1 ? "bg-[#37218d] text-white" : "bg-[#f4efff] text-foreground/75"
+                      }`}
+                    >
+                      “{post.take}”
+                    </p>
                     <div className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-primary">
                       <ThumbsUp className="h-3.5 w-3.5" strokeWidth={1.8} />
                       {post.reactions}
@@ -524,7 +532,7 @@ function SocialFeedSection() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -973,6 +981,7 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
+            <SocialFeedSection />
             <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <div className="relative z-10 max-w-7xl mx-auto">
@@ -1301,8 +1310,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
-        <SocialFeedSection />
 
         {/* 6. ROOMS */}
         <section className="py-8 md:py-12 bg-white" id="rooms">
