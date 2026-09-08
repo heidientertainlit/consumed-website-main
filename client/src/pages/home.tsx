@@ -479,6 +479,19 @@ export default function Home() {
               </div>
               <HeroTagline />
 
+              <div className="mb-5 flex flex-col sm:flex-row items-start gap-4">
+                <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
+                <a
+                  href="https://app.consumedapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground/55 hover:text-primary transition-colors"
+                  data-testid="link-hero-web-app"
+                >
+                  Open web app <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
               <div className="mt-0 mb-5 w-full max-w-[760px]">
                 <div className="flex flex-wrap items-center justify-start gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
                   {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
@@ -493,18 +506,6 @@ export default function Home() {
               <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
                 See what your friends are into, find your next obsession, and discover your Entertainment DNA.
               </p>
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
-                <a
-                  href="https://app.consumedapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground/55 hover:text-primary transition-colors"
-                  data-testid="link-hero-web-app"
-                >
-                  Open web app <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
             </motion.div>
             <div className="order-3 lg:order-2">
               <HeroFeedCarousel />
