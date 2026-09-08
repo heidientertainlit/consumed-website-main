@@ -372,13 +372,7 @@ function HeroFeedCarousel() {
 
 function PhoneTrio() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex w-full items-center justify-center"
-    >
+    <div className="flex w-full items-center justify-center">
       <div className="relative flex origin-center items-center justify-center md:scale-[0.92] lg:scale-[0.9]">
         <div className="hidden w-[200px] translate-x-6 translate-y-4 -rotate-6 overflow-hidden rounded-[2rem] border-[6px] border-[#1a1a1f] bg-[#1a1a1f] shadow-2xl sm:block md:w-[220px]">
           <img src={screenAddHero} alt="Consumed app — Add media screen" className="w-full" data-testid="img-hero-phone-add" />
@@ -390,7 +384,7 @@ function PhoneTrio() {
           <img src={screenRatingsHero} alt="Consumed app — Takes and ratings screen" className="w-full" data-testid="img-hero-phone-ratings" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -670,9 +664,9 @@ function ScatteredEntertainmentAnimation() {
         <motion.div
           initial={{ opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
           animate={cleared
-            ? { opacity: 1, y: 0, scale: [0.32, 1.1, 1], rotate: 0 }
+            ? { opacity: 1, y: 0, scale: 1, rotate: 0 }
             : { opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
-          transition={{ duration: 0.9, times: [0, 0.72, 1], ease: [0.18, 0.88, 0.28, 1.2] }}
+          transition={{ type: "spring", stiffness: 155, damping: 15, mass: 0.86 }}
           className="w-full"
         >
           <PhoneTrio />
