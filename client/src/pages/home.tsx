@@ -516,6 +516,41 @@ function ScatteredEntertainmentAnimation() {
         </>
       ),
     },
+    {
+      className: "bottom-[16%] left-[24%] z-[65] w-[34%]",
+      from: { x: -80, y: 390, rotate: -28 },
+      rotate: 9,
+      surfaceClass: "border-[#ef5365]/25 bg-[linear-gradient(145deg,#fff1f3,#ffb2bd)] shadow-[0_24px_55px_rgba(133,33,50,0.28)]",
+      content: (
+        <>
+          <div className="flex items-center justify-between">
+            <p className="text-[9px] font-bold text-[#e7324d]">♪ Music</p>
+            <span className="text-[8px] text-[#9b5360]">Recently Played</span>
+          </div>
+          <p className="mt-4 font-heading text-lg leading-none text-[#3e1820]">Songs I&apos;m making everyone listen to</p>
+          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/60">
+            <div className="h-full w-[68%] rounded-full bg-[#e7324d]" />
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "right-[17%] top-[21%] z-[68] w-[31%]",
+      from: { x: 260, y: -330, rotate: 24 },
+      rotate: -10,
+      surfaceClass: "border-[#bdd7ca] bg-[#eef9f3] shadow-[0_22px_52px_rgba(30,74,50,0.25)]",
+      content: (
+        <>
+          <div className="flex items-center justify-between">
+            <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[#218653]">Watched</p>
+            <span className="text-[9px] text-[#65917a]">Last night</span>
+          </div>
+          <p className="mt-3 font-heading text-base leading-tight text-[#193a29]">The White Lotus</p>
+          <p className="mt-2 text-[12px] tracking-[0.08em] text-[#20a866]">★★★★½</p>
+          <p className="mt-1 text-[8px] text-[#65917a]">where did I even rate this?</p>
+        </>
+      ),
+    },
   ];
 
   const chatBubbles = [
@@ -923,21 +958,45 @@ export default function Home() {
                 <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
                   Everything. Is. <span className="italic text-primary">Everywhere.</span>
                 </h2>
+                <p className="mt-6 text-base font-semibold leading-relaxed text-[#493f51] sm:text-lg">
+                  Different apps. Different lists. Different conversations.
+                </p>
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
+                  What we watch, read, listen to, play, save, and talk about is scattered across streaming queues, screenshots, notes, texts, ratings, and recommendations we swear we&apos;ll remember later.
+                </p>
               </motion.div>
-              <div className="mx-auto mt-8 max-w-3xl md:mt-12">
+              <div className="mx-auto mt-6 max-w-3xl md:mt-10">
                 <ScatteredEntertainmentAnimation />
               </div>
             </div>
           </div>
 
-          <div className="relative mt-5 overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:pb-60">
+          <div className="relative z-20 -mt-16 overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:-mt-24 md:pb-60">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,_rgba(118,80,209,0.55)_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_rgba(140,93,226,0.45)_0%,_transparent_35%)]" />
-            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 text-center md:px-14 md:pt-20">
+            <div className="pointer-events-none absolute left-1/2 top-24 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full border border-white/10 shadow-[0_0_90px_rgba(180,137,255,0.35)] md:top-32 md:h-[42rem] md:w-[42rem]" />
+            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-8 text-center md:px-14 md:pt-10">
+              <motion.div
+                initial={{ opacity: 0, y: 150, scale: 0.38, rotate: -5 }}
+                whileInView={{ opacity: 1, y: 0, scale: [0.38, 1.08, 1], rotate: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.9, times: [0, 0.72, 1], ease: [0.18, 0.88, 0.28, 1.2] }}
+                className="relative z-20 mx-auto"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.4 }}
+                  whileInView={{ opacity: [0, 0.8, 0], scale: [0.4, 1.55, 1.9] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#cbb6ff]"
+                />
+                <PhoneTrio />
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mx-auto max-w-3xl"
+                className="mx-auto mt-4 max-w-3xl md:mt-8"
               >
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8ceff]">All Your Entertainment</p>
                 <h3 className="mt-4 font-heading text-3xl font-normal leading-[1.05] text-white sm:text-4xl lg:text-5xl">
@@ -953,10 +1012,6 @@ export default function Home() {
                   Movies. TV. Books. Podcasts. Music. Gaming. Whatever you&apos;re into.
                 </p>
               </motion.div>
-
-              <div className="mt-10">
-                <PhoneTrio />
-              </div>
 
               <a
                 href="https://app.consumedapp.com"
