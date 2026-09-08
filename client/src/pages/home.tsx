@@ -394,7 +394,16 @@ function PhoneTrio() {
   );
 }
 
-function ScatteredEntertainmentAnimation({ cleared = false }: { cleared?: boolean }) {
+function ScatteredEntertainmentAnimation() {
+  const [hasEntered, setHasEntered] = useState(false);
+  const [cleared, setCleared] = useState(false);
+
+  useEffect(() => {
+    if (!hasEntered) return;
+    const timer = window.setTimeout(() => setCleared(true), 3000);
+    return () => window.clearTimeout(timer);
+  }, [hasEntered]);
+
   const fragments = [
     {
       className: "left-[-2%] top-[2%] z-10 w-[52%]",
@@ -577,8 +586,8 @@ function ScatteredEntertainmentAnimation({ cleared = false }: { cleared?: boolea
   return (
     <motion.div
       initial="hidden"
-      whileInView="visible"
-      animate={cleared ? "cleared" : undefined}
+      animate={cleared ? "cleared" : hasEntered ? "visible" : "hidden"}
+      onViewportEnter={() => setHasEntered(true)}
       viewport={{ once: true, amount: 0.25 }}
       className="relative mx-auto h-[470px] w-full max-w-[680px] sm:h-[520px]"
       aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
@@ -656,6 +665,25 @@ function ScatteredEntertainmentAnimation({ cleared = false }: { cleared?: boolea
           {bubble.text}
         </motion.p>
       ))}
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.1 }}
+        animate={cleared ? { opacity: 1, scale: 1.55 } : { opacity: 0, scale: 0.1 }}
+        transition={{ duration: 0.72, ease: [0.2, 0.82, 0.25, 1] }}
+        className="pointer-events-none absolute left-1/2 top-1/2 z-[92] h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_#7651cf_0%,_#301b6e_58%,_#160b36_100%)] shadow-[0_0_100px_rgba(91,49,181,0.55)]"
+      />
+      <div className="pointer-events-none absolute inset-0 z-[100] flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
+          animate={cleared
+            ? { opacity: 1, y: 0, scale: [0.32, 1.1, 1], rotate: 0 }
+            : { opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
+          transition={{ duration: 0.9, times: [0, 0.72, 1], ease: [0.18, 0.88, 0.28, 1.2] }}
+          className="w-full"
+        >
+          <PhoneTrio />
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
@@ -829,7 +857,6 @@ function SocialFeedSection() {
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [phonesBreakingThrough, setPhonesBreakingThrough] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -936,6 +963,10 @@ export default function Home() {
               </div>
               <HeroTagline />
 
+              <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
+                See what your friends are into, find your next obsession, and discover your Entertainment DNA.
+              </p>
+
               <div className="mb-5 flex flex-col sm:flex-row items-start gap-4">
                 <AppStoreButton className="w-full sm:w-auto px-7 py-3 text-sm" />
                 <a
@@ -960,9 +991,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-sm md:text-base text-foreground/80 mb-7 max-w-2xl leading-relaxed font-sans">
-                See what your friends are into, find your next obsession, and discover your Entertainment DNA.
-              </p>
             </motion.div>
             <div className="order-3 lg:order-2">
               <HeroFeedCarousel />
@@ -972,8 +1000,8 @@ export default function Home() {
 
         {/* 3. TAKES FEED */}
         <section className="relative mx-auto mt-8 w-[calc(100%-2rem)] max-w-7xl md:mt-12 md:w-[calc(100%-4rem)]" id="how-it-works">
-          <div className="overflow-hidden rounded-[2.5rem] border border-[#e8e2e9] bg-[#f5f2ed] text-[#211a2a]">
-            <div className="px-7 py-16 md:px-14 md:py-20">
+          <div className="overflow-hidden rounded-[2.5rem] border border-[#e8e2e9]">
+            <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -992,33 +1020,14 @@ export default function Home() {
                 </p>
               </motion.div>
               <div className="mx-auto mt-6 max-w-3xl md:mt-10">
-                <ScatteredEntertainmentAnimation cleared={phonesBreakingThrough} />
+                <ScatteredEntertainmentAnimation />
               </div>
             </div>
-          </div>
 
-          <div className="relative z-20 -mt-16 overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:-mt-24 md:pb-60">
+          <div className="relative overflow-hidden bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:pb-60">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,_rgba(118,80,209,0.55)_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_rgba(140,93,226,0.45)_0%,_transparent_35%)]" />
             <div className="pointer-events-none absolute left-1/2 top-24 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full border border-white/10 shadow-[0_0_90px_rgba(180,137,255,0.35)] md:top-32 md:h-[42rem] md:w-[42rem]" />
-            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-8 text-center md:px-14 md:pt-10">
-              <motion.div
-                initial={{ opacity: 0, y: 150, scale: 0.38, rotate: -5 }}
-                whileInView={{ opacity: 1, y: 0, scale: [0.38, 1.08, 1], rotate: 0 }}
-                onViewportEnter={() => setPhonesBreakingThrough(true)}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.9, times: [0, 0.72, 1], ease: [0.18, 0.88, 0.28, 1.2] }}
-                className="relative z-20 mx-auto"
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.4 }}
-                  whileInView={{ opacity: [0, 0.8, 0], scale: [0.4, 1.55, 1.9] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#cbb6ff]"
-                />
-                <PhoneTrio />
-              </motion.div>
-
+            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 text-center md:px-14 md:pt-20">
               <motion.div
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1050,6 +1059,7 @@ export default function Home() {
                 Bring it all together <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
+          </div>
           </div>
           <div className="hidden">
             <motion.div
