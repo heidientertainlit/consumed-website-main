@@ -370,6 +370,164 @@ function HeroFeedCarousel() {
   );
 }
 
+function SocialFeedSection() {
+  const feedPosts = [
+    {
+      person: "Avery",
+      time: "just now",
+      initial: "A",
+      color: "#ed5d9d",
+      action: "finished",
+      title: "The White Lotus",
+      poster: heroWhiteLotus,
+      take: "That finale just changed the entire group chat.",
+      reactions: "24",
+    },
+    {
+      person: "Maya",
+      time: "8m ago",
+      initial: "M",
+      color: "#7657c8",
+      action: "loved",
+      title: "Project Hail Mary",
+      poster: heroProjectHailMary,
+      take: "Loved the book AND loved the movie. Ryan Gosling crushed it.",
+      reactions: "31",
+    },
+    {
+      person: "Jordan",
+      time: "16m ago",
+      initial: "J",
+      color: "#3b8eec",
+      action: "is listening to",
+      title: "Crime Junkie",
+      poster: heroCrimeJunkie,
+      take: "Okay, I finally understand why everyone keeps recommending this.",
+      reactions: "18",
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-white px-6 py-20 md:py-28" id="chatter">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
+      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.04] md:text-5xl lg:text-6xl">
+            Wait, what is everyone into <span className="italic text-primary">right now?</span>
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
+            See what your friends are watching, reading, listening to, and playing — what they loved, what they absolutely did not, and what everyone suddenly seems to be talking about.
+          </p>
+          <p className="mt-7 text-sm font-semibold text-foreground/60 md:text-base">
+            Because eventually someone&apos;s going to say:
+          </p>
+          <blockquote className="mt-2 font-heading text-3xl leading-tight text-foreground md:text-4xl">
+            “Wait. You haven&apos;t <span className="italic text-primary">seen it?</span>”
+          </blockquote>
+          <a
+            href="https://app.consumedapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#37218d] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4a2da9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            data-testid="link-see-whats-happening"
+          >
+            See what&apos;s happening <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {[
+            { text: "obsessed", className: "-left-4 top-10", color: "bg-[#f4eaff] text-[#7232ba]" },
+            { text: "10/10", className: "-right-3 top-24", color: "bg-[#eaf2ff] text-[#3572cf]" },
+            { text: "no spoilers", className: "-left-6 bottom-24", color: "bg-[#e9fbf2] text-[#228a5e]" },
+            { text: "starting tonight", className: "right-4 -bottom-4", color: "bg-[#f7efff] text-[#9146c1]" },
+          ].map((take, index) => (
+            <motion.span
+              key={take.text}
+              animate={{ y: [0, index % 2 === 0 ? -7 : 7, 0] }}
+              transition={{ duration: 4.8 + index * 0.45, repeat: Infinity, ease: "easeInOut", delay: index * 0.4 }}
+              className={`absolute z-20 hidden rounded-full border border-white px-3.5 py-2 text-xs font-semibold shadow-sm sm:inline-flex ${take.className} ${take.color}`}
+            >
+              {take.text}
+            </motion.span>
+          ))}
+
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#e8e4f0] bg-white shadow-[0_24px_65px_rgba(51,31,94,0.15)]">
+            <div className="flex items-center justify-between border-b border-[#eeeaf4] px-5 py-4 md:px-6">
+              <div>
+                <p className="font-heading text-xl text-foreground">Happening now</p>
+                <p className="mt-0.5 text-xs text-[#32a269]">● 14 friends active</p>
+              </div>
+              <div className="flex -space-x-2" aria-label="Friends active now">
+                {["A", "M", "J"].map((initial, index) => (
+                  <span
+                    key={initial}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white text-[10px] font-bold text-white"
+                    style={{ background: ["#ed5d9d", "#7657c8", "#3b8eec"][index] }}
+                  >
+                    {initial}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="divide-y divide-[#eeeaf4]">
+              {feedPosts.map((post, index) => (
+                <motion.article
+                  key={post.person}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.12 + index * 0.1 }}
+                  className="flex gap-3 p-4 md:gap-4 md:p-5"
+                >
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
+                    style={{ background: post.color }}
+                  >
+                    {post.initial}
+                  </span>
+                  <img src={post.poster} alt="" className="h-20 w-14 shrink-0 rounded-lg object-cover shadow-sm" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold text-foreground">
+                      {post.person} <span className="font-normal text-foreground/45">{post.action}</span>{" "}
+                      <span className="text-primary">{post.title}</span>
+                    </p>
+                    <p className="mt-1 text-xs text-foreground/40">{post.time}</p>
+                    <p className="mt-2 text-sm leading-snug text-foreground/70">“{post.take}”</p>
+                    <div className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-primary">
+                      <ThumbsUp className="h-3.5 w-3.5" strokeWidth={1.8} />
+                      {post.reactions}
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div
+              animate={{ opacity: [0.55, 1, 0.55] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+              className="flex items-center gap-2 border-t border-[#eeeaf4] bg-[#fbfaff] px-5 py-3 text-xs text-foreground/45 md:px-6"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#43a7e8] text-[9px] font-bold text-white">S</span>
+              Sam is typing <span className="tracking-[0.18em]">•••</span>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -826,13 +984,19 @@ export default function Home() {
                 >
                   <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] text-white">
-                    There&apos;s a pattern to what you love.
+                    Okay, so apparently I have a <span className="italic text-[#d8ceff]">type.</span>
                   </h2>
-                  <p className="mt-4 text-[#d8ceff] italic text-2xl md:text-3xl lg:text-4xl font-heading">
-                    Discover your entertainment identity.
+                  <p className="max-w-3xl mx-auto mt-6 text-sm md:text-base leading-relaxed text-white/75">
+                    The shows I rewatch. The books I tell everyone to read. The movies I&apos;ve seen an embarrassing number of times. The podcast I somehow bring up in every conversation.
                   </p>
-                  <p className="max-w-3xl mx-auto mt-5 text-sm md:text-base leading-relaxed text-white/70">
-                    The more you track, rate, and interact, the more your Entertainment DNA evolves — revealing the patterns behind what you love.
+                  <p className="mt-5 font-heading text-xl md:text-2xl text-[#d8ceff]">
+                    Put it all together and... yeah.
+                  </p>
+                  <p className="mt-2 font-heading text-2xl md:text-3xl lg:text-4xl italic text-white">
+                    That&apos;s pretty much me.
+                  </p>
+                  <p className="max-w-3xl mx-auto mt-6 text-sm md:text-base leading-relaxed text-white/70">
+                    Consumed turns what you&apos;re into into your Entertainment DNA — the genres, patterns, preferences, and obsessions that make yours yours.
                   </p>
                 </motion.div>
 
@@ -1003,6 +1167,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <SocialFeedSection />
 
         {/* 5. TASTE MATCH */}
         <section className="pt-20 md:pt-28 pb-2 md:pb-4 px-6 bg-white" id="taste-match">
@@ -1278,92 +1444,6 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* 9. ENTERTAINMENT CHATTER */}
-        <section className="py-24 md:py-32 px-6 bg-white overflow-hidden" id="chatter">
-          <div className="container mx-auto max-w-6xl relative min-h-[500px] md:min-h-[560px] flex items-center justify-center">
-            {[
-              { text: "obsessed", className: "top-2 left-0 md:left-8", color: "bg-[#f4eaff] text-[#7232ba]" },
-              { text: "couldn’t finish it", className: "top-16 right-0 md:right-10", color: "bg-[#fff1f8] text-[#c64188]" },
-              { text: "10/10", className: "top-40 left-0 md:left-16", color: "bg-[#eaf2ff] text-[#3572cf]" },
-              { text: "overrated", className: "bottom-24 left-0 md:left-24", color: "bg-[#fff6df] text-[#a66a12]" },
-              { text: "no spoilers", className: "bottom-8 right-0 md:right-14", color: "bg-[#e9fbf2] text-[#228a5e]" },
-              { text: "TEAM AVA", className: "top-40 right-0 md:right-20", color: "bg-[#efeaff] text-[#6f45d4]" },
-              { text: "I called that ending", className: "bottom-40 right-4 md:right-0", color: "bg-[#eef9ff] text-[#2679a9]" },
-              { text: "starting tonight", className: "bottom-2 left-1/3", color: "bg-[#f7efff] text-[#9146c1]" },
-            ].map((take, i) => (
-              <motion.span
-                key={take.text}
-                animate={{ x: [0, i % 2 === 0 ? 10 : -10, 0], y: [0, i % 3 === 0 ? -8 : 8, 0] }}
-                transition={{ duration: 5 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.35 }}
-                className={`absolute z-0 hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold shadow-sm border border-white ${take.className} ${take.color}`}
-              >
-                {take.text}
-              </motion.span>
-            ))}
-
-            <motion.div
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative z-10 max-w-2xl text-center"
-            >
-              <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary mb-4">The conversation never ends</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                Okay, but what are you<br />
-                <span className="italic text-primary">watching right now?</span>
-              </h2>
-
-              <div className="mt-9 rounded-[2rem] border border-[#e8e4f0] bg-white p-5 md:p-6 text-left shadow-[0_20px_55px_rgba(51,31,94,0.12)]">
-                <div className="flex items-center justify-between pb-4 border-b border-[#eeeaf4]">
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      {["A", "J", "M"].map((initial, i) => (
-                        <span key={initial} className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white" style={{ background: ["#7b53db", "#ed5d9d", "#3b8eec"][i] }}>{initial}</span>
-                      ))}
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold">Tonight&apos;s chat</p>
-                      <p className="text-xs text-[#32a269]">● 14 watching now</p>
-                    </div>
-                  </div>
-                  <span className="rounded-full bg-[#f0ebff] px-3 py-1.5 text-[10px] font-bold text-primary">LIVE</span>
-                </div>
-
-                <div className="space-y-4 py-5">
-                  <div className="flex items-start gap-3">
-                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#ed5d9d] text-white flex items-center justify-center text-[10px] font-bold">A</span>
-                    <div>
-                      <p className="text-xs font-bold">Avery <span className="font-normal text-foreground/40">just now</span></p>
-                      <p className="mt-1 rounded-2xl rounded-tl-sm bg-[#f4efff] px-3.5 py-2.5 text-sm text-foreground/80">Hot take: this season is already better than the last one.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 justify-end">
-                    <div className="text-right">
-                      <p className="text-xs font-bold">You <span className="font-normal text-foreground/40">just now</span></p>
-                      <p className="mt-1 rounded-2xl rounded-tr-sm bg-[#37218d] px-3.5 py-2.5 text-sm text-white">Finally, someone said it. I&apos;m starting tonight.</p>
-                    </div>
-                    <span className="w-8 h-8 shrink-0 rounded-full bg-[#6f4bd3] text-white flex items-center justify-center text-[10px] font-bold">YO</span>
-                  </div>
-                  <motion.div
-                    animate={{ opacity: [0.45, 1, 0.45] }}
-                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex items-center gap-2 text-xs text-foreground/45"
-                  >
-                    <span className="w-8 h-8 rounded-full bg-[#43a7e8] text-white flex items-center justify-center text-[10px] font-bold">J</span>
-                    <span className="rounded-full bg-[#f3f1f6] px-3 py-2">Jordan is typing <span className="tracking-[0.18em]">•••</span></span>
-                  </motion.div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-full border border-[#e7e1ef] bg-[#fbfaff] px-4 py-3">
-                  <span className="text-primary text-lg leading-none">+</span>
-                  <span className="text-sm text-foreground/40">Drop your hot take...</span>
-                  <span className="ml-auto text-xs font-bold text-primary">Send ↑</span>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
 
