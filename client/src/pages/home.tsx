@@ -566,11 +566,11 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-heading font-normal leading-[1.05]">
                 Everything. Is. Everywhere.
               </h2>
-              <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
-                But entertainment is better, <span className="italic text-[#d8ceff]">together.</span> And now, finallyyyy everything is all in one place.
-              </p>
               <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] font-semibold leading-relaxed text-white/90">
                 Different apps. Different lists. Different conversations.
+              </p>
+              <p className="mt-4 sm:mt-5 font-heading text-lg sm:text-xl lg:text-[1.35rem] xl:text-2xl leading-snug text-[#e6ddff]">
+                But entertainment is better, <span className="italic text-[#d8ceff]">together.</span> And now, finallyyyy everything is all in one place.
               </p>
               <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[1.05rem] leading-relaxed text-white/75">
                 What we watch, read, listen to, play, save, and talk about is scattered everywhere. Consumed brings it all under one roof — so we can finally see what our friends are into, what they’re saying, and what they’re loving.
