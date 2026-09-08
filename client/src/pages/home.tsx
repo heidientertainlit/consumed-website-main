@@ -666,12 +666,6 @@ function ScatteredEntertainmentAnimation() {
         </motion.p>
       ))}
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.1 }}
-        animate={cleared ? { opacity: 1, scale: 1.55 } : { opacity: 0, scale: 0.1 }}
-        transition={{ duration: 0.72, ease: [0.2, 0.82, 0.25, 1] }}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-[92] h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_#7651cf_0%,_#301b6e_58%,_#160b36_100%)] shadow-[0_0_100px_rgba(91,49,181,0.55)]"
-      />
       <div className="pointer-events-none absolute inset-0 z-[100] flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
