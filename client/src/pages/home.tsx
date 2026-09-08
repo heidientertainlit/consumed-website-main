@@ -197,7 +197,7 @@ function HeroTagline() {
   return (
     <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
       Admit it, that{" "}
-      <span className="relative inline-grid max-w-full align-baseline overflow-hidden">
+      <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
           YouTube rabbit hole
         </span>
