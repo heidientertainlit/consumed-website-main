@@ -967,11 +967,19 @@ export default function Home() {
               </div>
 
               <div className="mt-0 mb-5 w-full max-w-[760px]">
-                <div className="flex flex-wrap items-center justify-start gap-y-2 text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase text-foreground/45">
-                  {["Movies", "TV", "Books", "Podcasts", "Gaming", "More"].map((category, index) => (
-                    <span key={category} className="inline-flex items-center gap-2.5 px-1.5 sm:px-2.5">
-                      {category}
-                      {index < 5 && <span className="text-primary/55">•</span>}
+                <div className="flex flex-wrap items-center justify-start gap-x-4 gap-y-2.5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:gap-x-5 sm:text-[10px] md:text-[11px]">
+                  {[
+                    { label: "Movies", Icon: Clapperboard },
+                    { label: "TV", Icon: Tv },
+                    { label: "Books", Icon: BookOpen },
+                    { label: "Podcasts", Icon: Headphones },
+                    { label: "Music", Icon: Music2 },
+                    { label: "YouTube", Icon: Youtube },
+                    { label: "Gaming", Icon: Gamepad2 },
+                  ].map(({ label, Icon }) => (
+                    <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                      <Icon className="h-3.5 w-3.5 text-primary/75" strokeWidth={1.8} aria-hidden="true" />
+                      {label}
                     </span>
                   ))}
                 </div>
@@ -1167,47 +1175,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. CATEGORIES */}
-        <section className="relative z-20 mt-8 pb-0 px-6 bg-transparent md:mt-12" id="categories">
+        {/* 4. SOCIAL FEED */}
+        <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="w-full">
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="mx-auto max-w-5xl"
-              >
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {[
-                    { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
-                    { title: "TV", desc: "Episodes and seasons", Icon: Tv },
-                    { title: "Books", desc: "Reads and favorites", Icon: BookOpen },
-                    { title: "Podcasts", desc: "Episodes and listens", Icon: Headphones },
-                    { title: "Music", desc: "Albums and artists", Icon: Music2 },
-                    { title: "YouTube", desc: "Channels and videos", Icon: Youtube },
-                    { title: "Gaming", desc: "Games and playtime", Icon: Gamepad2 },
-                  ].map((cat, i) => (
-                    <motion.div
-                      key={cat.title}
-                      initial={{ opacity: 0, y: 14 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex items-center gap-3 rounded-2xl border border-[#ece8f5] bg-[#fbfaff] p-3.5 md:p-4"
-                    >
-                      <span className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-[#eee8ff] flex items-center justify-center shrink-0">
-                        <cat.Icon className="w-5 h-5 md:w-[1.35rem] md:h-[1.35rem] text-primary" strokeWidth={1.6} />
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block text-sm md:text-base font-bold leading-tight">{cat.title}</span>
-                        <span className="block text-[11px] md:text-xs text-foreground/50 mt-0.5">{cat.desc}</span>
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-            </div>
             <SocialFeedSection />
             <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
