@@ -966,28 +966,27 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-0 mb-5 w-full max-w-[760px]">
-                <div className="flex flex-wrap items-center justify-start gap-x-4 gap-y-2.5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:gap-x-5 sm:text-[10px] md:text-[11px]">
-                  {[
-                    { label: "Movies", Icon: Clapperboard },
-                    { label: "TV", Icon: Tv },
-                    { label: "Books", Icon: BookOpen },
-                    { label: "Podcasts", Icon: Headphones },
-                    { label: "Music", Icon: Music2 },
-                    { label: "YouTube", Icon: Youtube },
-                    { label: "Gaming", Icon: Gamepad2 },
-                  ].map(({ label, Icon }) => (
-                    <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
-                      <Icon className="h-3.5 w-3.5 text-primary/75" strokeWidth={1.8} aria-hidden="true" />
-                      {label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
             </motion.div>
             <div className="order-3 lg:order-2">
               <HeroFeedCarousel />
+            </div>
+          </div>
+          <div className="mt-1 w-full px-6 md:mt-3 md:px-10 lg:px-14">
+            <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
+              {[
+                { label: "Movies", Icon: Clapperboard },
+                { label: "TV", Icon: Tv },
+                { label: "Books", Icon: BookOpen },
+                { label: "Podcasts", Icon: Headphones },
+                { label: "Music", Icon: Music2 },
+                { label: "YouTube", Icon: Youtube },
+                { label: "Gaming", Icon: Gamepad2 },
+              ].map(({ label, Icon }) => (
+                <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                  <Icon className="h-3.5 w-3.5 text-primary/75" strokeWidth={1.8} aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </section>
