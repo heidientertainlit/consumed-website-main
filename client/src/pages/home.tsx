@@ -1001,7 +1001,10 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="mx-auto max-w-3xl text-center"
               >
-                <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
+                <p className="mb-4 text-[10px] font-light uppercase tracking-[0.24em] text-[#746a7c] sm:text-xs">
+                  Why Consumed?
+                </p>
+                <h2 className="font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
                   I swear I saved it somewhere...
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
