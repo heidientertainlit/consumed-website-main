@@ -972,7 +972,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-1 w-full px-6 md:mt-3 md:px-10 lg:px-14">
-            <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
+            <div className="mx-auto flex max-w-[1600px] flex-wrap items-start justify-center gap-x-7 gap-y-5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
               {[
                 { label: "Movies", Icon: Clapperboard },
                 { label: "TV", Icon: Tv },
@@ -982,8 +982,8 @@ export default function Home() {
                 { label: "YouTube", Icon: Youtube },
                 { label: "Gaming", Icon: Gamepad2 },
               ].map(({ label, Icon }) => (
-                <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
-                  <Icon className="h-3.5 w-3.5 text-primary/75" strokeWidth={1.8} aria-hidden="true" />
+                <span key={label} className="inline-flex min-w-[70px] flex-col items-center gap-2 whitespace-nowrap text-center">
+                  <Icon className="h-6 w-6 text-primary/75 md:h-7 md:w-7" strokeWidth={1.6} aria-hidden="true" />
                   {label}
                 </span>
               ))}
@@ -1383,7 +1383,7 @@ export default function Home() {
             >
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary">Friends + DNA Matching</p>
               <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
-                Wait wait wait. You <span className="italic text-primary">love that too?</span>
+                This is why we&apos;re <span className="italic text-primary">friends.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
                 Compare your Entertainment DNA with friends. See where you match, what you have in common, and who somehow has the exact same weirdly specific obsessions you do.
