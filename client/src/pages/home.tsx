@@ -999,10 +999,10 @@ export default function Home() {
                 <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
                   I swear I saved it somewhere...
                 </h2>
-                <p className="mt-6 text-base font-semibold leading-relaxed text-[#493f51] sm:text-lg">
-                  Lost recommendations. Group chats. Notes app lists. Screenshots. Way too many apps.
-                </p>
-                <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
+                <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
+                  <span className="font-heading text-base italic text-[#493f51] sm:text-lg">
+                    Lost recommendations. Group chats. Notes app lists. Screenshots. Way too many apps.
+                  </span>{" "}
                   What we watch, read, listen to, play, save, and talk about is scattered across streaming queues, texts, ratings, and things we swear we&apos;ll remember later.
                 </p>
                 <p className="mt-5 font-heading text-xl text-[#493f51] sm:text-2xl">
