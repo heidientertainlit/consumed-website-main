@@ -4,8 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, MessageCircle, Star, Share2, TrendingUp } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
-import mediaLibraryScreen from "@assets/Screenshot_2026-08-19_at_12.43.39_PM_1787165032553.png";
-import currentlyConsumingScreen from "@assets/Screenshot_2026-08-19_at_12.43.17_PM_1787165001505.png";
 import heroMaybeSomeday from "@assets/Screenshot_2026-08-22_at_12.08.35_PM_1787422156206.png";
 import heroTheWomen from "@assets/Screenshot_2026-08-22_at_12.08.28_PM_1787422156207.png";
 import heroProjectHailMary from "@assets/Screenshot_2026-08-22_at_12.08.50_PM_1787422156206.png";
@@ -723,7 +721,7 @@ function SocialFeedSection() {
           viewport={{ once: true }}
         >
           <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.04] md:text-4xl lg:text-5xl xl:text-6xl">
-            Wait, what is everyone into <span className="italic text-primary">right now?</span>
+          What is everyone into <span className="italic text-primary">right now?</span>
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
             See what your friends are watching, reading, listening to, and playing — what they loved, what they absolutely did not, and what everyone suddenly seems to be talking about.
@@ -1016,42 +1014,6 @@ export default function Home() {
               </div>
             </div>
 
-          <div className="relative overflow-hidden bg-[linear-gradient(135deg,_#0e0828_0%,_#241251_55%,_#4a2c91_100%)] pb-28 text-white md:pb-60">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,_rgba(118,80,209,0.55)_0%,_transparent_28%),radial-gradient(circle_at_20%_85%,_rgba(140,93,226,0.45)_0%,_transparent_35%)]" />
-            <div className="pointer-events-none absolute left-1/2 top-24 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full border border-white/10 shadow-[0_0_90px_rgba(180,137,255,0.35)] md:top-32 md:h-[42rem] md:w-[42rem]" />
-            <div className="container relative z-10 mx-auto max-w-7xl px-7 pt-16 text-center md:px-14 md:pt-20">
-              <motion.div
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mx-auto mt-4 max-w-3xl md:mt-8"
-              >
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8ceff]">All Your Entertainment</p>
-                <h3 className="mt-4 font-heading text-3xl font-normal leading-[1.05] text-white sm:text-4xl lg:text-5xl">
-                  Okay but why is all of this in <span className="italic text-[#d8ceff]">different places?</span>
-                </h3>
-                <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-                  Movies over here. Books somewhere else. Podcasts in another app. And don&apos;t even get us started on the notes app list of things someone told you to watch six months ago.
-                </p>
-                <p className="mt-6 font-heading text-xl text-[#e6ddff] sm:text-2xl">
-                  So yeah. We put it all together.
-                </p>
-                <p className="mt-4 text-sm font-semibold leading-relaxed text-white/85 sm:text-base">
-                  Movies. TV. Books. Podcasts. Music. Gaming. Whatever you&apos;re into.
-                </p>
-              </motion.div>
-
-              <a
-                href="https://app.consumedapp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#301b6e] transition-colors hover:bg-[#e6ddff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-                data-testid="link-bring-it-together"
-              >
-                Bring it all together <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
           </div>
           <div className="hidden">
             <motion.div
@@ -1206,15 +1168,16 @@ export default function Home() {
         </section>
 
         {/* 4. CATEGORIES */}
-        <section className="relative z-20 -mt-12 md:-mt-40 pb-0 px-6 bg-transparent" id="categories">
+        <section className="relative z-20 mt-8 pb-0 px-6 bg-transparent md:mt-12" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-16">
+            <div className="w-full">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="mx-auto max-w-2xl"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3">
                   {[
                     { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
                     { title: "TV", desc: "Episodes and seasons", Icon: Tv },
@@ -1244,40 +1207,6 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative min-h-[500px] md:min-h-[560px] max-w-[650px] w-full mx-auto lg:-translate-y-4 xl:-translate-y-6"
-              >
-                <div className="absolute top-0 right-0 w-[74%] h-[500px] md:h-[550px] rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-[0_24px_60px_rgba(42,24,83,0.16)]">
-                  <img
-                    src={mediaLibraryScreen}
-                    alt="Consumed My Media screen with lists, filters, and tracked titles"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-
-                <div className="absolute top-10 left-0 z-10 w-[43%] rounded-2xl border border-[#ece8f5] bg-white p-4 shadow-[0_16px_35px_rgba(42,24,83,0.14)]">
-                  <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-primary">Your library</p>
-                  <p className="mt-2 text-3xl font-heading font-semibold text-[#7b3fe4]">912</p>
-                  <p className="text-xs text-foreground/50">titles tracked</p>
-                  <div className="grid grid-cols-2 gap-x-3 gap-y-2 mt-4 text-xs">
-                    <span><strong className="text-[#e64b94]">83</strong> Movies</span>
-                    <span><strong className="text-[#3177d8]">65</strong> TV</span>
-                    <span><strong className="text-[#30a04a]">732</strong> Books</span>
-                    <span><strong className="text-[#6e44d8]">8h</strong> Pods</span>
-                  </div>
-                </div>
-
-                <div className="absolute left-4 md:left-7 bottom-0 z-20 w-[53%] rounded-[1.6rem] overflow-hidden border-[5px] border-[#1a1135] bg-[#1a1135] shadow-[0_22px_45px_rgba(30,13,82,0.28)]">
-                  <img
-                    src={currentlyConsumingScreen}
-                    alt="Consumed Entertainment DNA currently consuming preview"
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
             </div>
             <SocialFeedSection />
             <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
