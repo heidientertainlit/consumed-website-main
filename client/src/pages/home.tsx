@@ -996,9 +996,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="mx-auto max-w-3xl text-center"
               >
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#746a7c]">Your entertainment, currently</p>
                 <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
-                  Everything. Is. <span className="italic text-primary">Everywhere.</span>
+                  I swear I saved it somewhere...
                 </h2>
                 <p className="mt-6 text-base font-semibold leading-relaxed text-[#493f51] sm:text-lg">
                   Lost recommendations. Group chats. Notes app lists. Screenshots. Way too many apps.
