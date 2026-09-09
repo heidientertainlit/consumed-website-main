@@ -1000,11 +1000,11 @@ export default function Home() {
                   I swear I saved it somewhere...
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
-                  <span className="font-sans italic text-[#493f51]">
+                  <span className="font-sans text-[#493f51]">
                     Group chats. Notes app lists. Screenshots. Lost recommendations. Way too many apps.
                   </span>
                 </p>
-                <p className="mt-5 text-base font-sans font-semibold leading-relaxed text-[#493f51] sm:text-lg">
+                <p className="mt-5 font-heading text-xl leading-relaxed text-[#493f51] sm:text-2xl">
                   Finally, one place for all of it.
                 </p>
                 <p className="mx-auto mt-3 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
