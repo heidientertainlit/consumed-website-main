@@ -1001,9 +1001,8 @@ export default function Home() {
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
                   <span className="font-heading text-base italic text-[#493f51] sm:text-lg">
-                    Lost recommendations. Group chats. Notes app lists. Screenshots. Way too many apps.
-                  </span>{" "}
-                  What we watch, read, listen to, play, save, and talk about is scattered across streaming queues, texts, ratings, and things we swear we&apos;ll remember later.
+                    Group chats. Notes app lists. Screenshots. Lost recommendations. Way too many apps.
+                  </span>
                 </p>
                 <p className="mt-5 font-heading text-xl text-[#493f51] sm:text-2xl">
                   So yeah. We made one place for all of it.
