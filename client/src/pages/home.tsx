@@ -999,15 +999,15 @@ export default function Home() {
                 <h2 className="mt-4 font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
                   I swear I saved it somewhere...
                 </h2>
-                <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[#746a7c] sm:text-base">
-                  <span className="font-heading text-base italic text-[#493f51] sm:text-lg">
+                <p className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
+                  <span className="font-sans italic text-[#493f51]">
                     Group chats. Notes app lists. Screenshots. Lost recommendations. Way too many apps.
                   </span>
                 </p>
-                <p className="mt-5 font-heading text-xl text-[#493f51] sm:text-2xl">
-                  So yeah. We made one place for all of it.
+                <p className="mt-5 text-base font-sans font-semibold leading-relaxed text-[#493f51] sm:text-lg">
+                  Finally, one place for all of it.
                 </p>
-                <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold leading-relaxed text-[#746a7c] sm:text-base">
+                <p className="mx-auto mt-3 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
                   What you&apos;re into. What your friends are into. And everything you have to say about it.
                 </p>
               </motion.div>
