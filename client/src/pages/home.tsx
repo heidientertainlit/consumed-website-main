@@ -180,6 +180,7 @@ const liveConversationActivity = [
 ];
 
 const heroMediaTypes = ["show", "movie", "book", "game", "YouTube rabbit hole", "podcast", "song"];
+const wantedActions = ["watch", "read", "play"];
 
 function HeroTagline() {
   const [mediaIndex, setMediaIndex] = useState(0);
@@ -215,6 +216,41 @@ function HeroTagline() {
       <br className="hidden sm:block" />
       was just your entire personality.
     </h1>
+  );
+}
+
+function WantedActionHeadline() {
+  const [actionIndex, setActionIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActionIndex((current) => (current + 1) % wantedActions.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <h2 className="font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
+      What was that thing I wanted to{" "}
+      <span className="relative inline-grid align-baseline overflow-hidden text-left">
+        <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
+          watch
+        </span>
+        <AnimatePresence initial={false} mode="wait">
+          <motion.span
+            key={wantedActions[actionIndex]}
+            initial={{ opacity: 0, y: "80%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="col-start-1 row-start-1 whitespace-nowrap italic text-primary"
+          >
+            {wantedActions[actionIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>{"?"}
+    </h2>
   );
 }
 
@@ -993,9 +1029,7 @@ export default function Home() {
                 <p className="mb-4 text-[10px] font-light uppercase tracking-[0.24em] text-[#746a7c] sm:text-xs">
                   Why Consumed?
                 </p>
-                <h2 className="font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
-                  I swear I saved it somewhere...
-                </h2>
+                <WantedActionHeadline />
                 <p className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
                   <span className="font-sans text-[#493f51]">
                     Group chats. Notes app lists. Screenshots. Lost recommendations. Way too many apps.
