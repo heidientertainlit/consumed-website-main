@@ -714,40 +714,29 @@ function SocialFeedSection() {
   return (
     <div className="relative overflow-hidden bg-white px-6 py-20 md:py-24" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
-      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-x-8 md:gap-y-7 lg:gap-x-16">
+      <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl font-heading text-4xl font-normal leading-[1.04] md:col-start-2 md:text-4xl lg:text-5xl xl:text-6xl"
+          className="w-full text-center font-heading text-4xl font-normal leading-[1.04] md:text-5xl lg:text-6xl xl:text-7xl"
         >
           What is everyone into <span className="italic text-primary">right now?</span>
         </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="md:col-start-1 md:row-start-2"
+          className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-foreground/70 md:text-lg"
         >
-          <p className="max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
-            See what your friends are watching, reading, listening to, and playing — and what they actually thought about it.
-          </p>
-          <a
-            href="https://app.consumedapp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#37218d] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4a2da9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-            data-testid="link-see-whats-happening"
-          >
-            See what&apos;s happening <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
-        </motion.div>
+          See what your friends are watching, reading, listening to, and playing — and what they actually thought about it.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative md:col-start-2 md:row-start-2"
+          className="relative mx-auto mt-10 max-w-4xl"
         >
           {[
             { text: "obsessed", className: "-left-4 top-10", color: "bg-[#f4eaff] text-[#7232ba]" },
