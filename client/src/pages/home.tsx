@@ -714,24 +714,24 @@ function SocialFeedSection() {
   return (
     <div className="relative overflow-hidden bg-white px-6 py-20 md:py-24" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
-      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-8 lg:gap-16">
+      <div className="container relative z-10 mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-x-8 md:gap-y-7 lg:gap-x-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl font-heading text-4xl font-normal leading-[1.04] md:col-start-2 md:text-4xl lg:text-5xl xl:text-6xl"
+        >
+          What is everyone into <span className="italic text-primary">right now?</span>
+        </motion.h2>
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          className="md:col-start-1 md:row-start-2"
         >
-          <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.04] md:text-4xl lg:text-5xl xl:text-6xl">
-          What is everyone into <span className="italic text-primary">right now?</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
-            See what your friends are watching, reading, listening to, and playing — what they loved, what they absolutely did not, and what everyone suddenly seems to be talking about.
+          <p className="max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
+            See what your friends are watching, reading, listening to, and playing — and what they actually thought about it.
           </p>
-          <p className="mt-7 text-sm font-semibold text-foreground/60 md:text-base">
-            Because eventually someone&apos;s going to say:
-          </p>
-          <blockquote className="mt-2 font-heading text-3xl leading-tight text-foreground md:text-4xl">
-            “Wait. You haven&apos;t <span className="italic text-primary">seen it?</span>”
-          </blockquote>
           <a
             href="https://app.consumedapp.com"
             target="_blank"
@@ -747,7 +747,7 @@ function SocialFeedSection() {
           initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative"
+          className="relative md:col-start-2 md:row-start-2"
         >
           {[
             { text: "obsessed", className: "-left-4 top-10", color: "bg-[#f4eaff] text-[#7232ba]" },
