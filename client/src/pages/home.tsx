@@ -1175,9 +1175,9 @@ export default function Home() {
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="mx-auto max-w-2xl"
+                className="mx-auto max-w-5xl"
               >
-                <div className="grid grid-cols-1 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   {[
                     { title: "Movies", desc: "Watchlists and ratings", Icon: Clapperboard },
                     { title: "TV", desc: "Episodes and seasons", Icon: Tv },
