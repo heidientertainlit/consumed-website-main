@@ -899,6 +899,23 @@ export default function Home() {
                 <span className="inline-block italic text-primary">social.</span>
               </h1>
 
+              <p className="mx-auto mt-6 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
+                THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
+              </p>
+
+              <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
+                <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
+                <a
+                  href="https://app.consumedapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground/55 hover:text-primary transition-colors"
+                  data-testid="link-hero-web-app"
+                >
+                  Open web app <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
               <div className="mt-7 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
                 {[
                   { label: "Movies", Icon: Clapperboard },
@@ -916,30 +933,14 @@ export default function Home() {
                 ))}
               </div>
 
-              <p className="mx-auto mt-5 max-w-3xl text-center font-sans text-sm leading-[1.45] text-[#6f6876] md:text-base">
-                The social app for everything you watch, read, listen to &amp; play.
-              </p>
-
-              <div className="mt-6 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-7">
-                <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
-                <a
-                  href="https://app.consumedapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground/55 hover:text-primary transition-colors"
-                  data-testid="link-hero-web-app"
-                >
-                  Open web app <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
             </motion.div>
           </div>
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="relative mt-2 w-full md:mt-4" id="how-it-works">
-          <div className="overflow-hidden border-y border-[#e8e2e9]">
+        <section className="relative w-full" id="how-it-works">
+          <div className="overflow-hidden">
+            <div className="h-16 bg-gradient-to-b from-white to-[#f5f2ed] md:h-24" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1108,6 +1109,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="h-16 bg-gradient-to-b from-[#f5f2ed] to-white md:h-24" aria-hidden="true" />
           </div>
         </section>
 
@@ -1115,6 +1117,7 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
+            <div className="relative left-1/2 h-16 w-screen -translate-x-1/2 bg-gradient-to-b from-white to-[#fbfaf8] md:h-24" aria-hidden="true" />
             <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#fbfaf8] px-6 py-12 md:px-12 md:py-16">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,_rgba(139,92,246,0.08),_transparent_28%),radial-gradient(circle_at_15%_85%,_rgba(236,72,153,0.05),_transparent_34%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
@@ -1339,6 +1342,8 @@ export default function Home() {
 
         {/* 5. FRIENDS + DNA MATCHING */}
         <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#fbfaf8] via-[#766b8a]/45 to-transparent md:h-28" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-20 bg-gradient-to-b from-transparent via-white/35 to-white md:h-28" aria-hidden="true" />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full border border-white/10" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: "linear" }} />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c17dff]/10 blur-3xl" animate={{ y: [-12, 12, -12], scale: [1, 1.08, 1] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} />
           <div className="relative z-10 container mx-auto max-w-7xl">
@@ -1545,6 +1550,7 @@ export default function Home() {
 
         {/* 8. DISCOVERY */}
         <section className="bg-white" id="discovery">
+          <div className="h-20 bg-gradient-to-b from-white via-[#736888]/40 to-[#10062d] md:h-28" aria-hidden="true" />
           <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 text-white md:px-14 md:py-16">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
