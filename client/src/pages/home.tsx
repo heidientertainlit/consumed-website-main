@@ -950,30 +950,30 @@ export default function Home() {
               >
                 <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
                   {[
-                    { text: "I can’t remember…", className: "-left-16 -top-16" },
-                    { text: "Sara suggested this", className: "-right-20 -top-24" },
-                    { text: "Mark said he liked it", className: "left-[58%] -top-40" },
-                    { text: "saved in Notes?", className: "left-[8%] -top-52" },
-                    { text: "was it a screenshot?", className: "right-[8%] -top-64" },
+                    { text: "I can’t remember…", className: "-left-16 -top-8" },
+                    { text: "Sara suggested this", className: "-right-20 -top-14" },
+                    { text: "Mark said he liked it", className: "left-[58%] -top-20" },
+                    { text: "saved in Notes?", className: "left-[8%] -top-28" },
+                    { text: "was it a screenshot?", className: "right-[8%] -top-36" },
                   ].map((thought, index) => (
                     <motion.span
                       key={thought.text}
                       className={`absolute rounded-full border border-white/70 bg-white/55 px-3 py-1.5 font-sans text-[11px] font-medium text-[#6f617b]/55 shadow-[0_8px_24px_rgba(60,43,78,0.05)] backdrop-blur-sm ${thought.className}`}
-                      animate={{ y: [42, -82], x: [0, index % 2 === 0 ? 10 : -10], opacity: [0, 0.52, 0.42, 0] }}
+                      animate={{ y: [38, -58], x: [0, index % 2 === 0 ? 10 : -10], opacity: [0, 0.52, 0.42, 0] }}
                       transition={{ duration: 7 + index * 0.35, repeat: Infinity, delay: index * 1.05, ease: "easeOut" }}
                     >
                       {thought.text}
                     </motion.span>
                   ))}
                   {[
-                    { Icon: Heart, className: "left-[28%] -top-28", color: "text-[#ad6a96]", delay: 0.7 },
-                    { Icon: ThumbsUp, className: "right-[27%] -top-48", color: "text-[#7251c7]", delay: 2.1 },
-                    { Icon: Heart, className: "right-[3%] -top-12", color: "text-[#ad6a96]", delay: 3.4 },
+                    { Icon: Heart, className: "left-[28%] -top-16", color: "text-[#ad6a96]", delay: 0.7 },
+                    { Icon: ThumbsUp, className: "right-[27%] -top-32", color: "text-[#7251c7]", delay: 2.1 },
+                    { Icon: Heart, className: "right-[3%] -top-10", color: "text-[#ad6a96]", delay: 3.4 },
                   ].map(({ Icon, className, color, delay }, index) => (
                     <motion.span
                       key={`${className}-${index}`}
                       className={`absolute flex h-8 w-8 items-center justify-center rounded-full border border-white/75 bg-white/60 shadow-[0_8px_24px_rgba(60,43,78,0.07)] backdrop-blur-sm ${color} ${className}`}
-                      animate={{ y: [38, -88], x: [0, index % 2 === 0 ? -8 : 8], rotate: [0, index % 2 === 0 ? -8 : 8], opacity: [0, 0.52, 0.4, 0] }}
+                      animate={{ y: [34, -60], x: [0, index % 2 === 0 ? -8 : 8], rotate: [0, index % 2 === 0 ? -8 : 8], opacity: [0, 0.52, 0.4, 0] }}
                       transition={{ duration: 7.4 + index * 0.5, repeat: Infinity, delay, ease: "easeOut" }}
                     >
                       <Icon className="h-3.5 w-3.5" strokeWidth={1.7} />
@@ -985,7 +985,7 @@ export default function Home() {
                 </div>
                 <p className="relative z-10 mx-auto mt-6 max-w-2xl font-sans text-sm leading-relaxed text-[#493f51] sm:text-base">
                   Somewhere between the group chats, screenshots, Notes app lists, and way too many apps, our entertainment lives got scattered everywhere.{" "}
-                  <strong>So we put it all in one place.</strong>
+                  <strong>But don&apos;t worry. We gotchu, boo. We put it all in one place.</strong>
                 </p>
               </motion.div>
               <div className="mx-auto mt-6 max-w-3xl md:mt-10">
