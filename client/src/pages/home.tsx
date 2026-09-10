@@ -1504,7 +1504,7 @@ export default function Home() {
                   title: "Okay, but how much do we match?",
                   description: "Compare your Entertainment DNA profiles to see what you have in common — and where you absolutely do not.",
                   content: (
-                    <div className="relative mt-7 flex min-h-[190px] items-center justify-center overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] text-[#271b3d]">
+                    <div className="relative mt-7 flex min-h-[190px] items-center justify-center overflow-hidden rounded-[1.35rem] bg-white/70 text-[#271b3d]">
                       <motion.div className="absolute h-40 w-40 rounded-full border border-[#d6c5ed]" animate={{ scale: [0.86, 1.08, 0.86], opacity: [0.45, 0.9, 0.45] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} />
                       <div className="relative text-center">
                         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#80639d]">Ashley H. + you</p>
@@ -1520,7 +1520,7 @@ export default function Home() {
                   title: "See what people like you are into.",
                   description: "Discover what people who share your interests are watching, reading, listening to, playing — and talking about.",
                   content: (
-                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#fffdfa] p-4 text-[#271b3d]">
+                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-white/70 p-4 text-[#271b3d]">
                       <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]">15% overlap</p>
                       <h4 className="mt-2 font-heading text-xl leading-tight">People who share your taste in books</h4>
                       <p className="mt-2 text-[11px] leading-relaxed text-[#806f8d]">You read for many of the same voices and ideas.</p>
@@ -1535,18 +1535,14 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.12, duration: 0.65 }}
-                  className={`relative rounded-[1.75rem] border p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6 ${
-                    index === 0
-                      ? "border-[#e2d7f0] bg-[#f5f0ff]"
-                      : "border-white/10 bg-white/[0.08]"
-                  }`}
+                  className="relative rounded-[1.75rem] border border-[#e5ded2] bg-[#f7f3ec] p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6"
                 >
                   <div className="flex items-center gap-3">
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl ${index === 0 ? "bg-[#e4d8f5]" : "bg-white/10"}`} style={{ color: index === 0 ? "#65448d" : concept.accent }}><concept.icon className="h-4 w-4" /></span>
-                    <span className={`text-[10px] font-bold uppercase tracking-[0.18em] ${index === 0 ? "text-[#65448d]" : "text-white/55"}`}>{concept.number} · {concept.label}</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ebe3d7]" style={{ color: "#65448d" }}><concept.icon className="h-4 w-4" /></span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#65448d]">{concept.number} · {concept.label}</span>
                   </div>
-                  <h3 className={`mt-5 font-heading text-2xl leading-[1.05] ${index === 0 ? "text-[#271b3d]" : "text-white"}`}>{concept.title}</h3>
-                  <p className={`mt-3 min-h-[48px] text-sm leading-relaxed ${index === 0 ? "text-[#6f617b]" : "text-white/65"}`}>{concept.description}</p>
+                  <h3 className="mt-5 font-heading text-2xl leading-[1.05] text-[#271b3d]">{concept.title}</h3>
+                  <p className="mt-3 min-h-[48px] text-sm leading-relaxed text-[#6f617b]">{concept.description}</p>
                   {concept.content}
                 </motion.article>
               ))}
