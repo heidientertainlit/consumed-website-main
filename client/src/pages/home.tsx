@@ -998,7 +998,9 @@ export default function Home() {
                 />
               </div>
               <h1 className="mb-6 w-full max-w-[680px] font-heading text-[1.4rem] font-normal leading-[1.08] tracking-tight md:mb-7 md:text-[1.75rem] lg:text-[2.25rem]">
-                The social app for everything you watch, read, listen to &amp; play.
+                The social app for everything you watch,{" "}
+                <br className="lg:hidden" />
+                read, listen to &amp; play.
               </h1>
 
               <p className="mb-6 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
