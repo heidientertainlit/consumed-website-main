@@ -194,7 +194,7 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h2 className="w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
+    <h2 className="w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-[#211a2a] md:text-5xl lg:text-6xl">
       Admit it, that{" "}
       <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
@@ -207,7 +207,7 @@ function HeroTagline() {
             animate={{ opacity: 1, y: "0%" }}
             exit={{ opacity: 0, y: "-80%" }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="col-start-1 row-start-1 whitespace-nowrap italic text-[#d8ceff]"
+            className="col-start-1 row-start-1 whitespace-nowrap italic text-[#7251c7]"
           >
             {heroMediaTypes[mediaIndex]}
           </motion.span>
@@ -1198,8 +1198,8 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
-            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] px-6 py-12 md:px-12 md:py-16">
-              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#f5f2ed] px-6 py-12 md:px-12 md:py-16">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,_rgba(139,92,246,0.08),_transparent_28%),radial-gradient(circle_at_15%_85%,_rgba(236,72,153,0.05),_transparent_34%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -1207,9 +1207,9 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="text-left"
                 >
-                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA Profile</p>
+                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your Entertainment DNA Profile</p>
                   <HeroTagline />
-                  <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-white/75 sm:text-base">
+                  <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
                     Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.
                   </p>
                 </motion.div>
@@ -1351,16 +1351,22 @@ export default function Home() {
                   { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
                   { title: "The Culture Catch Up", shades: "Trend Tracker • Music Maven", streak: "7", rank: "#8", tracked: "712", accent: "#8f9dff" },
                 ].map((identity, i) => (
-                  <motion.article
+                  <motion.div
                     key={identity.title}
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.55 + i * 0.14 }}
-                    className="w-[290px] md:w-[31.5%] min-w-[290px] shrink-0 rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(0,0,0,0.25)] flex flex-col"
+                    className="relative w-[290px] min-w-[290px] shrink-0 pb-4 pr-3 md:w-[31.5%]"
                   >
+                    <div className="absolute inset-x-5 bottom-1 top-5 rotate-[2deg] rounded-[1.8rem] bg-[#7251c7]/35" />
+                    <div className="absolute inset-x-2 bottom-2 top-2 -rotate-[1deg] rounded-[1.8rem] bg-[#2d1a56]/55" />
+                    <article className="relative z-10 flex h-full flex-col rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(48,31,78,0.22)]">
                     <div className="flex items-start justify-between gap-3">
-                      <p className="text-[10px] font-bold tracking-[0.16em] text-[#cfc3ff]">YOUR ENTERTAINMENT DNA ✧</p>
+                      <p className="text-[10px] font-bold uppercase leading-tight tracking-[0.16em] text-[#cfc3ff]">
+                        <span className="block">Your Entertainment DNA</span>
+                        <span className="mt-1 block">Profile ✧</span>
+                      </p>
                       <span className="w-8 h-8 rounded-full border border-white/15 text-white/70 flex items-center justify-center">↗</span>
                     </div>
                     <div className="flex items-center justify-between gap-4 mt-6">
@@ -1376,7 +1382,8 @@ export default function Home() {
                       <div className="border-x border-white/10"><p className="text-lg font-bold text-white">🏆 {identity.rank}</p><p className="text-[10px] text-white/45 mt-1">leaderboard</p></div>
                       <div><p className="text-lg font-bold text-white">{identity.tracked}</p><p className="text-[10px] text-white/45 mt-1">tracked</p></div>
                     </div>
-                  </motion.article>
+                    </article>
+                  </motion.div>
                 ))}
                 </div>
               </div>
