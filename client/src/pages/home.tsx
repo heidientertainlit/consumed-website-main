@@ -899,10 +899,6 @@ export default function Home() {
                 <span className="inline-block italic text-primary">social.</span>
               </h1>
 
-              <p className="mx-auto mt-6 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
-                THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
-              </p>
-
               <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
@@ -916,7 +912,11 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-7 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
+              <p className="mx-auto mt-6 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
+                THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
+              </p>
+
+              <div className="mt-7 grid w-full max-w-3xl grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
                 {[
                   { label: "Movies", Icon: Clapperboard },
                   { label: "TV", Icon: Tv },
