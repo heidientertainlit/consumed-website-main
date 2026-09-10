@@ -194,7 +194,7 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h2 className="mx-auto w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
+    <h2 className="w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
       Admit it, that{" "}
       <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
@@ -1213,15 +1213,12 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-left"
                 >
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA</p>
                   <HeroTagline />
-                  <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
-                    Turns out, all those obsessions add up.
-                  </p>
-                  <p className="mx-auto mt-3 max-w-3xl font-heading text-xl text-white md:text-2xl">
-                    Meet your Entertainment DNA profile.
+                  <p className="mt-6 text-base leading-relaxed text-white/75 md:text-lg">
+                    Turns out, all those obsessions add up. Meet your Entertainment DNA profile.
                   </p>
                 </motion.div>
 
