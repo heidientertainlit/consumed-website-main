@@ -1217,7 +1217,7 @@ export default function Home() {
                 >
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA</p>
                   <HeroTagline />
-                  <p className="mt-6 text-base leading-relaxed text-white/75 md:text-lg">
+                  <p className="mt-5 text-sm leading-relaxed text-white/75 md:text-base">
                     Turns out, all those obsessions add up. Meet your Entertainment DNA profile.
                   </p>
                 </motion.div>
