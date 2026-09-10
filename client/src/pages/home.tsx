@@ -1021,8 +1021,8 @@ export default function Home() {
               <HeroFeedCarousel />
             </div>
           </div>
-          <div className="mt-8 w-full px-6 py-6 md:mt-10 md:px-10 md:py-7 lg:px-14">
-            <div className="mx-auto mb-6 w-full max-w-4xl border-t border-[#e8e0f4]" />
+          <div className="mt-3 w-full px-6 py-4 md:mt-4 md:px-10 lg:px-14">
+            <div className="mx-auto mb-4 w-full max-w-2xl border-t border-[#e8e0f4]" />
             <p className="mx-auto mb-4 max-w-[1600px] text-center font-sans text-xs leading-relaxed text-foreground/65 md:text-[13px]">
               See what everyone&apos;s into · Talk about it · Find your next obsession · Discover your Entertainment DNA profile
             </p>
@@ -1046,7 +1046,7 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="relative mt-8 w-full md:mt-12" id="how-it-works">
+        <section className="relative mt-2 w-full md:mt-4" id="how-it-works">
           <div className="overflow-hidden border-y border-[#e8e2e9]">
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
