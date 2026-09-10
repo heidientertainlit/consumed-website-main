@@ -254,7 +254,7 @@ function WantedActionHeadline() {
   );
 }
 
-function HeroFeedCarousel() {
+function HeroFeedCarousel({ inSection = false }: { inSection?: boolean }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const stackedItems = [
     { item: heroFeedItems[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], activity: liveConversationActivity[(activeIndex - 1 + heroFeedItems.length) % heroFeedItems.length], x: -72, y: 24, rotate: -7, scale: 0.9, opacity: 0.68, zIndex: 1 },
@@ -275,7 +275,7 @@ function HeroFeedCarousel() {
       initial={{ opacity: 0, x: 24 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className="w-full max-w-[560px] mx-auto xl:-translate-x-20 xl:translate-y-5"
+      className={`mx-auto w-full max-w-[560px] ${inSection ? "" : "xl:-translate-x-20 xl:translate-y-5"}`}
       aria-label="What people are talking about"
     >
       <div className="relative h-[285px] md:h-[320px]">
@@ -768,98 +768,9 @@ function SocialFeedSection() {
           See what your friends are watching, reading, listening to, and playing — and what they actually thought about it.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative mx-auto mt-10 max-w-4xl"
-        >
-          {[
-            { text: "obsessed", className: "-left-4 top-10", color: "bg-[#f4eaff] text-[#7232ba]" },
-            { text: "couldn’t finish it", className: "left-16 -top-5", color: "bg-[#fff1f8] text-[#c64188]" },
-            { text: "10/10", className: "-right-3 top-24", color: "bg-[#eaf2ff] text-[#3572cf]" },
-            { text: "no spoilers", className: "-left-6 bottom-24", color: "bg-[#e9fbf2] text-[#228a5e]" },
-            { text: "I called that ending", className: "-right-4 bottom-28", color: "bg-[#eef9ff] text-[#2679a9]" },
-            { text: "starting tonight", className: "right-4 -bottom-4", color: "bg-[#f7efff] text-[#9146c1]" },
-          ].map((take, index) => (
-            <motion.span
-              key={take.text}
-              animate={{ y: [0, index % 2 === 0 ? -7 : 7, 0] }}
-              transition={{ duration: 4.8 + index * 0.45, repeat: Infinity, ease: "easeInOut", delay: index * 0.4 }}
-              className={`absolute z-20 hidden rounded-full border border-white px-3.5 py-2 text-xs font-semibold shadow-sm sm:inline-flex ${take.className} ${take.color}`}
-            >
-              {take.text}
-            </motion.span>
-          ))}
-
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#e8e4f0] bg-white shadow-[0_24px_65px_rgba(51,31,94,0.15)]">
-            <div className="flex items-center justify-between border-b border-[#eeeaf4] px-5 py-4 md:px-6">
-              <div>
-                <p className="font-heading text-xl text-foreground">Happening now</p>
-                <p className="mt-0.5 text-xs text-[#32a269]">● 14 friends active</p>
-              </div>
-              <div className="flex -space-x-2" aria-label="Friends active now">
-                {["A", "M", "J"].map((initial, index) => (
-                  <span
-                    key={initial}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white text-[10px] font-bold text-white"
-                    style={{ background: ["#ed5d9d", "#7657c8", "#3b8eec"][index] }}
-                  >
-                    {initial}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="divide-y divide-[#eeeaf4]">
-              {feedPosts.map((post, index) => (
-                <motion.article
-                  key={post.person}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.12 + index * 0.1 }}
-                  className="flex gap-3 p-4 md:gap-4 md:p-5"
-                >
-                  <span
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
-                    style={{ background: post.color }}
-                  >
-                    {post.initial}
-                  </span>
-                  <img src={post.poster} alt="" className="h-20 w-14 shrink-0 rounded-lg object-cover shadow-sm" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm font-bold text-foreground">
-                      {post.person} <span className="font-normal text-foreground/45">{post.action}</span>{" "}
-                      <span className="text-primary">{post.title}</span>
-                    </p>
-                    <p className="mt-1 text-xs text-foreground/40">{post.time}</p>
-                    <p
-                      className={`mt-2 w-fit rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-sm leading-snug ${
-                        index === 1 ? "bg-[#37218d] text-white" : "bg-[#f4efff] text-foreground/75"
-                      }`}
-                    >
-                      “{post.take}”
-                    </p>
-                    <div className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                      <ThumbsUp className="h-3.5 w-3.5" strokeWidth={1.8} />
-                      {post.reactions}
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-
-            <motion.div
-              animate={{ opacity: [0.55, 1, 0.55] }}
-              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-              className="flex items-center gap-2 border-t border-[#eeeaf4] bg-[#fbfaff] px-5 py-3 text-xs text-foreground/45 md:px-6"
-            >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#43a7e8] text-[9px] font-bold text-white">S</span>
-              Sam is typing <span className="tracking-[0.18em]">•••</span>
-            </motion.div>
-          </div>
-        </motion.div>
+        <div className="mx-auto mt-10 max-w-4xl">
+          <HeroFeedCarousel inSection />
+        </div>
       </div>
     </div>
   );
@@ -979,7 +890,7 @@ export default function Home() {
       <main>
         {/* 2. HERO */}
         <section className="pt-32 md:pt-40 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
-          <div className="container mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12 lg:gap-20 xl:gap-24 relative -translate-y-3 md:-translate-y-4">
+          <div className="container relative mx-auto max-w-7xl -translate-y-3 px-6 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1018,9 +929,6 @@ export default function Home() {
               </div>
 
             </motion.div>
-            <div className="order-3 lg:order-2">
-              <HeroFeedCarousel />
-            </div>
           </div>
           <div className="mt-3 w-full px-6 py-4 md:mt-4 md:px-10 lg:px-14">
             <div className="mx-auto mb-4 w-full max-w-2xl border-t border-[#e8e0f4]" />
