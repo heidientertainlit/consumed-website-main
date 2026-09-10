@@ -986,8 +986,8 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-[5.25rem] w-auto md:h-24 lg:h-[6.5rem]" />
+              <div className="mb-0 mt-1 flex items-center justify-start gap-1 md:mt-2 md:gap-2">
+                <img src={logoPurple} alt="Consumed" className="-ml-2 h-[5.25rem] w-auto md:-ml-3 md:h-24 lg:h-[6.5rem]" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
@@ -997,7 +997,7 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-heading text-[1.2rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.5rem] lg:text-[1.95rem]">
+              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-heading text-[1.1rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.35rem] lg:text-[1.7rem]">
                 The social app for everything you watch,{" "}
                 <br />
                 read, listen to &amp; play.
