@@ -931,9 +931,9 @@ export default function Home() {
           </div>
           <div className="mt-14 w-full px-6 py-4 md:mt-20 md:px-10 lg:px-14">
             <div className="mx-auto mb-6 w-full max-w-5xl border-t border-[#e8e0f4]" />
-            <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#40384b] md:text-3xl lg:text-4xl">
+            <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#6b6472] md:text-3xl lg:text-4xl">
               Entertainment is about to get more{" "}
-              <span className="font-heading font-normal italic text-primary">social.</span>
+              <span className="inline-block font-heading text-[1.18em] font-normal italic text-primary">social.</span>
             </h1>
             <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
               Movies, TV, books, podcasts, music &amp; more — all in one place.
