@@ -997,13 +997,13 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="mb-6 w-full max-w-[680px] text-left font-heading text-[1.4rem] font-normal leading-[1.08] tracking-tight md:mb-7 md:text-[1.75rem] lg:text-[2.25rem]">
+              <h1 className="mb-6 w-full max-w-[680px] text-left font-heading text-[1.4rem] font-normal leading-[1.14] tracking-tight md:mb-7 md:text-[1.75rem] lg:text-[2.25rem]">
                 The social app for everything you watch,{" "}
                 <br className="lg:hidden" />
                 read, listen to &amp; play.
               </h1>
 
-              <p className="mb-6 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
+              <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
                 See what your friends are into, find your next obsession,
                 <span className="block">and discover your Entertainment DNA profile.</span>
               </p>
