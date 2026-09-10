@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, MessageCircle, Star, Share2, TrendingUp } from "lucide-react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, MessageCircle, Star, Share2, TrendingUp, Users, GitCompareArrows, Layers3, ChevronRight } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import heroMaybeSomeday from "@assets/Screenshot_2026-08-22_at_12.08.35_PM_1787422156206.png";
@@ -865,6 +865,29 @@ function SocialFeedSection() {
   );
 }
 
+function CountUp({ value }: { value: number }) {
+  const [count, setCount] = useState(0);
+  const countRef = useRef<HTMLElement>(null);
+  const isInView = useInView(countRef, { once: true, amount: 0.6 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let frame = 0;
+    const start = performance.now();
+    const duration = 1300;
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setCount(Math.round(value * (1 - Math.pow(1 - progress, 3))));
+      if (progress < 1) frame = window.requestAnimationFrame(tick);
+    };
+    frame = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(frame);
+  }, [isInView, value]);
+
+  return <strong ref={countRef} className="font-heading text-7xl font-normal leading-none tracking-[-0.06em] text-[#7044a5] md:text-8xl">{count}</strong>;
+}
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -1421,111 +1444,96 @@ export default function Home() {
         </section>
 
         {/* 5. FRIENDS + DNA MATCHING */}
-        <section className="overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
-          <div className="container mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
+          <motion.div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full border border-white/10" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: "linear" }} />
+          <motion.div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c17dff]/10 blur-3xl" animate={{ y: [-12, 12, -12], scale: [1, 1.08, 1] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} />
+          <div className="relative z-10 container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="max-w-3xl"
             >
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#cfc3ff]">Friends + DNA Matching</p>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#cfc3ff]">The social layer of your taste</p>
               <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
                 Okay, yeah. <span className="italic text-[#cfc3ff]">You&apos;re my people.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
                 Your Entertainment DNA profile doesn&apos;t just tell you about you. It shows you who you click with — and why. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
               </p>
-              <a
-                href="https://app.consumedapp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
-                data-testid="link-compare-our-dna"
-              >
-                Compare our DNA <ArrowRight className="h-4 w-4" />
-              </a>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative w-full max-w-[470px] lg:justify-self-end"
-            >
-              <div className="absolute -left-12 top-16 h-40 w-40 rounded-full bg-[#a77dea]/15 blur-3xl" />
-              <div className="absolute -right-10 bottom-10 h-44 w-44 rounded-full bg-[#ef78b5]/10 blur-3xl" />
-              <div className="relative rounded-[1.6rem] border border-[#e7e0eb] bg-[#f8f6f2] p-3 shadow-[0_20px_50px_rgba(45,25,99,0.11)]">
-                <div className="mb-3 flex items-center justify-between px-1">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-foreground/45">People you might click with</p>
-                  <span className="rounded-full bg-[#eee8f8] px-2.5 py-1 text-[8px] font-bold text-primary">DNA MATCHES</span>
-                </div>
-
-                {[
-                  {
-                    name: "Ashley H.",
-                    initials: "AH",
-                    match: "77%",
-                    badge: "FRIEND WITH THE CLOSEST TASTE",
-                    common: "15 things in common",
-                    more: "+12",
-                    posters: [heroTheWomen, heroProjectHailMary, heroLastOfUsPartTwo],
-                  },
-                  {
-                    name: "Hilly B.",
-                    initials: "HB",
-                    match: "64%",
-                    badge: "NEW MATCH",
-                    common: "17 things in common",
-                    more: "+16",
-                    posters: [heroSeverance, heroWhiteLotus],
-                  },
-                ].map((match, index) => (
-                  <motion.article
-                    key={match.name}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.12 + index * 0.12 }}
-                    className={`${index === 1 ? "mt-2" : ""} rounded-[1.25rem] border border-[#dcd3e4] bg-white p-3 shadow-sm`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eee9f8] text-xs font-bold text-primary">
-                        {match.initials}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-bold text-foreground">{match.name}</p>
-                        <span className="mt-1 inline-flex max-w-full rounded-full bg-[#edf4ef] px-2.5 py-1 text-center text-[8px] font-bold leading-tight tracking-[0.08em] text-[#557362] md:text-[9px]">
-                          {match.badge}
-                        </span>
-                      </div>
-                      <strong className="font-heading text-3xl font-normal leading-none text-primary">{match.match}</strong>
-                    </div>
-
-                    <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.15em] text-primary">You both love</p>
-                    <div className="mt-2 flex items-stretch gap-2">
-                      {match.posters.map((poster, posterIndex) => (
-                        <img
-                          key={`${match.name}-${posterIndex}`}
-                          src={poster}
-                          alt=""
-                          className="h-16 w-11 rounded-lg object-cover shadow-sm sm:h-20 sm:w-14"
-                        />
-                      ))}
-                      <div className="flex h-16 min-w-11 flex-col items-center justify-center rounded-lg bg-[#eee8f8] text-primary sm:h-20 sm:min-w-14">
-                        <strong className="text-base">{match.more}</strong>
-                        <span className="text-[10px] font-semibold">more</span>
+            <div className="mt-14 grid gap-5 md:grid-cols-3 md:gap-0">
+              {[
+                {
+                  label: "Friends", icon: Users, number: "01", accent: "#cbb6ff",
+                  title: "Your people, in real time.",
+                  description: "See what your friends are watching, reading, and arguing about right now.",
+                  content: (
+                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] p-4 text-[#271b3d]">
+                      <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]"><span>Friends are active</span><span className="flex items-center gap-1.5"><i className="h-1.5 w-1.5 rounded-full bg-[#60c48b]" /> live</span></div>
+                      <div className="mt-5 space-y-3">
+                        {[["M", "Maya is watching", "The White Lotus", heroWhiteLotus], ["J", "Jules finished", "The Women", heroTheWomen]].map(([initial, action, title, image]) => (
+                          <div key={title as string} className="flex items-center gap-3 rounded-xl bg-white/80 p-2.5 shadow-[0_6px_18px_rgba(52,31,82,0.08)]">
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e2d5fa] text-xs font-bold text-[#65448d]">{initial}</span>
+                            <div className="min-w-0 flex-1"><p className="text-[10px] text-[#806f8d]">{action}</p><p className="truncate text-xs font-bold">{title}</p></div>
+                            <img src={image as string} alt="" className="h-10 w-8 rounded-md object-cover" />
+                          </div>
+                        ))}
                       </div>
                     </div>
-
-                    <div className="mt-3 flex items-center justify-between border-t border-[#e7e0e8] pt-2.5 text-xs">
-                      <span className="font-semibold text-primary">{match.common}</span>
-                      <span className="font-semibold text-foreground/70">View profile <span aria-hidden="true">›</span></span>
+                  ),
+                },
+                {
+                  label: "Compare DNA", icon: GitCompareArrows, number: "02", accent: "#f4b7d0",
+                  title: "A percentage with a pulse.",
+                  description: "Compare your Entertainment DNA and find out exactly where the overlap lives.",
+                  content: (
+                    <div className="relative mt-7 flex min-h-[190px] items-center justify-center overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] text-[#271b3d]">
+                      <motion.div className="absolute h-40 w-40 rounded-full border border-[#d6c5ed]" animate={{ scale: [0.86, 1.08, 0.86], opacity: [0.45, 0.9, 0.45] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} />
+                      <div className="relative text-center">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#80639d]">Ashley H. + you</p>
+                        <div className="mt-2 flex items-baseline justify-center"><CountUp value={77} /><span className="font-heading text-3xl text-[#7044a5]">%</span></div>
+                        <p className="mt-1 text-xs font-semibold text-[#806f8d]">taste overlap</p>
+                        <div className="mt-4 flex justify-center -space-x-2"><span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#f5f0ff] bg-[#dfc9f9] text-[10px] font-bold">AH</span><span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#f5f0ff] bg-[#f0b8d1] text-[10px] font-bold">YOU</span></div>
+                      </div>
                     </div>
-                  </motion.article>
-                ))}
+                  ),
+                },
+                {
+                  label: "Tribes", icon: Layers3, number: "03", accent: "#f4db8c",
+                  title: "Find your corner of the internet.",
+                  description: "Join a group of people who share your taste — and discover what they’re into next.",
+                  content: (
+                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#fffdfa] p-4 text-[#271b3d]">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]">15% overlap</p>
+                      <h4 className="mt-2 font-heading text-xl leading-tight">People who share your taste in books</h4>
+                      <p className="mt-2 text-[11px] leading-relaxed text-[#806f8d]">You read for many of the same voices and ideas.</p>
+                      <div className="mt-4 flex items-center justify-between border-t border-[#e5deea] pt-3"><div className="flex -space-x-2">{["RS", "J", "HH", "JR"].map((v) => <span key={v} className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#fffdfa] bg-[#e6ddf6] text-[9px] font-bold text-[#65448d]">{v}</span>)}</div><span className="flex items-center text-[11px] font-bold text-[#65448d]">See what they’re into <ChevronRight className="ml-1 h-3.5 w-3.5" /></span></div>
+                    </div>
+                  ),
+                },
+              ].map((concept, index) => (
+                <motion.article
+                  key={concept.label}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ delay: index * 0.12, duration: 0.65 }}
+                  className={`relative ${index > 0 ? "md:border-l md:border-white/15 md:pl-5" : ""} ${index < 2 ? "md:pr-5" : ""}`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10" style={{ color: concept.accent }}><concept.icon className="h-4 w-4" /></span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">{concept.number} · {concept.label}</span>
+                  </div>
+                  <h3 className="mt-5 font-heading text-2xl leading-[1.05] text-white">{concept.title}</h3>
+                  <p className="mt-3 min-h-[48px] text-sm leading-relaxed text-white/65">{concept.description}</p>
+                  {concept.content}
+                </motion.article>
+              ))}
+            </div>
 
-              </div>
-            </motion.div>
+            <motion.a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95" data-testid="link-compare-our-dna">Compare your DNA <ArrowRight className="h-4 w-4" /></motion.a>
           </div>
         </section>
 
