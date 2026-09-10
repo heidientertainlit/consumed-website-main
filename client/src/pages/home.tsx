@@ -997,7 +997,7 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="-mt-2 mb-6 w-full max-w-[680px] text-left font-heading text-[1.2rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:-mt-3 md:mb-7 md:text-[1.5rem] lg:text-[1.95rem]">
+              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-heading text-[1.2rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.5rem] lg:text-[1.95rem]">
                 The social app for everything you watch,{" "}
                 <br />
                 read, listen to &amp; play.
