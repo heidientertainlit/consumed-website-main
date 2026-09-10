@@ -881,9 +881,9 @@ export default function Home() {
             src={neonSmiley}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -right-32 top-16 w-64 opacity-[0.09] blur-[0.3px] sm:-right-40 sm:w-80 md:-right-48 md:top-12 md:w-[26rem] lg:-right-56 lg:w-[30rem]"
+            className="pointer-events-none absolute -right-32 top-16 w-64 opacity-[0.09] blur-[0.3px] sm:-right-40 sm:w-80 md:-right-48 md:top-12 md:w-[26rem] lg:-right-32 lg:w-[30rem] xl:-right-24"
             style={{ filter: "brightness(0) saturate(100%) invert(28%) sepia(24%) saturate(2580%) hue-rotate(232deg) brightness(90%) contrast(88%)" }}
-            animate={{ y: [0, -8, 0], rotate: [0, 1.5, 0] }}
+            animate={{ y: [0, -8, 0], rotate: [0, 1.5, 0], scale: [1, 1.025, 1] }}
             transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
           />
           <div className="container relative mx-auto max-w-7xl -translate-y-3 px-6 md:-translate-y-4">
@@ -935,8 +935,9 @@ export default function Home() {
               Entertainment is about to get more{" "}
               <span className="inline-block font-heading text-[1.18em] font-normal italic text-primary">social.</span>
             </h1>
-            <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
-              Movies, TV, books, podcasts, music &amp; more — all in one place.
+            <p className="mx-auto mt-4 max-w-3xl text-center font-sans text-sm leading-[1.45] text-[#6f6876] md:text-base">
+              <span className="block">The social app for everything you watch,</span>
+              <span className="block">read, listen to &amp; play.</span>
             </p>
           </div>
         </section>
