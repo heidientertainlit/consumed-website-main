@@ -1485,7 +1485,7 @@ export default function Home() {
                   title: "See what your people are into.",
                   description: "What they’re watching, reading, listening to, playing — and what they actually think about it.",
                   content: (
-                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] p-4 text-[#271b3d]">
+                    <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-white/70 p-4 text-[#271b3d]">
                       <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]"><span>Friends are active</span><span className="flex items-center gap-1.5"><i className="h-1.5 w-1.5 rounded-full bg-[#60c48b]" /> live</span></div>
                       <div className="mt-5 space-y-3">
                         {[["M", "Maya is watching", "The White Lotus", heroWhiteLotus], ["J", "Jules finished", "The Women", heroTheWomen]].map(([initial, action, title, image]) => (
@@ -1535,14 +1535,18 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.12, duration: 0.65 }}
-                  className="relative rounded-[1.75rem] border border-white/10 bg-white/[0.08] p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6"
+                  className={`relative rounded-[1.75rem] border p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6 ${
+                    index === 0
+                      ? "border-[#e2d7f0] bg-[#f5f0ff]"
+                      : "border-white/10 bg-white/[0.08]"
+                  }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10" style={{ color: concept.accent }}><concept.icon className="h-4 w-4" /></span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">{concept.number} · {concept.label}</span>
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl ${index === 0 ? "bg-[#e4d8f5]" : "bg-white/10"}`} style={{ color: index === 0 ? "#65448d" : concept.accent }}><concept.icon className="h-4 w-4" /></span>
+                    <span className={`text-[10px] font-bold uppercase tracking-[0.18em] ${index === 0 ? "text-[#65448d]" : "text-white/55"}`}>{concept.number} · {concept.label}</span>
                   </div>
-                  <h3 className="mt-5 font-heading text-2xl leading-[1.05] text-white">{concept.title}</h3>
-                  <p className="mt-3 min-h-[48px] text-sm leading-relaxed text-white/65">{concept.description}</p>
+                  <h3 className={`mt-5 font-heading text-2xl leading-[1.05] ${index === 0 ? "text-[#271b3d]" : "text-white"}`}>{concept.title}</h3>
+                  <p className={`mt-3 min-h-[48px] text-sm leading-relaxed ${index === 0 ? "text-[#6f617b]" : "text-white/65"}`}>{concept.description}</p>
                   {concept.content}
                 </motion.article>
               ))}
