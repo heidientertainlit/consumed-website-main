@@ -1215,19 +1215,13 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
+                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA</p>
                   <HeroTagline />
-                  <p className="max-w-3xl mx-auto mt-6 text-sm md:text-base leading-relaxed text-white/75">
-                    The shows I rewatch. The books I tell everyone to read. The movies I&apos;ve seen an embarrassing number of times. The podcast I somehow bring up in every conversation.
+                  <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
+                    Turns out, all those obsessions add up.
                   </p>
-                  <p className="mt-5 font-heading text-xl md:text-2xl text-[#d8ceff]">
-                    Put it all together and... yeah.
-                  </p>
-                  <p className="mt-2 font-heading text-2xl md:text-3xl lg:text-4xl italic text-white">
-                    That&apos;s pretty much me.
-                  </p>
-                  <p className="max-w-3xl mx-auto mt-6 text-sm md:text-base leading-relaxed text-white/70">
-                    Consumed turns what you&apos;re into into your Entertainment DNA — the genres, patterns, preferences, and obsessions that make yours yours.
+                  <p className="mx-auto mt-3 max-w-3xl font-heading text-xl text-white md:text-2xl">
+                    Meet your Entertainment DNA profile.
                   </p>
                 </motion.div>
 
