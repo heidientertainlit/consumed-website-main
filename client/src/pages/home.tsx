@@ -904,13 +904,30 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
+              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center"
             >
-              <div className="mb-0 mt-1 flex items-center justify-start md:mt-2">
-                <img src={logoPurple} alt="Consumed" className="-ml-2 h-[5.25rem] w-auto md:-ml-3 md:h-24 lg:h-[6.5rem]" />
+              <div className="mb-0 mt-1 flex items-center justify-center md:mt-2">
+                <img src={logoPurple} alt="Consumed" className="h-[5.25rem] w-auto md:h-24 lg:h-[6.5rem]" />
               </div>
 
-              <div className="mt-5 flex flex-row items-center justify-start gap-2 sm:gap-4 md:mt-7">
+              <div className="mt-1 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-2 md:text-[8px]">
+                {[
+                  { label: "Movies", Icon: Clapperboard },
+                  { label: "TV", Icon: Tv },
+                  { label: "Books", Icon: BookOpen },
+                  { label: "Podcasts", Icon: Headphones },
+                  { label: "Music", Icon: Music2 },
+                  { label: "YouTube", Icon: Youtube },
+                  { label: "Gaming", Icon: Gamepad2 },
+                ].map(({ label, Icon }) => (
+                  <span key={label} className="inline-flex min-w-0 flex-col items-center gap-1.5 whitespace-nowrap text-center">
+                    <Icon className="h-4 w-4 text-primary/70 md:h-[18px] md:w-[18px]" strokeWidth={1.6} aria-hidden="true" />
+                    {label}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-7">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
                   href="https://app.consumedapp.com"
@@ -933,22 +950,6 @@ export default function Home() {
             <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
               Movies, TV, books, podcasts, music &amp; more — all in one place.
             </p>
-            <div className="mx-auto flex max-w-[1600px] flex-wrap items-start justify-center gap-x-7 gap-y-5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
-              {[
-                { label: "Movies", Icon: Clapperboard },
-                { label: "TV", Icon: Tv },
-                { label: "Books", Icon: BookOpen },
-                { label: "Podcasts", Icon: Headphones },
-                { label: "Music", Icon: Music2 },
-                { label: "YouTube", Icon: Youtube },
-                { label: "Gaming", Icon: Gamepad2 },
-              ].map(({ label, Icon }) => (
-                <span key={label} className="inline-flex min-w-[70px] flex-col items-center gap-2 whitespace-nowrap text-center">
-                  <Icon className="h-6 w-6 text-primary/75 md:h-7 md:w-7" strokeWidth={1.6} aria-hidden="true" />
-                  {label}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
