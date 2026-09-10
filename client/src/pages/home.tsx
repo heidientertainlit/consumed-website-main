@@ -232,7 +232,7 @@ function WantedActionHeadline() {
 
   return (
     <h2 className="font-heading text-4xl font-normal leading-[0.98] sm:text-5xl lg:text-7xl">
-      What was that thing I wanted to{" "}
+      What was that thing my friend said I should{" "}
       <span className="relative inline-grid align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
           watch
@@ -939,7 +939,7 @@ export default function Home() {
 
         {/* 3. TAKES FEED */}
         <section className="relative w-full" id="how-it-works">
-          <div className="overflow-hidden">
+          <div className="overflow-x-clip overflow-y-visible">
             <div className="h-12 bg-gradient-to-b from-white to-[#f5f2ed] md:h-16" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
@@ -950,17 +950,17 @@ export default function Home() {
               >
                 <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
                   {[
-                    { text: "I can’t remember…", className: "-left-20 top-2" },
-                    { text: "Sara suggested this", className: "-right-24 top-10" },
-                    { text: "Mark said he liked it", className: "left-2/3 top-28" },
-                    { text: "saved in Notes?", className: "-left-10 top-32" },
-                    { text: "was it a screenshot?", className: "right-4 top-44" },
+                    { text: "I can’t remember…", className: "-left-16 -top-16" },
+                    { text: "Sara suggested this", className: "-right-20 -top-24" },
+                    { text: "Mark said he liked it", className: "left-[58%] -top-40" },
+                    { text: "saved in Notes?", className: "left-[8%] -top-52" },
+                    { text: "was it a screenshot?", className: "right-[8%] -top-64" },
                   ].map((thought, index) => (
                     <motion.span
                       key={thought.text}
                       className={`absolute rounded-full border border-white/70 bg-white/55 px-3 py-1.5 font-sans text-[11px] font-medium text-[#6f617b]/55 shadow-[0_8px_24px_rgba(60,43,78,0.05)] backdrop-blur-sm ${thought.className}`}
-                      animate={{ y: [30, -34], x: [0, index % 2 === 0 ? 8 : -8], opacity: [0, 0.48, 0.4, 0] }}
-                      transition={{ duration: 6.2 + index * 0.35, repeat: Infinity, delay: index * 1.15, ease: "easeOut" }}
+                      animate={{ y: [42, -82], x: [0, index % 2 === 0 ? 10 : -10], opacity: [0, 0.52, 0.42, 0] }}
+                      transition={{ duration: 7 + index * 0.35, repeat: Infinity, delay: index * 1.05, ease: "easeOut" }}
                     >
                       {thought.text}
                     </motion.span>
