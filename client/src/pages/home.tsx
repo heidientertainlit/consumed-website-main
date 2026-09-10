@@ -889,7 +889,16 @@ export default function Home() {
 
       <main>
         {/* 2. HERO */}
-        <section className="pt-32 md:pt-40 pb-4 md:pb-6 relative overflow-visible z-10" id="features">
+        <section className="relative z-10 overflow-hidden pb-4 pt-24 md:pb-6 md:pt-32" id="features">
+          <motion.img
+            src={neonSmiley}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-32 top-16 w-64 opacity-[0.09] blur-[0.3px] sm:-right-40 sm:w-80 md:-right-48 md:top-12 md:w-[26rem] lg:-right-56 lg:w-[30rem]"
+            style={{ filter: "brightness(0) saturate(100%) invert(28%) sepia(24%) saturate(2580%) hue-rotate(232deg) brightness(90%) contrast(88%)" }}
+            animate={{ y: [0, -8, 0], rotate: [0, 1.5, 0] }}
+            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+          />
           <div className="container relative mx-auto max-w-7xl -translate-y-3 px-6 md:-translate-y-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -897,25 +906,11 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <div className="mb-0 mt-1 flex items-center justify-start gap-1 md:mt-2 md:gap-2">
+              <div className="mb-0 mt-1 flex items-center justify-start md:mt-2">
                 <img src={logoPurple} alt="Consumed" className="-ml-2 h-[5.25rem] w-auto md:-ml-3 md:h-24 lg:h-[6.5rem]" />
-                <motion.img
-                  src={neonSmiley}
-                  alt=""
-                  aria-hidden="true"
-                  className="-ml-1 w-16 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)] md:-ml-2 md:w-[4.5rem] lg:w-20"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
-                />
               </div>
-              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-heading text-[1.1rem] font-normal italic leading-[1.25] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.35rem] lg:text-[1.7rem]">
-                Entertainment is about to get more social.
-                <span className="mt-3 block font-sans text-[0.78rem] font-normal not-italic leading-relaxed tracking-normal text-[#6f6876] md:text-[0.9rem] lg:text-base">
-                  Movies, TV, books, podcasts, music &amp; more — all in one place.
-                </span>
-              </h1>
 
-              <div className="mb-5 flex flex-row items-center justify-start gap-2 sm:gap-4">
+              <div className="mt-5 flex flex-row items-center justify-start gap-2 sm:gap-4 md:mt-7">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
                   href="https://app.consumedapp.com"
@@ -930,10 +925,13 @@ export default function Home() {
 
             </motion.div>
           </div>
-          <div className="mt-3 w-full px-6 py-4 md:mt-4 md:px-10 lg:px-14">
-            <div className="mx-auto mb-4 w-full max-w-2xl border-t border-[#e8e0f4]" />
-            <p className="mx-auto mb-4 max-w-[1600px] text-center font-sans text-xs leading-relaxed text-foreground/65 md:text-[13px]">
-              See what everyone&apos;s into · Talk about it · Find your next obsession · Discover your Entertainment DNA profile
+          <div className="mt-14 w-full px-6 py-4 md:mt-20 md:px-10 lg:px-14">
+            <div className="mx-auto mb-6 w-full max-w-5xl border-t border-[#e8e0f4]" />
+            <h1 className="mx-auto max-w-4xl text-center font-heading text-[1.55rem] font-normal italic leading-[1.2] tracking-tight text-[#40384b] md:text-[2rem] lg:text-[2.35rem]">
+              Entertainment is about to get more social.
+            </h1>
+            <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
+              Movies, TV, books, podcasts, music &amp; more — all in one place.
             </p>
             <div className="mx-auto flex max-w-[1600px] flex-wrap items-start justify-center gap-x-7 gap-y-5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
               {[
