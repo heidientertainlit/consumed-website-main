@@ -1216,7 +1216,7 @@ export default function Home() {
                     href="https://app.consumedapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
+                    className="mt-5 inline-flex items-center justify-center rounded-full bg-[#3a2496] px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
                     data-testid="link-learn-entertainment-dna"
                   >
                     Learn my Entertainment DNA
