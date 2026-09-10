@@ -896,7 +896,13 @@ export default function Home() {
             >
               <h1 className="mx-auto max-w-4xl text-center font-heading text-[2.1rem] font-normal leading-[0.98] text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
                 Entertainment is about to get more{" "}
-                <span className="inline-block italic text-primary">social.</span>
+                <motion.span
+                  className="inline-block italic text-primary"
+                  animate={{ opacity: [0.82, 1, 0.82], y: [0, -2, 0] }}
+                  transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  social.
+                </motion.span>
               </h1>
 
               <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
@@ -931,6 +937,14 @@ export default function Home() {
                     {label}
                   </span>
                 ))}
+              </div>
+
+              <div className="relative mt-5 h-9 w-px bg-gradient-to-b from-primary/20 to-transparent" aria-hidden="true">
+                <motion.span
+                  className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-primary/55 shadow-[0_0_10px_rgba(117,81,199,0.35)]"
+                  animate={{ y: [0, 26], opacity: [0, 1, 0] }}
+                  transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 1.6, ease: "easeInOut" }}
+                />
               </div>
 
             </motion.div>
