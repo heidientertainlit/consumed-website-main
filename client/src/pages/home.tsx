@@ -894,13 +894,12 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center md:-translate-x-6"
             >
-              <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#6b6472] md:text-3xl lg:text-4xl">
+              <h1 className="mx-auto max-w-4xl text-center font-heading text-4xl font-normal leading-[0.98] text-[#332a3d] sm:text-5xl lg:text-7xl">
                 Entertainment is about to get more{" "}
-                <span className="inline-block font-heading text-[1.18em] font-normal italic text-primary">social.</span>
+                <span className="inline-block italic text-primary">social.</span>
               </h1>
               <p className="mx-auto mt-4 max-w-3xl text-center font-sans text-sm leading-[1.45] text-[#6f6876] md:text-base">
-                <span className="block">The social app for everything you watch,</span>
-                <span className="block">read, listen to &amp; play.</span>
+                The social app for everything you watch, read, listen to &amp; play.
               </p>
 
               <div className="mt-7 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
