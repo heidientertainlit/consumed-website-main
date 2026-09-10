@@ -748,7 +748,7 @@ function SocialFeedSection() {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-white px-6 py-20 md:py-24" id="chatter">
+    <div className="relative overflow-hidden bg-white px-6 pb-8 pt-16 md:pb-10 md:pt-20" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
       <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
@@ -1198,7 +1198,7 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
-            <div className="relative left-1/2 mt-16 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] px-6 py-12 md:mt-20 md:px-12 md:py-16">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] px-6 py-12 md:px-12 md:py-16">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
@@ -1207,11 +1207,8 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="text-left"
                 >
-                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA</p>
+                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA Profile</p>
                   <HeroTagline />
-                  <p className="mt-4 text-xs leading-relaxed text-white/75 md:text-sm">
-                    Turns out, all those obsessions add up. Meet your Entertainment DNA profile.
-                  </p>
                 </motion.div>
 
                 <div className="relative mx-auto mt-6 h-[175px] w-full max-w-5xl overflow-hidden md:mt-7 md:h-[210px]" aria-hidden="true">
