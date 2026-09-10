@@ -1224,7 +1224,7 @@ export default function Home() {
                   </p>
                 </motion.div>
 
-                <div className="relative h-[230px] md:h-[275px] mt-8 md:mt-10 overflow-hidden" aria-hidden="true">
+                <div className="relative mx-auto mt-6 h-[175px] w-full max-w-5xl overflow-hidden md:mt-7 md:h-[210px]" aria-hidden="true">
                   <div className="absolute inset-x-[12%] top-1/2 h-24 -translate-y-1/2 rounded-full bg-[#9f63ff]/20 blur-3xl" />
 
                   {[
@@ -1239,7 +1239,7 @@ export default function Home() {
                       key={source.label}
                       animate={{ y: [0, -6, 0], opacity: [0.55, 1, 0.55] }}
                       transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: source.delay }}
-                      className={`absolute z-20 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] md:text-xs font-bold tracking-wide text-[#e1d9ff] backdrop-blur-sm ${source.className}`}
+                      className={`absolute z-20 rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[9px] md:text-[10px] font-bold tracking-wide text-[#e1d9ff] backdrop-blur-sm ${source.className}`}
                     >
                       {source.label}
                     </motion.span>
@@ -1340,16 +1340,16 @@ export default function Home() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1.15, duration: 0.6, type: "spring" }}
-                    className="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/20 bg-[#160c38]/85 px-4 py-3 text-center shadow-[0_0_35px_rgba(178,104,255,0.35)] backdrop-blur-md"
+                    className="absolute z-30 left-1/2 top-1/2 w-[54%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl border border-white/20 bg-[#160c38]/85 px-3 py-2 text-center shadow-[0_0_35px_rgba(178,104,255,0.35)] backdrop-blur-md"
                   >
                     <motion.span
                       animate={{ opacity: [0.55, 1, 0.55] }}
                       transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                      className="block text-[9px] font-bold tracking-[0.16em] text-[#d8ceff]"
+                      className="block text-[8px] font-bold tracking-[0.16em] text-[#d8ceff] md:text-[9px]"
                     >
                       DNA EVOLVING
                     </motion.span>
-                    <span className="block mt-1 font-heading text-base md:text-lg text-white">Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.</span>
+                    <span className="mt-1 block font-heading text-xs text-white md:text-base">Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.</span>
                   </motion.div>
                 </div>
 
