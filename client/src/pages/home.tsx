@@ -1345,7 +1345,7 @@ export default function Home() {
                 </div>
                 )}
 
-                <div className="-mx-6 mt-7 flex gap-4 overflow-x-auto px-6 pb-4 scrollbar-none md:mx-0 md:gap-6 md:px-0">
+                <div className="-mx-6 mt-7 flex gap-4 overflow-x-auto px-6 pb-8 pt-3 scrollbar-none md:mx-0 md:justify-center md:gap-0 md:overflow-visible md:px-0 md:pb-12">
                 {[
                   { title: "The Prestige Detective", shades: "Story Sharer • Emotional Binger", streak: "1", rank: "#1", tracked: "909", accent: "#b981ff" },
                   { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
@@ -1357,10 +1357,22 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.55 + i * 0.14 }}
-                    className="relative w-[290px] min-w-[290px] shrink-0 pb-4 pr-3 md:w-[31.5%]"
+                    className={`relative w-[290px] min-w-[290px] shrink-0 pb-4 pr-3 transition-transform duration-300 hover:z-40 hover:-translate-y-3 md:w-[31.5%] ${
+                      i === 0
+                        ? "md:translate-y-5 md:rotate-[-5deg]"
+                        : i === 1
+                          ? "md:z-20 md:-ml-16"
+                          : "md:z-30 md:-ml-16 md:translate-y-5 md:rotate-[5deg]"
+                    }`}
                   >
                     <div className="absolute inset-x-5 bottom-1 top-5 rotate-[2deg] rounded-[1.8rem] bg-[#7251c7]/35" />
                     <div className="absolute inset-x-2 bottom-2 top-2 -rotate-[1deg] rounded-[1.8rem] bg-[#2d1a56]/55" />
+                    {i === 2 && (
+                      <>
+                        <div className="absolute -bottom-1 -right-5 top-7 w-full rotate-[8deg] rounded-[1.8rem] bg-[#8f9dff]/30" />
+                        <div className="absolute -bottom-2 -right-9 top-10 w-full rotate-[11deg] rounded-[1.8rem] bg-[#2d1a56]/25" />
+                      </>
+                    )}
                     <article className="relative z-10 flex h-full flex-col rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(48,31,78,0.22)]">
                     <div className="flex items-start justify-between gap-3">
                       <p className="text-[10px] font-bold uppercase leading-tight tracking-[0.16em] text-[#cfc3ff]">
