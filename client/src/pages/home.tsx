@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, MessageCircle, Star, Share2, TrendingUp, Users, GitCompareArrows, Layers3, ChevronRight } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Heart, MessageCircle, Star, Share2, TrendingUp, Users, GitCompareArrows, Layers3, ChevronRight } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import heroMaybeSomeday from "@assets/Screenshot_2026-08-22_at_12.08.35_PM_1787422156206.png";
@@ -963,6 +963,20 @@ export default function Home() {
                       transition={{ duration: 7 + index * 0.35, repeat: Infinity, delay: index * 1.05, ease: "easeOut" }}
                     >
                       {thought.text}
+                    </motion.span>
+                  ))}
+                  {[
+                    { Icon: Heart, className: "left-[28%] -top-28", color: "text-[#ad6a96]", delay: 0.7 },
+                    { Icon: ThumbsUp, className: "right-[27%] -top-48", color: "text-[#7251c7]", delay: 2.1 },
+                    { Icon: Heart, className: "right-[3%] -top-12", color: "text-[#ad6a96]", delay: 3.4 },
+                  ].map(({ Icon, className, color, delay }, index) => (
+                    <motion.span
+                      key={`${className}-${index}`}
+                      className={`absolute flex h-8 w-8 items-center justify-center rounded-full border border-white/75 bg-white/60 shadow-[0_8px_24px_rgba(60,43,78,0.07)] backdrop-blur-sm ${color} ${className}`}
+                      animate={{ y: [38, -88], x: [0, index % 2 === 0 ? -8 : 8], rotate: [0, index % 2 === 0 ? -8 : 8], opacity: [0, 0.52, 0.4, 0] }}
+                      transition={{ duration: 7.4 + index * 0.5, repeat: Infinity, delay, ease: "easeOut" }}
+                    >
+                      <Icon className="h-3.5 w-3.5" strokeWidth={1.7} />
                     </motion.span>
                   ))}
                 </div>
