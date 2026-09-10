@@ -1210,10 +1210,7 @@ export default function Home() {
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your Entertainment DNA Profile</p>
                   <HeroTagline />
                   <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
-                    Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.
-                  </p>
-                  <p className="mt-3 font-sans text-sm font-semibold text-[#493f51] sm:text-base">
-                    Ready to find out yours?
+                    Your Entertainment DNA evolves with every movie, book, podcast, and more you consume. Ready to find out yours?
                   </p>
                   <a
                     href="https://app.consumedapp.com"
@@ -1222,7 +1219,7 @@ export default function Home() {
                     className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
                     data-testid="link-learn-entertainment-dna"
                   >
-                    Learn my Entertainment DNA Profile
+                    Learn my Entertainment DNA
                   </a>
                 </motion.div>
 
