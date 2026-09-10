@@ -1430,13 +1430,10 @@ export default function Home() {
             >
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#cfc3ff]">Friends + DNA Matching</p>
               <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
-                This is why we&apos;re <span className="italic text-[#cfc3ff]">friends.</span>
+                Okay, yeah. <span className="italic text-[#cfc3ff]">You&apos;re my people.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-                Compare your Entertainment DNA with friends. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
-              </p>
-              <p className="mt-6 font-heading text-2xl leading-tight text-white md:text-3xl">
-                Okay, yeah. <span className="italic text-[#cfc3ff]">You&apos;re my people.</span>
+                Your Entertainment DNA profile doesn&apos;t just tell you about you. It shows you who you click with — and why. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
               </p>
               <a
                 href="https://app.consumedapp.com"
@@ -1465,7 +1462,7 @@ export default function Home() {
 
                 {[
                   {
-                    name: "Ashley Hughes",
+                    name: "Ashley H.",
                     initials: "AH",
                     match: "77%",
                     badge: "FRIEND WITH THE CLOSEST TASTE",
