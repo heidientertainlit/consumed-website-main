@@ -911,10 +911,12 @@ export default function Home() {
             >
               Open web app
             </a>
-            <AppStoreButton />
+            <div className="hidden sm:block">
+              <AppStoreButton />
+            </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              className="ml-auto p-2 hover:bg-black/5 rounded-full transition-colors sm:ml-0"
               aria-label="Menu"
               aria-expanded={mobileMenuOpen}
             >
