@@ -1021,7 +1021,7 @@ export default function Home() {
               <HeroFeedCarousel />
             </div>
           </div>
-          <div className="mt-8 w-full border-t border-[#e8e0f4] bg-[#fbfaff] px-6 py-6 md:mt-10 md:px-10 md:py-7 lg:px-14">
+          <div className="mt-8 w-full border-t border-[#e8e0f4] px-6 py-6 md:mt-10 md:px-10 md:py-7 lg:px-14">
             <p className="mx-auto mb-4 max-w-[1600px] text-center font-sans text-xs leading-relaxed text-foreground/65 md:text-[13px]">
               See what everyone&apos;s into · Talk about it · Find your next obsession · Discover your Entertainment DNA profile
             </p>
