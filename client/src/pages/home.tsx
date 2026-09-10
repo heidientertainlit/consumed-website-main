@@ -1034,16 +1034,12 @@ export default function Home() {
                   Why Consumed?
                 </p>
                 <WantedActionHeadline />
-                <p className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
-                  <span className="font-sans text-[#493f51]">
-                    Group chats. Notes app lists. Screenshots. Lost recommendations. Way too many apps.
-                  </span>
+                <p className="mx-auto mt-6 max-w-2xl font-sans text-sm font-bold leading-relaxed text-[#493f51] sm:text-base">
+                  Somewhere between the group chats, screenshots, Notes app lists, and way too many apps, our entertainment lives got scattered everywhere.
+                  <span className="mt-2 block">So we put it all in one place.</span>
                 </p>
-                <p className="mt-5 font-heading text-xl leading-relaxed text-[#493f51] sm:text-2xl">
-                  Finally, one place for all of it.
-                </p>
-                <p className="mx-auto mt-3 max-w-2xl text-sm font-sans leading-relaxed text-[#746a7c] sm:text-base">
-                  What you&apos;re into. What your friends are into. And everything you have to say about it.
+                <p className="mx-auto mt-4 max-w-2xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
+                  What you&apos;re into, what your friends are into, and everything you&apos;re saying about it.
                 </p>
               </motion.div>
               <div className="mx-auto mt-6 max-w-3xl md:mt-10">
