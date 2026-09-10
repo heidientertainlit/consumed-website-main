@@ -194,7 +194,7 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h1 className="w-full max-w-[680px] text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-normal leading-[1.08] tracking-tight mb-6 md:mb-7">
+    <h2 className="mx-auto w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
       Admit it, that{" "}
       <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
@@ -207,7 +207,7 @@ function HeroTagline() {
             animate={{ opacity: 1, y: "0%" }}
             exit={{ opacity: 0, y: "-80%" }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="col-start-1 row-start-1 whitespace-nowrap italic text-primary"
+            className="col-start-1 row-start-1 whitespace-nowrap italic text-[#d8ceff]"
           >
             {heroMediaTypes[mediaIndex]}
           </motion.span>
@@ -215,7 +215,7 @@ function HeroTagline() {
       </span>
       <br className="hidden sm:block" />
       was just your entire personality.
-    </h1>
+    </h2>
   );
 }
 
@@ -1216,9 +1216,7 @@ export default function Home() {
                   className="text-center"
                 >
                   <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-4">Your Entertainment DNA</p>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05] text-white">
-                    Okay, so apparently I have a <span className="italic text-[#d8ceff]">type.</span>
-                  </h2>
+                  <HeroTagline />
                   <p className="max-w-3xl mx-auto mt-6 text-sm md:text-base leading-relaxed text-white/75">
                     The shows I rewatch. The books I tell everyone to read. The movies I&apos;ve seen an embarrassing number of times. The podcast I somehow bring up in every conversation.
                   </p>
