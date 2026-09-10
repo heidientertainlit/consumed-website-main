@@ -987,7 +987,7 @@ export default function Home() {
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
               <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
+                <img src={logoPurple} alt="Consumed" className="h-[4.5rem] w-auto md:h-20 lg:h-[5.5rem]" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
@@ -997,7 +997,7 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="mb-6 w-full max-w-[680px] text-left font-heading text-[1.275rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:mb-7 md:text-[1.6rem] lg:text-[2.05rem]">
+              <h1 className="mb-6 w-full max-w-[680px] text-left font-heading text-[1.2rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:mb-7 md:text-[1.5rem] lg:text-[1.95rem]">
                 The social app for everything you watch,{" "}
                 <br />
                 read, listen to &amp; play.
