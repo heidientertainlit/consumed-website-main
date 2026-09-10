@@ -944,7 +944,7 @@ export default function Home() {
           </div>
           <div className="mt-14 w-full px-6 py-4 md:mt-20 md:px-10 lg:px-14">
             <div className="mx-auto mb-6 w-full max-w-5xl border-t border-[#e8e0f4]" />
-            <h1 className="mx-auto max-w-4xl text-center font-heading text-[1.55rem] font-normal italic leading-[1.2] tracking-tight text-[#40384b] md:text-[2rem] lg:text-[2.35rem]">
+            <h1 className="mx-auto max-w-4xl text-center font-heading text-4xl font-normal italic leading-[0.98] text-[#40384b] sm:text-5xl lg:text-7xl">
               Entertainment is about to get more social.
             </h1>
             <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
