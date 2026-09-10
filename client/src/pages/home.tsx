@@ -1365,13 +1365,21 @@ export default function Home() {
                           : "md:z-30 md:-ml-16 md:translate-y-5 md:rotate-[5deg]"
                     }`}
                   >
-                    <div className="absolute inset-x-5 bottom-1 top-5 rotate-[2deg] rounded-[1.8rem] bg-[#7251c7]/35" />
-                    <div className="absolute inset-x-2 bottom-2 top-2 -rotate-[1deg] rounded-[1.8rem] bg-[#2d1a56]/55" />
+                    {i === 0 && (
+                      <div className="absolute -bottom-1 -left-12 top-5 w-full -rotate-[8deg] rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#352064] via-[#241447] to-[#130a2c] p-6 shadow-[0_18px_35px_rgba(48,31,78,0.18)]">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#cfc3ff]">Your Entertainment DNA</p>
+                        <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.16em] text-[#cfc3ff]">Profile ✧</p>
+                        <div className="mt-8 h-3 w-28 rounded-full bg-white/15" />
+                        <div className="mt-3 h-2 w-20 rounded-full bg-white/10" />
+                      </div>
+                    )}
                     {i === 2 && (
-                      <>
-                        <div className="absolute -bottom-1 -right-5 top-7 w-full rotate-[8deg] rounded-[1.8rem] bg-[#8f9dff]/30" />
-                        <div className="absolute -bottom-2 -right-9 top-10 w-full rotate-[11deg] rounded-[1.8rem] bg-[#2d1a56]/25" />
-                      </>
+                      <div className="absolute -bottom-1 -right-12 top-5 w-full rotate-[8deg] rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#352064] via-[#241447] to-[#130a2c] p-6 text-right shadow-[0_18px_35px_rgba(48,31,78,0.18)]">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#cfc3ff]">Your Entertainment DNA</p>
+                        <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.16em] text-[#cfc3ff]">Profile ✧</p>
+                        <div className="ml-auto mt-8 h-3 w-28 rounded-full bg-white/15" />
+                        <div className="ml-auto mt-3 h-2 w-20 rounded-full bg-white/10" />
+                      </div>
                     )}
                     <article className="relative z-10 flex h-full flex-col rounded-[1.8rem] border border-white/15 bg-gradient-to-br from-[#2d1a56] via-[#1f123e] to-[#130a2c] p-6 text-left shadow-[0_20px_45px_rgba(48,31,78,0.22)]">
                     <div className="flex items-start justify-between gap-3">
