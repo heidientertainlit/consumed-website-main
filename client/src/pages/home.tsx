@@ -1374,9 +1374,11 @@ export default function Home() {
         </section>
 
         {/* 5. FRIENDS + DNA MATCHING */}
+        <div
+          className="h-20 w-full bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#f3eff5_28%,_#ded6e5_52%,_#aa9bb9_72%,_#604d78_88%,_#10062d_100%)] md:h-28"
+          aria-hidden="true"
+        />
         <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#fbfaf8] via-[#766b8a]/45 to-transparent md:h-28" aria-hidden="true" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-20 bg-gradient-to-b from-transparent via-white/35 to-white md:h-28" aria-hidden="true" />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full border border-white/10" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: "linear" }} />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c17dff]/10 blur-3xl" animate={{ y: [-12, 12, -12], scale: [1, 1.08, 1] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} />
           <div className="relative z-10 container mx-auto max-w-7xl">
@@ -1479,6 +1481,10 @@ export default function Home() {
 
           </div>
         </section>
+        <div
+          className="h-20 w-full bg-[linear-gradient(to_bottom,_#2a155f_0%,_#594477_24%,_#9586a5_48%,_#cbc2d2_70%,_#eeeaf0_88%,_#ffffff_100%)] md:h-28"
+          aria-hidden="true"
+        />
 
         {/* 6. PLAY */}
         <section className="bg-white" id="play">
@@ -1583,7 +1589,10 @@ export default function Home() {
 
         {/* 8. DISCOVERY */}
         <section className="bg-white" id="discovery">
-          <div className="h-20 bg-gradient-to-b from-white via-[#736888]/40 to-[#10062d] md:h-28" aria-hidden="true" />
+          <div
+            className="h-32 w-full bg-[linear-gradient(to_bottom,_#ffffff_0%,_#faf8fc_18%,_#f0ebf5_36%,_#ded5e7_54%,_#bbaaca_70%,_#87709f_83%,_#4e376f_93%,_#10062d_100%)] md:h-40"
+            aria-hidden="true"
+          />
           <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 text-white md:px-14 md:py-16">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
@@ -1647,22 +1656,35 @@ export default function Home() {
               </div>
             </div>
 
-            <div id="feedback" className="relative z-10 max-w-5xl mx-auto mt-14 md:mt-16 pt-8 md:pt-10 border-t border-white/15 grid md:grid-cols-[1fr_auto] items-center gap-7 text-center md:text-left">
+          </motion.div>
+        </section>
+
+        <div
+          className="h-20 w-full bg-[linear-gradient(to_bottom,_#452184_0%,_#72569b_28%,_#a794b8_52%,_#d3c7d6_74%,_#eee8e9_90%,_#f5f2ed_100%)] md:h-28"
+          aria-hidden="true"
+        />
+
+        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto grid max-w-5xl items-center gap-7 text-center md:grid-cols-[1fr_auto] md:text-left"
+          >
               <div>
-                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#d8ceff] mb-3">Build it with us</p>
-                <h3 className="text-2xl md:text-3xl font-heading font-normal text-white">Help us make Consumed better.</h3>
-                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-white/65">
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7251c7]">Build it with us</p>
+                <h3 className="font-heading text-2xl font-normal text-[#211a2a] md:text-3xl">Help us make Consumed better.</h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#62586a] md:text-base">
                   Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
                 </p>
               </div>
               <Link
                 href="/feedback"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-white font-semibold whitespace-nowrap transition-all hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#4b2aa8] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#3d218d]"
                 data-testid="link-beta-feedback"
               >
                 Share feedback <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
           </motion.div>
         </section>
 
