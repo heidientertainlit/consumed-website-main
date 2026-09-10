@@ -1209,8 +1209,12 @@ export default function Home() {
                 >
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA Profile</p>
                   <HeroTagline />
+                  <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-white/75 sm:text-base">
+                    Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.
+                  </p>
                 </motion.div>
 
+                {false && (
                 <div className="relative mx-auto mt-6 h-[175px] w-full max-w-5xl overflow-hidden md:mt-7 md:h-[210px]" aria-hidden="true">
                   <div className="absolute inset-x-[12%] top-1/2 h-24 -translate-y-1/2 rounded-full bg-[#9f63ff]/20 blur-3xl" />
 
@@ -1339,8 +1343,9 @@ export default function Home() {
                     <span className="mt-1 block font-heading text-xs text-white md:text-base">Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.</span>
                   </motion.div>
                 </div>
+                )}
 
-                <div className="flex gap-4 md:gap-6 mt-4 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
+                <div className="-mx-6 mt-7 flex gap-4 overflow-x-auto px-6 pb-4 scrollbar-none md:mx-0 md:gap-6 md:px-0">
                 {[
                   { title: "The Prestige Detective", shades: "Story Sharer • Emotional Binger", streak: "1", rank: "#1", tracked: "909", accent: "#b981ff" },
                   { title: "The Comfort Rewatcher", shades: "Comedy Lover • Story Sharer", streak: "4", rank: "#12", tracked: "436", accent: "#d98be4" },
