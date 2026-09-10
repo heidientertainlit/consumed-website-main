@@ -1459,7 +1459,7 @@ export default function Home() {
                 Okay, yeah. <span className="italic text-[#cfc3ff]">You&apos;re my people.</span>
               </h2>
               <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
-                Your Entertainment DNA profile doesn&apos;t just tell you about you. It shows you who you click with — and why. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
+                Your Entertainment DNA doesn&apos;t just tell you about you. It shows you who you click with — and why. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
               </p>
             </motion.div>
 
