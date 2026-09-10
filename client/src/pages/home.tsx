@@ -987,7 +987,7 @@ export default function Home() {
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
               <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-[4.5rem] w-auto md:h-20 lg:h-[5.5rem]" />
+                <img src={logoPurple} alt="Consumed" className="h-20 w-auto md:h-[5.5rem] lg:h-24" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
