@@ -972,10 +972,12 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <HeroTagline />
+              <h1 className="mb-6 w-full max-w-[680px] font-heading text-2xl font-normal leading-[1.08] tracking-tight md:mb-7 md:text-3xl lg:text-[2.5rem]">
+                The social app for everything you watch, read, listen to &amp; play.
+              </h1>
 
               <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
-                See what your friends are into, find your next obsession, and discover your Entertainment DNA.
+                See what your friends are into, find your next obsession, and discover your Entertainment DNA profile.
               </p>
 
               <div className="mb-5 flex flex-col sm:flex-row items-start gap-4">
