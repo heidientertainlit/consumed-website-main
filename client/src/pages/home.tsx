@@ -986,21 +986,24 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <h1 className="mb-2 font-sans text-[10px] font-light uppercase leading-relaxed tracking-[0.2em] text-foreground/65 sm:text-xs">
-                The social app for all your entertainment.
-              </h1>
-              <div className="mb-0 mt-2 flex items-center justify-start gap-1 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-20 w-auto md:h-24 lg:h-28" />
+              <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
+                <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-20 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)] md:w-24 lg:w-28"
+                  className="w-16 md:w-[4.5rem] lg:w-20 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <p className="mb-6 mt-3 max-w-2xl text-xs leading-relaxed text-foreground/80 md:text-sm">
+              <h1 className="mb-6 w-full max-w-[680px] text-left font-heading text-[1.4rem] font-normal leading-[1.2] tracking-tight md:mb-7 md:text-[1.75rem] lg:text-[2.25rem]">
+                The social app for everything you watch,{" "}
+                <br className="lg:hidden" />
+                read, listen to &amp; play.
+              </h1>
+
+              <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
                 See what your friends are into, find your next obsession,
                 <span className="block">and discover your Entertainment DNA profile.</span>
               </p>
