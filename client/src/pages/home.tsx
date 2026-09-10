@@ -1467,8 +1467,8 @@ export default function Home() {
               {[
                 {
                   label: "Friends", icon: Users, number: "01", accent: "#cbb6ff",
-                  title: "Your people, in real time.",
-                  description: "See what your friends are watching, reading, and arguing about right now.",
+                  title: "See what your people are into.",
+                  description: "What they’re watching, reading, listening to, playing — and what they actually think about it.",
                   content: (
                     <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] p-4 text-[#271b3d]">
                       <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]"><span>Friends are active</span><span className="flex items-center gap-1.5"><i className="h-1.5 w-1.5 rounded-full bg-[#60c48b]" /> live</span></div>
@@ -1486,8 +1486,8 @@ export default function Home() {
                 },
                 {
                   label: "Compare DNA", icon: GitCompareArrows, number: "02", accent: "#f4b7d0",
-                  title: "A percentage with a pulse.",
-                  description: "Compare your Entertainment DNA and find out exactly where the overlap lives.",
+                  title: "Okay, but how much do we match?",
+                  description: "Compare your Entertainment DNA profiles to see what you have in common — and where you absolutely do not.",
                   content: (
                     <div className="relative mt-7 flex min-h-[190px] items-center justify-center overflow-hidden rounded-[1.35rem] bg-[#f5f0ff] text-[#271b3d]">
                       <motion.div className="absolute h-40 w-40 rounded-full border border-[#d6c5ed]" animate={{ scale: [0.86, 1.08, 0.86], opacity: [0.45, 0.9, 0.45] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} />
@@ -1502,8 +1502,8 @@ export default function Home() {
                 },
                 {
                   label: "Tribes", icon: Layers3, number: "03", accent: "#f4db8c",
-                  title: "Find your corner of the internet.",
-                  description: "Join a group of people who share your taste — and discover what they’re into next.",
+                  title: "See what people like you are into.",
+                  description: "Discover what people who share your interests are watching, reading, listening to, playing — and talking about.",
                   content: (
                     <div className="relative mt-7 min-h-[190px] overflow-hidden rounded-[1.35rem] bg-[#fffdfa] p-4 text-[#271b3d]">
                       <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#80639d]">15% overlap</p>
