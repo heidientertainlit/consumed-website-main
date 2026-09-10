@@ -896,13 +896,7 @@ export default function Home() {
             >
               <h1 className="mx-auto max-w-4xl text-center font-heading text-[2.1rem] font-normal leading-[0.98] text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
                 Entertainment is about to get more{" "}
-                <motion.span
-                  className="inline-block italic text-primary"
-                  animate={{ opacity: [0.82, 1, 0.82], y: [0, -2, 0] }}
-                  transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  social.
-                </motion.span>
+                <span className="inline-block italic text-primary">social.</span>
               </h1>
 
               <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
@@ -939,14 +933,6 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="relative mt-5 h-9 w-px bg-gradient-to-b from-primary/20 to-transparent" aria-hidden="true">
-                <motion.span
-                  className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-primary/55 shadow-[0_0_10px_rgba(117,81,199,0.35)]"
-                  animate={{ y: [0, 26], opacity: [0, 1, 0] }}
-                  transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 1.6, ease: "easeInOut" }}
-                />
-              </div>
-
             </motion.div>
           </div>
         </section>
@@ -960,10 +946,30 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mx-auto max-w-3xl text-center"
+                className="relative mx-auto max-w-3xl text-center"
               >
-                <WantedActionHeadline />
-                <p className="mx-auto mt-6 max-w-2xl font-sans text-sm leading-relaxed text-[#493f51] sm:text-base">
+                <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
+                  {[
+                    { text: "I can’t remember…", className: "-left-20 top-2" },
+                    { text: "Sara suggested this", className: "-right-24 top-10" },
+                    { text: "Mark said he liked it", className: "left-2/3 top-28" },
+                    { text: "saved in Notes?", className: "-left-10 top-32" },
+                    { text: "was it a screenshot?", className: "right-4 top-44" },
+                  ].map((thought, index) => (
+                    <motion.span
+                      key={thought.text}
+                      className={`absolute rounded-full border border-white/70 bg-white/55 px-3 py-1.5 font-sans text-[11px] font-medium text-[#6f617b]/55 shadow-[0_8px_24px_rgba(60,43,78,0.05)] backdrop-blur-sm ${thought.className}`}
+                      animate={{ y: [30, -34], x: [0, index % 2 === 0 ? 8 : -8], opacity: [0, 0.48, 0.4, 0] }}
+                      transition={{ duration: 6.2 + index * 0.35, repeat: Infinity, delay: index * 1.15, ease: "easeOut" }}
+                    >
+                      {thought.text}
+                    </motion.span>
+                  ))}
+                </div>
+                <div className="relative z-10">
+                  <WantedActionHeadline />
+                </div>
+                <p className="relative z-10 mx-auto mt-6 max-w-2xl font-sans text-sm leading-relaxed text-[#493f51] sm:text-base">
                   Somewhere between the group chats, screenshots, Notes app lists, and way too many apps, our entertainment lives got scattered everywhere.{" "}
                   <strong>So we put it all in one place.</strong>
                 </p>
