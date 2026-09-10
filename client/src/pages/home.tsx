@@ -1022,7 +1022,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-1 w-full px-6 md:mt-3 md:px-10 lg:px-14">
-            <p className="mx-auto mb-6 max-w-[1600px] text-center font-heading text-sm leading-relaxed text-foreground/75 sm:text-base md:text-lg">
+            <p className="mx-auto mb-6 max-w-[1600px] text-center font-sans text-sm leading-relaxed text-foreground/75 sm:text-base md:text-lg">
               See what everyone&apos;s into · Talk about it · Find your next obsession · Discover your Entertainment DNA profile
             </p>
             <div className="mx-auto flex max-w-[1600px] flex-wrap items-start justify-center gap-x-7 gap-y-5 text-[9px] font-bold uppercase tracking-[0.12em] text-foreground/50 sm:text-[10px] md:justify-between md:text-[11px]">
