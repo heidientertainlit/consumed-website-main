@@ -1021,8 +1021,8 @@ export default function Home() {
         </section>
 
         {/* 3. TAKES FEED */}
-        <section className="relative mx-auto mt-8 w-[calc(100%-2rem)] max-w-7xl md:mt-12 md:w-[calc(100%-4rem)]" id="how-it-works">
-          <div className="overflow-hidden rounded-[2.5rem] border border-[#e8e2e9]">
+        <section className="relative mt-8 w-full md:mt-12" id="how-it-works">
+          <div className="overflow-hidden border-y border-[#e8e2e9]">
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1208,7 +1208,7 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
-            <div className="relative overflow-hidden rounded-[2.5rem] mt-16 md:mt-20 px-6 py-12 md:px-12 md:py-16 bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91]">
+            <div className="relative left-1/2 mt-16 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-[#0e0828] via-[#241251] to-[#4a2c91] px-6 py-12 md:mt-20 md:px-12 md:py-16">
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_82%_12%,_#7c51da_0%,_transparent_28%),radial-gradient(circle_at_15%_85%,_#6440ba_0%,_transparent_34%)] pointer-events-none" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
@@ -1527,8 +1527,8 @@ export default function Home() {
         </section>
 
         {/* 6. ROOMS */}
-        <section className="py-8 md:py-12 bg-white" id="rooms">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+        <section className="bg-white" id="rooms">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#25115d_55%,_#5632a9_100%)] px-7 py-12 text-white md:px-14 md:py-16">
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_90%_20%,_#8c65e6_0%,_transparent_30%),radial-gradient(circle_at_15%_90%,_#6335b7_0%,_transparent_30%)] pointer-events-none" />
             <div className="relative z-10 grid lg:grid-cols-[0.78fr_1.22fr] items-center gap-10 lg:gap-16">
               <motion.div
@@ -1589,8 +1589,8 @@ export default function Home() {
         </section>
 
         {/* 7. PLAY */}
-        <section className="py-8 md:py-12 bg-white" id="play">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] border border-[#ece7f3] bg-white px-7 py-12 md:px-14 md:py-16 text-[#201636] shadow-[0_18px_45px_rgba(57,37,88,0.06)]">
+        <section className="bg-white" id="play">
+          <div className="relative w-full overflow-hidden bg-white px-7 py-12 text-[#201636] md:px-14 md:py-16">
             <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#e5f0ff] blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
@@ -1690,8 +1690,8 @@ export default function Home() {
         </section>
 
         {/* 8. DISCOVERY */}
-        <section className="py-8 md:py-12 bg-white" id="discovery">
-          <div className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 md:px-14 md:py-16 text-white">
+        <section className="bg-white" id="discovery">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 text-white md:px-14 md:py-16">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
             <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -1729,12 +1729,12 @@ export default function Home() {
         </section>
 
         {/* 10. FINAL CTA */}
-        <section className="py-8 md:py-12 bg-white" id="better-together">
+        <section className="bg-white" id="better-together">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,_#0b0425_0%,_#1c0d4a_48%,_#452184_100%)] px-7 py-16 md:px-14 md:py-20 text-center text-white"
+            className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#0b0425_0%,_#1c0d4a_48%,_#452184_100%)] px-7 py-16 text-center text-white md:px-14 md:py-20"
           >
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_18%_15%,_#4c2b98_0%,_transparent_28%),radial-gradient(circle_at_82%_85%,_#8762d7_0%,_transparent_28%)] pointer-events-none" />
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
