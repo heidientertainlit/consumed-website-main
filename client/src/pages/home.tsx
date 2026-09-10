@@ -822,9 +822,10 @@ export default function Home() {
       
       {/* 1. Navigation */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"}`}>
-        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-end">
-          <div className="flex w-full items-center gap-3 md:gap-4">
-            <div className="hidden sm:flex items-center gap-1.5 mr-auto">
+        <div className="container mx-auto flex max-w-7xl items-center justify-between px-6">
+          <img src={logoPurple} alt="Consumed" className="h-9 w-auto sm:h-10 md:h-11" />
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="hidden items-center gap-1 sm:flex">
               <a href="https://instagram.com/consumedapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors" data-testid="link-nav-instagram">
                 <Instagram className="w-4 h-4" />
               </a>
@@ -837,7 +838,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="ml-auto p-2 hover:bg-black/5 rounded-full transition-colors sm:ml-0"
+              className="rounded-full p-2 transition-colors hover:bg-black/5"
               aria-label="Menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -893,11 +894,16 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center md:-translate-x-6"
             >
-              <div className="mb-0 mt-1 flex items-center justify-center md:mt-2">
-                <img src={logoPurple} alt="Consumed" className="h-[5.25rem] w-auto md:h-24 lg:h-[6.5rem]" />
-              </div>
+              <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#6b6472] md:text-3xl lg:text-4xl">
+                Entertainment is about to get more{" "}
+                <span className="inline-block font-heading text-[1.18em] font-normal italic text-primary">social.</span>
+              </h1>
+              <p className="mx-auto mt-4 max-w-3xl text-center font-sans text-sm leading-[1.45] text-[#6f6876] md:text-base">
+                <span className="block">The social app for everything you watch,</span>
+                <span className="block">read, listen to &amp; play.</span>
+              </p>
 
-              <div className="mt-1 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-2 md:text-[8px]">
+              <div className="mt-7 grid w-full max-w-[440px] grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
                 {[
                   { label: "Movies", Icon: Clapperboard },
                   { label: "TV", Icon: Tv },
@@ -928,17 +934,6 @@ export default function Home() {
               </div>
 
             </motion.div>
-          </div>
-          <div className="mt-14 w-full px-6 py-4 md:mt-20 md:px-10 lg:px-14">
-            <div className="mx-auto mb-6 w-full max-w-5xl border-t border-[#e8e0f4]" />
-            <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#6b6472] md:text-3xl lg:text-4xl">
-              Entertainment is about to get more{" "}
-              <span className="inline-block font-heading text-[1.18em] font-normal italic text-primary">social.</span>
-            </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-center font-sans text-sm leading-[1.45] text-[#6f6876] md:text-base">
-              <span className="block">The social app for everything you watch,</span>
-              <span className="block">read, listen to &amp; play.</span>
-            </p>
           </div>
         </section>
 
