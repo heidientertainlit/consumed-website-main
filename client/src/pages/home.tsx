@@ -1454,11 +1454,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl"
             >
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#cfc3ff]">The social layer of your taste</p>
+              <p className="mb-4 text-xs font-light uppercase tracking-[0.18em] text-[#cfc3ff]">The social layer of your taste</p>
               <h2 className="max-w-xl font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
                 Okay, yeah. <span className="italic text-[#cfc3ff]">You&apos;re my people.</span>
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
                 Your Entertainment DNA profile doesn&apos;t just tell you about you. It shows you who you click with — and why. Same comfort show? Same genre rabbit hole? Same movie neither of you will accept criticism of?
               </p>
             </motion.div>
