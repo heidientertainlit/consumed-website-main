@@ -992,7 +992,7 @@ export default function Home() {
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-16 md:w-[4.5rem] lg:w-20 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
+                  className="-ml-1 w-16 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)] md:-ml-2 md:w-[4.5rem] lg:w-20"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
