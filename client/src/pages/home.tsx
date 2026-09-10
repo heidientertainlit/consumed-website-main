@@ -948,17 +948,17 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="relative mx-auto max-w-3xl text-center"
               >
-                <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
+                <div className="pointer-events-none absolute inset-0 block" aria-hidden="true">
                   {[
-                    { text: "I can’t remember…", className: "-left-16 -top-8" },
-                    { text: "Sara suggested this", className: "-right-20 -top-14" },
-                    { text: "Mark said he liked it", className: "left-[58%] -top-20" },
-                    { text: "saved in Notes?", className: "left-[8%] -top-28" },
-                    { text: "was it a screenshot?", className: "right-[8%] -top-36" },
+                    { text: "I can’t remember…", className: "left-[3%] -top-8 md:-left-16" },
+                    { text: "Sara suggested this", className: "right-[2%] -top-12 md:-right-20 md:-top-14" },
+                    { text: "Mark said he liked it", className: "left-[48%] -top-16 md:left-[58%] md:-top-20" },
+                    { text: "saved in Notes?", className: "left-[12%] -top-20 md:left-[8%] md:-top-28" },
+                    { text: "was it a screenshot?", className: "right-[10%] -top-28 md:right-[8%] md:-top-36" },
                   ].map((thought, index) => (
                     <motion.span
                       key={thought.text}
-                      className={`absolute rounded-full border border-white/70 bg-white/55 px-3 py-1.5 font-sans text-[11px] font-medium text-[#6f617b]/55 shadow-[0_8px_24px_rgba(60,43,78,0.05)] backdrop-blur-sm ${thought.className}`}
+                      className={`absolute whitespace-nowrap rounded-full border border-white/70 bg-white/55 px-2.5 py-1 font-sans text-[9px] font-medium text-[#6f617b]/55 shadow-[0_8px_24px_rgba(60,43,78,0.05)] backdrop-blur-sm md:px-3 md:py-1.5 md:text-[11px] ${thought.className}`}
                       animate={{ y: [38, -58], x: [0, index % 2 === 0 ? 10 : -10], opacity: [0, 0.52, 0.42, 0] }}
                       transition={{ duration: 7 + index * 0.35, repeat: Infinity, delay: index * 1.05, ease: "easeOut" }}
                     >
@@ -966,13 +966,13 @@ export default function Home() {
                     </motion.span>
                   ))}
                   {[
-                    { Icon: Heart, className: "left-[28%] -top-16", color: "text-[#ad6a96]", delay: 0.7 },
-                    { Icon: ThumbsUp, className: "right-[27%] -top-32", color: "text-[#7251c7]", delay: 2.1 },
-                    { Icon: Heart, className: "right-[3%] -top-10", color: "text-[#ad6a96]", delay: 3.4 },
+                    { Icon: Heart, className: "left-[34%] -top-12 md:left-[28%] md:-top-16", color: "text-[#ad6a96]", delay: 0.7 },
+                    { Icon: ThumbsUp, className: "right-[30%] -top-24 md:right-[27%] md:-top-32", color: "text-[#7251c7]", delay: 2.1 },
+                    { Icon: Heart, className: "right-[5%] -top-8 md:right-[3%] md:-top-10", color: "text-[#ad6a96]", delay: 3.4 },
                   ].map(({ Icon, className, color, delay }, index) => (
                     <motion.span
                       key={`${className}-${index}`}
-                      className={`absolute flex h-8 w-8 items-center justify-center rounded-full border border-white/75 bg-white/60 shadow-[0_8px_24px_rgba(60,43,78,0.07)] backdrop-blur-sm ${color} ${className}`}
+                      className={`absolute flex h-7 w-7 items-center justify-center rounded-full border border-white/75 bg-white/60 shadow-[0_8px_24px_rgba(60,43,78,0.07)] backdrop-blur-sm md:h-8 md:w-8 ${color} ${className}`}
                       animate={{ y: [34, -60], x: [0, index % 2 === 0 ? -8 : 8], rotate: [0, index % 2 === 0 ? -8 : 8], opacity: [0, 0.52, 0.4, 0] }}
                       transition={{ duration: 7.4 + index * 0.5, repeat: Infinity, delay, ease: "easeOut" }}
                     >
