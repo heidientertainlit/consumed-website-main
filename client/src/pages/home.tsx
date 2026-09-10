@@ -1212,6 +1212,18 @@ export default function Home() {
                   <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
                     Your Entertainment DNA evolves with every movie, book, podcast, and more you consume.
                   </p>
+                  <p className="mt-3 font-sans text-sm font-semibold text-[#493f51] sm:text-base">
+                    Ready to find out yours?
+                  </p>
+                  <a
+                    href="https://app.consumedapp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
+                    data-testid="link-learn-entertainment-dna"
+                  >
+                    Learn my Entertainment DNA Profile
+                  </a>
                 </motion.div>
 
                 {false && (
