@@ -986,9 +986,6 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <h1 className="mb-2 font-sans text-[10px] font-light uppercase leading-relaxed tracking-[0.2em] text-foreground/65 sm:text-xs">
-                The social app for all your entertainment.
-              </h1>
               <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
@@ -1000,7 +997,10 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <p className="mb-6 mt-3 max-w-2xl text-xs leading-relaxed text-foreground/80 md:text-sm">
+              <h1 className="mt-2 font-sans text-[10px] font-light uppercase leading-relaxed tracking-[0.2em] text-foreground/65 sm:text-xs">
+                The social app for all your entertainment.
+              </h1>
+              <p className="mb-6 mt-4 max-w-2xl text-sm leading-relaxed text-foreground/90 md:text-base">
                 See what your friends are into, find your next obsession,
                 <span className="block">and discover your Entertainment DNA profile.</span>
               </p>
