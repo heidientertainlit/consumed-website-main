@@ -989,13 +989,13 @@ export default function Home() {
               <h1 className="mb-2 font-sans text-[10px] font-light uppercase leading-relaxed tracking-[0.2em] text-foreground/65 sm:text-xs">
                 The social app for all your entertainment.
               </h1>
-              <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
+              <div className="mb-0 mt-2 flex items-center justify-start gap-1 md:gap-2">
+                <img src={logoPurple} alt="Consumed" className="h-20 w-auto md:h-24 lg:h-28" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
                   aria-hidden="true"
-                  className="w-16 md:w-[4.5rem] lg:w-20 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)]"
+                  className="w-20 drop-shadow-[0_12px_24px_rgba(121,83,213,0.16)] md:w-24 lg:w-28"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
