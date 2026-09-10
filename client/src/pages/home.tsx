@@ -984,9 +984,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left"
+              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <div className="mb-0 mt-3 flex items-center justify-center gap-1 md:mt-4 md:gap-2 lg:justify-start">
+              <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
@@ -1008,7 +1008,7 @@ export default function Home() {
                 <span className="block">and discover your Entertainment DNA profile.</span>
               </p>
 
-              <div className="mb-5 flex flex-row items-center justify-center gap-2 sm:gap-4 lg:justify-start">
+              <div className="mb-5 flex flex-row items-center justify-start gap-2 sm:gap-4">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
                   href="https://app.consumedapp.com"
