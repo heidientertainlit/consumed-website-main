@@ -763,7 +763,7 @@ function SocialFeedSection() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-foreground/70 md:text-lg"
+          className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-foreground/70 sm:text-base"
         >
           See what your friends are watching, reading, listening to, and playing — and what they actually thought about it.
         </motion.p>
@@ -1030,9 +1030,6 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="mx-auto max-w-3xl text-center"
               >
-                <p className="mb-4 text-[10px] font-light uppercase tracking-[0.24em] text-[#746a7c] sm:text-xs">
-                  Why Consumed?
-                </p>
                 <WantedActionHeadline />
                 <p className="mx-auto mt-6 max-w-2xl font-sans text-sm leading-relaxed text-[#493f51] sm:text-base">
                   Somewhere between the group chats, screenshots, Notes app lists, and way too many apps, our entertainment lives got scattered everywhere.{" "}
