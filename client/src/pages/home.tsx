@@ -748,7 +748,7 @@ function SocialFeedSection() {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-white px-6 pb-8 pt-16 md:pb-10 md:pt-20" id="chatter">
+    <div className="relative overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#faf8f5_22%,_#ffffff_48%,_#ffffff_100%)] px-6 pb-8 pt-24 md:pb-10 md:pt-32" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
       <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
@@ -1143,7 +1143,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="h-16 bg-gradient-to-b from-[#f5f2ed] to-white md:h-24" aria-hidden="true" />
           </div>
         </section>
 
