@@ -987,7 +987,7 @@ export default function Home() {
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
               <h1 className="mb-2 font-sans text-[10px] font-light uppercase leading-relaxed tracking-[0.2em] text-foreground/65 sm:text-xs">
-                The social app for everything you watch, read, listen to &amp; play.
+                The social app for all your entertainment.
               </h1>
               <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
                 <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
