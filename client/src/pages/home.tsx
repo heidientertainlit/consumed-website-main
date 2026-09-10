@@ -1505,7 +1505,6 @@ export default function Home() {
                   description: "Compare your Entertainment DNA profiles to see what you have in common — and where you absolutely do not.",
                   content: (
                     <div className="relative mt-7 flex min-h-[190px] items-center justify-center overflow-hidden rounded-[1.35rem] bg-white/70 text-[#271b3d]">
-                      <motion.div className="absolute h-40 w-40 rounded-full border border-[#d6c5ed]" animate={{ scale: [0.86, 1.08, 0.86], opacity: [0.45, 0.9, 0.45] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} />
                       <div className="relative text-center">
                         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#80639d]">Ashley H. + you</p>
                         <div className="mt-2 flex items-baseline justify-center"><CountUp value={77} /><span className="font-heading text-3xl text-[#7044a5]">%</span></div>
@@ -1535,7 +1534,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.12, duration: 0.65 }}
-                  className="relative rounded-[1.75rem] border border-[#e5ded2] bg-[#f7f3ec] p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6"
+                  className="relative rounded-[1.75rem] border border-[#ebe7e1] bg-[#fbfaf8] p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6"
                 >
                   <div className="flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ebe3d7]" style={{ color: "#65448d" }}><concept.icon className="h-4 w-4" /></span>
