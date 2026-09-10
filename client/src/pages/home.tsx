@@ -986,8 +986,8 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-start text-left lg:mx-0"
             >
-              <div className="relative -top-4 mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
-                <img src={logoPurple} alt="Consumed" className="h-[4.4rem] w-auto md:h-20 lg:h-[5.5rem]" />
+              <div className="mb-0 mt-3 flex items-center justify-start gap-1 md:mt-4 md:gap-2">
+                <img src={logoPurple} alt="Consumed" className="h-16 md:h-[4.5rem] lg:h-20 w-auto" />
                 <motion.img
                   src={neonSmiley}
                   alt=""
