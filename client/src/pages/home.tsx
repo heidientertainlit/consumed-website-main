@@ -912,7 +912,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <p className="mx-auto mt-6 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
+              <p className="mx-auto mt-7 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
                 THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
               </p>
 
@@ -940,7 +940,7 @@ export default function Home() {
         {/* 3. TAKES FEED */}
         <section className="relative w-full" id="how-it-works">
           <div className="overflow-hidden">
-            <div className="h-16 bg-gradient-to-b from-white to-[#f5f2ed] md:h-24" aria-hidden="true" />
+            <div className="h-12 bg-gradient-to-b from-white to-[#f5f2ed] md:h-16" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
