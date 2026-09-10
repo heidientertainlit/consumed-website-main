@@ -1463,7 +1463,20 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="mt-14 grid gap-5 md:grid-cols-3 md:gap-0">
+            <motion.a
+              href="https://app.consumedapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
+              data-testid="link-compare-our-dna"
+            >
+              Compare your DNA with a friend <ArrowRight className="h-4 w-4" />
+            </motion.a>
+
+            <div className="mt-14 grid gap-5 md:grid-cols-3">
               {[
                 {
                   label: "Friends", icon: Users, number: "01", accent: "#cbb6ff",
@@ -1520,7 +1533,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.12, duration: 0.65 }}
-                  className={`relative ${index > 0 ? "md:border-l md:border-white/15 md:pl-5" : ""} ${index < 2 ? "md:pr-5" : ""}`}
+                  className="relative rounded-[1.75rem] border border-white/10 bg-white/[0.08] p-5 shadow-[0_18px_45px_rgba(5,2,20,0.16)] backdrop-blur-sm md:p-6"
                 >
                   <div className="flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10" style={{ color: concept.accent }}><concept.icon className="h-4 w-4" /></span>
@@ -1533,7 +1546,6 @@ export default function Home() {
               ))}
             </div>
 
-            <motion.a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95" data-testid="link-compare-our-dna">Compare your DNA <ArrowRight className="h-4 w-4" /></motion.a>
           </div>
         </section>
 
