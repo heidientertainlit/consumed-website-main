@@ -1213,7 +1213,7 @@ export default function Home() {
                     Your Entertainment DNA evolves with every movie, book, podcast, and more you consume. Ready to find out yours?
                   </p>
                   <a
-                    href="https://app.consumedapp.com"
+                    href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-5 inline-flex items-center justify-center rounded-full bg-[#3a2496] px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2e1c78] active:scale-95"
