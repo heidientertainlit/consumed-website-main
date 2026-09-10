@@ -835,19 +835,6 @@ export default function Home() {
                 <TikTok className="w-4 h-4" />
               </a>
             </div>
-            <span className="hidden sm:block w-px h-5 bg-border" />
-            <a
-              href="https://app.consumedapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
-              data-testid="link-web-app"
-            >
-              Open web app
-            </a>
-            <div className="hidden sm:block">
-              <AppStoreButton />
-            </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="ml-auto p-2 hover:bg-black/5 rounded-full transition-colors sm:ml-0"
@@ -904,7 +891,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center"
+              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center md:-translate-x-6"
             >
               <div className="mb-0 mt-1 flex items-center justify-center md:mt-2">
                 <img src={logoPurple} alt="Consumed" className="h-[5.25rem] w-auto md:h-24 lg:h-[6.5rem]" />
@@ -944,8 +931,9 @@ export default function Home() {
           </div>
           <div className="mt-14 w-full px-6 py-4 md:mt-20 md:px-10 lg:px-14">
             <div className="mx-auto mb-6 w-full max-w-5xl border-t border-[#e8e0f4]" />
-            <h1 className="mx-auto max-w-4xl text-center font-heading text-4xl font-normal italic leading-[0.98] text-[#40384b] sm:text-5xl lg:text-7xl">
-              Entertainment is about to get more social.
+            <h1 className="mx-auto max-w-4xl text-center font-sans text-2xl font-medium leading-[1.15] tracking-tight text-[#40384b] md:text-3xl lg:text-4xl">
+              Entertainment is about to get more{" "}
+              <span className="font-heading font-normal italic text-primary">social.</span>
             </h1>
             <p className="mx-auto mt-3 max-w-3xl text-center font-sans text-xs leading-relaxed text-[#6f6876] md:text-sm">
               Movies, TV, books, podcasts, music &amp; more — all in one place.
