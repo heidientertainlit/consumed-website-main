@@ -997,10 +997,12 @@ export default function Home() {
                   transition={{ duration: 2.6, ease: "easeInOut", repeat: Infinity }}
                 />
               </div>
-              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-heading text-[1.1rem] font-normal leading-[1.2] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.35rem] lg:text-[1.7rem]">
-                The social app for everything you watch,{" "}
-                <br />
-                read, listen to &amp; play.
+              <h1 className="-mt-1 mb-6 w-full max-w-[680px] text-left font-sans text-[1.1rem] font-medium leading-[1.25] tracking-tight text-[#574f63] md:-mt-2 md:mb-7 md:text-[1.35rem] lg:text-[1.7rem]">
+                Entertainment is about to get{" "}
+                <span className="font-heading font-normal italic">more social.</span>
+                <span className="mt-3 block text-[0.78rem] font-normal leading-relaxed tracking-normal text-[#6f6876] md:text-[0.9rem] lg:text-base">
+                  Movies, TV, books, podcasts, music &amp; more — all in one place.
+                </span>
               </h1>
 
               <div className="mb-5 flex flex-row items-center justify-start gap-2 sm:gap-4">
