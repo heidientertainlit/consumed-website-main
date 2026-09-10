@@ -1198,7 +1198,7 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
-            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#f5f2ed] px-6 py-12 md:px-12 md:py-16">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#fbfaf8] px-6 py-12 md:px-12 md:py-16">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,_rgba(139,92,246,0.08),_transparent_28%),radial-gradient(circle_at_15%_85%,_rgba(236,72,153,0.05),_transparent_34%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
