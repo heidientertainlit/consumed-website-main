@@ -1617,6 +1617,30 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto grid max-w-5xl items-center gap-7 text-center md:grid-cols-[1fr_auto] md:text-left"
+          >
+              <div>
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7251c7]">Build it with us</p>
+                <h3 className="font-heading text-2xl font-normal text-[#211a2a] md:text-3xl">Help us make Consumed better.</h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#62586a] md:text-base">
+                  Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
+                </p>
+              </div>
+              <Link
+                href="/feedback"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#4b2aa8] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#3d218d]"
+                data-testid="link-beta-feedback"
+              >
+                Share feedback <ArrowRight className="w-4 h-4" />
+              </Link>
+          </motion.div>
+        </section>
+
         {/* 10. FINAL CTA */}
         <section className="bg-white" id="better-together">
           <motion.div
@@ -1643,30 +1667,6 @@ export default function Home() {
               </div>
             </div>
 
-          </motion.div>
-        </section>
-
-        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mx-auto grid max-w-5xl items-center gap-7 text-center md:grid-cols-[1fr_auto] md:text-left"
-          >
-              <div>
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7251c7]">Build it with us</p>
-                <h3 className="font-heading text-2xl font-normal text-[#211a2a] md:text-3xl">Help us make Consumed better.</h3>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#62586a] md:text-base">
-                  Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
-                </p>
-              </div>
-              <Link
-                href="/feedback"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#4b2aa8] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#3d218d]"
-                data-testid="link-beta-feedback"
-              >
-                Share feedback <ArrowRight className="w-4 h-4" />
-              </Link>
           </motion.div>
         </section>
 
