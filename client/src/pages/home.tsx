@@ -1373,10 +1373,6 @@ export default function Home() {
         </section>
 
         {/* 5. FRIENDS + DNA MATCHING */}
-        <div
-          className="h-20 w-full bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#f3eff5_28%,_#ded6e5_52%,_#aa9bb9_72%,_#604d78_88%,_#10062d_100%)] md:h-28"
-          aria-hidden="true"
-        />
         <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
           <motion.div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full border border-white/10" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: "linear" }} />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c17dff]/10 blur-3xl" animate={{ y: [-12, 12, -12], scale: [1, 1.08, 1] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} />
@@ -1480,10 +1476,6 @@ export default function Home() {
 
           </div>
         </section>
-        <div
-          className="h-20 w-full bg-[linear-gradient(to_bottom,_#2a155f_0%,_#594477_24%,_#9586a5_48%,_#cbc2d2_70%,_#eeeaf0_88%,_#ffffff_100%)] md:h-28"
-          aria-hidden="true"
-        />
 
         {/* 6. PLAY */}
         <section className="bg-white" id="play">
@@ -1588,10 +1580,6 @@ export default function Home() {
 
         {/* 8. DISCOVERY */}
         <section className="bg-white" id="discovery">
-          <div
-            className="h-32 w-full bg-[linear-gradient(to_bottom,_#ffffff_0%,_#faf8fc_18%,_#f0ebf5_36%,_#ded5e7_54%,_#bbaaca_70%,_#87709f_83%,_#4e376f_93%,_#10062d_100%)] md:h-40"
-            aria-hidden="true"
-          />
           <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 text-white md:px-14 md:py-16">
             <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
 
@@ -1657,11 +1645,6 @@ export default function Home() {
 
           </motion.div>
         </section>
-
-        <div
-          className="h-20 w-full bg-[linear-gradient(to_bottom,_#452184_0%,_#72569b_28%,_#a794b8_52%,_#d3c7d6_74%,_#eee8e9_90%,_#f5f2ed_100%)] md:h-28"
-          aria-hidden="true"
-        />
 
         <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
           <motion.div
