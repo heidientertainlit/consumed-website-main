@@ -748,7 +748,7 @@ function SocialFeedSection() {
   ];
 
   return (
-    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#faf8f5_22%,_#ffffff_48%,_#ffffff_100%)] px-6 pb-8 pt-24 md:pb-10 md:pt-32" id="chatter">
+    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#faf7f5_28%,_#f8f3f8_62%,_#f2eaf7_100%)] px-6 pb-8 pt-24 md:pb-10 md:pt-32" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_22%,_rgba(139,92,246,0.10),_transparent_30%),radial-gradient(circle_at_10%_85%,_rgba(236,72,153,0.07),_transparent_28%)]" />
       <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
@@ -1150,8 +1150,7 @@ export default function Home() {
         <section className="relative z-20 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
-            <div className="relative left-1/2 h-16 w-screen -translate-x-1/2 bg-gradient-to-b from-white to-[#fbfaf8] md:h-24" aria-hidden="true" />
-            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#fbfaf8] px-6 py-12 md:px-12 md:py-16">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 py-12 md:px-12 md:py-16">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,_rgba(139,92,246,0.08),_transparent_28%),radial-gradient(circle_at_15%_85%,_rgba(236,72,153,0.05),_transparent_34%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
