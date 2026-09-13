@@ -1582,7 +1582,11 @@ export default function Home() {
         </div>
 
         {/* 6. TRACK EVERYTHING */}
-        <section className="relative order-[-1] w-full overflow-hidden bg-[#f5f2ed] px-7 py-20 text-[#211a2a] md:px-14 md:py-28" id="track-everything">
+        <section
+          className="relative w-full overflow-hidden bg-[#f5f2ed] px-7 py-20 text-[#211a2a] md:px-14 md:py-28"
+          id="track-everything"
+          style={{ order: -1 }}
+        >
           <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#eadfff]/55 blur-3xl" />
           <div className="pointer-events-none absolute -right-36 bottom-0 h-96 w-96 rounded-full bg-[#e4efff]/65 blur-3xl" />
           <div className="relative z-10 mx-auto max-w-7xl">
