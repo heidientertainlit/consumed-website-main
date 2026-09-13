@@ -1027,7 +1027,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mx-auto max-w-4xl text-center lg:order-2 lg:mx-0 lg:text-left"
+              className="mx-auto max-w-4xl text-center lg:order-2 lg:mx-0 lg:-translate-y-16 lg:text-left xl:-translate-y-20"
             >
               <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
                 Okay, so what is Consumed?
