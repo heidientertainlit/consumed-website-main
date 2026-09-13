@@ -1014,10 +1014,7 @@ export default function Home() {
               </div>
               <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg lg:mx-0">
                 <p>
-                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast in your group chat.
-                </p>
-                <p>
-                  Track what you watch, read, listen to, and play. Share recommendations, compare taste profiles, and find your next obsession.
+                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast in your group chat. Track what you watch, read, listen to, and play. Share recommendations, compare taste profiles, and find your next obsession.
                 </p>
                 <p className="font-heading text-xl not-italic text-[#211a2a] md:text-2xl">
                   One app for your whole <span className="italic text-[#7251c7]">entertainment life.</span>
