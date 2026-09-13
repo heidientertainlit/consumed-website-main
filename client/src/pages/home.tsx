@@ -1760,7 +1760,7 @@ export default function Home() {
 
         {/* 6. TRACK EVERYTHING */}
         <section
-          className="relative -mt-10 w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#f6f1f5_12%,_#f5f2ed_30%,_#f5f2ed_100%)] px-7 pb-20 pt-8 text-[#211a2a] md:-mt-16 md:px-14 md:pb-28 md:pt-10"
+          className="relative -mt-10 w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#f6f1f5_12%,_#f5f2ed_30%,_#f5f2ed_100%)] px-7 pb-20 pt-8 text-[#211a2a] md:-mt-28 md:px-14 md:pb-28 md:pt-10 lg:-mt-36"
           id="track-everything"
           style={{ order: -1 }}
         >
