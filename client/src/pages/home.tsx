@@ -1293,19 +1293,19 @@ export default function Home() {
 
         {/* 5. DISCOVERY */}
         <section className="order-3 bg-white" id="discovery">
-          <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#f8f3fa_0%,_#eee7fa_52%,_#e6e7fb_100%)] px-7 py-16 text-[#211a2a] md:px-14 md:py-24">
-            <div className="relative z-10 mx-auto max-w-6xl">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#eee9fa_48%,_#f2eaf7_100%)] px-7 py-16 text-[#211a2a] md:px-14 md:py-24">
+            <div className="relative z-10 mx-auto max-w-6xl text-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Discovery</p>
-                <h2 className="max-w-4xl font-heading text-4xl font-normal leading-[1.02] md:text-6xl lg:text-7xl">
+                <h2 className="mx-auto max-w-5xl font-heading text-4xl font-normal leading-[1.02] md:text-6xl lg:text-7xl">
                   Finding your next obsession{" "}
                   <span className="italic text-[#7251c7]">shouldn&apos;t be this hard.</span>
                 </h2>
-                <p className="mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+                <p className="mx-auto mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
                   Your Entertainment DNA + the people you trust = a better way to find what to watch, read, listen to or play next.
                 </p>
                 <p className="mt-5 font-['Poppins'] text-lg font-bold italic text-[#33263e] md:text-xl">
@@ -1657,7 +1657,7 @@ export default function Home() {
 
         {/* 6. TRACK EVERYTHING */}
         <section
-          className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#f6f1f5_12%,_#f5f2ed_30%,_#f5f2ed_100%)] px-7 pb-20 pt-8 text-[#211a2a] md:px-14 md:pb-28 md:pt-10"
+          className="relative -mt-10 w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#f6f1f5_12%,_#f5f2ed_30%,_#f5f2ed_100%)] px-7 pb-20 pt-8 text-[#211a2a] md:-mt-16 md:px-14 md:pb-28 md:pt-10"
           id="track-everything"
           style={{ order: -1 }}
         >
