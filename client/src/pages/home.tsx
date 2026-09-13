@@ -1043,7 +1043,7 @@ export default function Home() {
         {/* 3. TAKES FEED */}
         <section className="relative order-3 w-full" id="how-it-works">
           <div className="overflow-x-clip overflow-y-visible">
-            <div className="h-12 bg-gradient-to-b from-white to-[#f5f2ed] md:h-16" aria-hidden="true" />
+            <div className="h-16 bg-gradient-to-b from-[#f8f3fa] via-[#f6f1f5] to-[#f5f2ed] md:h-24" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
