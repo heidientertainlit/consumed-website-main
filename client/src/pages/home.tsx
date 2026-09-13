@@ -1007,9 +1007,20 @@ export default function Home() {
                 <br />
                 <span className="italic text-[#7251c7]">Finally in one place.</span>
               </h2>
-              <p className="mx-auto mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
-                Consumed brings together what you&apos;re watching, reading, listening to and playing — plus the people, conversations and recommendations around it.
-              </p>
+              <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+                <p>
+                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about.
+                </p>
+                <p className="font-semibold text-[#45364f]">
+                  Consumed brings all of it — and all of us — together.
+                </p>
+                <p>
+                  Track what you watch, read, listen to and play. See what your friends are into. Talk about it. Find your next obsession. Discover your Entertainment DNA profile. Find people who are into what you&apos;re into. And prove just how much you know.
+                </p>
+                <p className="font-heading text-xl italic text-[#7251c7] md:text-2xl">
+                  One app for your whole entertainment life.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
