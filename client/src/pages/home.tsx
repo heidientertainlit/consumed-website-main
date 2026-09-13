@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Heart, MessageCircle, Star, Share2, TrendingUp, Users, GitCompareArrows, Layers3, ChevronRight } from "lucide-react";
+import { Menu, X, Instagram, ArrowRight, Clapperboard, BookOpen, Headphones, Music2, Tv, Youtube, Gamepad2, ThumbsUp, ThumbsDown, Heart, MessageCircle, Star, Brain, Share2, TrendingUp, Users, GitCompareArrows, Layers3, ChevronRight } from "lucide-react";
 
 import logoPurple from "@assets/consumed_logo_purple_crop_1769629036769.png";
 import heroMaybeSomeday from "@assets/Screenshot_2026-08-22_at_12.08.35_PM_1787422156206.png";
@@ -1776,12 +1776,12 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="relative z-10 mt-10 grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
+            <div className="relative z-10 mt-10 grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-6">
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
+                className="rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:col-span-2"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -1812,7 +1812,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-3"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-3 lg:col-span-2"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -1841,7 +1841,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-2"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-2 lg:col-span-2"
               >
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#109b6c] text-base font-bold text-white">▥</span>
@@ -1874,7 +1874,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.24 }}
-                className="overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] lg:order-4"
+                className="overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] lg:order-4 lg:col-span-3"
               >
                 <div className="bg-[linear-gradient(110deg,_#8d26e8_0%,_#315fef_100%)] px-5 py-5 text-white">
                   <div className="flex items-center gap-2.5">
@@ -1888,6 +1888,40 @@ export default function Home() {
                     { rank: 2, name: "Theo Brooks", handle: "@theoreads", points: "10,925", initial: "T", medal: "#cdd2dc" },
                     { rank: 3, name: "Nia Patel", handle: "@niaplays", points: "8,374", initial: "N", medal: "#df7507" },
                     { rank: 4, name: "Jon Bell", handle: "@jonlistens", points: "7,810", initial: "J", medal: "#a7aab2" },
+                  ].map((leader) => (
+                    <div key={leader.name} className="flex items-center gap-2.5 border-b border-[#ececf0] px-4 py-4 last:border-b-0">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: leader.medal }}>{leader.rank}</span>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f3e9ff] text-xs font-bold text-[#8d26e8]">{leader.initial}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-xs font-bold">{leader.name}</span>
+                        <span className="mt-0.5 block truncate text-[10px] text-[#96979e]">{leader.handle}</span>
+                      </span>
+                      <span className="shrink-0 text-[11px] font-medium text-[#555965]">{leader.points} pts</span>
+                    </div>
+                  ))}
+                </div>
+                <button className="w-full border-t border-[#ececf0] py-4 text-xs font-semibold text-[#9b32df]">Show More⌄</button>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] lg:order-5 lg:col-span-3"
+              >
+                <div className="bg-[linear-gradient(110deg,_#6f27e8_0%,_#d839c8_100%)] px-5 py-5 text-white">
+                  <div className="flex items-center gap-2.5">
+                    <Brain className="h-6 w-6" strokeWidth={1.8} />
+                    <h3 className="text-base font-bold">Top Trivia Players</h3>
+                  </div>
+                </div>
+                <div>
+                  {[
+                    { rank: 1, name: "Zoe Mercer", handle: "@zoeknows", points: "9,840", initial: "Z", medal: "#ffc515" },
+                    { rank: 2, name: "Eli Grant", handle: "@eligotit", points: "8,615", initial: "E", medal: "#cdd2dc" },
+                    { rank: 3, name: "Avery Lane", handle: "@averyanswers", points: "7,290", initial: "A", medal: "#df7507" },
+                    { rank: 4, name: "Sam Rivera", handle: "@samstrivia", points: "6,975", initial: "S", medal: "#a7aab2" },
                   ].map((leader) => (
                     <div key={leader.name} className="flex items-center gap-2.5 border-b border-[#ececf0] px-4 py-4 last:border-b-0">
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: leader.medal }}>{leader.rank}</span>
