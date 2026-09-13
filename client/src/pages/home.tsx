@@ -954,7 +954,43 @@ export default function Home() {
         </section>
 
         {/* 2. WHAT IS CONSUMED */}
-        <section className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#ffffff_0%,_#f8f3fa_100%)] px-7 pb-20 pt-14 text-[#211a2a] md:px-14 md:pb-28 md:pt-20">
+        <section className="relative w-full overflow-x-clip overflow-y-visible bg-[linear-gradient(to_bottom,_#ffffff_0%,_#f8f3fa_100%)] px-7 pb-20 pt-24 text-[#211a2a] md:px-14 md:pb-28 md:pt-28">
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 overflow-visible" aria-hidden="true">
+            {[
+              { title: "Sinners", type: "Movie", Icon: Clapperboard, className: "left-[4%] top-5", delay: 0 },
+              { title: "The White Lotus", type: "TV", Icon: Tv, className: "left-[18%] top-12", delay: 1.1 },
+              { title: "The Women", type: "Book", Icon: BookOpen, className: "left-[34%] top-2", delay: 2.2 },
+              { title: "Crime Junkie", type: "Podcast", Icon: Headphones, className: "left-[49%] top-14", delay: 0.65 },
+              { title: "Cowboy Carter", type: "Music", Icon: Music2, className: "left-[64%] top-4", delay: 1.75 },
+              { title: "Severance", type: "TV", Icon: Tv, className: "left-[78%] top-11", delay: 2.8 },
+              { title: "Mario Kart World", type: "Game", Icon: Gamepad2, className: "right-[2%] top-1", delay: 3.35 },
+            ].map(({ title, type, Icon, className, delay }, index) => (
+              <motion.span
+                key={title}
+                className={`absolute flex items-center gap-2 whitespace-nowrap rounded-full border border-[#ded3ed]/75 bg-white/80 px-3 py-2 text-left shadow-[0_10px_28px_rgba(66,42,94,0.09)] backdrop-blur-sm ${className}`}
+                animate={{
+                  y: [42, -92],
+                  x: [0, index % 2 === 0 ? 9 : -9],
+                  rotate: [0, index % 2 === 0 ? 3 : -3],
+                  opacity: [0, 0.72, 0.6, 0],
+                }}
+                transition={{
+                  duration: 8.5 + (index % 3) * 0.8,
+                  repeat: Infinity,
+                  delay,
+                  ease: "easeOut",
+                }}
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0e8fb] text-[#7251c7]">
+                  <Icon className="h-3.5 w-3.5" strokeWidth={1.7} />
+                </span>
+                <span>
+                  <span className="block font-sans text-[10px] font-semibold leading-none text-[#342a3f]">{title}</span>
+                  <span className="mt-1 block font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#887b91]">{type}</span>
+                </span>
+              </motion.span>
+            ))}
+          </div>
           <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full bg-[#e9ddff]/55 blur-3xl" />
           <div className="relative z-10 mx-auto max-w-6xl">
             <motion.div
