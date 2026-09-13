@@ -767,7 +767,7 @@ function SocialFeedSection() {
   ];
 
   return (
-    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#faf7f5_28%,_#f8f3f8_62%,_#f2eaf7_100%)] px-6 pb-8 pt-24 md:pb-10 md:pt-32" id="chatter">
+    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#f6f2ef_38%,_#f5eff5_72%,_#f2eaf7_100%)] px-6 pb-8 pt-12 md:pb-10 md:pt-16" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,_rgba(139,92,246,0.08),_transparent_34%)]" />
       <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
