@@ -1566,26 +1566,164 @@ export default function Home() {
         </section>
         </div>
 
+        {/* 6. TRACK EVERYTHING */}
+        <section className="relative w-full overflow-hidden bg-[#f5f2ed] px-7 py-20 text-[#211a2a] md:px-14 md:py-28" id="track-everything">
+          <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#eadfff]/55 blur-3xl" />
+          <div className="pointer-events-none absolute -right-36 bottom-0 h-96 w-96 rounded-full bg-[#e4efff]/65 blur-3xl" />
+          <div className="relative z-10 mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mx-auto max-w-5xl text-center"
+            >
+              <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
+                Your entertainment life. All of it.
+              </p>
+              <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
+                Watching it? Reading it?
+                <br />
+                Listening to it? Playing it?
+                <br />
+                <span className="italic text-[#7251c7]">Put it here.</span>
+              </h2>
+              <p className="mx-auto mt-7 max-w-4xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+                Movies, shows, books, podcasts, music, YouTube, games — keep track of what you&apos;re into, what you&apos;ve finished, and what&apos;s next. Rate it, review it, make your lists, and never lose that recommendation someone swore you&apos;d love.
+              </p>
+              <p className="mx-auto mt-5 max-w-3xl font-heading text-xl italic text-[#3e3150] md:text-2xl">
+                One place for all the things that are basically your personality now.
+              </p>
+            </motion.div>
+
+            <div className="mt-14 grid gap-5 lg:grid-cols-[0.8fr_1.3fr_0.9fr]">
+              <motion.article
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="rounded-[1.75rem] border border-[#e2dbe8] bg-white/90 p-6 shadow-[0_20px_50px_rgba(57,39,78,0.10)]"
+              >
+                <div className="flex items-center justify-between">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7251c7]">My library</p>
+                  <span className="text-xs font-semibold text-[#8b8092]">248 titles</span>
+                </div>
+                <div className="mt-6 space-y-3">
+                  {[
+                    { label: "Watching", count: 12, Icon: Tv, color: "#7251c7" },
+                    { label: "Reading", count: 7, Icon: BookOpen, color: "#c45491" },
+                    { label: "Listening", count: 18, Icon: Headphones, color: "#3479c7" },
+                    { label: "Playing", count: 5, Icon: Gamepad2, color: "#d18412" },
+                    { label: "Up next", count: 34, Icon: Layers3, color: "#4f8d6c" },
+                  ].map(({ label, count, Icon, color }) => (
+                    <div key={label} className="flex items-center gap-3 rounded-xl border border-[#eee9f1] bg-[#fbf9fc] px-3.5 py-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white shadow-sm" style={{ color }}>
+                        <Icon className="h-4 w-4" strokeWidth={1.7} />
+                      </span>
+                      <span className="flex-1 text-sm font-semibold">{label}</span>
+                      <span className="text-xs font-bold text-[#8b8092]">{count}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="rounded-[1.75rem] border border-[#e2dbe8] bg-white/90 p-6 shadow-[0_20px_50px_rgba(57,39,78,0.10)]"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7251c7]">Currently consuming</p>
+                    <h3 className="mt-2 font-heading text-2xl">Everything in progress.</h3>
+                  </div>
+                  <span className="rounded-full bg-[#eee6fa] px-3 py-1.5 text-[10px] font-bold text-[#7251c7]">View all</span>
+                </div>
+                <div className="mt-6 space-y-4">
+                  {[
+                    { title: "The White Lotus", type: "Watching · S3 E4", progress: 64, image: heroWhiteLotus, color: "#7251c7" },
+                    { title: "The Women", type: "Reading · 68%", progress: 68, image: heroTheWomen, color: "#c45491" },
+                    { title: "Crime Junkie", type: "Listening · 32 min left", progress: 45, image: heroCrimeJunkie, color: "#3479c7" },
+                  ].map((item) => (
+                    <div key={item.title} className="flex items-center gap-4 rounded-2xl border border-[#eee9f1] bg-[#fbf9fc] p-3">
+                      <img src={item.image} alt="" className="h-20 w-14 shrink-0 rounded-lg object-cover" />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate font-heading text-lg">{item.title}</p>
+                        <p className="mt-1 text-xs text-[#817587]">{item.type}</p>
+                        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#e9e4ec]">
+                          <div className="h-full rounded-full" style={{ width: `${item.progress}%`, backgroundColor: item.color }} />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col rounded-[1.75rem] border border-[#e2dbe8] bg-white/90 p-6 shadow-[0_20px_50px_rgba(57,39,78,0.10)]"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7251c7]">Finished & rated</p>
+                <div className="mt-5 rounded-2xl bg-[#f6f0ff] p-5">
+                  <div className="flex items-start gap-4">
+                    <img src={heroSinners} alt="" className="h-24 w-16 rounded-lg object-cover" />
+                    <div>
+                      <p className="font-heading text-xl">Sinners</p>
+                      <p className="mt-1 text-[11px] text-[#817587]">Movie · Watched</p>
+                      <p className="mt-3 text-sm tracking-[0.08em] text-[#e4a91d]">★★★★½</p>
+                    </div>
+                  </div>
+                  <p className="mt-5 font-heading text-lg italic leading-snug text-[#4d3d5f]">
+                    “I thought I knew what kind of movie I was watching. I absolutely did not.”
+                  </p>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border border-[#eee9f1] bg-[#fbf9fc] p-3 text-center">
+                    <p className="font-heading text-2xl text-[#7251c7]">42</p>
+                    <p className="mt-1 text-[9px] font-bold uppercase tracking-wide text-[#8b8092]">Finished</p>
+                  </div>
+                  <div className="rounded-xl border border-[#eee9f1] bg-[#fbf9fc] p-3 text-center">
+                    <p className="font-heading text-2xl text-[#7251c7]">8</p>
+                    <p className="mt-1 text-[9px] font-bold uppercase tracking-wide text-[#8b8092]">Lists</p>
+                  </div>
+                </div>
+              </motion.article>
+            </div>
+          </div>
+        </section>
+
         {/* 6. PLAY */}
         <section className="bg-white" id="play">
           <div className="relative w-full overflow-hidden bg-white px-7 py-12 text-[#201636] md:px-14 md:py-16">
             <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#e5f0ff] blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 max-w-2xl mx-auto text-center">
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Play</p>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Consuming it is only half the fun.</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                   Don&apos;t just consume it.<br />
                   <span className="italic text-primary">Play along.</span>
                 </h2>
-                <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-foreground/65">
-                  Trivia, predictions, rankings and more ways to make entertainment a little more fun.
-                </p>
+                <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-relaxed text-foreground/65 md:text-lg">
+                  <p className="font-heading text-2xl leading-tight text-[#201636] md:text-3xl">
+                    Think you know entertainment?
+                    <br />
+                    <span className="italic text-primary">Okay, prove it.</span>
+                  </p>
+                  <p>You know who said the line. You called the ending three episodes ago. You know the deep cut, the plot twist, the stat, the song, the character everyone else forgot.</p>
+                  <p className="font-semibold text-[#3e3150]">Now you get credit for it.</p>
+                  <p>Play trivia. Make predictions. Pick a side. Climb the leaderboards. Build your reputation — and prove you know your stuff.</p>
+                  <p>Because loving entertainment is fun. Being right about it? Even better.</p>
+                  <p className="font-heading text-xl italic text-[#3e3150]">Entertainment isn&apos;t a database of titles. It&apos;s something people participate in together.</p>
+                </div>
                 <div className="flex flex-wrap justify-center gap-2 mt-7">
                   {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
                     <span key={mode} className="rounded-full border border-[#e2d8f0] bg-[#f8f4ff] px-3.5 py-1.5 text-xs font-semibold text-primary/80">
