@@ -1776,7 +1776,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="relative z-10 grid md:grid-cols-3 gap-4 md:gap-5 mt-10">
+            <div className="relative z-10 mt-10 grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1812,7 +1812,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-3"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -1841,7 +1841,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6 lg:order-2"
               >
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#109b6c] text-base font-bold text-white">▥</span>
@@ -1867,6 +1867,40 @@ export default function Home() {
                   ))}
                 </ol>
                 <button className="mx-auto mt-auto rounded-full bg-[#10a978] px-5 py-2 text-xs font-semibold text-white">✓ &nbsp; Submit My Ranking</button>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.24 }}
+                className="overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] lg:order-4"
+              >
+                <div className="bg-[linear-gradient(110deg,_#8d26e8_0%,_#315fef_100%)] px-5 py-5 text-white">
+                  <div className="flex items-center gap-2.5">
+                    <Star className="h-6 w-6" strokeWidth={1.8} />
+                    <h3 className="text-base font-bold">Total Consumption Leaders</h3>
+                  </div>
+                </div>
+                <div>
+                  {[
+                    { rank: 1, name: "Maya Chen", handle: "@mayawatches", points: "12,480", initial: "M", medal: "#ffc515" },
+                    { rank: 2, name: "Theo Brooks", handle: "@theoreads", points: "10,925", initial: "T", medal: "#cdd2dc" },
+                    { rank: 3, name: "Nia Patel", handle: "@niaplays", points: "8,374", initial: "N", medal: "#df7507" },
+                    { rank: 4, name: "Jon Bell", handle: "@jonlistens", points: "7,810", initial: "J", medal: "#a7aab2" },
+                  ].map((leader) => (
+                    <div key={leader.name} className="flex items-center gap-2.5 border-b border-[#ececf0] px-4 py-4 last:border-b-0">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: leader.medal }}>{leader.rank}</span>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f3e9ff] text-xs font-bold text-[#8d26e8]">{leader.initial}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-xs font-bold">{leader.name}</span>
+                        <span className="mt-0.5 block truncate text-[10px] text-[#96979e]">{leader.handle}</span>
+                      </span>
+                      <span className="shrink-0 text-[11px] font-medium text-[#555965]">{leader.points} pts</span>
+                    </div>
+                  ))}
+                </div>
+                <button className="w-full border-t border-[#ececf0] py-4 text-xs font-semibold text-[#9b32df]">Show More⌄</button>
               </motion.article>
             </div>
           </div>
