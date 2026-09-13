@@ -462,13 +462,6 @@ function PhoneTrio() {
 
 function ScatteredEntertainmentAnimation() {
   const [hasEntered, setHasEntered] = useState(false);
-  const [cleared, setCleared] = useState(false);
-
-  useEffect(() => {
-    if (!hasEntered) return;
-    const timer = window.setTimeout(() => setCleared(true), 3000);
-    return () => window.clearTimeout(timer);
-  }, [hasEntered]);
 
   const fragments = [
     {
@@ -652,11 +645,11 @@ function ScatteredEntertainmentAnimation() {
   return (
     <motion.div
       initial="hidden"
-      animate={cleared ? "cleared" : hasEntered ? "visible" : "hidden"}
+      animate={hasEntered ? "visible" : "hidden"}
       onViewportEnter={() => setHasEntered(true)}
       viewport={{ once: true, amount: 0.25 }}
       className="relative mx-auto h-[470px] w-full max-w-[680px] sm:h-[520px]"
-      aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps before coming together in Consumed"
+      aria-label="Entertainment recommendations scattered across notes, messages, screenshots, and media apps"
     >
       {fragments.map((fragment, index) => (
         <motion.div
@@ -732,18 +725,6 @@ function ScatteredEntertainmentAnimation() {
         </motion.p>
       ))}
 
-      <div className="pointer-events-none absolute inset-0 z-[100] flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
-          animate={cleared
-            ? { opacity: 1, y: 0, scale: 1, rotate: 0 }
-            : { opacity: 0, y: 180, scale: 0.32, rotate: -5 }}
-          transition={{ type: "spring", stiffness: 155, damping: 15, mass: 0.86 }}
-          className="w-full"
-        >
-          <PhoneTrio />
-        </motion.div>
-      </div>
     </motion.div>
   );
 }
@@ -968,6 +949,41 @@ export default function Home() {
                 ))}
               </div>
 
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 2. WHAT IS CONSUMED */}
+        <section className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#ffffff_0%,_#f8f3fa_100%)] px-7 pb-20 pt-14 text-[#211a2a] md:px-14 md:pb-28 md:pt-20">
+          <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full bg-[#e9ddff]/55 blur-3xl" />
+          <div className="relative z-10 mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl text-left"
+            >
+              <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
+                Okay, so what is Consumed?
+              </p>
+              <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
+                Everything you&apos;re into.
+                <br />
+                <span className="italic text-[#7251c7]">Finally in one place.</span>
+              </h2>
+              <p className="mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+                Consumed brings together what you&apos;re watching, reading, listening to and playing — plus the people, conversations and recommendations around it.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 60, scale: 0.94 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+              className="mx-auto mt-12 max-w-4xl md:mt-16"
+            >
+              <PhoneTrio />
             </motion.div>
           </div>
         </section>
