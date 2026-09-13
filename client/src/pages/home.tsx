@@ -990,7 +990,7 @@ export default function Home() {
 
         <div className="flex w-full flex-col">
         {/* 3. TAKES FEED */}
-        <section className="relative order-2 w-full" id="how-it-works">
+        <section className="relative order-3 w-full" id="how-it-works">
           <div className="overflow-x-clip overflow-y-visible">
             <div className="h-12 bg-gradient-to-b from-white to-[#f5f2ed] md:h-16" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
@@ -1423,10 +1423,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        </div>
 
         {/* 5. FRIENDS + DNA MATCHING */}
-        <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
+        <section className="relative order-2 overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
           <motion.div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full border border-white/10" animate={{ rotate: 360 }} transition={{ duration: 32, repeat: Infinity, ease: "linear" }} />
           <motion.div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c17dff]/10 blur-3xl" animate={{ y: [-12, 12, -12], scale: [1, 1.08, 1] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} />
           <div className="relative z-10 container mx-auto max-w-7xl">
@@ -1529,6 +1528,7 @@ export default function Home() {
 
           </div>
         </section>
+        </div>
 
         {/* 6. PLAY */}
         <section className="bg-white" id="play">
