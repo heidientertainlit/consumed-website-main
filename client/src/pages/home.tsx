@@ -993,8 +993,7 @@ export default function Home() {
                 Okay, so what is Consumed?
               </p>
               <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl">
-                Everything you&apos;re into.
-                <br />
+                Everything you&apos;re into.{" "}
                 <span className="italic text-[#7251c7]">Finally, all in one place.</span>
               </h2>
               <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-7 items-start gap-x-2 text-[7px] font-bold uppercase tracking-[0.06em] text-[#756e7c] sm:text-[8px] md:mt-10 md:gap-x-3 md:text-[9px] lg:mx-0">
