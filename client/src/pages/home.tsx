@@ -941,9 +941,9 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 overflow-visible" aria-hidden="true">
             {[
               { label: "★★★★★", kind: "stars", className: "left-[3%] top-5", delay: 0 },
-              { label: "92% match", kind: "match", className: "left-[29%] top-14", delay: 2.2 },
-              { label: "Prediction locked ✓", kind: "prediction", className: "left-[59%] top-3", delay: 3.35 },
-              { label: "Prestige Detective", kind: "identity", className: "right-[5%] top-16", delay: 4.35 },
+              { label: "92% match", kind: "match", className: "left-[15%] top-14", delay: 2.2 },
+              { label: "Prediction locked ✓", kind: "prediction", className: "left-[29%] top-3", delay: 3.35 },
+              { label: "Prestige Detective", kind: "identity", className: "left-[43%] top-16", delay: 4.35 },
             ].map(({ label, kind, className, delay }, index) => (
               <motion.span
                 key={`${label}-${kind}`}
@@ -1033,7 +1033,7 @@ export default function Home() {
               transition={{ duration: 0.75, ease: "easeOut" }}
               className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:order-1 lg:mt-0"
             >
-              <div className="origin-center lg:-translate-x-20 lg:-translate-y-20 lg:scale-[0.92] xl:-translate-x-24">
+              <div className="origin-center lg:-translate-x-20 lg:-translate-y-32 lg:scale-[0.92] xl:-translate-x-24">
                 <PhoneTrio />
               </div>
             </motion.div>
