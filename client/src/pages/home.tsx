@@ -1003,33 +1003,33 @@ export default function Home() {
               <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
                 Everything you&apos;re into.
                 <br />
-                <span className="italic text-[#7251c7]">Finally in one place.</span>
+                <span className="italic text-[#7251c7]">Finally, all in one place.</span>
               </h2>
+              <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-7 items-start gap-x-2 text-[7px] font-bold uppercase tracking-[0.06em] text-[#756e7c] sm:text-[8px] md:mt-10 md:gap-x-4 md:text-[9px]">
+                {[
+                  { label: "Movies", Icon: Clapperboard },
+                  { label: "TV", Icon: Tv },
+                  { label: "Books", Icon: BookOpen },
+                  { label: "Podcasts", Icon: Headphones },
+                  { label: "Music", Icon: Music2 },
+                  { label: "YouTube", Icon: Youtube },
+                  { label: "Gaming", Icon: Gamepad2 },
+                ].map(({ label, Icon }) => (
+                  <span key={label} className="inline-flex min-w-0 flex-col items-center gap-2 whitespace-nowrap text-center">
+                    <Icon className="h-[18px] w-[18px] text-primary/70 md:h-5 md:w-5" strokeWidth={1.6} aria-hidden="true" />
+                    {label}
+                  </span>
+                ))}
+              </div>
               <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
                 <p>
                   Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about. <span className="font-semibold text-[#45364f]">Consumed brings all of it — and all of us — together.</span>
                 </p>
-                <div className="mx-auto grid w-full max-w-3xl grid-cols-4 items-start gap-x-3 gap-y-5 py-3 text-[8px] font-bold uppercase tracking-[0.08em] text-[#756e7c] sm:grid-cols-7 md:text-[9px]">
-                  {[
-                    { label: "Movies", Icon: Clapperboard },
-                    { label: "TV", Icon: Tv },
-                    { label: "Books", Icon: BookOpen },
-                    { label: "Podcasts", Icon: Headphones },
-                    { label: "Music", Icon: Music2 },
-                    { label: "YouTube", Icon: Youtube },
-                    { label: "Gaming", Icon: Gamepad2 },
-                  ].map(({ label, Icon }) => (
-                    <span key={label} className="inline-flex min-w-0 flex-col items-center gap-2 whitespace-nowrap text-center">
-                      <Icon className="h-[18px] w-[18px] text-primary/70 md:h-5 md:w-5" strokeWidth={1.6} aria-hidden="true" />
-                      {label}
-                    </span>
-                  ))}
-                </div>
                 <p>
                   Track what you watch, read, listen to and play. See what your friends are into. Talk about it. Find your next obsession. Discover your Entertainment DNA profile. Find people who are into what you&apos;re into. And prove just how much you know.
                 </p>
-                <p className="font-heading text-xl italic text-[#7251c7] md:text-2xl">
-                  One app for your whole entertainment life.
+                <p className="font-heading text-xl not-italic text-[#211a2a] md:text-2xl">
+                  One app for your whole <span className="italic text-[#7251c7]">entertainment life.</span>
                 </p>
               </div>
             </motion.div>
