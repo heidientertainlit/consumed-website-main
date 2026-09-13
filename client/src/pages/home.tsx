@@ -961,7 +961,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-4xl text-left"
+              className="mx-auto max-w-4xl text-center"
             >
               <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
                 Okay, so what is Consumed?
@@ -971,7 +971,7 @@ export default function Home() {
                 <br />
                 <span className="italic text-[#7251c7]">Finally in one place.</span>
               </h2>
-              <p className="mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+              <p className="mx-auto mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
                 Consumed brings together what you&apos;re watching, reading, listening to and playing — plus the people, conversations and recommendations around it.
               </p>
             </motion.div>
