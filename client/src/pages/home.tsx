@@ -1723,22 +1723,19 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-xs font-bold tracking-[0.18em] uppercase text-primary/70 mb-4">Consuming it is only half the fun.</p>
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary/70">
+                  Don&apos;t just consume it.
+                  <br />
+                  Play along.
+                </p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  Don&apos;t just consume it.<br />
-                  <span className="italic text-primary">Play along.</span>
+                  Think you know entertainment?
+                  <br />
+                  <span className="italic text-primary">Okay, prove it.</span>
                 </h2>
                 <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-relaxed text-foreground/65 md:text-lg">
-                  <p className="font-heading text-2xl leading-tight text-[#201636] md:text-3xl">
-                    Think you know entertainment?
-                    <br />
-                    <span className="italic text-primary">Okay, prove it.</span>
-                  </p>
-                  <p>You know who said the line. You called the ending three episodes ago. You know the deep cut, the plot twist, the stat, the song, the character everyone else forgot.</p>
-                  <p className="font-semibold text-[#3e3150]">Now you get credit for it.</p>
-                  <p>Play trivia. Make predictions. Pick a side. Climb the leaderboards. Build your reputation — and prove you know your stuff.</p>
-                  <p>Because loving entertainment is fun. Being right about it? Even better.</p>
-                  <p className="font-heading text-xl italic text-[#3e3150]">Entertainment isn&apos;t a database of titles. It&apos;s something people participate in together.</p>
+                  <p>You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.</p>
+                  <p className="font-heading text-xl italic text-[#3e3150]">Consuming what you watch, read, listen to, and play ... is just half the fun.</p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 mt-7">
                   {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
