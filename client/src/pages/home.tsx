@@ -1992,8 +1992,8 @@ export default function Home() {
                 Entertainment is about to get more{" "}
                 <span className="italic text-[#d8ceff]">social.</span>
               </h2>
-              <p className="mt-5 text-xl md:text-2xl font-heading text-[#d8ceff]">
-                Track it. Talk about it. Find your people.
+              <p className="mt-5 max-w-3xl text-xl md:text-2xl font-heading text-[#d8ceff]">
+                And we can&apos;t wait for you to join us. Come see what everyone&apos;s into, find your people, and help shape what Consumed becomes.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-9">
                 <a href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95">
