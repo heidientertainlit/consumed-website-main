@@ -1922,7 +1922,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative order-1 w-[82vw] max-w-[360px] shrink-0 snap-center rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.14)] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
+                className="relative order-1 w-[82vw] max-w-[360px] shrink-0 snap-center rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -1953,7 +1953,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="relative order-5 flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.14)] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
+                className="relative order-5 flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
@@ -1982,7 +1982,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="relative order-3 flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.14)] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
+                className="relative order-3 flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] transition-transform hover:z-20 hover:-translate-y-1 md:p-6"
               >
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#109b6c] text-base font-bold text-white">▥</span>
@@ -2015,7 +2015,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.24 }}
-                className="relative order-2 w-[82vw] max-w-[360px] shrink-0 snap-center overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.14)] transition-transform hover:z-20 hover:-translate-y-1"
+                className="relative order-2 w-[82vw] max-w-[360px] shrink-0 snap-center overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] transition-transform hover:z-20 hover:-translate-y-1"
               >
                 <div className="bg-[linear-gradient(110deg,_#8d26e8_0%,_#315fef_100%)] px-5 py-5 text-white">
                   <div className="flex items-center gap-2.5">
@@ -2049,7 +2049,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="relative order-4 w-[82vw] max-w-[360px] shrink-0 snap-center overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.14)] transition-transform hover:z-20 hover:-translate-y-1"
+                className="relative order-4 w-[82vw] max-w-[360px] shrink-0 snap-center overflow-hidden rounded-[1.7rem] border border-[#e3e3e8] bg-white text-[#111727] transition-transform hover:z-20 hover:-translate-y-1"
               >
                 <div className="bg-[linear-gradient(110deg,_#6f27e8_0%,_#d839c8_100%)] px-5 py-5 text-white">
                   <div className="flex items-center gap-2.5">
