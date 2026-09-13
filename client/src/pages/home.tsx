@@ -988,8 +988,9 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="flex w-full flex-col">
         {/* 3. TAKES FEED */}
-        <section className="relative w-full" id="how-it-works">
+        <section className="relative order-2 w-full" id="how-it-works">
           <div className="overflow-x-clip overflow-y-visible">
             <div className="h-12 bg-gradient-to-b from-white to-[#f5f2ed] md:h-16" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
@@ -1198,7 +1199,7 @@ export default function Home() {
         </section>
 
         {/* 4. SOCIAL FEED */}
-        <section className="relative z-20 bg-transparent" id="categories">
+        <section className="relative z-20 order-1 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
             <SocialFeedSection />
             <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 py-12 md:px-12 md:py-16">
@@ -1422,6 +1423,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* 5. FRIENDS + DNA MATCHING */}
         <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_52%,_#4e2a9a_100%)] px-6 py-20 text-white md:py-28" id="taste-match">
