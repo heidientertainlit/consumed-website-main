@@ -1733,8 +1733,8 @@ export default function Home() {
                 </h2>
                 <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-relaxed text-foreground/65 md:text-lg">
                   <p>
-                    You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.
-                    <span className="mt-4 block font-sans font-bold italic text-[#3e3150]">Consuming what you watch, read, listen to, and play ... is just half the fun.</span>
+                    You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.{" "}
+                    <span className="font-sans font-bold italic text-[#3e3150]">Consuming what you watch, read, listen to, and play ... is just half the fun.</span>
                   </p>
                 </div>
               </motion.div>
