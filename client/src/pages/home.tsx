@@ -194,26 +194,27 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h1 className="mx-auto w-full max-w-4xl text-left font-heading text-[2.1rem] font-normal leading-[0.98] tracking-tight text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
-      Admit it, that{" "}
-      <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
-        <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
-          YouTube rabbit hole
+    <h1 className="mx-auto w-full max-w-[1000px] text-left font-heading text-[2.1rem] font-normal leading-[0.98] tracking-tight text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
+      <span className="block sm:whitespace-nowrap">
+        Admit it, that{" "}
+        <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
+          <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
+            YouTube rabbit hole
+          </span>
+          <AnimatePresence initial={false} mode="wait">
+            <motion.span
+              key={heroMediaTypes[mediaIndex]}
+              initial={{ opacity: 0, y: "80%" }}
+              animate={{ opacity: 1, y: "0%" }}
+              exit={{ opacity: 0, y: "-80%" }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="col-start-1 row-start-1 whitespace-nowrap italic text-[#7251c7]"
+            >
+              {heroMediaTypes[mediaIndex]}
+            </motion.span>
+          </AnimatePresence>
         </span>
-        <AnimatePresence initial={false} mode="wait">
-          <motion.span
-            key={heroMediaTypes[mediaIndex]}
-            initial={{ opacity: 0, y: "80%" }}
-            animate={{ opacity: 1, y: "0%" }}
-            exit={{ opacity: 0, y: "-80%" }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="col-start-1 row-start-1 whitespace-nowrap italic text-[#7251c7]"
-          >
-            {heroMediaTypes[mediaIndex]}
-          </motion.span>
-        </AnimatePresence>
       </span>
-      <br className="hidden sm:block" />
       was just your entire personality.
     </h1>
   );
@@ -933,7 +934,7 @@ export default function Home() {
             >
               <HeroTagline />
 
-              <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
+              <div className="mt-5 flex w-full max-w-[1000px] flex-row items-center justify-start gap-2 sm:gap-4 md:mt-6">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
                   href="https://app.consumedapp.com"
@@ -946,7 +947,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <p className="mx-auto mt-7 max-w-3xl text-center font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
+              <p className="mx-auto mt-7 w-full max-w-[1000px] text-left font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
                 THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
               </p>
 
