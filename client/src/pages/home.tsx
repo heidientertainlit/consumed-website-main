@@ -982,12 +982,12 @@ export default function Home() {
             ))}
           </div>
           <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full bg-[#e9ddff]/55 blur-3xl" />
-          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:translate-x-[60px] lg:grid-cols-[minmax(0,0.92fr)_minmax(560px,1.08fr)] lg:gap-8">
+          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[minmax(560px,1.08fr)_minmax(0,0.92fr)] lg:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mx-auto max-w-4xl text-center lg:mx-0 lg:text-left"
+              className="mx-auto max-w-4xl text-center lg:order-2 lg:mx-0 lg:text-left"
             >
               <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
                 Okay, so what is Consumed?
@@ -1031,9 +1031,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:mt-0"
+              className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:order-1 lg:mt-0"
             >
-              <div className="origin-center lg:translate-x-20 lg:scale-[0.92] xl:translate-x-24">
+              <div className="origin-center lg:-translate-x-20 lg:scale-[0.92] xl:-translate-x-24">
                 <PhoneTrio />
               </div>
             </motion.div>
