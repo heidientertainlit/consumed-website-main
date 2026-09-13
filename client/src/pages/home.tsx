@@ -1293,7 +1293,7 @@ export default function Home() {
 
         {/* 5. DISCOVERY */}
         <section className="order-3 bg-white" id="discovery">
-          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#eee9fa_48%,_#f2eaf7_100%)] px-7 pb-10 pt-16 text-[#211a2a] md:px-14 md:pb-12 md:pt-24">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#eee9fa_48%,_#f2eaf7_100%)] px-7 pb-16 pt-16 text-[#211a2a] md:px-14 md:pb-20 md:pt-24">
             <div className="relative z-10 mx-auto max-w-6xl text-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -1320,6 +1320,38 @@ export default function Home() {
                 >
                   Find Your Next Obsession <ArrowRight className="h-4 w-4" />
                 </a>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mx-auto mt-12 max-w-4xl rounded-[2rem] border border-white/80 bg-white/85 p-5 text-left shadow-[0_24px_70px_rgba(65,42,103,0.12)] backdrop-blur-sm md:p-7"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="flex items-center gap-2 font-sans text-lg font-bold text-[#211a2a] md:text-2xl">
+                      <span aria-hidden="true">✨</span> Recommended For You
+                    </h3>
+                    <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="flex shrink-0 items-center gap-1 text-sm font-semibold text-[#7251c7] hover:text-[#4b2aa8]">
+                      See more <ChevronRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                  <div className="mt-5 grid grid-cols-3 gap-3 md:gap-5">
+                    {[
+                      { title: "Sinners", type: "Movie", image: heroSinners, match: "96%" },
+                      { title: "The Women", type: "Book", image: heroTheWomen, match: "93%" },
+                      { title: "The White Lotus", type: "TV", image: heroWhiteLotus, match: "91%" },
+                    ].map((item) => (
+                      <article key={item.title} className="min-w-0">
+                        <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-[#e8e1ed]">
+                          <img src={item.image} alt="" className="h-full w-full object-cover" />
+                          <span className="absolute bottom-2 right-2 rounded-full bg-[#21143f]/90 px-2 py-1 text-[9px] font-bold text-white md:text-xs">{item.match} match</span>
+                        </div>
+                        <p className="mt-2 truncate text-xs font-semibold text-[#211a2a] md:text-base">{item.title}</p>
+                        <p className="text-[10px] text-[#82778a] md:text-xs">{item.type} · Based on your DNA</p>
+                      </article>
+                    ))}
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -1546,6 +1578,79 @@ export default function Home() {
                 ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ENTERTAINMENT STATS */}
+        <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#f7f1f8_48%,_#eee8f7_100%)] px-6 py-16 text-[#211a2a] md:py-24" id="stats">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your taste, by the numbers</p>
+              <h2 className="font-heading text-4xl font-normal leading-[1.03] md:text-6xl">
+                Love to know <span className="italic text-[#7251c7]">your stats?</span>
+              </h2>
+              <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#746a7c] md:text-base">
+                See the genres you return to, what you&apos;ve loved lately, and the picks currently shaping your Entertainment DNA.
+              </p>
+            </motion.div>
+
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-[1.7rem] border border-white bg-white/90 p-6 shadow-[0_18px_55px_rgba(54,35,82,0.1)]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7251c7]">Your DNA might be hinting at…</p>
+                <h3 className="mt-5 font-sans text-3xl font-bold leading-tight text-[#1f1830]">Easy answers just aren&apos;t that interesting.</h3>
+                <div className="mt-7 grid grid-cols-3 gap-3 border-t border-[#ddd5df] pt-6">
+                  {[["4/10", "Recent picks are movies."], ["3/10", "Recent picks rated 4★+."], ["23%", "Share of 5★ picks that are movies."]].map(([value, label]) => (
+                    <div key={label}>
+                      <p className="font-heading text-2xl font-bold text-[#6540a5]">{value}</p>
+                      <p className="mt-1 text-xs leading-snug text-[#817584]">{label}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
+
+              <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="grid rounded-[1.7rem] border border-white bg-white/90 p-6 shadow-[0_18px_55px_rgba(54,35,82,0.1)] sm:grid-cols-2 sm:gap-6 lg:grid-cols-1 xl:grid-cols-2">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#62586a]">Mostly into</p>
+                  <div className="mt-5 space-y-4">
+                    {[["Drama", "30%", "bg-[#ec4899]", "30%"], ["Comedy", "24%", "bg-[#8b3cf0]", "24%"], ["Thriller", "9%", "bg-[#2878e8]", "9%"]].map(([label, value, color, width]) => (
+                      <div key={label}>
+                        <div className="flex justify-between text-sm"><span>{label}</span><span className="text-[#746a7c]">{value}</span></div>
+                        <div className="mt-2 h-2 rounded-full bg-[#eeeef1]"><div className={`h-full rounded-full ${color}`} style={{ width }} /></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-7 sm:mt-0 lg:mt-7 xl:mt-0">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#62586a]">Loved lately</p>
+                  <div className="mt-4 space-y-3">
+                    {[[heroProjectHailMary, "Project Hail Mary", "Book"], [heroTheWomen, "The Women", "Book"], [posterPodcast, "Crime Junkie", "Podcast"]].map(([image, title, type]) => (
+                      <div key={title} className="flex items-center gap-3">
+                        <img src={image} alt="" className="h-12 w-9 rounded-md object-cover" />
+                        <div><p className="text-xs font-semibold">{title}</p><p className="text-[10px] text-[#9b919f]">{type}</p></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.article>
+
+              <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="rounded-[1.7rem] bg-[linear-gradient(145deg,_#2b1853,_#170b34)] p-6 text-white shadow-[0_22px_60px_rgba(37,20,72,0.28)]">
+                <div className="grid grid-cols-3 divide-x divide-white/15 border-b border-white/10 pb-5 text-center">
+                  {[["🏆", "17,199", "Points"], ["◈", "#2", "Leaderboard"], ["▥", "216", "Tracked"]].map(([icon, value, label]) => (
+                    <div key={label}><p className="text-sm text-[#e7c85c]">{icon}</p><p className="mt-1 font-heading text-2xl">{value}</p><p className="mt-1 text-[8px] font-bold uppercase tracking-wider text-white/45">{label}</p></div>
+                  ))}
+                </div>
+                <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-[#cfc3ff]">Now shaping your DNA</p>
+                <p className="mt-1 text-xs text-white/45">Currently consuming</p>
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  {[[heroGreatBigBeautifulLife, "Reading"], [heroSeverance, "Watching"], [heroMormonWives, "Watching"]].map(([image, status]) => (
+                    <div key={image} className="min-w-0">
+                      <img src={image} alt="" className="aspect-[3/4] w-full rounded-lg object-cover" />
+                      <p className="mt-2 truncate text-[9px] font-semibold text-[#d7c9ff]">{status}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.article>
             </div>
           </div>
         </section>
@@ -2022,7 +2127,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
+        <section id="feedback" className="w-full bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#f8f6f2_58%,_#ffffff_100%)] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
