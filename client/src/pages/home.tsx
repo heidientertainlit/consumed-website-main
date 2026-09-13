@@ -1029,11 +1029,11 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 60, scale: 0.94 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.05, margin: "200px 0px" }}
               transition={{ duration: 0.75, ease: "easeOut" }}
               className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:order-1 lg:mt-0"
             >
-              <div className="origin-center lg:-translate-x-20 lg:scale-[0.92] xl:-translate-x-24">
+              <div className="origin-center lg:-translate-x-20 lg:-translate-y-20 lg:scale-[0.92] xl:-translate-x-24">
                 <PhoneTrio />
               </div>
             </motion.div>
