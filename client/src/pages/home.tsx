@@ -1214,7 +1214,7 @@ export default function Home() {
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your Entertainment DNA Profile</p>
                   <PersonalityTraitHeadline />
                   <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
-                    Your Entertainment DNA evolves with every movie, book, podcast, and more you consume. Ready to find out yours?
+                    What you consume says something about you. Your Entertainment DNA evolves with every movie, book, podcast, and more you consume. Ready to find out yours?
                   </p>
                   <a
                     href="https://apps.apple.com/us/app/consumed-medias-social-layer/id6759014223"
