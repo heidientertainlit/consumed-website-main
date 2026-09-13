@@ -1293,7 +1293,7 @@ export default function Home() {
 
         {/* 5. DISCOVERY */}
         <section className="order-3 bg-white" id="discovery">
-          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#eee9fa_48%,_#f2eaf7_100%)] px-7 py-16 text-[#211a2a] md:px-14 md:py-24">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#eee9fa_48%,_#f2eaf7_100%)] px-7 pb-10 pt-16 text-[#211a2a] md:px-14 md:pb-12 md:pt-24">
             <div className="relative z-10 mx-auto max-w-6xl text-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -1328,7 +1328,7 @@ export default function Home() {
         {/* 6. ENTERTAINMENT DNA */}
         <section className="relative z-20 order-4 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 py-12 md:px-12 md:py-16">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_82%,_rgba(236,72,153,0.04),_transparent_38%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
@@ -2048,8 +2048,14 @@ export default function Home() {
       </main>
 
       {/* 12. FOOTER */}
-      <footer className="bg-white pt-12 md:pt-16 pb-8" id="footer">
-        <div className="container mx-auto px-6 max-w-7xl">
+      <footer className="relative overflow-hidden bg-white pb-8 pt-12 md:pt-16" id="footer">
+        <img
+          src={neonSmiley}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -right-32 w-[30rem] max-w-none opacity-[0.07] md:-bottom-52 md:-right-40 md:w-[46rem]"
+        />
+        <div className="container relative z-10 mx-auto max-w-7xl px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-[1.35fr_0.75fr_0.75fr_0.75fr] gap-10 lg:gap-14">
             <div>
               <Link href="/">
