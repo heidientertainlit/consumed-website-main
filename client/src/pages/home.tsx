@@ -941,17 +941,9 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 overflow-visible" aria-hidden="true">
             {[
               { label: "★★★★★", kind: "stars", className: "left-[3%] top-5", delay: 0 },
-              { label: "Watching", kind: "status", className: "left-[14%] top-14", delay: 1.1 },
-              { label: "92% match", kind: "match", className: "left-[25%] top-1", delay: 2.2 },
-              { label: "Want to", kind: "status", className: "left-[37%] top-12", delay: 0.65 },
-              { label: "❤️ Agree", kind: "reaction", className: "left-[47%] top-3", delay: 1.75 },
-              { label: "+ Add", kind: "action", className: "left-[58%] top-14", delay: 2.8 },
-              { label: "Prediction locked ✓", kind: "prediction", className: "left-[67%] top-2", delay: 3.35 },
-              { label: "book", kind: "book", className: "left-[80%] top-14", delay: 0.4 },
-              { label: "headphones", kind: "headphones", className: "right-[8%] top-3", delay: 1.45 },
-              { label: "play", kind: "play", className: "right-[2%] top-16", delay: 2.55 },
-              { label: "AH", kind: "avatar", className: "left-[31%] top-20", delay: 3.8 },
-              { label: "Prestige Detective", kind: "identity", className: "left-[51%] top-24", delay: 4.35 },
+              { label: "92% match", kind: "match", className: "left-[29%] top-14", delay: 2.2 },
+              { label: "Prediction locked ✓", kind: "prediction", className: "left-[59%] top-3", delay: 3.35 },
+              { label: "Prestige Detective", kind: "identity", className: "right-[5%] top-16", delay: 4.35 },
             ].map(({ label, kind, className, delay }, index) => (
               <motion.span
                 key={`${label}-${kind}`}
