@@ -1306,10 +1306,8 @@ export default function Home() {
                   <span className="italic text-[#7251c7]">shouldn&apos;t be this hard.</span>
                 </h2>
                 <p className="mx-auto mt-7 max-w-3xl font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
-                  Your Entertainment DNA + the people you trust = a better way to find what to watch, read, listen to or play next.
-                </p>
-                <p className="mt-5 font-['Poppins'] text-lg font-bold italic text-[#33263e] md:text-xl">
-                  Less searching. More “wait, how have I never seen this?”
+                  Your Entertainment DNA + the people you trust = a better way to find what to watch, read, listen to or play next.{" "}
+                  <span className="font-bold italic text-[#33263e]">Less searching. More “wait, how have I never seen this?”</span>
                 </p>
                 <a
                   href="https://app.consumedapp.com"
@@ -1895,8 +1893,8 @@ export default function Home() {
         </div>
 
         {/* 6. PLAY */}
-        <section className="bg-[#fbfaf8]" id="play">
-          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#faf9fb_18%,_#ffffff_48%,_#ffffff_100%)] px-7 py-12 text-[#201636] md:px-14 md:py-16">
+        <section className="bg-[#f2ecf6]" id="play">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f2ecf6_0%,_#f5f0f8_20%,_#faf8fb_42%,_#ffffff_68%,_#ffffff_100%)] px-7 py-12 text-[#201636] md:px-14 md:py-16">
             <div className="pointer-events-none absolute -right-20 top-12 h-80 w-80 rounded-full bg-[#e5f0ff]/55 blur-3xl" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
