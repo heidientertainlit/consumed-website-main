@@ -194,7 +194,7 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h1 className="mx-auto w-full max-w-4xl text-center font-heading text-[2.1rem] font-normal leading-[0.98] tracking-tight text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
+    <h1 className="mx-auto w-full max-w-4xl text-left font-heading text-[2.1rem] font-normal leading-[0.98] tracking-tight text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
       Admit it, that{" "}
       <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
