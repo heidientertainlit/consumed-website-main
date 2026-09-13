@@ -250,7 +250,8 @@ function PersonalityTraitHeadline() {
           </motion.span>
         </AnimatePresence>
       </span>
-      ? Yeah, it&apos;s a personality trait now.
+      <br />
+      Yeah, it&apos;s a personality trait now.
     </h2>
   );
 }
