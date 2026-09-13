@@ -1790,9 +1790,9 @@ export default function Home() {
         </div>
 
         {/* 6. PLAY */}
-        <section className="bg-white" id="play">
-          <div className="relative w-full overflow-hidden bg-white px-7 py-12 text-[#201636] md:px-14 md:py-16">
-            <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#e5f0ff] blur-3xl pointer-events-none" />
+        <section className="bg-[#fbfaf8]" id="play">
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#faf9fb_18%,_#ffffff_48%,_#ffffff_100%)] px-7 py-12 text-[#201636] md:px-14 md:py-16">
+            <div className="pointer-events-none absolute -right-20 top-12 h-80 w-80 rounded-full bg-[#e5f0ff]/55 blur-3xl" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
             <div className="relative z-10 mx-auto max-w-3xl text-left">
@@ -1978,30 +1978,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mx-auto grid max-w-5xl items-center gap-7 text-center md:grid-cols-[1fr_auto] md:text-left"
-          >
-              <div>
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7251c7]">Build it with us</p>
-                <h3 className="font-heading text-2xl font-normal text-[#211a2a] md:text-3xl">Help us make Consumed better.</h3>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#62586a] md:text-base">
-                  Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
-                </p>
-              </div>
-              <Link
-                href="/feedback"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#4b2aa8] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#3d218d]"
-                data-testid="link-beta-feedback"
-              >
-                Share feedback <ArrowRight className="w-4 h-4" />
-              </Link>
-          </motion.div>
-        </section>
-
         {/* 10. FINAL CTA */}
         <section className="bg-white" id="better-together">
           <motion.div
@@ -2044,6 +2020,30 @@ export default function Home() {
               <span className="font-sans font-bold text-2xl text-purple-900">Yahoo!</span>
             </div>
           </div>
+        </section>
+
+        <section id="feedback" className="w-full bg-[#f5f2ed] px-7 py-14 text-[#211a2a] md:px-14 md:py-18">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto grid max-w-5xl items-center gap-7 text-center md:grid-cols-[1fr_auto] md:text-left"
+          >
+              <div>
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7251c7]">Build it with us</p>
+                <h3 className="font-heading text-2xl font-normal text-[#211a2a] md:text-3xl">Help us make Consumed better.</h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#62586a] md:text-base">
+                  Consumed is still in beta, and we&apos;re building it alongside the people using it. Tell us what you love, what&apos;s not quite right, and what you want to see next.
+                </p>
+              </div>
+              <Link
+                href="/feedback"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#4b2aa8] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#3d218d]"
+                data-testid="link-beta-feedback"
+              >
+                Share feedback <ArrowRight className="w-4 h-4" />
+              </Link>
+          </motion.div>
         </section>
       </main>
 
