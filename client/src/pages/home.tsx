@@ -1581,7 +1581,7 @@ export default function Home() {
         </section>
 
         {/* ENTERTAINMENT STATS */}
-        <section className="relative -mt-12 overflow-hidden bg-[linear-gradient(to_bottom,_#f2ecf6_0%,_#f3edf6_20%,_#f5eff7_48%,_#eee8f7_100%)] px-6 pb-16 pt-8 text-[#211a2a] md:-mt-20 md:pb-24 md:pt-10" id="stats">
+        <section className="relative order-5 -mt-12 overflow-hidden bg-[linear-gradient(to_bottom,_#f2ecf6_0%,_#f3edf6_20%,_#f5eff7_48%,_#eee8f7_100%)] px-6 pb-16 pt-8 text-[#211a2a] md:-mt-20 md:pb-24 md:pt-10" id="stats">
           <div className="mx-auto max-w-7xl">
             <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your taste, by the numbers</p>
