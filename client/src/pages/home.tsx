@@ -1085,7 +1085,7 @@ export default function Home() {
         {/* 4. SAVED RECOMMENDATIONS */}
         <section className="relative order-2 w-full" id="how-it-works">
           <div className="overflow-x-clip overflow-y-visible">
-            <div className="h-16 bg-gradient-to-b from-[#f8f3fa] via-[#f6f1f5] to-[#f5f2ed] md:h-24" aria-hidden="true" />
+            <div className="h-20 bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f3edf5_30%,_#f4f0f1_68%,_#f5f2ed_100%)] md:h-28" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
