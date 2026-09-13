@@ -220,6 +220,46 @@ function HeroTagline() {
   );
 }
 
+const playKnowledgePrompts = ["movie quote?", "plot twist?", "book ending?", "theme song?"];
+
+function PlayKnowledgeHeadline() {
+  const [promptIndex, setPromptIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setPromptIndex((current) => (current + 1) % playKnowledgePrompts.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <h2 className="font-heading text-4xl font-normal leading-[1.05] md:text-5xl lg:text-6xl">
+      Are you the one that knows every
+      <br />
+      <span className="relative inline-grid overflow-hidden align-baseline text-left">
+        <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
+          book ending?
+        </span>
+        <AnimatePresence initial={false} mode="wait">
+          <motion.span
+            key={playKnowledgePrompts[promptIndex]}
+            initial={{ opacity: 0, y: "80%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="col-start-1 row-start-1 whitespace-nowrap text-[#211a2a]"
+          >
+            {playKnowledgePrompts[promptIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      <br />
+      <span className="italic text-primary">Okay, prove it.</span>
+    </h2>
+  );
+}
+
 function PersonalityTraitHeadline() {
   const [mediaIndex, setMediaIndex] = useState(0);
 
@@ -1726,11 +1766,7 @@ export default function Home() {
                 <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary/70">
                   Don&apos;t just consume it. Play along.
                 </p>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  Think you know entertainment?
-                  <br />
-                  <span className="italic text-primary">Okay, prove it.</span>
-                </h2>
+                <PlayKnowledgeHeadline />
                 <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-relaxed text-foreground/65 md:text-lg">
                   <p>
                     You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.{" "}
