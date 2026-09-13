@@ -194,7 +194,7 @@ function HeroTagline() {
   }, []);
 
   return (
-    <h2 className="w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-[#211a2a] md:text-5xl lg:text-6xl">
+    <h1 className="mx-auto w-full max-w-4xl text-center font-heading text-[2.1rem] font-normal leading-[0.98] tracking-tight text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
       Admit it, that{" "}
       <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
         <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
@@ -215,6 +215,42 @@ function HeroTagline() {
       </span>
       <br className="hidden sm:block" />
       was just your entire personality.
+    </h1>
+  );
+}
+
+function PersonalityTraitHeadline() {
+  const [mediaIndex, setMediaIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setMediaIndex((current) => (current + 1) % heroMediaTypes.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <h2 className="w-full max-w-5xl font-heading text-4xl font-normal leading-[1.05] tracking-tight text-[#211a2a] md:text-5xl lg:text-6xl">
+      That{" "}
+      <span className="relative inline-grid max-w-full align-baseline overflow-hidden text-left">
+        <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-nowrap">
+          YouTube rabbit hole
+        </span>
+        <AnimatePresence initial={false} mode="wait">
+          <motion.span
+            key={heroMediaTypes[mediaIndex]}
+            initial={{ opacity: 0, y: "80%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="col-start-1 row-start-1 whitespace-nowrap italic text-[#7251c7]"
+          >
+            {heroMediaTypes[mediaIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      ? Yeah, it&apos;s a personality trait now.
     </h2>
   );
 }
@@ -892,12 +928,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="z-10 mx-auto flex w-full max-w-[680px] flex-col items-center text-center md:-translate-x-6"
+              className="z-10 mx-auto flex w-full max-w-[1000px] flex-col items-center text-center md:-translate-x-6"
             >
-              <h1 className="mx-auto max-w-4xl text-center font-heading text-[2.1rem] font-normal leading-[0.98] text-[#332a3d] sm:text-[2.75rem] lg:text-[4.15rem]">
-                Entertainment is about to get more{" "}
-                <span className="inline-block italic text-primary">social.</span>
-              </h1>
+              <HeroTagline />
 
               <div className="mt-5 flex flex-row items-center justify-center gap-2 sm:gap-4 md:mt-6">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
@@ -1160,7 +1193,7 @@ export default function Home() {
                   className="text-left"
                 >
                   <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your Entertainment DNA Profile</p>
-                  <HeroTagline />
+                  <PersonalityTraitHeadline />
                   <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-[#746a7c] sm:text-base">
                     Your Entertainment DNA evolves with every movie, book, podcast, and more you consume. Ready to find out yours?
                   </p>
@@ -1652,7 +1685,8 @@ export default function Home() {
             <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_18%_15%,_#4c2b98_0%,_transparent_28%),radial-gradient(circle_at_82%_85%,_#8762d7_0%,_transparent_28%)] pointer-events-none" />
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                What are you consuming?
+                Entertainment is about to get more{" "}
+                <span className="italic text-[#d8ceff]">social.</span>
               </h2>
               <p className="mt-5 text-xl md:text-2xl font-heading text-[#d8ceff]">
                 Track it. Talk about it. Find your people.
