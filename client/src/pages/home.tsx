@@ -957,17 +957,28 @@ export default function Home() {
         <section className="relative w-full overflow-x-clip overflow-y-visible bg-[linear-gradient(to_bottom,_#ffffff_0%,_#f8f3fa_100%)] px-7 pb-20 pt-24 text-[#211a2a] md:px-14 md:pb-28 md:pt-28">
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 overflow-visible" aria-hidden="true">
             {[
-              { title: "Sinners", type: "Movie", Icon: Clapperboard, className: "left-[4%] top-5", delay: 0 },
-              { title: "The White Lotus", type: "TV", Icon: Tv, className: "left-[18%] top-12", delay: 1.1 },
-              { title: "The Women", type: "Book", Icon: BookOpen, className: "left-[34%] top-2", delay: 2.2 },
-              { title: "Crime Junkie", type: "Podcast", Icon: Headphones, className: "left-[49%] top-14", delay: 0.65 },
-              { title: "Cowboy Carter", type: "Music", Icon: Music2, className: "left-[64%] top-4", delay: 1.75 },
-              { title: "Severance", type: "TV", Icon: Tv, className: "left-[78%] top-11", delay: 2.8 },
-              { title: "Mario Kart World", type: "Game", Icon: Gamepad2, className: "right-[2%] top-1", delay: 3.35 },
-            ].map(({ title, type, Icon, className, delay }, index) => (
+              { label: "★★★★★", kind: "stars", className: "left-[3%] top-5", delay: 0 },
+              { label: "Watching", kind: "status", className: "left-[14%] top-14", delay: 1.1 },
+              { label: "92% match", kind: "match", className: "left-[25%] top-1", delay: 2.2 },
+              { label: "Want to", kind: "status", className: "left-[37%] top-12", delay: 0.65 },
+              { label: "❤️ Agree", kind: "reaction", className: "left-[47%] top-3", delay: 1.75 },
+              { label: "+ Add", kind: "action", className: "left-[58%] top-14", delay: 2.8 },
+              { label: "Prediction locked ✓", kind: "prediction", className: "left-[67%] top-2", delay: 3.35 },
+              { label: "book", kind: "book", className: "left-[80%] top-14", delay: 0.4 },
+              { label: "headphones", kind: "headphones", className: "right-[8%] top-3", delay: 1.45 },
+              { label: "play", kind: "play", className: "right-[2%] top-16", delay: 2.55 },
+              { label: "AH", kind: "avatar", className: "left-[31%] top-20", delay: 3.8 },
+              { label: "Prestige Detective", kind: "identity", className: "left-[51%] top-24", delay: 4.35 },
+            ].map(({ label, kind, className, delay }, index) => (
               <motion.span
-                key={title}
-                className={`absolute flex items-center gap-2 whitespace-nowrap rounded-full border border-[#ded3ed]/75 bg-white/80 px-3 py-2 text-left shadow-[0_10px_28px_rgba(66,42,94,0.09)] backdrop-blur-sm ${className}`}
+                key={`${label}-${kind}`}
+                className={`absolute flex items-center justify-center whitespace-nowrap border border-[#ded3ed]/75 bg-white/82 text-left shadow-[0_10px_28px_rgba(66,42,94,0.09)] backdrop-blur-sm ${
+                  kind === "avatar"
+                    ? "h-9 w-9 rounded-full bg-[#d9c7f5] text-[10px] font-bold text-[#59388c]"
+                    : kind === "book" || kind === "headphones" || kind === "play"
+                      ? "h-9 w-9 rounded-full text-[#7251c7]"
+                      : "rounded-full px-3 py-2 font-sans text-[10px] font-semibold text-[#493b56]"
+                } ${className}`}
                 animate={{
                   y: [42, -92],
                   x: [0, index % 2 === 0 ? 9 : -9],
@@ -981,13 +992,17 @@ export default function Home() {
                   ease: "easeOut",
                 }}
               >
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f0e8fb] text-[#7251c7]">
-                  <Icon className="h-3.5 w-3.5" strokeWidth={1.7} />
-                </span>
-                <span>
-                  <span className="block font-sans text-[10px] font-semibold leading-none text-[#342a3f]">{title}</span>
-                  <span className="mt-1 block font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#887b91]">{type}</span>
-                </span>
+                {kind === "book" ? (
+                  <BookOpen className="h-4 w-4" strokeWidth={1.7} />
+                ) : kind === "headphones" ? (
+                  <Headphones className="h-4 w-4" strokeWidth={1.7} />
+                ) : kind === "play" ? (
+                  <span className="ml-0.5 block h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-[#7251c7]" />
+                ) : (
+                  <span className={kind === "stars" ? "tracking-[0.06em] text-[#e2a91c]" : kind === "identity" ? "font-heading text-[11px] italic text-[#7251c7]" : ""}>
+                    {label}
+                  </span>
+                )}
               </motion.span>
             ))}
           </div>
