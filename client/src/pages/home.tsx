@@ -807,7 +807,7 @@ function SocialFeedSection() {
   ];
 
   return (
-    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f5f2ed_0%,_#f6f2ef_38%,_#f5eff5_72%,_#f2eaf7_100%)] px-6 pb-8 pt-12 md:pb-10 md:pt-16" id="chatter">
+    <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#eee8f7_0%,_#f3eef4_14%,_#f5f2ed_30%,_#f6f2ef_48%,_#f5eff5_74%,_#f2eaf7_100%)] px-6 pb-8 pt-12 md:pb-10 md:pt-16" id="chatter">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,_rgba(139,92,246,0.08),_transparent_34%)]" />
       <div className="container relative z-10 mx-auto max-w-7xl">
         <motion.h2
@@ -1022,7 +1022,7 @@ export default function Home() {
             ))}
           </div>
           <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full bg-[#e9ddff]/55 blur-3xl" />
-          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[minmax(560px,1.08fr)_minmax(0,0.92fr)] lg:gap-8">
+          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-0 lg:grid-cols-[minmax(560px,1.08fr)_minmax(0,0.92fr)] lg:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1067,7 +1067,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.05, margin: "200px 0px" }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:order-1 lg:mt-0"
+              className="mx-auto -mt-6 w-full max-w-4xl md:-mt-10 lg:order-1 lg:mt-0"
             >
               <div className="origin-center lg:-translate-x-20 lg:-translate-y-32 lg:scale-[0.92] xl:-translate-x-24">
                 <PhoneTrio />
@@ -1360,7 +1360,7 @@ export default function Home() {
         {/* 6. ENTERTAINMENT DNA */}
         <section className="relative z-20 order-4 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f5eff7_46%,_#f2ecf6_100%)] px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_82%,_rgba(236,72,153,0.04),_transparent_38%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div 
@@ -1583,7 +1583,7 @@ export default function Home() {
         </section>
 
         {/* ENTERTAINMENT STATS */}
-        <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,_#fbfaf8_0%,_#f7f1f8_48%,_#eee8f7_100%)] px-6 py-16 text-[#211a2a] md:py-24" id="stats">
+        <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,_#f2ecf6_0%,_#f5eff7_34%,_#eee8f7_100%)] px-6 py-16 text-[#211a2a] md:py-24" id="stats">
           <div className="mx-auto max-w-7xl">
             <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">Your taste, by the numbers</p>
