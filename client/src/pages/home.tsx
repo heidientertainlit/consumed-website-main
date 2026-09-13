@@ -932,23 +932,6 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-9 grid w-full max-w-3xl translate-y-6 grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-10 md:translate-y-8 md:text-[8px]">
-                {[
-                  { label: "Movies", Icon: Clapperboard },
-                  { label: "TV", Icon: Tv },
-                  { label: "Books", Icon: BookOpen },
-                  { label: "Podcasts", Icon: Headphones },
-                  { label: "Music", Icon: Music2 },
-                  { label: "YouTube", Icon: Youtube },
-                  { label: "Gaming", Icon: Gamepad2 },
-                ].map(({ label, Icon }) => (
-                  <span key={label} className="inline-flex min-w-0 flex-col items-center gap-1.5 whitespace-nowrap text-center">
-                    <Icon className="h-4 w-4 text-primary/70 md:h-[18px] md:w-[18px]" strokeWidth={1.6} aria-hidden="true" />
-                    {label}
-                  </span>
-                ))}
-              </div>
-
             </motion.div>
           </div>
         </section>
@@ -1024,11 +1007,24 @@ export default function Home() {
               </h2>
               <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
                 <p>
-                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about.
+                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about. <span className="font-semibold text-[#45364f]">Consumed brings all of it — and all of us — together.</span>
                 </p>
-                <p className="font-semibold text-[#45364f]">
-                  Consumed brings all of it — and all of us — together.
-                </p>
+                <div className="mx-auto grid w-full max-w-3xl grid-cols-4 items-start gap-x-3 gap-y-5 py-3 text-[8px] font-bold uppercase tracking-[0.08em] text-[#756e7c] sm:grid-cols-7 md:text-[9px]">
+                  {[
+                    { label: "Movies", Icon: Clapperboard },
+                    { label: "TV", Icon: Tv },
+                    { label: "Books", Icon: BookOpen },
+                    { label: "Podcasts", Icon: Headphones },
+                    { label: "Music", Icon: Music2 },
+                    { label: "YouTube", Icon: Youtube },
+                    { label: "Gaming", Icon: Gamepad2 },
+                  ].map(({ label, Icon }) => (
+                    <span key={label} className="inline-flex min-w-0 flex-col items-center gap-2 whitespace-nowrap text-center">
+                      <Icon className="h-[18px] w-[18px] text-primary/70 md:h-5 md:w-5" strokeWidth={1.6} aria-hidden="true" />
+                      {label}
+                    </span>
+                  ))}
+                </div>
                 <p>
                   Track what you watch, read, listen to and play. See what your friends are into. Talk about it. Find your next obsession. Discover your Entertainment DNA profile. Find people who are into what you&apos;re into. And prove just how much you know.
                 </p>
