@@ -1724,9 +1724,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary/70">
-                  Don&apos;t just consume it.
-                  <br />
-                  Play along.
+                  Don&apos;t just consume it. Play along.
                 </p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
                   Think you know entertainment?
@@ -1734,15 +1732,10 @@ export default function Home() {
                   <span className="italic text-primary">Okay, prove it.</span>
                 </h2>
                 <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-relaxed text-foreground/65 md:text-lg">
-                  <p>You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.</p>
-                  <p className="font-heading text-xl italic text-[#3e3150]">Consuming what you watch, read, listen to, and play ... is just half the fun.</p>
-                </div>
-                <div className="flex flex-wrap justify-center gap-2 mt-7">
-                  {["Trivia", "Cast Your Vote", "Debate the Rank"].map((mode) => (
-                    <span key={mode} className="rounded-full border border-[#e2d8f0] bg-[#f8f4ff] px-3.5 py-1.5 text-xs font-semibold text-primary/80">
-                      {mode}
-                    </span>
-                  ))}
+                  <p>
+                    You called the ending. You knew the deep cut. Now get credit for it. Play trivia, make predictions, pick sides, and climb the leaderboards. Get points and show how much you know.
+                    <span className="mt-4 block font-sans font-bold italic text-[#3e3150]">Consuming what you watch, read, listen to, and play ... is just half the fun.</span>
+                  </p>
                 </div>
               </motion.div>
             </div>
