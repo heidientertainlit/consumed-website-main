@@ -1014,10 +1014,10 @@ export default function Home() {
               </div>
               <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg lg:mx-0">
                 <p>
-                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about. <span className="font-semibold text-[#45364f]">Consumed brings all of it (and all of us) together.</span>
+                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast in your group chat.
                 </p>
                 <p>
-                  Track what you watch, read, listen to and play. See what your friends are into. Talk about it. Find your next obsession. Discover your Entertainment DNA profile. Find people who are into what you&apos;re into. And prove just how much you know.
+                  Track what you watch, read, listen to, and play. Share recommendations, compare taste profiles, and find your next obsession.
                 </p>
                 <p className="font-heading text-xl not-italic text-[#211a2a] md:text-2xl">
                   One app for your whole <span className="italic text-[#7251c7]">entertainment life.</span>
