@@ -1582,7 +1582,7 @@ export default function Home() {
 
         {/* 6. TRACK EVERYTHING */}
         <section
-          className="relative w-full overflow-hidden bg-[#f5f2ed] px-7 py-20 text-[#211a2a] md:px-14 md:py-28"
+          className="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,_#f8f3fa_0%,_#f6f1f5_12%,_#f5f2ed_30%,_#f5f2ed_100%)] px-7 pb-20 pt-8 text-[#211a2a] md:px-14 md:pb-28 md:pt-10"
           id="track-everything"
           style={{ order: -1 }}
         >
