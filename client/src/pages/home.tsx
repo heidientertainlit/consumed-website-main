@@ -1757,7 +1757,7 @@ export default function Home() {
             <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-[#e5f0ff] blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#f8e9ff] blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
+            <div className="relative z-10 mx-auto max-w-3xl text-left">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
