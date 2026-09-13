@@ -1781,27 +1781,29 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="rounded-[1.7rem] border border-[#e6e0f0] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)]"
+                className="rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#2c6ef2]">Prediction</span>
-                  <span className="rounded-full bg-[#eaf1ff] px-2.5 py-1 text-[10px] font-bold text-[#2c6ef2]">LIVE</span>
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2873ed] text-base font-bold text-white">✓</span>
+                    <span className="text-base font-bold">Cast Your Vote</span>
+                  </div>
+                  <span className="text-xs text-[#9a9ba2]">1/19</span>
                 </div>
-                <h3 className="mt-4 text-xl font-bold leading-tight">Who&apos;s making it to the finale?</h3>
-                <div className="space-y-3 mt-5">
-                  {[
-                    { name: "Ava", value: 42, color: "#296be9" },
-                    { name: "Ben", value: 31, color: "#7a4bea" },
-                    { name: "Carla", value: 17, color: "#d64fa6" },
-                    { name: "Dylan", value: 10, color: "#f1a52b" },
-                  ].map((choice) => (
-                    <div key={choice.name}>
-                      <div className="flex justify-between text-xs font-semibold"><span>{choice.name}</span><span>{choice.value}%</span></div>
-                      <div className="h-2 rounded-full bg-[#efeff4] mt-1.5 overflow-hidden">
-                        <div className="h-full rounded-full" style={{ width: `${choice.value}%`, backgroundColor: choice.color }} />
-                      </div>
+                <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#2873ed]">TV</p>
+                <h3 className="mt-1.5 text-lg font-bold leading-tight">Best mystery binge?</h3>
+                <div className="mt-5 space-y-2.5">
+                  {["Only Murders in the Building", "Big Little Lies", "True Detective", "The Night Agent"].map((choice, index) => (
+                    <div key={choice} className="flex min-h-12 items-center gap-3 rounded-xl border border-[#e2e2e5] px-3 py-2.5 shadow-[0_3px_8px_rgba(20,27,45,0.04)]">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#eef4ff] text-xs font-bold text-[#2873ed]">{String.fromCharCode(65 + index)}</span>
+                      <span className="min-w-0 flex-1 text-xs font-medium leading-tight">{choice}</span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-[#d0d1d5]" />
                     </div>
                   ))}
+                </div>
+                <div className="mt-5 flex items-center justify-between text-xs font-semibold text-[#2873ed]">
+                  <span>Skip &gt;</span>
+                  <span className="rounded-full bg-[#effbf4] px-2.5 py-1 text-[#23a35a]">+2 pts</span>
                 </div>
               </motion.article>
 
@@ -1810,16 +1812,28 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="rounded-[1.7rem] border border-[#e6e0f0] bg-white p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)] flex flex-col"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
               >
-                <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#8d31ca]">Trivia</span>
-                <h3 className="mt-4 text-xl font-bold leading-tight">Which movie is this quote from?</h3>
-                <blockquote className="mt-5 rounded-2xl bg-[#f6efff] p-5 font-heading text-2xl italic text-[#6f2baa]">
-                  “You had me at hello.”
-                </blockquote>
-                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#376ff0] to-[#ab31e5] px-5 py-3 text-sm font-bold text-white">
-                  Play Trivia <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#7d22a8] text-lg text-white">♙</span>
+                    <span className="text-base font-bold">TV Trivia</span>
+                  </div>
+                  <span className="text-xs text-[#9a9ba2]">1/17</span>
+                </div>
+                <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#a52bea]">Fleabag</p>
+                <h3 className="mt-1.5 text-lg font-bold leading-tight">Who created the TV series Fleabag?</h3>
+                <p className="mt-2 text-xs font-bold text-[#a52bea]">+10 pts</p>
+                <div className="mt-5 space-y-2.5">
+                  {["Tina Fey", "Phoebe Waller-Bridge", "Mindy Kaling", "Lena Dunham"].map((choice, index) => (
+                    <div key={choice} className="flex min-h-12 items-center gap-3 rounded-xl border border-[#e2e2e5] px-3 py-2.5">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f5eaff] text-xs font-bold text-[#a52bea]">{String.fromCharCode(65 + index)}</span>
+                      <span className="min-w-0 flex-1 text-xs font-medium">{choice}</span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-[#d0d1d5]" />
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-auto pt-5 text-center text-[11px] text-[#a7a7ae]">8 players have already answered — your turn</p>
               </motion.article>
 
               <motion.article
@@ -1827,21 +1841,32 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="rounded-[1.7rem] border border-[#eadcae] bg-[#fff9e8] p-5 md:p-6 text-[#1d1930] shadow-[0_18px_45px_rgba(67,44,103,0.10)] flex flex-col"
+                className="flex flex-col rounded-[1.7rem] border border-[#e3e3e8] bg-white p-5 text-[#111727] shadow-[0_18px_45px_rgba(67,44,103,0.10)] md:p-6"
               >
-                <span className="text-[10px] font-extrabold tracking-[0.16em] uppercase text-[#d18412]">Rank It</span>
-                <h3 className="mt-4 text-xl font-bold leading-tight">Rank these &apos;90s rom-coms.</h3>
-                <ol className="space-y-2.5 mt-5">
-                  {["10 Things I Hate About You", "Clueless", "You've Got Mail"].map((title, i) => (
-                    <li key={title} className="flex items-center gap-3 rounded-xl border border-[#eadcae] bg-white/75 px-3 py-2.5">
-                      <span className="w-7 h-7 rounded-full bg-[#f3cf5f] flex items-center justify-center text-xs font-extrabold">{i + 1}</span>
-                      <span className="text-sm font-semibold">{title}</span>
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#109b6c] text-base font-bold text-white">▥</span>
+                  <span className="text-base font-bold">Debate the Rank</span>
+                </div>
+                <h3 className="mt-5 text-lg font-bold leading-tight">Best Star Trek Movies</h3>
+                <p className="mt-1 text-xs text-[#a2a3aa]">By Kimberly W.</p>
+                <div className="mt-4 rounded-lg bg-[#e9faf3] px-3 py-2 text-[11px] font-medium text-[#278b6b]">⠿ &nbsp; Drag to reorder — saves automatically</div>
+                <ol className="mt-4 space-y-2.5">
+                  {[
+                    { title: "The Wrath of Khan", image: heroSinners },
+                    { title: "The Undiscovered Country", image: heroProjectHailMary },
+                    { title: "First Contact", image: heroSeverance },
+                    { title: "The Voyage Home", image: heroMaybeSomeday },
+                  ].map((item, index) => (
+                    <li key={item.title} className="flex items-center gap-2.5 rounded-xl bg-[#f8f9fa] px-2.5 py-2.5">
+                      <span className="text-[#d2d4d7]">⠿</span>
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#10a978] text-xs font-bold text-white">{index + 1}</span>
+                      <img src={item.image} alt="" className="h-10 w-7 shrink-0 rounded object-cover" />
+                      <span className="min-w-0 flex-1 text-[11px] font-medium leading-tight">{item.title}</span>
+                      <span className="text-right text-[9px] leading-tight"><span className="text-[#18ae7c]">↑{index === 0 ? "0" : "100"}%</span><br /><span className="text-[#f06a8c]">↓{index === 0 ? "100" : "0"}%</span></span>
                     </li>
                   ))}
                 </ol>
-                <a href="https://app.consumedapp.com" target="_blank" rel="noopener noreferrer" className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1930] px-5 py-3 text-sm font-bold text-white">
-                  Play now <ArrowRight className="w-4 h-4" />
-                </a>
+                <button className="mx-auto mt-auto rounded-full bg-[#10a978] px-5 py-2 text-xs font-semibold text-white">✓ &nbsp; Submit My Ranking</button>
               </motion.article>
             </div>
           </div>
