@@ -1579,7 +1579,6 @@ export default function Home() {
 
           </div>
         </section>
-        </div>
 
         {/* 6. TRACK EVERYTHING */}
         <section
@@ -1713,6 +1712,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* 6. PLAY */}
         <section className="bg-white" id="play">
