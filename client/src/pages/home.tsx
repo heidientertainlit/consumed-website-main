@@ -932,7 +932,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-7 grid w-full max-w-3xl grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
+              <div className="mt-9 grid w-full max-w-3xl grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-10 md:text-[8px]">
                 {[
                   { label: "Movies", Icon: Clapperboard },
                   { label: "TV", Icon: Tv },
