@@ -934,6 +934,10 @@ export default function Home() {
             >
               <HeroTagline />
 
+              <p className="mx-auto mt-5 w-full max-w-[1000px] text-left font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:mt-6 md:text-[13px]">
+                THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
+              </p>
+
               <div className="mt-5 flex w-full max-w-[1000px] flex-row items-center justify-start gap-2 sm:gap-4 md:mt-6">
                 <AppStoreButton className="w-auto px-5 py-3 text-sm sm:px-7" />
                 <a
@@ -946,10 +950,6 @@ export default function Home() {
                   Open web app <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-
-              <p className="mx-auto mt-7 w-full max-w-[1000px] text-left font-sans text-[10px] font-light uppercase leading-[1.6] tracking-[0.14em] text-[#756e7c] sm:text-xs md:text-[13px]">
-                THE SOCIAL APP FOR EVERYTHING YOU WATCH, READ, LISTEN TO &amp; PLAY.
-              </p>
 
               <div className="mt-7 grid w-full max-w-3xl grid-cols-7 items-start gap-1 text-[6px] font-bold uppercase tracking-[0.08em] text-foreground/45 sm:text-[7px] md:mt-8 md:text-[8px]">
                 {[
