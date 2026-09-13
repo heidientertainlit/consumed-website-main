@@ -1077,8 +1077,13 @@ export default function Home() {
         </section>
 
         <div className="flex w-full flex-col">
-        {/* 3. TAKES FEED */}
-        <section className="relative order-3 w-full" id="how-it-works">
+        {/* 3. SOCIAL FEED */}
+        <section className="relative z-20 order-1 bg-transparent">
+          <SocialFeedSection />
+        </section>
+
+        {/* 4. SAVED RECOMMENDATIONS */}
+        <section className="relative order-2 w-full" id="how-it-works">
           <div className="overflow-x-clip overflow-y-visible">
             <div className="h-16 bg-gradient-to-b from-[#f8f3fa] via-[#f6f1f5] to-[#f5f2ed] md:h-24" aria-hidden="true" />
             <div className="bg-[#f5f2ed] px-7 py-16 text-[#211a2a] md:px-14 md:py-20">
@@ -1286,10 +1291,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. SOCIAL FEED */}
-        <section className="relative z-20 order-1 bg-transparent" id="categories">
+        {/* 5. ENTERTAINMENT DNA */}
+        <section className="relative z-20 order-3 bg-transparent" id="categories">
           <div className="container mx-auto max-w-7xl flex flex-col">
-            <SocialFeedSection />
             <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[linear-gradient(to_bottom,_#f2eaf7_0%,_#f7f1f8_34%,_#fbfaf8_100%)] px-6 py-12 md:px-12 md:py-16">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_82%,_rgba(236,72,153,0.04),_transparent_38%)]" />
               <div className="relative z-10 max-w-7xl mx-auto">
@@ -1942,37 +1946,66 @@ export default function Home() {
 
         {/* 8. DISCOVERY */}
         <section className="bg-white" id="discovery">
-          <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#10062d_0%,_#221052_46%,_#4e2a9a_100%)] px-7 py-12 text-white md:px-14 md:py-16">
-            <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_88%_13%,_#865fe1_0%,_transparent_30%),radial-gradient(circle_at_8%_82%,_#2c7be7_0%,_transparent_26%)] pointer-events-none" />
+          <div className="relative w-full overflow-hidden bg-[linear-gradient(135deg,_#13072f_0%,_#28105b_48%,_#5932b5_100%)] px-7 py-16 text-white md:px-14 md:py-24">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,_rgba(159,122,234,0.42)_0%,_transparent_31%),radial-gradient(circle_at_10%_90%,_rgba(58,130,237,0.30)_0%,_transparent_30%)]" />
+            <div className="pointer-events-none absolute -right-28 -top-32 h-96 w-96 rounded-full border border-white/10" />
+            <div className="pointer-events-none absolute -right-12 -top-20 h-72 w-72 rounded-full border border-white/10" />
 
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
+            <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#d8ceff]">Discovery</p>
-                  <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em]">DISCOVER</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal leading-[1.05]">
-                  Your next obsession<br />
-                  <span className="italic text-[#d8ceff]">is already here.</span>
+                <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#cfc0ff]">Discovery</p>
+                <h2 className="max-w-4xl font-heading text-4xl font-normal leading-[1.02] md:text-6xl lg:text-7xl">
+                  Finding your next obsession{" "}
+                  <span className="italic text-[#cfc0ff]">shouldn&apos;t be this hard.</span>
                 </h2>
-                <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-white/75">
-                  Discover what to watch, read, or listen to next through your taste, your Entertainment DNA, the people you trust, and what&apos;s happening across Consumed.
+                <p className="mt-7 max-w-3xl font-sans text-base leading-relaxed text-white/78 md:text-lg">
+                  Your Entertainment DNA + the people you trust = a better way to find what to watch, read, listen to or play next.
+                </p>
+                <p className="mt-5 font-['Poppins'] text-lg font-bold italic text-white md:text-xl">
+                  Less searching. More “wait, how have I never seen this?”
                 </p>
                 <a
                   href="https://app.consumedapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-8 rounded-full bg-white px-6 py-3.5 text-[#2e1c78] font-semibold transition-all hover:bg-[#ede9ff] hover:scale-105 active:scale-95"
+                  className="mt-9 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-[#2e1c78] transition-all hover:-translate-y-0.5 hover:bg-[#ede9ff] hover:shadow-[0_14px_35px_rgba(0,0,0,0.22)] active:scale-95"
                   data-testid="link-discover-something-new"
                 >
-                  Discover something new <ArrowRight className="w-4 h-4" />
+                  Find Your Next Obsession <ArrowRight className="h-4 w-4" />
                 </a>
-                <div className="mt-10 md:mt-12">
-                  <LiveConversationsCarousel />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 28 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.12, duration: 0.65 }}
+                className="relative mx-auto flex min-h-[330px] w-full max-w-md items-center justify-center"
+                aria-hidden="true"
+              >
+                <div className="absolute left-0 top-10 w-[72%] -rotate-6 rounded-[1.6rem] border border-white/20 bg-white/10 p-5 shadow-[0_25px_65px_rgba(4,0,18,0.35)] backdrop-blur-md">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#d8ceff]">Your Entertainment DNA</p>
+                  <p className="mt-3 font-heading text-3xl leading-none">Prestige Detective</p>
+                  <div className="mt-5 flex gap-2">
+                    {["Mystery", "Drama", "Books"].map((item) => <span key={item} className="rounded-full bg-white/10 px-2.5 py-1 text-[10px]">{item}</span>)}
+                  </div>
+                </div>
+                <div className="absolute bottom-8 right-0 w-[72%] rotate-5 rounded-[1.6rem] border border-white/30 bg-white p-5 text-[#26163e] shadow-[0_25px_65px_rgba(4,0,18,0.38)]">
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7657c8]">Recommended by people you trust</p>
+                    <span className="text-[#7657c8]">★★★★★</span>
+                  </div>
+                  <p className="mt-5 font-heading text-2xl leading-tight">Your next “just one more episode.”</p>
+                  <p className="mt-3 text-xs leading-relaxed text-[#746a7c]">Matched to your taste and loved by three friends.</p>
+                  <div className="mt-5 flex -space-x-2">
+                    {["MC", "AR", "JB"].map((initials, index) => (
+                      <span key={initials} className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white text-[9px] font-bold text-[#442b73]" style={{ background: ["#e0d4fa", "#f4c8dc", "#c9dcfa"][index] }}>{initials}</span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
