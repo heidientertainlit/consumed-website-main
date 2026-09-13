@@ -990,22 +990,22 @@ export default function Home() {
             ))}
           </div>
           <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full bg-[#e9ddff]/55 blur-3xl" />
-          <div className="relative z-10 mx-auto max-w-6xl">
+          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(560px,1.08fr)] lg:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mx-auto max-w-4xl text-center"
+              className="mx-auto max-w-4xl text-center lg:mx-0 lg:text-left"
             >
               <p className="mb-5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#7251c7]">
                 Okay, so what is Consumed?
               </p>
-              <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
+              <h2 className="font-heading text-4xl font-normal leading-[1.02] tracking-tight md:text-6xl">
                 Everything you&apos;re into.
                 <br />
                 <span className="italic text-[#7251c7]">Finally, all in one place.</span>
               </h2>
-              <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-7 items-start gap-x-2 text-[7px] font-bold uppercase tracking-[0.06em] text-[#756e7c] sm:text-[8px] md:mt-10 md:gap-x-4 md:text-[9px]">
+              <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-7 items-start gap-x-2 text-[7px] font-bold uppercase tracking-[0.06em] text-[#756e7c] sm:text-[8px] md:mt-10 md:gap-x-3 md:text-[9px] lg:mx-0">
                 {[
                   { label: "Movies", Icon: Clapperboard },
                   { label: "TV", Icon: Tv },
@@ -1021,9 +1021,9 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg">
+              <div className="mx-auto mt-7 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-[#62586a] md:text-lg lg:mx-0">
                 <p>
-                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about. <span className="font-semibold text-[#45364f]">Consumed brings all of it — and all of us — together.</span>
+                  Entertainment has always brought us together. The show everyone&apos;s talking about. The book you won&apos;t shut up about. The podcast you immediately send to the group chat. The game you know way too much about. <span className="font-semibold text-[#45364f]">Consumed brings all of it (and all of us) together.</span>
                 </p>
                 <p>
                   Track what you watch, read, listen to and play. See what your friends are into. Talk about it. Find your next obsession. Discover your Entertainment DNA profile. Find people who are into what you&apos;re into. And prove just how much you know.
@@ -1039,7 +1039,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className="mx-auto mt-12 max-w-4xl md:mt-16"
+              className="mx-auto mt-4 w-full max-w-4xl md:mt-8 lg:mt-0"
             >
               <PhoneTrio />
             </motion.div>
