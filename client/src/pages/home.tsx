@@ -1879,7 +1879,7 @@ export default function Home() {
                 <div className="bg-[linear-gradient(110deg,_#8d26e8_0%,_#315fef_100%)] px-5 py-5 text-white">
                   <div className="flex items-center gap-2.5">
                     <Star className="h-6 w-6" strokeWidth={1.8} />
-                    <span className="font-['Poppins'] text-base font-bold">Total Consumption Leaders</span>
+                    <span className="leaderboard-title text-base font-bold" style={{ fontFamily: '"Poppins", sans-serif' }}>Total Consumption Leaders</span>
                   </div>
                 </div>
                 <div>
@@ -1913,7 +1913,7 @@ export default function Home() {
                 <div className="bg-[linear-gradient(110deg,_#6f27e8_0%,_#d839c8_100%)] px-5 py-5 text-white">
                   <div className="flex items-center gap-2.5">
                     <Brain className="h-6 w-6" strokeWidth={1.8} />
-                    <span className="font-['Poppins'] text-base font-bold">Top Trivia Players</span>
+                    <span className="leaderboard-title text-base font-bold" style={{ fontFamily: '"Poppins", sans-serif' }}>Top Trivia Players</span>
                   </div>
                 </div>
                 <div>

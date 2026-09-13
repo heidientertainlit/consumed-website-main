@@ -89,6 +89,12 @@
   font-weight: 350;
 }
 
+.leaderboard-title {
+  font-family: "Poppins", sans-serif !important;
+  font-style: normal;
+  letter-spacing: normal;
+}
+
 .text-gradient {
   background: linear-gradient(135deg, hsl(var(--primary)), #9f7aea);
   -webkit-background-clip: text;
